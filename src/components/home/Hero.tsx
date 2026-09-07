@@ -161,9 +161,17 @@ export default function Hero() {
                                             <p className="text-xs" style={{ color: "var(--secondary-text)" }}>QA & Testing Solutions</p>
                                         </div>
                                     </div>
-                                    <div style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", color: "#fff", fontWeight: 600, fontSize: 12 }}>
+                                    {/* Accessible name is spelled out because the page carries two
+                                        "Case Study" pills pointing at different projects — the visible
+                                        label stays inside the accessible name (WCAG 2.5.3). */}
+                                    <Link
+                                        href="/portfolio/testriq-organic-growth"
+                                        aria-label="Case Study: Testriq organic growth"
+                                        className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                                        style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", color: "#fff", fontWeight: 600, fontSize: 12 }}
+                                    >
                                         Case Study
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4 mb-4">
@@ -208,9 +216,14 @@ export default function Hero() {
                                             <p className="text-xs" style={{ color: "var(--secondary-text)" }}>Software Training Institute</p>
                                         </div>
                                     </div>
-                                    <div style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", color: "#fff", fontWeight: 600, fontSize: 12 }}>
+                                    <Link
+                                        href="/portfolio/cdpl-performance-marketing"
+                                        aria-label="Case Study: CDPL performance marketing"
+                                        className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                                        style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", color: "#fff", fontWeight: 600, fontSize: 12 }}
+                                    >
                                         Case Study
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4 mb-4">

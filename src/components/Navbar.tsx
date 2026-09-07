@@ -181,6 +181,7 @@ export default function Navbar() {
               <Link href="/" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Home</Link>
               <Link href="/our-team" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Our Team</Link>
               <Link href="/services" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Services</Link>
+              <Link href="/portfolio" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Portfolio</Link>
               <Link href="/products/chimegenius-ai-pro" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Products</Link>
               <Link href="/blog" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Blog</Link>
               <Link href="/about" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">About</Link>
@@ -348,6 +349,17 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+              {/* Portfolio — a plain link, so it deliberately does not use the
+                  dropdown shape the Services/Products triggers use. */}
+              <Link
+                href="/portfolio"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
+                style={getNavLinkStyle("/portfolio")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              >
+                Portfolio
+              </Link>
               {/* Products Dropdown */}
               <div className="relative" onMouseEnter={handleProductsMouseEnter} onMouseLeave={handleProductsMouseLeave}>
                 <button
@@ -668,6 +680,17 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            <Link
+              href="/portfolio"
+              onClick={toggleMobileMenu}
+              className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
+              style={getNavLinkStyle("/portfolio")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+            >
+              Portfolio
+            </Link>
 
             {/* Mobile Products Accordion */}
             <div>

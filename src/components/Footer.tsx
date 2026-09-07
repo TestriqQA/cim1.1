@@ -27,6 +27,7 @@ export default function Footer() {
         { name: "Our Team", href: "/our-team" },
         { name: "Careers", href: "/careers" },
         { name: "Our Services", href: "/services" },
+        { name: "Portfolio", href: "/portfolio" },
         { name: "Products", href: "/products/chimegenius-ai-pro" },
         { name: "Contact Us", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
