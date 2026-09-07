@@ -144,7 +144,15 @@ export const teamMembers: TeamMember[] = [
   },
 ];
 
-/** Practice areas the team is organised around. Each links into the service silo. */
+/**
+ * Practice areas the team is organised around. Each links into the service silo,
+ * so this array doubles as the /our-team page's internal-linking layer.
+ *
+ * Ordered to mirror the primary navigation, and deliberately kept at NINE — the
+ * page copy ("nine practice areas") and the services mega-menu both promise
+ * nine, so a shorter list here reads as a miscount and leaves service hubs
+ * unlinked from this page.
+ */
 export interface TeamDiscipline {
   title: string;
   description: string;
@@ -168,6 +176,27 @@ export const teamDisciplines: TeamDiscipline[] = [
     skills: ["iOS", "Android", "React Native", "Flutter", "Cross-platform"],
   },
   {
+    title: "Social Media Marketing",
+    description:
+      "Channel strategy, content and community management run against the metrics that actually move pipeline rather than vanity reach.",
+    href: "/services/social-media-marketing-services",
+    skills: ["Content Strategy", "Community", "Instagram", "LinkedIn", "Video"],
+  },
+  {
+    title: "AI Workflows & Automation",
+    description:
+      "Automations and AI assistants wired into the tools a business already runs on, scoped to the work they actually remove.",
+    href: "/services/ai-workflows-automations-services",
+    skills: ["Workflow Automation", "Integrations", "LLM Tooling", "RPA"],
+  },
+  {
+    title: "AI-Powered Chatbots",
+    description:
+      "Assistants that answer from your own content and hand off cleanly to a human the moment they stop being useful.",
+    href: "/services/ai-chatbots-services",
+    skills: ["Conversational AI", "RAG", "Support Deflection", "CRM Handoff"],
+  },
+  {
     title: "Organic Growth & SEO",
     description:
       "Technical foundations, on-page structure and content that earns rankings — audited against real crawl and index data.",
@@ -182,18 +211,18 @@ export const teamDisciplines: TeamDiscipline[] = [
     skills: ["Google Ads", "Meta Ads", "LinkedIn Ads", "Analytics", "CRO"],
   },
   {
-    title: "AI Workflows & Automation",
-    description:
-      "Automations and AI assistants wired into the tools a business already runs on, scoped to the work they actually remove.",
-    href: "/services/ai-workflows-automations-services",
-    skills: ["Workflow Automation", "AI Chatbots", "Integrations", "LLM Tooling"],
-  },
-  {
     title: "Brand Identity & Design",
     description:
       "Identity systems and interface design that stay coherent from a logo lockup through to a production component library.",
     href: "/services/brand-identity-design",
     skills: ["Brand Identity", "UI/UX Design", "Design Systems", "Creative Direction"],
+  },
+  {
+    title: "Support & Maintenance",
+    description:
+      "The unglamorous half of the job — updates, monitoring, accessibility fixes and the small changes that keep a live site healthy.",
+    href: "/services/additional-support-services",
+    skills: ["Monitoring", "Security Updates", "Accessibility", "Retainers"],
   },
 ];
 

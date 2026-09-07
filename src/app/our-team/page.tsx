@@ -20,6 +20,14 @@ import {
 const siteUrl = "https://www.cinuteinfomedia.com";
 const pagePath = "/our-team";
 
+// Every section on this route is a Server Component reading from a static
+// module (`data/team.ts`) — there is no request-time data and no client
+// JavaScript shipped for the page itself. Declaring the segment static makes
+// that a build-time guarantee rather than an inference: the route is rendered
+// once into HTML and served from the edge cache, so introducing a dynamic API
+// here would fail the build instead of silently opting the page into SSR.
+export const dynamic = "force-static";
+
 export const metadata = getPageMetadata({
     title: "Our Team | Meet the People Behind Cinute InfoMedia",
     description:
@@ -84,7 +92,7 @@ export default function OurTeamPage() {
                 "Meet the Cinute InfoMedia team: the founders, engineers, marketers and specialists who scope, build and run every project.",
             urlPath: pagePath,
             datePublished: "2026-09-04",
-            dateModified: "2026-09-04",
+            dateModified: "2026-09-07",
             mainEntityId: teamListId,
             breadcrumbId: `${siteUrl}${pagePath}/#breadcrumb`,
         }),
