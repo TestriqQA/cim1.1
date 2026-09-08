@@ -40,8 +40,9 @@ export default function FeaturedMembers() {
             className="mt-5 text-lg leading-relaxed"
             style={{ color: "var(--secondary-text)" }}
           >
-            Engineering, applied research, and the people operations that keep the team steady —
-            the specialists behind the work between kickoff and handover.
+            Web and mobile engineering, applied research, search and content, and the people
+            operations that keep the team steady — the specialists behind the work between
+            kickoff and handover.
           </p>
         </div>
 

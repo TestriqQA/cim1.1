@@ -20,15 +20,23 @@
 // originals were shot further back (heads at 34% vs the group's 45%), which is
 // what made them read as small and set back next to the others.
 //
-// All six are now 576px square — exactly 2x the 288px leader avatar, a true
+// Every portrait is 576px square — exactly 2x the 288px leader avatar, a true
 // retina fit. Avatars render at fixed sizes (288px on the leader cards, 112px
 // on the featured cards) rather than filling a flexible box: no CLS, because
 // next/image gets explicit width/height.
 //
-// NOTE: the optical detail in five of the six originals tops out around 300px,
-// and the head-size normalisation crops into that, so these are upscaled.
-// Sandeep's is the softest (a 223px crop). Higher-resolution headshots would be
-// picked up automatically — nothing in the components needs to change.
+// NOTE: the optical detail in five of the six original leader crops tops out
+// around 300px, and the head-size normalisation crops into that, so those are
+// upscaled. Sandeep's is the softest (a 223px crop). Higher-resolution
+// headshots would be picked up automatically — nothing in the components needs
+// to change.
+//
+// The later portraits (Jayesh, Ved, Priya) were pulled from their Sanity blog
+// author records and squared with a saliency-weighted crop, so they are framed
+// on the face but not to the same hand-tuned 14%/45% rule as the six above.
+// `placeholder-avatar.webp` is a neutral stand-in at the same 576px, used where
+// no photo has been supplied yet — swapping in a real portrait is a one-line
+// change to that person's `image`.
 
 export interface TeamMember {
   /** Stable slug — used for React keys and JSON-LD @id fragments. */
@@ -110,17 +118,7 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    id: "elvita-gomes",
-    tier: "featured",
-    name: "Elvita Gomes",
-    role: "Human Resources Specialist",
-    focus: "People Operations & Hiring",
-    bio: "Elvita looks after people operations — hiring, onboarding, and the day-to-day support that keeps a distributed team working well together. If you apply to Cinute InfoMedia, she is usually the first person you will hear from.",
-    image: "/images/team/elvita-gomes.webp",
-    expertise: ["Talent Acquisition", "Onboarding", "Employee Experience"],
-    linkedin: "https://www.linkedin.com/in/elvita07",
-  },
-  {
+    // ---- Engineering ------------------------------------------------------
     id: "prakash-mishra",
     tier: "featured",
     name: "Prakash Mishra",
@@ -132,6 +130,42 @@ export const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/prakashmmishra/",
   },
   {
+    id: "jayesh-mistry",
+    tier: "featured",
+    name: "Jayesh Mistry",
+    role: "Web Developer & UI Designer",
+    focus: "Interfaces & Responsive Web",
+    bio: "Jayesh builds the interfaces people actually touch — responsive layouts and design systems that hold together from a 320px phone to a wide desktop. He is also the most prolific writer on the CIM blog, which is usually where a new pattern gets explained before it ships.",
+    image: "/images/team/jayesh-mistry.webp",
+    expertise: ["UI Design", "Responsive Web", "Front-end Development"],
+    linkedin: "https://www.linkedin.com/in/jayesh-mistry-53300235b",
+  },
+  {
+    id: "ratnesh-waghare",
+    tier: "featured",
+    name: "Ratnesh Waghare",
+    role: "Frontend Developer",
+    focus: "Front-end Development",
+    bio: "Ratnesh works on the front end of client projects, turning designs into the accessible, responsive markup and components that ship. A fuller profile and portrait are on the way.",
+    // No photo on file yet — the shared neutral avatar stands in until one is
+    // supplied, so the card renders at the same size as every other portrait.
+    image: "/images/team/placeholder-avatar.webp",
+    expertise: ["Front-end Development", "UI Engineering", "Responsive Interfaces"],
+    linkedin: "https://www.linkedin.com/in/ratnesh-waghare-63782a293/",
+  },
+  {
+    id: "priya-choudhary",
+    tier: "featured",
+    name: "Priya Choudhary",
+    role: "Mobile App Developer",
+    focus: "Native & Cross-platform Apps",
+    bio: "Priya builds native and cross-platform apps in Flutter and React Native for startups and SMEs across India, with a focus on clean architecture and budget-smart MVPs. She writes about app development cost, tech stacks and shipping faster.",
+    image: "/images/team/priya-choudhary.webp",
+    expertise: ["Flutter", "React Native", "Mobile Architecture"],
+    linkedin: "https://www.linkedin.com/in/choudharypriya/",
+  },
+  {
+    // ---- Research ---------------------------------------------------------
     id: "aakash-yadav",
     tier: "featured",
     name: "Aakash Yadav",
@@ -141,6 +175,42 @@ export const teamMembers: TeamMember[] = [
     image: "/images/team/aakash-yadav.webp",
     expertise: ["AI & Automation", "Applied Research", "Developer Tooling"],
     linkedin: "https://www.linkedin.com/in/aakashyadav9890/",
+  },
+  {
+    // ---- Search & content -------------------------------------------------
+    id: "sushma-pal",
+    tier: "featured",
+    name: "Sushma Pal",
+    role: "Senior SEO Analyst",
+    focus: "Organic Growth & Content",
+    bio: "Sushma analyses what search is actually rewarding in a client's category and turns it into a content and optimisation plan. Her work is the bridge between a technical SEO audit and the pages that get written because of it.",
+    // No photo on file yet — see the note on Ratnesh above.
+    image: "/images/team/placeholder-avatar.webp",
+    expertise: ["Technical SEO", "Content Strategy", "Organic Growth"],
+    linkedin: "https://www.linkedin.com/in/sushma-pal131/",
+  },
+  {
+    id: "ved-patil",
+    tier: "featured",
+    name: "Ved Patil",
+    role: "SEO Executive",
+    focus: "On-page & Technical SEO",
+    bio: "Ved plans and executes the on-page, technical and content SEO that grows organic traffic and conversions. Their specialism is keyword strategy and SERP analysis — turning search data into rankings rather than into a report nobody acts on.",
+    image: "/images/team/ved-patil.webp",
+    expertise: ["Keyword Strategy", "SERP Analysis", "On-page SEO"],
+    linkedin: "https://www.linkedin.com/in/ved-patil-07511b2b4/",
+  },
+  {
+    // ---- People -----------------------------------------------------------
+    id: "elvita-gomes",
+    tier: "featured",
+    name: "Elvita Gomes",
+    role: "Human Resources Specialist",
+    focus: "People Operations & Hiring",
+    bio: "Elvita looks after people operations — hiring, onboarding, and the day-to-day support that keeps a distributed team working well together. If you apply to Cinute InfoMedia, she is usually the first person you will hear from.",
+    image: "/images/team/elvita-gomes.webp",
+    expertise: ["Talent Acquisition", "Onboarding", "Employee Experience"],
+    linkedin: "https://www.linkedin.com/in/elvita07",
   },
 ];
 
