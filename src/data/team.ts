@@ -166,7 +166,7 @@ export const teamMembers: TeamMember[] = [
     id: "sushma-pal",
     tier: "featured",
     name: "Sushma Pal",
-    role: "Lead Senior SEO Analyst",
+    role: "Lead SEO Analyst",
     focus: "Organic Growth & Content",
     bio: "Sushma analyses what search is actually rewarding in a client's category and turns it into a content and optimisation plan. Her work is the bridge between a technical SEO audit and the pages that get written because of it.",
     // No photo on file yet — see the note on Ratnesh above.
