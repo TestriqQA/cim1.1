@@ -191,33 +191,17 @@ export default function Hero() {
               Roster index — real jump navigation, not ornament
           ---------------------------------------------------------------- */}
           <nav
-            aria-labelledby="roster-index-label"
-            className="rounded-3xl border p-5 sm:p-6"
+            // The visible "The roster / 11 people" header was removed, so the
+            // nav carries its own label instead of pointing at a heading that
+            // no longer exists — without it this is an unnamed landmark.
+            aria-label="Team members"
+            className="rounded-3xl border p-3 sm:p-4"
             style={{
               backgroundColor: "var(--card-bg)",
               borderColor: "var(--border-color)",
             }}
           >
-            <div
-              className="flex items-baseline justify-between gap-4 border-b pb-4"
-              style={{ borderColor: "var(--border-color)" }}
-            >
-              <p
-                id="roster-index-label"
-                className="text-xs font-bold uppercase tracking-[0.2em]"
-                style={{ color: "var(--brand-blue-text)" }}
-              >
-                The roster
-              </p>
-              <p
-                className="text-xs font-semibold tabular-nums"
-                style={{ color: "var(--secondary-text)" }}
-              >
-                {String(teamMembers.length).padStart(2, "0")} people
-              </p>
-            </div>
-
-            <ol className="mt-2">
+            <ol>
               {teamMembers.map((member, index) => (
                 <li key={member.id}>
                   <a

@@ -176,8 +176,11 @@ export default function Navbar() {
                 </div>
               </Link>
             </div>
-            {/* SSR nav links — visible to Googlebot's HTML crawl */}
-            <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
+            {/* SSR nav links — visible to Googlebot's HTML crawl. Centred with
+                the same `flex-1 justify-center` as the mounted bar, and followed
+                by an inert mirror of its right-hand cluster, so the header does
+                not reflow when hydration swaps this block out. */}
+            <div className="hidden lg:flex flex-1 justify-center items-center space-x-1 2xl:space-x-2">
               <Link href="/" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Home</Link>
               <Link href="/our-team" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Our Team</Link>
               <Link href="/services" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Services</Link>
@@ -187,6 +190,18 @@ export default function Navbar() {
               <Link href="/about" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">About</Link>
               <Link href="/careers" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Careers</Link>
               <Link href="/contact" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Contact</Link>
+            </div>
+
+            {/* Inert mirror of the mounted bar's theme button + CTA. The theme
+                switcher needs client state, so only its footprint is reserved
+                here; the CTA is a real link so it is crawlable pre-hydration. */}
+            <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
+              <div aria-hidden="true" className="p-2 2xl:p-2.5">
+                <div className="w-5 h-5" />
+              </div>
+              <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium shadow-lg shadow-[#008ac1]/30">
+                Let’s Talk
+              </Link>
             </div>
           </div>
         </div>
@@ -230,9 +245,14 @@ export default function Navbar() {
           </div>
 
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="ml-3 2xl:ml-6 flex items-center space-x-1 2xl:space-x-2">
+          {/* Desktop Navigation — centred in the space between the logo and the
+              right-hand cluster. `flex-1` makes this the only growing track, so
+              the links sit in the middle rather than being pushed against the
+              CTA by `justify-between`. The theme toggle and "Let's Talk" used to
+              live in this same container, which is why the links could not
+              centre; they are now their own group below. */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center space-x-1 2xl:space-x-2">
               <Link
                 href="/"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
@@ -467,7 +487,12 @@ export default function Navbar() {
               >
                 Contact
               </Link>
+            </div>
+          </div>
 
+          {/* Right-hand cluster — theme switcher + primary CTA. Kept out of the
+              centred link group so the links centre on their own. */}
+          <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
               {/* Theme Toggle Button */}
               {/* Theme Dropdown */}
               <div className="relative" ref={themeDropdownRef}>
@@ -535,7 +560,6 @@ export default function Navbar() {
               <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium transition-all shadow-lg shadow-[#008ac1]/30 hover:shadow-xl hover:shadow-[#008ac1]/40 hover:scale-105">
                 Let’s Talk
               </Link>
-            </div>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
