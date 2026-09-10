@@ -7,12 +7,33 @@ export interface PrivacySection {
     content: { subtitle: string; text: string }[];
 }
 
+// Who actually operates the product and answers its privacy requests.
+//
+// This exists because the privacy page used to hard-code Cinute InfoMedia's
+// name, address and phone numbers into EVERY product policy. That is correct
+// for a product CIM operates and false for one it merely lists — a Kruti.io
+// policy naming Cinute Digital Pvt. Ltd. as the data controller cannot then
+// print a different company's contact details underneath it. Omit the field and
+// the page falls back to CIM's own details, so existing products are unchanged.
+export interface PrivacyOperator {
+    name: string;
+    addressLines?: string[];
+    email: string;
+    phones?: string[];
+    websiteLabel: string;
+    websiteUrl: string;
+    // Set when the policy is reproduced from another company's site; rendered as
+    // a pointer to the authoritative version.
+    canonicalUrl?: string;
+}
+
 export interface ProductPrivacyPolicy {
     slug: string;
     productName: string;
     lastUpdated: string;
     intro: string;
     sections: PrivacySection[];
+    operator?: PrivacyOperator;
 }
 
 export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
@@ -100,6 +121,147 @@ export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
                 title: "10. Contact Information",
                 content: [
                     { subtitle: "", text: "Privacy Team — Cinute InfoMedia\nEmail: contact@cinuteinfomedia.com\nPhone: +91-9004988859 / +91-7700995410\nAddress: Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107, India." },
+                ],
+            },
+        ],
+    },
+    // ==========================================================================
+    // Kruti.io — reproduced from the policy published at kruti.io/privacy.
+    //
+    // The data controller is Cinute Digital Pvt. Ltd., NOT Cinute InfoMedia, so
+    // this entry carries its own `operator` block; without it the page would
+    // print CIM's name, Mira Road address and phone numbers directly beneath a
+    // policy that names a different company. `canonicalUrl` points readers at
+    // the authoritative copy, which is the one that governs.
+    //
+    // `lastUpdated` is Kruti.io's own effective date, copied as published.
+    // Re-stamping it with a build date would misstate when the policy took
+    // effect. When Cinute Digital revises the policy, this entry must be
+    // re-synced by hand — nothing here reads from kruti.io at runtime.
+    //
+    // Deliberately NOT carried across from the source, because each would say
+    // more on cinuteinfomedia.com than the original says on kruti.io:
+    //   - The host is left unnamed, exactly as Kruti.io leaves it.
+    //   - The Cookie Policy's "no analytics cookies" claim is not restated;
+    //     their pages ship a Google Analytics tag, and that inconsistency is
+    //     theirs to resolve, not ours to republish.
+    //   - No Grievance Officer is named, because the source names none.
+    //   - No postal address, CIN, GSTIN or phone number is added.
+    // ==========================================================================
+    {
+        slug: "kruti-io",
+        productName: "Kruti.io",
+        lastUpdated: "March 10, 2026",
+        operator: {
+            name: "Cinute Digital Pvt. Ltd.",
+            email: "support@kruti.io",
+            websiteLabel: "kruti.io",
+            websiteUrl: "https://kruti.io/",
+            canonicalUrl: "https://kruti.io/privacy",
+        },
+        intro: "Kruti.io is an AI-powered LinkedIn content generation platform operated by Cinute Digital Pvt. Ltd., a company incorporated under the laws of India. This Privacy Policy explains how Kruti.io collects, uses, stores, shares and protects your personal information when you use the platform at kruti.io. It applies to all users of the service, including those on a free trial and those on a paid subscription. This page reproduces the policy published at kruti.io/privacy; Cinute Digital Pvt. Ltd. is the data controller for Kruti.io.",
+        sections: [
+            {
+                title: "1. Introduction",
+                content: [
+                    { subtitle: "", text: "Kruti.io (\"the Service\") is an AI-powered LinkedIn content generation platform operated by Cinute Digital Pvt. Ltd. This Privacy Policy describes how the Service collects, uses, stores, shares and protects your personal information. It applies to every user of the Service, whether on a free trial or a paid subscription. By using Kruti.io you agree to the practices described here." },
+                ],
+            },
+            {
+                title: "2. Information We Collect",
+                content: [
+                    { subtitle: "Account Information via LinkedIn OAuth", text: "When you sign in, Kruti.io receives information from LinkedIn through LinkedIn's OAuth 2.0 and OpenID Connect protocol, using the scopes openid, profile, email and w_member_social. The information received is: your full name; your email address; your profile picture URL; your professional headline; and your LinkedIn profile identifier. Kruti.io never receives or stores your LinkedIn password." },
+                    { subtitle: "Profile Data You Provide", text: "Information you enter to shape your content: your professional summary and industry; your skills and expertise topics; your content positioning and tone preferences; your content goals and styles; a description of your target audience; your posting schedule preferences; your post signature or sign-off text; and your Human Mode preference, which is a writing-style setting." },
+                    { subtitle: "Content Data", text: "The material the Service generates and stores for you: AI-generated content plans, including weekly strategies, pillars and themes; posts, including titles, body text, hashtags, AI image prompts and generated images; newsletter drafts, including titles, subjects and bodies; and content repurposing outputs such as social threads, blog posts and emails." },
+                    { subtitle: "Payment Information", text: "Payments are processed by Razorpay. Kruti.io stores only: your Razorpay customer identifier; your Razorpay subscription identifier; your selected plan and currency preference (INR or USD); and your subscription status and billing period dates.\n\nKruti.io does NOT store your credit card numbers, bank account details, UPI IDs, or any payment instrument information. All sensitive payment data is handled exclusively by Razorpay." },
+                    { subtitle: "Technical Data", text: "Session tokens used for authentication (JWT-based); server access logs, which include IP addresses, timestamps and user agent strings; and error logs used for debugging and service improvement." },
+                ],
+            },
+            {
+                title: "3. How We Use Your Information",
+                content: [
+                    { subtitle: "AI Content Generation", text: "Your profile data and preferences are used to generate content plans, posts, images and newsletter drafts tailored to you." },
+                    { subtitle: "Personalization", text: "Your headline, skills, industry, tone preferences and audience description are used to shape the strategy and the voice of what is generated." },
+                    { subtitle: "LinkedIn Posting", text: "Posts you have approved are published to your LinkedIn account using the w_member_social scope authorization you granted at sign-in." },
+                    { subtitle: "Payment Processing", text: "Your Razorpay identifiers, plan, currency and subscription status are used to manage your subscription, billing and renewals." },
+                    { subtitle: "Transactional Emails", text: "Your email address is used to send service messages such as account, billing and subscription notifications." },
+                    { subtitle: "Service Improvement", text: "Aggregated usage and error information is used to diagnose problems and improve the platform." },
+                    { subtitle: "Legal Compliance", text: "Information may be used or retained where necessary to comply with applicable law and to enforce the Terms of Service." },
+                ],
+            },
+            {
+                title: "4. AI Data Processing",
+                content: [
+                    { subtitle: "Models Used", text: "Kruti.io uses Google Gemini 2.5 Pro for text generation and Google Imagen 3 for image generation." },
+                    { subtitle: "Data Sent to Google", text: "The following is sent to Google's APIs to generate content on your behalf: your professional headline, skills and industry; your tone preferences, content goals and positioning; content context, such as previous posts used for continuity; your target audience description; and image generation prompts for Imagen 3. Google's Generative AI Terms of Service and Privacy Policy govern how Google handles this data." },
+                    { subtitle: "No Model Training", text: "Kruti.io does not use your data to train AI models. Google's API services are used solely to generate content on your behalf." },
+                ],
+            },
+            {
+                title: "5. Third-Party Services",
+                content: [
+                    { subtitle: "LinkedIn Corporation", text: "Authentication via OAuth 2.0 and publishing of approved content to your LinkedIn account." },
+                    { subtitle: "Google (Gemini & Imagen)", text: "AI text and image generation." },
+                    { subtitle: "Razorpay", text: "Payment processing for subscriptions." },
+                    { subtitle: "Resend", text: "Transactional email delivery service." },
+                ],
+            },
+            {
+                title: "6. Cookies and Tracking",
+                content: [
+                    { subtitle: "", text: "Kruti.io uses essential cookies for authentication and session management. Full details are set out in the Kruti.io Cookie Policy at kruti.io/cookies." },
+                ],
+            },
+            {
+                title: "7. Data Storage and Security",
+                content: [
+                    { subtitle: "Security Measures", text: "Data is encrypted in transit using HTTPS and TLS; authentication uses a secure JWT strategy; database access is restricted through application-level controls; payment data is handled exclusively by PCI-DSS compliant Razorpay; and LinkedIn OAuth tokens are stored securely and used only for authorized actions." },
+                    { subtitle: "No Sale of Data", text: "Kruti.io does not sell, rent, or trade your personal data to third parties for marketing or any other purpose." },
+                ],
+            },
+            {
+                title: "8. Data Retention",
+                content: [
+                    { subtitle: "Account data", text: "Retained for as long as your account remains active." },
+                    { subtitle: "Content data", text: "Posts, content plans and newsletters are retained so that you can continue to access and use them." },
+                    { subtitle: "Upon account deletion", text: "All user data, content plans, posts and newsletters are permanently deleted from the database, and the deletion cascades through all related records." },
+                    { subtitle: "Payment records", text: "Razorpay may retain transaction records in accordance with its own policies and applicable financial regulations." },
+                    { subtitle: "Server logs", text: "Access and error logs are retained for up to 90 days." },
+                ],
+            },
+            {
+                title: "9. Your Rights",
+                content: [
+                    { subtitle: "Under Indian Law (IT Act, 2000 & SPDI Rules, 2011)", text: "You have the right to access the personal information held about you; the right to correct information that is inaccurate; and the right to withdraw consent for the processing of sensitive personal data." },
+                    { subtitle: "Under GDPR (for users in the European Union)", text: "If you are located in the EU or EEA, you additionally have the right to data portability; the right to erasure; the right to restriction of processing; the right to object to processing based on legitimate interests; and the right to lodge a complaint with a supervisory authority." },
+                    { subtitle: "How to Exercise Your Rights", text: "To delete your account, email support@kruti.io. To export your data, email support@kruti.io. To revoke Kruti.io's access to your LinkedIn account, use LinkedIn's own Settings, under Data Privacy and Permitted Services." },
+                ],
+            },
+            {
+                title: "10. Children's Privacy",
+                content: [
+                    { subtitle: "", text: "Kruti.io is not intended for individuals under the age of 18. Kruti.io does not knowingly collect personal information from minors." },
+                ],
+            },
+            {
+                title: "11. International Data Transfers",
+                content: [
+                    { subtitle: "Google (United States)", text: "AI content and image generation via the Gemini and Imagen APIs." },
+                    { subtitle: "Razorpay (India)", text: "Payment processing." },
+                    { subtitle: "Infrastructure providers", text: "Hosting and CDN services." },
+                ],
+            },
+            {
+                title: "12. Changes to This Policy",
+                content: [
+                    { subtitle: "", text: "Kruti.io may update this Privacy Policy from time to time. The \"Last Updated\" date will be revised when it does. For significant changes, users will be notified by email or through an in-app notification. Continued use of the Service after a change constitutes acceptance of the revised policy." },
+                ],
+            },
+            {
+                title: "13. Contact Us",
+                content: [
+                    { subtitle: "", text: "Cinute Digital Pvt. Ltd.\nEmail: support@kruti.io\nWebsite: kruti.io" },
+                    { subtitle: "Grievance Officer", text: "In accordance with the Information Technology Act, 2000 and the rules made thereunder, the Grievance Officer can be contacted at support@kruti.io. Grievances are acknowledged within 24 hours and resolved within 30 days." },
                 ],
             },
         ],

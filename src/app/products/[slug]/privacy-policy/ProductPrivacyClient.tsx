@@ -3,15 +3,33 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
-import type { ProductPrivacyPolicy } from "@/data/productPrivacy";
+import type { PrivacyOperator, ProductPrivacyPolicy } from "@/data/productPrivacy";
 
 interface ProductPrivacyClientProps {
     policy: ProductPrivacyPolicy;
     slug: string;
 }
 
+// Cinute InfoMedia's own details, used for the products CIM operates. These
+// were hard-coded into this component and therefore printed on EVERY product
+// privacy page, including one whose policy names a different data controller.
+// A policy that carries its own `operator` now overrides them.
+const CIM_OPERATOR: PrivacyOperator = {
+    name: "Cinute InfoMedia",
+    addressLines: [
+        "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
+        "Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107",
+        "India",
+    ],
+    email: "contact@cinuteinfomedia.com",
+    phones: ["+91-9004988859", "+91-7700995410"],
+    websiteLabel: "www.cinuteinfomedia.com",
+    websiteUrl: "https://www.cinuteinfomedia.com",
+};
+
 const ProductPrivacyClient: React.FC<ProductPrivacyClientProps> = ({ policy, slug }) => {
     const [isVisible, setIsVisible] = useState(false);
+    const operator: PrivacyOperator = policy.operator ?? CIM_OPERATOR;
 
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), 100);
@@ -153,17 +171,31 @@ const ProductPrivacyClient: React.FC<ProductPrivacyClientProps> = ({ policy, slu
                     <div className="grid md:grid-cols-2 gap-6">
                         <div>
                             <p className="font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                Cinute InfoMedia
+                                {operator.name}
                             </p>
-                            <p className="text-sm mb-1" style={{ color: "var(--secondary-text)" }}>
-                                Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park
-                            </p>
-                            <p className="text-sm mb-1" style={{ color: "var(--secondary-text)" }}>
-                                Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107
-                            </p>
-                            <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                India
-                            </p>
+                            {operator.addressLines?.map((line, i) => (
+                                <p
+                                    key={i}
+                                    className="text-sm mb-1 last:mb-0"
+                                    style={{ color: "var(--secondary-text)" }}
+                                >
+                                    {line}
+                                </p>
+                            ))}
+                            {operator.canonicalUrl && (
+                                <p className="text-sm mt-4" style={{ color: "var(--secondary-text)" }}>
+                                    This policy is reproduced from{" "}
+                                    <a
+                                        href={operator.canonicalUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline hover:no-underline"
+                                    >
+                                        the version published by {operator.name}
+                                    </a>
+                                    , which is the authoritative copy.
+                                </p>
+                            )}
                         </div>
 
                         <div>
@@ -172,46 +204,44 @@ const ProductPrivacyClient: React.FC<ProductPrivacyClientProps> = ({ policy, slu
                                     Email:
                                 </p>
                                 <a
-                                    href="mailto:contact@cinuteinfomedia.com"
+                                    href={`mailto:${operator.email}`}
                                     className="text-sm hover:underline"
                                     style={{ color: "var(--secondary-text)" }}
                                 >
-                                    contact@cinuteinfomedia.com
+                                    {operator.email}
                                 </a>
                             </div>
 
-                            <div className="mb-3">
-                                <p className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
-                                    Phone:
-                                </p>
-                                <a
-                                    href="tel:+919004988859"
-                                    className="text-sm block hover:underline py-2"
-                                    style={{ color: "var(--secondary-text)" }}
-                                >
-                                    +91-9004988859
-                                </a>
-                                <a
-                                    href="tel:+917700995410"
-                                    className="text-sm block hover:underline py-2"
-                                    style={{ color: "var(--secondary-text)" }}
-                                >
-                                    +91-7700995410
-                                </a>
-                            </div>
+                            {operator.phones && operator.phones.length > 0 && (
+                                <div className="mb-3">
+                                    <p className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+                                        Phone:
+                                    </p>
+                                    {operator.phones.map((phone) => (
+                                        <a
+                                            key={phone}
+                                            href={`tel:${phone.replace(/[^+\d]/g, "")}`}
+                                            className="text-sm block hover:underline py-2"
+                                            style={{ color: "var(--secondary-text)" }}
+                                        >
+                                            {phone}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
 
                             <div>
                                 <p className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
                                     Website:
                                 </p>
                                 <a
-                                    href="https://www.cinuteinfomedia.com"
+                                    href={operator.websiteUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-sm hover:underline"
                                     style={{ color: "var(--secondary-text)" }}
                                 >
-                                    www.cinuteinfomedia.com
+                                    {operator.websiteLabel}
                                 </a>
                             </div>
                         </div>
@@ -224,7 +254,8 @@ const ProductPrivacyClient: React.FC<ProductPrivacyClientProps> = ({ policy, slu
                         Thank you for trusting {policy.productName} with your information.
                     </p>
                     <p className="text-sm mt-2" style={{ color: "var(--secondary-text)" }}>
-                        We are committed to maintaining the highest standards of privacy and security.
+                        {operator.name} is committed to maintaining the highest standards of
+                        privacy and security.
                     </p>
                 </div>
 

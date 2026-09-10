@@ -128,16 +128,24 @@ export default async function ProductPage({
             name: product.name,
             description: product.longDescription,
             url: `${siteUrl}/products/${product.slug}`,
-            applicationCategory: "BrowserApplication",
+            // Category and pricing come from the product record. Both used to be
+            // hard-coded to ChimeGenius's shape — "BrowserApplication" plus a free
+            // offer — which published, in machine-readable schema, that EVERY
+            // product is a browser extension available for $0. A product that
+            // publishes no citable price emits no `offers` node at all rather than
+            // inheriting another product's commercial terms.
+            applicationCategory: product.applicationCategory ?? "BrowserApplication",
             operatingSystem: product.extensionUrl ? "Chrome, Edge" : "Web",
             ...(product.version && { softwareVersion: product.version }),
-            offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-                description: "Free plan with a daily generation limit. Pro and Business plans unlock unlimited generations, custom tones, and team features.",
-                url: `${siteUrl}/contact`,
-            },
+            ...(product.offers?.length && {
+                offers: product.offers.map((offer) => ({
+                    "@type": "Offer",
+                    price: offer.price,
+                    priceCurrency: offer.priceCurrency,
+                    ...(offer.description && { description: offer.description }),
+                    ...(offer.url && { url: offer.url }),
+                })),
+            }),
             provider: {
                 "@id": `${siteUrl}/#organization`,
             },

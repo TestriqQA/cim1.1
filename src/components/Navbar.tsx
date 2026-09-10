@@ -56,13 +56,24 @@ const getServiceSlug = (title: string) => {
   return title.toLowerCase().replace(/[&\s]+/g, "-");
 };
 
-// Products dropdown — one live product for now (mirrors the `services` structure).
+// Products dropdown (mirrors the `services` structure). Local to the Navbar and
+// deliberately NOT imported from data/products.ts — the dropdown needs a short
+// label and a logo, neither of which the product records carry. Feeds four
+// render sites: the desktop dropdown, the mobile accordion, the sr-only crawl
+// nav, and the pre-hydration crawl nav in the `!mounted` branch. Keep in sync
+// with data/products.ts when a product is added or removed.
 const products = [
   {
     title: "ChimeGenius AI Pro",
     description: "Smart comment & reply generator",
     slug: "chimegenius-ai-pro",
     logo: "/images/chimegenius-ai-pro-logo.svg",
+  },
+  {
+    title: "Kruti.io",
+    description: "AI LinkedIn content platform",
+    slug: "kruti-io",
+    logo: "/images/kruti-io-logo.webp",
   },
 ];
 
@@ -166,7 +177,7 @@ export default function Navbar() {
   // SSR-safe placeholder — includes navigation links for Googlebot crawlability
   if (!mounted) {
     return (
-      <nav className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+      <nav aria-label="Main" className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
         <div className="mx-auto px-6 md:px-12 xl:px-16">
           <div className="flex justify-between items-center h-16 lg:h-20">
             <div className="flex-shrink-0">
@@ -213,12 +224,26 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
+        {/* Same, for products. The visible Products link above can only point at
+            one product, and the dropdown that lists the rest does not exist until
+            hydration — so without this, every product but that one is absent from
+            the HTML Googlebot crawls. */}
+        <nav aria-label="Product pages" className="sr-only">
+          {products.map((product, i) => (
+            <Link key={i} href={`/products/${product.slug}`}>
+              {product.title}
+            </Link>
+          ))}
+        </nav>
       </nav>
     );
   }
 
   return (
+    // Named because two sr-only <nav>s live inside it; without a label axe
+    // reports landmark-unique on every route that renders the header.
     <nav
+      aria-label="Main"
       className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm transition-colors duration-300"
       style={{
         // use the global background variable so dark mode works

@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.cinuteinfomedia.com';
 
     // Build-time constant — only update when static content actually changes
-    const staticLastModified = '2026-04-16T00:00:00.000Z';
+    const staticLastModified = '2026-09-10T00:00:00.000Z';
 
     // 1. Static Routes (with realistic, stable lastModified dates)
     const staticRoutes: MetadataRoute.Sitemap = [

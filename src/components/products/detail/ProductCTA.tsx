@@ -40,6 +40,14 @@ export default function ProductCTA({ product }: { product: Product }) {
     }[c?.toLowerCase()] ?? c);
     const solidColor = solidAccent(color);
 
+    // The closing CTA points wherever the product actually lives: its own site,
+    // then a browser-extension store listing, then CIM's contact form. Both
+    // external cases open in a new tab; the fallback stays an internal <Link>.
+    const ctaHref = product.externalUrl ?? product.extensionUrl;
+    const ctaClass =
+        "w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg";
+    const ctaStyle = { backgroundColor: solidColor, boxShadow: `0 4px 20px ${color}40` };
+
     return (
         <section className="py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-50" />
@@ -65,10 +73,29 @@ export default function ProductCTA({ product }: { product: Product }) {
                         {product.closingCtaBody ?? `Join thousands of businesses already using ${product.name} to save time, reduce costs, and achieve better results.`}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <Link href={`${product.extensionUrl}`} className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg" style={{ backgroundColor: solidColor, boxShadow: `0 4px 20px ${color}40` }}>
-                            {product.closingCtaLabel ?? "Get Started Free"}
-                            <ArrowRight className="w-4 h-4 md:w-6 md:h-6 ml-2 flex-shrink-0" />
-                        </Link>
+                        {/* This used to be an unguarded `href={`${product.extensionUrl}`}`,
+                            so any product without an extensionUrl shipped a live
+                            href="undefined" pointing at /products/<slug>/undefined.
+                            Destination now mirrors ProductHero: the product's own site
+                            if it has one, the store listing for extensions, /contact
+                            otherwise. */}
+                        {ctaHref ? (
+                            <a
+                                href={ctaHref}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={ctaClass}
+                                style={ctaStyle}
+                            >
+                                {product.closingCtaLabel ?? "Get Started Free"}
+                                <ArrowRight className="w-4 h-4 md:w-6 md:h-6 ml-2 flex-shrink-0" />
+                            </a>
+                        ) : (
+                            <Link href="/contact" className={ctaClass} style={ctaStyle}>
+                                {product.closingCtaLabel ?? "Get Started Free"}
+                                <ArrowRight className="w-4 h-4 md:w-6 md:h-6 ml-2 flex-shrink-0" />
+                            </Link>
+                        )}
                     </div>
                     <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         {product.stats.slice(0, 3).map((stat, i) => (

@@ -107,7 +107,9 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                         <div>
                             <h2 className="text-xl font-bold text-white mb-1">Need Immediate Help?</h2>
                             <p className="text-sm text-white/80">
-                                Our support team responds {support.responseTime.toLowerCase()}.
+                                {support.responseTime
+                                    ? `Our support team responds ${support.responseTime.toLowerCase()}.`
+                                    : `Email the ${support.productName} team and they will get back to you.`}
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -118,26 +120,35 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                                 <Mail className="w-4 h-4" />
                                 {support.supportEmail}
                             </a>
-                            <a
-                                href={`tel:${support.supportPhone.replace(/-/g, "")}`}
-                                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 bg-white/15 text-white border border-white/30"
-                            >
-                                <Phone className="w-4 h-4" />
-                                {support.supportPhone}
-                            </a>
+                            {/* Optional. A product whose team publishes no phone
+                                number must not ship a `tel:` link — an empty
+                                supportPhone used to render one with no number in it. */}
+                            {support.supportPhone && (
+                                <a
+                                    href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 bg-white/15 text-white border border-white/30"
+                                >
+                                    <Phone className="w-4 h-4" />
+                                    {support.supportPhone}
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
 
-                {/* Response Time Badge */}
-                <div
-                    className={`flex items-center justify-center gap-2 mb-12 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"}`}
-                >
-                    <Clock className="w-4 h-4" style={{ color: "var(--accent-teal-text)" }} />
-                    <span className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
-                        Average Response Time: <strong style={{ color: "var(--foreground)" }}>{support.responseTime}</strong>
-                    </span>
-                </div>
+                {/* Response Time Badge — omitted for products whose team publishes
+                    no response-time commitment, rather than advertising one on
+                    their behalf. */}
+                {support.responseTime && (
+                    <div
+                        className={`flex items-center justify-center gap-2 mb-12 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"}`}
+                    >
+                        <Clock className="w-4 h-4" style={{ color: "var(--accent-teal-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
+                            Average Response Time: <strong style={{ color: "var(--foreground)" }}>{support.responseTime}</strong>
+                        </span>
+                    </div>
+                )}
 
                 {/* Support Channels Grid */}
                 <div className="mb-16">
@@ -291,18 +302,20 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                             <Mail className="w-4 h-4" />
                             Email Support Team
                         </a>
-                        <a
-                            href={`tel:${support.supportPhone.replace(/-/g, "")}`}
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-md"
-                            style={{
-                                borderColor: "var(--border-color)",
-                                color: "var(--foreground)",
-                                backgroundColor: "var(--card-bg)",
-                            }}
-                        >
-                            <Phone className="w-4 h-4" />
-                            Call Us
-                        </a>
+                        {support.supportPhone && (
+                            <a
+                                href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-md"
+                                style={{
+                                    borderColor: "var(--border-color)",
+                                    color: "var(--foreground)",
+                                    backgroundColor: "var(--card-bg)",
+                                }}
+                            >
+                                <Phone className="w-4 h-4" />
+                                Call Us
+                            </a>
+                        )}
                     </div>
 
                     <div className="mt-6 flex items-center justify-center gap-6 text-xs" style={{ color: "var(--secondary-text)" }}>
@@ -310,10 +323,12 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                             <Mail className="w-3.5 h-3.5" style={{ color: "var(--accent-teal-text)" }} />
                             {support.supportEmail}
                         </span>
-                        <span className="flex items-center gap-1.5">
-                            <Phone className="w-3.5 h-3.5" style={{ color: "var(--accent-teal-text)" }} />
-                            {support.supportPhone}
-                        </span>
+                        {support.supportPhone && (
+                            <span className="flex items-center gap-1.5">
+                                <Phone className="w-3.5 h-3.5" style={{ color: "var(--accent-teal-text)" }} />
+                                {support.supportPhone}
+                            </span>
+                        )}
                     </div>
                 </div>
 

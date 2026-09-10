@@ -110,7 +110,21 @@ export default function ProductHero({ product }: { product: Product }) {
                         ))}
 
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
-                            {product.extensionUrl ? (
+                            {/* Priority: the product's own site, then a browser-extension
+                                store listing (which gets the Chrome mark), then CIM's
+                                contact form. ProductCTA resolves the same order. */}
+                            {product.externalUrl ? (
+                                <a
+                                    href={product.externalUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                    style={{ backgroundColor: solidColor }}
+                                >
+                                    {product.ctaPrimaryLabel ?? "Visit the product"}
+                                    <ArrowRight className="w-5 h-5 ml-2" />
+                                </a>
+                            ) : product.extensionUrl ? (
                                 <a
                                     href={product.extensionUrl}
                                     target="_blank"

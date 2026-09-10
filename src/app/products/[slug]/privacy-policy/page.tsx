@@ -30,6 +30,11 @@ export async function generateMetadata({
 
     const url = `https://www.cinuteinfomedia.com/products/${slug}/privacy-policy`;
 
+    // The operator, not the host site. "by Cinute InfoMedia" was hard-coded into
+    // both social descriptions, which would have published CIM as the data
+    // controller for a product operated by another company.
+    const operatorName = policy.operator?.name ?? "Cinute InfoMedia";
+
     return {
         title: `Privacy Policy — ${policy.productName} | Cinute InfoMedia`,
         description: `Privacy policy for ${policy.productName}. Learn how we collect, use, and protect your data when using ${policy.productName}.`,
@@ -38,7 +43,7 @@ export async function generateMetadata({
         },
         openGraph: {
             title: `Privacy Policy — ${policy.productName}`,
-            description: `Privacy policy for ${policy.productName} by Cinute InfoMedia.`,
+            description: `Privacy policy for ${policy.productName} by ${operatorName}.`,
             url,
             type: "website",
             images: [
@@ -53,7 +58,7 @@ export async function generateMetadata({
         twitter: {
             card: "summary_large_image",
             title: `Privacy Policy — ${policy.productName}`,
-            description: `Privacy policy for ${policy.productName} by Cinute InfoMedia.`,
+            description: `Privacy policy for ${policy.productName} by ${operatorName}.`,
             images: ["/og-images/Privacy.webp"],
         },
     };
