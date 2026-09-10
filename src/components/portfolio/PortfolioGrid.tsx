@@ -52,7 +52,8 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
 
   return (
     <section
-      className="py-16 md:py-24"
+      id="case-studies"
+      className="scroll-mt-24 py-16 md:py-24"
       style={{ backgroundColor: "var(--card-bg)" }}
       aria-labelledby="projects-heading"
     >
