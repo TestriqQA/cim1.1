@@ -94,28 +94,60 @@ export default function ProjectHero({ project }: { project: ClientProject }) {
             )}
           </div>
 
-          {/* Outcomes, up front. */}
-          <dl
-            className="grid gap-px overflow-hidden rounded-xl border sm:grid-cols-3"
-            style={{ borderColor: "var(--border-color)", backgroundColor: "var(--border-color)" }}
-          >
-            {project.metrics.slice(0, 3).map((m) => (
-              <div key={m.label} className="p-5" style={{ backgroundColor: "var(--card-bg)" }}>
-                <dd
-                  className="text-2xl font-bold leading-none md:text-3xl"
-                  style={{ color: "var(--brand-blue-text)" }}
-                >
-                  {m.value}
-                </dd>
-                <dt
-                  className="mt-2.5 text-sm leading-snug"
-                  style={{ color: "var(--secondary-text)" }}
-                >
-                  {m.label}
-                </dt>
+          {/* The client's mark, then the outcomes. `lg:items-end` on the row
+              bottom-aligns this column against the taller headline column, so
+              the pair sits flush with the baseline of the copy opposite. */}
+          <div className="flex flex-col gap-5">
+            {project.logo && (
+              // Deliberately on a fixed white plate rather than a theme surface.
+              // Testriq's wordmark sets "tes" in mid-grey, which all but
+              // disappears on the dark theme's near-black background, and the
+              // registered-trademark glyph vanishes entirely. Recolouring a
+              // client's logo to suit our palette is not ours to do, so it gets
+              // the light ground it was drawn for and stays correct in both
+              // themes. The border keeps the plate from floating in light mode.
+              <div
+                className="flex items-center justify-center rounded-xl border px-6 py-8"
+                style={{ borderColor: "var(--border-color)", backgroundColor: "#ffffff" }}
+              >
+                <Image
+                  src={project.logo}
+                  alt={`${project.client} logo`}
+                  width={800}
+                  height={219}
+                  // `sizes` is what stops Next serving a 1920px variant for a
+                  // ~210px slot; the height classes are the real constraint and
+                  // the width follows the intrinsic ratio.
+                  sizes="(min-width: 768px) 240px, 180px"
+                  className="h-10 w-auto md:h-14"
+                  priority
+                />
               </div>
-            ))}
-          </dl>
+            )}
+
+            {/* Outcomes, up front. */}
+            <dl
+              className="grid gap-px overflow-hidden rounded-xl border sm:grid-cols-3"
+              style={{ borderColor: "var(--border-color)", backgroundColor: "var(--border-color)" }}
+            >
+              {project.metrics.slice(0, 3).map((m) => (
+                <div key={m.label} className="p-5" style={{ backgroundColor: "var(--card-bg)" }}>
+                  <dd
+                    className="text-2xl font-bold leading-none md:text-3xl"
+                    style={{ color: "var(--brand-blue-text)" }}
+                  >
+                    {m.value}
+                  </dd>
+                  <dt
+                    className="mt-2.5 text-sm leading-snug"
+                    style={{ color: "var(--secondary-text)" }}
+                  >
+                    {m.label}
+                  </dt>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
 
         {project.cover && (

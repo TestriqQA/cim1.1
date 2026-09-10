@@ -318,7 +318,12 @@ export const clientProjects: ClientProject[] = [
       { name: "SEO Content Writing", href: "/services/seo-services/seo-content-writing-services" },
       { name: "Link Building", href: "/services/seo-services/link-building" },
     ],
-    logo: "/images/logos/testriq-logo.png",
+    // Extracted from www.testriq.com's own header asset (their schema.org
+    // `logo` points at the identical file), then resized to 800x219 WebP.
+    // New filename rather than overwriting the old testriq-logo.png: Next keys
+    // its optimised image cache on the path, so replacing a file in place keeps
+    // serving the previous bytes.
+    logo: "/images/logos/testriq-qa-lab-logo.webp",
     seoTitle: "Testriq QA Lab Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
     seoDescription:
       "How a six-month engagement moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI, and rebuilt site architecture and SEO to grow organic traffic and qualified leads.",
