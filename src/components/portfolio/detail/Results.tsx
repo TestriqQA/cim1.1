@@ -1,58 +1,67 @@
-import { getCategoryMeta, type ClientProject } from "@/data/portfolio";
+import { type ClientProject } from "@/data/portfolio";
 import styles from "@/components/portfolio/portfolio.module.css";
 
-// Chapter 03 — Result. A bento board on a 6-column lg grid; spans derive from
-// the count so 1–5 metrics all tile without holes.
+// Outcomes. A uniform grid, not a bento — every metric gets the same weight so
+// the reader compares them rather than being told which one matters.
+//
+// Values are short STRINGS ("200+", "Strong", "Lower"), never assumed numeric:
+// the site states outcomes in hedged language except where a figure is already
+// published. `detail` is optional and guarded.
 
-const container = "mx-auto max-w-[90rem] px-4 sm:px-6 md:px-16";
-
-function span(index: number, total: number): { cls: string; feature: boolean } {
-  if (total === 1) return { cls: "md:col-span-2 lg:col-span-6", feature: true };
-  if (index === 0) return { cls: total % 2 === 1 ? "md:col-span-2 lg:col-span-4" : "lg:col-span-4", feature: true };
-  if (index === 1) return { cls: "lg:col-span-2", feature: false };
-  const remaining = total - 2;
-  if (remaining === 1) return { cls: "lg:col-span-6", feature: false };
-  return { cls: remaining % 3 === 0 ? "lg:col-span-2" : "lg:col-span-3", feature: false };
-}
+const container = "mx-auto px-6 md:px-12 xl:px-20";
 
 export default function Results({ project }: { project: ClientProject }) {
-  const cat = getCategoryMeta(project.category);
-  const total = project.metrics.length;
-
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: "var(--ink-2)" }} aria-labelledby="results-heading">
+    // `border-t` is insurance, not decoration: the Gallery above is optional,
+    // so on a project with no media this section would otherwise sit against
+    // Approach, which shares its background. The hairline keeps the seam.
+    <section
+      className="border-t py-16 md:py-24"
+      style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+      aria-labelledby="results-heading"
+    >
       <div className={container}>
-        <header className={styles.reveal}>
-          <div className="flex items-center gap-5 md:gap-8">
-            <span aria-hidden="true" className={`${styles.numeral} text-5xl font-extrabold text-zinc-500 md:text-6xl`}>03</span>
-            <span aria-hidden="true" className="h-px flex-1 bg-zinc-800" />
-            <span className={`${styles.mono} text-[0.6875rem] uppercase tracking-[0.28em]`} style={{ color: cat.text }}>
-              Result
-            </span>
-          </div>
-          <h2 id="results-heading" className={`${styles.balance} mt-8 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl`}>
-            Results
-          </h2>
-        </header>
+        <h2
+          id="results-heading"
+          className="text-2xl font-bold tracking-tight md:text-3xl"
+          style={{ color: "var(--foreground)" }}
+        >
+          Results
+        </h2>
 
-        <ul className={`${styles.cascade} mt-14 grid gap-4 md:mt-20 md:grid-cols-2 md:gap-5 lg:grid-cols-6`}>
-          {project.metrics.map((m, index) => {
-            const s = span(index, total);
-            return (
-              <li key={m.label} className={s.cls}>
-                <div
-                  className={`${styles.glass} ${styles.railX} relative h-full overflow-hidden rounded-3xl p-7 md:p-9`}
-                  style={{ "--cat": cat.rgb } as React.CSSProperties}
+        <ul className={`${styles.cascade} mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3`}>
+          {project.metrics.map((metric) => (
+            <li key={metric.label}>
+              <div
+                className="flex h-full flex-col rounded-xl border p-6"
+                style={{
+                  backgroundColor: "var(--background)",
+                  borderColor: "var(--border-color)",
+                }}
+              >
+                <p
+                  className="text-3xl font-bold leading-none"
+                  style={{ color: "var(--brand-blue-text)" }}
                 >
-                  <p className={`${styles.numeral} ${s.feature ? "text-6xl md:text-7xl xl:text-8xl" : "text-5xl md:text-6xl"} font-extrabold break-words`} style={{ color: cat.text }}>
-                    {m.value}
+                  {metric.value}
+                </p>
+                <h3
+                  className="mt-4 text-sm font-semibold"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  {metric.label}
+                </h3>
+                {metric.detail && (
+                  <p
+                    className="mt-2 text-sm leading-relaxed"
+                    style={{ color: "var(--secondary-text)" }}
+                  >
+                    {metric.detail}
                   </p>
-                  <h3 className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-white md:text-sm">{m.label}</h3>
-                  {m.detail && <p className={`${styles.pretty} mt-3 max-w-[52ch] text-base leading-relaxed text-zinc-400`}>{m.detail}</p>}
-                </div>
-              </li>
-            );
-          })}
+                )}
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

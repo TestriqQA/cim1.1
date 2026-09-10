@@ -1,11 +1,7 @@
 import PortfolioHero from "@/components/portfolio/PortfolioHero";
-import PortfolioStream from "@/components/portfolio/PortfolioStream";
-import LighthouseBlock from "@/components/portfolio/LighthouseBlock";
-import StackEnvironment from "@/components/portfolio/StackEnvironment";
-import TestimonialFeed from "@/components/portfolio/TestimonialFeed";
-import ConversionCTA from "@/components/portfolio/ConversionCTA";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+import CTA from "@/components/services/CTA";
 import { clientProjects } from "@/data/portfolio";
-import styles from "@/components/portfolio/portfolio.module.css";
 import { getPageMetadata } from "@/lib/metadata";
 import {
     generateGraphSchema,
@@ -40,13 +36,14 @@ export const metadata = getPageMetadata({
 export const dynamic = "force-static";
 
 export default function PortfolioPage() {
-    const listId = `${siteUrl}${pagePath}/#case-files`;
+    const listId = `${siteUrl}${pagePath}/#case-studies`;
 
     const projectList = {
         "@type": "ItemList",
         "@id": listId,
         name: "Cinute InfoMedia client case studies",
-        description: "Selected client engagements across web development, SEO, app and AI development and performance marketing.",
+        description:
+            "Selected client engagements across web development, SEO, app and AI development and performance marketing.",
         numberOfItems: clientProjects.length,
         itemListElement: clientProjects.map((project, index) => ({
             "@type": "ListItem",
@@ -94,15 +91,14 @@ export default function PortfolioPage() {
     );
 
     return (
-        // Dark-only showcase: the route owns its palette (see portfolio.module.css).
-        <main className={styles.page} style={{ "--page-selection-bg": "#06b6d4" } as React.CSSProperties}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <main data-page-theme="blue">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
             <PortfolioHero />
-            <PortfolioStream projects={clientProjects} />
-            <LighthouseBlock />
-            <StackEnvironment />
-            <TestimonialFeed />
-            <ConversionCTA />
+            <PortfolioGrid projects={clientProjects} />
+            <CTA />
         </main>
     );
 }

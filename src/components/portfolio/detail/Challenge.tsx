@@ -1,49 +1,52 @@
-import { getCategoryMeta, type ClientProject } from "@/data/portfolio";
-import styles from "@/components/portfolio/portfolio.module.css";
+import { type ClientProject } from "@/data/portfolio";
 
-// Chapter 01 — Situation & Task. Rules and space, no card.
-// The task is pulled out as a bordered statement so the brief is unmistakable.
+// Situation and task. Prose, rules and space — no card, no panel.
+// The task is pulled out against a rule so the brief is unmistakable.
 
-const container = "mx-auto max-w-[90rem] px-4 sm:px-6 md:px-16";
+const container = "mx-auto px-6 md:px-12 xl:px-20";
 
 export default function Challenge({ project }: { project: ClientProject }) {
-  const cat = getCategoryMeta(project.category);
-
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: "var(--ink-2)" }} aria-labelledby="challenge-heading">
+    <section
+      className="py-16 md:py-24"
+      style={{ backgroundColor: "var(--background)" }}
+      aria-labelledby="challenge-heading"
+    >
       <div className={container}>
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16 xl:gap-24">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <div className="flex items-center gap-5 md:gap-8">
-              <span aria-hidden="true" className={`${styles.numeral} text-5xl font-extrabold text-zinc-500 md:text-6xl`}>01</span>
-              <span aria-hidden="true" className="h-px flex-1 bg-zinc-800" />
-              <span className={`${styles.mono} text-[0.6875rem] uppercase tracking-[0.28em]`} style={{ color: cat.text }}>
-                Situation · Task
-              </span>
-            </div>
-            <h2
-              id="challenge-heading"
-              className={`${styles.balance} mt-8 text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl`}
-            >
-              The challenge
-            </h2>
-          </div>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:gap-16">
+          <h2
+            id="challenge-heading"
+            className="text-2xl font-bold tracking-tight md:text-3xl"
+            style={{ color: "var(--foreground)" }}
+          >
+            The challenge
+          </h2>
 
-          <div className={styles.cascade}>
+          <div className="max-w-[68ch]">
             {project.situation.map((paragraph, index) => (
               <p
                 key={index}
-                className={`${styles.pretty} max-w-[68ch] leading-relaxed ${index === 0 ? "text-xl font-medium text-zinc-100 md:text-2xl" : "mt-8 text-lg text-zinc-400 md:text-xl"}`}
+                className={`text-base leading-relaxed md:text-lg ${index === 0 ? "" : "mt-5"}`}
+                style={{ color: "var(--secondary-text)" }}
               >
                 {paragraph}
               </p>
             ))}
 
-            <div className="mt-10 border-l-2 pl-6" style={{ borderColor: cat.glow }}>
-              <p className={`${styles.mono} text-[0.6875rem] uppercase tracking-[0.28em]`} style={{ color: cat.text }}>
+            <div
+              className="mt-8 border-l-2 pl-5"
+              style={{ borderColor: "var(--brand-blue-text)" }}
+            >
+              <h3
+                className="text-sm font-semibold uppercase tracking-wide"
+                style={{ color: "var(--secondary-text)" }}
+              >
                 The task
-              </p>
-              <p className={`${styles.pretty} mt-3 max-w-[60ch] text-lg font-semibold leading-relaxed text-white md:text-xl`}>
+              </h3>
+              <p
+                className="mt-2 text-base font-medium leading-relaxed md:text-lg"
+                style={{ color: "var(--foreground)" }}
+              >
                 {project.task}
               </p>
             </div>

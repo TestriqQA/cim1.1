@@ -7,9 +7,9 @@ import Approach from "@/components/portfolio/detail/Approach";
 import Results from "@/components/portfolio/detail/Results";
 import Testimonial from "@/components/portfolio/detail/Testimonial";
 import NextProject from "@/components/portfolio/detail/NextProject";
-import ConversionCTA from "@/components/portfolio/ConversionCTA";
-import { getCategoryMeta } from "@/data/portfolio";
-import styles from "@/components/portfolio/portfolio.module.css";
+import AtAGlance from "@/components/portfolio/detail/AtAGlance";
+import Gallery from "@/components/portfolio/detail/Gallery";
+import CTA from "@/components/services/CTA";
 import {
     generateGraphSchema,
     generateOrganizationSchema,
@@ -227,10 +227,7 @@ export default async function PortfolioProjectPage({
         // base `::selection { background: var(--page-selection-bg) }`, so
         // setting both would make the per-project accent inert. Products'
         // detail route sets only the custom property for the same reason.
-        <main
-            className={styles.page}
-            style={{ "--page-selection-bg": getCategoryMeta(project.category).glow } as React.CSSProperties}
-        >
+        <main data-page-theme="blue">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -238,14 +235,17 @@ export default async function PortfolioProjectPage({
                 }}
             />
             <ProjectHero project={project} />
+            <AtAGlance project={project} />
             <Challenge project={project} />
             <Approach project={project} />
+            {/* Renders null when the project carries no media. */}
+            <Gallery project={project} />
             <Results project={project} />
             {/* Renders null internally when the project has no testimonial. */}
             <Testimonial project={project} />
             {/* Cyclic forward link so a case study is never a dead end. */}
             <NextProject project={project} />
-            <ConversionCTA />
+            <CTA />
         </main>
     );
 }

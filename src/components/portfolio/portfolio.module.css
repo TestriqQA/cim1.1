@@ -1,50 +1,24 @@
 /* ==========================================================================
-   /portfolio — Cyber-Noir design & interaction layer
+   /portfolio — motion layer
    --------------------------------------------------------------------------
-   The route is deliberately DARK-ONLY: a #09090b (zinc-950) ground, stark
-   white type, glass surfaces, and one accent hue per service category. It
-   does not follow the site's light/dark token switch — a showcase page owns
-   its own palette — so every colour here is literal, not a theme token.
+   Deliberately small. The portfolio pages are built from the site's own theme
+   tokens and Tailwind utilities; this file only holds the two things Tailwind
+   cannot express — a scroll-linked reveal and its reduced-motion/print resets.
 
-   Everything is CSS. The only client JavaScript on the route is the bento
-   filter and a ~30-line count-up leaf. Rules that keep this honest:
-
-   1. PROGRESSIVE, NEVER DESTRUCTIVE. Scroll-driven work sits behind
-      `@supports (animation-timeline: ...)`; without support an element renders
-      in its FINAL state.
-   2. NO `overflow: hidden` ANCESTORS on revealed or sticky content — it breaks
-      `position: sticky` and strands view() timelines at 0% (invisible).
-      Decorative layers are clipped inside their own wrapper.
-   3. MOTION IS OPT-IN behind `prefers-reduced-motion: no-preference`.
-   4. GLOWS ARE FILLS. Category hues appear as borders, shadows and gradients.
-      Coloured TEXT uses the lighter `text` step from the category meta.
+   Rules carried over from the rest of the codebase:
+   1. PROGRESSIVE. The reveal lives inside `@supports (animation-timeline:
+      view())`. Without support the element renders in its FINAL state, never
+      hidden behind a feature the browser cannot run.
+   2. NO `overflow: hidden` ANCESTORS on revealed content — that creates a
+      scroll container which never scrolls, stranding the element at 0%
+      progress and leaving it invisible.
+   3. MOTION IS OPT-IN, behind `prefers-reduced-motion: no-preference`.
    ========================================================================== */
 
-/* -------------------------------------------------------------------------
-   Palette (literal — see header)
-   ---------------------------------------------------------------------- */
-.page {
-  --ink: #09090b;
-  --ink-2: #0f0f12;
-  --line: #27272a;
-  --line-soft: #1c1c20;
-  --text: #fafafa;
-  --text-2: #a1a1aa;
-  --text-3: #d4d4d8;
-  --glass: rgb(24 24 27 / 40%);
-  --glass-strong: rgb(24 24 27 / 65%);
-
-  background-color: var(--ink);
-  color: var(--text);
-}
-
-/* -------------------------------------------------------------------------
-   Keyframes
-   ---------------------------------------------------------------------- */
-@keyframes revealUp {
+@keyframes riseIn {
   from {
     opacity: 0;
-    transform: translate3d(0, 28px, 0);
+    transform: translate3d(0, 16px, 0);
   }
 
   to {
@@ -53,271 +27,7 @@
   }
 }
 
-@keyframes growX {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes drift {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  to {
-    transform: translate3d(5%, -7%, 0) scale(1.15);
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@keyframes ringDraw {
-  from {
-    stroke-dashoffset: var(--ring-c, 283);
-  }
-
-  to {
-    stroke-dashoffset: var(--ring-o, 0);
-  }
-}
-
-@keyframes signal {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes scan {
-  from {
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    transform: translate3d(0, 100vh, 0);
-  }
-}
-
-/* -------------------------------------------------------------------------
-   Ground textures
-   ---------------------------------------------------------------------- */
-.grain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Fine perspective grid, faded toward the horizon. */
-.gridField {
-  position: absolute;
-  inset: 0;
-  opacity: 0.35;
-  background-image:
-    linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 20%, transparent 75%);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 20%, transparent 75%);
-}
-
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  /* 64px, not 90px: the initial raster of a Gaussian blur scales with radius
-     squared, and these sit above the fold on a 4x-throttled mobile profile. */
-  filter: blur(64px);
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .blobDrift {
-    animation: drift 28s ease-in-out infinite alternate;
-  }
-
-  .blobDriftSlow {
-    animation: drift 40s ease-in-out infinite alternate-reverse;
-  }
-}
-
-/* A single scanline sweeping the hero. Decorative; aria-hidden. */
-.scanline {
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 120px;
-  pointer-events: none;
-  background: linear-gradient(180deg, transparent, rgb(255 255 255 / 4%), transparent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .scanline {
-    animation: scan 9s linear infinite;
-  }
-}
-
-/* -------------------------------------------------------------------------
-   Glass & glow surfaces
-   `--cat` is the category rgb triplet ("16 185 129"), set inline per card.
-   ---------------------------------------------------------------------- */
-.glass {
-  background-color: var(--glass);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-}
-
-.glassStrong {
-  background-color: var(--glass-strong);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--line);
-}
-
-.glow {
-  --cat: 255 255 255;
-  position: relative;
-  border-color: rgb(var(--cat) / 28%);
-  box-shadow:
-    0 0 0 1px rgb(var(--cat) / 8%),
-    0 24px 60px -30px rgb(var(--cat) / 35%);
-  transition:
-    border-color 0.45s ease,
-    box-shadow 0.45s ease,
-    transform 0.45s cubic-bezier(0.22, 0.7, 0.3, 1);
-}
-
-.glow:hover,
-.glow:focus-within {
-  border-color: rgb(var(--cat) / 70%);
-  box-shadow:
-    0 0 0 1px rgb(var(--cat) / 25%),
-    0 0 40px -6px rgb(var(--cat) / 45%),
-    0 30px 70px -30px rgb(var(--cat) / 50%);
-  transform: translate3d(0, -4px, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .glow:hover,
-  .glow:focus-within {
-    transform: none;
-  }
-}
-
-/* Top-edge accent that draws in on hover/focus. */
-.railX::before {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 2px;
-  border-radius: inherit;
-  background: linear-gradient(90deg, rgb(var(--cat) / 100%), rgb(var(--cat) / 0%));
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.3, 1);
-}
-
-.railX:hover::before,
-.railX:focus-within::before {
-  transform: scaleX(1);
-}
-
-/* Left-edge accent (hub records on the detail-adjacent layouts). */
-.railY::before {
-  content: "";
-  position: absolute;
-  inset-block: 0;
-  left: 0;
-  width: 2px;
-  background: linear-gradient(180deg, rgb(var(--cat) / 100%), rgb(var(--cat) / 0%));
-  transform: scaleY(0.2);
-  transform-origin: top center;
-  transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.3, 1);
-}
-
-.railY:hover::before,
-.railY:focus-within::before {
-  transform: scaleY(1);
-}
-
-/* Neon button: category-tinted ring + bloom on hover/focus. */
-.neon {
-  --cat: 6 182 212;
-  position: relative;
-  isolation: isolate;
-  background-color: rgb(var(--cat) / 100%);
-  color: #09090b;
-  box-shadow:
-    0 0 0 1px rgb(var(--cat) / 40%),
-    0 10px 30px -10px rgb(var(--cat) / 60%);
-  transition:
-    box-shadow 0.4s ease,
-    transform 0.4s cubic-bezier(0.22, 0.7, 0.3, 1);
-}
-
-.neon:hover,
-.neon:focus-visible {
-  box-shadow:
-    0 0 0 1px rgb(var(--cat) / 70%),
-    0 0 30px 0 rgb(var(--cat) / 55%),
-    0 18px 40px -12px rgb(var(--cat) / 70%);
-  transform: translate3d(0, -2px, 0);
-}
-
-.neonOutline {
-  --cat: 255 255 255;
-  border: 1px solid rgb(var(--cat) / 35%);
-  color: var(--text);
-  transition:
-    border-color 0.3s ease,
-    background-color 0.3s ease;
-}
-
-.neonOutline:hover,
-.neonOutline:focus-visible {
-  border-color: rgb(var(--cat) / 80%);
-  background-color: rgb(var(--cat) / 10%);
-}
-
-/* Code-font badge with a hairline. */
-.badge {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  border: 1px solid var(--line);
-  background-color: rgb(9 9 11 / 60%);
-  color: var(--text-3);
-}
-
-/* -------------------------------------------------------------------------
-   Scroll-linked reveals
-   ---------------------------------------------------------------------- */
+/* Base state is the finished state — see rule 1. */
 .reveal,
 .cascade {
   opacity: 1;
@@ -326,190 +36,33 @@
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
-      animation-name: revealUp;
+      animation-name: riseIn;
       animation-duration: auto;
       animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
       animation-fill-mode: both;
       animation-timeline: view();
-      animation-range: entry 0% entry 74%;
+      animation-range: entry 0% entry 70%;
     }
 
     .cascade > * {
-      animation-name: revealUp;
+      animation-name: riseIn;
       animation-duration: auto;
       animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
       animation-fill-mode: both;
       animation-timeline: view();
-      animation-range: entry 0% entry 64%;
+      animation-range: entry 0% entry 62%;
     }
 
     .cascade > *:nth-child(2n) {
-      animation-range: entry 0% entry 78%;
+      animation-range: entry 0% entry 74%;
     }
 
     .cascade > *:nth-child(3n) {
-      animation-range: entry 0% entry 92%;
+      animation-range: entry 0% entry 86%;
     }
   }
 }
 
-/* -------------------------------------------------------------------------
-   Reading progress — hairline across the very top of the viewport.
-   Additive only: with no scroll-timeline support it never paints.
-   ---------------------------------------------------------------------- */
-.readingBar {
-  position: fixed;
-  inset-inline: 0;
-  top: 0;
-  z-index: 200;
-  height: 2px;
-  transform: scaleX(0);
-  transform-origin: left center;
-  pointer-events: none;
-}
-
-@supports (animation-timeline: scroll()) {
-  .readingBar {
-    animation-name: growX;
-    animation-duration: auto;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: scroll(root block);
-  }
-}
-
-/* -------------------------------------------------------------------------
-   Sticky card stack (detail page). md+ only; phones get a plain list.
-   ---------------------------------------------------------------------- */
-.stackCard {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .stackCard {
-    position: sticky;
-    top: calc(6.5rem + var(--i, 0) * 1.35rem);
-  }
-}
-
-/* Persistent glass filter pill — sticks below the site navbar. */
-.stickyPill {
-  position: sticky;
-  top: 4.5rem;
-  z-index: 40;
-}
-
-@media (min-width: 1024px) {
-  .stickyPill {
-    top: 5.5rem;
-  }
-}
-
-/* -------------------------------------------------------------------------
-   SVG ring tracks (Lighthouse block). `--ring-c` is the circumference and
-   `--ring-o` the final offset, both set inline from the score.
-   ---------------------------------------------------------------------- */
-.ringTrack {
-  stroke: var(--line);
-}
-
-.ringFill {
-  stroke-linecap: round;
-  stroke-dasharray: var(--ring-c, 283);
-  stroke-dashoffset: var(--ring-o, 0);
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .ringFill {
-      animation-name: ringDraw;
-      animation-duration: auto;
-      animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
-      animation-fill-mode: both;
-      animation-timeline: view();
-      animation-range: entry 10% entry 90%;
-    }
-  }
-}
-
-/* Hero signal line — draws itself in once on load. */
-.signal {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .signal {
-    animation: signal 2.4s cubic-bezier(0.22, 0.7, 0.3, 1) 0.2s forwards;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .signal {
-    stroke-dashoffset: 0;
-  }
-}
-
-.pulse {
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pulse {
-    animation: none;
-  }
-}
-
-/* -------------------------------------------------------------------------
-   Marquee — decorative, aria-hidden, pauses under the pointer.
-   ---------------------------------------------------------------------- */
-.marqueeViewport {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.marqueeTrack {
-  display: flex;
-  width: max-content;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .marqueeTrack {
-    animation: marquee 46s linear infinite;
-  }
-
-  .marqueeViewport:hover .marqueeTrack {
-    animation-play-state: paused;
-  }
-}
-
-/* -------------------------------------------------------------------------
-   Type helpers
-   ---------------------------------------------------------------------- */
-.numeral {
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.04em;
-  line-height: 0.85;
-}
-
-.balance {
-  text-wrap: balance;
-}
-
-.pretty {
-  text-wrap: pretty;
-}
-
-.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-}
-
-/* -------------------------------------------------------------------------
-   Print / no-motion safety net
-   ---------------------------------------------------------------------- */
 @media print {
 
   .reveal,
@@ -517,15 +70,5 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .stackCard,
-  .stickyPill {
-    position: static !important;
-  }
-
-  .readingBar,
-  .scanline {
-    display: none !important;
   }
 }
