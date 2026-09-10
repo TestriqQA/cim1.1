@@ -17,16 +17,19 @@ const pagePath = "/portfolio";
 
 export const metadata = getPageMetadata({
     title: "Portfolio – Web Development, SEO & Digital Marketing Case Studies | Cinute InfoMedia",
+    // Describes what is ACTUALLY on the page. The previous copy advertised four
+    // service areas — app and AI builds, performance marketing — that no longer
+    // have a case study behind them.
     description:
-        "Client case studies from Cinute InfoMedia: web development, SEO, app and AI builds and performance marketing, each written up as situation, task, action and measurable result.",
+        "Client case studies from Cinute InfoMedia, written up as situation, task, action and measured result — including the Testriq QA Lab rebuild from WordPress to Next.js and the SEO programme behind it.",
     url: pagePath,
     keywords: [
         "portfolio",
         "case studies",
         "web development case study",
         "SEO case study",
-        "performance marketing case study",
-        "AI chatbot case study",
+        "Next.js migration case study",
+        "WordPress to Next.js",
         "digital agency portfolio",
     ],
     image: "/og-images/Services.webp",
@@ -42,8 +45,11 @@ export default function PortfolioPage() {
         "@type": "ItemList",
         "@id": listId,
         name: "Cinute InfoMedia client case studies",
+        // Machine-readable, so it must match `numberOfItems` and the rendered
+        // list. A description naming four service areas beside numberOfItems: 1
+        // is a contradiction inside a single JSON-LD node.
         description:
-            "Selected client engagements across web development, SEO, app and AI development and performance marketing.",
+            "Client engagements written up in full, covering web development and organic search.",
         numberOfItems: clientProjects.length,
         itemListElement: clientProjects.map((project, index) => ({
             "@type": "ListItem",
@@ -64,7 +70,7 @@ export default function PortfolioPage() {
         generateWebPageSchema({
             name: "Portfolio – Web Development, SEO & Digital Marketing Case Studies",
             description:
-                "Client case studies from Cinute InfoMedia, each written up as situation, task, action and measurable result.",
+                "Client case studies from Cinute InfoMedia, each written up as situation, task, action and measured result.",
             urlPath: pagePath,
             mainEntityId: listId,
             breadcrumbId: `${siteUrl}${pagePath}/#breadcrumb`,

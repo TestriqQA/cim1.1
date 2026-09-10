@@ -38,8 +38,26 @@ const nextConfig = {
                 { source: `/products/${slug}/privacy-policy`, destination: productTarget, permanent: true },
             ]),
         ];
+        // The portfolio shipped with six case studies on 2026-09-07; five were
+        // illustrative rather than real engagements and have been removed, so
+        // /portfolio now holds the single Testriq QA Lab study. Their URLs were
+        // live on main, so they redirect to the hub rather than 404.
+        //
+        // Exact-match sources, and /portfolio is not itself a redirect source,
+        // so none of these can match its own destination — see the case-loop
+        // warning below.
+        const removedProjectSlugs = [
+            'cdpl-performance-marketing', 'healthcare-plus-seo', 'ved-solutions-lead-gen',
+            'maple-ai-automation', 'cloudscale-nextjs-platform',
+        ];
+        const portfolioRedirects = removedProjectSlugs.map((slug) => ({
+            source: `/portfolio/${slug}`,
+            destination: '/portfolio',
+            permanent: true,
+        }));
         return [
             ...productRedirects,
+            ...portfolioRedirects,
             {
                 source: '/social-media-services',
                 destination: '/services/social-media-marketing-services',

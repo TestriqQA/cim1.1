@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProjectBySlug, getAllProjectSlugs } from "@/data/portfolio";
+import { getProjectBySlug, getAllProjectSlugs, getCategoryMeta } from "@/data/portfolio";
 import ProjectHero from "@/components/portfolio/detail/ProjectHero";
 import ProjectBody from "@/components/portfolio/detail/ProjectBody";
 import NextProject from "@/components/portfolio/detail/NextProject";
@@ -47,16 +47,20 @@ export async function generateMetadata({
     return {
         title: metaTitle,
         description: metaDescription,
-        keywords: [
-            project.client,
-            `${project.client} case study`,
-            project.category,
-            project.industry,
-            ...project.servicesDelivered.slice(0, 4).map((service) => service.name),
-            "Cinute InfoMedia",
-            "case study",
-            "client results",
-        ],
+        keywords: Array.from(
+            new Set([
+                project.client,
+                `${project.client} case study`,
+                // The human label ("Web Development"), not the raw taxonomy id
+                // ("web-dev") — the id is an internal slug, not a search term.
+                getCategoryMeta(project.category).label,
+                project.industry,
+                ...project.servicesDelivered.slice(0, 4).map((service) => service.name),
+                "Cinute InfoMedia",
+                "case study",
+                "client results",
+            ])
+        ),
         alternates: {
             canonical: url,
         },
@@ -168,11 +172,16 @@ export default async function PortfolioProjectPage({
             url: pageUrl,
             genre: "Case study",
             inLanguage: "en-US",
-            keywords: [
-                project.category,
-                project.industry,
-                ...project.servicesDelivered.map((service) => service.name),
-            ].join(", "),
+            // Deduped: the category label and the first service name are often
+            // the same string ("Web Development"), and a keyword list that
+            // repeats itself is a quality signal working against us.
+            keywords: Array.from(
+                new Set([
+                    getCategoryMeta(project.category).label,
+                    project.industry,
+                    ...project.servicesDelivered.map((service) => service.name),
+                ])
+            ).join(", "),
             about: {
                 "@type": "Organization",
                 name: project.client,

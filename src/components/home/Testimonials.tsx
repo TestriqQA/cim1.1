@@ -8,7 +8,13 @@ export default function Testimonials() {
 
     const testimonials = [
         {
-            company: "Testriq Technologies",
+            // NAME CORRECTION ONLY — the quote text is untouched. The client is
+            // Testriq QA Lab: their own site's Organization schema uses that
+            // name and the string "Technologies" appears nowhere on
+            // www.testriq.com. This quote was credited to "Testriq
+            // Technologies" here while /portfolio credited the same engagement
+            // to Testriq QA Lab, so the site contradicted itself.
+            company: "Testriq QA Lab",
             industry: "QA & Testing Solutions",
             quote:
                 "Cinute InfoMedia transformed our outdated website into a lead-generation powerhouse. The custom web development solution they delivered exceeded our expectations, and the ongoing SEO support has significantly grown our organic traffic.",

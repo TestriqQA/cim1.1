@@ -35,7 +35,18 @@ export default function ProjectFacts({ project }: { project: ClientProject }) {
   ];
 
   return (
-    <aside className="lg:sticky lg:top-24 lg:self-start" aria-labelledby="facts-heading">
+    // `position: sticky` with a top offset silently stops working once the
+    // element is taller than the space below that offset — it just scrolls away
+    // like a static block, which is what happened when this column grew to eight
+    // deliverables and seven service chips (1042px against a 904px budget on a
+    // 1000px viewport). Bounding the height and letting the column scroll itself
+    // keeps it pinned no matter how much a project puts in it. `max-h` and
+    // `overflow` are lg-only, because below lg the column is not sticky at all —
+    // it stacks above the article and must flow at its natural height.
+    <aside
+      className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-2 [scrollbar-width:thin]"
+      aria-labelledby="facts-heading"
+    >
       <h2 id="facts-heading" className="sr-only">
         Project details
       </h2>

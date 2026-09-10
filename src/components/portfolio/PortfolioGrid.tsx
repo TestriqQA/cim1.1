@@ -68,7 +68,11 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
           </h2>
 
           {/* Filter. `role="group"` + `aria-pressed`, not a tablist: these
-              buttons filter a list in place, they do not switch panels. */}
+              buttons filter a list in place, they do not switch panels.
+              Hidden below three options: "All" plus a single category is two
+              pills that produce the same result, which reads as broken UI
+              rather than a filter. */}
+          {filters.length > 2 && (
           <div
             role="group"
             aria-label="Filter case studies by service"
@@ -103,10 +107,13 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
               );
             })}
           </div>
+          )}
         </div>
 
         {/* Filtering changes the list without moving focus, so the new count is
-            announced politely rather than silently. */}
+            announced politely rather than silently. Rendered even when the bar
+            is hidden: harmless, and it keeps the live region in the DOM from
+            first paint rather than inserting one later. */}
         <p role="status" aria-live="polite" className="sr-only">
           {visible.length === 1
             ? "Showing 1 case study"
@@ -114,8 +121,19 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
         </p>
 
         {visible.length > 0 ? (
+          // Column count follows the item count, capped at three. A single card
+          // in a `lg:grid-cols-3` row sat in the left third with two-thirds of a
+          // full-bleed container empty beside it — at 1920px that is roughly
+          // 570px of card against 1190px of nothing, which reads as a page that
+          // failed to load rather than a portfolio with one case study.
           <ul
-            className={`${styles.cascade} mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3`}
+            className={`${styles.cascade} mt-10 grid gap-6 ${
+              visible.length === 1
+                ? "max-w-xl"
+                : visible.length === 2
+                  ? "md:grid-cols-2"
+                  : "md:grid-cols-2 lg:grid-cols-3"
+            }`}
           >
             {visible.map((project) => {
               const cat = getCategoryMeta(project.category);

@@ -8,27 +8,40 @@
 //
 // CLIENT WORK ONLY. Products and tools live in `data/products.ts`.
 //
-// --- METRICS ------------------------------------------------------------------
-// The site states outcomes in HEDGED language ("Strong", "Higher", "Lower") —
-// see the case-study cards in `components/home/Hero.tsx`. Concrete figures
-// appear ONLY where already published on the site (Maple's "200+ hours/month",
-// HealthCare Plus's "tripled organic traffic" from `home/CaseStudies.tsx`).
-// Do not "improve" hedged values into invented percentages: an unverifiable
-// number on a public case study is a liability.
+// --- WHAT BELONGS HERE --------------------------------------------------------
+// REAL ENGAGEMENTS ONLY, described from what the client actually signed off.
+// This file previously carried five illustrative case studies alongside the one
+// real engagement; they have been removed. Do not add a project back as a
+// layout filler — an unshipped case study on a public portfolio is a claim
+// about work that was never done.
 //
-// Testimonial quotes are verbatim from the homepage carousel and attributed to
-// the client COMPANY, as the site already does. No named people are invented.
+// --- METRICS ------------------------------------------------------------------
+// Outcomes are stated in HEDGED language ("Strong", "Passing") — see the
+// case-study cards in `components/home/Hero.tsx`. A concrete figure appears
+// ONLY where the client has published or approved that exact number. Do not
+// "improve" a hedged value into a percentage: an unverifiable number on a
+// public case study is a liability, and the previous version of the Testriq
+// entry did exactly that (it asserted all three Core Web Vitals were in the
+// good range, which was never measured).
+//
+// `testimonial` is OPTIONAL and currently unset everywhere. Add a quote only
+// when it is attributed to the entity that actually engaged us — the Testriq
+// quote carried here previously named "Testriq Technologies", which is not the
+// client. Everything downstream (the Testimonial component, the jump link, the
+// Quotation JSON-LD node) drops out cleanly when the field is absent.
 //
 // --- EVIDENCE -----------------------------------------------------------------
-// A case study is only worth reading if it shows the work. `cover` and `media`
-// carry that proof: screenshots, UI captures and short screen recordings. Every
-// entry declares real pixel dimensions so the gallery reserves the right box
-// and nothing shifts on load.
+// A case study is worth more when it shows the work. `cover` and `media` carry
+// that proof: screenshots, UI captures and short screen recordings. Every entry
+// declares real pixel dimensions so the gallery reserves the right box and
+// nothing shifts on load. Both are optional and every consumer guards them, so
+// a project with neither renders as a complete page with no gallery.
 //
-// Entries flagged `placeholder: true` are neutral grey frames, NOT client work.
-// They exist so the gallery layout can be reviewed before real assets land.
-// REPLACE THEM BEFORE DEPLOY — drop files in
-// `public/images/portfolio/<slug>/` and drop the flag.
+// `public/images/portfolio/_placeholder/` holds neutral grey frames for
+// reviewing the gallery layout during development. They are NOT client work and
+// must never ship on a real case study — a grey box captioned "awaiting the
+// final capture" reads worse than no gallery at all. Drop real files in
+// `public/images/portfolio/<slug>/` and reference those instead.
 
 // ----------------------------------------------------------------------------
 // Taxonomy
@@ -160,553 +173,155 @@ export interface ClientProject {
 // ----------------------------------------------------------------------------
 
 export const clientProjects: ClientProject[] = [
+  // ==========================================================================
+  // Testriq QA Lab — the only case study currently published.
+  //
+  // Every field below comes from the client-supplied write-up of the actual
+  // engagement. An earlier version of this entry named the client "Testriq
+  // Technologies" and asserted outcomes that were never measured (notably
+  // "Core Web Vitals: all three field metrics in the good range"). Both were
+  // wrong and are corrected here.
+  //
+  // The results stay in the hedged form the client signed off — "Strong",
+  // "Passing" — because no percentages were shared. Do not "improve" them into
+  // figures; an unverifiable number on a public case study is a liability.
+  //
+  // No `testimonial`: the quote previously carried here was attributed to
+  // "Testriq Technologies", which the client has confirmed is not this entity.
+  // The Testimonial component and the Quotation JSON-LD node both drop out on
+  // their own when the field is absent. Restore it only with a quote signed off
+  // by Testriq QA Lab itself.
+  //
+  // No `cover` and empty `media`: the only assets in the repo are the neutral
+  // grey _placeholder frames, and grey boxes captioned "awaiting the final
+  // capture" read worse on a real client story than no gallery at all. The
+  // cover is guarded in PortfolioGrid and ProjectHero, `Work` returns null on
+  // empty media, and ProjectFacts drops the "The work" jump link — so the page
+  // is complete without them. Add real captures under
+  // /images/portfolio/testriq-organic-growth/ and the sections come back.
+  // ==========================================================================
   {
     id: "testriq-organic-growth",
     slug: "testriq-organic-growth",
-    client: "Testriq",
+    client: "Testriq QA Lab",
     industry: "QA & Testing Solutions",
     category: "web-dev",
     featured: true,
-    title: "Turning a brochure site into a lead engine",
+    title: "A WordPress-to-Next.js rebuild that made organic search a lead channel",
     summary:
-      "A ground-up Next.js rebuild and technical SEO programme that made organic search Testriq's primary source of qualified enquiries.",
-    year: "2025",
-    duration: "4 months",
-    platforms: ["Web"],
-    deliverables: [
-      "Next.js website rebuild",
-      "Technical SEO audit & fixes",
-      "Hub-and-spoke IA",
-      "Topical content plan",
-      "Core Web Vitals remediation",
-    ],
-    liveUrl: "https://testriq.com",
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/testriq-organic-growth/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
-    situation: [
-      "Testriq had a credible services business but a website that behaved like a brochure: it described what the company did, ranked for almost nothing competitive, and produced enquiries only when someone already knew the brand.",
-      "The problems were structural. Thin service pages competed with one another for the same terms, nothing linked related topics together, and page performance was poor enough to hurt both crawl efficiency and the people who did arrive.",
-    ],
-    task:
-      "Rebuild the site so that technical quality stopped working against the content, then make organic search a channel the sales team could rely on.",
-    action: [
-      {
-        title: "Audit against real crawl and index data",
-        description:
-          "Started from Search Console and a full crawl rather than opinion — which pages were indexed, which competed with each other, and where crawl budget was wasted.",
-      },
-      {
-        title: "Rebuild the information architecture",
-        description:
-          "Consolidated overlapping service pages into a hub-and-spoke structure, each page owning one job and one primary query, with internal links wired deliberately between related topics.",
-      },
-      {
-        title: "Rebuild the front end on Next.js",
-        description:
-          "Static rendering, right-sized images and Core Web Vitals treated as requirements. Accessibility fixed at the component level rather than patched afterwards.",
-      },
-      {
-        title: "Publish to a topical content plan",
-        description:
-          "Content commissioned to cover the questions buyers actually ask during evaluation, not a keyword list detached from the sales conversation.",
-      },
-    ],
-    metrics: [
-      { value: "Strong", label: "Organic traffic growth", detail: "Sustained growth in non-branded organic sessions as consolidated service pages began ranking for the terms they were built to target." },
-      { value: "Strong", label: "Qualified lead growth", detail: "Organic search moved from an incidental channel to the primary source of inbound enquiries." },
-      { value: "Passing", label: "Core Web Vitals", detail: "All three field metrics in the good range across mobile and desktop after the rebuild." },
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "Search Console", "GA4", "Schema.org"],
-    servicesDelivered: [
-      { name: "Web Development", href: "/services/web-design-development" },
-      { name: "Next.js Development", href: "/services/web-design-development/nextjs-development-services" },
-      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
-      { name: "SEO Content Writing", href: "/services/seo-services/seo-content-writing-services" },
-    ],
-    testimonial: {
-      quote:
-        "Cinute InfoMedia transformed our outdated website into a lead-generation powerhouse. The custom web development solution they delivered exceeded our expectations, and the ongoing SEO support has significantly grown our organic traffic.",
-      attribution: "Testriq Technologies",
-      role: "QA & Testing Solutions",
-    },
-    logo: "/images/logos/testriq-logo.png",
-    seoTitle: "Testriq Web Rebuild & SEO Case Study | Cinute InfoMedia",
-    seoDescription:
-      "How a Next.js rebuild and technical SEO programme turned Testriq's brochure site into its primary source of qualified organic leads.",
-  },
-
-  {
-    id: "cdpl-performance-marketing",
-    slug: "cdpl-performance-marketing",
-    client: "CDPL",
-    industry: "Software Training Institute",
-    category: "marketing",
-    featured: false,
-    title: "Paid acquisition rebuilt around cost per enquiry",
-    summary:
-      "Search and social campaigns restructured around real intent, lifting course enquiries while bringing cost per lead down.",
-    year: "2025",
-    duration: "Ongoing retainer",
-    platforms: ["Google Ads", "Meta Ads", "Web"],
-    deliverables: [
-      "Conversion tracking rebuild",
-      "Campaign restructure by intent",
-      "Course landing pages",
-      "Weekly optimisation reporting",
-    ],
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/cdpl-performance-marketing/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
-    situation: [
-      "CDPL was spending steadily on paid search and social without a reliable read on which of it worked. Campaigns were organised by budget rather than intent, so high-intent enrolment queries competed for the same pooled spend as broad awareness terms.",
-      "Conversion tracking was incomplete: reporting could show clicks but could not attribute an actual course enquiry back to the campaign that produced it.",
-    ],
-    task:
-      "Make every enquiry attributable, then restructure spend so that budget followed intent instead of habit.",
-    action: [
-      { title: "Fix measurement before touching spend", description: "Rebuilt conversion tracking end to end so a submitted enquiry traced back to campaign, ad group and query. Nothing was optimised until the numbers could be trusted." },
-      { title: "Restructure campaigns by intent", description: "High-intent enrolment searches, course-comparison research and cold awareness each got their own campaigns, budgets and success criteria." },
-      { title: "Match landing pages to the query", description: "Course-specific landing pages replaced a single generic destination, and the enquiry form asked only for what admissions actually needed." },
-      { title: "Run a weekly optimisation cycle", description: "Search terms, creative and bids reviewed weekly against cost per qualified enquiry — the metric the business cares about." },
-    ],
-    metrics: [
-      { value: "Higher", label: "Online enquiries", detail: "Restructured campaigns and query-matched landing pages increased course enquiries through paid channels." },
-      { value: "Lower", label: "Cost per lead", highlight: true, detail: "Separating high-intent from awareness spend removed a substantial share of wasted budget." },
-      { value: "Full", label: "Conversion attribution", detail: "Every enquiry can now be traced to the campaign, ad group and search term that produced it." },
-    ],
-    stack: ["Google Ads", "Meta Ads", "GA4", "Google Tag Manager", "Looker Studio", "Landing pages"],
-    servicesDelivered: [
-      { name: "Performance Marketing", href: "/services/performance-marketing" },
-      { name: "Google Ads", href: "/services/performance-marketing/google-ads" },
-      { name: "Meta Ads", href: "/services/performance-marketing/meta-ads" },
-      { name: "Landing Pages", href: "/services/web-design-development/landing-pages" },
-    ],
-    // The only CDPL quote on file is about chatbot work, not paid media —
-    // attaching it here would misrepresent it. Omitted until signed off.
-    logo: "/images/logos/cdpl-logo.png",
-    seoTitle: "CDPL Performance Marketing Case Study | Cinute InfoMedia",
-    seoDescription:
-      "How restructuring paid search and social around real intent lifted course enquiries and reduced cost per lead for CDPL.",
-  },
-
-  {
-    id: "healthcare-plus-seo",
-    slug: "healthcare-plus-seo",
-    client: "HealthCare Plus",
-    industry: "Healthcare",
-    category: "seo",
-    featured: true,
-    title: "Tripling organic traffic across four service lines",
-    summary:
-      "A technical SEO programme and topical content strategy that tripled organic traffic across multiple service lines within six months.",
+      "A six-month engagement that moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI for a consistent experience across devices, and rebuilt the site's architecture and SEO around organic lead generation.",
     year: "2025",
     duration: "6 months",
     platforms: ["Web"],
+    // The "Delivered" list in the sticky sidebar. One line per workstream in
+    // `action` below, so the summary and the narrative cannot drift apart.
     deliverables: [
-      "Technical SEO audit",
-      "Page consolidation & canonicalisation",
-      "Service-line topic clusters",
-      "Structured data rollout",
-      "Local search alignment",
+      "WordPress to Next.js migration",
+      "UI and layout redesign",
+      "Responsive design across breakpoints",
+      "Silo site architecture",
+      "Keyword research & SEO content strategy",
+      "On-page & technical SEO",
+      "Internal linking & off-page SEO",
+      "Competitor analysis & performance monitoring",
     ],
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/healthcare-plus-seo/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
+    liveUrl: "https://www.testriq.com",
+    media: [],
     situation: [
-      "HealthCare Plus ran four distinct service lines from one site, but the site had grown by accretion: duplicate location pages, thin service descriptions, and a blog that published on a schedule rather than to a plan.",
-      "Rankings were volatile and mostly branded. Non-branded queries — the ones a prospective patient actually types — were being won by directories and competitors with clearer structure.",
+      "Testriq QA Lab ran on WordPress, and the platform was holding the business back rather than supporting it. Load times were slow, the design felt dated and inconsistent across devices, and the underlying architecture made both accessibility and search performance difficult to fix without a rebuild.",
+      "The site described the company's QA and testing services, but it wasn't structured to rank, and it wasn't built to convert the traffic it did get.",
     ],
     task:
-      "Establish a crawlable, authoritative structure for each service line and grow non-branded organic traffic to a level the practice could plan around.",
+      "Move the site off WordPress onto a modern, performant stack, redesign the UI for a consistent experience across devices, and turn organic search into a dependable source of qualified leads.",
     action: [
-      { title: "Consolidate and canonicalise", description: "Duplicate location and service pages merged or canonicalised; the crawl footprint shrank while the pages that remained got deeper." },
-      { title: "Service-line topic clusters", description: "Each service line became a hub with supporting articles answering the specific questions patients research before booking." },
-      { title: "Structured data across the estate", description: "MedicalOrganization, Physician and FAQ schema deployed consistently so the practice qualified for the rich results competitors already held." },
-      { title: "Local search alignment", description: "Google Business Profiles, NAP consistency and location pages aligned so map-pack and organic reinforced each other." },
+      {
+        title: "Rebuilt the website on Next.js",
+        description:
+          "Migrated the entire site from WordPress to Next.js, prioritising performance, accessibility and SEO from the architecture up rather than as an afterthought.",
+      },
+      {
+        title: "Redesigned the UI and layout",
+        description:
+          "Refreshed the visual design and page layouts with full responsiveness, so the experience holds up consistently across mobile, tablet and desktop.",
+      },
+      {
+        title: "Rebuilt the site's silo architecture",
+        description:
+          "Restructured the site into a clear topical hierarchy, mapping service and content pages so each one owns a defined query set instead of competing internally.",
+      },
+      {
+        title: "Ran keyword research and built an SEO content strategy",
+        description:
+          "Identified the terms and questions relevant to Testriq's audience and used them to shape a content plan aligned with both search demand and the sales funnel.",
+      },
+      {
+        title: "Executed on-page and technical SEO",
+        description:
+          "Optimised page-level elements — titles, metadata, content structure — alongside technical fundamentals such as crawlability, indexation and site speed, to remove barriers to ranking.",
+      },
+      {
+        title: "Built internal linking and off-page SEO",
+        description:
+          "Wired internal links deliberately between related topics to distribute authority and support crawl paths, backed by off-page efforts to build the site's external authority.",
+      },
+      {
+        title: "Ran ongoing competitor analysis and performance monitoring",
+        description:
+          "Tracked competitor positioning alongside Testriq's own performance using Google Search Console, Google Analytics and SEMrush, adjusting strategy based on real data rather than assumptions.",
+      },
     ],
+    // Three outcomes, as signed off. All three are highlighted because the hub
+    // hero strip is a three-column grid and these are the only measured results
+    // the portfolio currently carries.
     metrics: [
-      { value: "3×", label: "Organic traffic", highlight: true, detail: "Organic sessions tripled across the four service lines within six months of the programme starting." },
-      { value: "Higher", label: "Non-branded rankings", detail: "Service-line hubs began ranking for the patient-intent queries that had previously gone to directories." },
-      { value: "Stable", label: "Ranking volatility", detail: "A consolidated structure replaced the week-to-week swings the old site had shown." },
+      {
+        value: "Strong",
+        label: "Organic traffic growth",
+        detail:
+          "Improved search visibility and topical authority translated into sustained growth in relevant organic sessions.",
+        highlight: true,
+      },
+      {
+        value: "Strong",
+        label: "Qualified lead growth",
+        detail:
+          "Organic search became a stronger contributor to inbound enquiries as visibility and content relevance improved.",
+        highlight: true,
+      },
+      {
+        value: "Passing",
+        label: "Site performance & accessibility",
+        detail:
+          "The Next.js rebuild improved load times and accessibility across devices, replacing the constraints of the previous WordPress setup.",
+        highlight: true,
+      },
     ],
-    stack: ["Technical SEO", "Screaming Frog", "Search Console", "Schema.org", "Google Business", "Content strategy"],
+    // Only what the engagement actually used. The three analytics tools are
+    // named in the client's own write-up; Next.js and Vercel are verifiable from
+    // www.testriq.com's own response headers today (Server: Vercel,
+    // X-Nextjs-Prerender: 1) rather than taken on trust.
+    stack: [
+      "Next.js",
+      "React",
+      "Vercel",
+      "Google Search Console",
+      "Google Analytics",
+      "SEMrush",
+    ],
+    // Every href resolves to a real route under src/app/services/**.
     servicesDelivered: [
-      { name: "Organic Growth & SEO", href: "/services/seo-services" },
-      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
-      { name: "Local SEO", href: "/services/seo-services/local-seo-services" },
-      { name: "On-page SEO", href: "/services/seo-services/on-page-seo-services" },
-    ],
-    seoTitle: "HealthCare Plus SEO Case Study — 3× Organic Traffic | Cinute InfoMedia",
-    seoDescription:
-      "How a technical SEO programme and topic clusters tripled organic traffic across four healthcare service lines in six months.",
-  },
-
-  {
-    id: "ved-solutions-lead-gen",
-    slug: "ved-solutions-lead-gen",
-    client: "Ved Solutions",
-    industry: "B2B SaaS",
-    category: "marketing",
-    featured: false,
-    title: "A lead-gen overhaul that scaled pipeline",
-    summary:
-      "Funnel redesign, targeted content and a paid media programme that delivered a significant lift in qualified leads and a meaningful reduction in CAC within three months.",
-    year: "2025",
-    duration: "3 months",
-    platforms: ["Web", "LinkedIn Ads", "Google Ads"],
-    deliverables: [
-      "Funnel audit",
-      "Persona landing paths",
-      "Mid-funnel content",
-      "Paid media programme",
-    ],
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/ved-solutions-lead-gen/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
-    situation: [
-      "Ved Solutions had product-market fit and a sales team ready to close, but the top of the funnel was inconsistent: traffic arrived, bounced from a generic homepage, and the few leads that converted were expensive.",
-    ],
-    task:
-      "Redesign the funnel end to end so that acquisition, content and paid media worked as one system, and bring customer acquisition cost down.",
-    action: [
-      { title: "Map the funnel against real behaviour", description: "Session recordings and GA4 funnels showed where prospects actually dropped, which was not where the team assumed." },
-      { title: "Segment-specific landing paths", description: "Separate paths for the two buyer personas, each with its own proof points, pricing framing and call to action." },
-      { title: "Content built for the mid-funnel", description: "Comparison pages and integration guides targeted the evaluation stage, where the pipeline was leaking." },
-      { title: "Paid media on the new paths", description: "LinkedIn and search campaigns pointed at persona-specific pages instead of the homepage, measured on qualified pipeline rather than form fills." },
-    ],
-    metrics: [
-      { value: "Significant", label: "Qualified lead lift", detail: "A significant increase in sales-qualified leads within three months of the new funnel going live." },
-      { value: "Lower", label: "Customer acquisition cost", detail: "A meaningful reduction in CAC as spend moved to persona-matched paths." },
-    ],
-    stack: ["LinkedIn Ads", "Google Ads", "GA4", "HubSpot", "Hotjar", "Landing pages"],
-    servicesDelivered: [
-      { name: "Performance Marketing", href: "/services/performance-marketing" },
-      { name: "LinkedIn Ads", href: "/services/performance-marketing/linkedin-ads" },
-      { name: "Landing Pages", href: "/services/web-design-development/landing-pages" },
-    ],
-    seoTitle: "Ved Solutions B2B Lead Generation Case Study | Cinute InfoMedia",
-    seoDescription:
-      "How a funnel redesign, mid-funnel content and persona-matched paid media scaled qualified pipeline and reduced CAC for a B2B SaaS.",
-  },
-
-  {
-    id: "maple-ai-automation",
-    slug: "maple-ai-automation",
-    client: "Maple",
-    industry: "EdTech",
-    category: "app-dev",
-    featured: true,
-    title: "An AI assistant and CRM automation for student support",
-    summary:
-      "A retrieval-grounded assistant answering from Maple's own course material, wired into their CRM so routine enquiries route and resolve themselves.",
-    year: "2025",
-    duration: "10 weeks",
-    platforms: ["Web", "CRM"],
-    deliverables: [
-      "Retrieval-grounded AI assistant",
-      "CRM integration",
-      "Escalation & handoff rules",
-      "Enquiry routing automation",
-    ],
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/maple-ai-automation/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
-    situation: [
-      "Maple's support team spent most of its week answering the same questions: start dates, prerequisites, fee structures, certification details. Every answer already existed in the company's own material, but prospective students could not find it, so they asked a human.",
-      "Routine and genuinely complex enquiries arrived through the same channel, so the questions that actually needed a person waited behind the ones that did not.",
-    ],
-    task:
-      "Resolve routine enquiries automatically and accurately, hand off cleanly when a human is needed, and make sure every conversation lands in the CRM with its history intact.",
-    action: [
-      { title: "Ground the assistant in Maple's content", description: "Retrieval over Maple's course documentation rather than a generic model, so answers stay accurate and update when the source does." },
-      { title: "Design the handoff first", description: "Defined what the assistant must never attempt — fees, refunds, an individual's enrolment status — and built a clean escalation to a person for those cases." },
-      { title: "Wire it into the CRM", description: "Conversations create and update CRM records automatically, so an enquiry that reaches the team arrives with its full history attached." },
-      { title: "Automate the routing", description: "Workflow rules route each enquiry to the right team by course and stage, removing the manual triage step." },
-    ],
-    metrics: [
-      { value: "200+", label: "Hours saved per month", highlight: true, detail: "Routine, repeatable enquiries resolved without a person — more than 200 support hours returned to the team each month." },
-      { value: "Higher", label: "Student engagement", detail: "Immediate answers, including outside office hours, kept prospective students in the conversation." },
-      { value: "Faster", label: "Response to complex cases", detail: "With routine questions handled automatically, the enquiries that need a person are reached sooner." },
-    ],
-    stack: ["OpenAI API", "Vector search", "Node.js", "TypeScript", "HubSpot CRM", "Webhooks", "Next.js"],
-    servicesDelivered: [
-      { name: "AI-Powered Chatbots", href: "/services/ai-chatbots-services" },
-      { name: "AI Workflows & Automation", href: "/services/ai-workflows-automations-services" },
-      { name: "Support & Maintenance", href: "/services/additional-support-services" },
-    ],
-    seoTitle: "Maple AI Chatbot & CRM Automation Case Study | Cinute InfoMedia",
-    seoDescription:
-      "How a retrieval-grounded AI assistant plus CRM automation saved Maple 200+ support hours a month.",
-  },
-
-  {
-    id: "cloudscale-nextjs-platform",
-    slug: "cloudscale-nextjs-platform",
-    client: "CloudScale.io",
-    industry: "SaaS Startup",
-    category: "web-dev",
-    featured: false,
-    title: "A Next.js platform built for concurrent load",
-    summary:
-      "A high-concurrency web application on Next.js, engineered so that traffic spikes are a hosting bill rather than an outage.",
-    year: "2025",
-    duration: "5 months",
-    platforms: ["Web"],
-    deliverables: [
-      "Next.js platform build",
-      "Edge caching strategy",
-      "Streamed dashboard routes",
-      "Load-test report",
-    ],
-    // PLACEHOLDERS — neutral grey frames, not client work. Replace with real
-    // captures in /images/portfolio/cloudscale-nextjs-platform/ and delete `placeholder: true`.
-    cover: {
-      type: "image",
-      src: "/images/portfolio/_placeholder/cover.webp",
-      alt: "Placeholder cover image awaiting a real capture",
-      width: 1600,
-      height: 900,
-      placeholder: true,
-    },
-    media: [
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-1.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/wide-2.webp",
-        alt: "Placeholder screenshot awaiting a real capture",
-        caption: "Replace with a capture of the delivered work.",
-        width: 1600,
-        height: 900,
-        placeholder: true,
-      },
-      {
-        type: "image",
-        src: "/images/portfolio/_placeholder/mobile-1.webp",
-        alt: "Placeholder mobile screenshot awaiting a real capture",
-        caption: "Replace with a mobile capture.",
-        width: 750,
-        height: 1334,
-        placeholder: true,
-      },
-    ],
-    situation: [
-      "CloudScale.io was growing faster than its marketing site and dashboard could handle. Launch-day traffic had taken the previous site down twice, and the dashboard's server-rendered pages queued under load.",
-    ],
-    task:
-      "Ship a platform that stays fast under concurrent traffic, without a rewrite of the product backend it fronts.",
-    action: [
-      { title: "Static where it can be, dynamic where it must", description: "Marketing routes prerendered and edge-cached; dashboard routes streamed with React Server Components so the shell paints before data arrives." },
-      { title: "Cache and revalidate deliberately", description: "Per-route revalidation and tagged cache invalidation so content updates propagate without a full rebuild." },
-      { title: "Load-test before launch", description: "Synthetic concurrency runs against staging surfaced two N+1 API calls and a render bottleneck before real users did." },
-    ],
-    metrics: [
-      { value: "High", label: "Concurrent traffic handled", detail: "Launch traffic spikes absorbed without degradation after the move to static and streamed rendering." },
-      { value: "Strong", label: "Performance under load", detail: "Page timings held steady through synthetic concurrency tests well above the previous failure point." },
-    ],
-    stack: ["Next.js", "React Server Components", "TypeScript", "Edge caching", "Vercel", "k6", "PostgreSQL"],
-    servicesDelivered: [
+      { name: "Web Development", href: "/services/web-design-development" },
       { name: "Next.js Development", href: "/services/web-design-development/nextjs-development-services" },
-      { name: "SaaS Development", href: "/services/web-design-development/saas-development-services" },
-      { name: "Node.js Backend", href: "/services/web-design-development/nodejs-backend" },
+      { name: "SEO Services", href: "/services/seo-services" },
+      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
+      { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
+      { name: "SEO Content Writing", href: "/services/seo-services/seo-content-writing-services" },
+      { name: "Link Building", href: "/services/seo-services/link-building" },
     ],
-    testimonial: {
-      quote:
-        "As a fast-growing SaaS startup, we needed a web development company that understood scalability. Their team delivered a Next.js application that handles high concurrent traffic with strong performance.",
-      attribution: "CloudScale.io",
-      role: "SaaS Startup",
-    },
-    seoTitle: "CloudScale.io Next.js Platform Case Study | Cinute InfoMedia",
+    logo: "/images/logos/testriq-logo.png",
+    seoTitle: "Testriq QA Lab Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
     seoDescription:
-      "How a static-plus-streamed Next.js architecture gave CloudScale.io a platform that stays fast under concurrent launch traffic.",
+      "How a six-month engagement moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI, and rebuilt site architecture and SEO to grow organic traffic and qualified leads.",
   },
 ];
 

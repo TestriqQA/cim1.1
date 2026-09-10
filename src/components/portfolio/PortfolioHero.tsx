@@ -21,6 +21,17 @@ const focusRing =
 export default function PortfolioHero() {
   const highlights = getHighlightMetrics();
 
+  // When every highlighted outcome belongs to the same client, crediting each
+  // cell individually prints that client's name three times and points three
+  // links at one URL. Credit once, beneath the strip, and let the figures carry
+  // the row. With several clients the per-cell credit is the whole point, so
+  // that path is unchanged.
+  const soleProject =
+    highlights.length > 0 &&
+    highlights.every((h) => h.project.slug === highlights[0].project.slug)
+      ? highlights[0].project
+      : null;
+
   return (
     <section
       className="pt-12 pb-14 md:pt-16 md:pb-20"
@@ -74,7 +85,7 @@ export default function PortfolioHero() {
             className="mt-6 text-lg leading-relaxed md:text-xl"
             style={{ color: "var(--secondary-text)" }}
           >
-            Every project below is written up in full — the situation, the task, the work
+            Each engagement below is written up in full — the situation, the task, the work
             itself, and what changed as a result.
           </p>
 
@@ -139,23 +150,39 @@ export default function PortfolioHero() {
                     {metric.label}
                   </p>
 
-                  <p className="mt-4">
-                    {/* One link per item, stretched over the whole cell. Its
-                        accessible name names the outcome as well as the client,
-                        so it still makes sense read out of context. */}
-                    <Link
-                      href={`/portfolio/${project.slug}`}
-                      aria-label={`${metric.value} ${metric.label} — read the ${project.client} case study`}
-                      className={`${focusRing} inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold after:absolute after:inset-0 after:content-['']`}
-                      style={{ color: "var(--brand-blue-text)" }}
-                    >
-                      {project.client}
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
-                  </p>
+                  {!soleProject && (
+                    <p className="mt-4">
+                      {/* One link per item, stretched over the whole cell. Its
+                          accessible name names the outcome as well as the client,
+                          so it still makes sense read out of context. */}
+                      <Link
+                        href={`/portfolio/${project.slug}`}
+                        aria-label={`${metric.value} ${metric.label} — read the ${project.client} case study`}
+                        className={`${focusRing} inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold after:absolute after:inset-0 after:content-['']`}
+                        style={{ color: "var(--brand-blue-text)" }}
+                      >
+                        {project.client}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>
+
+            {/* The single credit for a single-client strip. */}
+            {soleProject && (
+              <p className="mt-8">
+                <Link
+                  href={`/portfolio/${soleProject.slug}`}
+                  className={`${focusRing} inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold hover:underline`}
+                  style={{ color: "var(--brand-blue-text)" }}
+                >
+                  Read the {soleProject.client} case study
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </p>
+            )}
           </div>
         )}
       </div>

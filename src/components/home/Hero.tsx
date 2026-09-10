@@ -150,23 +150,22 @@ export default function Hero() {
                                         >
                                             <Image
                                                 src="/images/logos/testriq-logo.png"
-                                                alt="Testriq"
+                                                alt="Testriq QA Lab"
                                                 width={40}
                                                 height={40}
                                                 className="w-10 h-10 object-contain"
                                             />
                                         </div>
                                         <div>
-                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>Testriq</h3>
+                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>Testriq QA Lab</h3>
                                             <p className="text-xs" style={{ color: "var(--secondary-text)" }}>QA & Testing Solutions</p>
                                         </div>
                                     </div>
-                                    {/* Accessible name is spelled out because the page carries two
-                                        "Case Study" pills pointing at different projects — the visible
-                                        label stays inside the accessible name (WCAG 2.5.3). */}
+                                    {/* The accessible name spells out which case study this
+                                        opens, and keeps the visible label inside it (WCAG 2.5.3). */}
                                     <Link
                                         href="/portfolio/testriq-organic-growth"
-                                        aria-label="Case Study: Testriq organic growth"
+                                        aria-label="Case Study: Testriq QA Lab organic growth"
                                         className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                                         style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", color: "#fff", fontWeight: 600, fontSize: 12 }}
                                     >
@@ -182,58 +181,6 @@ export default function Hero() {
                                     <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
                                         <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>Strong</div>
                                         <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Website Traffic</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* CDPL Case Study Card */}
-                            <div
-                                className="relative p-6 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    border: "1px solid var(--border-color)",
-                                }}
-                            >
-                                <div style={{ position: "absolute", left: -20, bottom: -20, width: 80, height: 80, borderRadius: "50%", background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", filter: "blur(30px)", opacity: 0.2 }} />
-
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="flex items-center gap-3">
-                                        {/* CDPL Logo Placeholder */}
-                                        <div
-                                            className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden"
-                                            style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}
-                                        >
-                                            <Image
-                                                src="/images/logos/cdpl-logo.png"
-                                                alt="CDPL"
-                                                width={40}
-                                                height={40}
-                                                className="w-10 h-10 object-contain"
-                                            />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>CDPL</h3>
-                                            <p className="text-xs" style={{ color: "var(--secondary-text)" }}>Software Training Institute</p>
-                                        </div>
-                                    </div>
-                                    <Link
-                                        href="/portfolio/cdpl-performance-marketing"
-                                        aria-label="Case Study: CDPL performance marketing"
-                                        className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
-                                        style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", color: "#fff", fontWeight: 600, fontSize: 12 }}
-                                    >
-                                        Case Study
-                                    </Link>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 mb-4">
-                                    <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", WebkitBackgroundClip: "text", color: "transparent" }}>Strong</div>
-                                        <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Online Inquiries</div>
-                                    </div>
-                                    <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-orange), var(--brand-yellow))", WebkitBackgroundClip: "text", color: "transparent" }}>Lower</div>
-                                        <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Cost Reduction</div>
                                     </div>
                                 </div>
                             </div>
