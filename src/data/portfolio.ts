@@ -15,6 +15,18 @@
 // layout filler — an unshipped case study on a public portfolio is a claim
 // about work that was never done.
 //
+// --- STACK --------------------------------------------------------------------
+// `stack` lists ONLY the technologies the client has told us to display. It is
+// not a technical inventory of the engagement and must never be padded out:
+// no framework implied by another ("Next.js, therefore React"), nothing read
+// off the live site's response headers, nothing added to make the list look
+// fuller. If the client did not name it, it does not go in.
+//
+// This rule exists because an earlier version of the Testriq entry listed
+// Vercel and React, neither of which the client had disclosed — Vercel was
+// inferred from a `Server:` header on their live site. Publishing a client's
+// hosting provider is theirs to decide, not ours to deduce.
+//
 // --- METRICS ------------------------------------------------------------------
 // Outcomes are stated in HEDGED language ("Strong", "Passing") — see the
 // case-study cards in `components/home/Hero.tsx`. A concrete figure appears
@@ -296,14 +308,12 @@ export const clientProjects: ClientProject[] = [
         highlight: true,
       },
     ],
-    // Only what the engagement actually used. The three analytics tools are
-    // named in the client's own write-up; Next.js and Vercel are verifiable from
-    // www.testriq.com's own response headers today (Server: Vercel,
-    // X-Nextjs-Prerender: 1) rather than taken on trust.
+    // ONLY what the client named. Nothing here is inferred, verified
+    // independently, or filled in for completeness — see the STACK policy at
+    // the top of this file. Next.js and the three analytics tools are the four
+    // technologies the client's own write-up names, and that is the whole list.
     stack: [
       "Next.js",
-      "React",
-      "Vercel",
       "Google Search Console",
       "Google Analytics",
       "SEMrush",
