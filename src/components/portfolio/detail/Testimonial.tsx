@@ -1,12 +1,11 @@
+import { Quote } from "lucide-react";
 import { type ClientProject } from "@/data/portfolio";
 
-// Optional. Renders NOTHING when a project has no signed-off quote, so the page
-// can mount it unconditionally without risking an empty shell.
+// Optional. Renders NOTHING when a project has no signed-off quote, so the
+// article can mount it unconditionally without risking an empty block.
 //
 // Attributed to the client COMPANY, matching how the site credits quotes
 // elsewhere — no invented people, no avatars, no job titles.
-
-const container = "mx-auto px-6 md:px-12 xl:px-20";
 
 export default function Testimonial({ project }: { project: ClientProject }) {
   if (!project.testimonial) return null;
@@ -14,38 +13,51 @@ export default function Testimonial({ project }: { project: ClientProject }) {
   const { quote, attribution, role } = project.testimonial;
 
   return (
-    <section
-      className="py-16 md:py-24"
-      style={{ backgroundColor: "var(--background)" }}
-      aria-labelledby="testimonial-heading"
-    >
-      <div className={container}>
-        <h2 id="testimonial-heading" className="sr-only">
-          What the client said
-        </h2>
+    <section id="testimonial" className="scroll-mt-24" aria-labelledby="testimonial-heading">
+      <h2
+        id="testimonial-heading"
+        className="text-2xl font-bold tracking-tight md:text-3xl"
+        style={{ color: "var(--foreground)" }}
+      >
+        Client feedback
+      </h2>
 
-        <figure
-          className="max-w-3xl border-l-2 pl-6 md:pl-8"
-          style={{ borderColor: "var(--brand-blue-text)" }}
+      <figure
+        className="mt-5 max-w-[68ch] rounded-lg border p-6"
+        style={{
+          backgroundColor: "var(--background)",
+          borderColor: "var(--border-color)",
+        }}
+      >
+        <Quote
+          aria-hidden="true"
+          className="h-6 w-6"
+          strokeWidth={1.5}
+          style={{ color: "var(--brand-blue-text)" }}
+        />
+        <blockquote className="mt-4">
+          <p
+            className="text-lg leading-relaxed"
+            style={{ color: "var(--foreground)" }}
+          >
+            &ldquo;{quote}&rdquo;
+          </p>
+        </blockquote>
+        <figcaption
+          className="mt-5 border-t pt-4"
+          style={{ borderColor: "var(--border-color)" }}
         >
-          <blockquote>
-            <p
-              className="text-xl font-medium leading-relaxed md:text-2xl"
-              style={{ color: "var(--foreground)" }}
-            >
-              &ldquo;{quote}&rdquo;
-            </p>
-          </blockquote>
-          <figcaption className="mt-6">
-            <cite className="text-base font-semibold not-italic" style={{ color: "var(--foreground)" }}>
-              {attribution}
-            </cite>
-            <span className="mt-0.5 block text-sm" style={{ color: "var(--secondary-text)" }}>
-              {role}
-            </span>
-          </figcaption>
-        </figure>
-      </div>
+          <cite
+            className="text-sm font-semibold not-italic"
+            style={{ color: "var(--foreground)" }}
+          >
+            {attribution}
+          </cite>
+          <span className="mt-0.5 block text-sm" style={{ color: "var(--secondary-text)" }}>
+            {role}
+          </span>
+        </figcaption>
+      </figure>
     </section>
   );
 }

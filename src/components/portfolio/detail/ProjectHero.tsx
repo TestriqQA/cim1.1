@@ -4,9 +4,11 @@ import { ChevronRight, ExternalLink } from "lucide-react";
 import { getCategoryMeta, type ClientProject } from "@/data/portfolio";
 
 // Case-study masthead. Server component; the <h1> is plain text and is the LCP
-// element. The cover image sits below the fold of the heading so it never
-// competes with it, and carries explicit intrinsic dimensions so the box is
-// reserved before it loads.
+// element, so nothing animates it.
+//
+// The outcomes sit HERE, directly under the summary, rather than six sections
+// down. A visitor who reads only the top of the page should already know what
+// changed — the write-up below explains how.
 
 const container = "mx-auto px-6 md:px-12 xl:px-20";
 const focusRing =
@@ -17,12 +19,12 @@ export default function ProjectHero({ project }: { project: ClientProject }) {
 
   return (
     <section
-      className="py-14 md:py-20"
+      className="pt-12 pb-14 md:pt-16 md:pb-20"
       style={{ backgroundColor: "var(--background)" }}
       aria-labelledby="project-heading"
     >
       <div className={container}>
-        <nav aria-label="Breadcrumb" className="mb-10">
+        <nav aria-label="Breadcrumb" className="mb-8">
           <ol
             className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"
             style={{ color: "var(--secondary-text)" }}
@@ -49,50 +51,71 @@ export default function ProjectHero({ project }: { project: ClientProject }) {
           </ol>
         </nav>
 
-        <div className="max-w-3xl">
-          <p
-            className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold"
-            style={{ color: "var(--brand-blue-text)" }}
-          >
-            <span>{cat.label}</span>
-            <span aria-hidden="true" style={{ color: "var(--secondary-text)" }}>·</span>
-            <span style={{ color: "var(--secondary-text)" }}>{project.year}</span>
-          </p>
-
-          <h1
-            id="project-heading"
-            className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl"
-            style={{ color: "var(--foreground)" }}
-          >
-            {project.title}
-          </h1>
-
-          <p
-            className="mt-6 text-lg leading-relaxed md:text-xl"
-            style={{ color: "var(--secondary-text)" }}
-          >
-            {project.summary}
-          </p>
-
-          {project.liveUrl && (
-            <p className="mt-7">
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${focusRing} inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-semibold transition-colors duration-300`}
-                style={{
-                  borderColor: "var(--border-color)",
-                  backgroundColor: "var(--card-bg)",
-                  color: "var(--foreground)",
-                }}
-              >
-                Visit the live site
-                <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                <span className="sr-only">(opens in a new tab)</span>
-              </a>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
+          <div>
+            <p
+              className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold"
+              style={{ color: "var(--brand-blue-text)" }}
+            >
+              <span>{cat.label}</span>
+              <span aria-hidden="true" style={{ color: "var(--secondary-text)" }}>·</span>
+              <span style={{ color: "var(--secondary-text)" }}>{project.year}</span>
             </p>
-          )}
+
+            <h1
+              id="project-heading"
+              className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl"
+              style={{ color: "var(--foreground)" }}
+            >
+              {project.title}
+            </h1>
+
+            <p
+              className="mt-5 max-w-2xl text-lg leading-relaxed"
+              style={{ color: "var(--secondary-text)" }}
+            >
+              {project.summary}
+            </p>
+
+            {project.liveUrl && (
+              <p className="mt-7">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${focusRing} inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity duration-300 hover:opacity-90`}
+                  style={{ backgroundColor: "var(--brand-blue-btn)" }}
+                >
+                  Visit the live site
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              </p>
+            )}
+          </div>
+
+          {/* Outcomes, up front. */}
+          <dl
+            className="grid gap-px overflow-hidden rounded-xl border sm:grid-cols-3"
+            style={{ borderColor: "var(--border-color)", backgroundColor: "var(--border-color)" }}
+          >
+            {project.metrics.slice(0, 3).map((m) => (
+              <div key={m.label} className="p-5" style={{ backgroundColor: "var(--card-bg)" }}>
+                <dd
+                  className="text-2xl font-bold leading-none md:text-3xl"
+                  style={{ color: "var(--brand-blue-text)" }}
+                >
+                  {m.value}
+                </dd>
+                <dt
+                  className="mt-2.5 text-sm leading-snug"
+                  style={{ color: "var(--secondary-text)" }}
+                >
+                  {m.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
         </div>
 
         {project.cover && (

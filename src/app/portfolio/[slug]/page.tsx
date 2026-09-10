@@ -2,13 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProjectBySlug, getAllProjectSlugs } from "@/data/portfolio";
 import ProjectHero from "@/components/portfolio/detail/ProjectHero";
-import Challenge from "@/components/portfolio/detail/Challenge";
-import Approach from "@/components/portfolio/detail/Approach";
-import Results from "@/components/portfolio/detail/Results";
-import Testimonial from "@/components/portfolio/detail/Testimonial";
+import ProjectBody from "@/components/portfolio/detail/ProjectBody";
 import NextProject from "@/components/portfolio/detail/NextProject";
-import AtAGlance from "@/components/portfolio/detail/AtAGlance";
-import Gallery from "@/components/portfolio/detail/Gallery";
 import CTA from "@/components/services/CTA";
 import {
     generateGraphSchema,
@@ -235,14 +230,8 @@ export default async function PortfolioProjectPage({
                 }}
             />
             <ProjectHero project={project} />
-            <AtAGlance project={project} />
-            <Challenge project={project} />
-            <Approach project={project} />
-            {/* Renders null when the project carries no media. */}
-            <Gallery project={project} />
-            <Results project={project} />
-            {/* Renders null internally when the project has no testimonial. */}
-            <Testimonial project={project} />
+            {/* Sticky facts column + the case-study article. */}
+            <ProjectBody project={project} />
             {/* Cyclic forward link so a case study is never a dead end. */}
             <NextProject project={project} />
             <CTA />

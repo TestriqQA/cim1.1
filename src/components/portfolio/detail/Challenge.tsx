@@ -1,56 +1,49 @@
 import { type ClientProject } from "@/data/portfolio";
 
-// Situation and task. Prose, rules and space — no card, no panel.
-// The task is pulled out against a rule so the brief is unmistakable.
-
-const container = "mx-auto px-6 md:px-12 xl:px-20";
+// Situation and task. A content block inside the case-study article — the
+// surrounding layout owns the background and the dividers.
 
 export default function Challenge({ project }: { project: ClientProject }) {
   return (
-    <section
-      className="py-16 md:py-24"
-      style={{ backgroundColor: "var(--background)" }}
-      aria-labelledby="challenge-heading"
-    >
-      <div className={container}>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:gap-16">
-          <h2
-            id="challenge-heading"
-            className="text-2xl font-bold tracking-tight md:text-3xl"
+    <section id="challenge" className="scroll-mt-24" aria-labelledby="challenge-heading">
+      <h2
+        id="challenge-heading"
+        className="text-2xl font-bold tracking-tight md:text-3xl"
+        style={{ color: "var(--foreground)" }}
+      >
+        The challenge
+      </h2>
+
+      <div className="mt-5 max-w-[68ch]">
+        {project.situation.map((paragraph, index) => (
+          <p
+            key={index}
+            className={`text-base leading-relaxed md:text-lg ${index === 0 ? "" : "mt-4"}`}
+            style={{ color: "var(--secondary-text)" }}
+          >
+            {paragraph}
+          </p>
+        ))}
+
+        <div
+          className="mt-6 rounded-lg border-l-2 p-4"
+          style={{
+            borderColor: "var(--brand-blue-text)",
+            backgroundColor: "var(--background)",
+          }}
+        >
+          <h3
+            className="text-xs font-bold uppercase tracking-wider"
+            style={{ color: "var(--secondary-text)" }}
+          >
+            What we were asked to do
+          </h3>
+          <p
+            className="mt-2 text-base font-medium leading-relaxed"
             style={{ color: "var(--foreground)" }}
           >
-            The challenge
-          </h2>
-
-          <div className="max-w-[68ch]">
-            {project.situation.map((paragraph, index) => (
-              <p
-                key={index}
-                className={`text-base leading-relaxed md:text-lg ${index === 0 ? "" : "mt-5"}`}
-                style={{ color: "var(--secondary-text)" }}
-              >
-                {paragraph}
-              </p>
-            ))}
-
-            <div
-              className="mt-8 border-l-2 pl-5"
-              style={{ borderColor: "var(--brand-blue-text)" }}
-            >
-              <h3
-                className="text-sm font-semibold uppercase tracking-wide"
-                style={{ color: "var(--secondary-text)" }}
-              >
-                The task
-              </h3>
-              <p
-                className="mt-2 text-base font-medium leading-relaxed md:text-lg"
-                style={{ color: "var(--foreground)" }}
-              >
-                {project.task}
-              </p>
-            </div>
-          </div>
+            {project.task}
+          </p>
         </div>
       </div>
     </section>
