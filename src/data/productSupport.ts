@@ -70,14 +70,20 @@ export const productSupportData: ProductSupport[] = [
     {
         slug: "kruti-io",
         productName: "Kruti.io",
-        supportEmail: "support@kruti.io",
-        intro: "Need help with your Kruti.io subscription, LinkedIn connection, content generation or a refund? Kruti.io is built and operated by Cinute Digital Pvt. Ltd., and product support is handled by that team at support@kruti.io.",
+        // Cinute InfoMedia is the front door for Kruti.io enquiries, same as it
+        // is for ChimeGenius. The addresses that stay pointed at support@kruti.io
+        // below are the ones tied to actions inside Kruti.io's own systems —
+        // cancelling a subscription, a Razorpay refund, deleting an account —
+        // which CIM cannot execute and which Kruti.io publishes its own SLA for.
+        // Sending those here would publish an instruction that quietly fails.
+        supportEmail: "support@cinuteinfomedia.com",
+        intro: "Need help with your Kruti.io subscription, LinkedIn connection or content generation? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help. Kruti.io is built and operated by Cinute Digital Pvt. Ltd., so actions that run inside the platform itself — cancellations, refunds and account deletion — are handled by that team at support@kruti.io.",
         channels: [
-            { icon: "Mail", title: "Email Support", description: "Email support@kruti.io from your registered address. For billing questions, include the date of the payment in question; refund requests should use the subject line \"Refund Request\".", action: "Email support@kruti.io", href: "mailto:support@kruti.io" },
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with the email address on your Kruti.io account and a description of the issue. For billing questions, include the date of the payment in question.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
             { icon: "HelpCircle", title: "Product FAQ", description: "Answers on how the AI learns your voice, editing posts before they publish, what happens after the 7-day trial, and how billing works.", action: "Read the FAQ", href: "https://kruti.io/#faq" },
             { icon: "BookOpen", title: "The Kruti Journal", description: "Long-form guides on LinkedIn strategy, personal branding, content analytics and lead generation, published by the Kruti.io team.", action: "Read the blog", href: "https://kruti.io/blog" },
             { icon: "Zap", title: "Manage Your Subscription", description: "Cancel or change your plan from Settings, under Subscription, in your Kruti.io account — or email support@kruti.io. Access continues to the end of the current billing period.", action: "Go to Kruti.io", href: "https://kruti.io/" },
-            { icon: "MessageSquare", title: "Agency Enquiries", description: "Questions about Kruti.io for your team, or about the digital marketing and web work Cinute InfoMedia does around it? Talk to us directly.", action: "Contact CIM", href: "/contact" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Rolling Kruti.io out across a team, or looking for the digital marketing and web work Cinute InfoMedia builds around it? Start a conversation.", action: "Contact us", href: "/contact" },
         ],
         commonIssues: [
             { question: "How do I sign in? I don't see an email or password option.", answer: "LinkedIn OAuth is the only sign-in method. There is no email and password, Google or magic-link login, and no separate sign-up page — authorising Kruti.io on LinkedIn creates your account. One Kruti.io account per LinkedIn profile is permitted." },

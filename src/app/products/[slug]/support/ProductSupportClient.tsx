@@ -107,9 +107,13 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                         <div>
                             <h2 className="text-xl font-bold text-white mb-1">Need Immediate Help?</h2>
                             <p className="text-sm text-white/80">
+                                {/* The no-SLA fallback deliberately says "us", not
+                                    "the <product> team" — the address beside it is
+                                    whoever the data names, which is not always the
+                                    company that built the product. */}
                                 {support.responseTime
                                     ? `Our support team responds ${support.responseTime.toLowerCase()}.`
-                                    : `Email the ${support.productName} team and they will get back to you.`}
+                                    : `Email us about ${support.productName} and we will get back to you.`}
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
