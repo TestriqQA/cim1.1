@@ -146,7 +146,11 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                       borderColor: "var(--border-color)",
                     }}
                   >
-                    {project.cover && (
+                    {/* Card masthead: a capture of the work when the project has
+                        one, otherwise the client's mark. A cover always wins —
+                        a screenshot says more about an engagement than a logo —
+                        so this needs no revisiting when real captures land. */}
+                    {project.cover ? (
                       // Fixed aspect box: the intrinsic size is declared in the
                       // data, so nothing shifts while the image loads.
                       <div
@@ -161,7 +165,27 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                           className="object-cover"
                         />
                       </div>
-                    )}
+                    ) : project.logo ? (
+                      // Same reasoning as the case-study masthead: a fixed white
+                      // plate, because client wordmarks are drawn for light
+                      // grounds and recolouring one to suit our dark theme is
+                      // not ours to do. alt="" because the client's name is the
+                      // very next element — naming the logo too would announce
+                      // it twice to a screen reader.
+                      <div
+                        className="flex items-center justify-center border-b px-6 py-8"
+                        style={{ backgroundColor: "#ffffff", borderColor: "var(--border-color)" }}
+                      >
+                        <Image
+                          src={project.logo}
+                          alt=""
+                          width={800}
+                          height={219}
+                          sizes="160px"
+                          className="h-9 w-auto"
+                        />
+                      </div>
+                    ) : null}
 
                     <div className="flex flex-1 flex-col p-6">
                       <p
