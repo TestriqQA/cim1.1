@@ -1,34 +1,25 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowDown, ArrowRight, ChevronRight } from "lucide-react";
-import { clientProjects, getCategoryMeta } from "@/data/portfolio";
+import { getHighlightMetrics } from "@/data/portfolio";
 
 // Hub masthead. Server component; the <h1> is plain text and paints first.
 //
-// The hero leads with an actual case study rather than with decoration. A
-// portfolio index whose header is a heading, a paragraph and three abstract
-// counts tells a visitor nothing about the work — putting the strongest project
-// directly in the masthead shows it, and every element here is real data:
-// the featured project, the derived counts and the client roster.
+// The strip below the intro is the point of the hero: the strongest measured
+// outcomes from across the portfolio, each credited to the client it belongs to
+// and linking into that case study. It answers "why should I care" before the
+// reader has scrolled, and it is proof rather than decoration — every figure is
+// a real published outcome, not a claim written for the header.
+//
+// Which metrics appear is a DATA decision (`highlight: true` in
+// data/portfolio.ts), not a hand-picked list here, so a figure can never end up
+// credited to the wrong client.
 
 const container = "mx-auto px-6 md:px-12 xl:px-20";
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]";
 
 export default function PortfolioHero() {
-  // The lead card. Falls back to the first project so the hero never empties
-  // if nothing is flagged `featured`.
-  const featured = clientProjects.find((p) => p.featured) ?? clientProjects[0];
-  const cat = featured ? getCategoryMeta(featured.category) : null;
-
-  const disciplines = new Set(clientProjects.map((p) => p.category)).size;
-  const industries = new Set(clientProjects.map((p) => p.industry)).size;
-
-  const facts = [
-    { value: clientProjects.length, label: "Case studies" },
-    { value: disciplines, label: "Disciplines" },
-    { value: industries, label: "Industries" },
-  ];
+  const highlights = getHighlightMetrics();
 
   return (
     <section
@@ -63,193 +54,110 @@ export default function PortfolioHero() {
           </ol>
         </nav>
 
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-          {/* ---------------------------------------------------------- */}
-          <div>
-            <p
-              className="text-sm font-semibold uppercase tracking-wider"
-              style={{ color: "var(--brand-blue-text)" }}
-            >
-              Client work
-            </p>
+        <div className="max-w-3xl">
+          <p
+            className="text-sm font-semibold uppercase tracking-wider"
+            style={{ color: "var(--brand-blue-text)" }}
+          >
+            Client work
+          </p>
 
-            <h1
-              id="portfolio-heading"
-              className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
-              style={{ color: "var(--foreground)" }}
-            >
-              Our Portfolio
-            </h1>
+          <h1
+            id="portfolio-heading"
+            className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+            style={{ color: "var(--foreground)" }}
+          >
+            Our Portfolio
+          </h1>
 
-            <p
-              className="mt-6 max-w-xl text-lg leading-relaxed"
-              style={{ color: "var(--secondary-text)" }}
-            >
-              Every project below is written up in full: the situation we walked into, what we
-              were asked to do, the work itself, and what changed as a result — with the
-              delivered work shown, not just described.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#case-studies"
-                className={`${focusRing} inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity duration-300 hover:opacity-90`}
-                style={{ backgroundColor: "var(--brand-blue-btn)" }}
-              >
-                Browse the work
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <Link
-                href="/get-in-touch"
-                className={`${focusRing} inline-flex items-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition-colors duration-300`}
-                style={{
-                  borderColor: "var(--border-color)",
-                  backgroundColor: "var(--card-bg)",
-                  color: "var(--foreground)",
-                }}
-              >
-                Start a project
-              </Link>
-            </div>
-
-            <dl
-              className="mt-10 flex flex-wrap gap-x-10 gap-y-5 border-t pt-7"
-              style={{ borderColor: "var(--border-color)" }}
-            >
-              {facts.map(({ value, label }) => (
-                <div key={label}>
-                  <dd
-                    className="text-2xl font-bold tabular-nums"
-                    style={{ color: "var(--foreground)" }}
-                  >
-                    {value}
-                  </dd>
-                  <dt className="mt-1 text-sm" style={{ color: "var(--secondary-text)" }}>
-                    {label}
-                  </dt>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {/* ----------------------------------------------------------
-              Featured case study — the work itself, in the masthead.
-          ---------------------------------------------------------- */}
-          {featured && cat && (
-            <article
-              className="relative overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg"
-              style={{
-                backgroundColor: "var(--card-bg)",
-                borderColor: "var(--border-color)",
-              }}
-            >
-              {featured.cover && (
-                <div
-                  className="relative aspect-[16/10] w-full"
-                  style={{ backgroundColor: "var(--hover-bg)" }}
-                >
-                  <Image
-                    src={featured.cover.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              )}
-
-              <div className="p-6 md:p-7">
-                <p
-                  className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "var(--brand-blue-text)" }}
-                >
-                  <span>Featured</span>
-                  <span aria-hidden="true" style={{ color: "var(--secondary-text)" }}>·</span>
-                  <span style={{ color: "var(--secondary-text)" }}>{cat.label}</span>
-                </p>
-
-                <h2
-                  className="mt-3 text-xl font-bold leading-snug md:text-2xl"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  {/* The one link; stretched over the card. */}
-                  <Link
-                    href={`/portfolio/${featured.slug}`}
-                    className={`${focusRing} rounded-sm after:absolute after:inset-0 after:content-['']`}
-                  >
-                    {featured.title}
-                  </Link>
-                </h2>
-
-                <p className="mt-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                  {featured.client} · {featured.industry}
-                </p>
-
-                <dl
-                  className="mt-5 flex flex-wrap gap-x-8 gap-y-3 border-t pt-5"
-                  style={{ borderColor: "var(--border-color)" }}
-                >
-                  {featured.metrics.slice(0, 2).map((m) => (
-                    <div key={m.label}>
-                      <dd
-                        className="text-lg font-bold leading-none"
-                        style={{ color: "var(--brand-blue-text)" }}
-                      >
-                        {m.value}
-                      </dd>
-                      <dt
-                        className="mt-1.5 text-xs leading-snug"
-                        style={{ color: "var(--secondary-text)" }}
-                      >
-                        {m.label}
-                      </dt>
-                    </div>
-                  ))}
-                </dl>
-
-                <p
-                  aria-hidden="true"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold"
-                  style={{ color: "var(--brand-blue-text)" }}
-                >
-                  Read case study
-                  <ArrowRight className="h-4 w-4" />
-                </p>
-              </div>
-            </article>
-          )}
-        </div>
-
-        {/* Client roster. Names rather than logo images: we hold marks for only
-            two of the six, and a half-filled logo wall reads worse than a clean
-            list. Swap to logos once the set is complete. */}
-        <div
-          className="mt-14 border-t pt-7"
-          style={{ borderColor: "var(--border-color)" }}
-        >
-          <h2
-            id="clients-heading"
-            className="text-xs font-bold uppercase tracking-wider"
+          <p
+            className="mt-6 text-lg leading-relaxed md:text-xl"
             style={{ color: "var(--secondary-text)" }}
           >
-            Clients we have worked with
-          </h2>
-          <ul
-            aria-labelledby="clients-heading"
-            className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3"
-          >
-            {clientProjects.map((project) => (
-              <li
-                key={project.slug}
-                className="text-base font-semibold"
-                style={{ color: "var(--foreground)" }}
-              >
-                {project.client}
-              </li>
-            ))}
-          </ul>
+            Every project below is written up in full — the situation, the task, the work
+            itself, and what changed as a result.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#case-studies"
+              className={`${focusRing} inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity duration-300 hover:opacity-90`}
+              style={{ backgroundColor: "var(--brand-blue-btn)" }}
+            >
+              Browse the work
+              <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <Link
+              href="/get-in-touch"
+              className={`${focusRing} inline-flex items-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition-colors duration-300`}
+              style={{
+                borderColor: "var(--border-color)",
+                backgroundColor: "var(--card-bg)",
+                color: "var(--foreground)",
+              }}
+            >
+              Start a project
+            </Link>
+          </div>
         </div>
+
+        {/* ------------------------------------------------------------------
+            Measured outcomes, credited and linked.
+        ------------------------------------------------------------------ */}
+        {highlights.length > 0 && (
+          <div
+            className="mt-14 border-t pt-10"
+            style={{ borderColor: "var(--border-color)" }}
+          >
+            <h2 id="outcomes-heading" className="sr-only">
+              Selected outcomes
+            </h2>
+
+            <ul
+              aria-labelledby="outcomes-heading"
+              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12"
+            >
+              {highlights.map(({ metric, project }) => (
+                <li
+                  key={project.slug + metric.label}
+                  // `relative` anchors the stretched link; the rule sits on the
+                  // left from lg up, where the items sit side by side.
+                  className="relative lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0"
+                  style={{ borderColor: "var(--border-color)" }}
+                >
+                  <p
+                    className="text-4xl font-bold leading-none tracking-tight md:text-5xl"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    {metric.value}
+                  </p>
+
+                  <p
+                    className="mt-3 text-base font-medium"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    {metric.label}
+                  </p>
+
+                  <p className="mt-4">
+                    {/* One link per item, stretched over the whole cell. Its
+                        accessible name names the outcome as well as the client,
+                        so it still makes sense read out of context. */}
+                    <Link
+                      href={`/portfolio/${project.slug}`}
+                      aria-label={`${metric.value} ${metric.label} — read the ${project.client} case study`}
+                      className={`${focusRing} inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold after:absolute after:inset-0 after:content-['']`}
+                      style={{ color: "var(--brand-blue-text)" }}
+                    >
+                      {project.client}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

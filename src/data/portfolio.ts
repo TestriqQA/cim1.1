@@ -87,6 +87,12 @@ export interface ProjectMetric {
   value: string;
   label: string;
   detail?: string;
+  /**
+   * Surfaced in the /portfolio hero strip. Flag only outcomes that stand on
+   * their own out of context — a concrete figure beats a hedged word there,
+   * because the hero has no surrounding narrative to qualify it.
+   */
+  highlight?: boolean;
 }
 
 export interface ProjectActionStep {
@@ -338,7 +344,7 @@ export const clientProjects: ClientProject[] = [
     ],
     metrics: [
       { value: "Higher", label: "Online enquiries", detail: "Restructured campaigns and query-matched landing pages increased course enquiries through paid channels." },
-      { value: "Lower", label: "Cost per lead", detail: "Separating high-intent from awareness spend removed a substantial share of wasted budget." },
+      { value: "Lower", label: "Cost per lead", highlight: true, detail: "Separating high-intent from awareness spend removed a substantial share of wasted budget." },
       { value: "Full", label: "Conversion attribution", detail: "Every enquiry can now be traced to the campaign, ad group and search term that produced it." },
     ],
     stack: ["Google Ads", "Meta Ads", "GA4", "Google Tag Manager", "Looker Studio", "Landing pages"],
@@ -428,7 +434,7 @@ export const clientProjects: ClientProject[] = [
       { title: "Local search alignment", description: "Google Business Profiles, NAP consistency and location pages aligned so map-pack and organic reinforced each other." },
     ],
     metrics: [
-      { value: "3×", label: "Organic traffic", detail: "Organic sessions tripled across the four service lines within six months of the programme starting." },
+      { value: "3×", label: "Organic traffic", highlight: true, detail: "Organic sessions tripled across the four service lines within six months of the programme starting." },
       { value: "Higher", label: "Non-branded rankings", detail: "Service-line hubs began ranking for the patient-intent queries that had previously gone to directories." },
       { value: "Stable", label: "Ranking volatility", detail: "A consolidated structure replaced the week-to-week swings the old site had shown." },
     ],
@@ -599,7 +605,7 @@ export const clientProjects: ClientProject[] = [
       { title: "Automate the routing", description: "Workflow rules route each enquiry to the right team by course and stage, removing the manual triage step." },
     ],
     metrics: [
-      { value: "200+", label: "Hours saved per month", detail: "Routine, repeatable enquiries resolved without a person — more than 200 support hours returned to the team each month." },
+      { value: "200+", label: "Hours saved per month", highlight: true, detail: "Routine, repeatable enquiries resolved without a person — more than 200 support hours returned to the team each month." },
       { value: "Higher", label: "Student engagement", detail: "Immediate answers, including outside office hours, kept prospective students in the conversation." },
       { value: "Faster", label: "Response to complex cases", detail: "With routine questions handled automatically, the enquiries that need a person are reached sooner." },
     ],
@@ -724,6 +730,25 @@ export const portfolioStack: string[] = Array.from(
 // ----------------------------------------------------------------------------
 // Helpers
 // ----------------------------------------------------------------------------
+
+/**
+ * Outcomes flagged `highlight`, paired with the project they belong to. Drives
+ * the hero strip on /portfolio — derived rather than hand-listed, so a metric
+ * can never be shown against the wrong client.
+ *
+ * Quantified values ("3×", "200+") are ordered ahead of hedged ones ("Lower"),
+ * because the hero has no surrounding narrative and a figure carries further
+ * than a word there. Ties keep source order, so the result is stable.
+ */
+export function getHighlightMetrics(): { metric: ProjectMetric; project: ClientProject }[] {
+  const isQuantified = (value: string) => /\d/.test(value);
+
+  return clientProjects
+    .flatMap((project) =>
+      project.metrics.filter((m) => m.highlight).map((metric) => ({ metric, project }))
+    )
+    .sort((a, b) => Number(isQuantified(b.metric.value)) - Number(isQuantified(a.metric.value)));
+}
 
 export function getProjectBySlug(slug: string): ClientProject | undefined {
   return clientProjects.find((p) => p.slug === slug);
