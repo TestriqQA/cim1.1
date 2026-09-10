@@ -52,20 +52,20 @@ export const productSupportData: ProductSupport[] = [
         ],
     },
     // ==========================================================================
-    // Kruti.io — a SIGNPOST, not a support desk.
+    // Kruti.io — Cinute InfoMedia is the support desk.
     //
-    // Kruti.io is operated by Cinute Digital Pvt. Ltd. Cinute InfoMedia cannot
-    // action a Kruti.io account deletion, a LinkedIn reconnection or a Razorpay
-    // refund, so every channel below routes to support@kruti.io — the only
-    // address published anywhere on kruti.io, and the same address their pages
-    // give for refunds, data export and grievances.
+    // Kruti.io is built and operated by Cinute Digital Pvt. Ltd., but CIM fields
+    // enquiries for it on the same line and the same SLA as ChimeGenius. The
+    // phone and response time below are CIM's own commitments, not figures
+    // borrowed from kruti.io — kruti.io publishes no phone number and no general
+    // support SLA (only a 24-hour grievance acknowledgement and a 3-business-day
+    // refund reply, neither of which is a support-desk promise).
     //
-    // supportPhone and responseTime are deliberately absent: Kruti.io publishes
-    // no phone number and no general support SLA (only a 24-hour grievance
-    // acknowledgement and a 3-business-day refund reply, neither of which is a
-    // support-desk promise). Both fields are optional and the client guards them,
-    // so the page simply omits the phone button and the response-time badge
-    // rather than inventing either.
+    // The support@kruti.io addresses that remain are the ones tied to actions
+    // inside Kruti.io's own systems — cancelling a subscription, a Razorpay
+    // refund, account deletion, data export. CIM cannot execute those, and
+    // Kruti.io publishes its own timings for them, so routing them here would
+    // publish an instruction that quietly fails.
     // ==========================================================================
     {
         slug: "kruti-io",
@@ -77,6 +77,8 @@ export const productSupportData: ProductSupport[] = [
         // which CIM cannot execute and which Kruti.io publishes its own SLA for.
         // Sending those here would publish an instruction that quietly fails.
         supportEmail: "support@cinuteinfomedia.com",
+        supportPhone: "+91-9004988859",
+        responseTime: "Within 4 business hours",
         intro: "Need help with your Kruti.io subscription, LinkedIn connection or content generation? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help. Kruti.io is built and operated by Cinute Digital Pvt. Ltd., so actions that run inside the platform itself — cancellations, refunds and account deletion — are handled by that team at support@kruti.io.",
         channels: [
             { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with the email address on your Kruti.io account and a description of the issue. For billing questions, include the date of the payment in question.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
