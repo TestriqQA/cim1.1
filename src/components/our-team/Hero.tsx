@@ -1,15 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChevronRight, Users } from "lucide-react";
-import { teamDisciplines, teamMembers } from "@/data/team";
+import { teamDisciplines } from "@/data/team";
 import styles from "./team.module.css";
 
 // Server component — no client JavaScript.
 //
-// The page's LCP element is the <h1> text node, so there is deliberately still
-// no hero image on this route. The visual weight instead comes from type scale,
-// a CSS-drawn ambient background, and the roster index on the right — which is
-// not decoration: every row is a real in-page anchor down to that person's
-// card, so the hero doubles as the page's table of contents.
+// The page's LCP element is the <h1> text node. The right-hand column shows a
+// team illustration loaded via next/image (auto-optimised WebP/AVIF, responsive
+// srcset, lazy-loaded by default so it never competes with the LCP paint).
 
 const stats = [
   {
@@ -188,57 +187,19 @@ export default function Hero() {
           </div>
 
           {/* ---------------------------------------------------------------
-              Roster index — real jump navigation, not ornament
+              Team illustration — decorative, lazy-loaded via next/image
           ---------------------------------------------------------------- */}
-          <nav
-            // The visible "The roster / 11 people" header was removed, so the
-            // nav carries its own label instead of pointing at a heading that
-            // no longer exists — without it this is an unnamed landmark.
-            aria-label="Team members"
-            className="rounded-3xl border p-3 sm:p-4"
-            style={{
-              backgroundColor: "var(--card-bg)",
-              borderColor: "var(--border-color)",
-            }}
-          >
-            <ol>
-              {teamMembers.map((member, index) => (
-                <li key={member.id}>
-                  <a
-                    href={`#${member.id}`}
-                    className={`${styles.indexRow} group flex items-center gap-4 rounded-xl px-3 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="w-6 shrink-0 text-xs font-bold tabular-nums transition-colors duration-300"
-                      style={{ color: "var(--secondary-text)" }}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span
-                        className="block font-semibold leading-snug"
-                        style={{ color: "var(--foreground)" }}
-                      >
-                        {member.name}
-                      </span>
-                      <span
-                        className="mt-0.5 block text-xs leading-snug"
-                        style={{ color: "var(--secondary-text)" }}
-                      >
-                        {member.role}
-                      </span>
-                    </span>
-                    <ArrowRight
-                      className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
-                      style={{ color: "var(--brand-blue-text)" }}
-                      aria-hidden="true"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
+          <div
+            className="overflow-hidden rounded-3xl">
+            <Image
+              src="/images/team/hero-img.png"
+              alt="Cinute InfoMedia team collaborating together"
+              width={920}
+              height={640}
+              sizes="(max-width: 1023px) 100vw, 46vw"
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </div>
 
         {/* -----------------------------------------------------------------
