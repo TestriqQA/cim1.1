@@ -355,7 +355,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                 <section ref={contentRef} className="px-6 md:px-12 xl:px-16 py-8 scroll-mt-24">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-2xl font-bold mb-2">
-                            Results for "{isTagSearch ? '#' : ''}{searchQuery}"
+                            Results for &quot;{isTagSearch ? '#' : ''}{searchQuery}&quot;
                         </h2>
                         <p style={{ color: "var(--secondary-text)" }}>
                             Found <span className="font-semibold text-[var(--brand-purple-text)]">{filteredPosts.length}</span>{" "}
