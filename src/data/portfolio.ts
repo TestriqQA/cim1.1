@@ -282,9 +282,10 @@ export const clientProjects: ClientProject[] = [
           "Tracked competitor positioning alongside Testriq's own performance using Google Search Console, Google Analytics and SEMrush, adjusting strategy based on real data rather than assumptions.",
       },
     ],
-    // Three outcomes, as signed off. All three are highlighted because the hub
-    // hero strip is a three-column grid and these are the only measured results
-    // the portfolio currently carries.
+    // Three outcomes, as signed off. Only the first is `highlight`ed: the hub
+    // hero strip now draws from four projects and shows one outcome per client,
+    // so each project contributes its single strongest result rather than
+    // filling the row on its own.
     metrics: [
       {
         value: "Strong",
@@ -298,14 +299,12 @@ export const clientProjects: ClientProject[] = [
         label: "Qualified lead growth",
         detail:
           "Organic search became a stronger contributor to inbound enquiries as visibility and content relevance improved.",
-        highlight: true,
       },
       {
         value: "Passing",
         label: "Site performance & accessibility",
         detail:
           "The Next.js rebuild improved load times and accessibility across devices, replacing the constraints of the previous WordPress setup.",
-        highlight: true,
       },
     ],
     // ONLY what the client named. Nothing here is inferred, verified
@@ -337,6 +336,332 @@ export const clientProjects: ClientProject[] = [
     seoTitle: "Testriq QA Lab Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
     seoDescription:
       "How a six-month engagement moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI, and rebuilt site architecture and SEO to grow organic traffic and qualified leads.",
+  },
+
+  // ==========================================================================
+  // Cinute Digital — WordPress to Next.js, then SEO and paid.
+  //
+  // Client-supplied engagement facts; the business description is drawn from
+  // cinutedigital.com. Deliberately absent, because the client's own site does
+  // not support them and we measured none: course prices, student or placement
+  // counts, review ratings, and the ISTQB / ISO / NSDC credentials the site
+  // advertises. Note also that their site footer credits a different agency —
+  // our authorship rests on the engagement, so the page never claims a credit
+  // the client has not published.
+  // ==========================================================================
+  {
+    id: "cinute-digital-nextjs-rebuild-seo",
+    slug: "cinute-digital-nextjs-rebuild-seo",
+    client: "Cinute Digital",
+    industry: "EdTech Training Institute",
+    category: "web-dev",
+    featured: true,
+    title: "A WordPress-to-Next.js rebuild and SEO programme for an EdTech institute",
+    summary:
+      "Cinute Digital's course site moved off WordPress onto Next.js, with performance and accessibility rebuilt in rather than patched on, then an advanced SEO programme and paid campaigns grew organic traffic and course enquiries together.",
+    year: "2025",
+    platforms: ["Web"],
+    deliverables: [
+      "WordPress to Next.js migration",
+      "Performance optimisation",
+      "Accessibility improvements",
+      "Course catalogue architecture",
+      "Advanced technical SEO",
+      "On-page SEO & content optimisation",
+      "Paid marketing campaigns",
+    ],
+    liveUrl: "https://www.cinutedigital.com",
+    media: [],
+    situation: [
+      "Cinute Digital runs instructor-led courses in software testing, data science, artificial intelligence, business intelligence and digital marketing, across a catalogue that keeps growing. The site carrying all of it ran on WordPress, and the platform had become the constraint rather than the support.",
+      "For an institute whose enrolments usually begin with someone searching for a course, that is expensive on both sides. Page performance and accessibility were capped by the stack, and the course pages that should have been ranking were competing with each other instead of each owning a query.",
+    ],
+    task:
+      "Move the site off WordPress onto a modern, performant stack, fix performance and accessibility at the architecture level, and turn the course catalogue into a search asset — supported by paid campaigns.",
+    action: [
+      {
+        title: "Rebuilt the site on Next.js",
+        description:
+          "Migrated the whole site off WordPress onto Next.js, treating performance, accessibility and search as architectural requirements rather than things to patch afterwards.",
+      },
+      {
+        title: "Raised performance across the catalogue",
+        description:
+          "Static rendering, right-sized images and disciplined client-side JavaScript, so a course page loads quickly on the mid-range mobile devices most enquiries come from.",
+      },
+      {
+        title: "Fixed accessibility at the component level",
+        description:
+          "Addressed contrast, focus behaviour, semantics and keyboard navigation in the components themselves, so fixes hold as the catalogue grows instead of decaying page by page.",
+      },
+      {
+        title: "Restructured the course catalogue for search",
+        description:
+          "Mapped courses and categories into a clear hierarchy so each page owns a defined query set, replacing the internal competition between overlapping course pages.",
+      },
+      {
+        title: "Ran an advanced technical SEO programme",
+        description:
+          "Crawlability, indexation, structured data and site speed addressed together, removing the technical barriers that were holding back pages the content already deserved to rank.",
+      },
+      {
+        title: "Optimised on-page content against real demand",
+        description:
+          "Titles, metadata and page structure rewritten around the terms prospective learners actually search, aligned to how the admissions conversation runs.",
+      },
+      {
+        title: "Ran paid campaigns alongside organic",
+        description:
+          "Paid marketing run in parallel with the organic programme, so the two channels supported enrolments together rather than competing for the same budget.",
+      },
+    ],
+    metrics: [
+      {
+        value: "Strong",
+        label: "Organic traffic growth",
+        detail:
+          "Sustained growth in organic sessions as the rebuilt catalogue began ranking for the course terms it was restructured to target.",
+        highlight: true,
+      },
+      {
+        value: "Strong",
+        label: "Search visibility growth",
+        detail:
+          "Broader coverage across course and category queries once internal competition between overlapping pages was resolved.",
+      },
+      {
+        value: "Improved",
+        label: "Performance & accessibility",
+        detail:
+          "The Next.js rebuild lifted load times and accessibility across devices, replacing limits that the previous WordPress setup had imposed on both.",
+      },
+    ],
+    stack: ["Next.js", "Google Search Console", "Google Analytics", "SEMrush"],
+    servicesDelivered: [
+      { name: "Web Development", href: "/services/web-design-development" },
+      { name: "Next.js Development", href: "/services/web-design-development/nextjs-development-services" },
+      { name: "SEO Services", href: "/services/seo-services" },
+      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
+      { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
+      { name: "Performance Marketing", href: "/services/performance-marketing" },
+    ],
+    seoTitle: "Cinute Digital Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
+    seoDescription:
+      "How Cinute Digital moved off WordPress onto Next.js, lifted performance and accessibility, and grew organic traffic and course enquiries through advanced SEO and paid marketing.",
+  },
+
+  // ==========================================================================
+  // Ved Solutions — SEO and paid on the EXISTING site. No rebuild.
+  //
+  // This is the one engagement here that did not involve a build, and the copy
+  // must stay that way: their site is still the same static site it was, and
+  // describing a rebuild, migration or redesign would be false. Nothing is
+  // published about their hosting or framework for the same reason.
+  //
+  // Their own site carries unreplaced Lorem Ipsum testimonials and unaudited
+  // marketing counters ("20+ Happy Clients", "100% Feedback Percentage"); none
+  // of it is repeated here, and no traffic or lead figure is stated, because
+  // none was supplied.
+  // ==========================================================================
+  {
+    id: "ved-solutions-seo-lead-growth",
+    slug: "ved-solutions-seo-lead-growth",
+    client: "Ved Solutions",
+    industry: "IT Consulting & Software Development",
+    category: "seo",
+    featured: false,
+    title: "Advanced SEO on an existing site, built for qualified lead growth",
+    summary:
+      "No rebuild — an advanced SEO programme applied to Ved Solutions' existing UK site, strengthening its content, organic visibility and lead flow, with paid campaigns running alongside.",
+    year: "2025",
+    platforms: ["Web"],
+    deliverables: [
+      "SEO audit of the existing site",
+      "Content improvement & optimisation",
+      "Technical SEO",
+      "On-page SEO",
+      "Internal linking & off-page SEO",
+      "Paid marketing campaigns",
+    ],
+    liveUrl: "https://vedsolutions.co.uk",
+    media: [],
+    situation: [
+      "Ved Solutions is a UK IT consultancy building web, mobile and enterprise software, with UK-based management and a development team in India. The offer is a considered one, aimed at businesses that want to outsource or extend software delivery.",
+      "The site described that offer, but it was not earning search visibility for the work the business actually wanted more of. The brief was explicitly not a rebuild — improve what was already live.",
+    ],
+    task:
+      "Improve the existing site's content and search performance without rebuilding it, and grow qualified enquiries from organic search and paid campaigns together.",
+    action: [
+      {
+        title: "Audited the site as it stood",
+        description:
+          "Started from what was already published — how pages were indexed, which competed with each other, and where the existing content fell short of the queries it was closest to.",
+      },
+      {
+        title: "Strengthened the service content",
+        description:
+          "Reworked the service pages so each one answers the question a buyer is actually asking at that point, with the depth search results reward rather than a summary paragraph.",
+      },
+      {
+        title: "Executed technical SEO on the live site",
+        description:
+          "Crawlability, indexation and page-level technical fundamentals addressed in place, removing barriers to ranking without touching the underlying build.",
+      },
+      {
+        title: "Optimised on-page elements",
+        description:
+          "Titles, metadata and heading structure rewritten around real search demand, so each page presents itself clearly to both readers and crawlers.",
+      },
+      {
+        title: "Built internal links and off-page authority",
+        description:
+          "Internal links wired deliberately between related services to distribute authority and support crawl paths, backed by off-page work to build external authority.",
+      },
+      {
+        title: "Ran paid campaigns alongside organic",
+        description:
+          "Paid marketing run in parallel with the SEO programme, so enquiries grew from both channels while the organic work compounded.",
+      },
+    ],
+    metrics: [
+      {
+        value: "Strong",
+        label: "Qualified lead growth",
+        detail:
+          "Enquiries grew as the improved service content began reaching buyers earlier in their search, supported by paid campaigns running alongside.",
+        highlight: true,
+      },
+      {
+        value: "Strong",
+        label: "Organic traffic growth",
+        detail:
+          "Sustained growth in organic sessions from the existing site, without any rebuild or replatform.",
+      },
+      {
+        value: "Improved",
+        label: "Content & search visibility",
+        detail:
+          "Service pages rewritten to match real search demand, broadening the range of queries the site appears for.",
+      },
+    ],
+    stack: ["Google Search Console", "Google Analytics", "SEMrush"],
+    servicesDelivered: [
+      { name: "SEO Services", href: "/services/seo-services" },
+      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
+      { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
+      { name: "SEO Content Writing", href: "/services/seo-services/seo-content-writing-services" },
+      { name: "Link Building", href: "/services/seo-services/link-building" },
+      { name: "Performance Marketing", href: "/services/performance-marketing" },
+    ],
+    seoTitle: "Ved Solutions SEO Case Study — Organic & Paid Lead Growth | Cinute InfoMedia",
+    seoDescription:
+      "How advanced SEO on Ved Solutions' existing site improved their content and organic visibility and grew qualified leads for a UK IT consultancy, with paid campaigns alongside.",
+  },
+
+  // ==========================================================================
+  // Empiric Business Media — hand-written HTML/CSS/JS to static Next.js.
+  //
+  // "60 to 100" is the one concrete figure on this page and it is the client's
+  // own reported page-speed score, stated as such. Everything else stays hedged.
+  //
+  // Nothing is published about their delegate, attendee or speaker numbers:
+  // their own site withholds those pending verification, so repeating any
+  // figure here would be fabricating one. No award or superlative either — the
+  // client's site makes no such claim about itself.
+  // ==========================================================================
+  {
+    id: "empiric-business-media-nextjs-seo",
+    slug: "empiric-business-media-nextjs-seo",
+    client: "Empiric Business Media",
+    industry: "B2B Events & Business Media",
+    category: "web-dev",
+    featured: true,
+    title: "A static Next.js rebuild that took page speed from 60 to 100",
+    summary:
+      "Empiric Business Media's site moved off hand-written HTML, CSS and JavaScript onto a static Next.js build — page speed went from 60 to 100, accessibility improved, and the interface was modernised to the client's brief, with advanced SEO turning impressions into leads.",
+    year: "2026",
+    platforms: ["Web"],
+    deliverables: [
+      "HTML/CSS/JS to Next.js static rebuild",
+      "Modern UI design to client brief",
+      "Performance optimisation",
+      "Accessibility improvements",
+      "Advanced technical SEO",
+      "On-page SEO & content structure",
+    ],
+    liveUrl: "https://www.empiricbusinessmedia.com",
+    media: [],
+    situation: [
+      "Empiric Business Media produces B2B conferences, summits, awards, roundtables and webinars for enterprise decision-makers, across several industry verticals. Its site was hand-written HTML, CSS and JavaScript.",
+      "That was workable, but it capped what the site could do. Page speed sat at 60, accessibility needed real work, and the design no longer matched how the business wanted to present itself to the sponsors and delegates it was asking to commit.",
+    ],
+    task:
+      "Rebuild the site as a static Next.js application, modernise the interface to the client's brief, lift performance and accessibility, and run advanced SEO on the new build.",
+    action: [
+      {
+        title: "Rebuilt the site as a static Next.js application",
+        description:
+          "Replaced the hand-written HTML, CSS and JavaScript with a statically generated Next.js build, so every page ships as pre-rendered markup rather than assembling itself in the browser.",
+      },
+      {
+        title: "Modernised the UI to the client's brief",
+        description:
+          "Redesigned the interface and page layouts against the client's own requirements, with full responsiveness so the experience holds from a phone to a desktop.",
+      },
+      {
+        title: "Took page speed from 60 to 100",
+        description:
+          "Static rendering, right-sized assets and a disciplined JavaScript budget moved the client's reported page-speed score from 60 to 100.",
+      },
+      {
+        title: "Improved accessibility across the site",
+        description:
+          "Contrast, focus states, semantics and keyboard navigation handled in the components, so the improvements carry across every page rather than sitting on a few.",
+      },
+      {
+        title: "Ran advanced SEO on the new build",
+        description:
+          "Crawlability, indexation, metadata and content structure addressed on the rebuilt site, so the technical foundation and the content worked towards the same queries.",
+      },
+      {
+        title: "Tracked impressions through to leads",
+        description:
+          "Monitored the path from search impressions to clicks to enquiries, adjusting the content plan against what the data showed rather than what was assumed.",
+      },
+    ],
+    metrics: [
+      {
+        value: "60 → 100",
+        label: "Page speed score",
+        detail:
+          "The client's reported page-speed score after the static Next.js rebuild, up from 60 on the previous hand-written site.",
+        highlight: true,
+      },
+      {
+        value: "Strong",
+        label: "Impression growth",
+        detail:
+          "Search impressions grew as the rebuilt site became easier to crawl, index and surface on Google.",
+      },
+      {
+        value: "Strong",
+        label: "Impressions converting to leads",
+        detail:
+          "A rising share of those impressions turned into clicks and then enquiries, rather than visibility that stopped at the results page.",
+      },
+    ],
+    stack: ["Next.js", "Google Search Console", "Google Analytics", "SEMrush"],
+    servicesDelivered: [
+      { name: "Web Development", href: "/services/web-design-development" },
+      { name: "Next.js Development", href: "/services/web-design-development/nextjs-development-services" },
+      { name: "Brand Identity & Design", href: "/services/brand-identity-design" },
+      { name: "SEO Services", href: "/services/seo-services" },
+      { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
+      { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
+    ],
+    seoTitle: "Empiric Business Media Case Study — Next.js Rebuild & SEO | Cinute InfoMedia",
+    seoDescription:
+      "How a static Next.js rebuild took Empiric Business Media's page speed from 60 to 100, modernised the UI, improved accessibility, and grew impressions and leads with advanced SEO.",
   },
 ];
 

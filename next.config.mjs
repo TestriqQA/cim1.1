@@ -46,13 +46,21 @@ const nextConfig = {
         // Exact-match sources, and /portfolio is not itself a redirect source,
         // so none of these can match its own destination — see the case-loop
         // warning below.
-        const removedProjectSlugs = [
-            'cdpl-performance-marketing', 'healthcare-plus-seo', 'ved-solutions-lead-gen',
-            'maple-ai-automation', 'cloudscale-nextjs-platform',
-        ];
-        const portfolioRedirects = removedProjectSlugs.map((slug) => ({
+        // Two of the removed slugs now have a REAL successor rather than a
+        // generic parent: the old CDPL entry covered Cinute Digital (CDPL is
+        // Cinute Digital Pvt. Ltd.), and the old Ved Solutions entry covered
+        // the same client we have since written up properly. Those land on the
+        // matching case study; the three with no successor land on the hub.
+        const portfolioSuccessors = {
+            'cdpl-performance-marketing': '/portfolio/cinute-digital-nextjs-rebuild-seo',
+            'ved-solutions-lead-gen': '/portfolio/ved-solutions-seo-lead-growth',
+            'healthcare-plus-seo': '/portfolio',
+            'maple-ai-automation': '/portfolio',
+            'cloudscale-nextjs-platform': '/portfolio',
+        };
+        const portfolioRedirects = Object.entries(portfolioSuccessors).map(([slug, destination]) => ({
             source: `/portfolio/${slug}`,
-            destination: '/portfolio',
+            destination,
             permanent: true,
         }));
         return [
