@@ -130,14 +130,21 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "prakash-mishra",
-    tier: "featured",
+    tier: "leader",
     name: "Prakash Mishra",
     role: "Co-Founder & Lead S/W Engineer",
     focus: "Web Engineering & Architecture",
+    experience: "10+ years",
     bio: "Prakash leads engineering on client builds: architecture decisions, code review, and the performance and accessibility work that decides whether a site is genuinely fast for real people on real devices. Most of our Next.js and headless-CMS work ships through his review.",
     image: "/images/team/prakash-mishra.webp",
     expertise: ["Next.js & React", "System Architecture", "Web Performance"],
     linkedin: "https://www.linkedin.com/in/prakashmmishra/",
+    highlights: [
+      "Architecture and tech-stack decisions for client builds",
+      "Code review and engineering quality standards",
+      "Performance, accessibility and Core Web Vitals",
+      "Next.js, headless-CMS and front-end delivery",
+    ],
   },
   {
     id: "aakash-yadav",
