@@ -176,6 +176,14 @@ export interface ClientProject {
   servicesDelivered: ProjectService[];
   testimonial?: ProjectTestimonial;
   logo?: string;
+  /**
+   * The background a client's mark is drawn for. Client logos are shown on a
+   * fixed plate of this colour in BOTH themes, because recolouring or
+   * filtering someone else's logo to suit our palette is not ours to do.
+   * Most marks are drawn for light grounds, so "light" is the default; set
+   * "dark" for a mark whose lettering is white and would vanish on white.
+   */
+  logoGround?: "light" | "dark";
   seoTitle?: string;
   seoDescription?: string;
 }
@@ -452,6 +460,7 @@ export const clientProjects: ClientProject[] = [
       { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
       { name: "Performance Marketing", href: "/services/performance-marketing" },
     ],
+    logo: "/images/logos/cinute-digital-logo.webp",
     seoTitle: "Cinute Digital Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
     seoDescription:
       "How Cinute Digital moved off WordPress onto Next.js, lifted performance and accessibility, and grew organic traffic and course enquiries through advanced SEO and paid marketing.",
@@ -564,6 +573,7 @@ export const clientProjects: ClientProject[] = [
       { name: "Link Building", href: "/services/seo-services/link-building" },
       { name: "Performance Marketing", href: "/services/performance-marketing" },
     ],
+    logo: "/images/logos/ved-solutions-logo.webp",
     seoTitle: "Ved Solutions SEO Case Study — Organic & Paid Lead Growth | Cinute InfoMedia",
     seoDescription:
       "How advanced SEO on Ved Solutions' existing site improved their content and organic visibility and grew qualified leads for a UK IT consultancy, with paid campaigns alongside.",
@@ -674,6 +684,11 @@ export const clientProjects: ClientProject[] = [
       { name: "Technical SEO", href: "/services/seo-services/technical-seo-services" },
       { name: "On-Page SEO", href: "/services/seo-services/on-page-seo-services" },
     ],
+    // EBM's mark sets its lettering in white for a dark ground; on a white
+    // plate everything but the orange word disappears. It gets the ground it
+    // was drawn for instead of being recoloured.
+    logoGround: "dark",
+    logo: "/images/logos/empiric-business-media-logo.webp",
     seoTitle: "Empiric Business Media Case Study — Next.js Rebuild & SEO | Cinute InfoMedia",
     seoDescription:
       "How a static Next.js rebuild took Empiric Business Media's page speed from 60 to 100, modernised the UI, improved accessibility, and grew impressions and leads with advanced SEO.",
@@ -719,6 +734,12 @@ export function getHighlightMetrics(): { metric: ProjectMetric; project: ClientP
     )
     .sort((a, b) => Number(isQuantified(b.metric.value)) - Number(isQuantified(a.metric.value)));
 }
+
+// A client mark sits on the ground it was drawn for, in both themes. Most are
+// drawn for light; EBM's lettering is white and needs dark. Recolouring or
+// filtering someone else's logo to fit our palette is not ours to do.
+export const logoPlate = (ground?: "light" | "dark") =>
+  ground === "dark" ? "#111318" : "#ffffff";
 
 export function getProjectBySlug(slug: string): ClientProject | undefined {
   return clientProjects.find((p) => p.slug === slug);

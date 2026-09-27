@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, ExternalLink } from "lucide-react";
-import { getCategoryMeta, type ClientProject } from "@/data/portfolio";
+import { getCategoryMeta, logoPlate, type ClientProject } from "@/data/portfolio";
 
 // Case-study masthead. Server component; the <h1> is plain text and is the LCP
 // element, so nothing animates it.
@@ -99,29 +99,30 @@ export default function ProjectHero({ project }: { project: ClientProject }) {
               the pair sits flush with the baseline of the copy opposite. */}
           <div className="flex flex-col gap-5">
             {project.logo && (
-              // Deliberately on a fixed white plate rather than a theme surface.
-              // Testriq's wordmark sets "tes" in mid-grey, which all but
-              // disappears on the dark theme's near-black background, and the
-              // registered-trademark glyph vanishes entirely. Recolouring a
-              // client's logo to suit our palette is not ours to do, so it gets
-              // the light ground it was drawn for and stays correct in both
-              // themes. The border keeps the plate from floating in light mode.
+              // A fixed plate rather than a theme surface, in the ground the
+              // mark was drawn for — see `logoPlate`. The border keeps a white
+              // plate from floating in light mode.
               <div
                 className="flex items-center justify-center rounded-xl border px-6 py-8"
-                style={{ borderColor: "var(--border-color)", backgroundColor: "#ffffff" }}
+                style={{
+                  borderColor: "var(--border-color)",
+                  backgroundColor: logoPlate(project.logoGround),
+                }}
               >
-                <Image
-                  src={project.logo}
-                  alt={`${project.client} logo`}
-                  width={800}
-                  height={219}
-                  // `sizes` is what stops Next serving a 1920px variant for a
-                  // ~210px slot; the height classes are the real constraint and
-                  // the width follows the intrinsic ratio.
-                  sizes="(min-width: 768px) 240px, 180px"
-                  className="h-10 w-auto md:h-14"
-                  priority
-                />
+                {/* One box for every client, with `object-contain` inside it.
+                    Client marks range from a 1:1 roundel to a 6.5:1 lockup, and
+                    constraining by height alone rendered a square logo at a
+                    fraction of the width of a wide one. */}
+                <div className="relative h-16 w-[220px] md:h-20 md:w-[260px]">
+                  <Image
+                    src={project.logo}
+                    alt={`${project.client} logo`}
+                    fill
+                    sizes="260px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
             )}
 

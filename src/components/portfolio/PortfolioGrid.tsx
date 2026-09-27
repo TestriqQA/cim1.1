@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import {
   serviceCategories,
   getCategoryMeta,
+  logoPlate,
   type ClientProject,
   type ServiceCategory,
 } from "@/data/portfolio";
@@ -175,17 +176,22 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                       // very next element — naming the logo too would announce
                       // it twice to a screen reader.
                       <div
-                        className="flex items-center justify-center border-b px-6 py-8"
-                        style={{ backgroundColor: "#ffffff", borderColor: "var(--border-color)" }}
+                        className="flex items-center justify-center border-b px-6 py-7"
+                        style={{
+                          backgroundColor: logoPlate(project.logoGround),
+                          borderColor: "var(--border-color)",
+                        }}
                       >
-                        <Image
-                          src={project.logo}
-                          alt=""
-                          width={800}
-                          height={219}
-                          sizes="160px"
-                          className="h-9 w-auto"
-                        />
+                        {/* Same fixed box as the case-study masthead, smaller. */}
+                        <div className="relative h-16 w-[190px]">
+                          <Image
+                            src={project.logo}
+                            alt=""
+                            fill
+                            sizes="180px"
+                            className="object-contain"
+                          />
+                        </div>
                       </div>
                     ) : null}
 
