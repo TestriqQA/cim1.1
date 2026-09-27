@@ -95,6 +95,69 @@ export const productSupportData: ProductSupport[] = [
             { question: "My payment failed, or my account says past due.", answer: "If a payment fails, your account status changes to past due. After repeated failures, access to the dashboard may be restricted until the payment is resolved. Billing runs monthly through Razorpay on the anniversary of your subscription start date. Note that chargebacks filed without contacting support first may result in temporary suspension pending investigation." },
         ],
     },
+    // ==========================================================================
+    // AssetMon — support runs through Cinute InfoMedia.
+    //
+    // AssetMon's own pages list five addresses on assetmon.app (hello@,
+    // support@, security@, enterprise@, status@). That domain returns NXDOMAIN
+    // from both 8.8.8.8 and 1.1.1.1, so mail sent to any of them cannot be
+    // delivered. Publishing them here would hand customers dead addresses, so
+    // every channel routes to CIM on the same line and SLA as the other
+    // products. Restore the product addresses if and when the domain resolves.
+    // ==========================================================================
+    {
+        slug: "assetmon",
+        productName: "AssetMon",
+        supportEmail: "support@cinuteinfomedia.com",
+        supportPhone: "+91-9004988859",
+        responseTime: "Within 4 business hours",
+        intro: "Need help with your AssetMon workspace, a CSV import, the API, SSO or billing? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
+        channels: [
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with your workspace name and a description of the issue. For an import problem, attach a few sample rows from the CSV.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
+            { icon: "HelpCircle", title: "Product FAQ", description: "Answers on setup time, importing an existing inventory, how tenant isolation works, what the trial includes and how billing runs.", action: "Read the FAQ", href: "https://assetm.cinuteinfomedia.com/#faq" },
+            { icon: "BookOpen", title: "Guides & Glossary", description: "Long-form guides on IT asset management practice, plus a glossary of the terms that come up in audits, licensing and depreciation.", action: "Read the guides", href: "https://assetm.cinuteinfomedia.com/blog" },
+            { icon: "Zap", title: "Security & Compliance", description: "How tenant isolation, encryption, audit logging and access control work, and how to request a DPA or an InfoSec review.", action: "Read the security page", href: "https://assetm.cinuteinfomedia.com/security" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Rolling AssetMon out across several sites or teams, or want it integrated with what you already run? Start a conversation.", action: "Contact us", href: "/contact" },
+        ],
+        commonIssues: [
+            { question: "How do I import my existing asset spreadsheet?", answer: "Use the CSV import. AssetMon auto-maps category, location and department by name, so an existing spreadsheet comes across without being rebuilt. If a column does not map cleanly, email support@cinuteinfomedia.com with a few sample rows and we will help you shape the file." },
+            { question: "What is on the free Starter plan, and what needs Business?", answer: "Starter is free and covers up to 5 users and 50 assets with core asset tracking, CSV import and export, and email support. Service tickets, maintenance schedules, procurement, the depreciation engine, the API and webhooks, and SSO are Business features. A 30-day trial opens up everything in Business with no card required." },
+            { question: "How is my workspace separated from other customers?", answer: "Each workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column. Data is encrypted in transit with TLS 1.2 or higher and at rest with AES-256, and backups are encrypted with separate keys. Access is role-based, and every asset event is written to an immutable audit log." },
+            { question: "What happens to my data at the end of the trial, or if I cancel?", answer: "At the end of the trial the workspace pauses for 14 days while you decide, and you can export everything during that window. After a cancellation, workspace data is deleted within 30 days, so take your CSV or API export before then if you want to keep it." },
+            { question: "How do I connect SSO or use the API?", answer: "SSO through Google, Microsoft Entra ID or SAML is available on Business and above, and SCIM 2.0 user provisioning on Enterprise. API access uses tenant-scoped keys that are hashed at rest and can be read-only or read-write, with revocation and expiry; webhooks are HMAC-SHA256 signed and retried three times. The OpenAPI documentation covers both." },
+        ],
+    },
+    // ==========================================================================
+    // TopCareerLive — support runs through Cinute InfoMedia.
+    //
+    // topcareerlive.com publishes NO contact details at all: no email, no phone,
+    // no contact page (/contact and /contact-us both 404). Every channel here is
+    // CIM's, and the answers stay within what the platform verifiably does —
+    // the site's own five FAQ answers are one repeated block of boilerplate that
+    // answers none of the questions asked, so none of it is reproduced.
+    // ==========================================================================
+    {
+        slug: "topcareerlive",
+        productName: "TopCareerLive",
+        supportEmail: "support@cinuteinfomedia.com",
+        supportPhone: "+91-9004988859",
+        responseTime: "Within 4 business hours",
+        intro: "Questions about posting a role, managing applicants, your candidate profile or a job alert? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
+        channels: [
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with the email address on your TopCareerLive account and a description of the issue. For a problem with a specific listing, include its link.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
+            { icon: "Users", title: "For Employers", description: "Company profiles, posting a role, and filtering, ranking and tracking applicants through your own hiring stages.", action: "Employer overview", href: "https://topcareerlive.com/employers" },
+            { icon: "HelpCircle", title: "For Candidates", description: "Create a profile, search roles by location, experience and freshness, and set up job alerts by email or WhatsApp.", action: "Browse jobs", href: "https://topcareerlive.com/search" },
+            { icon: "BookOpen", title: "Career Insights", description: "Articles on building a career, written for candidates working out what to apply for next.", action: "Read the blog", href: "https://topcareerlive.com/blog" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Hiring at volume, or want TopCareerLive fitted to how your team already recruits? Start a conversation.", action: "Contact us", href: "/contact" },
+        ],
+        commonIssues: [
+            { question: "How do I create an account?", answer: "Register with an email address and password, or continue with a Google account. The candidate flow collects your name, email, mobile number and current location, and lets you upload a CV as a PDF, DOC or DOCX file, then walks you through employment, education and job preferences." },
+            { question: "How do I get told about new roles?", answer: "Job alerts are delivered by email and on WhatsApp, so a matching role reaches you without you having to keep checking. Alert preferences are set during registration and can be changed from your profile." },
+            { question: "How do I narrow a job search?", answer: "Filter by location, experience level from fresher upwards, and how recently a role was posted — any time, the last 24 hours, the last 7 days, or the last 30 days. Results can also be narrowed by category and role type." },
+            { question: "How do I edit, renew or pause a job I have posted?", answer: "From the employer dashboard, any live listing can be edited, renewed or paused in a single click, so a role comes down as soon as it is filled and goes back up if the hire falls through." },
+            { question: "How much does it cost to post a job?", answer: "TopCareerLive does not currently publish pricing for job postings. Email support@cinuteinfomedia.com and we will put you in touch with the right person." },
+        ],
+    },
 ];
 
 export function getProductSupportBySlug(slug: string): ProductSupport | undefined {

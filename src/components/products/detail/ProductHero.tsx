@@ -62,7 +62,10 @@ export default function ProductHero({ product }: { product: Product }) {
                         <nav className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-sm" style={{ color: "var(--secondary-text)" }}>
                             <Link href="/" className="hover:underline">Home</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <Link href="/products" className="hover:underline">Products</Link>
+                            {/* Not a link: there is no /products hub. Products are
+                                reached through the navbar dropdown, so this crumb
+                                names the section without pointing at a 404. */}
+                            <span>Products</span>
                             <ChevronRight className="w-4 h-4" />
                             <span style={{ color: textColor }}>{product.name}</span>
                         </nav>

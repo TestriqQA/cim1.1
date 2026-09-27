@@ -51,8 +51,7 @@ export async function generateMetadata({
             product.tagline,
             ...product.techStack.slice(0, 5),
             "Cinute InfoMedia",
-            "AI tools",
-            "digital products",
+                        "digital products",
         ],
         alternates: {
             canonical: url,
@@ -114,8 +113,10 @@ export default async function ProductPage({
 
         generateBreadcrumbSchema(
             [
+                // No "Products" crumb: there is no /products hub — products are
+                // reached through the navbar dropdown — so naming it here would
+                // declare a breadcrumb parent that 404s.
                 { name: "Home", url: "/" },
-                { name: "Products", url: "/products" },
                 { name: product.name, url: `/products/${product.slug}` },
             ],
             `${siteUrl}/products/${product.slug}/#breadcrumb`
@@ -163,7 +164,10 @@ export default async function ProductPage({
         generateNavigationSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Products", url: "/products" },
+            // "Products" is intentionally absent: the navbar shows it as a
+            // dropdown with no landing page of its own, and every entry here
+            // must be a URL that actually resolves. Keep this list identical
+            // across every page that emits the #navigation node.
             { name: "Blog", url: "/blog" },
             { name: "About", url: "/about" },
             { name: "Careers", url: "/careers" },

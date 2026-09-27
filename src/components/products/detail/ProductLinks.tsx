@@ -39,11 +39,13 @@ export default function ProductLinks({ product }: { product: Product }) {
                                 Support
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                             </Link>
-                            <Link href={product.privacyUrl} className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: "var(--border-color)", color: "var(--foreground)", backgroundColor: "var(--card-bg)" }}>
-                                <FileText className="w-4 h-4" />
-                                Privacy Policy
-                                <ArrowUpRight className="w-3.5 h-3.5" />
-                            </Link>
+                            {product.privacyUrl && (
+                                <Link href={product.privacyUrl} className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: "var(--border-color)", color: "var(--foreground)", backgroundColor: "var(--card-bg)" }}>
+                                    <FileText className="w-4 h-4" />
+                                    Privacy Policy
+                                    <ArrowUpRight className="w-3.5 h-3.5" />
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

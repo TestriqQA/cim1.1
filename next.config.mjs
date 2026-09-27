@@ -30,8 +30,15 @@ const nextConfig = {
             'testriq-qa', 'cim-chatbot', 'cim-autoflow',
             'cim-analytics', 'cim-sitebuilder', 'cim-socialhub',
         ];
+        // NOTE: '/products' is deliberately NOT redirected. There is no products
+        // hub — the navbar dropdown is the way in — and with four products a
+        // permanent redirect to one of them was arbitrary and made it the
+        // declared breadcrumb parent of the other three. /products now 404s,
+        // which is correct for a URL nothing links to and the sitemap omits.
+        // The 308 that used to live here is browser-cached, so anyone who hit
+        // /products before this change keeps being redirected until their cache
+        // clears; that is expected and resolves itself.
         const productRedirects = [
-            { source: '/products', destination: productTarget, permanent: true },
             ...removedProductSlugs.flatMap((slug) => [
                 { source: `/products/${slug}`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/support`, destination: productTarget, permanent: true },

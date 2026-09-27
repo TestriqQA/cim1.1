@@ -421,10 +421,13 @@ export const clientProjects: ClientProject[] = [
         label: "Organic traffic growth",
         detail:
           "Sustained growth in organic sessions as the rebuilt catalogue began ranking for the course terms it was restructured to target.",
-        highlight: true,
       },
       {
         value: "Strong",
+        // Highlighted instead of the traffic metric above: Testriq already
+        // contributes "Strong / Organic traffic growth" to the hub strip, and
+        // two identical cells side by side read as a rendering fault.
+        highlight: true,
         label: "Search visibility growth",
         detail:
           "Broader coverage across course and category queries once internal competition between overlapping pages was resolved.",
@@ -436,6 +439,10 @@ export const clientProjects: ClientProject[] = [
           "The Next.js rebuild lifted load times and accessibility across devices, replacing limits that the previous WordPress setup had imposed on both.",
       },
     ],
+    // The three analytics tools are listed on these engagements at the
+    // client's explicit instruction. That satisfies the STACK policy above
+    // rather than breaking it: the rule is to publish only what we have
+    // been told to display, and we were told to display these.
     stack: ["Next.js", "Google Search Console", "Google Analytics", "SEMrush"],
     servicesDelivered: [
       { name: "Web Development", href: "/services/web-design-development" },
@@ -544,6 +551,10 @@ export const clientProjects: ClientProject[] = [
           "Service pages rewritten to match real search demand, broadening the range of queries the site appears for.",
       },
     ],
+    // The three analytics tools are listed on these engagements at the
+    // client's explicit instruction. That satisfies the STACK policy above
+    // rather than breaking it: the rule is to publish only what we have
+    // been told to display, and we were told to display these.
     stack: ["Google Search Console", "Google Analytics", "SEMrush"],
     servicesDelivered: [
       { name: "SEO Services", href: "/services/seo-services" },
@@ -650,6 +661,10 @@ export const clientProjects: ClientProject[] = [
           "A rising share of those impressions turned into clicks and then enquiries, rather than visibility that stopped at the results page.",
       },
     ],
+    // The three analytics tools are listed on these engagements at the
+    // client's explicit instruction. That satisfies the STACK policy above
+    // rather than breaking it: the rule is to publish only what we have
+    // been told to display, and we were told to display these.
     stack: ["Next.js", "Google Search Console", "Google Analytics", "SEMrush"],
     servicesDelivered: [
       { name: "Web Development", href: "/services/web-design-development" },

@@ -49,7 +49,19 @@ export default function HowItWorks({ product }: { product: Product }) {
                         Get up and running in minutes with our simple, streamlined process.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Columns follow the step count. The fixed `lg:grid-cols-4`
+                    left a visibly empty fourth cell for any product whose
+                    process has three steps, which reads as a missing step
+                    rather than a deliberate three-step flow. */}
+                <div
+                    className={`grid gap-6 ${
+                        product.process.length === 3
+                            ? "md:grid-cols-3"
+                            : product.process.length === 2
+                                ? "md:grid-cols-2"
+                                : "md:grid-cols-2 lg:grid-cols-4"
+                    }`}
+                >
                     {product.process.map((step, idx) => {
                         const isHovered = hoveredStep === idx;
                         return (

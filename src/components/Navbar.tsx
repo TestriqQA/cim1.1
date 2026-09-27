@@ -75,6 +75,18 @@ const products = [
     slug: "kruti-io",
     logo: "/images/kruti-io-logo.webp",
   },
+  {
+    title: "AssetMon",
+    description: "Multi-tenant IT asset management",
+    slug: "assetmon",
+    logo: "/images/assetmon-logo.webp",
+  },
+  {
+    title: "TopCareerLive",
+    description: "Job board for candidates & employers",
+    slug: "topcareerlive",
+    logo: "/images/topcareerlive-logo.webp",
+  },
 ];
 
 
@@ -431,8 +443,12 @@ export default function Navbar() {
 
                 {isProductsOpen && (
                   <div className="absolute left-0 mt-2 w-80 z-[300]">
+                    {/* Bounded and scrollable rather than `overflow-hidden`:
+                        the panel has no intrinsic height limit, so each extra
+                        product grew it further down the viewport with nothing
+                        to stop it clipping off the bottom of the screen. */}
                     <div
-                      className="rounded-2xl shadow-2xl border p-3 overflow-hidden"
+                      className="rounded-2xl shadow-2xl border p-3 max-h-[70vh] overflow-y-auto"
                       style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",

@@ -132,7 +132,9 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                 ? "max-w-xl"
                 : visible.length === 2
                   ? "md:grid-cols-2"
-                  : "md:grid-cols-2 lg:grid-cols-3"
+                  : visible.length === 4
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-2 lg:grid-cols-3"
             }`}
           >
             {visible.map((project) => {
