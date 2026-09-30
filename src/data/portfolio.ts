@@ -693,6 +693,121 @@ export const clientProjects: ClientProject[] = [
     seoDescription:
       "How a static Next.js rebuild took Empiric Business Media's page speed from 60 to 100, modernised the UI, improved accessibility, and grew impressions and leads with advanced SEO.",
   },
+
+  // ==========================================================================
+  // The Hobby Card Shop — custom WordPress theme, built from scratch.
+  //
+  // The point of this engagement was HANDOVER, not traffic: the client asked
+  // for a custom-themed WordPress store they could run themselves. So the
+  // outcomes here are capabilities rather than measurements, and they are
+  // stated that way.
+  //
+  // No `highlight` on any metric: the hub hero strip is headed "Selected
+  // outcomes" and shows measured results from across the portfolio. Nothing
+  // was measured on this engagement — no traffic, conversion or revenue figure
+  // was shared — so putting a capability in that strip beside four measured
+  // outcomes would misrepresent what it is. Add a highlight if and when the
+  // client shares a real figure.
+  //
+  // Deliberately not claimed: any sales, order, traffic or conversion number;
+  // the store's catalogue size; and the plugins visible in its markup, which
+  // the client did not name and which are theirs to disclose.
+  // ==========================================================================
+  {
+    id: "hobby-card-shop-wordpress-ecommerce",
+    slug: "hobby-card-shop-wordpress-ecommerce",
+    client: "The Hobby Card Shop",
+    industry: "Trading Card Collectibles",
+    category: "web-dev",
+    featured: true,
+    title: "A custom WordPress store the client runs without a developer",
+    summary:
+      "A trading card marketplace built from scratch on WordPress — a bespoke theme rather than an off-the-shelf template, fully responsive, and wired so the client adds, edits and removes products, categories and content themselves from the admin.",
+    year: "2026",
+    platforms: ["Web"],
+    deliverables: [
+      "Custom WordPress theme, built from scratch",
+      "WooCommerce storefront & checkout",
+      "Responsive UI design",
+      "Product & category architecture",
+      "Client-managed content and media",
+      "Admin training handover",
+    ],
+    liveUrl: "https://hobbycardshop.in",
+    media: [],
+    situation: [
+      "The Hobby Card Shop sells trading cards and collectibles — football, cricket, Pokémon and anime TCG, sealed boxes and packs, supplies and memorabilia — to collectors who care a great deal about how a card is presented.",
+      "The brief was specific: a WordPress store on a custom theme, not a marketplace template dressed up with a plugin. And it had to be a store they could actually run. A catalogue like this changes constantly — new drops, sold singles, shifting categories — and every change going through a developer would have made the shop slower than the hobby it serves.",
+    ],
+    task:
+      "Design and build a bespoke WordPress theme for the store, make it work properly on every screen, and hand over a site where the client controls the catalogue and the content themselves.",
+    action: [
+      {
+        title: "Designed the storefront from scratch",
+        description:
+          "A bespoke theme rather than a purchased template, designed around how collectors actually browse — by sport, by set, by rarity — so the layout serves the catalogue instead of the catalogue being forced into a layout.",
+      },
+      {
+        title: "Built the theme to match the design",
+        description:
+          "The theme was coded to the design rather than assembled in a page builder, which keeps the markup clean and the storefront quick, and leaves nothing that has to be fought with later.",
+      },
+      {
+        title: "Made it responsive across devices",
+        description:
+          "Storefront, category pages, product pages and checkout all hold their layout from a phone to a desktop, which matters for a catalogue browsed as much on the move as at a desk.",
+      },
+      {
+        title: "Wired up the commerce side",
+        description:
+          "Products, variants, categories, cart and checkout built out on WooCommerce, with the category structure shaped around how the shop groups its stock rather than the default taxonomy.",
+      },
+      {
+        title: "Put the client in control of the catalogue",
+        description:
+          "Everything the shop changes day to day — products, prices, images, categories, page content — is editable from the WordPress admin. Adding a drop or retiring a sold card is an admin task, not a support ticket.",
+      },
+      {
+        title: "Handed over with training",
+        description:
+          "The client was walked through managing the store themselves, so the handover ended with them running it rather than with a dependency on whoever built it.",
+      },
+    ],
+    // Capabilities, stated as such. No measurement was shared for this
+    // engagement, and none is invented — see the note above.
+    metrics: [
+      {
+        value: "Self-serve",
+        label: "Store management",
+        detail:
+          "Products, categories, prices, images and page content are all managed by the client from the WordPress admin, so routine changes no longer wait on a developer.",
+      },
+      {
+        value: "Custom",
+        label: "Theme, built from scratch",
+        detail:
+          "No off-the-shelf template and no page builder — the theme was designed and coded for this store, so the storefront matches the brief rather than the nearest available layout.",
+      },
+      {
+        value: "Responsive",
+        label: "Across every screen",
+        detail:
+          "Storefront, catalogue, product pages and checkout hold their layout from phone to desktop.",
+      },
+    ],
+    stack: ["WordPress", "WooCommerce", "Custom theme"],
+    servicesDelivered: [
+      { name: "Web Development", href: "/services/web-design-development" },
+      { name: "WordPress Development", href: "/services/web-design-development/wordpress-development-services" },
+      { name: "eCommerce Development", href: "/services/web-design-development/ecommerce-development-company" },
+    ],
+    // THCS's mark is gold on black, drawn for a dark ground.
+    logoGround: "dark",
+    logo: "/images/logos/hobby-card-shop-logo.webp",
+    seoTitle: "The Hobby Card Shop Case Study — Custom WordPress eCommerce | Cinute InfoMedia",
+    seoDescription:
+      "How a trading card store got a custom WordPress theme built from scratch, a responsive WooCommerce storefront, and full control of its own catalogue from the admin.",
+  },
 ];
 
 // ----------------------------------------------------------------------------
