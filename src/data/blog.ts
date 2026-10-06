@@ -19,7 +19,7 @@ export interface BaseContentBlock {
 
 export interface TextBlock extends BaseContentBlock {
   type: 'text';
-  variant: 'h1' | 'h2' | 'h3' | 'paragraph';
+  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'paragraph';
   content: string;
 }
 
