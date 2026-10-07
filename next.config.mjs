@@ -30,8 +30,15 @@ const nextConfig = {
             'testriq-qa', 'cim-chatbot', 'cim-autoflow',
             'cim-analytics', 'cim-sitebuilder', 'cim-socialhub',
         ];
+        // NOTE: '/products' is deliberately NOT redirected. There is no products
+        // hub — the navbar dropdown is the way in — and with four products a
+        // permanent redirect to one of them was arbitrary and made it the
+        // declared breadcrumb parent of the other three. /products now 404s,
+        // which is correct for a URL nothing links to and the sitemap omits.
+        // The 308 that used to live here is browser-cached, so anyone who hit
+        // /products before this change keeps being redirected until their cache
+        // clears; that is expected and resolves itself.
         const productRedirects = [
-            { source: '/products', destination: productTarget, permanent: true },
             ...removedProductSlugs.flatMap((slug) => [
                 { source: `/products/${slug}`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/support`, destination: productTarget, permanent: true },
@@ -46,13 +53,21 @@ const nextConfig = {
         // Exact-match sources, and /portfolio is not itself a redirect source,
         // so none of these can match its own destination — see the case-loop
         // warning below.
-        const removedProjectSlugs = [
-            'cdpl-performance-marketing', 'healthcare-plus-seo', 'ved-solutions-lead-gen',
-            'maple-ai-automation', 'cloudscale-nextjs-platform',
-        ];
-        const portfolioRedirects = removedProjectSlugs.map((slug) => ({
+        // Two of the removed slugs now have a REAL successor rather than a
+        // generic parent: the old CDPL entry covered Cinute Digital (CDPL is
+        // Cinute Digital Pvt. Ltd.), and the old Ved Solutions entry covered
+        // the same client we have since written up properly. Those land on the
+        // matching case study; the three with no successor land on the hub.
+        const portfolioSuccessors = {
+            'cdpl-performance-marketing': '/portfolio/cinute-digital-nextjs-rebuild-seo',
+            'ved-solutions-lead-gen': '/portfolio/ved-solutions-seo-lead-growth',
+            'healthcare-plus-seo': '/portfolio',
+            'maple-ai-automation': '/portfolio',
+            'cloudscale-nextjs-platform': '/portfolio',
+        };
+        const portfolioRedirects = Object.entries(portfolioSuccessors).map(([slug, destination]) => ({
             source: `/portfolio/${slug}`,
-            destination: '/portfolio',
+            destination,
             permanent: true,
         }));
         return [

@@ -17,11 +17,12 @@ const pagePath = "/portfolio";
 
 export const metadata = getPageMetadata({
     title: "Portfolio – Web Development, SEO & Digital Marketing Case Studies | Cinute InfoMedia",
-    // Describes what is ACTUALLY on the page. The previous copy advertised four
-    // service areas — app and AI builds, performance marketing — that no longer
-    // have a case study behind them.
+    // Describes what is ACTUALLY on the page. Keep it in step with the entries
+    // in data/portfolio.ts: it named only Testriq while the portfolio held one
+    // case study, and it must not drift back into advertising service areas no
+    // engagement here covers.
     description:
-        "Client case studies from Cinute InfoMedia, written up as situation, task, action and measured result — including the Testriq QA Lab rebuild from WordPress to Next.js and the SEO programme behind it.",
+        "Client case studies from Cinute InfoMedia, written up as situation, task, action and measured result — Next.js rebuilds, advanced SEO programmes and paid marketing for Testriq QA Lab, Cinute Digital, Ved Solutions and Empiric Business Media.",
     url: pagePath,
     keywords: [
         "portfolio",
@@ -45,11 +46,11 @@ export default function PortfolioPage() {
         "@type": "ItemList",
         "@id": listId,
         name: "Cinute InfoMedia client case studies",
-        // Machine-readable, so it must match `numberOfItems` and the rendered
-        // list. A description naming four service areas beside numberOfItems: 1
+        // Machine-readable, so it must stay true to `numberOfItems` and the
+        // rendered list — naming service areas the list does not actually cover
         // is a contradiction inside a single JSON-LD node.
         description:
-            "Client engagements written up in full, covering web development and organic search.",
+            "Client engagements written up in full, covering web development, organic search and performance marketing.",
         numberOfItems: clientProjects.length,
         itemListElement: clientProjects.map((project, index) => ({
             "@type": "ListItem",
@@ -88,7 +89,10 @@ export default function PortfolioPage() {
             { name: "Our Team", url: "/our-team" },
             { name: "Services", url: "/services" },
             { name: "Portfolio", url: pagePath },
-            { name: "Products", url: "/products/chimegenius-ai-pro" },
+            // "Products" is intentionally absent: the navbar shows it as a
+            // dropdown with no landing page of its own, and every entry here
+            // must be a URL that actually resolves. Keep this list identical
+            // across every page that emits the #navigation node.
             { name: "Blog", url: "/blog" },
             { name: "About", url: "/about" },
             { name: "Careers", url: "/careers" },

@@ -113,7 +113,10 @@ export default function ProjectFacts({ project }: { project: ClientProject }) {
         ))}
       </ul>
 
-      {/* Stack */}
+      {/* Stack — guarded: an engagement may name no tooling at all, and an
+          empty list under a live heading reads as a failed render. */}
+      {project.stack.length > 0 && (
+        <>
       <h3
         className="mt-8 text-xs font-bold uppercase tracking-wider"
         style={{ color: "var(--secondary-text)" }}
@@ -131,6 +134,8 @@ export default function ProjectFacts({ project }: { project: ClientProject }) {
           </li>
         ))}
       </ul>
+        </>
+      )}
 
       {/* Jump nav — hidden below lg, where the sidebar stacks above the
           narrative and the links would just repeat what follows. */}

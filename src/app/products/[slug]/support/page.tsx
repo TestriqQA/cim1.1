@@ -93,8 +93,10 @@ export default async function ProductSupportPage({
 
         generateBreadcrumbSchema(
             [
+                // No "Products" crumb: there is no /products hub — products are
+                // reached through the navbar dropdown — so naming it here would
+                // declare a breadcrumb parent that 404s.
                 { name: "Home", url: "/" },
-                { name: "Products", url: "/products" },
                 { name: support.productName, url: `/products/${slug}` },
                 { name: "Support", url: `/products/${slug}/support` },
             ],

@@ -217,7 +217,10 @@ export default async function PortfolioProjectPage({
             { name: "Our Team", url: "/our-team" },
             { name: "Services", url: "/services" },
             { name: "Portfolio", url: "/portfolio" },
-            { name: "Products", url: "/products/chimegenius-ai-pro" },
+            // "Products" is intentionally absent: the navbar shows it as a
+            // dropdown with no landing page of its own, and every entry here
+            // must be a URL that actually resolves. Keep this list identical
+            // across every page that emits the #navigation node.
             { name: "Blog", url: "/blog" },
             { name: "About", url: "/about" },
             { name: "Careers", url: "/careers" },

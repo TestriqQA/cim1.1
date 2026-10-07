@@ -42,6 +42,10 @@ function serializePortableTextBlock(block: any): string {
                     text = `<em>${text}</em>`;
                 } else if (mark === 'code') {
                     text = `<code>${text}</code>`;
+                } else if (mark === 'underline') {
+                    text = `<u>${text}</u>`;
+                } else if (mark === 'strike-through') {
+                    text = `<s>${text}</s>`;
                 }
             });
         }
@@ -132,7 +136,9 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
         // Handle List Items
         if (block._type === 'block' && block.listItem) {
             const listStyle = block.listItem === 'number' ? 'numbered' : 'bullet';
-            const content = block.children?.map((c: any) => c.text).join('');
+            // Serialize like any other block, so bold/italic/code/links an editor
+            // applied inside a bullet survive instead of being flattened to text.
+            const content = serializePortableTextBlock(block);
 
             if (currentListBlock && currentListBlock.style === listStyle) {
                 // Continue existing list
@@ -160,7 +166,7 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
 
             if (block._type === 'block') {
                 // Headings
-                if (block.style === 'h1' || block.style === 'h2' || block.style === 'h3') {
+                if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(block.style)) {
                     contentBlocks.push({
                         id: block._key,
                         type: 'text',

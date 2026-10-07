@@ -26,10 +26,14 @@ export default function PortfolioHero() {
   // links at one URL. Credit once, beneath the strip, and let the figures carry
   // the row. With several clients the per-cell credit is the whole point, so
   // that path is unchanged.
+  // One row, at most four figures. `getHighlightMetrics()` already orders
+  // quantified outcomes ahead of hedged ones, so the cut keeps the strongest
+  // proof rather than whatever happens to be first in the data.
+  const cells = highlights.slice(0, 4);
+
   const soleProject =
-    highlights.length > 0 &&
-    highlights.every((h) => h.project.slug === highlights[0].project.slug)
-      ? highlights[0].project
+    cells.length > 0 && cells.every((h) => h.project.slug === cells[0].project.slug)
+      ? cells[0].project
       : null;
 
   return (
@@ -115,7 +119,7 @@ export default function PortfolioHero() {
         {/* ------------------------------------------------------------------
             Measured outcomes, credited and linked.
         ------------------------------------------------------------------ */}
-        {highlights.length > 0 && (
+        {cells.length > 0 && (
           <div
             className="mt-14 border-t pt-10"
             style={{ borderColor: "var(--border-color)" }}
@@ -124,11 +128,25 @@ export default function PortfolioHero() {
               Selected outcomes
             </h2>
 
+            {/* Column count follows the number of outcomes, so the row always
+                fills. The fixed `lg:grid-cols-3` left an orphan cell under a
+                full-width hairline at any count that was not a multiple of
+                three — and the count is the number of case studies carrying a
+                highlighted result, which changes as work is added. Capped at
+                four: beyond that the figures get too narrow to read. */}
             <ul
               aria-labelledby="outcomes-heading"
-              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12"
+              className={`grid gap-8 lg:gap-12 ${
+                cells.length === 1
+                  ? ""
+                  : cells.length === 2
+                    ? "sm:grid-cols-2"
+                    : cells.length === 3
+                      ? "sm:grid-cols-2 lg:grid-cols-3"
+                      : "sm:grid-cols-2 lg:grid-cols-4"
+              }`}
             >
-              {highlights.map(({ metric, project }) => (
+              {cells.map(({ metric, project }) => (
                 <li
                   key={project.slug + metric.label}
                   // `relative` anchors the stretched link; the rule sits on the

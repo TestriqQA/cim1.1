@@ -266,6 +266,105 @@ export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
             },
         ],
     },
+    // ==========================================================================
+    // AssetMon — reproduced from the policy published at
+    // assetm.cinuteinfomedia.com/privacy (last updated May 2026).
+    //
+    // No `operator` override, so the page falls back to Cinute InfoMedia's own
+    // details. That is correct here and NOT an oversight: AssetMon runs on a
+    // cinuteinfomedia.com subdomain and names no other legal entity anywhere on
+    // its own site. Contrast the Kruti.io entry, which carries an operator
+    // block because it is a different company's product.
+    //
+    // Their own policy names sub-processors only generically ("our cloud hosting
+    // provider", "our transactional email provider"), and that restraint is kept
+    // — naming a specific vendor here would say more than the source does.
+    //
+    // TopCareerLive has NO entry in this file on purpose: topcareerlive.com
+    // publishes no privacy policy, terms or contact details at all. `privacyUrl`
+    // is optional on Product and ProductLinks hides the button, so no route is
+    // generated and nothing 404s. Add an entry only when the product publishes
+    // a real policy — this is not a document to draft on its behalf.
+    // ==========================================================================
+    {
+        slug: "assetmon",
+        productName: "AssetMon",
+        lastUpdated: "May 2026",
+        intro: "AssetMon is a multi-tenant IT asset management platform. This Privacy Policy explains what the platform collects, how it is used and stored, who it is shared with, and the choices available to you. It applies to everyone using the service, on the free Starter plan, on a trial, and on a paid subscription.",
+        sections: [
+            {
+                title: "1. Information We Collect",
+                content: [
+                    { subtitle: "Account Information", text: "When a workspace is created we collect the name and email address of the person creating it, the workspace name and its slug, and the details of any users subsequently invited. Passwords are stored hashed, never in readable form." },
+                    { subtitle: "Workspace Content", text: "The asset records, categories, locations, departments, service tickets, maintenance schedules, software licence records, purchase requests and orders, reservations, audit records and any photographs or files attached to them. This is your data; the platform holds it on your behalf." },
+                    { subtitle: "Technical Data", text: "Session and authentication tokens, server access logs including IP address, timestamp and user agent, and error logs used for diagnosis and service improvement." },
+                    { subtitle: "Billing Information", text: "Subscription plan, seat count, billing period and payment status. Card, UPI and bank details are handled by the payment processor and are not stored by AssetMon." },
+                ],
+            },
+            {
+                title: "2. How We Use Your Information",
+                content: [
+                    { subtitle: "", text: "To provide and operate the service; to authenticate users and enforce role-based access; to send transactional email such as invitations, alerts and billing notices; to diagnose faults and improve reliability; to process subscriptions; and to meet legal obligations. We do not use customer workspace data to train models." },
+                ],
+            },
+            {
+                title: "3. Tenant Isolation and Security",
+                content: [
+                    { subtitle: "Database-per-tenant isolation", text: "Each workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant identifier column, so one workspace's records are not reachable from another's queries." },
+                    { subtitle: "Encryption", text: "Data is encrypted in transit using TLS 1.2 or higher, and at rest using AES-256. Backups are encrypted with separate keys." },
+                    { subtitle: "Access controls", text: "Role-based access control within each workspace, security headers, rate limiting, magic-byte verification of uploaded files, and parameterised database access. API keys are tenant-scoped, hashed at rest, can be read-only or read-write, and support revocation and expiry. Two-factor authentication is available using TOTP." },
+                    { subtitle: "Audit logging", text: "Every asset event — creation, update, check-out, check-in, licence assignment and ticket activity — is written to an immutable log that can be exported." },
+                ],
+            },
+            {
+                title: "4. Cookies and Local Storage",
+                content: [
+                    { subtitle: "", text: "AssetMon sets first-party cookies only, and stores an access token in the browser's local storage to keep you signed in. It uses no advertising trackers, no social media pixels and no third-party analytics." },
+                ],
+            },
+            {
+                title: "5. Third-Party Services",
+                content: [
+                    { subtitle: "", text: "AssetMon relies on a small number of sub-processors to operate: a cloud hosting provider, a managed database provider, a transactional email provider, an error-tracking provider, and a payment processor for subscription billing. Each handles data only as needed to deliver its part of the service." },
+                ],
+            },
+            {
+                title: "6. Data Storage and Location",
+                content: [
+                    { subtitle: "", text: "Workspace data is stored in the European Union by default. Enterprise customers can request region pinning to the EU, India or the United States." },
+                ],
+            },
+            {
+                title: "7. Data Retention",
+                content: [
+                    { subtitle: "Active workspaces", text: "Workspace data is retained for as long as the workspace is active." },
+                    { subtitle: "After a trial", text: "A workspace pauses for 14 days at the end of a trial. Data remains exportable during that window." },
+                    { subtitle: "After cancellation", text: "Workspace data is deleted within 30 days of cancellation. Encrypted backups are retained for 30 days after that point and then removed." },
+                    { subtitle: "Audit logs", text: "Retained for 365 days." },
+                ],
+            },
+            {
+                title: "8. Your Rights",
+                content: [
+                    { subtitle: "Access and export", text: "Your data is exportable at any time while the workspace is live or paused, as CSV from the interface or through the REST API." },
+                    { subtitle: "Correction and deletion", text: "Records can be corrected in the interface, and a workspace can be closed from the dashboard. To request deletion of personal data held outside a workspace, contact us using the details below." },
+                    { subtitle: "No sale of data", text: "We do not sell personal data, and we do not share workspace content with third parties except the sub-processors described above." },
+                ],
+            },
+            {
+                title: "9. Data Processing Agreement",
+                content: [
+                    { subtitle: "", text: "A data processing agreement is signed with every paying customer. Contact us for the current version, or for an information-security review." },
+                ],
+            },
+            {
+                title: "10. Changes to This Policy",
+                content: [
+                    { subtitle: "", text: "This policy may be updated to reflect changes in the service, our sub-processors or the law. The \"Last updated\" date above changes when it does, and significant changes are notified by email or in-app notice." },
+                ],
+            },
+        ],
+    },
 ];
 
 export function getProductPrivacyBySlug(slug: string): ProductPrivacyPolicy | undefined {

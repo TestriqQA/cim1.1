@@ -121,6 +121,9 @@ export default defineType({
             name: 'publishedAt',
             title: 'Published at',
             type: 'datetime',
+            description: 'Shown as the post date and used to order posts, newest first.',
+            initialValue: () => new Date().toISOString(),
+            validation: (rule) => rule.required(),
         }),
         defineField({
             name: 'readTime',

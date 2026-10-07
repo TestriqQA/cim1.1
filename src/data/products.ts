@@ -46,7 +46,11 @@ export interface Product {
   faqs: ProductFAQ[];
   stats: { label: string; value: string }[];
   supportUrl: string;
-  privacyUrl: string;
+  // Optional: a product whose operator has not published a privacy policy links
+  // to no policy at all rather than to a page we invented for them. A privacy
+  // policy is a binding statement about data handling — it is not ours to write
+  // on a product's behalf. ProductLinks hides the button when this is absent.
+  privacyUrl?: string;
   demoVideoUrl?: string; // Optional URL for product video demo
   extensionUrl?: string; // Optional Chrome Web Store / Edge Add-ons URL for browser-extension products
   // Canonical home of a product that lives on its own domain. When set, the
@@ -122,14 +126,14 @@ export const products: Product[] = [
       "Join thousands of creators, brands, and professionals using ChimeGenius AI Pro to save time and grow their social media presence with AI-powered comments and replies.",
     closingCtaLabel: "Get Started Free",
 
-    icon: "MessageCircle",
+    icon: "MessageSquare",
     color: "bg-gradient-to-br from-[#FF6B35] to-[#F72585]",
     accentColor: "#F72585",
     features: [
       { icon: "Sparkles", title: "AI-Powered Comment Generation", description: "Analyzes post context — text, images, hashtags, and sentiment — to generate relevant, natural-sounding comments and replies in one click." },
-      { icon: "Palette", title: "Custom Tone AI Comment Styles", description: "Choose Bold, Professional, Funny, Supportive, Witty, Casual, or Thought-Provoking tones, or create your own custom tone preset for consistent brand voice." },
-      { icon: "MousePointerClick", title: "One-Click AI Comment Toolbar", description: "Click any comment box on a supported platform and the ChimeGenius AI toolbar appears automatically — no tab-switching required." },
-      { icon: "PenLine", title: "Editable AI-Generated Replies", description: "Every AI comment is fully editable. Refine the suggestion, add a personal touch, or rewrite it entirely before posting." },
+      { icon: "Wand2", title: "Custom Tone AI Comment Styles", description: "Choose Bold, Professional, Funny, Supportive, Witty, Casual, or Thought-Provoking tones, or create your own custom tone preset for consistent brand voice." },
+      { icon: "MousePointer2", title: "One-Click AI Comment Toolbar", description: "Click any comment box on a supported platform and the ChimeGenius AI toolbar appears automatically — no tab-switching required." },
+      { icon: "FileText", title: "Editable AI-Generated Replies", description: "Every AI comment is fully editable. Refine the suggestion, add a personal touch, or rewrite it entirely before posting." },
       { icon: "Globe", title: "Multi-Platform Comment Generator", description: "Works across LinkedIn, Instagram, Facebook, X (Twitter), YouTube, Reddit, and more — one AI tool for all your social engagement." },
       { icon: "Zap", title: "Instant AI Reply Generation", description: "Built on advanced LLMs with sub-second response times — generate, review, and post faster than typing manually." },
     ],
@@ -300,6 +304,245 @@ export const products: Product[] = [
         url: "https://kruti.io/#pricing",
       },
     ],
+  },
+
+  // ==========================================================================
+  // AssetMon — multi-tenant IT asset management, at assetm.cinuteinfomedia.com.
+  //
+  // Everything below comes from the product's own pages. Deliberately NOT
+  // carried across, each of which would be a false or unsupported claim here:
+  //
+  //   - The "4.8 / 5, 127 reviews" aggregateRating in their homepage JSON-LD.
+  //     No review is published anywhere on the site, and republishing a rating
+  //     with nothing behind it is the kind of thing Search Console penalises.
+  //   - The homepage dashboard and terminal mockups (1,284 assets, $284K book
+  //     value, tenants "acme"/"beta"/"globex") and the ROI calculator's default
+  //     output. All illustrative; the ROI page says so itself.
+  //   - The Northwind testimonial, which is attributed to a company that does
+  //     not exist.
+  //   - The five @assetmon social accounts, all of which 404.
+  //   - The support addresses on assetmon.app: that domain does not resolve, so
+  //     mail to it cannot be delivered. Support routes to CIM instead — see the
+  //     productSupport entry.
+  //
+  // PRICING: the canonical /pricing page quotes INR (₹0 Starter, ₹699 Business,
+  // Enterprise custom). A separate $8/user/month figure appears on the two
+  // /compare pages and implicitly in the ROI calculator. Only the INR prices
+  // are published here, because those are the ones the pricing page itself
+  // states; the two are NOT converted into one another.
+  //
+  // TRIAL WORDING: the homepage says data is "exportable any time, even after",
+  // which their own Terms contradict ("We delete workspace data within 30 days
+  // of cancellation"). The conservative, Terms-consistent version is used.
+  // ==========================================================================
+  {
+    id: "assetmon",
+    name: "AssetMon",
+    slug: "assetmon",
+    tagline: "Multi-Tenant IT Asset Management",
+    description:
+      "AssetMon is a browser-based IT asset management platform: hardware inventory, service tickets, preventive maintenance, software licences, procurement and depreciation in one workspace, with every tenant in its own isolated database.",
+    longDescription:
+      "AssetMon tracks everything an IT or operations team is responsible for — hardware, software licences, tickets, maintenance schedules, purchase orders and depreciation — in a single browser-based workspace. Each customer workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column, so one workspace's data cannot be read from another. Modules switch on and off as a team needs them, and everything is reachable through a documented REST API with signed webhooks.",
+
+    // --- SEO / page copy ----------------------------------------------------
+    seoTitle: "AssetMon — Multi-Tenant IT Asset Management Software",
+    seoDescription:
+      "Track hardware, software licences, tickets, maintenance, procurement and depreciation in one workspace. Database-per-tenant isolation, open REST API, free Starter plan and a 30-day trial.",
+    heroHeadline: "IT Asset Management With Real Tenant Isolation",
+    heroSubheadline:
+      "AssetMon — hardware, licences, tickets, maintenance, procurement and depreciation in a single workspace",
+    heroBody: [
+      "AssetMon replaces the asset spreadsheet with a system that knows what you own, who has it, what it cost, what it is worth now, and what is due for maintenance next.",
+      "Every workspace runs in its own PostgreSQL database rather than sharing tables behind a tenant column, so a missed filter cannot leak one customer's data into another's. Assets carry QR labels you print from the browser and audit from any phone, and every event is captured in an immutable, exportable log.",
+    ],
+    ctaPrimaryLabel: "Start your 30-day free trial",
+    ctaSecondaryLabel: "Talk to us about AssetMon",
+    featuresHeading: "What AssetMon Does",
+    featuresIntro:
+      "One workspace for the whole asset lifecycle — from purchase order to disposal — with each module switched on only if you need it.",
+    howItWorksHeading: "How AssetMon Works",
+    faqHeading: "AssetMon FAQs",
+    closingCtaHeading: "See AssetMon in Action",
+    closingCtaBody:
+      "Start on the free Starter plan — up to 5 users and 50 assets, no card required — or take a 30-day trial of everything in Business. Paid plans are ₹699 per user per month, billed through Razorpay, with 20% off annual billing.",
+    closingCtaLabel: "Start free",
+
+    icon: "Monitor",
+    color: "bg-gradient-to-br from-[#008ac1] to-[#00b5ca]",
+    accentColor: "#008ac1",
+    features: [
+      { icon: "LayoutDashboard", title: "A Living Inventory", description: "Custom fields per category, photos, QR-coded labels and an immutable audit trail, with full CSV import and export. The spreadsheet retires." },
+      { icon: "Inbox", title: "Service Tickets", description: "Raise a ticket and the asset flips to In Repair on its own. Priority-routed, vendor-aware, and tied to the asset's own history." },
+      { icon: "CalendarDays", title: "Preventive Maintenance", description: "Recurring schedules that bump their own next due date, so servicing is something the system remembers rather than someone's calendar." },
+      { icon: "TrendingUp", title: "Depreciation Engine", description: "Straight-line and double-declining methods, a fleet-level report and CSV export, so finance and IT work from the same numbers." },
+      { icon: "Shield", title: "Software & Licence Compliance", description: "Seats used against seats owned, with expiry alerts and audit-ready records — before a vendor audit rather than during one." },
+      { icon: "ShoppingCart", title: "Procurement, End to End", description: "Purchase request to purchase order to receipt, creating the asset record automatically the moment a delivery is booked in." },
+    ],
+    // Only technologies AssetMon's own pages name.
+    techStack: ["PostgreSQL", "Prisma", "REST API", "OpenAPI", "SAML 2.0", "SCIM 2.0"],
+    process: [
+      { step: 1, title: "Sign Up", description: "Your dedicated database is provisioned in seconds, with sensible default asset categories already seeded." },
+      { step: 2, title: "Import or Add Assets", description: "Bring a CSV across with auto-mapping for category, location and department, or add assets by hand. QR labels print from a normal printer." },
+      { step: 3, title: "Switch On the Modules You Need", description: "Tickets, maintenance, procurement, depreciation, reservations and audits each toggle on or off in two clicks, and the UI and API stay in sync." },
+      { step: 4, title: "Run Your Operation", description: "Scan to audit from any phone, watch discrepancies surface live, and pull any of it out again through the REST API or a CSV export." },
+    ],
+    // These answers publish as FAQPage structured data. Where AssetMon's own
+    // homepage and pricing page answer the same question differently, the more
+    // conservative version is used — and where the homepage contradicts the
+    // Terms, the Terms win.
+    faqs: [
+      { question: "How long does setup take?", answer: "About five minutes. You sign up, your tenant database is provisioned, default asset categories are seeded, and you can start adding assets straight away — or import a CSV from your existing spreadsheet in one step." },
+      { question: "Can I import my existing inventory?", answer: "Yes. AssetMon imports CSV files with auto-mapping for category, location and department by name, so an existing asset spreadsheet comes across without being rebuilt by hand." },
+      { question: "Do I need to install anything?", answer: "No. AssetMon runs entirely in the browser. Asset QR labels print from a regular printer and scan from any phone camera, so there is no app to roll out." },
+      { question: "How is my data kept separate from other customers?", answer: "Every workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column. Data is encrypted with TLS 1.2 or higher in transit and AES-256 at rest, and backups are encrypted with separate keys." },
+      { question: "Is there a free plan, and how does the trial work?", answer: "There is a free Starter plan — up to 5 users and 50 assets, with core asset tracking, CSV import and export, and email support. Separately, a 30-day trial opens up everything in the Business plan with no card required. Service tickets, maintenance, procurement, the depreciation engine, the API and SSO are Business features rather than Starter ones." },
+      { question: "What happens at the end of the trial?", answer: "Your workspace pauses for 14 days while you decide. Choose a plan and pick up where you left off, or export your data and close the workspace. Exports are available while the workspace is live or paused; after cancellation, workspace data is deleted within 30 days." },
+      { question: "How does billing work, and can I cancel anytime?", answer: "Business is ₹699 per user per month, billed through Razorpay, which accepts UPI, netbanking, major debit and credit cards, wallets and e-mandate. Annual billing takes 20% off, and registered nonprofits and student or academic projects get 50%. You can cancel from the dashboard in two clicks and keep access to the end of the billing period." },
+    ],
+    // Product facts, not metrics. AssetMon's own site advertises a 4.8 rating
+    // with 127 reviews and a dashboard full of sample figures; none of it has
+    // anything behind it, so none of it is repeated here.
+    stats: [
+      { label: "Free trial, no card", value: "30 days" },
+      { label: "Starter plan, forever", value: "₹0" },
+      { label: "Database per tenant", value: "1" },
+      { label: "To toggle a module", value: "2 clicks" },
+    ],
+    supportUrl: "/products/assetmon/support",
+    privacyUrl: "/products/assetmon/privacy-policy",
+    externalUrl: "https://assetm.cinuteinfomedia.com",
+    applicationCategory: "BusinessApplication",
+    // The INR prices from AssetMon's own /pricing page. A $8/user/month figure
+    // appears on the two /compare pages; it is not published here, and the two
+    // are not treated as conversions of each other. Enterprise is quoted on
+    // application, so it carries no Offer.
+    offers: [
+      {
+        price: "0",
+        priceCurrency: "INR",
+        description:
+          "Starter — free forever. Up to 5 users and 50 assets, with core asset tracking, CSV import and export, and email support.",
+        url: "https://assetm.cinuteinfomedia.com/pricing",
+      },
+      {
+        price: "699",
+        priceCurrency: "INR",
+        description:
+          "Business — ₹699 per user per month. Unlimited users and assets, service tickets, maintenance, procurement, depreciation, licence compliance, reservations, audits, API, webhooks and SSO. 20% off annual billing.",
+        url: "https://assetm.cinuteinfomedia.com/pricing",
+      },
+    ],
+  },
+
+  // ==========================================================================
+  // TopCareerLive — job board at topcareerlive.com.
+  //
+  // This entry is deliberately SPARSE, and it should stay that way until the
+  // product publishes more. What the site advertises but this page does not
+  // repeat, and why:
+  //
+  //   - The homepage "Trusted by world class companies" band showing Google,
+  //     Microsoft, Amazon, Netflix and Stripe logos. The site states no
+  //     customer, client or partner relationship with any of them. Reproducing
+  //     that association on cinuteinfomedia.com would be the single most
+  //     damaging claim on this page.
+  //   - Every advertised figure: "5M+ verified professionals", "50K+ active job
+  //     seekers", "15K+ careers launched", "1,200+ employer partners", "4.8
+  //     rating", "reduce time-to-hire by 40%", "14K+", "SINCE 2014". These are
+  //     hardcoded strings, several mutually inconsistent — "15K+" labels two
+  //     different metrics on one page, and "since 2014" sits under a 2026
+  //     copyright.
+  //   - "Seamless ATS integrations with Workday, Greenhouse & more", which
+  //     names two third-party products with nothing to support the claim.
+  //   - The site's own five FAQ answers, which are one identical block of
+  //     boilerplate that answers none of the five questions asked.
+  //
+  // NO `offers`: no price is published anywhere. /pricing 404s, the footer
+  // "Pricing Plans" link is a dead anchor, and the employers FAQ answers "how
+  // much does it cost" without naming a figure. An empty `offers` is correct —
+  // the JSON-LD then asserts no price at all.
+  //
+  // NO `privacyUrl`: the site publishes no privacy policy, terms or contact
+  // details — /privacy, /terms and /contact all 404. A privacy policy is a
+  // binding statement about data handling and is not ours to write on the
+  // product's behalf, so the Privacy button is simply absent until one exists.
+  // ==========================================================================
+  {
+    id: "topcareerlive",
+    name: "TopCareerLive",
+    slug: "topcareerlive",
+    tagline: "Job Board for Candidates and Employers",
+    description:
+      "TopCareerLive is a job board connecting candidates with verified employers: search and apply with filters for location, experience and freshness, or post roles and manage applicants through a hiring pipeline.",
+    longDescription:
+      "TopCareerLive is a two-sided job platform. Candidates build a profile through a guided four-step onboarding, search roles filtered by location, experience and how recently a job was posted, and apply directly. Employers create a company page, post roles, and filter, rank and track applicants through their own hiring stages, exporting candidate details and CVs as PDFs for offline review.",
+
+    // --- SEO / page copy ----------------------------------------------------
+    seoTitle: "TopCareerLive — Job Board for Candidates & Employers",
+    seoDescription:
+      "Search and apply for roles with filters for location, experience and freshness, or post jobs and manage applicants through a hiring pipeline with CV export.",
+    heroHeadline: "A Job Board Built Around the Hiring Pipeline",
+    heroSubheadline:
+      "TopCareerLive — candidates find roles that fit, employers manage applicants in one place",
+    heroBody: [
+      "TopCareerLive connects candidates with employers whose listings have been through a verification process, so the search results are roles that actually exist.",
+      "Candidates filter by location, experience level and how recently a role was posted, and can have alerts delivered by email or WhatsApp. Employers post roles from a company profile, then filter, rank and move applicants through their own hiring stages, exporting candidate details and CVs as PDFs when they need to review offline.",
+    ],
+    ctaPrimaryLabel: "Visit TopCareerLive",
+    ctaSecondaryLabel: "Talk to us about TopCareerLive",
+    featuresHeading: "What TopCareerLive Does",
+    featuresIntro:
+      "One platform for both sides of a hire — searching and applying on one, posting and shortlisting on the other.",
+    howItWorksHeading: "How Hiring Works on TopCareerLive",
+    faqHeading: "TopCareerLive FAQs",
+    closingCtaHeading: "See TopCareerLive in Action",
+    closingCtaBody:
+      "Create an account to search and apply, or set up a company profile and post your first role. Talk to us if you would like a walkthrough first.",
+    closingCtaLabel: "Visit TopCareerLive",
+
+    icon: "Workflow",
+    color: "bg-gradient-to-br from-[#6db75c] to-[#00b5ca]",
+    accentColor: "#6db75c",
+    features: [
+      { icon: "Sparkles", title: "Matching by Skills and Goals", description: "Candidates are connected to roles that fit their skills, experience and career goals rather than to everything that shares a job title." },
+      { icon: "UserCheck", title: "Verified Employers Only", description: "Every employer goes through a verification process before their listings appear, so candidates are not sorting real roles from fake ones." },
+      { icon: "Search", title: "Search That Narrows Properly", description: "Filter by location, experience level from fresher upwards, and freshness — last 24 hours, last 7 days, last 30 days — plus category and role type." },
+      { icon: "LayoutDashboard", title: "Job Management", description: "Full control over live listings. Edit, renew or pause a position in a single click from the employer dashboard." },
+      { icon: "Inbox", title: "Applicant Pipeline", description: "A central list of everyone who has applied, tracked through hiring stages you define, so nobody sits unreviewed." },
+      { icon: "FileText", title: "CV and Candidate Export", description: "Export candidate details and CVs as PDFs for offline review or to share with a hiring manager who does not use the platform." },
+    ],
+    // Only capabilities the site itself demonstrates or names.
+    techStack: ["Google Sign-In", "Email & WhatsApp alerts", "PDF CV export", "Applicant tracking"],
+    process: [
+      { step: 1, title: "Create Your Profile", description: "Employers build a company page that candidates can research. Candidates complete a guided four-step profile covering account, employment, education and preferences." },
+      { step: 2, title: "Post a Role or Search", description: "Employers write a detailed job description and publish it. Candidates search with filters for location, experience and how recently a role went live." },
+      { step: 3, title: "Review Applicants", description: "Filter, rank and move applicants through your own hiring stages from the review dashboard, exporting CVs as PDFs where a reviewer needs them offline." },
+    ],
+    // Written from what the platform verifiably does. The site's own FAQ
+    // answers are a single block of boilerplate repeated under all five
+    // questions, answering none of them, so none of it is reproduced.
+    faqs: [
+      { question: "How do candidates sign up?", answer: "Either with an email address and password, or with a Google account. Registration collects your name, email, mobile number and current location, and lets you upload a CV as a PDF, DOC or DOCX file." },
+      { question: "What can I filter job searches by?", answer: "Location, experience level from fresher through senior, and freshness — any time, the last 24 hours, the last 7 days or the last 30 days — alongside category and role type." },
+      { question: "How do I hear about new roles?", answer: "Job alerts can be delivered by email and on WhatsApp, so a matching role reaches you without you having to check the board." },
+      { question: "What does an employer get?", answer: "A company profile page, job posting with full descriptions, and a review dashboard where applicants can be filtered, ranked and moved through your own hiring stages. Candidate details and CVs export as PDFs." },
+      { question: "Can I edit or pause a live job posting?", answer: "Yes. Listings can be edited, renewed or paused in a single click from the employer dashboard, so a role can come down the moment it is filled." },
+      { question: "How much does it cost to post a job?", answer: "TopCareerLive does not currently publish pricing for job postings. Get in touch with Cinute InfoMedia and we will put you in contact with the right person." },
+    ],
+    // Capabilities, not metrics. TopCareerLive advertises a number of figures —
+    // active seekers, placements, a satisfaction rating, a time-to-hire
+    // reduction — that are hardcoded into the markup and in places contradict
+    // each other, so none of them appears here.
+    stats: [
+      { label: "Hiring process", value: "3 steps" },
+      { label: "Guided candidate onboarding", value: "4 steps" },
+      { label: "Alerts: email & WhatsApp", value: "2 channels" },
+      { label: "CV export format", value: "PDF" },
+    ],
+    supportUrl: "/products/topcareerlive/support",
+    externalUrl: "https://topcareerlive.com",
+    applicationCategory: "WebApplication",
   },
 ];
 
