@@ -323,19 +323,6 @@ export default function SolutionTypes() {
                                             </div>
                                         </div>
 
-                                        {/* CTA Button */}
-                                        {/* <button
-                                            className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${isHovered ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isHovered ? solution.accentColor : `${solution.accentColor}15`,
-                                                color: isHovered ? "white" : solution.accentColor,
-                                                border: `1px solid ${solution.accentColor}30`,
-                                            }}
-                                        >
-                                            <span>Learn More</span>
-                                            <ArrowRight className="w-4 h-4" />
-                                        </button> */}
                                     </div>
 
                                     {/* Bottom Shine Effect */}

@@ -95,12 +95,6 @@ export default function CTA() {
                                 </Link>
                             </div>
 
-                            {/* <Link
-                                    href="/portfolio"
-                                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold transition-all hover:bg-white/10"
-                                >
-                                    View Our Work
-                                </Link> */}
                         </div>
 
                         {/* Right Stats */}

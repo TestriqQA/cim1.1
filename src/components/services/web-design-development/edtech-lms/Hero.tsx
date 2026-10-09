@@ -178,14 +178,6 @@ export default function Hero() {
                                 Start Your Project
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg border transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "var(--border-color)", color: "var(--foreground)" }}
-                            >
-                                <Play className="w-5 h-5" />
-                                See Demo
-                            </Link> */}
                         </div>
                     </div>
 

@@ -162,17 +162,6 @@ export default function Hero() {
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
 
-                            {/* <Link
-                                href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Case Studies
-                            </Link> */}
                         </div>
 
                         {/* Stats */}

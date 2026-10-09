@@ -6,7 +6,7 @@ import {
     CreditCard, FileText, Stethoscope, Clock, Users,
     Clipboard, DollarSign, UserCheck, Package, AlertCircle,
     BookOpen, TrendingUp, BarChart3, Target, Shield,
-    Sparkles, Plus, Zap, Eye
+    Sparkles, Plus, Zap
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -457,24 +457,6 @@ export default function SolutionTypes() {
                                             })}
                                         </div>
 
-                                        {/* Learn more link */}
-                                        <div
-                                            className="mt-6 pt-4 border-t transition-all duration-300"
-                                            style={{
-                                                borderColor: isHovered ? `${solution.color}30` : "transparent",
-                                                opacity: isHovered ? 1 : 0,
-                                                transform: isHovered ? "translateY(0)" : "translateY(-10px)",
-                                            }}
-                                        >
-                                            <button
-                                                className="flex items-center gap-2 text-sm font-semibold group/btn transition-all duration-300 hover:gap-3"
-                                                style={{ color: solution.color }}
-                                            >
-                                                <Eye className="w-4 h-4" />
-                                                View Details
-                                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                                            </button>
-                                        </div>
                                     </div>
 
                                     {/* Animated bottom gradient bar */}

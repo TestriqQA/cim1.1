@@ -1,10 +1,10 @@
 import { client } from "./client";
 import { categoriesQuery, moreStoriesQuery } from "./queries";
 import { mapSanityPostToBlogPost, toListPost } from "./mapper";
-import { BlogPost } from "@/data/blog";
+import { BlogCategoryLink, BlogPost } from "@/data/blog";
 
 export async function getSidebarData(): Promise<{
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }> {
@@ -21,7 +21,9 @@ export async function getSidebarData(): Promise<{
     const tags = Array.from(new Set(popularPosts.flatMap((p: { tags: string[] }) => p.tags))) as string[];
 
     return {
-        categories: categories.map((c: any) => c.name as string),
+        // Name *and* slug: the sidebar links to the category, and the slug is
+        // editor-set, so it can't be derived from the name.
+        categories: categories.map((c: any) => ({ name: c.name as string, slug: c.slug as string })),
         popularPosts,
         tags
     };

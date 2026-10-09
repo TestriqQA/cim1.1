@@ -1,6 +1,5 @@
 "use client";
 
-import { getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 import Image from "next/image";
@@ -174,10 +173,10 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                             Expertise
                                         </h2>
                                         <div className="flex flex-wrap gap-2">
-                                            {Array.from(new Set(authorPosts.map((p) => p.category))).map((category) => (
+                                            {Array.from(new Map(authorPosts.map((p) => [p.categorySlug, p.category])).entries()).map(([categorySlug, category]) => (
                                                 <Link
-                                                    key={category}
-                                                    href={`/blog/category/${getCategorySlug(category)}`}
+                                                    key={categorySlug}
+                                                    href={`/blog/category/${categorySlug}`}
                                                     className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple-text)]"
                                                     style={{
                                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",

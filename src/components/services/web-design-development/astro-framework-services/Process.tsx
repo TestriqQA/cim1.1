@@ -167,7 +167,7 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className={`relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                className={`cursor-pointer relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                                     }`}
                                 onMouseEnter={() => {
                                     if (window.matchMedia("(hover: hover)").matches) {

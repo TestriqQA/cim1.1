@@ -91,13 +91,6 @@ export default function Hero() {
                                 </span>
                             </Link>
 
-                            {/* <button
-                                className="group px-6 py-3 md:px-8 md:py-4 text-sm md:text-base border rounded-full font-bold hover:border-color transition-all duration-300 flex items-center gap-2"
-                                style={{ borderColor: "var(--border-color)" }}
-                            >
-                                <Play className="w-5 h-5" />
-                                Watch Success Stories
-                            </button> */}
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
