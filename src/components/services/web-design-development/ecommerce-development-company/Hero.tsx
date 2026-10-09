@@ -233,17 +233,6 @@ export default function Hero() {
                                 Get Your Free Audit & Quote
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/portfolio"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                }}
-                            >
-                                View Our Portfolio
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 

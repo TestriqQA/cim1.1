@@ -112,6 +112,8 @@ export interface BlogPost {
   contentBlocks?: ContentBlock[]; // New modular content blocks (optional)
   author: Author;
   category: string;
+  /** The category's own slug from the CMS — the only reliable way to link to it. */
+  categorySlug: string;
   tags: string[];
   image: string;
   publishedAt: string;
@@ -128,6 +130,12 @@ export interface BlogPost {
     dateModified?: string;
     wordCount?: number;
   };
+}
+
+/** A category reduced to what a link needs: its label and its CMS slug. */
+export interface BlogCategoryLink {
+  name: string;
+  slug: string;
 }
 
 // Category Details Interface

@@ -1,4 +1,4 @@
-import { BlogPost, Author, ContentBlock } from '@/data/blog';
+import { BlogPost, Author, ContentBlock, getCategorySlug } from '@/data/blog';
 import { Job } from '@/types/careers';
 import { urlFor } from './image';
 
@@ -64,6 +64,10 @@ export function mapSanityPostToBlogPost(sanityPost: any): BlogPost {
         contentBlocks: mapSanityBlocksToContentBlocks(sanityPost.content),
         author: mapSanityAuthorToAuthor(sanityPost.author),
         category: sanityPost.category?.name || 'Uncategorized',
+        // Editors set category slugs by hand, so they can't be derived from the
+        // name ("AI & Automation" is ai-automation, but "Enterprise AI &
+        // Automation" is enterprise-ai-and-automation). Always use the stored one.
+        categorySlug: sanityPost.category?.slug?.current || getCategorySlug(sanityPost.category?.name || ''),
         tags: sanityPost.tags || [],
         image: sanityPost.mainImage ? postImageUrl(sanityPost.mainImage) : '',
         publishedAt: sanityPost.publishedAt,

@@ -254,17 +254,6 @@ export default function Hero() {
                                 Control Your Narrative
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/contact"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300 hover:bg-cyan-500/5"
-                                style={{
-                                    borderColor: "#06b6d4",
-                                    color: "#06b6d4",
-                                }}
-                            >
-                                See Our Work
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 

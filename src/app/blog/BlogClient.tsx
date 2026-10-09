@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useCallback, Suspense } from "react";
-import { BlogPost, getCategorySlug } from "@/data/blog";
+import { BlogCategoryLink, BlogPost, getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import SearchParamSync from "./SearchParamSync";
@@ -11,7 +11,7 @@ import Image from "next/image";
 
 interface BlogClientProps {
     initialPosts: BlogPost[];
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import BlogContentRenderer from "@/components/blog/BlogContentRenderer";
@@ -8,7 +7,7 @@ import { Calendar, Clock, Share2, List, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState, useEffect } from "react";
-import { BlogPost } from "@/data/blog";
+import { BlogCategoryLink, BlogPost } from "@/data/blog";
 
 // Type for table of contents items
 interface TocItem {
@@ -145,7 +144,7 @@ export default function BlogDetailClient({
 }: {
     post: BlogPost;
     relatedPosts: BlogPost[];
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }) {
@@ -208,7 +207,7 @@ export default function BlogDetailClient({
                         </Link>
                         <span>/</span>
                         <Link
-                            href={`/blog/category/${getCategorySlug(post.category)}`}
+                            href={`/blog/category/${post.categorySlug}`}
                             className="hover:text-[var(--brand-purple-text)] transition-colors"
                         >
                             {post.category}
@@ -223,7 +222,7 @@ export default function BlogDetailClient({
                             {/* Category & Date */}
                             <div className="flex flex-wrap items-center gap-3 mb-5">
                                 <Link
-                                    href={`/blog/category/${getCategorySlug(post.category)}`}
+                                    href={`/blog/category/${post.categorySlug}`}
                                     className="px-4 py-1.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
                                     style={{ backgroundColor: "var(--brand-purple-btn)" }}
                                 >

@@ -251,17 +251,6 @@ export default function Hero() {
                                 Start Your Project
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/portfolio"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300 hover:bg-violet-500/5"
-                                style={{
-                                    borderColor: "#a855f7",
-                                    color: "#a855f7",
-                                }}
-                            >
-                                View Case Studies
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 

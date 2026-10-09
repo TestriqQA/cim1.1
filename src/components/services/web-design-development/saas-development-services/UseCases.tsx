@@ -294,20 +294,6 @@ export default function UseCases() {
                                             </div>
                                         </div>
 
-                                        {/* Learn More Link */}
-                                        {/* <button
-                                            className={`mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 group/btn ${isActive ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isActive ? industry.bgColor : `${industry.bgColor}10`,
-                                                color: isActive ? "white" : industry.bgColor,
-                                                border: `1.5px solid ${industry.bgColor}30`,
-                                            }}
-                                        >
-                                            <span>View Case Studies</span>
-                                            <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? "translate-x-1 -translate-y-1" : ""
-                                                }`} />
-                                        </button> */}
                                     </div>
 
                                     {/* Corner Glow */}
@@ -395,17 +381,6 @@ export default function UseCases() {
                                     <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                                 </Link>
 
-                                {/* <button
-                                    className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        color: "#008ac1",
-                                        border: "2px solid var(--border-color)",
-                                    }}
-                                >
-                                    View Portfolio
-                                    <ArrowUpRight className="w-5 h-5" />
-                                </button> */}
                             </div>
                         </div>
 

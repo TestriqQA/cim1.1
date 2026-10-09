@@ -649,17 +649,6 @@ export default function GetInTouchClient() {
                                 >
                                     👉 Learn more about us here
                                 </a>
-                                <button
-                                    onClick={() => alert("Company Profile link would go here")}
-                                    className="block w-full p-4 border-2 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
-                                    style={{
-                                        borderColor: BRAND.primary,
-                                        color: BRAND_TEXT.primary,
-                                        background: `linear-gradient(90deg, ${BRAND.primary}08, ${BRAND.secondary}08)`,
-                                    }}
-                                >
-                                    📄 View Company Profile
-                                </button>
                             </div>
 
                             <div className="flex justify-center flex-col sm:flex-row gap-4">

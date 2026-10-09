@@ -13,7 +13,6 @@ export default function CTA() {
                     <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                         <Link href="/contact" style={{ padding: "14px 28px", borderRadius: 999, background: "#fff", color: "#006d97", fontWeight: 800, transition: "all 0.3s" }} className="hover:bg-gray-100">Start Your Free Digital Audit <ChevronRight className="w-4 h-4 inline-block ml-2" /></Link>
                         <Link href="/contact" style={{ padding: "14px 28px", borderRadius: 999, background: "transparent", border: "2px solid rgba(255,255,255,0.3)", color: "#fff", fontWeight: 700, transition: "all 0.3s" }} className="hover:bg-white hover:text-cyan-600">Request Proposal</Link>
-                        {/* <button style={{ padding: "14px 28px", borderRadius: 999, background: "transparent", border: "2px solid rgba(255,255,255,0.3)", color: "#fff", fontWeight: 700, transition: "all 0.3s" }} className="hover:bg-white hover:text-cyan-600">Get Free Audit</button> */}
                     </div>
                 </div>
             </div>

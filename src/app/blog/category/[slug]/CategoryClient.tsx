@@ -1,6 +1,6 @@
 "use client";
 
-import { CategoryDetails, BlogPost } from "@/data/blog";
+import { BlogCategoryLink, CategoryDetails, BlogPost } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import {
@@ -59,7 +59,7 @@ export default function CategoryClient({
     categoryName: string;
     categoryInfo: CategoryDetails;
     posts: BlogPost[];
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }) {

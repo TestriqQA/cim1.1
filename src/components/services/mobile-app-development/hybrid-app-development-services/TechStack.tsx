@@ -26,7 +26,7 @@ export default function TechStack() {
         ],
         frontend: [
             { name: "Angular", description: "TypeScript Framework", logo: "/images/techstack_logos/angularjs-logo.svg" },
-            { name: "React", description: <Link href="/services/nextjs-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors">UI Library</Link>, logo: "/images/techstack_logos/react-logo.svg" },
+            { name: "React", description: <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors">UI Library</Link>, logo: "/images/techstack_logos/react-logo.svg" },
             { name: "Vue.js", description: "Progressive Framework", logo: "/images/techstack_logos/vuejs-logo.svg" },
             { name: "TypeScript", description: "Type Safety", logo: "/images/techstack_logos/typescript-logo.svg" },
             { name: "Sass", description: "CSS Preprocessor", logo: "/images/techstack_logos/Sass-SCSS-logo.png" },

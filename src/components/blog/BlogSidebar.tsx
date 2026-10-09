@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { BlogPost, getCategorySlug } from "@/data/blog";
+import { BlogCategoryLink, BlogPost } from "@/data/blog";
 import { TrendingUp, Folder, Tag, ArrowRight } from "lucide-react";
 
 interface BlogSidebarProps {
   currentPostSlug?: string;
-  categories: string[];
+  categories: BlogCategoryLink[];
   popularPosts: BlogPost[];
   tags: string[];
 }
@@ -78,8 +78,8 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <Link
-              key={category}
-              href={`/blog/category/${getCategorySlug(category)}`}
+              key={category.slug}
+              href={`/blog/category/${category.slug}`}
               className="px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)]"
               style={{
                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
@@ -87,7 +87,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
                 borderColor: "var(--border-color)",
               }}
             >
-              {category}
+              {category.name}
             </Link>
           ))}
         </div>

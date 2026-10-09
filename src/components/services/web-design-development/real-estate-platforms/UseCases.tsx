@@ -308,23 +308,6 @@ export default function UseCases() {
                                             })}
                                         </div>
 
-                                        {/* Learn more button - commented out */}
-                                        {/* <div
-                                            className="mt-6 pt-4 border-t transition-all duration-300"
-                                            style={{
-                                                borderColor: isHovered ? `${useCase.color}30` : "transparent",
-                                                opacity: isHovered ? 1 : 0,
-                                                transform: isHovered ? "translateY(0)" : "translateY(-10px)",
-                                            }}
-                                        >
-                                            <button
-                                                className="flex items-center gap-2 text-sm font-semibold group/btn transition-all duration-300"
-                                                style={{ color: useCase.color }}
-                                            >
-                                                Learn More
-                                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                                            </button>
-                                        </div> */}
                                     </div>
 
                                     {/* Animated bottom bar */}

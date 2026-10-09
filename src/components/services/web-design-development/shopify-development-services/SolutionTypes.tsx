@@ -188,7 +188,7 @@ export default function SolutionTypes() {
                         return (
                             <div
                                 key={idx}
-                                className="group relative card-float"
+                                className="group relative card-float cursor-pointer"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}

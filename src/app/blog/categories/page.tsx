@@ -32,7 +32,7 @@ export default async function BlogCategoriesPage() {
 
   const posts = sanityPosts.map(mapSanityPostToBlogPost);
   const { popularPosts, tags } = await getSidebarData();
-  const sidebarCategories = categories.map((c: any) => c.name);
+  const sidebarCategories = categories.map((c: any) => ({ name: c.name as string, slug: c.slug as string }));
 
   // Unified @graph schema
   const categoriesSchema = generateGraphSchema(

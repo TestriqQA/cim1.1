@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import { CategoryDetails, BlogPost } from "@/data/blog";
+import { BlogCategoryLink, CategoryDetails, BlogPost } from "@/data/blog";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import {
     Code,
@@ -39,7 +39,7 @@ const textAccent = (c?: string) => (({"#6b00d7":"var(--accent-violet-text)","#00
 interface CategoriesContentProps {
     categories: CategoryDetails[];
     posts: BlogPost[];
-    sidebarCategories: string[];
+    sidebarCategories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }

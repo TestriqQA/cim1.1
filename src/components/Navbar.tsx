@@ -664,7 +664,7 @@ export default function Navbar() {
                           e.stopPropagation();
                           toggleTheme(mode.value);
                         }}
-                        className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
+                        className={`cursor-pointer w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
                           }`}
                         style={{
                           backgroundColor: isSelected ? "var(--hover-bg)" : "transparent",

@@ -68,7 +68,8 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
         type: "tag" as const,
         title: tag,
         subtitle: `Browse ${tag} articles`,
-        url: `/blog?tag=${encodeURIComponent(tag)}`,
+        // `search` is the param the blog index actually reads; `tag` was ignored.
+        url: `/blog?search=${encodeURIComponent(tag)}`,
       }));
     results.push(...matchingTags);
 
@@ -88,16 +89,17 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
       }));
     results.push(...matchingAuthors);
 
-    // Search categories
-    const categories = Array.from(new Set(posts.map((p) => p.category)));
+    // Search categories — keyed by the CMS slug, which is the only reliable
+    // way to build the URL (it cannot be derived from the display name).
+    const categories = Array.from(new Map(posts.map((p) => [p.categorySlug, p.category])).entries());
     const matchingCategories = categories
-      .filter((cat) => cat && cat.toLowerCase().includes(q))
+      .filter(([, cat]) => cat && cat.toLowerCase().includes(q))
       .slice(0, 2)
-      .map((cat) => ({
+      .map(([categorySlug, cat]) => ({
         type: "category" as const,
         title: cat,
         subtitle: `Explore ${cat} category`,
-        url: `/blog/category/${cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")}`,
+        url: `/blog/category/${categorySlug}`,
       }));
     results.push(...matchingCategories);
 

@@ -138,13 +138,6 @@ export default function Hero() {
                                 Book Free Brand Audit
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="#portfolio"
-                                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full border-2 transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "var(--brand-yellow)", color: "var(--accent-amber-text)" }}
-                            >
-                                View Our Work
-                            </Link> */}
                         </div>
                     </div>
 
