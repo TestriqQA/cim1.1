@@ -38,6 +38,7 @@ export interface Product {
   description: string;
   longDescription: string;
   icon: string; // lucide icon name
+  logo: string,
   color: string; // gradient CSS
   accentColor: string; // single brand color
   features: ProductFeature[];
@@ -98,6 +99,7 @@ export const products: Product[] = [
     name: "ChimeGenius AI Pro",
     slug: "chimegenius-ai-pro",
     tagline: "Smart Comment & Reply Generator",
+    logo: "/images/chimegenius-ai-pro-logo.svg",
     description:
       "Generate smart, context-aware comments & replies on LinkedIn, Instagram, Facebook, X and YouTube instantly. Free AI Chrome extension — try it now.",
     longDescription:
@@ -203,6 +205,7 @@ export const products: Product[] = [
     name: "Kruti.io",
     slug: "kruti-io",
     tagline: "AI-Powered LinkedIn Content Platform",
+    logo: "/images/kruti-io-logo.webp",
     description:
       "Kruti.io is an AI-powered LinkedIn content platform by Cinute Digital Pvt. Ltd. — a personalised strategy, 30 ready-to-publish posts, AI images and newsletter drafts every month, published straight to LinkedIn.",
     longDescription:
@@ -340,6 +343,7 @@ export const products: Product[] = [
     name: "AssetMon",
     slug: "assetmon",
     tagline: "Multi-Tenant IT Asset Management",
+    logo: "/images/assetmon-logo.jpg",
     description:
       "AssetMon is a browser-based IT asset management platform: hardware inventory, service tickets, preventive maintenance, software licences, procurement and depreciation in one workspace, with every tenant in its own isolated database.",
     longDescription:
@@ -473,6 +477,7 @@ export const products: Product[] = [
     name: "TopCareerLive",
     slug: "topcareerlive",
     tagline: "Job Board for Candidates and Employers",
+    logo: "/images/topcareerlive-logo.jpg",
     description:
       "TopCareerLive is a job board connecting candidates with verified employers: search and apply with filters for location, experience and freshness, or post roles and manage applicants through a hiring pipeline.",
     longDescription:
