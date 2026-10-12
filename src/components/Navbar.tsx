@@ -79,13 +79,13 @@ const products = [
     title: "AssetMon",
     description: "Multi-tenant IT asset management",
     slug: "assetmon",
-    logo: "/images/assetmon-logo.webp",
+    logo: "/images/assetmon-logo.jpg",
   },
   {
     title: "TopCareerLive",
     description: "Job board for candidates & employers",
     slug: "topcareerlive",
-    logo: "/images/topcareerlive-logo.webp",
+    logo: "/images/topcareerlive-logo.jpg",
   },
 ];
 
@@ -390,7 +390,7 @@ export default function Navbar() {
                               Not sure which service you need?
                             </h4>
                             <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
-                              Let's discuss your project and find the perfect solution
+                              Let&apos;s discuss your project and find the perfect solution
                             </p>
                           </div>
                           <Link

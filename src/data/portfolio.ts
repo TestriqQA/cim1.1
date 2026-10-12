@@ -808,6 +808,319 @@ export const clientProjects: ClientProject[] = [
     seoDescription:
       "How a trading card store got a custom WordPress theme built from scratch, a responsive WooCommerce storefront, and full control of its own catalogue from the admin.",
   },
+
+  // ==========================================================================
+  // YouTooCanRun — multi-event fitness platform on one Flutter codebase.
+  //
+  // DRAFT — not approved copy. Four things to settle before this goes live:
+  //
+  // 1. Brand names: get explicit written confirmation that YouTooCanRun may be
+  //    named and that the participant figures may appear. Individual event names
+  //    are deliberately left out; add one back only if the client confirms that
+  //    name in writing.
+  //
+  // 2. Figures are dated: everything numeric was read from the live platform on
+  //    12-Oct-2026 (21 events, 5 brands, 14,989 participants, 1,015 on one
+  //    event across 150 cities and 286 training groups, 548 app tests, 305
+  //    backend tests). Re-read them the day you publish, or write them as
+  //    "as of October 2026".
+  //
+  // 3. Deliberately excluded: security findings and review history, server and
+  //    infrastructure detail, signing keys and credential handling, the admin
+  //    panel's internal structure, and anything traceable to an individual
+  //    participant. A portfolio case study should carry the problem, the
+  //    approach, the scale and the outcome — not the internals.
+  //
+  // 4. What would make it stronger and we cannot supply: live store links,
+  //    client-approved screenshots, and one outcome number that belongs to the
+  //    client (completion rate, retention, participant satisfaction).
+  //
+  // No `testimonial`: none supplied. The Testimonial component and the
+  // Quotation JSON-LD node both drop out on their own when the field is absent.
+  //
+  // No `cover` and empty `media`: no client-approved screenshots or assets are
+  // available. The page is complete without them (PortfolioGrid, ProjectHero,
+  // Work and ProjectFacts all guard for missing evidence). Add real captures
+  // under /images/portfolio/youtoocanrun-event-platform/ when approved.
+  //
+  // No `liveUrl`: the apps are in the stores but no public link has been
+  // confirmed for the portfolio. Add when the client provides one.
+  // ==========================================================================
+  {
+    id: "youtoocanrun-event-platform",
+    slug: "youtoocanrun-event-platform",
+    client: "YouTooCanRun",
+    industry: "Mass-participation Sports & Fitness Events",
+    category: "app-dev",
+    featured: true,
+    title: "One Flutter codebase running 21 events across 5 brands",
+    summary:
+      "A single Flutter app and Laravel backend that carries every YouTooCanRun edition — 21 events, 5 brands, 14,989 participants — configured rather than forked, with per-event scoring engines, health data from six sources, and an organiser admin panel that keeps each edition isolated.",
+    year: "2026",
+    duration: "Ongoing",
+    platforms: ["iOS", "Android", "Web admin"],
+    deliverables: [
+      "Participant app for iOS and Android (Flutter)",
+      "Two scoring engines — consistency and cumulative step goals",
+      "Health data integration across six sources",
+      "Leaderboards: overall, by city, by training group, by period",
+      "Automated milestone and completion certificates",
+      "In-app notification centre with per-participant read state",
+      "Organiser admin panel",
+      "Versioned API contract",
+      "Force-update gate and managed releases on both stores",
+      "Automated test suites (548 app, 305 backend)",
+    ],
+    media: [],
+    situation: [
+      "YouTooCanRun does not run one event. It runs many, for different brands, often at the same time, and each one is judged differently — one on consistency across a hundred days, another on a cumulative step goal, another on distance. Each also needs its own app identity, its own leaderboard structure and its own organiser controls. Building an app per event would have meant a separate codebase, a separate release cycle and a separate set of defects for every edition.",
+      "The harder constraint is that the events are live with real participants while the next ones are being built. A change made for one edition must not alter the behaviour of another that is mid-challenge, and a participant whose steps stop counting is not something that can wait for a sprint boundary.",
+    ],
+    task:
+      "Build and run one platform that can carry many events at once: a single app that takes its identity and its rules from the event it is pointed at, a backend where an organiser can change those rules without a developer, and a release process that can ship to both app stores without disturbing the editions already running.",
+    action: [
+      {
+        title: "Built one app that serves every event",
+        description:
+          "A single Flutter codebase carries all the editions. Branding, event rules, the tabs a participant sees and the features that are switched on all come from the event's own configuration, so a new edition is set up rather than written.",
+      },
+      {
+        title: "Kept each event's rules behind its own flag",
+        description:
+          "Every scoring behaviour sits behind a per-event switch that defaults to off. Code for one event is inert for the rest until an organiser turns it on, and the failure mode of a mistake is \"the feature is absent\", never \"it appeared on somebody else's event\".",
+      },
+      {
+        title: "Integrated six sources of health data",
+        description:
+          "Apple HealthKit, Android Health Connect, Google Health, Garmin, Strava and Fitbit. Two push from the phone and four are pulled on a schedule, so the platform reconciles a participant's day from whichever source she actually uses, and a device change does not cost her the record.",
+      },
+      {
+        title: "Built leaderboards that scope the way the events do",
+        description:
+          "Overall, by city, by training group, and by period — yesterday, weekly, monthly. Ranking rules are implemented once on the server and never recomputed on the handset, so every participant's position is derived the same way.",
+      },
+      {
+        title: "Automated the certificates",
+        description:
+          "Weekly, monthly and post-event certificates are generated server-side from the participant's own record, with an organiser switch to hold them back until an edition is ready to issue them.",
+      },
+      {
+        title: "Rebuilt notifications with real per-participant state",
+        description:
+          "Announcements can be addressed to a whole event or to one city or training group, and read state is kept per person on the server rather than guessed on the device — so reinstalling the app or changing phone does not resurface everything ever sent.",
+      },
+      {
+        title: "Gave organisers an admin panel for the things they actually change",
+        description:
+          "Events and their rules, participants, approved-participant lists, leaderboards, notifications, certificates and sponsor placements — each scoped to one event, so an organiser managing one edition cannot reach another.",
+      },
+      {
+        title: "Wrote the API as a versioned contract",
+        description:
+          "The app and the backend are built against a written, versioned specification rather than against each other, which lets the mobile and backend work proceed in parallel and makes every change to the shape of a response a deliberate, recorded decision.",
+      },
+      {
+        title: "Put both sides under automated tests",
+        description:
+          "548 tests on the app and 305 on the backend, with the rule that a feature whose trigger is a widget is not considered tested until a test has pumped that widget.",
+      },
+      {
+        title: "Managed the releases",
+        description:
+          "Versioned builds, signed with the correct per-brand upload key, submitted and tracked on both the App Store and Google Play, with a server-side force-update gate that is only armed once the new build is confirmed live on that platform's store.",
+      },
+    ],
+    // The first metric is `highlight`ed: the hub hero strip shows one outcome
+    // per client, and the "21 events / 5 brands / 1 codebase" figure is the
+    // strongest standalone result — concrete and self-explanatory.
+    //
+    // All figures read from the live platform on 12-Oct-2026. Re-read before
+    // publishing, or qualify them as "as of October 2026".
+    metrics: [
+      {
+        value: "21 events",
+        label: "5 brands, one codebase",
+        detail:
+          "A new edition is configured, not forked. The platform has absorbed events judged on three different scoring models without a separate app or a separate backend for any of them.",
+        highlight: true,
+      },
+      {
+        value: "14,989",
+        label: "Participants carried",
+        detail:
+          "The same app and the same backend serve every edition, including events running concurrently with live participants on each.",
+      },
+      {
+        value: "853",
+        label: "Automated tests",
+        detail:
+          "548 on the app and 305 on the backend, ensuring that shipping for one event does not break another that is mid-challenge.",
+      },
+    ],
+    // ONLY what the case study document names. The six health sources are listed
+    // individually because the integration is the distinguishing work, not a
+    // background detail. Firebase Cloud Messaging is named explicitly in the
+    // source document's stack section. See the STACK policy at the top of this
+    // file.
+    stack: [
+      "Flutter",
+      "Dart",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Firebase Cloud Messaging",
+      "Apple HealthKit",
+      "Android Health Connect",
+      "Garmin API",
+      "Strava API",
+      "Fitbit API",
+      "Google Health API",
+    ],
+    // Every href resolves to a real route under src/app/services/**.
+    servicesDelivered: [
+      { name: "Mobile App Development", href: "/services/mobile-app-development" },
+      { name: "Cross-Platform App Development", href: "/services/mobile-app-development/cross-platform-app-development-company" },
+      { name: "iOS App Development", href: "/services/mobile-app-development/ios-app-development-company" },
+      { name: "Android App Development", href: "/services/mobile-app-development/android-app-development-company" },
+      { name: "Web Development", href: "/services/web-design-development" },
+      { name: "Laravel Development", href: "/services/web-design-development/laravel-php" },
+    ],
+    logo: "/images/logos/you-too-can-run.png",
+    seoTitle: "YouTooCanRun Case Study — Multi-Event Fitness Platform | Cinute InfoMedia",
+    seoDescription:
+      "How one Flutter app and Laravel backend carries 21 events across 5 brands for YouTooCanRun — configured rather than forked, with per-event scoring, health integrations from six sources, and 14,989 participants.",
+  },
+
+  // ==========================================================================
+  // YouTooCanRun — the two public web platforms (registration + marketplace).
+  //
+  // A SEPARATE ENTRY, deliberately. Same client as the Flutter event platform
+  // above, different engagement: two public websites rather than the
+  // participant apps. Kept apart so neither case study claims the other's
+  // scope, and so the web work filters under "web-dev" rather than "app-dev".
+  //
+  // DRAFT — not approved copy. Settle before this goes live:
+  //
+  // 1. `year` is recorded as 2026 because the engagement is current. Replace it
+  //    with the year the build actually started once the client confirms it.
+  //
+  // 2. Security: the audit is named, the findings are NOT, and that line should
+  //    hold. The source document for the entry above draws it the same way — a
+  //    public case study should never describe a client's vulnerabilities,
+  //    remediated or otherwise.
+  //
+  // 3. No figures: no traffic, conversion, performance or registration numbers
+  //    have been supplied for either site, so every metric here is in the hedged
+  //    form this file requires. Do not convert one into a percentage.
+  //
+  // 4. Feature descriptions were read from the live sites on 12-Oct-2026 (city
+  //    pages, distance filters and registration windows on racesregistrations.com;
+  //    listings, comparison, reviews and organiser submissions on racemart.in).
+  //    Re-check them before publishing.
+  //
+  // 5. `featured` is false so one client does not take two double-width cards in
+  //    the bento stream. Flip it if the client wants this story led with.
+  //
+  // No `testimonial`: the quote carried on racesregistrations.com is a runner's
+  // review of the client's events, not a client statement about our work.
+  //
+  // No `cover` and empty `media`: no client-approved captures. Add real files
+  // under /images/portfolio/youtoocanrun-race-platforms/ and the gallery returns.
+  // ==========================================================================
+  {
+    id: "youtoocanrun-race-platforms",
+    slug: "youtoocanrun-race-platforms",
+    client: "YouTooCanRun",
+    industry: "Mass-participation Sports & Fitness Events",
+    category: "web-dev",
+    featured: false,
+    title: "A React registration platform and a Laravel race marketplace",
+    summary:
+      "Two public platforms for YouTooCanRun: racesregistrations.com, where runners find races by city, distance and date and enter them before registration closes, and racemart.in, where races are listed, compared and reviewed. Both were taken through the full development lifecycle to deployment, remediated against a security audit, and have been maintained since.",
+    year: "2026",
+    duration: "Ongoing",
+    platforms: ["Web"],
+    deliverables: [
+      "Race registration platform (React)",
+      "Race listing and discovery marketplace (Laravel, PHP)",
+      "Event discovery by city, by distance and by period",
+      "Registration windows with live open and closed status",
+      "Race comparison, event reviews and organiser listing submissions",
+      "Full-lifecycle delivery through to deployment",
+      "Security audit remediation",
+      "Ongoing maintenance",
+    ],
+    liveUrl: "https://racesregistrations.com",
+    media: [],
+    situation: [
+      "YouTooCanRun meets runners at two different moments, and they want different things at each. Someone still choosing a race wants to compare what is on offer — where it is, how far, what other runners made of it. Someone who has already chosen wants to enter it, before a registration window closes on a date that does not move. One platform answers each question, and neither is much use if it only half works.",
+      "Both are public and in constant use. Registration opens and closes on fixed dates, organisers add listings as their events are announced, and the platforms carry participant signups — so work has to land without taking either site down, and the security posture has to be reviewed rather than assumed.",
+    ],
+    task:
+      "Take both platforms through the full web development lifecycle — requirements, build, testing and deployment — then act on what a security audit found and keep both running as events open and close week after week.",
+    action: [
+      {
+        title: "Built the registration platform in React",
+        description:
+          "racesregistrations.com presents races by city, by distance from 5K to ultra, and by period, each with its own registration window and current status — so a runner sees what is still open to enter rather than reading a static list of dates.",
+      },
+      {
+        title: "Built the race marketplace on Laravel and PHP",
+        description:
+          "racemart.in carries the listings themselves: searchable by race and by city, with comparison, event reviews, and a route for organisers to submit their own events, so the catalogue grows without a developer publishing each entry by hand.",
+      },
+      {
+        title: "Ran the full development lifecycle on both",
+        description:
+          "Requirements, build, testing and deployment were carried for each platform as one engagement rather than handed over at the end of the build, so what shipped is what was specified and both went live under our own release.",
+      },
+      {
+        title: "Remediated what the security audit found",
+        description:
+          "Both platforms were audited and the findings were fixed. What those findings were stays out of a public case study, remediated or not.",
+      },
+      {
+        title: "Kept both platforms in maintenance",
+        description:
+          "The engagement did not end at launch. Both sites are maintained in service, with fixes and updates released while events are live, because a registration window does not pause for a deployment.",
+      },
+    ],
+    // Hedged by design: no traffic, conversion or registration figures have been
+    // supplied for either platform. See the METRICS policy at the top of this file.
+    metrics: [
+      {
+        value: "2 platforms",
+        label: "Built, deployed and maintained",
+        detail:
+          "A React registration platform and a Laravel marketplace, each taken from requirements through to deployment and kept in service since.",
+      },
+      {
+        value: "Full lifecycle",
+        label: "Requirements through deployment",
+        detail:
+          "Both sites were specified, built, tested and deployed as a single engagement rather than handed over at the end of the build.",
+      },
+      {
+        value: "Ongoing",
+        label: "Security fixes and maintenance",
+        detail:
+          "Audit findings were remediated, and both platforms remain under continuous maintenance as events open and close.",
+      },
+    ],
+    // ONLY the three technologies the client named for this engagement. See the
+    // STACK policy at the top of this file — nothing inferred, nothing padded.
+    stack: ["React", "PHP", "Laravel"],
+    // Every href resolves to a real route under src/app/services/**.
+    servicesDelivered: [
+      { name: "Web Development", href: "/services/web-design-development" },
+      { name: "Laravel Development", href: "/services/web-design-development/laravel-php" },
+      { name: "Additional Support Services", href: "/services/additional-support-services" },
+    ],
+    logo: "/images/logos/you-too-can-run.png",
+    seoTitle: "YouTooCanRun Web Case Study — Race Registration & RaceMart | Cinute InfoMedia",
+    seoDescription:
+      "Two platforms for YouTooCanRun — a React race-registration site and a Laravel race marketplace — built, deployed, security-audited and maintained end to end.",
+  },
 ];
 
 // ----------------------------------------------------------------------------

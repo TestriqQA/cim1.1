@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { ChevronRight, ArrowRight, ShieldCheck, MessageSquare, Workflow, BarChart3, Monitor, Share2, Chrome } from "lucide-react";
 import type { Product } from "@/data/products";
+import Image from "next/image";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
     ShieldCheck, MessageSquare, Workflow, BarChart3, Monitor, Share2,
@@ -165,8 +166,15 @@ export default function ProductHero({ product }: { product: Product }) {
                         <div className="relative flex items-center justify-center">
                             <div className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden border flex items-center justify-center animate-float-gentle" style={{ borderColor: `${color}30`, backgroundColor: "var(--card-bg)", boxShadow: `0 0 50px ${color}10` }}>
                                 <div className="flex flex-col items-center justify-center gap-4 p-12">
-                                    <div className={`w-24 h-24 rounded-3xl ${product.color} p-5 shadow-xl`}>
-                                        <Icon className="w-full h-full text-white" />
+                                    <div className={`w-24 h-24 rounded-3xl ${product.color} shadow-xl`}>
+                                        {/* <Icon className="w-full h-full text-white" /> */}
+                                        <Image
+                                            src={product.logo}
+                                            alt={product.name}
+                                            width={96}
+                                            height={96}
+                                            className="rounded-3xl"
+                                        />
                                     </div>
                                     <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>{product.name}</h3>
                                     <p className="text-center text-sm max-w-xs" style={{ color: "var(--secondary-text)" }}>{product.tagline}</p>
