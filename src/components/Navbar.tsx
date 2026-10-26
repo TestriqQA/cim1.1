@@ -69,24 +69,24 @@ const products = [
     slug: "chimegenius-ai-pro",
     logo: "/images/chimegenius-ai-pro-logo.svg",
   },
-  {
-    title: "Kruti.io",
-    description: "AI LinkedIn content platform",
-    slug: "kruti-io",
-    logo: "/images/kruti-io-logo.webp",
-  },
-  {
-    title: "AssetMon",
-    description: "Multi-tenant IT asset management",
-    slug: "assetmon",
-    logo: "/images/assetmon-logo.jpg",
-  },
-  {
-    title: "TopCareerLive",
-    description: "Job board for candidates & employers",
-    slug: "topcareerlive",
-    logo: "/images/topcareerlive-logo.jpg",
-  },
+  // {
+  //   title: "Kruti.io",
+  //   description: "AI LinkedIn content platform",
+  //   slug: "kruti-io",
+  //   logo: "/images/kruti-io-logo.webp",
+  // },
+  // {
+  //   title: "AssetMon",
+  //   description: "Multi-tenant IT asset management",
+  //   slug: "assetmon",
+  //   logo: "/images/assetmon-logo.jpg",
+  // },
+  // {
+  //   title: "TopCareerLive",
+  //   description: "Job board for candidates & employers",
+  //   slug: "topcareerlive",
+  //   logo: "/images/topcareerlive-logo.jpg",
+  // },
 ];
 
 
