@@ -40,13 +40,15 @@ export default function FeaturedMembers() {
             className="mt-5 text-lg leading-relaxed"
             style={{ color: "var(--secondary-text)" }}
           >
-            Web and mobile engineering, applied research, search and content, and the people
-            operations that keep the team steady — the specialists behind the work between
-            kickoff and handover.
+            Web and mobile engineering, applied research, search and content,
+            and the people operations that keep the team steady — the
+            specialists behind the work between kickoff and handover.
           </p>
         </div>
 
-        <ul className={`${styles.cascade} mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3`}>
+        <ul
+          className={`${styles.cascade} mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3`}
+        >
           {featuredMembers.map((member) => (
             <li key={member.id} id={member.id} className="h-full scroll-mt-28">
               <article
@@ -87,7 +89,8 @@ export default function FeaturedMembers() {
                 <p
                   className="mt-6 border-l-2 pl-4 text-sm font-semibold leading-relaxed"
                   style={{
-                    borderColor: "color-mix(in srgb, var(--brand-blue) 45%, transparent)",
+                    borderColor:
+                      "color-mix(in srgb, var(--brand-blue) 45%, transparent)",
                     color: "var(--foreground)",
                   }}
                 >

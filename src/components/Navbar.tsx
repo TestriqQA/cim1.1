@@ -25,15 +25,60 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Web Design & Development", description: "Custom websites that drive results", color: "bg-gradient-to-br from-[#008ac1] to-[#00b5ca]" },
-  { icon: Smartphone, title: "Mobile App Development", description: "Native & cross-platform solutions", color: "bg-gradient-to-br from-[#6B00D7] to-[#bc3feb]" },
-  { icon: Share2, title: "Social Media Marketing", description: "Engage and grow your audience", color: "bg-gradient-to-br from-[#00b5ca] to-[#00efd6]" },
-  { icon: Zap, title: "AI Workflows & Automations", description: "Streamline your operations", color: "bg-gradient-to-br from-[#fab900] to-[#ee6500]" },
-  { icon: MessageSquare, title: "AI-Powered Chatbots", description: "Intelligent customer support", color: "bg-gradient-to-br from-[#008ac1] to-[#bc3feb]" },
-  { icon: TrendingUp, title: "Organic Growth & SEO", description: "Rank higher, reach more", color: "bg-gradient-to-br from-[#6db75c] to-[#4a9e3f]" },
-  { icon: Target, title: "Performance Marketing", description: "Data-driven ad campaigns", color: "bg-gradient-to-br from-[#e53935] to-[#ff7043]" },
-  { icon: Palette, title: "Brand Identity & Design", description: "Stand out with unique branding", color: "bg-gradient-to-br from-[#fab900] to-[#ee6500]" },
-  { icon: Headphones, title: "Additional Support Services", description: "Ongoing assistance & maintenance", color: "bg-gradient-to-br from-[#4b277a] to-[#97288e]" },
+  {
+    icon: Globe,
+    title: "Web Design & Development",
+    description: "Custom websites that drive results",
+    color: "bg-gradient-to-br from-[#008ac1] to-[#00b5ca]",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description: "Native & cross-platform solutions",
+    color: "bg-gradient-to-br from-[#6B00D7] to-[#bc3feb]",
+  },
+  {
+    icon: Share2,
+    title: "Social Media Marketing",
+    description: "Engage and grow your audience",
+    color: "bg-gradient-to-br from-[#00b5ca] to-[#00efd6]",
+  },
+  {
+    icon: Zap,
+    title: "AI Workflows & Automations",
+    description: "Streamline your operations",
+    color: "bg-gradient-to-br from-[#fab900] to-[#ee6500]",
+  },
+  {
+    icon: MessageSquare,
+    title: "AI-Powered Chatbots",
+    description: "Intelligent customer support",
+    color: "bg-gradient-to-br from-[#008ac1] to-[#bc3feb]",
+  },
+  {
+    icon: TrendingUp,
+    title: "Organic Growth & SEO",
+    description: "Rank higher, reach more",
+    color: "bg-gradient-to-br from-[#6db75c] to-[#4a9e3f]",
+  },
+  {
+    icon: Target,
+    title: "Performance Marketing",
+    description: "Data-driven ad campaigns",
+    color: "bg-gradient-to-br from-[#e53935] to-[#ff7043]",
+  },
+  {
+    icon: Palette,
+    title: "Brand Identity & Design",
+    description: "Stand out with unique branding",
+    color: "bg-gradient-to-br from-[#fab900] to-[#ee6500]",
+  },
+  {
+    icon: Headphones,
+    title: "Additional Support Services",
+    description: "Ongoing assistance & maintenance",
+    color: "bg-gradient-to-br from-[#4b277a] to-[#97288e]",
+  },
 ];
 
 // Helper function to get correct slug for services
@@ -89,7 +134,6 @@ const products = [
   },
 ];
 
-
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
@@ -112,7 +156,9 @@ export default function Navbar() {
   // Active link styles
   const getNavLinkStyle = (path: string) => ({
     color: isActive(path) ? "var(--brand-purple-text)" : "var(--foreground)",
-    backgroundColor: isActive(path) ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent",
+    backgroundColor: isActive(path)
+      ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+      : "transparent",
   });
 
   // next-themes
@@ -136,8 +182,10 @@ export default function Navbar() {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
-      const isOutsideDesktop = themeDropdownRef.current && !themeDropdownRef.current.contains(target);
-      const isOutsideMobile = mobileThemeRef.current && !mobileThemeRef.current.contains(target);
+      const isOutsideDesktop =
+        themeDropdownRef.current && !themeDropdownRef.current.contains(target);
+      const isOutsideMobile =
+        mobileThemeRef.current && !mobileThemeRef.current.contains(target);
 
       if (isOutsideDesktop && isOutsideMobile) {
         setIsThemeOpen(false);
@@ -189,13 +237,27 @@ export default function Navbar() {
   // SSR-safe placeholder — includes navigation links for Googlebot crawlability
   if (!mounted) {
     return (
-      <nav aria-label="Main" className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+      <nav
+        aria-label="Main"
+        className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm"
+        style={{
+          backgroundColor: "var(--card-bg)",
+          borderColor: "var(--border-color)",
+        }}
+      >
         <div className="mx-auto px-6 md:px-12 xl:px-16">
           <div className="flex justify-between items-center h-16 lg:h-20">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2">
                 <div className="relative overflow-hidden rounded-lg">
-                  <Image src="/images/CIM-LOGO-Black.png" alt="CIM Logo" height={80} width={180} className="lg:h-[75px] lg:w-[175px]" priority />
+                  <Image
+                    src="/images/CIM-LOGO-Black.png"
+                    alt="CIM Logo"
+                    height={80}
+                    width={180}
+                    className="lg:h-[75px] lg:w-[175px]"
+                    priority
+                  />
                 </div>
               </Link>
             </div>
@@ -204,15 +266,60 @@ export default function Navbar() {
                 by an inert mirror of its right-hand cluster, so the header does
                 not reflow when hydration swaps this block out. */}
             <div className="hidden lg:flex flex-1 justify-center items-center space-x-1 2xl:space-x-2">
-              <Link href="/" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Home</Link>
-              <Link href="/our-team" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Our Team</Link>
-              <Link href="/services" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Services</Link>
-              <Link href="/portfolio" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Portfolio</Link>
-              <Link href="/products/chimegenius-ai-pro" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Products</Link>
-              <Link href="/blog" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Blog</Link>
-              <Link href="/about" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">About</Link>
-              <Link href="/careers" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Careers</Link>
-              <Link href="/contact" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Contact</Link>
+              <Link
+                href="/"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Home
+              </Link>
+              <Link
+                href="/our-team"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Our Team
+              </Link>
+              <Link
+                href="/services"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Services
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Portfolio
+              </Link>
+              <Link
+                href="/products/chimegenius-ai-pro"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Products
+              </Link>
+              <Link
+                href="/blog"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/about"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                About
+              </Link>
+              <Link
+                href="/careers"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Careers
+              </Link>
+              <Link
+                href="/contact"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Inert mirror of the mounted bar's theme button + CTA. The theme
@@ -222,7 +329,10 @@ export default function Navbar() {
               <div aria-hidden="true" className="p-2 2xl:p-2.5">
                 <div className="w-5 h-5" />
               </div>
-              <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium shadow-lg shadow-[#008ac1]/30">
+              <Link
+                href="/contact"
+                className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium shadow-lg shadow-[#008ac1]/30"
+              >
                 Let’s Talk
               </Link>
             </div>
@@ -270,7 +380,11 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="h-20 w-[128px] 2xl:w-[180px] flex items-center justify-center overflow-hidden rounded-lg transition-transform group-hover:scale-105">
                 <Image
-                  src={isDark ? "/images/CIM-LOGO-White.png" : "/images/CIM-LOGO-Black.png"}
+                  src={
+                    isDark
+                      ? "/images/CIM-LOGO-White.png"
+                      : "/images/CIM-LOGO-Black.png"
+                  }
                   alt="CIM Logo"
                   height={80}
                   width={180}
@@ -280,7 +394,6 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-
 
           {/* Desktop Navigation — centred in the space between the logo and the
               right-hand cluster. `flex-1` makes this the only growing track, so
@@ -294,8 +407,16 @@ export default function Navbar() {
                 href="/"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Home
               </Link>
@@ -303,33 +424,60 @@ export default function Navbar() {
                 href="/our-team"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/our-team")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/our-team")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/our-team")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Our Team
               </Link>
               {/* Services Mega Menu */}
-              <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <button
                   className="flex items-center space-x-1 px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                   style={{
-                    color: isActive("/services") ? "var(--brand-purple-text)" : "var(--foreground)",
+                    color: isActive("/services")
+                      ? "var(--brand-purple-text)"
+                      : "var(--foreground)",
                     backgroundColor: isServicesOpen
                       ? "var(--hover-bg)"
                       : isActive("/services")
                         ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
                         : "transparent",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/services") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = isActive(
+                      "/services",
+                    )
+                      ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                      : "var(--hover-bg)")
+                  }
                   onMouseLeave={(e) => {
-                    if (!isServicesOpen) e.currentTarget.style.backgroundColor = isActive("/services") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent";
+                    if (!isServicesOpen)
+                      e.currentTarget.style.backgroundColor = isActive(
+                        "/services",
+                      )
+                        ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                        : "transparent";
                   }}
                   aria-expanded={isServicesOpen}
                   aria-haspopup="true"
                   aria-label="Services Menu"
                 >
                   <span>Services</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
 
                 {/* Mega Menu Dropdown */}
@@ -355,24 +503,36 @@ export default function Navbar() {
                                 borderColor: "transparent",
                               }}
                               onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = "var(--hover-bg)";
-                                e.currentTarget.style.borderColor = "var(--border-color)";
+                                e.currentTarget.style.backgroundColor =
+                                  "var(--hover-bg)";
+                                e.currentTarget.style.borderColor =
+                                  "var(--border-color)";
                               }}
                               onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = "transparent";
-                                e.currentTarget.style.borderColor = "transparent";
+                                e.currentTarget.style.backgroundColor =
+                                  "transparent";
+                                e.currentTarget.style.borderColor =
+                                  "transparent";
                               }}
                               onClick={() => setIsServicesOpen(false)}
                             >
                               <div className="flex items-start space-x-3">
-                                <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${service.color} p-2.5 group-hover:scale-110 transition-transform shadow-lg`}>
+                                <div
+                                  className={`flex-shrink-0 w-12 h-12 rounded-lg ${service.color} p-2.5 group-hover:scale-110 transition-transform shadow-lg`}
+                                >
                                   <Icon className="w-full h-full text-white" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <h3 className="text-sm font-semibold mb-1 transition-colors" style={{ color: "var(--foreground)" }}>
+                                  <h3
+                                    className="text-sm font-semibold mb-1 transition-colors"
+                                    style={{ color: "var(--foreground)" }}
+                                  >
                                     {service.title}
                                   </h3>
-                                  <p className="text-xs line-clamp-2" style={{ color: "var(--secondary-text)" }}>
+                                  <p
+                                    className="text-xs line-clamp-2"
+                                    style={{ color: "var(--secondary-text)" }}
+                                  >
                                     {service.description}
                                   </p>
                                 </div>
@@ -383,14 +543,24 @@ export default function Navbar() {
                       </div>
 
                       {/* Bottom CTA */}
-                      <div className="mt-6 pt-6 border-t" style={{ borderColor: "var(--border-color)" }}>
+                      <div
+                        className="mt-6 pt-6 border-t"
+                        style={{ borderColor: "var(--border-color)" }}
+                      >
                         <div className="flex items-center justify-between">
                           <div>
-                            <h4 className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                            <h4
+                              className="text-sm font-semibold"
+                              style={{ color: "var(--foreground)" }}
+                            >
                               Not sure which service you need?
                             </h4>
-                            <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
-                              Let&apos;s discuss your project and find the perfect solution
+                            <p
+                              className="text-xs mt-1"
+                              style={{ color: "var(--secondary-text)" }}
+                            >
+                              Let&apos;s discuss your project and find the
+                              perfect solution
                             </p>
                           </div>
                           <Link
@@ -412,33 +582,64 @@ export default function Navbar() {
                 href="/portfolio"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/portfolio")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive(
+                    "/portfolio",
+                  )
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive(
+                    "/portfolio",
+                  )
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Portfolio
               </Link>
               {/* Products Dropdown */}
-              <div className="relative" onMouseEnter={handleProductsMouseEnter} onMouseLeave={handleProductsMouseLeave}>
+              <div
+                className="relative"
+                onMouseEnter={handleProductsMouseEnter}
+                onMouseLeave={handleProductsMouseLeave}
+              >
                 <button
                   className="flex items-center space-x-1 px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                   style={{
-                    color: isActive("/products") ? "var(--brand-purple-text)" : "var(--foreground)",
+                    color: isActive("/products")
+                      ? "var(--brand-purple-text)"
+                      : "var(--foreground)",
                     backgroundColor: isProductsOpen
                       ? "var(--hover-bg)"
                       : isActive("/products")
                         ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
                         : "transparent",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = isActive(
+                      "/products",
+                    )
+                      ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                      : "var(--hover-bg)")
+                  }
                   onMouseLeave={(e) => {
-                    if (!isProductsOpen) e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent";
+                    if (!isProductsOpen)
+                      e.currentTarget.style.backgroundColor = isActive(
+                        "/products",
+                      )
+                        ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                        : "transparent";
                   }}
                   aria-expanded={isProductsOpen}
                   aria-haspopup="true"
                   aria-label="Products Menu"
                 >
                   <span>Products</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
 
                 {isProductsOpen && (
@@ -465,23 +666,39 @@ export default function Navbar() {
                               borderColor: "transparent",
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = "var(--hover-bg)";
-                              e.currentTarget.style.borderColor = "var(--border-color)";
+                              e.currentTarget.style.backgroundColor =
+                                "var(--hover-bg)";
+                              e.currentTarget.style.borderColor =
+                                "var(--border-color)";
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = "transparent";
+                              e.currentTarget.style.backgroundColor =
+                                "transparent";
                               e.currentTarget.style.borderColor = "transparent";
                             }}
                             onClick={() => setIsProductsOpen(false)}
                           >
                             <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden group-hover:scale-110 transition-transform shadow-lg">
-                              <Image src={product.logo} alt="" width={48} height={48} className="w-full h-full object-cover" unoptimized />
+                              <Image
+                                src={product.logo}
+                                alt=""
+                                width={48}
+                                height={48}
+                                className="w-full h-full object-cover"
+                                unoptimized
+                              />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-sm font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+                              <h3
+                                className="text-sm font-semibold mb-1"
+                                style={{ color: "var(--foreground)" }}
+                              >
                                 {product.title}
                               </h3>
-                              <p className="text-xs line-clamp-2" style={{ color: "var(--secondary-text)" }}>
+                              <p
+                                className="text-xs line-clamp-2"
+                                style={{ color: "var(--secondary-text)" }}
+                              >
                                 {product.description}
                               </p>
                             </div>
@@ -496,8 +713,16 @@ export default function Navbar() {
                 href="/blog"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/blog")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/blog")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/blog")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Blog
               </Link>
@@ -505,8 +730,16 @@ export default function Navbar() {
                 href="/about"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/about")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/about")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/about")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 About
               </Link>
@@ -514,8 +747,16 @@ export default function Navbar() {
                 href="/careers"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/careers")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/careers")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/careers")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Careers
               </Link>
@@ -523,8 +764,16 @@ export default function Navbar() {
                 href="/contact"
                 className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/contact")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/contact")
+                    ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                    : "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = isActive("/contact")
+                    ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                    : "transparent")
+                }
               >
                 Contact
               </Link>
@@ -534,73 +783,111 @@ export default function Navbar() {
           {/* Right-hand cluster — theme switcher + primary CTA. Kept out of the
               centred link group so the links centre on their own. */}
           <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
-              {/* Theme Toggle Button */}
-              {/* Theme Dropdown */}
-              <div className="relative" ref={themeDropdownRef}>
-                <button
-                  onClick={() => setIsThemeOpen(!isThemeOpen)}
-                  className="p-2 2xl:p-2.5 rounded-lg transition-all hover:scale-110"
-                  style={{ color: "var(--foreground)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-                  aria-label="Theme settings"
-                  aria-expanded={isThemeOpen}
-                >
-                  {theme === 'system' ? (
-                    <Monitor className="w-5 h-5 transition-transform" />
-                  ) : isDark ? (
-                    <Moon className="w-5 h-5 transition-transform" style={{ color: "var(--brand-blue)" }} />
-                  ) : (
-                    <Sun className="w-5 h-5 transition-transform" style={{ color: "var(--brand-yellow)" }} />
-                  )}
-                </button>
-
-                {isThemeOpen && (
-                  <div
-                    className="absolute top-12 right-0 w-36 rounded-xl border shadow-xl p-1 overflow-hidden animate-in fade-in zoom-in-95 duration-200 z-[300]"
-                    style={{
-                      backgroundColor: "var(--card-bg)",
-                      borderColor: "var(--border-color)",
-                    }}
-                  >
-                    {[
-                      { name: "Light", value: "light", icon: Sun, color: "var(--brand-yellow)" },
-                      { name: "Dark", value: "dark", icon: Moon, color: "var(--brand-blue)" },
-                      { name: "System", value: "system", icon: Monitor, color: "var(--foreground)" },
-                    ].map((mode) => {
-                      const Icon = mode.icon;
-                      const isSelected = theme === mode.value;
-                      return (
-                        <button
-                          key={mode.value}
-                          onClick={() => toggleTheme(mode.value)}
-                          className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
-                            }`}
-                          style={{
-                            backgroundColor: isSelected ? "var(--hover-bg)" : "transparent",
-                            color: "var(--foreground)"
-                          }}
-                          onMouseEnter={(e) => {
-                            if (!isSelected) e.currentTarget.style.backgroundColor = "var(--hover-bg)";
-                          }}
-                          onMouseLeave={(e) => {
-                            if (!isSelected) e.currentTarget.style.backgroundColor = "transparent";
-                          }}
-                        >
-                          <Icon className="w-4 h-4" style={{ color: mode.color }} />
-                          <span>{mode.name}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
+            {/* Theme Toggle Button */}
+            {/* Theme Dropdown */}
+            <div className="relative" ref={themeDropdownRef}>
+              <button
+                onClick={() => setIsThemeOpen(!isThemeOpen)}
+                className="p-2 2xl:p-2.5 rounded-lg transition-all hover:scale-110"
+                style={{ color: "var(--foreground)" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "transparent")
+                }
+                aria-label="Theme settings"
+                aria-expanded={isThemeOpen}
+              >
+                {theme === "system" ? (
+                  <Monitor className="w-5 h-5 transition-transform" />
+                ) : isDark ? (
+                  <Moon
+                    className="w-5 h-5 transition-transform"
+                    style={{ color: "var(--brand-blue)" }}
+                  />
+                ) : (
+                  <Sun
+                    className="w-5 h-5 transition-transform"
+                    style={{ color: "var(--brand-yellow)" }}
+                  />
                 )}
+              </button>
 
+              {isThemeOpen && (
+                <div
+                  className="absolute top-12 right-0 w-36 rounded-xl border shadow-xl p-1 overflow-hidden animate-in fade-in zoom-in-95 duration-200 z-[300]"
+                  style={{
+                    backgroundColor: "var(--card-bg)",
+                    borderColor: "var(--border-color)",
+                  }}
+                >
+                  {[
+                    {
+                      name: "Light",
+                      value: "light",
+                      icon: Sun,
+                      color: "var(--brand-yellow)",
+                    },
+                    {
+                      name: "Dark",
+                      value: "dark",
+                      icon: Moon,
+                      color: "var(--brand-blue)",
+                    },
+                    {
+                      name: "System",
+                      value: "system",
+                      icon: Monitor,
+                      color: "var(--foreground)",
+                    },
+                  ].map((mode) => {
+                    const Icon = mode.icon;
+                    const isSelected = theme === mode.value;
+                    return (
+                      <button
+                        key={mode.value}
+                        onClick={() => toggleTheme(mode.value)}
+                        className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          isSelected
+                            ? "bg-accent text-accent-foreground"
+                            : "hover:bg-muted"
+                        }`}
+                        style={{
+                          backgroundColor: isSelected
+                            ? "var(--hover-bg)"
+                            : "transparent",
+                          color: "var(--foreground)",
+                        }}
+                        onMouseEnter={(e) => {
+                          if (!isSelected)
+                            e.currentTarget.style.backgroundColor =
+                              "var(--hover-bg)";
+                        }}
+                        onMouseLeave={(e) => {
+                          if (!isSelected)
+                            e.currentTarget.style.backgroundColor =
+                              "transparent";
+                        }}
+                      >
+                        <Icon
+                          className="w-4 h-4"
+                          style={{ color: mode.color }}
+                        />
+                        <span>{mode.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
 
-              </div>
-
-              <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium transition-all shadow-lg shadow-[#008ac1]/30 hover:shadow-xl hover:shadow-[#008ac1]/40 hover:scale-105">
-                Let’s Talk
-              </Link>
+            <Link
+              href="/contact"
+              className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium transition-all shadow-lg shadow-[#008ac1]/30 hover:shadow-xl hover:shadow-[#008ac1]/40 hover:scale-105"
+            >
+              Let’s Talk
+            </Link>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
@@ -630,16 +917,26 @@ export default function Navbar() {
               onClick={() => setIsThemeOpen(!isThemeOpen)}
               className="p-3 rounded-lg transition-colors relative"
               style={{ color: "var(--foreground)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "transparent")
+              }
               aria-label="Theme settings"
             >
-              {theme === 'system' ? (
+              {theme === "system" ? (
                 <Monitor className="w-5 h-5" />
               ) : isDark ? (
-                <Moon className="w-5 h-5" style={{ color: "var(--brand-blue)" }} />
+                <Moon
+                  className="w-5 h-5"
+                  style={{ color: "var(--brand-blue)" }}
+                />
               ) : (
-                <Sun className="w-5 h-5" style={{ color: "var(--brand-yellow)" }} />
+                <Sun
+                  className="w-5 h-5"
+                  style={{ color: "var(--brand-yellow)" }}
+                />
               )}
               {/* Mobile Dropdown */}
               {isThemeOpen && (
@@ -651,9 +948,24 @@ export default function Navbar() {
                   }}
                 >
                   {[
-                    { name: "Light", value: "light", icon: Sun, color: "var(--brand-yellow)" },
-                    { name: "Dark", value: "dark", icon: Moon, color: "var(--brand-blue)" },
-                    { name: "System", value: "system", icon: Monitor, color: "var(--foreground)" },
+                    {
+                      name: "Light",
+                      value: "light",
+                      icon: Sun,
+                      color: "var(--brand-yellow)",
+                    },
+                    {
+                      name: "Dark",
+                      value: "dark",
+                      icon: Moon,
+                      color: "var(--brand-blue)",
+                    },
+                    {
+                      name: "System",
+                      value: "system",
+                      icon: Monitor,
+                      color: "var(--foreground)",
+                    },
                   ].map((mode) => {
                     const Icon = mode.icon;
                     const isSelected = theme === mode.value;
@@ -664,14 +976,22 @@ export default function Navbar() {
                           e.stopPropagation();
                           toggleTheme(mode.value);
                         }}
-                        className={`cursor-pointer w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
-                          }`}
+                        className={`cursor-pointer w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          isSelected
+                            ? "bg-accent text-accent-foreground"
+                            : "hover:bg-muted"
+                        }`}
                         style={{
-                          backgroundColor: isSelected ? "var(--hover-bg)" : "transparent",
-                          color: "var(--foreground)"
+                          backgroundColor: isSelected
+                            ? "var(--hover-bg)"
+                            : "transparent",
+                          color: "var(--foreground)",
                         }}
                       >
-                        <Icon className="w-4 h-4" style={{ color: mode.color }} />
+                        <Icon
+                          className="w-4 h-4"
+                          style={{ color: mode.color }}
+                        />
                         <span>{mode.name}</span>
                       </div>
                     );
@@ -680,9 +1000,24 @@ export default function Navbar() {
               )}
             </button>
 
-
-            <button onClick={toggleMobileMenu} className="p-3 rounded-lg transition-colors" style={{ color: "var(--foreground)" }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")} aria-label="Toggle mobile menu" aria-expanded={isMobileMenuOpen}>
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <button
+              onClick={toggleMobileMenu}
+              className="p-3 rounded-lg transition-colors"
+              style={{ color: "var(--foreground)" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "transparent")
+              }
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -690,7 +1025,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+        <div
+          className="lg:hidden border-t shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto"
+          style={{
+            backgroundColor: "var(--card-bg)",
+            borderColor: "var(--border-color)",
+          }}
+        >
           <div className="px-4 py-4 space-y-3">
             {/* Home Link */}
             <Link
@@ -698,8 +1039,16 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/")
+                  ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/")
+                  ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Home
             </Link>
@@ -708,17 +1057,37 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/our-team")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/our-team")
+                  ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/our-team")
+                  ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Our Team
             </Link>
 
             {/* Mobile Services Accordion */}
             <div>
-              <button onClick={toggleMobileServices} className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all" style={{ color: "var(--foreground)" }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
+              <button
+                onClick={toggleMobileServices}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all"
+                style={{ color: "var(--foreground)" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "transparent")
+                }
+              >
                 <span>Services</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
               {/* Mobile Services List */}
@@ -727,15 +1096,36 @@ export default function Navbar() {
                   {services.map((service, index) => {
                     const Icon = service.icon;
                     return (
-                      <Link key={index} href={`/services/${getServiceSlug(service.title)}`} onClick={toggleMobileMenu} className="flex items-center space-x-3 p-3 rounded-lg transition-all" onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
-                        <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${service.color} p-2 shadow-md`}>
+                      <Link
+                        key={index}
+                        href={`/services/${getServiceSlug(service.title)}`}
+                        onClick={toggleMobileMenu}
+                        className="flex items-center space-x-3 p-3 rounded-lg transition-all"
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "var(--hover-bg)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "transparent")
+                        }
+                      >
+                        <div
+                          className={`flex-shrink-0 w-10 h-10 rounded-lg ${service.color} p-2 shadow-md`}
+                        >
                           <Icon className="w-full h-full text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                          <h3
+                            className="text-sm font-semibold"
+                            style={{ color: "var(--foreground)" }}
+                          >
                             {service.title}
                           </h3>
-                          <p className="text-xs truncate" style={{ color: "var(--secondary-text)" }}>
+                          <p
+                            className="text-xs truncate"
+                            style={{ color: "var(--secondary-text)" }}
+                          >
                             {service.description}
                           </p>
                         </div>
@@ -751,32 +1141,78 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/portfolio")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/portfolio")
+                  ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/portfolio")
+                  ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Portfolio
             </Link>
 
             {/* Mobile Products Accordion */}
             <div>
-              <button onClick={toggleMobileProducts} className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all" style={{ color: "var(--foreground)" }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
+              <button
+                onClick={toggleMobileProducts}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all"
+                style={{ color: "var(--foreground)" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "transparent")
+                }
+              >
                 <span>Products</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${isMobileProductsOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${isMobileProductsOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
               {isMobileProductsOpen && (
                 <div className="mt-2 grid grid-cols-1 gap-3 pl-2">
                   {products.map((product, index) => {
                     return (
-                      <Link key={index} href={`/products/${product.slug}`} onClick={toggleMobileMenu} className="flex items-center space-x-3 p-3 rounded-lg transition-all" onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
+                      <Link
+                        key={index}
+                        href={`/products/${product.slug}`}
+                        onClick={toggleMobileMenu}
+                        className="flex items-center space-x-3 p-3 rounded-lg transition-all"
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "var(--hover-bg)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "transparent")
+                        }
+                      >
                         <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden shadow-md">
-                          <Image src={product.logo} alt="" width={40} height={40} className="w-full h-full object-cover" unoptimized />
+                          <Image
+                            src={product.logo}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="w-full h-full object-cover"
+                            unoptimized
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                          <h3
+                            className="text-sm font-semibold"
+                            style={{ color: "var(--foreground)" }}
+                          >
                             {product.title}
                           </h3>
-                          <p className="text-xs truncate" style={{ color: "var(--secondary-text)" }}>
+                          <p
+                            className="text-xs truncate"
+                            style={{ color: "var(--secondary-text)" }}
+                          >
                             {product.description}
                           </p>
                         </div>
@@ -792,8 +1228,16 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/blog")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/blog")
+                  ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/blog")
+                  ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Blog
             </Link>
@@ -803,8 +1247,16 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/about")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/about")
+                  ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/about")
+                  ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)"
+                  : "transparent")
+              }
             >
               About
             </Link>
@@ -813,8 +1265,16 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/careers")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/careers")
+                  ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/careers")
+                  ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Careers
             </Link>
@@ -823,12 +1283,24 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
               style={getNavLinkStyle("/contact")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)" : "transparent")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/contact")
+                  ? "color-mix(in srgb, var(--brand-blue) 15%, transparent)"
+                  : "var(--hover-bg)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = isActive("/contact")
+                  ? "color-mix(in srgb, var(--brand-blue) 10%, transparent)"
+                  : "transparent")
+              }
             >
               Contact
             </Link>
-            <Link href="/contact" onClick={toggleMobileMenu} className="block w-full text-center bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-6 py-3 rounded-full text-base font-medium transition-all shadow-lg">
+            <Link
+              href="/contact"
+              onClick={toggleMobileMenu}
+              className="block w-full text-center bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-6 py-3 rounded-full text-base font-medium transition-all shadow-lg"
+            >
               Let’s Talk
             </Link>
           </div>
@@ -853,10 +1325,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
-
-
-
-
-
