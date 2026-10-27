@@ -126,6 +126,7 @@ export default function CaseStudies() {
 
                 {/* Metric badge: value above label, both centered */}
                 <div
+                  className="min-w-[63px] px-[10.5px] py-[6px] sm:min-w-[84px] sm:px-[14px] sm:py-[8px]"
                   style={{
                     display: "flex",
                     flexDirection: "column",
@@ -133,8 +134,6 @@ export default function CaseStudies() {
                     justifyContent: "center",
                     textAlign: "center",
                     gap: 4,
-                    minWidth: 84,
-                    padding: "8px 14px",
                     borderRadius: 999,
                     color: "#fff",
                     fontWeight: 700,
@@ -143,15 +142,9 @@ export default function CaseStudies() {
                     ...cs.gradientStyle,
                   }}
                 >
-                  <span>{cs.metric}</span>
+                  <span className="text-[75%] sm:text-base">{cs.metric}</span>
 
-                  <span
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      opacity: 0.9,
-                    }}
-                  >
+                  <span className="text-[7.5px] sm:text-[10px] font-semibold opacity-90">
                     {cs.metricLabel}
                   </span>
                 </div>

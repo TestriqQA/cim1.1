@@ -284,15 +284,14 @@ export default function Hero() {
                   <Link
                     href="/portfolio/testriq-organic-growth"
                     aria-label="Case Study: Testriq QA Lab organic growth"
-                    className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                    className="text-[9px] leading-3 sm:text-xs sm:leading-4 px-[9px] py-[3px] sm:px-3 sm:py-1 transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                     style={{
-                      padding: "4px 12px",
                       borderRadius: 999,
                       background:
                         "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
                       color: "#fff",
                       fontWeight: 600,
-                      fontSize: 12,
+                      textAlign: "center",
                     }}
                   >
                     Case Study

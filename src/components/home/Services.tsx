@@ -315,19 +315,20 @@ export default function Services() {
       <div className="mx-auto px-6 md:px-12 xl:px-20">
         <div className="text-center mb-12">
           <div
+            className="inline-flex items-center gap-2 whitespace-nowrap max-w-full"
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "8px 16px",
+              padding: "8px 12px",
               borderRadius: 999,
               backgroundColor: "var(--background)",
               border: "1px solid var(--border-color)",
               marginBottom: 16,
             }}
           >
-            <Zap className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-            <span style={{ fontWeight: 600 }}>
+            <Zap
+              className="w-4 h-4 flex-shrink-0"
+              style={{ color: "var(--brand-yellow)" }}
+            />
+            <span className="text-xs sm:text-sm" style={{ fontWeight: 600 }}>
               Full-Stack Digital Presence Services
             </span>
           </div>

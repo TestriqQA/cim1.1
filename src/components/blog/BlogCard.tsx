@@ -28,7 +28,7 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           borderColor: "var(--border-color)",
         }}
       >
-        <div className="relative h-64 md:h-80 overflow-hidden">
+        <div className="relative w-full aspect-[16/9] overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
@@ -51,14 +51,20 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           <h3 className="text-xl md:text-2xl font-bold mb-3 line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
             {post.title}
           </h3>
-          <p className="text-sm mb-4 line-clamp-2" style={{ color: "var(--secondary-text)" }}>
+          <p
+            className="text-sm mb-4 line-clamp-2"
+            style={{ color: "var(--secondary-text)" }}
+          >
             {post.excerpt}
           </p>
           <div
             className="flex items-center justify-between flex-wrap gap-4 mb-4 pb-4 border-b"
             style={{ borderColor: "var(--border-color)" }}
           >
-            <div className="flex items-center space-x-4 text-xs" style={{ color: "var(--secondary-text)" }}>
+            <div
+              className="flex items-center space-x-4 text-xs"
+              style={{ color: "var(--secondary-text)" }}
+            >
               <div className="flex items-center space-x-1">
                 <Calendar className="w-4 h-4" />
                 <span>{formattedDate}</span>
@@ -107,13 +113,13 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           borderColor: "var(--border-color)",
         }}
       >
-        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+        <div className="relative w-20 aspect-square shrink-0 rounded-lg overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
             fill
             sizes="80px"
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
             loader={sanityImageLoader}
           />
         </div>
@@ -121,7 +127,10 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           <h4 className="font-semibold line-clamp-2 mb-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
             {post.title}
           </h4>
-          <div className="flex items-center space-x-3 text-xs" style={{ color: "var(--secondary-text)" }}>
+          <div
+            className="flex items-center space-x-3 text-xs"
+            style={{ color: "var(--secondary-text)" }}
+          >
             <span>{formattedDate}</span>
             <span>•</span>
             <span>{post.readTime} min read</span>
@@ -141,7 +150,7 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
         borderColor: "var(--border-color)",
       }}
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <Image
           src={post.image}
           alt={post.title}
@@ -156,13 +165,17 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           <span
             className="text-xs font-semibold px-2 py-1 rounded-full"
             style={{
-              backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
+              backgroundColor:
+                "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
               color: "var(--brand-purple-text)",
             }}
           >
             {post.category}
           </span>
-          <span className="text-xs flex items-center space-x-1" style={{ color: "var(--secondary-text)" }}>
+          <span
+            className="text-xs flex items-center space-x-1"
+            style={{ color: "var(--secondary-text)" }}
+          >
             <Clock className="w-3 h-3" />
             <span>{post.readTime}m</span>
           </span>
@@ -170,7 +183,10 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
         <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
           {post.title}
         </h3>
-        <p className="text-sm mb-4 line-clamp-2" style={{ color: "var(--secondary-text)" }}>
+        <p
+          className="text-sm mb-4 line-clamp-2"
+          style={{ color: "var(--secondary-text)" }}
+        >
           {post.excerpt}
         </p>
         <div

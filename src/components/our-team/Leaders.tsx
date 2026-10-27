@@ -38,7 +38,7 @@ export default function Leaders() {
             className="mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl"
             style={{ color: "var(--foreground)" }}
           >
-            Three people own the outcome
+            Four people own the outcome
           </h2>
           <p
             className="mt-5 text-lg leading-relaxed"
