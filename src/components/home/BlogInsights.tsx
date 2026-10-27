@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, ArrowRight, Calendar, Clock, User } from "lucide-react";
+import { BookOpen, ArrowRight, Calendar, Clock } from "lucide-react";
 import { BlogPost } from "@/data/blog";
 
 interface BlogInsightsProps {
@@ -27,6 +27,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
             "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
         }}
       />
+
       <div
         className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-10 blur-3xl"
         style={{
@@ -51,12 +52,18 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
               }}
             >
               <BookOpen
-                style={{ color: "var(--brand-purple)", width: 20, height: 20 }}
+                style={{
+                  color: "var(--brand-purple)",
+                  width: 20,
+                  height: 20,
+                }}
               />
+
               <span style={{ fontWeight: 600, fontSize: 14 }}>
                 Latest from Blog
               </span>
             </div>
+
             <h2
               style={{
                 fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
@@ -76,6 +83,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                 industry trends
               </span>
             </h2>
+
             <p
               style={{
                 color: "var(--secondary-text)",
@@ -87,9 +95,11 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
               development, and business growth.
             </p>
           </div>
+
+          {/* Top View All Button: desktop only */}
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:gap-3"
+            className="hidden lg:inline-flex group items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:gap-3"
             style={{
               backgroundColor: "var(--card-bg)",
               border: "1px solid var(--border-color)",
@@ -120,7 +130,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group"
+                className={`group`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <article
@@ -139,6 +149,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
+
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
                       <span
@@ -151,6 +162,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                         {post.category}
                       </span>
                     </div>
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
@@ -166,6 +178,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                         <Calendar className="w-3.5 h-3.5" />
                         <span>{formattedDate}</span>
                       </div>
+
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />
                         <span>{post.readTime} min read</span>
@@ -206,10 +219,12 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                             className="object-cover"
                           />
                         </div>
+
                         <div>
                           <p className="text-sm font-medium">
                             {post.author.name}
                           </p>
+
                           <p
                             className="text-xs"
                             style={{ color: "var(--secondary-text)" }}
@@ -218,6 +233,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                           </p>
                         </div>
                       </div>
+
                       <div
                         className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
                         style={{ color: "var(--brand-purple-text)" }}
@@ -233,8 +249,8 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
           })}
         </div>
 
-        {/* Mobile View All Button */}
-        <div className="mt-10 text-center md:hidden">
+        {/* Bottom View All Button: mobile and tablet only */}
+        <div className="mt-10 text-center lg:hidden">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all"

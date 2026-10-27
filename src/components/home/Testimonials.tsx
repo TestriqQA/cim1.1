@@ -11,7 +11,7 @@ export default function Testimonials() {
       // NAME CORRECTION ONLY — the quote text is untouched. The client is
       // Testriq QA Lab: their own site's Organization schema uses that
       // name and the string "Technologies" appears nowhere on
-      // www.testriq.com. This quote was credited to "Testriq
+      // [www.testriq.com](https://www.testriq.com). This quote was credited to "Testriq
       // Technologies" here while /portfolio credited the same engagement
       // to Testriq QA Lab, so the site contradicted itself.
       company: "Testriq QA Lab",
@@ -103,22 +103,16 @@ export default function Testimonials() {
         </div>
 
         <div
+          className="p-6 md:p-8"
           style={{
-            padding: 32,
             borderRadius: 24,
             border: "2px solid var(--border-color)",
             backgroundColor: "var(--card-bg)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              gap: 24,
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          {/* Mobile/tablet: stacked & centered. Desktop: side by side */}
+          <div className="flex flex-col lg:flex-row items-center gap-6">
             <div
               style={{
                 width: 96,
@@ -138,10 +132,10 @@ export default function Testimonials() {
               {testimonials[testimonialIndex].avatar}
             </div>
 
-            <div style={{ flex: 1 }}>
+            <div className="flex-1 w-full text-center lg:text-left">
               <p
+                className="text-base md:text-lg"
                 style={{
-                  fontSize: 18,
                   fontWeight: 700,
                   marginBottom: 12,
                   fontStyle: "italic",
@@ -151,12 +145,8 @@ export default function Testimonials() {
                 &quot;{testimonials[testimonialIndex].quote}&quot;
               </p>
               <div
-                style={{
-                  display: "flex",
-                  gap: 12,
-                  alignItems: "center",
-                  marginBottom: 12,
-                }}
+                className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-1 sm:gap-3"
+                style={{ marginBottom: 12 }}
               >
                 <div style={{ fontWeight: 800, color: "var(--foreground)" }}>
                   {testimonials[testimonialIndex].company}
@@ -193,12 +183,10 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation Controls */}
+          {/* Navigation Controls - centered on mobile/tablet, left on desktop */}
           <div
+            className="flex justify-center lg:justify-start items-center"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
               marginTop: 24,
               paddingTop: 24,
               borderTop: "1px solid var(--border-color)",

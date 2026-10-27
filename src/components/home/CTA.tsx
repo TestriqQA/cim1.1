@@ -21,6 +21,7 @@ export default function CTA() {
             Transform Your Digital Presence with a Web Development Company That
             Delivers Results
           </h2>
+
           <p style={{ color: "rgba(255,255,255,0.9)", marginBottom: 20 }}>
             Join 300+ businesses that trust Cinute InfoMedia for web
             development, mobile apps, and digital marketing solutions that drive
@@ -32,27 +33,38 @@ export default function CTA() {
               display: "flex",
               gap: 12,
               justifyContent: "center",
+              alignItems: "center",
               flexWrap: "wrap",
             }}
           >
             <Link
               href="/contact"
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 8,
                 padding: "14px 28px",
                 borderRadius: 999,
                 background: "#fff",
                 color: "#006d97",
                 fontWeight: 800,
                 transition: "all 0.3s",
+                textAlign: "center",
+                lineHeight: 1.2,
               }}
               className="hover:bg-gray-100"
             >
-              Start Your Free Digital Audit{" "}
-              <ChevronRight className="w-4 h-4 inline-block ml-2" />
+              <span>Start Your Free Digital Audit</span>
+              <ChevronRight size={18} />
             </Link>
+
             <Link
               href="/contact"
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
                 padding: "14px 28px",
                 borderRadius: 999,
                 background: "transparent",
@@ -60,10 +72,13 @@ export default function CTA() {
                 color: "#fff",
                 fontWeight: 700,
                 transition: "all 0.3s",
+                lineHeight: 1.2,
               }}
-              className="hover:bg-white hover:text-cyan-600"
+              className="group hover:bg-white hover:text-cyan-600"
             >
-              Request Proposal
+              <span className="inline-block transition-transform duration-300 hover:scale-[1.1] active:scale-[1.1]">
+                Request Proposal
+              </span>
             </Link>
           </div>
         </div>
