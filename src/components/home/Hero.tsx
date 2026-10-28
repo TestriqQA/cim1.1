@@ -279,19 +279,21 @@ export default function Hero() {
                       </p>
                     </div>
                   </div>
-                  {/* The accessible name spells out which case study this
-                                        opens, and keeps the visible label inside it (WCAG 2.5.3). */}
+                  {/* The accessible name spells out which case study this opens, and keeps the visible label inside it (WCAG 2.5.3). */}
+
                   <Link
                     href="/portfolio/testriq-organic-growth"
                     aria-label="Case Study: Testriq QA Lab organic growth"
-                    className="text-[9px] leading-3 sm:text-xs sm:leading-4 px-[9px] py-[3px] sm:px-3 sm:py-1 transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                    className="text-xs leading-4 sm:text-xs sm:leading-4 px-3 py-2 sm:px-3 sm:py-1 transition-all duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                     style={{
                       borderRadius: 999,
                       background:
                         "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
                       color: "#fff",
-                      fontWeight: 600,
+                      fontWeight: 700,
                       textAlign: "center",
+                      whiteSpace: "nowrap",
+                      boxShadow: "0 3px 10px rgba(0, 138, 193, 0.2)",
                     }}
                   >
                     Case Study
