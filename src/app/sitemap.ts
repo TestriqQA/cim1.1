@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
-import { products } from "@/data/products";
+import { listedProducts, isProductListed } from "@/data/products";
 import { productPrivacyPolicies } from "@/data/productPrivacy";
 import { productSupportData } from "@/data/productSupport";
 import { clientProjects } from "@/data/portfolio";
@@ -108,8 +108,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         console.warn('Warning: Failed to fetch Sanity data for sitemap. Blog routes will be excluded.', error);
     }
 
-    // 6. Product Routes
-    const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    // 6. Product Routes — only products still reachable from the site. The three
+    // withdrawn in Oct 2026 were previously still listed here with no internal
+    // link pointing at them, which is the definition of an orphan URL.
+    const productRoutes: MetadataRoute.Sitemap = listedProducts.map((product) => ({
         url: `${baseUrl}/products/${product.slug}`,
         lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
@@ -117,7 +119,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // 7. Product Privacy Policy Routes
-    const productPrivacyRoutes: MetadataRoute.Sitemap = productPrivacyPolicies.map((policy) => ({
+    const productPrivacyRoutes: MetadataRoute.Sitemap = productPrivacyPolicies
+        .filter((policy) => isProductListed(policy.slug))
+        .map((policy) => ({
         url: `${baseUrl}/products/${policy.slug}/privacy-policy`,
         lastModified: staticLastModified,
         changeFrequency: 'yearly' as const,
@@ -125,7 +129,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // 8. Product Support Routes
-    const productSupportRoutes: MetadataRoute.Sitemap = productSupportData.map((support) => ({
+    const productSupportRoutes: MetadataRoute.Sitemap = productSupportData
+        .filter((support) => isProductListed(support.slug))
+        .map((support) => ({
         url: `${baseUrl}/products/${support.slug}/support`,
         lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,

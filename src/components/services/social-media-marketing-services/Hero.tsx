@@ -175,7 +175,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    300+
+                                    Proven
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>
                                     Campaigns
@@ -189,7 +189,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    5M+
+                                    Broad
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Reach

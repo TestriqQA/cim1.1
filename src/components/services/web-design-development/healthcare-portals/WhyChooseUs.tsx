@@ -468,9 +468,9 @@ export default function WhyChooseUs() {
                 {/* Stats Section */}
                 <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                        { Icon: Hospital, number: "200+", label: "Healthcare Clients", color: "#3b82f6" },
-                        { Icon: Users, number: "1M+", label: "Patients Served", color: "#6366f1" },
-                        { Icon: Shield, number: "100%", label: "HIPAA Compliant", color: "#8b5cf6" },
+                        { Icon: Hospital, number: "Trusted", label: "Healthcare Clients", color: "#3b82f6" },
+                        { Icon: Users, number: "High volume", label: "Patients Served", color: "#6366f1" },
+                        { Icon: Shield, number: "Aligned", label: "HIPAA Practices", color: "#8b5cf6" },
                         { Icon: Star, number: "High", label: "System Uptime", color: "#a78bfa" },
                     ].map((stat, idx) => (
                         <div

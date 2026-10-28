@@ -52,7 +52,7 @@ export default function Services() {
                 "Business process automation (BPA)",
                 "Document processing & OCR",
                 <>CRM/ERP integrations (<Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">Salesforce, HubSpot</Link>)</>,
-                "Key Results: 200+ hours saved monthly, significant cost reduction",
+                "Key Results: significant hours saved monthly, significant cost reduction",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-purple), var(--brand-yellow))" },
         },

@@ -100,7 +100,7 @@ export default function ServiceOverview() {
                         className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        In the post-December 2025 Google core update era, "content is king" is an understatement. Today, content relevance and authority are the only currencies that matter. At Cinute Infomedia, we don't just write; we architect search engine friendly content that bridges the gap between AI-driven search intent and human experience.
+                        In the post-December 2025 Google core update era, "content is king" is an understatement. Today, content relevance and authority are the only currencies that matter. At Cinute InfoMedia, we don't just write; we architect search engine friendly content that bridges the gap between AI-driven search intent and human experience.
                         <br /><br />
                         Our SEO content strategy is rooted in deep user intent analysis, ensuring every word aligns with the specific needs of your audience whether they are in the US, EU, or APAC. From SEO copywriting agency excellence to complex topic clusters SEO, we deliver the technical depth and creative flair required to dominate the SERPs in 2026.
                     </p>

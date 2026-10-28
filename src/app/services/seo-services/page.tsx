@@ -40,8 +40,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'SEO Services | Expert SEO Agency for Organic Growth & Rankings 2026',
-    description: 'Results-driven SEO services to dominate search rankings. Expert technical SEO, content strategy, link building, and AI-search optimization. sustained organic traffic growth, 500+ keywords ranked on page 1, strong ROI, strong client retention.',
+    title: 'SEO Services & Organic Growth | Cinute InfoMedia',
+    description: 'Technical SEO, content and link building for organic growth, tracked in Search Console and GA4. Start with a free SEO audit.',
     url: '/services/seo-services',
     keywords: [
         'SEO services',
@@ -66,8 +66,8 @@ export default function OrganicGrowthSEOPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "SEO Services | Expert SEO Agency for Organic Growth & Rankings 2026",
-            description: "Results-driven SEO services to dominate search rankings. Expert technical SEO, content strategy, link building, and AI-search optimization. sustained organic traffic growth, 500+ keywords ranked on page 1, strong ROI, strong client retention.",
+            name: "SEO Services & Organic Growth | Cinute InfoMedia",
+            description: "Technical SEO, content and link building for organic growth, tracked in Search Console and GA4. Start with a free SEO audit.",
             urlPath: "/services/seo-services",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -84,7 +84,7 @@ export default function OrganicGrowthSEOPage() {
 
         generateServiceSchema({
             name: "SEO Services",
-            description: "Results-driven SEO services to dominate search rankings in the 2026 AI-search era. We don't just optimize — we engineer sustainable organic growth engines. Expert technical SEO, E-E-A-T content strategy, authority link building, and AI Overview optimization. sustained organic traffic growth, 500+ keywords ranked on page 1, strong ROI, strong client retention, 50+ industries served.",
+            description: "Results-driven SEO services to dominate search rankings in the 2026 AI-search era. We don't just optimize — we engineer sustainable organic growth engines. Expert technical SEO, E-E-A-T content strategy, authority link building, and AI Overview optimization: sustained organic traffic growth, keywords ranked on page 1, strong ROI and strong client retention across a broad range of industries.",
             urlPath: "/services/seo-services",
             serviceType: "Search Engine Optimization (SEO)",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -137,7 +137,7 @@ export default function OrganicGrowthSEOPage() {
 
         generateHowToSchema({
             name: "Our 6-Phase SEO Growth Process",
-            description: "A proven 6-phase SEO methodology that has delivered sustained organic traffic growth, 500+ page-1 keywords, and strong ROI for clients across 50+ industries.",
+            description: "A proven 6-phase SEO methodology that has delivered sustained organic traffic growth, page-1 keywords, and strong ROI for clients across a broad range of industries.",
             steps: [
                 { name: "Comprehensive SEO Audit", text: "Deep technical audit covering crawlability, Core Web Vitals, indexation, schema gaps, and competitor analysis. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-audit" },
                 { name: "Keyword & Content Strategy", text: "Data-driven keyword research, topical mapping, content gap analysis, and pillar-cluster architecture design. Timeline: Week 2-3.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-strategy" },

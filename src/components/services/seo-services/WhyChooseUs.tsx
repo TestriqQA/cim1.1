@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
             icon: Zap,
             decorIcon: ArrowUpRight,
             title: "Technical Excellence",
-            description: <span>Our team has delivered rigorously tested web architectures for 50+ clients. We speak the language of developers, ensuring your <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Technical SEO Audit</Link> translates into perfect code, schema, and Core Web Vitals scores.</span>,
+            description: <span>Our team has delivered rigorously tested web architectures for clients. We speak the language of developers, ensuring your <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Technical SEO Audit</Link> translates into perfect code, schema, and Core Web Vitals scores.</span>,
             highlight: "Dev-Ready Code",
             color: "#8b5cf6",
         },

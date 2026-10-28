@@ -32,7 +32,9 @@ export default function Footer() {
         { name: "Contact Us", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-of-service" },
-        { name: "CMS Login", href: "/cms" },
+        // No "CMS Login" link: /cms is the Sanity Studio. A sitewide footer link
+        // handed crawlers an editor route on every page; editors reach it directly.
+        // The route also now carries X-Robots-Tag: noindex (see next.config.mjs).
     ];
 
     // Service sub-categories for expanded grid
@@ -70,7 +72,7 @@ export default function Footer() {
                 { name: "Real Estate", href: "/services/web-design-development/real-estate-platforms" },
                 { name: "Travel & Hospitality", href: "/services/web-design-development/travel-and-hospitality-services" },
                 { name: "Entertainment", href: "/services/web-design-development/entertainment-media" },
-                { name: "Portfolio Sites", href: "/services/web-design-development/branding-services" },
+                { name: "Branding & Identity", href: "/services/web-design-development/branding-services" },
             ],
         },
         {
@@ -364,7 +366,7 @@ export default function Footer() {
                 <div className="py-6 border-t" style={styles.border}>
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-xs" style={styles.text}>
-                            © {year} Cinute Infomedia. All rights reserved.
+                            © {year} Cinute InfoMedia. All rights reserved.
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
                             <Link href="/privacy-policy" className="hover:underline" style={styles.link}>Privacy Policy</Link>

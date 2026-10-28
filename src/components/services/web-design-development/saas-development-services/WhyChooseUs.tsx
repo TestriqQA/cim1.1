@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
         {
             icon: Rocket,
             title: "MVP to Enterprise Roadmap",
-            description: "Launch fast with a lean MVP, then iteratively add features based on user feedback, analytics, and market validation. Our SaaS MVP development services follow agile methodologies with 2-week sprints, continuous delivery, and data-driven prioritization. Case study: Delivered production-ready MVPs in 6-8 weeks for 20+ startups, 70% of which secured Series A funding.",
+            description: "Launch fast with a lean MVP, then iteratively add features based on user feedback, analytics, and market validation. Our SaaS MVP development services follow agile methodologies with 2-week sprints, continuous delivery, and data-driven prioritization. Case study: Delivered production-ready MVPs in 6-8 weeks for early-stage startups, several of which went on to raise.",
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {

@@ -18,7 +18,7 @@ export default function Process() {
                         <span style={{ fontWeight: 600 }}>Our Proven Method</span>
                     </div>
                     <h2 style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: 8 }}>Your 4-Step Digital Audit & <span style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>Growth Roadmap</span></h2>
-                    <p style={{ color: "var(--secondary-text)", maxWidth: "700px", margin: "0 auto" }}>Every successful project starts with understanding where you are and where you want to go. Our proven 4-step framework has guided 300+ businesses to digital excellence.</p>
+                    <p style={{ color: "var(--secondary-text)", maxWidth: "700px", margin: "0 auto" }}>Every successful project starts with understanding where you are and where you want to go. Our proven 4-step framework has guided businesses to digital excellence.</p>
                 </div>
 
                 <div className="relative flex flex-col items-center">

@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--foreground)" }}>The Cinute Infomedia Advantage:</span> <span style={{ color: "var(--brand-purple-text)" }}>Where Innovation Meets Execution</span>
+                        <span style={{ color: "var(--foreground)" }}>The Cinute InfoMedia Advantage:</span> <span style={{ color: "var(--brand-purple-text)" }}>Where Innovation Meets Execution</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         As a globally recognized custom mobile app development company, we combine cutting-edge technology with deep industry expertise to build apps that users love and businesses profit from.

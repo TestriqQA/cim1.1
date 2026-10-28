@@ -4,7 +4,7 @@ import { getPageMetadata } from "@/lib/metadata";
 import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = getPageMetadata({
-    title: "Get in Touch | Cinute Infomedia",
+    title: "Get in Touch | Cinute InfoMedia",
     description: "Ready to grow your business? Let's discuss your project and build something amazing together.",
     url: "/get-in-touch",
     image: "/og-images/get_in_touch.webp"

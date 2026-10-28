@@ -4,7 +4,7 @@ import { generateBlogPostGraphSchema } from "@/lib/schema";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
-import { postQuery, allPostsQuery, moreStoriesQuery } from "@/sanity/lib/queries";
+import { postQuery, allPostsQuery, relatedPostsQuery } from "@/sanity/lib/queries";
 import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.slug,
     post.publishedAt,
     post.author.name,
+    post.updatedAt,
     post.seo
   );
 }
@@ -50,8 +51,26 @@ export default async function BlogDetailPage({ params }: Props) {
   const post = mapSanityPostToBlogPost(sanityPost);
 
   const { categories, popularPosts, tags } = await getSidebarData();
-  const relatedPostsRaw = await client.fetch(moreStoriesQuery, { skip: sanityPost._id, limit: 3 });
-  const relatedPosts = relatedPostsRaw.map(mapSanityPostToBlogPost).map(toListPost);
+
+  // Related by category, then by shared tags, then by recency (T11). The three
+  // tiers come back together and are flattened in that order, deduped, and cut
+  // to three — so a post in a thin category still fills the row.
+  const related = await client.fetch(relatedPostsQuery, {
+    skip: sanityPost._id,
+    categoryId: sanityPost.category?._id ?? null,
+    tags: sanityPost.tags ?? [],
+    limit: 3,
+  });
+  const seen = new Set<string>([sanityPost._id]);
+  const relatedPosts = [
+    ...(related?.sameCategory ?? []),
+    ...(related?.sharedTags ?? []),
+    ...(related?.recent ?? []),
+  ]
+    .filter((p: { _id?: string }) => Boolean(p?._id) && !seen.has(p._id!) && seen.add(p._id!))
+    .slice(0, 3)
+    .map(mapSanityPostToBlogPost)
+    .map(toListPost);
 
   // Unified @graph schema — auto-generated from post data with CMS overrides
   const blogPostSchema = generateBlogPostGraphSchema(post);

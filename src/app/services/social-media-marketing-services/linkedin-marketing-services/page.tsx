@@ -9,27 +9,15 @@ import FAQ from "@/components/services/social-media-marketing-services/linkedin-
 import CTA from "@/components/services/social-media-marketing-services/linkedin-marketing-services/CTA";
 
 export const metadata: Metadata = {
-    title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
+    title: "LinkedIn Marketing Services | Cinute InfoMedia",
     description:
-        "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
-    keywords: [
-        "LinkedIn marketing",
-        "LinkedIn ads agency",
-        "B2B lead generation",
-        "LinkedIn advertising",
-        "LinkedIn InMail campaigns",
-        "LinkedIn sponsored content",
-        "account-based marketing",
-        "LinkedIn Sales Navigator",
-        "B2B social media marketing",
-        "LinkedIn strategy",
-    ],
+        "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
     },
     openGraph: {
-        title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
-        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
+        title: "LinkedIn Marketing Services | Cinute InfoMedia",
+        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
         type: "website",
         images: [
@@ -37,14 +25,14 @@ export const metadata: Metadata = {
                 url: "/og-images/linkedin-marketing-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026 by Cinute Infomedia",
+                alt: "LinkedIn Marketing Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
-        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
+        title: "LinkedIn Marketing Services | Cinute InfoMedia",
+        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
         images: ["/og-images/linkedin-marketing-services.webp"],
     },
 
@@ -59,7 +47,7 @@ const jsonLd = {
             "description": "Professional LinkedIn ads management, B2B lead generation, and Account Based Marketing (ABM) services optimized for 2026.",
             "provider": {
                 "@type": "Organization",
-                "name": "Cinute Infomedia",
+                "name": "Cinute InfoMedia",
                 "url": "https://www.cinuteinfomedia.com"
             },
             "areaServed": "Global",

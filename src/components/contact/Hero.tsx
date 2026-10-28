@@ -398,7 +398,7 @@ export default function Hero() {
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Whether you need a high-performance website, AI-powered marketing automation, or a complete digital transformation, our team of experts is ready to help you succeed.
                                 <span className="block mt-2 font-semibold" style={{ color: "var(--foreground)" }}>
-                                    With 300+ successful projects and strong client retention, we're your trusted partner for scalable digital growth.
+                                    With a proven record of successful projects and strong client retention, we're your trusted partner for scalable digital growth.
                                 </span>
                             </p>
                         </div>

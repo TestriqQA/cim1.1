@@ -135,13 +135,13 @@ export async function POST(req: NextRequest) {
 
             const emailHeader = `
                 <div style="background: linear-gradient(90deg, ${BRAND_BLUE}, ${BRAND_PURPLE}); padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
-                    <h1 style="color: #ffffff; margin: 0; font-family: Arial, sans-serif; font-size: 24px;">Cinute Infomedia Careers</h1>
+                    <h1 style="color: #ffffff; margin: 0; font-family: Arial, sans-serif; font-size: 24px;">Cinute InfoMedia Careers</h1>
                 </div>
             `;
 
             const emailFooter = `
                 <div style="text-align: center; padding: 20px; color: ${TEXT_sec}; font-size: 12px; font-family: Arial, sans-serif;">
-                    <p>&copy; ${new Date().getFullYear()} Cinute Infomedia. All rights reserved.</p>
+                    <p>&copy; ${new Date().getFullYear()} Cinute InfoMedia. All rights reserved.</p>
                 </div>
             `;
 
@@ -212,7 +212,7 @@ export async function POST(req: NextRequest) {
                                 <h2 style="color: ${TEXT_main}; margin-top: 0;">Verified! We received your application.</h2>
                                 <p style="color: ${TEXT_sec}; line-height: 1.6;">
                                     Hi <strong>${fullName}</strong>,<br/><br/>
-                                    Thanks for applying to the <strong>${jobTitle}</strong> position at Cinute Infomedia. 
+                                    Thanks for applying to the <strong>${jobTitle}</strong> position at Cinute InfoMedia. 
                                     Our team is currently reviewing your application and we'll be in touch if your qualifications match our needs.
                                 </p>
                                 <div style="margin: 30px 0;">
@@ -220,7 +220,7 @@ export async function POST(req: NextRequest) {
                                 </div>
                                 <p style="color: ${TEXT_sec}; font-size: 14px;">
                                     Best Regards,<br/>
-                                    <strong>Cinute Infomedia Recruitment Team</strong>
+                                    <strong>Cinute InfoMedia Recruitment Team</strong>
                                 </p>
                             </div>
                             ${emailFooter}

@@ -107,7 +107,7 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Avg. ROAS</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">500+</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Proven</div>
                                 <div className="text-xs sm:text-sm text-white/70">Campaigns Managed</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">

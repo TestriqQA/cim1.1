@@ -34,7 +34,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Web Portal Development Services | News Portal & Blog Design Agency',
+    title: 'News Portal & Blog Design Services | Cinute InfoMedia',
     description: 'Scale with trusted Blogs & News Portals Development. Custom CMS, SEO-ready architectures & monetization solutions for global media. Get a quote!',
     url: '/services/web-design-development/blog-design-services',
     keywords: [
@@ -57,7 +57,7 @@ export default function BlogsNewsPortalsPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Web Portal Development Services | News Portal & Blog Design Agency",
+            name: "News Portal & Blog Design Services | Cinute InfoMedia",
             description: "Scale with trusted Blogs & News Portals Development. Custom CMS, SEO-ready architectures & monetization solutions for global media. Get a quote!",
             urlPath: "/services/web-design-development/blog-design-services",
             datePublished: "2025-01-01",

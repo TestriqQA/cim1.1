@@ -25,8 +25,8 @@ import {
 
 export const metadata: Metadata = {
   ...getPageMetadata({
-    title: "Web Development Company | AI-Powered Digital Solutions | Cinute InfoMedia",
-    description: "Expert web development company delivering custom websites, mobile apps & AI-driven marketing. proven, measurable ROI. 300+ global projects. Free audit today! ✨",
+    title: "Web Development & Digital Marketing | Cinute InfoMedia",
+    description: "Cinute InfoMedia builds fast websites and mobile apps and runs SEO, performance marketing and AI automation. Mira Road, Mumbai. Book a free audit.",
     url: "/",
     keywords: [
       "web development company",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "web design and development company",
       "professional website development"
     ],
-    image: "/og-images/home_page.png",
+    image: "/og-images/home_page.webp",
   }),
   other: {
     "geo.region": "IN-MH",
@@ -61,8 +61,8 @@ export default async function Home() {
     generateWebSiteSchema(),
 
     generateWebPageSchema({
-      name: "Web Development Company | AI-Powered Digital Solutions",
-      description: "Expert web development company delivering custom websites, mobile apps & AI-driven marketing. proven, measurable ROI. 300+ global projects. Free audit today!",
+      name: "Web Development & Digital Marketing | Cinute InfoMedia",
+      description: "Cinute InfoMedia builds fast websites and mobile apps and runs SEO, performance marketing and AI automation. Mira Road, Mumbai. Book a free audit.",
       urlPath: "",
       datePublished: "2025-01-01",
       dateModified: "2026-03-02",
@@ -75,7 +75,7 @@ export default async function Home() {
     generateFAQSchema([
       {
         question: "What makes Cinute InfoMedia different from other web development companies?",
-        answer: "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and 300+ successful projects speak to our partnership approach.",
+        answer: "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and a proven record of delivery speaks to our partnership approach.",
       },
       {
         question: "What web development services do you offer?",
@@ -154,7 +154,7 @@ export default async function Home() {
 
     generateHowToSchema({
       name: "Your 4-Step Digital Audit & Growth Roadmap",
-      description: "Every successful project starts with understanding where you are and where you want to go. Our proven 4-step framework has guided 300+ businesses to digital excellence.",
+      description: "Every successful project starts with understanding where you are and where you want to go. Our proven 4-step framework has guided businesses to digital excellence.",
       totalTime: "PT4W",
       steps: [
         {

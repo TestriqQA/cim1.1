@@ -10,13 +10,13 @@ import CTA from "@/components/services/social-media-marketing-services/twitter-a
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+    title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
     description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
     },
     openGraph: {
-        title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+        title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
         description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
         type: "website",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
                 url: "/og-images/twitter-ads-management.webp",
                 width: 1200,
                 height: 630,
-                alt: "X Marketing Services | Expert Twitter Marketing Agency for Higher CTR by Cinute Infomedia",
+                alt: "X (Twitter) Marketing Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+        title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
         description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
         images: ["/og-images/twitter-ads-management.webp"],
     },
@@ -44,7 +44,7 @@ export default function XMarketingPage() {
         "@graph": [
             {
                 "@type": "Organization",
-                "name": "Cinute Infomedia",
+                "name": "Cinute InfoMedia",
                 "url": "https://www.cinuteinfomedia.com",
                 "logo": "https://www.cinuteinfomedia.com/logo.png",
                 "sameAs": [
@@ -57,7 +57,7 @@ export default function XMarketingPage() {
                 "serviceType": "X (Twitter) Marketing Services",
                 "provider": {
                     "@type": "Organization",
-                    "name": "Cinute Infomedia"
+                    "name": "Cinute InfoMedia"
                 },
                 "description": "Full-service X (Twitter) marketing including ads management, real-time engagement, and trend hijacking for global brands.",
                 "areaServed": "Global",

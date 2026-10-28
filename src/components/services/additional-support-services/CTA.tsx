@@ -153,7 +153,7 @@ export default function CTA() {
                         >
                             {[
                                 { value: "24/7", label: "Support Available" },
-                                { value: "500+", label: "Happy Clients" },
+                                { value: "Growing", label: "Happy Clients" },
                                 { value: "<2hr", label: "Avg Response" },
                             ].map((stat, index) => (
                                 <div key={index} className="text-center flex-1">

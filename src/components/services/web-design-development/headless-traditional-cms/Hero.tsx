@@ -18,9 +18,9 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "50+", label: "CMS Projects" },
+        { value: "Proven", label: "CMS Projects" },
         { value: "High", label: "Uptime" },
-        { value: "-60%", label: "Content Time" },
+        { value: "Faster", label: "Content Time" },
     ];
 
     return (

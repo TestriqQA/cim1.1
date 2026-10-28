@@ -145,7 +145,7 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="text-center">
                         <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple-text)" }}>
-                            300+
+                            Proven
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
                             Mobile apps delivered successfully
@@ -153,7 +153,7 @@ export default function CTA() {
                     </div>
                     <div className="text-center">
                         <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-amber-text)" }}>
-                            50M+
+                            High
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
                             Active users across all apps

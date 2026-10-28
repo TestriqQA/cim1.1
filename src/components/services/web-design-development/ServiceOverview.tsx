@@ -1,12 +1,6 @@
 "use client";
 
 import { Zap } from "lucide-react";
-import {
-    Code2,
-    Search,
-    ShieldCheck,
-    Sparkles
-} from "lucide-react";
 import Link from "next/link";
 
 
@@ -49,7 +43,7 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            As an expert <span className="text-[var(--brand-blue-text)] font-bold">web development company</span>, we provide full-spectrum digital engineering. Our <Link href="/blog/ui-ux-design-principles-best-practices" className="text-[var(--accent-teal-text)] font-bold underline underline-offset-2 hover:underline transition-colors">professional web design agency</Link> combines <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">creative excellence</Link> with technical precision.
+                            As an expert <span className="text-[var(--brand-blue-text)] font-bold">web development company</span>, we provide full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">professional web design agency</span> combines <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">creative excellence</Link> with technical precision.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
@@ -148,279 +142,83 @@ export default function ServiceOverview() {
                             </div>
                         </div>
 
-                        {/* Browser Window */}
-                        <div
-                            className="relative rounded-2xl overflow-hidden shadow-2xl border"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                            }}
+                        {/* Browser Window — decorative wireframe.
+                            Deliberately an SVG with NO text nodes. This was previously
+                            live DOM text: a placeholder site URL, fake import/export
+                            source lines, a preview-pane caption, three invented
+                            engagement counts and an unmeasured latency figure. Google
+                            reads DOM text regardless of aria-hidden, so the words
+                            themselves had to go, not just their accessibility
+                            exposure. Shapes only — nothing here states a fact.
+                            (SEO change request T9.) */}
+                        <svg
+                            viewBox="0 0 520 360"
+                            className="relative w-full h-auto rounded-2xl shadow-2xl border"
+                            style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+                            role="presentation"
+                            aria-hidden="true"
+                            focusable="false"
                         >
-                            {/* Browser Header */}
-                            <div
-                                className="flex items-center gap-2 px-4 py-3 border-b"
-                                style={{ borderColor: "var(--border-color)" }}
-                            >
-                                <div className="flex gap-1.5">
-                                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                                </div>
-                                <div
-                                    className="flex-1 mx-4 px-3 py-1 rounded-md text-xs truncate"
-                                    style={{
-                                        backgroundColor: "color-mix(in srgb, var(--foreground) 5%, transparent)",
-                                        color: "var(--secondary-text)",
-                                    }}
-                                >
-                                    https://your-amazing-website.com
-                                </div>
-                            </div>
+                            {/* chrome bar */}
+                            <rect x="0" y="0" width="520" height="34" fill="color-mix(in srgb, var(--foreground) 4%, transparent)" />
+                            <circle cx="20" cy="17" r="5" fill="#ff5f57" />
+                            <circle cx="38" cy="17" r="5" fill="#febc2e" />
+                            <circle cx="56" cy="17" r="5" fill="#28c840" />
+                            {/* address bar: a shape, not a URL */}
+                            <rect x="78" y="9" width="364" height="16" rx="8" fill="color-mix(in srgb, var(--foreground) 7%, transparent)" />
+                            <line x1="0" y1="34" x2="520" y2="34" stroke="var(--border-color)" strokeWidth="1" />
 
-                            {/* Split View: Code Editor + Preview */}
-                            <div className="grid grid-cols-2 min-h-[280px]">
-                                {/* Code Editor Panel */}
-                                <div
-                                    className="p-4 border-r font-mono text-xs leading-relaxed overflow-hidden"
-                                    style={{
-                                        backgroundColor: "color-mix(in srgb, var(--card-bg) 95%, #1e1e2e)",
-                                        borderColor: "var(--border-color)",
-                                    }}
-                                >
-                                    <div className="flex items-center gap-2 mb-3 pb-2 border-b" style={{ borderColor: "var(--border-color)" }}>
-                                        <Code2 className="w-3.5 h-3.5" style={{ color: "var(--brand-blue)" }} />
-                                        <span style={{ color: "var(--secondary-text)" }}>index.tsx</span>
-                                    </div>
-                                    {/* Animated Code Lines */}
-                                    <div className="space-y-1.5">
-                                        <div className="flex">
-                                            <span style={{ color: "#C586C0" }}>import</span>
-                                            <span style={{ color: "var(--foreground)" }}>&nbsp;{"{"}&nbsp;</span>
-                                            <span style={{ color: "#9CDCFE" }}>Hero</span>
-                                            <span style={{ color: "var(--foreground)" }}>&nbsp;{"}"}&nbsp;</span>
-                                            <span style={{ color: "#C586C0" }}>from</span>
-                                            <span style={{ color: "#CE9178" }}>&nbsp;&apos;./components&apos;</span>
-                                        </div>
-                                        <div className="flex">
-                                            <span style={{ color: "#C586C0" }}>import</span>
-                                            <span style={{ color: "var(--foreground)" }}>&nbsp;{"{"}&nbsp;</span>
-                                            <span style={{ color: "#9CDCFE" }}>motion</span>
-                                            <span style={{ color: "var(--foreground)" }}>&nbsp;{"}"}&nbsp;</span>
-                                            <span style={{ color: "#C586C0" }}>from</span>
-                                            <span style={{ color: "#CE9178" }}>&nbsp;&apos;framer-motion&apos;</span>
-                                        </div>
-                                        <div className="h-2"></div>
-                                        <div className="flex">
-                                            <span style={{ color: "#569CD6" }}>export</span>
-                                            <span style={{ color: "#C586C0" }}>&nbsp;default&nbsp;</span>
-                                            <span style={{ color: "#569CD6" }}>function</span>
-                                            <span style={{ color: "#DCDCAA" }}>&nbsp;App</span>
-                                            <span style={{ color: "var(--foreground)" }}>() {"{"}</span>
-                                        </div>
-                                        <div className="flex pl-4">
-                                            <span style={{ color: "#C586C0" }}>return</span>
-                                            <span style={{ color: "var(--foreground)" }}>&nbsp;(</span>
-                                        </div>
-                                        <div className="flex pl-8">
-                                            <span style={{ color: "#808080" }}>&lt;</span>
-                                            <span style={{ color: "#4EC9B0" }}>motion.div</span>
-                                        </div>
-                                        <div className="flex pl-10">
-                                            <span style={{ color: "#9CDCFE" }}>animate</span>
-                                            <span style={{ color: "#D4D4D4" }}>={"{"}</span>
-                                            <span style={{ color: "#CE9178" }}>&quot;fadeIn&quot;</span>
-                                            <span style={{ color: "#D4D4D4" }}>{"}"}</span>
-                                        </div>
-                                        <div className="flex pl-8">
-                                            <span style={{ color: "#808080" }}>&gt;</span>
-                                        </div>
-                                        <div className="flex pl-10 items-center gap-1">
-                                            <span style={{ color: "#808080" }}>&lt;</span>
-                                            <span style={{ color: "#4EC9B0" }}>Hero</span>
-                                            <span style={{ color: "#808080" }}>&nbsp;/&gt;</span>
-                                            <span
-                                                className="inline-block w-2 h-4 animate-pulse ml-0.5"
-                                                style={{ backgroundColor: "var(--brand-blue)" }}
-                                            ></span>
-                                        </div>
-                                    </div>
-                                </div>
+                            {/* left pane: code lines as bars */}
+                            <rect x="0" y="34" width="250" height="294" fill="color-mix(in srgb, var(--card-bg) 95%, #1e1e2e)" />
+                            <line x1="250" y1="34" x2="250" y2="328" stroke="var(--border-color)" strokeWidth="1" />
+                            <g>
+                                <rect x="18" y="56" width="52" height="7" rx="3.5" fill="#C586C0" />
+                                <rect x="76" y="56" width="38" height="7" rx="3.5" fill="#9CDCFE" />
+                                <rect x="18" y="76" width="40" height="7" rx="3.5" fill="#C586C0" />
+                                <rect x="64" y="76" width="64" height="7" rx="3.5" fill="#9CDCFE" />
+                                <rect x="18" y="104" width="46" height="7" rx="3.5" fill="#569CD6" />
+                                <rect x="70" y="104" width="72" height="7" rx="3.5" fill="#DCDCAA" />
+                                <rect x="32" y="124" width="34" height="7" rx="3.5" fill="#C586C0" />
+                                <rect x="72" y="124" width="88" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.5" />
+                                <rect x="46" y="144" width="104" height="7" rx="3.5" fill="#4EC9B0" />
+                                <rect x="46" y="164" width="76" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.4" />
+                                <rect x="32" y="184" width="28" height="7" rx="3.5" fill="#C586C0" />
+                                <rect x="18" y="212" width="60" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.3" />
+                                <rect x="18" y="232" width="92" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.3" />
+                                <rect x="18" y="252" width="48" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.3" />
+                            </g>
 
-                                {/* Live Preview Panel */}
-                                <div
-                                    className="p-4 relative overflow-hidden"
-                                    style={{
-                                        background: "linear-gradient(180deg, color-mix(in srgb, var(--brand-blue) 5%, var(--card-bg)), var(--card-bg))",
-                                    }}
-                                >
-                                    <div className="flex items-center justify-between mb-3 pb-2 border-b" style={{ borderColor: "var(--border-color)" }}>
-                                        <div className="flex items-center gap-2">
-                                            <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-teal)" }} />
-                                            <span style={{ color: "var(--secondary-text)" }} className="text-xs">Live Preview</span>
-                                        </div>
-                                        <div className="flex items-center gap-1">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-                                            <span className="text-[10px]" style={{ color: "var(--secondary-text)" }}>Live</span>
-                                        </div>
-                                    </div>
+                            {/* right pane: rendered-page wireframe */}
+                            <rect x="250" y="34" width="270" height="294" fill="color-mix(in srgb, var(--brand-blue) 4%, var(--card-bg))" />
+                            {/* mini nav */}
+                            <rect x="266" y="50" width="238" height="22" rx="6" fill="color-mix(in srgb, var(--foreground) 4%, transparent)" />
+                            <rect x="274" y="57" width="14" height="8" rx="4" fill="var(--brand-blue)" />
+                            <rect x="420" y="58" width="24" height="6" rx="3" fill="var(--secondary-text)" opacity="0.45" />
+                            <rect x="450" y="58" width="24" height="6" rx="3" fill="var(--secondary-text)" opacity="0.45" />
+                            {/* hero block */}
+                            <rect x="266" y="84" width="238" height="74" rx="8" fill="color-mix(in srgb, var(--brand-blue) 10%, transparent)" />
+                            <rect x="282" y="102" width="150" height="10" rx="5" fill="var(--brand-blue)" opacity="0.65" />
+                            <rect x="282" y="120" width="196" height="6" rx="3" fill="var(--secondary-text)" opacity="0.4" />
+                            <rect x="282" y="132" width="120" height="6" rx="3" fill="var(--secondary-text)" opacity="0.4" />
+                            {/* two cards */}
+                            <rect x="266" y="170" width="114" height="62" rx="8" fill="color-mix(in srgb, var(--foreground) 4%, transparent)" />
+                            <rect x="390" y="170" width="114" height="62" rx="8" fill="color-mix(in srgb, var(--foreground) 4%, transparent)" />
+                            <rect x="280" y="184" width="54" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.5" />
+                            <rect x="404" y="184" width="54" height="7" rx="3.5" fill="var(--secondary-text)" opacity="0.5" />
+                            <rect x="280" y="200" width="84" height="5" rx="2.5" fill="var(--secondary-text)" opacity="0.3" />
+                            <rect x="404" y="200" width="84" height="5" rx="2.5" fill="var(--secondary-text)" opacity="0.3" />
+                            {/* cta pill */}
+                            <rect x="266" y="246" width="238" height="30" rx="15" fill="color-mix(in srgb, var(--brand-teal) 22%, transparent)" />
+                            <rect x="350" y="258" width="70" height="7" rx="3.5" fill="var(--brand-teal)" opacity="0.7" />
 
-                                    {/* Enhanced Mini Website Preview */}
-                                    <div className="space-y-2.5">
-                                        {/* Mini Nav with Logo */}
-                                        <div className="flex items-center justify-between px-2 py-1.5 rounded-md" style={{ backgroundColor: "color-mix(in srgb, var(--foreground) 3%, transparent)" }}>
-                                            <div className="flex items-center gap-1.5">
-                                                <div
-                                                    className="w-4 h-4 rounded-md flex items-center justify-center"
-                                                    style={{ background: "linear-gradient(135deg, var(--brand-blue), var(--brand-teal))" }}
-                                                >
-                                                    <span className="text-[6px] text-white font-bold">C</span>
-                                                </div>
-                                                <div className="w-8 h-1.5 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                            </div>
-                                            <div className="flex gap-1.5">
-                                                <div className="w-5 h-1 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                <div className="w-5 h-1 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                <div className="w-5 h-1 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                <div
-                                                    className="w-8 h-3 rounded-sm flex items-center justify-center"
-                                                    style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))" }}
-                                                >
-                                                    <span className="text-[5px] text-white font-medium">CTA</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Hero Section with Profile */}
-                                        <div
-                                            className="rounded-lg p-3"
-                                            style={{
-                                                background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 12%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
-                                            }}
-                                        >
-                                            <div className="flex items-start gap-2">
-                                                {/* Avatar */}
-                                                <div
-                                                    className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center shadow-sm"
-                                                    style={{ background: "linear-gradient(135deg, #667eea, #764ba2)" }}
-                                                >
-                                                    <span className="text-[8px] text-white font-bold">👤</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <div
-                                                        className="w-3/4 h-2 rounded mb-1.5"
-                                                        style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))" }}
-                                                    ></div>
-                                                    <div className="w-full h-1 rounded mb-1" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                    <div className="w-2/3 h-1 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                </div>
-                                            </div>
-                                            {/* Stats Row */}
-                                            <div className="flex gap-2 mt-2.5">
-                                                {[
-                                                    { value: "2.5K", icon: "👁" },
-                                                    { value: "1.8K", icon: "❤️" },
-                                                    { value: "324", icon: "💬" },
-                                                ].map((stat, idx) => (
-                                                    <div
-                                                        key={idx}
-                                                        className="flex-1 rounded-md py-1 px-1.5 flex items-center justify-center gap-1"
-                                                        style={{ backgroundColor: "color-mix(in srgb, var(--card-bg) 80%, transparent)" }}
-                                                    >
-                                                        <span className="text-[7px]">{stat.icon}</span>
-                                                        <span className="text-[7px] font-bold" style={{ color: "var(--foreground)" }}>{stat.value}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Feature Cards with Icons */}
-                                        <div className="grid grid-cols-3 gap-1.5">
-                                            {[
-                                                { icon: "🚀", color: "#f59e0b" },
-                                                { icon: "⚡", color: "#10b981" },
-                                                { icon: "🎯", color: "#8b5cf6" },
-                                            ].map((item, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="rounded-lg p-2 text-center transition-transform hover:scale-105"
-                                                    style={{ backgroundColor: "color-mix(in srgb, var(--foreground) 4%, transparent)" }}
-                                                >
-                                                    <div
-                                                        className="w-5 h-5 rounded-md mx-auto mb-1.5 flex items-center justify-center shadow-sm"
-                                                        style={{ backgroundColor: `${item.color}20` }}
-                                                    >
-                                                        <span className="text-[10px]">{item.icon}</span>
-                                                    </div>
-                                                    <div className="w-full h-1 rounded mb-0.5" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                    <div className="w-2/3 h-0.5 rounded mx-auto" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        {/* Mini Analytics Chart */}
-                                        <div
-                                            className="rounded-lg p-2"
-                                            style={{ backgroundColor: "color-mix(in srgb, var(--foreground) 3%, transparent)" }}
-                                        >
-                                            <div className="flex items-center justify-between mb-1.5">
-                                                <div className="w-10 h-1 rounded" style={{ backgroundColor: "var(--border-color)" }}></div>
-                                                <div className="flex gap-0.5">
-                                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--brand-blue)" }}></div>
-                                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--brand-teal)" }}></div>
-                                                </div>
-                                            </div>
-                                            {/* Bar Chart */}
-                                            <div className="flex items-end justify-between gap-1 h-8 px-1">
-                                                {[40, 65, 45, 80, 60, 90, 70].map((height, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="flex-1 rounded-t-sm"
-                                                        style={{
-                                                            height: `${height}%`,
-                                                            background: i === 5
-                                                                ? "linear-gradient(180deg, var(--brand-blue), var(--brand-teal))"
-                                                                : "color-mix(in srgb, var(--brand-blue) 30%, transparent)",
-                                                        }}
-                                                    ></div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Animated Gradient Overlay */}
-                                    <div
-                                        className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none"
-                                        style={{
-                                            background: "linear-gradient(to top, var(--card-bg), transparent)",
-                                        }}
-                                    ></div>
-                                </div>
-                            </div>
-
-                            {/* Bottom Status Bar */}
-                            <div
-                                className="flex items-center justify-between px-4 py-2 border-t text-xs"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    backgroundColor: "color-mix(in srgb, var(--foreground) 3%, transparent)",
-                                }}
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                                        <span style={{ color: "var(--secondary-text)" }}>Live</span>
-                                    </div>
-                                    <div className="flex items-center gap-1.5">
-                                        <Zap className="w-3 h-3" style={{ color: "var(--brand-teal)" }} />
-                                        <span style={{ color: "var(--secondary-text)" }}>98ms</span>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                    <ShieldCheck className="w-3 h-3" style={{ color: "var(--brand-blue)" }} />
-                                    <span style={{ color: "var(--secondary-text)" }}>Secure</span>
-                                </div>
-                            </div>
-                        </div>
+                            {/* status bar */}
+                            <line x1="0" y1="328" x2="520" y2="328" stroke="var(--border-color)" strokeWidth="1" />
+                            <rect x="0" y="328" width="520" height="32" fill="color-mix(in srgb, var(--foreground) 3%, transparent)" />
+                            <circle cx="22" cy="344" r="3.5" fill="#28c840" />
+                            <rect x="34" y="341" width="30" height="6" rx="3" fill="var(--secondary-text)" opacity="0.35" />
+                            <rect x="80" y="341" width="22" height="6" rx="3" fill="var(--secondary-text)" opacity="0.35" />
+                            <rect x="462" y="341" width="40" height="6" rx="3" fill="var(--secondary-text)" opacity="0.35" />
+                        </svg>
 
                         {/* Decorative Elements */}
                         <div

@@ -36,8 +36,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Top Mobile App Development Company | Custom Apps 2026',
-    description: 'Expert mobile app development company delivering custom iOS, Android & cross-platform apps. 300+ successful projects. Get free consultation today!',
+    title: 'Mobile App Development Company | Cinute InfoMedia',
+    description: 'iOS, Android and cross-platform app development with React Native and Flutter. Plan, build and launch with Cinute InfoMedia. Get a quote.',
     url: '/services/mobile-app-development',
     keywords: [
         'Mobile App Development Company',
@@ -64,8 +64,8 @@ export default function MobileAppDevelopmentPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Top Mobile App Development Company | Custom Apps 2026",
-            description: "Expert mobile app development company delivering custom iOS, Android & cross-platform apps. 300+ successful projects. Get free consultation today!",
+            name: "Mobile App Development Company | Cinute InfoMedia",
+            description: "iOS, Android and cross-platform app development with React Native and Flutter. Plan, build and launch with Cinute InfoMedia. Get a quote.",
             urlPath: "/services/mobile-app-development",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -82,7 +82,7 @@ export default function MobileAppDevelopmentPage() {
 
         generateServiceSchema({
             name: "Mobile App Development Services",
-            description: "Transform your vision into high-performance mobile apps that drive business growth. As an expert mobile app development company with deep expertise, we craft custom iOS, Android, and cross-platform solutions globally. apps delivered globally, applications used at scale, strong client retention, a rigorous QA process.",
+            description: "Transform your vision into high-performance mobile apps that drive business growth. As an expert mobile app development company with deep expertise, we craft custom iOS, Android, and cross-platform solutions globally — apps delivered and used at scale, backed by strong client retention and a rigorous QA process.",
             urlPath: "/services/mobile-app-development",
             serviceType: "Mobile App Development",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -124,7 +124,7 @@ export default function MobileAppDevelopmentPage() {
 
         generateHowToSchema({
             name: "Our 6-Phase Agile Development Process",
-            description: "A proven 6-phase agile methodology for building mobile apps that has delivered 300+ successful projects with a rigorous QA process and faster time-to-market.",
+            description: "A proven 6-phase agile methodology for building mobile apps that has delivered a proven record of successful projects with a rigorous QA process and faster time-to-market.",
             steps: [
                 { name: "Discovery & Strategy", text: "Stakeholder interviews, MoSCoW feature prioritization, competitive analysis, and technical roadmap creation. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-discovery" },
                 { name: "UI/UX Design", text: "Figma wireframes, interactive prototyping, usability testing, and design system creation. Timeline: Week 3-5.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-design" },

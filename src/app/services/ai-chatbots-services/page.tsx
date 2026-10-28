@@ -40,8 +40,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Custom AI Chatbot Development Agency | Cinute InfoMedia',
-    description: 'Transform customer support with our Enterprise AI Chatbot Platform. Custom AI chatbots for eCommerce, SaaS & Healthcare. 10M+ conversations handled, high customer satisfaction, 50+ industries served, high automation, <1s response time, strong ROI.',
+    title: 'AI Chatbot Development Services | Cinute InfoMedia',
+    description: 'Custom AI chatbots for support, sales and WhatsApp, connected to your CRM. Built, tested and measured by Cinute InfoMedia. Book a free audit.',
     url: '/services/ai-chatbots-services',
     keywords: [
         'AI Chatbot Services',
@@ -65,8 +65,8 @@ export default function AIPoweredChatbotsPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Custom AI Chatbot Development Agency | Cinute InfoMedia",
-            description: "Transform customer support with our Enterprise AI Chatbot Platform. Custom AI chatbots for eCommerce, SaaS & Healthcare. 10M+ conversations handled, high customer satisfaction, 50+ industries served, high automation, <1s response time, strong ROI.",
+            name: "AI Chatbot Development Services | Cinute InfoMedia",
+            description: "Custom AI chatbots for support, sales and WhatsApp, connected to your CRM. Built, tested and measured by Cinute InfoMedia. Book a free audit.",
             urlPath: "/services/ai-chatbots-services",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -83,7 +83,7 @@ export default function AIPoweredChatbotsPage() {
 
         generateServiceSchema({
             name: "AI Chatbot Services",
-            description: "Empower your business with intelligent, 24/7 conversations at scale. Custom AI Chatbot Development Agency building enterprise AI platforms with context understanding and sentiment analysis using LLMs and NLP. 10M+ conversations handled, high customer satisfaction, 50+ industries served, Tier-1 query automation, high engagement, <1s response time, high accuracy.",
+            description: "Empower your business with intelligent, 24/7 conversations at scale. Custom AI Chatbot Development Agency building enterprise AI platforms with context understanding and sentiment analysis using LLMs and NLP. a high volume of conversations handled, high customer satisfaction, a broad range of industries served, Tier-1 query automation, high engagement, <1s response time, high accuracy.",
             urlPath: "/services/ai-chatbots-services",
             serviceType: "Custom AI Chatbot Development & Enterprise Platforms",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -122,7 +122,7 @@ export default function AIPoweredChatbotsPage() {
 
         generateHowToSchema({
             name: "Our 6-Step AI Chatbot Development Process",
-            description: "A proven 6-step methodology for building enterprise AI chatbots that handle 10M+ conversations with high customer satisfaction and Tier-1 automation.",
+            description: "A proven 6-step methodology for building enterprise AI chatbots that handle a high volume of conversations with high customer satisfaction and Tier-1 automation.",
             steps: [
                 { name: "Discovery & Strategy", text: "Understanding business goals, user journeys, integration requirements, and defining chatbot personality. Timeline: 1-2 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-chatbots-services/#step-discovery" },
                 { name: "Conversation Design", text: "Mapping dialog flows, intent architecture, fallback strategies, and multi-turn conversation blueprints. Timeline: 2-3 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-chatbots-services/#step-design" },

@@ -12,13 +12,6 @@ export const metadata: Metadata = {
     title: "Enterprise App Development Services | Secure & Scalable",
     description:
         "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
-    keywords: [
-        "Enterprise Application Development services",
-        "Enterprise Software Development",
-        "Enterprise App Development company",
-        "Enterprise Mobile App Development",
-        "Enterprise Web Applications",
-    ],
     openGraph: {
         title: "Enterprise App Development Services | Secure & Scalable",
         description:
@@ -30,7 +23,7 @@ export const metadata: Metadata = {
                 url: "/og-images/enterprise-application-development.webp",
                 width: 1200,
                 height: 630,
-                alt: "Enterprise App Development Services by Cinute Infomedia",
+                alt: "Enterprise App Development Services by Cinute InfoMedia",
             },
         ],
     },
@@ -55,7 +48,7 @@ const jsonLd = {
             "description": "Custom enterprise software development services for global organizations.",
             "provider": {
                 "@type": "Organization",
-                "name": "Cinute Infomedia",
+                "name": "Cinute InfoMedia",
                 "url": "https://www.cinuteinfomedia.com/"
             },
             "serviceType": "Enterprise App Development",

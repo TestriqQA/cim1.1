@@ -120,7 +120,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Reach 1.2B+ professionals with elite, data-driven LinkedIn marketing strategies. At Cinute Infomedia, we don&apos;t just &quot;run ads&quot; but we build high-conversion B2B engines that generate qualified leads, establish industry authority, and drive measurable revenue in the 2026 AI-search era.
+                            Reach 1.2B+ professionals with elite, data-driven LinkedIn marketing strategies. At Cinute InfoMedia, we don&apos;t just &quot;run ads&quot; but we build high-conversion B2B engines that generate qualified leads, establish industry authority, and drive measurable revenue in the 2026 AI-search era.
                         </p>
 
                         {/* Feature Pills */}

@@ -14,18 +14,6 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services",
     },
-    keywords: [
-        "ecommerce SEO services",
-        "Shopify SEO",
-        "Magento SEO",
-        "WooCommerce SEO",
-        "online store optimization",
-        "product page SEO",
-        "technical ecommerce audit",
-        "ecommerce SEO agency",
-        "BigCommerce SEO",
-        "ecommerce conversion rate optimization",
-    ],
     openGraph: {
         title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
         description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
@@ -36,7 +24,7 @@ export const metadata: Metadata = {
                 url: "/og-images/ecommerce-seo-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026 by Cinute Infomedia",
+                alt: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026 by Cinute InfoMedia",
             },
         ],
     },
@@ -56,7 +44,7 @@ export default function EcommerceSEOPage() {
         "serviceType": "Ecommerce SEO Services",
         "provider": {
             "@type": "Organization",
-            "name": "Cinute Infomedia",
+            "name": "Cinute InfoMedia",
             "url": "https://www.cinuteinfomedia.com",
             "logo": "https://www.cinuteinfomedia.com/logo.png",
             "description": "Global Web Design, Development & Digital Marketing Agency specializing in ecommerce SEO services for Shopify, Magento, WooCommerce, and BigCommerce platforms",

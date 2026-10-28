@@ -32,7 +32,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Real Estate Platform Development | Property Listing & IDX Websites',
+    title: 'Real Estate Platform Development | Cinute InfoMedia',
     description: 'Build powerful real estate platforms that showcase properties beautifully, capture leads, and integrate with MLS systems. Custom property listing portals, broker platforms, and virtual tour solutions.',
     url: '/services/web-design-development/real-estate-platforms',
     keywords: [
@@ -55,7 +55,7 @@ export default function RealEstatePlatformsPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Real Estate Platform Development | Property Listing & IDX Websites",
+            name: "Real Estate Platform Development | Cinute InfoMedia",
             description: "Build powerful real estate platforms that showcase properties beautifully, capture leads, and integrate with MLS systems. Custom property listing portals, broker platforms, and virtual tour solutions.",
             urlPath: "/services/web-design-development/real-estate-platforms",
             datePublished: "2025-01-01",

@@ -555,10 +555,31 @@ export const products: Product[] = [
 // HELPER FUNCTIONS
 // ============================================================================
 
+/**
+ * Products withdrawn from the site but kept in `products` so their copy, FAQs
+ * and policies are not lost. They are excluded from routing and the sitemap, so
+ * their URLs 404 rather than sitting in the index with nothing linking to them.
+ *
+ * To bring one back: delete its slug here and restore its entry in the Navbar
+ * dropdown (both lists, desktop and mobile).
+ */
+export const UNLISTED_PRODUCT_SLUGS: readonly string[] = [
+  "kruti-io",
+  "assetmon",
+  "topcareerlive",
+];
+
+export function isProductListed(slug: string): boolean {
+  return !UNLISTED_PRODUCT_SLUGS.includes(slug);
+}
+
+/** Products that are actually reachable from the site. */
+export const listedProducts: Product[] = products.filter((p) => isProductListed(p.slug));
+
 export function getProductBySlug(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
+  return products.find((p) => p.slug === slug && isProductListed(p.slug));
 }
 
 export function getAllProductSlugs(): string[] {
-  return products.map((p) => p.slug);
+  return listedProducts.map((p) => p.slug);
 }

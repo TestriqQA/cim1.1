@@ -10,7 +10,7 @@ export default function FAQ() {
     const faqs = [
         {
             q: "What makes Cinute InfoMedia different from other web development companies?",
-            a: "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and 300+ successful projects speak to our partnership approach.",
+            a: "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and a proven record of delivery speaks to our partnership approach.",
         },
         {
             q: "What web development services do you offer?",
@@ -64,7 +64,10 @@ export default function FAQ() {
                                     </div>
                                     <div style={{ flex: 1 }}>
                                         <div style={{ fontWeight: 700, marginBottom: 8 }}>{faq.q}</div>
-                                        {faqOpen === i && <div style={{ color: "var(--foreground)", marginTop: 8 }}>{faq.a}</div>}
+                                        {/* Always rendered so the answer is in the server HTML
+                                            (and matches the FAQPage JSON-LD); the toggle only
+                                            controls visibility. See T10. */}
+                                        <div style={{ color: "var(--foreground)", marginTop: 8, display: faqOpen === i ? "block" : "none" }}>{faq.a}</div>
                                     </div>
                                 </div>
                             </button>

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { productPrivacyPolicies, getProductPrivacyBySlug } from "@/data/productPrivacy";
 import ProductPrivacyClient from "./ProductPrivacyClient";
+import { isProductListed } from "@/data/products";
 import {
     generateGraphSchema,
     generateOrganizationSchema,
@@ -12,7 +13,11 @@ import {
 
 // SSG — pre-render all product privacy pages at build time
 export async function generateStaticParams() {
-    return productPrivacyPolicies.map((p) => ({ slug: p.slug }));
+    // Same visibility gate as the parent product route — otherwise a
+    // withdrawn product keeps a live support/privacy page under a 404 parent.
+    return productPrivacyPolicies
+        .filter((p) => isProductListed(p.slug))
+        .map((p) => ({ slug: p.slug }));
 }
 
 // Dynamic metadata per product privacy policy

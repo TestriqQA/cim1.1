@@ -92,11 +92,11 @@ export default function CTA() {
                         {/* Right Stats */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-6">
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">85+</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Trusted</div>
                                 <div className="text-xs sm:text-sm text-white/70">Enterprise Clients</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">500K+</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">High</div>
                                 <div className="text-xs sm:text-sm text-white/70">Active Users</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">

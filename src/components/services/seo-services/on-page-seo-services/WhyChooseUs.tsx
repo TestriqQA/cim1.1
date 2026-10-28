@@ -79,8 +79,8 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>30+</h3>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Combined Exp.</p>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>Deep</h3>
+                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Combined Expertise</p>
                             </div>
                             <div
                                 className="p-6 rounded-2xl border"

@@ -40,8 +40,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'AI Workflow Automation Services | Agentic AI Agency',
-    description: 'Transform fragmented operations into an intelligent engine. Custom AI Automation Agency building sophisticated Agentic Workflow Automations that think, adapt, and execute. significant efficiency gains, faster execution, significant cost savings, fewer errors, 1000+ workflows deployed, significant client savings.',
+    title: 'AI Workflow Automation Services | Cinute InfoMedia',
+    description: 'Automate lead handling, reporting and CRM workflows with AI. Practical business process automation from Cinute InfoMedia. Book a free audit.',
     url: '/services/ai-workflows-automations-services',
     keywords: [
         'AI Workflow Automation',
@@ -65,8 +65,8 @@ export default function AIWorkflowsAutomationsPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "AI Workflow Automation Services | Agentic AI Agency",
-            description: "Transform fragmented operations into an intelligent engine. Custom AI Automation Agency building sophisticated Agentic Workflow Automations that think, adapt, and execute. significant efficiency gains, faster execution, significant cost savings, fewer errors, 1000+ workflows deployed, significant client savings.",
+            name: "AI Workflow Automation Services | Cinute InfoMedia",
+            description: "Automate lead handling, reporting and CRM workflows with AI. Practical business process automation from Cinute InfoMedia. Book a free audit.",
             urlPath: "/services/ai-workflows-automations-services",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -83,7 +83,7 @@ export default function AIWorkflowsAutomationsPage() {
 
         generateServiceSchema({
             name: "AI Workflow Automation Services",
-            description: "Transform your fragmented operations into an intelligent engine. As a Custom AI Automation Agency, we don't just connect tools — we build sophisticated Agentic Workflow Automations that think, adapt, and execute. significant efficiency gains, faster execution, significant cost savings, fewer errors, 50+ industries served, 1000+ workflows deployed, significant client savings.",
+            description: "Transform your fragmented operations into an intelligent engine. As a Custom AI Automation Agency, we don't just connect tools — we build sophisticated Agentic Workflow Automations that think, adapt, and execute — for significant efficiency gains, faster execution, lower costs and fewer errors, with workflows deployed across a broad range of industries.",
             urlPath: "/services/ai-workflows-automations-services",
             serviceType: "AI Workflow Automation & Agentic AI Solutions",
             areaServed: ["IN", "US", "GB", "AU", "AE"],

@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
             id: 2,
             icon: TrendingUp,
             title: "Proven Track Record",
-            description: "500%+ average ROAS across 200+ campaigns in diverse industries.",
+            description: "Strong average ROAS across our campaign portfolio in diverse industries.",
             highlight: "500% Avg ROAS",
         },
         {

@@ -234,14 +234,14 @@ export default function IndustriesAndUseCases() {
                         {[
                             {
                                 icon: Award,
-                                metric: "50+",
+                                metric: "Broad",
                                 label: "Industries Served",
                                 gradient: "from-blue-500 to-cyan-500",
                                 delay: "1.2s",
                             },
                             {
                                 icon: TrendingUp,
-                                metric: "1000+",
+                                metric: "Proven",
                                 label: "Workflows Deployed",
                                 gradient: "from-purple-500 to-pink-500",
                                 delay: "1.3s",

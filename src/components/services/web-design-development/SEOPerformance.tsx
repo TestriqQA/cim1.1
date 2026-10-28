@@ -27,7 +27,7 @@ export default function SEOPerformance() {
         {
             icon: Zap,
             title: "Custom Web Solutions",
-            description: "Data-backed UI/UX focused on business value. Our sites have increased online leads by up to 425% for global brands.",
+            description: "Data-backed UI/UX focused on business value. Our sites are built to grow qualified leads for global brands.",
             items: ["Conversion audit", "Lead capture paths", "A/B tested layouts", "User flow mapping"],
             color: "from-[#bc3feb] to-[#fab900]",
         },

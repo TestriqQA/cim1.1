@@ -102,7 +102,7 @@ export default function Hero() {
                         </p>
 
                         <p className="mt-4 text-sm md:text-base max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Join 50+ global <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">fintech</Link> and <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">enterprise</Link> clients who trust us for rigorously tested technical maintenance and significant operational efficiency improvements.
+                            Join global <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">fintech</Link> and <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">enterprise</Link> clients who trust us for rigorously tested technical maintenance and significant operational efficiency improvements.
                         </p>
 
                         {/* Feature Pills */}
@@ -201,9 +201,9 @@ export default function Hero() {
                             {/* Stats Row */}
                             <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t" style={{ borderColor: "var(--border-color)" }}>
                                 {[
-                                    { value: "500+", label: "Happy Clients" },
-                                    { value: "12+", label: "Years Exp." },
-                                    { value: "50+", label: "Support Staff" },
+                                    { value: "Growing", label: "Happy Clients" },
+                                    { value: "2025", label: "Founded" },
+                                    { value: "Dedicated", label: "Support Staff" },
                                 ].map((stat, index) => (
                                     <div key={index} className="text-center">
                                         <div className="text-2xl font-black" style={{ color: "var(--brand-purple-text)" }}>{stat.value}</div>

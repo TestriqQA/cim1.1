@@ -1,3 +1,4 @@
+import { isProductListed } from "./products";
 // ============================================================================
 // PRODUCT SUPPORT DATA
 // ============================================================================
@@ -161,5 +162,6 @@ export const productSupportData: ProductSupport[] = [
 ];
 
 export function getProductSupportBySlug(slug: string): ProductSupport | undefined {
-    return productSupportData.find((p) => p.slug === slug);
+    // Withdrawn products keep their support text here but must not serve a page.
+    return productSupportData.find((p) => p.slug === slug && isProductListed(p.slug));
 }

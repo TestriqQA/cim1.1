@@ -20,7 +20,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Headless & Traditional CMS Development | WordPress, Strapi, Contentful',
+    title: 'Headless & Traditional CMS Development | Cinute InfoMedia',
     description: 'Expert CMS development for headless and traditional platforms. From Contentful, Strapi, and Sanity to WordPress and Drupal - we build CMS solutions that empower your content teams.',
     url: '/services/web-design-development/headless-traditional-cms',
     keywords: [
@@ -46,7 +46,7 @@ export default function HeadlessTraditionalCMSPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Headless & Traditional CMS Development | WordPress, Strapi, Contentful",
+            name: "Headless & Traditional CMS Development | Cinute InfoMedia",
             description: "Expert CMS development for headless and traditional platforms. From Contentful, Strapi, and Sanity to WordPress and Drupal - we build CMS solutions that empower your content teams.",
             urlPath: "/services/web-design-development/headless-traditional-cms",
             datePublished: "2025-01-01",
@@ -73,7 +73,7 @@ export default function HeadlessTraditionalCMSPage() {
                 url: "/contact",
                 priceCurrency: "USD",
                 validFrom: "2025-01-01",
-                description: "Custom CMS development for headless and traditional platforms. 50+ projects completed with significant reduction in content publishing time. Get in touch for a custom quote.",
+                description: "Custom CMS development for headless and traditional platforms, with projects completed showing a significant reduction in content publishing time. Get in touch for a custom quote.",
             },
         }),
 
@@ -93,7 +93,7 @@ export default function HeadlessTraditionalCMSPage() {
 
         generateHowToSchema({
             name: "Our CMS Implementation Process",
-            description: "A structured 6-step methodology for CMS development that has delivered 50+ projects with significant reduction in content publishing time.",
+            description: "A structured 6-step methodology for CMS development that has delivered projects with significant reduction in content publishing time.",
             steps: [
                 { name: "Discovery & Strategy", text: "Deep dive into content needs, workflow mapping, stakeholder interviews, and integration requirements analysis.", url: "https://www.cinuteinfomedia.com/services/web-design-development/headless-traditional-cms/#step-discovery" },
                 { name: "CMS Selection", text: "Optimal platform selection based on requirements, feature matching, scalability assessment, and cost analysis.", url: "https://www.cinuteinfomedia.com/services/web-design-development/headless-traditional-cms/#step-selection" },

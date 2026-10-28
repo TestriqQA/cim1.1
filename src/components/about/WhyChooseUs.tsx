@@ -41,9 +41,9 @@ export default function WhyChooseUs() {
     ];
 
     const stats = [
-        { value: "300+", label: "Successful projects delivered" },
+        { value: "Proven", label: "Successful projects delivered" },
         { value: "Trusted", label: "Businesses trust our solutions globally" },
-        { value: "95%", label: "Client retention rate" },
+        { value: "Strong", label: "Client retention rate" },
         { value: "80%+", label: "Test coverage in mobile apps" },
         { value: "AES-256", label: "Encryption standard" },
         { value: "Sub-2s", label: "Core Web Vitals performance" },

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { products, getProductBySlug, getAllProductSlugs } from "@/data/products";
+import { getProductBySlug, getAllProductSlugs } from "@/data/products";
 import ProductHero from "@/components/products/detail/ProductHero";
 import Features from "@/components/products/detail/Features";
 import HowItWorks from "@/components/products/detail/HowItWorks";
@@ -46,13 +46,6 @@ export async function generateMetadata({
     return {
         title: metaTitle,
         description: metaDescription,
-        keywords: [
-            product.name,
-            product.tagline,
-            ...product.techStack.slice(0, 5),
-            "Cinute InfoMedia",
-                        "digital products",
-        ],
         alternates: {
             canonical: url,
         },

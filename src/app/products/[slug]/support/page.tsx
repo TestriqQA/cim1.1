@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { productSupportData, getProductSupportBySlug } from "@/data/productSupport";
 import ProductSupportClient from "./ProductSupportClient"; // client component
+import { isProductListed } from "@/data/products";
 import {
     generateGraphSchema,
     generateOrganizationSchema,
@@ -12,7 +13,11 @@ import {
 
 // SSG — pre-render all product support pages at build time
 export async function generateStaticParams() {
-    return productSupportData.map((p) => ({ slug: p.slug }));
+    // Same visibility gate as the parent product route — otherwise a
+    // withdrawn product keeps a live support/privacy page under a 404 parent.
+    return productSupportData
+        .filter((p) => isProductListed(p.slug))
+        .map((p) => ({ slug: p.slug }));
 }
 
 // Dynamic metadata per product support page

@@ -90,7 +90,11 @@ export const teamMembers: TeamMember[] = [
     experience: "20+ years",
     bio: "Goutam has spent more than twenty years across quality engineering, delivery management and business development. He scopes what a project actually needs, keeps delivery honest against the brief, and coaches the team on the process discipline that makes complex builds predictable.",
     image: "/images/team/goutam-mishra.webp",
-    expertise: ["Delivery Management", "Software Testing", "Business Development"],
+    expertise: [
+      "Delivery Management",
+      "Software Testing",
+      "Business Development",
+    ],
     linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
     highlights: [
       "Scoping and estimation for new engagements",
@@ -159,7 +163,7 @@ export const teamMembers: TeamMember[] = [
     role: "QA Lead & Business Strategy Manager",
     focus: "Quality Engineering • Business Strategy • Partnerships",
     experience: "8+ years",
-    bio: "Aakash brings 8+ years of QA experience to connecting business needs with practical technology solutions. He leads quality initiatives, supports digital growth planning, and develops client and partner relationships across Testriq QA Lab and Cinute Infomedia. His work includes exploring AI and automation, identifying collaboration opportunities, and helping shape solutions that support clients' business goals.",
+    bio: "Aakash brings 8+ years of QA experience to connecting business needs with practical technology solutions. He leads quality initiatives, supports digital growth planning, and develops client and partner relationships across Testriq QA Lab and Cinute InfoMedia. His work includes exploring AI and automation, identifying collaboration opportunities, and helping shape solutions that support clients' business goals.",
     image: "/images/team/aakash-yadav.webp",
     expertise: ["Quality Engineering", "Business Strategy", "Partnerships"],
     linkedin: "https://www.linkedin.com/in/aakashyadav9890/",
@@ -208,7 +212,11 @@ export const teamMembers: TeamMember[] = [
     // No photo on file yet — the shared neutral avatar stands in until one is
     // supplied, so the card renders at the same size as every other portrait.
     image: "/images/team/placeholder-avatar.webp",
-    expertise: ["Front-end Development", "UI Engineering", "Responsive Interfaces"],
+    expertise: [
+      "Front-end Development",
+      "UI Engineering",
+      "Responsive Interfaces",
+    ],
     linkedin: "https://www.linkedin.com/in/ratnesh-waghare-63782a293/",
   },
   {
@@ -281,7 +289,13 @@ export const teamDisciplines: TeamDiscipline[] = [
     description:
       "Technical foundations, on-page structure and content that earns rankings — audited against real crawl and index data.",
     href: "/services/seo-services",
-    skills: ["Technical SEO", "On-page SEO", "Local SEO", "Content", "Link Building"],
+    skills: [
+      "Technical SEO",
+      "On-page SEO",
+      "Local SEO",
+      "Content",
+      "Link Building",
+    ],
   },
   {
     title: "Performance Marketing",
@@ -295,7 +309,12 @@ export const teamDisciplines: TeamDiscipline[] = [
     description:
       "Identity systems and interface design that stay coherent from a logo lockup through to a production component library.",
     href: "/services/brand-identity-design",
-    skills: ["Brand Identity", "UI/UX Design", "Design Systems", "Creative Direction"],
+    skills: [
+      "Brand Identity",
+      "UI/UX Design",
+      "Design Systems",
+      "Creative Direction",
+    ],
   },
   {
     title: "Support & Maintenance",
@@ -307,10 +326,14 @@ export const teamDisciplines: TeamDiscipline[] = [
 ];
 
 /** Large-card section. Source order is preserved. */
-export const leaders: TeamMember[] = teamMembers.filter((m) => m.tier === "leader");
+export const leaders: TeamMember[] = teamMembers.filter(
+  (m) => m.tier === "leader",
+);
 
 /** Compact-card section. Source order is preserved. */
-export const featuredMembers: TeamMember[] = teamMembers.filter((m) => m.tier === "featured");
+export const featuredMembers: TeamMember[] = teamMembers.filter(
+  (m) => m.tier === "featured",
+);
 
 export function getTeamMemberById(id: string): TeamMember | undefined {
   return teamMembers.find((member) => member.id === id);

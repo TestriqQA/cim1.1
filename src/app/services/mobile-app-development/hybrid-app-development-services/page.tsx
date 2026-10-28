@@ -9,23 +9,12 @@ import FAQ from "@/components/services/mobile-app-development/hybrid-app-develop
 import CTA from "@/components/services/mobile-app-development/hybrid-app-development-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Hybrid App Development Services | Top Cross-Platform Agency 2026 \uD83D\uDE80",
+    title: "Hybrid App Development Services | Cinute InfoMedia",
     description:
-        "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor. measurable CTR boost!",
-    keywords: [
-        "hybrid app development services",
-        "Ionic framework app development agency",
-        "Capacitor development solutions",
-        "hybrid mobile app development company",
-        "cross-platform app development",
-        "PWA development",
-        "custom hybrid app development for startups",
-        "healthcare hybrid applications",
-        "IoT hybrid app development",
-    ],
+        "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor for a measurable CTR boost.",
     openGraph: {
-        title: "Hybrid App Development Services | Top Cross-Platform Agency 2026 \uD83D\uDE80",
-        description: "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor. measurable CTR boost!",
+        title: "Hybrid App Development Services | Cinute InfoMedia",
+        description: "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor for a measurable CTR boost.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services",
         type: "website",
         images: [
@@ -33,14 +22,14 @@ export const metadata: Metadata = {
                 url: "/og-images/hybrid-app-development-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Hybrid App Development Services | Top Cross-Platform Agency 2026 🚀 by Cinute Infomedia",
+                alt: "Hybrid App Development Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Hybrid App Development Services | Top Cross-Platform Agency 2026 \uD83D\uDE80",
-        description: "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor. measurable CTR boost!",
+        title: "Hybrid App Development Services | Cinute InfoMedia",
+        description: "Expert hybrid mobile app development company. Build high-performance, single codebase apps for iOS & Android with Ionic & Capacitor for a measurable CTR boost.",
         images: ["/og-images/hybrid-app-development-services.webp"],
     },
     alternates: {
@@ -57,7 +46,7 @@ export default function HybridAppDevelopmentPage() {
                 "name": "Hybrid App Development Services",
                 "provider": {
                     "@type": "Organization",
-                    "name": "Cinute Infomedia",
+                    "name": "Cinute InfoMedia",
                     "url": "https://www.cinuteinfomedia.com",
                 },
                 "description":

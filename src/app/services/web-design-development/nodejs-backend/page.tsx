@@ -65,7 +65,7 @@ export default function NodejsBackendPage() {
 
         generateServiceSchema({
             name: "Node.js & Backend Development Services",
-            description: "High-performance APIs and microservices that power your applications. Node.js, Express, NestJS, and cloud-native architecture for modern businesses. 500+ APIs deployed, high availability, handling 10M+ daily requests.",
+            description: "High-performance APIs and microservices that power your applications. Node.js, Express, NestJS, and cloud-native architecture for modern businesses — production APIs deployed with high availability, handling high daily request volume.",
             urlPath: "/services/web-design-development/nodejs-backend",
             serviceType: "Backend Development & API Engineering",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -93,7 +93,7 @@ export default function NodejsBackendPage() {
 
         generateHowToSchema({
             name: "Our Backend Development Process",
-            description: "A structured 6-step methodology for building scalable backend systems that handle 10M+ daily requests with high availability.",
+            description: "A structured 6-step methodology for building scalable backend systems that handle high daily request volume with high availability.",
             steps: [
                 { name: "Requirements Analysis", text: "Defining API specifications, data models, integration mapping, and technical requirements for your backend system.", url: "https://www.cinuteinfomedia.com/services/web-design-development/nodejs-backend/#step-requirements" },
                 { name: "Architecture Design", text: "System architecture planning, database design, API contract design, and scalability blueprint creation.", url: "https://www.cinuteinfomedia.com/services/web-design-development/nodejs-backend/#step-architecture" },

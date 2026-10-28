@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
             description: "We implement defense-in-depth strategies including 256-bit encryption, MFA, and real-time threat monitoring to protect assets.",
             highlights: [
                 { icon: Lock, text: "End-to-End Encryption" },
-                { icon: ShieldCheck, text: "SOC2 Compliant" },
+                { icon: ShieldCheck, text: "SOC 2-Aligned" },
                 { icon: Users, text: "IAM Controls" }
             ],
             color: "#0ea5e9",
@@ -62,9 +62,9 @@ export default function WhyChooseUs() {
     ];
 
     const stats = [
-        { value: "50+", label: "FinTech Products" },
+        { value: "Proven", label: "FinTech Products" },
         { value: "High-Volume", label: "Processed Volume" },
-        { value: "100%", label: "Security Record" },
+        { value: "Strong", label: "Security Record" },
         { value: "24/7", label: "Critical Support" },
     ];
 

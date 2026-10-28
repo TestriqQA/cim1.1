@@ -8,13 +8,13 @@ export default function Technologies() {
     const frontendTech = [
         { name: "React", logo: "/images/techstack_logos/react-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
         { name: "Next.js", logo: "/images/techstack_logos/nextjs-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "Vue.js", logo: "/images/techstack_logos/vuejs-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "Angular", logo: "/images/techstack_logos/angularjs-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "JavaScript", logo: "/images/techstack_logos/javascript-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
+        { name: "Vue.js", logo: "/images/techstack_logos/vuejs-logo.svg" },
+        { name: "Angular", logo: "/images/techstack_logos/angularjs-logo.svg" },
+        { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg" },
+        { name: "JavaScript", logo: "/images/techstack_logos/javascript-logo.svg" },
         { name: "HTML5", logo: "/images/techstack_logos/html5-logo.svg" },
         { name: "CSS3", logo: "/images/techstack_logos/css3-logo.svg" },
-        { name: "Tailwind CSS", logo: "/images/techstack_logos/tailwindcss-logo.svg", href: "/blog/future-web-development-nextjs" },
+        { name: "Tailwind CSS", logo: "/images/techstack_logos/tailwindcss-logo.svg" },
         { name: "Bootstrap", logo: "/images/techstack_logos/bootstrap-logo.svg" },
     ];
 
@@ -23,16 +23,16 @@ export default function Technologies() {
         { name: "Python", logo: "/images/techstack_logos/python-logo.svg", href: "/services/web-design-development/python-django" },
         { name: "PHP", logo: "/images/techstack_logos/php-logo.svg", href: "/services/web-design-development/laravel-php" },
         { name: "Java", logo: "/images/techstack_logos/java-logo.svg", href: "/services/web-design-development/java-spring-boot" },
-        { name: "MongoDB", logo: "/images/techstack_logos/mongodb-logo.svg", href: "/services/web-design-development/nodejs-backend" },
-        { name: "PostgreSQL", logo: "/images/techstack_logos/postgresql-logo.svg", href: "/services/web-design-development/nodejs-backend" },
-        { name: "MySQL", logo: "/images/techstack_logos/mysql-logo.svg", href: "/services/web-design-development/nodejs-backend" },
-        { name: "Redis", logo: "/images/techstack_logos/redis-logo.svg", href: "/services/web-design-development/nodejs-backend" },
+        { name: "MongoDB", logo: "/images/techstack_logos/mongodb-logo.svg" },
+        { name: "PostgreSQL", logo: "/images/techstack_logos/postgresql-logo.svg" },
+        { name: "MySQL", logo: "/images/techstack_logos/mysql-logo.svg" },
+        { name: "Redis", logo: "/images/techstack_logos/redis-logo.svg" },
         { name: "Express", logo: "/images/techstack_logos/express-logo1.webp", href: "/services/web-design-development/nodejs-backend" },
         { name: "Django", logo: "/images/techstack_logos/django-logo.svg", href: "/services/web-design-development/python-django" },
     ];
 
     const cloudTech = [
-        { name: "AWS", logo: "/images/techstack_logos/amazonwebservices-logo.svg", href: "/services/web-design-development/nodejs-backend" },
+        { name: "AWS", logo: "/images/techstack_logos/amazonwebservices-logo.svg" },
         { name: "Docker", logo: "/images/techstack_logos/docker-logo.svg" },
         { name: "Kubernetes", logo: "/images/techstack_logos/kubernetes-logo.svg" },
         { name: "Git", logo: "/images/techstack_logos/git-logo.svg" },

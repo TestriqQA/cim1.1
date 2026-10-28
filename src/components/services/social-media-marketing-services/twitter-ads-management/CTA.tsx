@@ -49,7 +49,7 @@ export default function CTA() {
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>Followers Gained</p>
                         </div>
                         <div className="text-center">
-                            <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>50M+</p>
+                            <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>High</p>
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>Impressions</p>
                         </div>
                         <div className="text-center">

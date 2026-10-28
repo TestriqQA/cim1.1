@@ -117,16 +117,16 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {[
                         {
-                            number: "300+",
+                            number: "Proven",
                             label: "Campaigns Managed",
                         },
                         {
-                            number: "98%",
+                            number: "Strong",
                             label: "Client Satisfaction",
                         },
                         {
-                            number: "30+",
-                            label: "Years of SMM Experience",
+                            number: "Deep",
+                            label: "SMM Expertise",
                         },
                     ].map((indicator, idx) => (
                         <div key={idx}>

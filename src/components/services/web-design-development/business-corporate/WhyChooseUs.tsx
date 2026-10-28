@@ -29,10 +29,10 @@ export default function WhyChooseUs() {
         {
             icon: Shield,
             title: "Enterprise Security Standards",
-            description: "SOC 2 compliant development practices with enterprise-grade security protocols protecting your corporate data and reputation.",
+            description: "SOC 2-aligned development practices with enterprise-grade security protocols protecting your corporate data and reputation.",
             color: "from-[#008ac1] to-[#00b5ca]",
             accentColor: "#008ac1",
-            features: ["SOC 2 Compliant", "End-to-End Encryption", "Regular Security Audits"]
+            features: ["SOC 2-Aligned", "End-to-End Encryption", "Regular Security Audits"]
         },
         {
             icon: Award,
@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             description: "Proven track record with multinational corporations, understanding the unique requirements of large-scale enterprise websites.",
             color: "from-[#f97316] to-[#ea580c]",
             accentColor: "#f97316",
-            features: ["50+ Enterprise Clients", "Global Scale", "Industry Leaders"]
+            features: ["Enterprise Clients", "Global Scale", "Industry Leaders"]
         },
         {
             icon: Zap,
@@ -139,9 +139,9 @@ export default function WhyChooseUs() {
                         }`}
                 >
                     {[
-                        { value: "500+", label: "Projects Delivered", icon: FileCheck },
-                        { value: "98%", label: "Client Satisfaction", icon: Users },
-                        { value: "12+", label: "Years Experience", icon: Award },
+                        { value: "Proven", label: "Projects Delivered", icon: FileCheck },
+                        { value: "Strong", label: "Client Satisfaction", icon: Users },
+                        { value: "2025", label: "Founded", icon: Award },
                         { value: "High", label: "Uptime SLA", icon: TrendingUp },
                     ].map((stat, idx) => {
                         const StatIcon = stat.icon;

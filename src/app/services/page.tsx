@@ -36,7 +36,7 @@ export default function ServicesPage() {
 
         generateWebPageSchema({
             name: "Full-Service Digital Solutions | Cinute InfoMedia",
-            description: "Explore our comprehensive range of digital services including Web Design, Mobile Apps, SEO, Performance Marketing, and AI Solutions. 50+ projects successfully delivered.",
+            description: "Explore our comprehensive range of digital services including Web Design, Mobile Apps, SEO, Performance Marketing, and AI Solutions. A proven delivery record.",
             urlPath: "/services",
             datePublished: "2025-01-01",
             dateModified: "2026-03-02",

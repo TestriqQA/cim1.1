@@ -16,7 +16,7 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "50K+", label: "Patients Served" },
+        { value: "High", label: "Patients Served" },
         { value: "High", label: "Uptime" },
         { value: "HIPAA", label: "Certified" },
     ];

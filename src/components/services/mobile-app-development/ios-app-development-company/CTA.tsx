@@ -92,7 +92,7 @@ export default function CTA() {
                         {/* Right Stats */}
                         <div className="grid grid-cols-2 gap-6">
                             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-4xl font-bold text-white mb-2">150+</div>
+                                <div className="text-4xl font-bold text-white mb-2">Proven</div>
                                 <div className="text-sm text-white/70">iOS Apps Delivered</div>
                             </div>
                             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
@@ -104,7 +104,7 @@ export default function CTA() {
                                 <div className="text-sm text-white/70">First Submit Approval</div>
                             </div>
                             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-4xl font-bold text-white mb-2">10M+</div>
+                                <div className="text-4xl font-bold text-white mb-2">High</div>
                                 <div className="text-sm text-white/70">Total Downloads</div>
                             </div>
                         </div>

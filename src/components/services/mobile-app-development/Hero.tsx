@@ -116,7 +116,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="space-y-4 mb-8 text-lg md:text-xl text-[var(--secondary-text)] leading-relaxed">
-                            As a <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>expert mobile app development company</span> with <span style={{ color: "var(--foreground)", fontWeight: 700 }}>proven, deep expertise</span>, we craft <span style={{ color: "var(--foreground)" }}>custom mobile app development solutions</span> that transform businesses globally. Our experienced team has delivered <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>300+ high-performance mobile applications</span> across <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">Android</Link>, and <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">cross-platform</Link> ecosystems.
+                            As a <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>expert mobile app development company</span> with <span style={{ color: "var(--foreground)", fontWeight: 700 }}>proven, deep expertise</span>, we craft <span style={{ color: "var(--foreground)" }}>custom mobile app development solutions</span> that transform businesses globally. Our experienced team has delivered <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>high-performance mobile applications</span> across <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">Android</Link>, and <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">cross-platform</Link> ecosystems.
                         </p>
 
                         {/* Feature Highlights */}
@@ -199,7 +199,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    300+
+                                    Proven
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-[var(--secondary-text)]">
                                     Apps Delivered
@@ -213,7 +213,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    50M+
+                                    High
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-[var(--secondary-text)]">
                                     Active Users

@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function CTA() {
     const stats = [
-        { value: "500+", label: "Brands Created" },
-        { value: "98%", label: "Client Satisfaction" },
-        { value: "12+", label: "Years Experience" },
+        { value: "Proven", label: "Brands Created" },
+        { value: "Strong", label: "Client Satisfaction" },
+        { value: "2025", label: "Founded" },
     ];
 
     return (
@@ -56,7 +56,7 @@ export default function CTA() {
                         Ready to <span style={{ color: "var(--accent-amber-text)" }}>Transform Your Brand</span>?
                     </h2>
                     <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Don't Settle for Generic. Build a Brand That Leads. Join 500+ successful companies who trusted us with their visual identity.
+                        Don't Settle for Generic. Build a Brand That Leads. Join the companies who trusted us with their visual identity.
                     </p>
 
                     {/* Stats */}

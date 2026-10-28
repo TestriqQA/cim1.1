@@ -117,6 +117,9 @@ export interface BlogPost {
   tags: string[];
   image: string;
   publishedAt: string;
+  /** The CMS document's last-modified time, for article:modified_time and
+   *  schema dateModified. Absent on the legacy seed data. */
+  updatedAt?: string;
   readTime: number;
   featured?: boolean;
   seo?: {

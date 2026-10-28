@@ -25,7 +25,7 @@ export const metadata: Metadata = {
                 url: "/og-images/video-marketing-agency.webp",
                 width: 1200,
                 height: 630,
-                alt: "YouTube Marketing Services | Top Agency for ROI & Growth by Cinute Infomedia",
+                alt: "YouTube Marketing Services | Top Agency for ROI & Growth by Cinute InfoMedia",
             },
         ],
     },
@@ -50,7 +50,7 @@ export default function YouTubeMarketingPage() {
                             {
                                 "@type": "Organization",
                                 "@id": "https://www.cinuteinfomedia.com/#organization",
-                                "name": "Cinute Infomedia",
+                                "name": "Cinute InfoMedia",
                                 "url": "https://www.cinuteinfomedia.com",
                                 "logo": "https://www.cinuteinfomedia.com/images/logo.png"
                             },

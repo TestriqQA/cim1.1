@@ -122,7 +122,7 @@ export default function Hero() {
                         </p>
 
                         <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Trusted by 500+ businesses across 15+ industries. We deliver a measurable increase in local search visibility and a boost in direction requests within 90 days.
+                            Trusted by businesses across many industries. We deliver a measurable increase in local search visibility and a boost in direction requests within 90 days.
                         </p>
 
                         {/* Feature Pills */}
@@ -183,9 +183,9 @@ export default function Hero() {
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Avg increase</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>500+</h2>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Growing</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Businesses</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>15+ industries</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Many industries</p>
                             </div>
                             <div className="text-center lg:text-left">
                                 <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Strong</h2>

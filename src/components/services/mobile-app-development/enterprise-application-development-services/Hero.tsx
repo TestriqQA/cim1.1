@@ -126,7 +126,7 @@ export default function Hero() {
                         {/* Feature Pills */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
-                                "85+ Global clients",
+                                "Global clients",
                                 "Users at Scale",
                                 "High Availability",
                                 "SOC 2, GDPR-aligned",
@@ -180,12 +180,12 @@ export default function Hero() {
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>85+</h2>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Trusted</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Enterprise Clients</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>500K+</h2>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Daily Active Users</p>
                             </div>
                         </div>

@@ -40,8 +40,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Performance Marketing Agency | Global ROI-Driven Advertising Services',
-    description: 'Scale your revenue globally with precision performance marketing. strong average ROAS, 138K+ leads generated, reduced CPA, significant revenue driven. Google Partner, Meta Business Partner, LinkedIn Marketing Partner. large-scale annual ad spend managed for 50+ global brands.',
+    title: 'Performance Marketing & PPC Agency | Cinute InfoMedia',
+    description: 'Google Ads, Meta Ads and LinkedIn Ads managed for measurable leads and sales. Performance marketing by Cinute InfoMedia. Book a free audit.',
     url: '/services/performance-marketing',
     keywords: [
         'performance marketing agency',
@@ -68,8 +68,8 @@ export default function PerformanceMarketingPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Performance Marketing Agency | Global ROI-Driven Advertising Services",
-            description: "Scale your revenue globally with precision performance marketing. strong average ROAS, 138K+ leads generated, reduced CPA, significant revenue driven. Google Partner, Meta Business Partner, LinkedIn Marketing Partner. large-scale annual ad spend managed for 50+ global brands.",
+            name: "Performance Marketing & PPC Agency | Cinute InfoMedia",
+            description: "Google Ads, Meta Ads and LinkedIn Ads managed for measurable leads and sales. Performance marketing by Cinute InfoMedia. Book a free audit.",
             urlPath: "/services/performance-marketing",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -86,7 +86,7 @@ export default function PerformanceMarketingPage() {
 
         generateServiceSchema({
             name: "Performance Marketing Services",
-            description: "Stop guessing where your marketing budget goes — start scaling with precision. We lower your Customer Acquisition Cost (CAC) while maximizing Return on Ad Spend (ROAS). strong average ROAS, 138K+ leads generated, reduced CPA, significant revenue driven, large-scale annual ad spend managed for 50+ global brands. Google Partner, Meta Business Partner, LinkedIn Marketing Partner certified.",
+            description: "Stop guessing where your marketing budget goes — start scaling with precision. We lower your Customer Acquisition Cost (CAC) while maximizing Return on Ad Spend (ROAS): strong average ROAS, significant leads generated, reduced CPA and real revenue driven, with large-scale annual ad spend managed for global brands. Google Partner, Meta Business Partner, LinkedIn Marketing Partner certified.",
             urlPath: "/services/performance-marketing",
             serviceType: "Performance Marketing & ROI-Driven Advertising",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -136,7 +136,7 @@ export default function PerformanceMarketingPage() {
 
         generateHowToSchema({
             name: "Our 6-Step Performance Marketing Methodology",
-            description: "A proven 6-step methodology delivering strong average ROAS, 138K+ leads, and reduced CPA for 50+ global brands across large-scale annual ad spend.",
+            description: "A proven 6-step methodology delivering strong average ROAS, significant leads, and reduced CPA for global brands across large-scale annual ad spend.",
             steps: [
                 { name: "Discovery & Deep-Dive Audit", text: "Understanding your business DNA, auditing existing accounts, and identifying low-hanging fruits for immediate wins.", url: "https://www.cinuteinfomedia.com/services/performance-marketing/#step-discovery" },
                 { name: "Strategy & Media Planning", text: "Custom roadmap with cross-channel budget allocation, keyword mapping, and audience segmentation.", url: "https://www.cinuteinfomedia.com/services/performance-marketing/#step-strategy" },

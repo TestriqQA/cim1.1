@@ -40,27 +40,20 @@ export async function generateMetadata({
     const url = `${siteUrl}/portfolio/${project.slug}`;
 
     const metaTitle =
-        project.seoTitle ?? `${project.client} Case Study — ${project.title} | Cinute InfoMedia`;
+        // T8: the old template was `<client> Case Study — <title> | Cinute InfoMedia`,
+        // which ran 73-78 characters on every case study. Dropping the project
+        // title (it is the <h1> and the first thing in the description) keeps the
+        // client name — the part people actually search — inside 60.
+        project.seoTitle ?? `${project.client} Case Study | Cinute InfoMedia`;
     const socialTitle = project.seoTitle ?? `${project.client} Case Study — ${project.title}`;
     const metaDescription = project.seoDescription ?? project.summary;
 
     return {
         title: metaTitle,
+        // No `keywords`: Google ignores <meta name="keywords"> and it published our
+        // keyword targeting to competitors. The schema.org `keywords` on the
+        // CreativeWork node below is a different, still-useful property — kept.
         description: metaDescription,
-        keywords: Array.from(
-            new Set([
-                project.client,
-                `${project.client} case study`,
-                // The human label ("Web Development"), not the raw taxonomy id
-                // ("web-dev") — the id is an internal slug, not a search term.
-                getCategoryMeta(project.category).label,
-                project.industry,
-                ...project.servicesDelivered.slice(0, 4).map((service) => service.name),
-                "Cinute InfoMedia",
-                "case study",
-                "client results",
-            ])
-        ),
         alternates: {
             canonical: url,
         },

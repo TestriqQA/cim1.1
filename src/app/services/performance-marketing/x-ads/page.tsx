@@ -26,7 +26,7 @@ export default function XAdsPage() {
                         "serviceType": "X Ads Management",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency",
