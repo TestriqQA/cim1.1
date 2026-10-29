@@ -90,7 +90,11 @@ export const teamMembers: TeamMember[] = [
     experience: "20+ years",
     bio: "Goutam has spent more than twenty years across quality engineering, delivery management and business development. He scopes what a project actually needs, keeps delivery honest against the brief, and coaches the team on the process discipline that makes complex builds predictable.",
     image: "/images/team/goutam-mishra.webp",
-    expertise: ["Delivery Management", "Software Testing", "Business Development"],
+    expertise: [
+      "Delivery Management",
+      "Software Testing",
+      "Business Development",
+    ],
     linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
     highlights: [
       "Scoping and estimation for new engagements",
@@ -183,7 +187,7 @@ export const teamMembers: TeamMember[] = [
     focus: "Organic Growth & Content",
     bio: "Sushma analyses what search is actually rewarding in a client's category and turns it into a content and optimisation plan. Her work is the bridge between a technical SEO audit and the pages that get written because of it.",
     // No photo on file yet — see the note on Ratnesh above.
-    image: "/images/team/placeholder-avatar.webp",
+    image: "/images/team/sushma-pal.jpeg",
     expertise: ["Technical SEO", "Content Strategy", "Organic Growth"],
     linkedin: "https://www.linkedin.com/in/sushma-pal131/",
   },
@@ -194,7 +198,7 @@ export const teamMembers: TeamMember[] = [
     role: "Lead SEO Executive",
     focus: "On-page & Technical SEO",
     bio: "Ved plans and executes the on-page, technical and content SEO that grows organic traffic and conversions. Their specialism is keyword strategy and SERP analysis — turning search data into rankings rather than into a report nobody acts on.",
-    image: "/images/team/ved-patil.webp",
+    image: "/images/team/ved-patil.jpeg",
     expertise: ["Keyword Strategy", "SERP Analysis", "On-page SEO"],
     linkedin: "https://www.linkedin.com/in/ved-patil-07511b2b4/",
   },
@@ -207,8 +211,12 @@ export const teamMembers: TeamMember[] = [
     bio: "Ratnesh works on the front end of client projects, turning designs into the accessible, responsive markup and components that ship. A fuller profile and portrait are on the way.",
     // No photo on file yet — the shared neutral avatar stands in until one is
     // supplied, so the card renders at the same size as every other portrait.
-    image: "/images/team/placeholder-avatar.webp",
-    expertise: ["Front-end Development", "UI Engineering", "Responsive Interfaces"],
+    image: "/images/team/ratnesh-waghare.png",
+    expertise: [
+      "Front-end Development",
+      "UI Engineering",
+      "Responsive Interfaces",
+    ],
     linkedin: "https://www.linkedin.com/in/ratnesh-waghare-63782a293/",
   },
   {
@@ -281,7 +289,13 @@ export const teamDisciplines: TeamDiscipline[] = [
     description:
       "Technical foundations, on-page structure and content that earns rankings — audited against real crawl and index data.",
     href: "/services/seo-services",
-    skills: ["Technical SEO", "On-page SEO", "Local SEO", "Content", "Link Building"],
+    skills: [
+      "Technical SEO",
+      "On-page SEO",
+      "Local SEO",
+      "Content",
+      "Link Building",
+    ],
   },
   {
     title: "Performance Marketing",
@@ -295,7 +309,12 @@ export const teamDisciplines: TeamDiscipline[] = [
     description:
       "Identity systems and interface design that stay coherent from a logo lockup through to a production component library.",
     href: "/services/brand-identity-design",
-    skills: ["Brand Identity", "UI/UX Design", "Design Systems", "Creative Direction"],
+    skills: [
+      "Brand Identity",
+      "UI/UX Design",
+      "Design Systems",
+      "Creative Direction",
+    ],
   },
   {
     title: "Support & Maintenance",
@@ -307,10 +326,14 @@ export const teamDisciplines: TeamDiscipline[] = [
 ];
 
 /** Large-card section. Source order is preserved. */
-export const leaders: TeamMember[] = teamMembers.filter((m) => m.tier === "leader");
+export const leaders: TeamMember[] = teamMembers.filter(
+  (m) => m.tier === "leader",
+);
 
 /** Compact-card section. Source order is preserved. */
-export const featuredMembers: TeamMember[] = teamMembers.filter((m) => m.tier === "featured");
+export const featuredMembers: TeamMember[] = teamMembers.filter(
+  (m) => m.tier === "featured",
+);
 
 export function getTeamMemberById(id: string): TeamMember | undefined {
   return teamMembers.find((member) => member.id === id);

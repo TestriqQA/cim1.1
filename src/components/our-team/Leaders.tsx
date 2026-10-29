@@ -38,15 +38,15 @@ export default function Leaders() {
             className="mt-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl"
             style={{ color: "var(--foreground)" }}
           >
-            Three people own the outcome
+            Four people own the outcome
           </h2>
           <p
             className="mt-5 text-lg leading-relaxed"
             style={{ color: "var(--secondary-text)" }}
           >
-            Strategy, delivery and growth sit with three people. They scope the work, stay
-            accountable for it, and are the ones you deal with directly rather than through an
-            account layer.
+            Strategy, delivery and growth sit with three people. They scope the
+            work, stay accountable for it, and are the ones you deal with
+            directly rather than through an account layer.
           </p>
         </div>
 
@@ -57,7 +57,10 @@ export default function Leaders() {
             return (
               <li key={leader.id} id={leader.id} className="scroll-mt-28">
                 {/* Section marker */}
-                <div aria-hidden="true" className="mb-10 flex items-center gap-5">
+                <div
+                  aria-hidden="true"
+                  className="mb-10 flex items-center gap-5"
+                >
                   <span
                     className="text-sm font-bold tabular-nums"
                     style={{ color: "var(--brand-blue-text)" }}

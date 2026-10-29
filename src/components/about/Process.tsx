@@ -216,6 +216,9 @@ export default function Process() {
                           <p className="text-[var(--secondary-text)] leading-relaxed mb-4">
                             {step.description}
                           </p>
+                          <p className="text-[var(--secondary-text)] leading-relaxed mb-4">
+                            {step.description}
+                          </p>
 
                           <div className="space-y-2 overflow-hidden">
                             <div className="pt-4 border-t border-[var(--border-color)]">
@@ -389,6 +392,16 @@ export default function Process() {
                     </div>
                   </div>
 
+                  {/* Mobile stacked card */}
+                  <div className="lg:hidden mt-6 relative bg-[var(--card-bg)] rounded-3xl p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
+                    <div
+                      className="absolute -top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold z-10"
+                      style={{
+                        background: `linear-gradient(135deg, ${step.colorFrom}, ${step.colorTo})`,
+                      }}
+                    >
+                      {idx + 1}
+                    </div>
                   {/* Mobile stacked card */}
                   <div className="lg:hidden mt-6 relative bg-[var(--card-bg)] rounded-3xl p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
                     <div
