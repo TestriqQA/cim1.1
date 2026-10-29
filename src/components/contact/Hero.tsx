@@ -417,7 +417,7 @@ export default function Hero() {
                       color: "transparent",
                     }}
                   >
-                    Let's Start a
+                    Let&apos;s Start a
                   </span>
                 </span>
                 <br />
@@ -466,7 +466,7 @@ export default function Hero() {
                   style={{ color: "var(--foreground)" }}
                 >
                   With 300+ successful projects and strong client retention,
-                  we're your trusted partner for scalable digital growth.
+                  we&apos;re your trusted partner for scalable digital growth.
                 </span>
               </p>
             </div>
@@ -692,7 +692,7 @@ export default function Hero() {
                       className="text-2xl font-bold mb-2"
                       style={{ color: "var(--foreground)" }}
                     >
-                      Thanks - we'll be in touch!
+                      Thanks - we&apos;ll be in touch!
                     </h2>
                     <p style={{ color: "var(--secondary-text)" }}>
                       We received your message and will respond within 24 hours.

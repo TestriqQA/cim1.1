@@ -173,7 +173,7 @@ export default function Services() {
           </Link>
           )
         </>,
-        "Key Results: 200+ hours saved monthly, significant cost reduction",
+        "Key Results: significant hours saved monthly, significant cost reduction",
       ],
       gradientStyle: {
         background:
