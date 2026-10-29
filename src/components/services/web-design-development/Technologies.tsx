@@ -50,10 +50,26 @@ export default function Technologies() {
       logo: "/images/techstack_logos/java-logo.svg",
       href: "/services/web-design-development/java-spring-boot",
     },
-    { name: "MongoDB", logo: "/images/techstack_logos/mongodb-logo.svg" },
-    { name: "PostgreSQL", logo: "/images/techstack_logos/postgresql-logo.svg" },
-    { name: "MySQL", logo: "/images/techstack_logos/mysql-logo.svg" },
-    { name: "Redis", logo: "/images/techstack_logos/redis-logo.svg" },
+    {
+      name: "MongoDB",
+      logo: "/images/techstack_logos/mongodb-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    {
+      name: "PostgreSQL",
+      logo: "/images/techstack_logos/postgresql-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    {
+      name: "MySQL",
+      logo: "/images/techstack_logos/mysql-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    {
+      name: "Redis",
+      logo: "/images/techstack_logos/redis-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
     {
       name: "Express",
       logo: "/images/techstack_logos/express-logo1.webp",

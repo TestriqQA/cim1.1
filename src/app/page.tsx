@@ -68,9 +68,6 @@ export default async function Home() {
       name: "Web Development Company | AI-Powered Digital Solutions",
       description:
         "Expert web development company delivering custom websites, mobile apps & AI-driven marketing. proven, measurable ROI. 300+ global projects. Free audit today!",
-      name: "Web Development & Digital Marketing | Cinute InfoMedia",
-      description:
-        "Cinute InfoMedia builds fast websites and mobile apps and runs SEO, performance marketing and AI automation. Mira Road, Mumbai. Book a free audit.",
       urlPath: "",
       datePublished: "2025-01-01",
       dateModified: "2026-03-02",
@@ -84,10 +81,6 @@ export default async function Home() {
           "What makes Cinute InfoMedia different from other web development companies?",
         answer:
           "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and 300+ successful projects speak to our partnership approach.",
-        question:
-          "What makes Cinute InfoMedia different from other web development companies?",
-        answer:
-          "We combine technical excellence with business strategy. Unlike typical web development agencies that just code to specs, we act as your growth partner - providing strategic guidance, data-driven recommendations, and continuous optimization. Our strong client retention and a proven record of delivery speaks to our partnership approach.",
       },
       {
         question: "What web development services do you offer?",

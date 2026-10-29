@@ -104,7 +104,7 @@ export default function Process() {
             }}
           >
             Every successful project starts with understanding where you are and
-            where you want to go. Our proven 4-step framework has guided
+            where you want to go. Our proven 4-step framework has guided 300+
             businesses to digital excellence.
           </p>
         </div>

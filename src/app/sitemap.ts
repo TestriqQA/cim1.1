@@ -134,17 +134,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
-  // 6. Product Routes — only products still reachable from the site. The three
-  // withdrawn in Oct 2026 were previously still listed here with no internal
-  // link pointing at them, which is the definition of an orphan URL.
-  const productRoutes: MetadataRoute.Sitemap = listedProducts.map(
-    (product) => ({
-      url: `${baseUrl}/products/${product.slug}`,
-      lastModified: staticLastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }),
-  );
+  // 6. Product Routes
+  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${baseUrl}/products/${product.slug}`,
+    lastModified: staticLastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   // 7. Product Privacy Policy Routes
   const productPrivacyRoutes: MetadataRoute.Sitemap =
