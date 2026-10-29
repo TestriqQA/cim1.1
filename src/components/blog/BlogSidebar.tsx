@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { BlogPost, getCategorySlug } from "@/data/blog";
+import { BlogCategoryLink, BlogPost } from "@/data/blog";
 import { TrendingUp, Folder, Tag, ArrowRight } from "lucide-react";
 
 interface BlogSidebarProps {
   currentPostSlug?: string;
-  categories: string[];
+  categories: BlogCategoryLink[];
   popularPosts: BlogPost[];
   tags: string[];
 }
@@ -30,7 +30,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           borderColor: "var(--border-color)",
         }}>
         <div className="flex items-center space-x-2 mb-4">
-          <TrendingUp className="w-5 h-5 text-[var(--brand-purple)]" />
+          <TrendingUp className="w-5 h-5 text-[var(--brand-purple-text)]" />
           <h3 className="text-lg font-bold">Popular Posts</h3>
         </div>
         <div className="space-y-3">
@@ -50,7 +50,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[var(--brand-purple)] transition-colors">
+                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
                   {post.title}
                 </p>
                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
@@ -72,29 +72,29 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           borderColor: "var(--border-color)",
         }}>
         <div className="flex items-center space-x-2 mb-4">
-          <Folder className="w-5 h-5 text-[var(--brand-purple)]" />
+          <Folder className="w-5 h-5 text-[var(--brand-purple-text)]" />
           <h3 className="text-lg font-bold">Categories</h3>
         </div>
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <Link
-              key={category}
-              href={`/blog/category/${getCategorySlug(category)}`}
+              key={category.slug}
+              href={`/blog/category/${category.slug}`}
               className="px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)]"
               style={{
                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
-                color: "var(--brand-purple)",
+                color: "var(--brand-purple-text)",
                 borderColor: "var(--border-color)",
               }}
             >
-              {category}
+              {category.name}
             </Link>
           ))}
         </div>
         <Link
           href="/blog/categories"
           className="flex items-center justify-center gap-2 mt-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 hover:bg-[var(--hover-bg)]"
-          style={{ color: "var(--brand-purple)" }}
+          style={{ color: "var(--brand-purple-text)" }}
         >
           View all categories
           <ArrowRight className="w-4 h-4" />
@@ -108,7 +108,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           borderColor: "var(--border-color)",
         }}>
         <div className="flex items-center space-x-2 mb-4">
-          <Tag className="w-5 h-5 text-[var(--brand-purple)]" />
+          <Tag className="w-5 h-5 text-[var(--brand-purple-text)]" />
           <h3 className="text-lg font-bold">Tags</h3>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -116,7 +116,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
             <button
               key={tag}
               onClick={() => handleTagClick(tag)}
-              className="px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 border cursor-pointer hover:bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] hover:text-[var(--brand-purple)] hover:border-[var(--brand-purple)]"
+              className="px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 border cursor-pointer hover:bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] hover:text-[var(--brand-purple-text)] hover:border-[var(--brand-purple)]"
               style={{
                 backgroundColor: "transparent",
                 color: "var(--secondary-text)",
@@ -135,8 +135,8 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           backgroundColor: "var(--card-bg)",
           borderColor: "var(--border-color)",
         }}>
-        <div className="absolute inset-0 opacity-10" style={{
-          background: "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent))",
         }} />
         <div className="relative z-10">
           <h3 className="text-lg font-bold mb-2">Need Help?</h3>
@@ -148,7 +148,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
               href="/contact"
               className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg font-semibold text-white text-sm transition-all duration-200 hover:shadow-lg"
               style={{
-                backgroundColor: "var(--brand-purple)",
+                backgroundColor: "var(--brand-purple-btn)",
               }}
             >
               Get in Touch
@@ -156,7 +156,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
             </Link>
             <Link
               href="/services"
-              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg font-semibold text-sm border transition-all duration-200 hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple)]"
+              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg font-semibold text-sm border transition-all duration-200 hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple-text)]"
               style={{
                 borderColor: "var(--border-color)",
                 color: "var(--foreground)",

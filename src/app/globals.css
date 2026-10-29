@@ -14,11 +14,53 @@
     --brand-chatbot: #4e51d2;
     --brand-seo: #6db75c;
 
+    /* Accessible text-on-surface variants (WCAG AA >=4.5:1). The vivid brand
+       colors above stay for backgrounds/fills (with white text); these darker
+       variants are for colored TEXT sitting on light surfaces. Dark-mode values
+       are overridden in [data-theme="dark"] below. */
+    --brand-blue-text: #006d97;
+    --brand-purple-text: #a21caf;
+
+    /* Accessible SOLID-button backgrounds — white text hits >=4.5:1.
+       Theme-independent (a button's bg vs its own white text doesn't change
+       with page theme), so intentionally not overridden in dark mode. */
+    --brand-blue-btn: #006d97;
+    --brand-purple-btn: #9333ea;
+    --accent-teal-btn: #0f766e;
+    /* Per-hue solid-button backgrounds for the service pages' step accents.
+       The vivid step hues (#3b82f6/#ec4899/#f97316/#6366f1/#10b981) only reach
+       2.3-4.5:1 against white label text; these darkened variants clear 4.5:1. */
+    --accent-sky-btn: #2563eb;
+    --accent-pink-btn: #be185d;
+    --accent-orange-btn: #c2410c;
+    --accent-indigo-btn: #4338ca;
+    --accent-green-btn: #047857;
+
+    /* Accessible per-hue TEXT tokens for the service pages' theme accents
+       (teal/violet/indigo). Light values pass on white; dark values below
+       pass on the dark card/background. */
+    --accent-teal-text: #115e59;
+    --accent-violet-text: #6d28d9;
+    --accent-indigo-text: #4338ca;
+    /* Batch 4 service-page accents: cyan (React), lime (Shopify), green (Node) */
+    --accent-cyan-text: #155e75;
+    --accent-lime-text: #3f6212;
+    --accent-green-text: #166534;
+    /* Batch 3 Process-card + fintech accents */
+    --accent-sky-text: #0369a1;
+    --accent-pink-text: #be185d;
+    --accent-orange-text: #9a3412;
+    --accent-amber-text: #92400e;
+    --accent-red-text: #b91c1c;
+
+    /* Selection highlight color (overridden per page via data-page-theme) */
+    --page-selection-bg: var(--brand-purple);
+
     /* Light Mode Colors */
     --background: #f0f0f0;
     --foreground: #000000;
     --card-bg: #ffffff;
-    --border-color: #e5e7eb;
+    --border-color: #cbcccf;
     --hover-bg: #f9fafb;
     --secondary-text: #374151;
     /* Darkened from #4b5563 for better contrast on #f0f0f0 */
@@ -32,6 +74,21 @@
     --border-color: #2d2d2d;
     --hover-bg: #262626;
     --secondary-text: #9ca3af;
+    /* Lighter brand text variants for dark surfaces (WCAG AA >=4.5:1) */
+    --brand-blue-text: #38bdf8;
+    --brand-purple-text: #cd7ff5;
+    /* Lighter accent text variants for dark surfaces */
+    --accent-teal-text: #5eead4;
+    --accent-violet-text: #c4b5fd;
+    --accent-indigo-text: #a5b4fc;
+    --accent-cyan-text: #67e8f9;
+    --accent-lime-text: #a3e635;
+    --accent-green-text: #4ade80;
+    --accent-sky-text: #7dd3fc;
+    --accent-pink-text: #f9a8d4;
+    --accent-orange-text: #fdba74;
+    --accent-amber-text: #fcd34d;
+    --accent-red-text: #f87171;
   }
 
   body {
@@ -70,10 +127,36 @@
     cursor: pointer;
   }
 
-  /* Brand Gradient Selection */
+  /* Brand Gradient Selection — default purple, overridden per page */
   ::selection {
     color: #ffffff;
-    background: #BC3FEB;
+    background: var(--page-selection-bg);
+  }
+
+  /* Per-page theme overrides via data-page-theme on <main> */
+  [data-page-theme="seo"] ::selection {
+    background: var(--brand-seo);
+  }
+
+  [data-page-theme="orange"] ::selection {
+    background: var(--brand-orange);
+  }
+
+  [data-page-theme="teal"] ::selection {
+    background: var(--brand-teal);
+  }
+
+  [data-page-theme="chatbot"] ::selection {
+    background: var(--brand-chatbot);
+  }
+
+  [data-page-theme="blue"] ::selection {
+    background: var(--brand-blue);
+  }
+
+  [data-page-theme="yellow"] ::selection {
+    background: var(--brand-yellow);
+    color: #000000;
   }
 }
 
@@ -216,4 +299,43 @@ body,
 
 .animate-pulse-scale {
   animation: pulse-scale 6s ease-in-out infinite;
+}
+
+/* Home hero decorative animations — migrated out of HomeClient's styled-jsx
+   <style jsx global> so the home composition can be a Server Component.
+   (`@keyframes blob`, `.animate-blob`, and `@keyframes fadeIn` already exist
+   above; these add the delays, fade-in, and slow-spin the Hero relies on.
+   The unused `grow`/`scroll`/`gradient` keyframes were intentionally dropped.) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation: blob 7s infinite 4s;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
 }

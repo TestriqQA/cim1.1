@@ -1,5 +1,3 @@
-"use client";
-
 import { MessageSquare, Palette, Code2, Rocket, Settings, HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
@@ -26,7 +24,7 @@ export default function Process() {
         {
             icon: Rocket,
             title: "Content Setup",
-            description: <>Content is king. We assist with <Link href="/services/performance-marketing" className="hover:underline text-[#06b6d4]">LinkedIn profile optimization</Link> ensuring cohesive cross-channel narrative.</>,
+            description: <>Content is king. We assist with <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">LinkedIn profile optimization</Link> ensuring cohesive cross-channel narrative.</>,
             details: ["Content assistance", "LinkedIn optimization", "Cohesive narrative", "Cross-channel sync"]
         },
         {
@@ -38,7 +36,7 @@ export default function Process() {
         {
             icon: HeartHandshake,
             title: "Ongoing Support",
-            description: <>We're in it for the long haul. <Link href="/services/web-design-development/saas-development-services" className="hover:underline text-[#06b6d4]">Personal portfolio hosting</Link> and maintenance solutions to keep your content fresh and secure.</>,
+            description: <>We're in it for the long haul. <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Personal portfolio hosting</Link> and maintenance solutions to keep your content fresh and secure.</>,
             details: ["Hosting solutions", "Maintenance", "Fresh content", "Security updates"]
         }
     ];
@@ -60,13 +58,13 @@ export default function Process() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "#06b6d4" }} />
-                        <span className="text-sm font-medium" style={{ color: "#06b6d4" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "#06b6d4" }}>Creative Process</span>
+                        Our <span style={{ color: "var(--accent-cyan-text)" }}>Creative Process</span>
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>

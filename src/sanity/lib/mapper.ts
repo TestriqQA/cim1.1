@@ -1,6 +1,17 @@
-import { BlogPost, Author, ContentBlock } from '@/data/blog';
+import { BlogPost, Author, ContentBlock, getCategorySlug } from '@/data/blog';
 import { Job } from '@/types/careers';
 import { urlFor } from './image';
+
+// Sanity's CDN resizes and negotiates the format, so the originals (often
+// multi-megabyte PNGs) never reach the browser. `fit: max` only ever scales
+// down, so aspect ratios are untouched, and `auto: format` keeps serving the
+// original format to clients that don't advertise webp/avif — social crawlers
+// reading these same URLs from the OG tags still get something they can read.
+const postImageUrl = (source: any) =>
+    urlFor(source).width(1200).fit('max').auto('format').quality(75).url();
+
+const avatarUrl = (source: any) =>
+    urlFor(source).width(400).fit('max').auto('format').quality(75).url();
 
 /**
  * Serializes Sanity Portable Text block children with marks into HTML
@@ -31,6 +42,10 @@ function serializePortableTextBlock(block: any): string {
                     text = `<em>${text}</em>`;
                 } else if (mark === 'code') {
                     text = `<code>${text}</code>`;
+                } else if (mark === 'underline') {
+                    text = `<u>${text}</u>`;
+                } else if (mark === 'strike-through') {
+                    text = `<s>${text}</s>`;
                 }
             });
         }
@@ -49,12 +64,45 @@ export function mapSanityPostToBlogPost(sanityPost: any): BlogPost {
         contentBlocks: mapSanityBlocksToContentBlocks(sanityPost.content),
         author: mapSanityAuthorToAuthor(sanityPost.author),
         category: sanityPost.category?.name || 'Uncategorized',
+        // Editors set category slugs by hand, so they can't be derived from the
+        // name ("AI & Automation" is ai-automation, but "Enterprise AI &
+        // Automation" is enterprise-ai-and-automation). Always use the stored one.
+        categorySlug: sanityPost.category?.slug?.current || getCategorySlug(sanityPost.category?.name || ''),
         tags: sanityPost.tags || [],
-        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).url() : '',
+        image: sanityPost.mainImage ? postImageUrl(sanityPost.mainImage) : '',
         publishedAt: sanityPost.publishedAt,
         readTime: sanityPost.readTime || 5,
         featured: sanityPost.featured || false,
         seo: sanityPost.seo,
+        schema: sanityPost.schema,
+    };
+}
+
+/**
+ * Reduces a post to the fields its list views actually render (cards, search
+ * suggestions, sidebars): everything else still gets serialized into the RSC
+ * payload sent to the browser. postFields attaches each post's seo and schema
+ * objects plus the author's full record — bio, email, social links, their own
+ * seo — and the blog index ships 62 posts twice over, once for the grid and
+ * once for the navbar search. Cards only ever show an author's name and photo.
+ *
+ * Server-side consumers (metadata, JSON-LD) must keep using the untrimmed post.
+ */
+export function toListPost(post: BlogPost): BlogPost {
+    return {
+        ...post,
+        content: '',
+        contentBlocks: [],
+        seo: undefined,
+        schema: undefined,
+        author: {
+            id: post.author.id,
+            name: post.author.name,
+            image: post.author.image,
+            title: '',
+            bio: '',
+            email: '',
+        },
     };
 }
 
@@ -74,9 +122,10 @@ export function mapSanityAuthorToAuthor(sanityAuthor: any): Author {
         name: sanityAuthor.name,
         title: sanityAuthor.title || '',
         bio: sanityAuthor.bio || '',
-        image: sanityAuthor.image ? urlFor(sanityAuthor.image).url() : '',
+        image: sanityAuthor.image ? avatarUrl(sanityAuthor.image) : '',
         email: sanityAuthor.email || '',
         social: sanityAuthor.social,
+        seo: sanityAuthor.seo,
         postsCount: sanityAuthor.postsCount,
     };
 }
@@ -91,7 +140,9 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
         // Handle List Items
         if (block._type === 'block' && block.listItem) {
             const listStyle = block.listItem === 'number' ? 'numbered' : 'bullet';
-            const content = block.children?.map((c: any) => c.text).join('');
+            // Serialize like any other block, so bold/italic/code/links an editor
+            // applied inside a bullet survive instead of being flattened to text.
+            const content = serializePortableTextBlock(block);
 
             if (currentListBlock && currentListBlock.style === listStyle) {
                 // Continue existing list
@@ -119,7 +170,7 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
 
             if (block._type === 'block') {
                 // Headings
-                if (block.style === 'h1' || block.style === 'h2' || block.style === 'h3') {
+                if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(block.style)) {
                     contentBlocks.push({
                         id: block._key,
                         type: 'text',
@@ -143,7 +194,7 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
                 contentBlocks.push({
                     id: block._key,
                     type: 'image',
-                    src: block.asset ? urlFor(block.asset).url() : '',
+                    src: block.asset ? postImageUrl(block.asset) : '',
                     alt: block.alt || '',
                     caption: block.caption
                 });

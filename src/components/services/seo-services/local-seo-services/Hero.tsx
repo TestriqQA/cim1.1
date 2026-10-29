@@ -80,19 +80,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: localAmber }}>Local SEO</span>
+                            <span style={{ color: "var(--accent-amber-text)" }}>Local SEO</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
                             style={{
-                                backgroundColor: `${localAmber}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${localAmber}30`,
                             }}
                         >
-                            <MapPin className="w-4 h-4" style={{ color: localAmber }} />
-                            <span className="text-sm font-medium" style={{ color: localAmber }}>
+                            <MapPin className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-amber-text)" }}>
                                 Dominate Local Search
                             </span>
                         </div>
@@ -102,8 +102,8 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Dominate <Link href="/services/seo-services" className="hover:text-amber-500 transition-colors">Local Search</Link> & Attract{" "}
-                            <span className="relative inline-block" style={{ color: localAmber }}>
+                            Dominate <Link href="/services/seo-services" className="hover:text-[var(--accent-amber-text)] transition-colors">Local Search</Link> & Attract{" "}
+                            <span className="relative inline-block" style={{ color: "var(--accent-amber-text)" }}>
                                 <Link href="/services/performance-marketing" className="hover:underline text-inherit">High-Intent Customers</Link>
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -118,19 +118,19 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Rank in the top 3 Google Map Pack results and become visible to 83% of consumers searching for local businesses. Our local SEO services optimize your Google Business Profile, NAP consistency, and secure the #1 Map Pack spot.
+                            Rank in the top 3 Google Map Pack results and become visible to 83% of consumers searching for local businesses. Our local SEO services optimize your Google Business Profile, NAP consistency, and secure a top Map Pack spot.
                         </p>
 
                         <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Trusted by 500+ businesses across 15+ industries. We deliver 247% increase in local search visibility and 178% boost in direction requests within 90 days.
+                            Trusted by 500+ businesses across 15+ industries. We deliver a measurable increase in local search visibility and a boost in direction requests within 90 days.
                         </p>
 
                         {/* Feature Pills */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
                                 "Google Business Profile",
-                                <Link href="/services/seo-services/technical-seo-services" className="hover:text-amber-500 transition-colors">Map Pack Rankings</Link>,
-                                <Link href="/services/seo-services/link-building" className="hover:text-amber-500 transition-colors">Citation Building</Link>,
+                                <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--accent-amber-text)] transition-colors">Map Pack Rankings</Link>,
+                                <Link href="/services/seo-services/link-building" className="hover:text-[var(--accent-amber-text)] transition-colors">Citation Building</Link>,
                                 "Review Generation",
                             ].map((feature, idx) => (
                                 <div
@@ -152,7 +152,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: localAmber }}
+                                style={{ backgroundColor: "#b45309" }}
                             >
                                 Get Your Free Local SEO Audit
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -173,29 +173,29 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: localAmber }}>#1</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Top</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Map Pack Spot</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)", opacity: 0.7 }}>87% in top 3</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Most in top 3</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: localAmber }}>3x</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>More</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Local Calls</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)", opacity: 0.7 }}>Avg increase</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Avg increase</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: localAmber }}>500+</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>500+</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Businesses</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)", opacity: 0.7 }}>15+ industries</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>15+ industries</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: localAmber }}>340%</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Strong</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Review Growth</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)", opacity: 0.7 }}>5-star increase</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>5-star increase</p>
                             </div>
                             <div className="text-center lg:text-left col-span-2 sm:col-span-1">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: localAmber }}>92%</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>High</h2>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Retention</p>
-                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)", opacity: 0.7 }}>Community-focused</p>
+                                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Community-focused</p>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,10 @@ export default function Process() {
     const tiktokPink = "#ff0050";
     const tiktokCyan = "#00f2ea";
 
+    // Map brand color -> theme-aware text token (contrast-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === tiktokCyan ? "var(--accent-cyan-text)" : "var(--accent-pink-text)";
+
     const steps = [
         {
             id: 1,
@@ -22,7 +26,7 @@ export default function Process() {
         {
             id: 2,
             icon: Target,
-            title: <Link href="/blog/digital-marketing-strategy-planning-execution" className="hover:text-[var(--primary)] transition-colors">Strategy Development</Link>,
+            title: <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-[var(--primary)] transition-colors">Strategy Development</Link>,
             description: "Build a content and targeting strategy aligned with TikTok best practices.",
             deliverables: ["Content pillars", "Targeting plan", "Budget allocation"],
         },
@@ -83,7 +87,7 @@ export default function Process() {
                         }}
                     >
                         <CheckCircle className="w-4 h-4" style={{ color: tiktokPink }} />
-                        <span className="text-sm font-semibold" style={{ color: tiktokPink }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -160,7 +164,7 @@ export default function Process() {
                                                     className="text-xs font-bold px-3 py-1 rounded-full"
                                                     style={{
                                                         backgroundColor: `${stepColor}20`,
-                                                        color: stepColor,
+                                                        color: textAccent(stepColor),
                                                     }}
                                                 >
                                                     Step {step.id}
@@ -169,7 +173,7 @@ export default function Process() {
 
                                             <h3
                                                 className="text-xl font-bold mb-2 transition-colors duration-300"
-                                                style={{ color: isHovered ? stepColor : "var(--foreground)" }}
+                                                style={{ color: isHovered ? textAccent(stepColor) : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -185,7 +189,7 @@ export default function Process() {
                                                         className="px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300"
                                                         style={{
                                                             borderColor: isHovered ? stepColor : `${stepColor}30`,
-                                                            color: isHovered ? stepColor : "var(--secondary-text)",
+                                                            color: isHovered ? textAccent(stepColor) : "var(--secondary-text)",
                                                             backgroundColor: isHovered ? `${stepColor}10` : "transparent",
                                                             transitionDelay: `${dIdx * 50}ms`,
                                                         }}

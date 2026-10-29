@@ -19,8 +19,8 @@ export default function Hero() {
 
     const stats = [
         { value: "100+", label: "Stores Built" },
-        { value: "$10M+", label: "Sales Processed" },
-        { value: "99.9%", label: "Uptime" },
+        { value: "High-Volume", label: "Sales Processed" },
+        { value: "High", label: "Uptime" },
     ];
 
     return (
@@ -65,7 +65,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#96bf48" }}>Shopify & E-commerce</span>
+                            <span style={{ color: "var(--accent-lime-text)" }}>Shopify & E-commerce</span>
                         </nav>
 
                         {/* Badge */}
@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <ShoppingCart className="w-4 h-4" style={{ color: "#96bf48" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#96bf48" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                                 E-commerce Experts
                             </span>
                         </div>
@@ -102,7 +102,7 @@ export default function Hero() {
 
                         <div className="space-y-4">
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                Partner with a leading Shopify marketing agency to scale your brand with expert Shopify development services built for the 2026 digital landscape. From high-converting store setup to enterprise-grade Shopify Plus solutions, we deliver precision-engineered experiences that dominate search rankings and drive sustainable ROI across global markets.
+                                Partner with an expert Shopify marketing agency to scale your brand with expert Shopify development services built for the 2026 digital landscape. From high-converting store setup to enterprise-grade Shopify Plus solutions, we deliver precision-engineered experiences that dominate search rankings and drive sustainable ROI across global markets.
                             </p>
                         </div>
 
@@ -258,7 +258,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#96bf48" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-lime-text)" }}>
                                 Platforms We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

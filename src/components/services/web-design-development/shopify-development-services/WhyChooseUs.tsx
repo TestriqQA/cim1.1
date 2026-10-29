@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
             icon: TrendingUp,
             title: "2026 SEO Readiness",
             description:
-                <span>Optimized for the post-December 2025 Google core update, we implement high-E-E-A-T content and JSON-LD schema to dominate <Link href="/services/seo-services/ecommerce-seo-services" className="text-[#5c8a1e] hover:underline">AI search results</Link>.</span>,
+                <span>Optimized for the post-December 2025 Google core update, we implement high-E-E-A-T content and JSON-LD schema to dominate <Link href="/services/seo-services/ecommerce-seo-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">AI search results</Link>.</span>,
             gradient: "from-[#96bf48] to-[#b4d97c]",
         },
         {
@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Zap,
-            title: "99.9% Bug-Free Deployment",
+            title: "Thoroughly Tested Deployment",
             description:
                 "Rigorous QA involving automated load testing and manual checks to ensure stable launches and maintain customer trust.",
             gradient: "from-[#5c8a1e] to-[#96bf48]",
@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "#96bf48" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>
                     </div>

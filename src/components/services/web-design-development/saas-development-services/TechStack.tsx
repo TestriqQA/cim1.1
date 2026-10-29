@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, Database, Shield, Cloud, RefreshCw, Puzzle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

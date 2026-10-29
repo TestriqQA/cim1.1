@@ -55,7 +55,7 @@ export default function UseCases() {
             example: "Reduced query response time by 65%",
             gradient: "from-amber-600 via-orange-600 to-red-600",
             bgColor: "#d97706",
-            stats: "65% Faster",
+            stats: "Faster",
             tags: ["Portals", "Automation", "Secure"],
             link: "/services/web-design-development/business-corporate",
         },
@@ -84,7 +84,7 @@ export default function UseCases() {
         {
             icon: Cog,
             title: "Workflow & Automation Tools",
-            description: "Business process automation, project management software, and operational tools that replace spreadsheets and fragmented systems - unlocking 10x productivity gains.",
+            description: "Business process automation, project management software, and operational tools that replace spreadsheets and fragmented systems - unlocking significant productivity gains.",
             example: "Consolidated 15 tools into one dashboard",
             gradient: "from-orange-600 via-red-600 to-pink-600",
             bgColor: "#ea580c",
@@ -124,7 +124,7 @@ export default function UseCases() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #008ac1 8%, transparent), color-mix(in srgb, #bc3feb 8%, transparent))",
                             borderColor: "color-mix(in srgb, #008ac1 20%, transparent)",
-                            color: "#008ac1",
+                            color: "var(--brand-blue-text)",
                         }}
                     >
                         <Users className="w-4 h-4" />
@@ -199,7 +199,7 @@ export default function UseCases() {
                                                 className="px-3 py-1.5 rounded-full border bg-white/5 backdrop-blur-sm"
                                                 style={{ borderColor: "rgba(0, 138, 193, 0.2)" }}
                                             >
-                                                <p className="text-xs font-bold" style={{ color: "#008ac1" }}>
+                                                <p className="text-xs font-bold" style={{ color: "var(--brand-blue-text)" }}>
                                                     {industry.stats}
                                                 </p>
                                             </div>
@@ -294,20 +294,6 @@ export default function UseCases() {
                                             </div>
                                         </div>
 
-                                        {/* Learn More Link */}
-                                        {/* <button
-                                            className={`mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 group/btn ${isActive ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isActive ? industry.bgColor : `${industry.bgColor}10`,
-                                                color: isActive ? "white" : industry.bgColor,
-                                                border: `1.5px solid ${industry.bgColor}30`,
-                                            }}
-                                        >
-                                            <span>View Case Studies</span>
-                                            <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? "translate-x-1 -translate-y-1" : ""
-                                                }`} />
-                                        </button> */}
                                     </div>
 
                                     {/* Corner Glow */}
@@ -370,7 +356,7 @@ export default function UseCases() {
                                 border: "1px solid var(--border-color)",
                             }}>
                                 <DollarSign className="w-5 h-5" style={{ color: "#008ac1" }} />
-                                <span className="text-sm font-bold" style={{ color: "#008ac1" }}>
+                                <span className="text-sm font-bold" style={{ color: "var(--brand-blue-text)" }}>
                                     ROI-FOCUSED DEVELOPMENT
                                 </span>
                             </div>
@@ -395,17 +381,6 @@ export default function UseCases() {
                                     <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                                 </Link>
 
-                                {/* <button
-                                    className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        color: "#008ac1",
-                                        border: "2px solid var(--border-color)",
-                                    }}
-                                >
-                                    View Portfolio
-                                    <ArrowUpRight className="w-5 h-5" />
-                                </button> */}
                             </div>
                         </div>
 

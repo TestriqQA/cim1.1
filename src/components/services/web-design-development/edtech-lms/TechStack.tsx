@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, Video, Database, Cloud, Play, BarChart3 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,9 +8,9 @@ export default function TechStack() {
             category: "Frontend Frameworks",
             icon: Code2,
             items: [
-                { name: <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline">React/Next.js</Link>, description: "Fast, interactive apps", logos: ["/images/techstack_logos/react-logo.svg", "/images/techstack_logos/nextjs-logo.svg"] },
+                { name: <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline">React/Next.js</Link>, description: "Fast, interactive apps", logos: ["/images/techstack_logos/react-logo.svg", "/images/techstack_logos/nextjs-logo.svg"] },
                 { name: "TypeScript", description: "Type-safe development", logos: ["/images/techstack_logos/typescript-logo.svg"] },
-                { name: <Link href="/services/mobile-app-development" className="hover:underline">React Native</Link>, description: "Mobile learning apps", logos: ["/images/techstack_logos/react-logo.svg"] },
+                { name: <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline">React Native</Link>, description: "Mobile learning apps", logos: ["/images/techstack_logos/react-logo.svg"] },
             ],
         },
         {
@@ -28,9 +26,9 @@ export default function TechStack() {
             category: "Content Management",
             icon: Play,
             items: [
-                { name: <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="hover:underline">Sanity</Link>, description: "Headless CMS", logos: ["/images/techstack_logos/Sanity-square-logo.png"] },
-                { name: <Link href="/services/web-design-development/contentful-headless-cms" className="hover:underline">Contentful</Link>, description: "Content platform", logos: ["/images/techstack_logos/Contentful-logo.webp"] },
-                { name: <Link href="/services/web-design-development/strapi-headless-cms" className="hover:underline">Strapi</Link>, description: "Open-source CMS", logos: ["/images/techstack_logos/Strapi-logo.png"] },
+                { name: <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="underline underline-offset-2 hover:underline">Sanity</Link>, description: "Headless CMS", logos: ["/images/techstack_logos/Sanity-square-logo.png"] },
+                { name: <Link href="/services/web-design-development/contentful-headless-cms" className="underline underline-offset-2 hover:underline">Contentful</Link>, description: "Content platform", logos: ["/images/techstack_logos/Contentful-logo.webp"] },
+                { name: <Link href="/services/web-design-development/strapi-headless-cms" className="underline underline-offset-2 hover:underline">Strapi</Link>, description: "Open-source CMS", logos: ["/images/techstack_logos/Strapi-logo.png"] },
             ],
         },
         {
@@ -57,7 +55,7 @@ export default function TechStack() {
             items: [
                 { name: "AWS", description: "Scalable cloud", logos: ["/images/techstack_logos/aws-logo.png"] },
                 { name: "Vercel", description: "Edge deployment", logos: ["/images/techstack_logos/vercel-logo.webp"] },
-                { name: <Link href="/services/seo-services/technical-seo-services" className="hover:underline">Cloudflare</Link>, description: "Global CDN", logos: ["/images/techstack_logos/Cloudflare-logo.webp"] },
+                { name: <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline">Cloudflare</Link>, description: "Global CDN", logos: ["/images/techstack_logos/Cloudflare-logo.webp"] },
             ],
         },
     ];
@@ -71,7 +69,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#a855f7" }}>EdTech</span> Tech Stack
+                        <span style={{ color: "var(--brand-purple-text)" }}>EdTech</span> Tech Stack
                     </h2>
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
                         Modern technologies for scalable, engaging learning experiences.

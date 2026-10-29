@@ -16,7 +16,7 @@ export default function Services() {
                 <><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-cyan)] hover:underline transition-colors">Business & corporate websites</Link></>,
                 <><Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-cyan)] hover:underline transition-colors">Web applications & SaaS platforms</Link></>,
                 <>E-commerce ecosystems (<Link href="/services/web-design-development/shopify-development-services" className="hover:text-[var(--brand-cyan)] hover:underline transition-colors">Shopify</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="hover:text-[var(--brand-cyan)] hover:underline transition-colors">WooCommerce</Link>)</>,
-                "Key Results: Sub-2s load times, 300% organic growth",
+                "Key Results: Sub-2s load times, sustained organic growth",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-cyan), var(--brand-blue))" },
         },
@@ -28,7 +28,7 @@ export default function Services() {
                 <>Native <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">iOS</Link> & <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">Android app development</Link></>,
                 <>Cross-platform (<Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">React Native</Link>, <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">Flutter</Link>)</>,
                 <><Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">Enterprise mobile applications</Link></>,
-                "Key Results: 40% faster time-to-market, 98.7% bug-free",
+                "Key Results: Faster time-to-market",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))" },
         },
@@ -37,10 +37,10 @@ export default function Services() {
             title: "Social Media Marketing",
             slug: "social-media-marketing-services",
             bullets: [
-                <>Platform-specific strategies (<Link href="/services/social-media-marketing-services/facebook-marketing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Facebook</Link>, <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Instagram</Link>, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">LinkedIn</Link>)</>,
+                <>Platform-specific strategies (<Link href="/services/social-media-marketing-services/facebook-marketing-services" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Facebook</Link>, <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Instagram</Link>, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">LinkedIn</Link>)</>,
                 "Paid social media advertising",
                 "Influencer marketing campaigns",
-                "Key Results: 300% ROI on paid campaigns, 10x engagement",
+                "Key Results: Strong ROI on paid campaigns, higher engagement",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-teal), var(--brand-cyan))" },
         },
@@ -52,7 +52,7 @@ export default function Services() {
                 "Business process automation (BPA)",
                 "Document processing & OCR",
                 <>CRM/ERP integrations (<Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">Salesforce, HubSpot</Link>)</>,
-                "Key Results: 200+ hours saved monthly, 60% cost reduction",
+                "Key Results: 200+ hours saved monthly, significant cost reduction",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-purple), var(--brand-yellow))" },
         },
@@ -64,7 +64,7 @@ export default function Services() {
                 "Custom AI chatbot development",
                 "E-commerce sales & support bots",
                 <><Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-cyan)] hover:underline transition-colors">WhatsApp & social media automation</Link></>,
-                "Key Results: 300% ROI, 70% reduction in support costs",
+                "Key Results: Strong ROI, lower support costs",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-cyan), var(--brand-purple))" },
         },
@@ -76,7 +76,7 @@ export default function Services() {
                 <><Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">Technical SEO</Link> & site audits</>,
                 <><Link href="/services/seo-services/on-page-seo-services" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">On-page</Link> & <Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">off-page optimization</Link></>,
                 <><Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">Content strategy</Link> & marketing</>,
-                "Key Results: 3x organic traffic in 6 months, #1 rankings",
+                "Key Results: Strong organic traffic growth, top rankings",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-yellow), var(--brand-orange))" },
         },
@@ -88,7 +88,7 @@ export default function Services() {
                 <><Link href="/services/performance-marketing/google-ads" className="hover:text-[var(--brand-orange)] hover:underline transition-colors">Google Ads</Link> & PPC management</>,
                 <>Paid social campaigns (<Link href="/services/performance-marketing/meta-ads" className="hover:text-[var(--brand-orange)] hover:underline transition-colors">Meta</Link>, <Link href="/services/performance-marketing/linkedin-ads" className="hover:text-[var(--brand-orange)] hover:underline transition-colors">LinkedIn</Link>, <Link href="/services/performance-marketing/tiktok-ads" className="hover:text-[var(--brand-orange)] hover:underline transition-colors">TikTok</Link>)</>,
                 "Retargeting & remarketing strategies",
-                "Key Results: 10x ROAS, precision targeting",
+                "Key Results: Strong ROAS, precision targeting",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-orange), var(--brand-purple))" },
         },
@@ -100,7 +100,7 @@ export default function Services() {
                 "Strategic logo design",
                 "Brand style guide development",
                 "Complete visual identity systems",
-                "Key Results: 95% client retention, award-winning designs",
+                "Key Results: Strong client retention, distinctive designs",
             ],
             gradientStyle: { background: "linear-gradient(90deg, var(--brand-purple), var(--brand-orange))" },
         },
@@ -152,7 +152,7 @@ export default function Services() {
                                 <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 12, borderTop: "1px solid var(--border-color)" }}>
                                     <Link
                                         href={`/services/${service.slug}`}
-                                        style={{ color: "var(--brand-blue)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 8 }}
+                                        style={{ color: "var(--brand-blue-text)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 8 }}
                                         className="p-2 -ml-2 rounded-lg hover:bg-[rgba(var(--brand-blue-rgb),0.1)] transition-colors"
                                     >
                                         Learn more <span className="sr-only">about {service.title}</span> <ArrowRight className="w-4 h-4" />

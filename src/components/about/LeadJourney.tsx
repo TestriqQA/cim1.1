@@ -65,7 +65,7 @@ export default function LeadJourney() {
                                 </p>
                                 <p className="text-lg text-[var(--secondary-text)] leading-relaxed">
                                     This staged approach ensures that leads are not only generated but also nurtured into high-value, long-term clients.{" "}
-                                    <span className="font-semibold text-[var(--brand-blue)]">Results won't appear on day one</span>, but with consistent execution and strategic optimization, the funnel delivers sustainable, scalable growth.
+                                    <span className="font-semibold text-[var(--brand-blue-text)]">Results won't appear on day one</span>, but with consistent execution and strategic optimization, the funnel delivers sustainable, scalable growth.
                                 </p>
                             </div>
                         </div>

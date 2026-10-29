@@ -40,22 +40,10 @@ export default function CTA() {
                             Get Free Audit
                             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2 flex-shrink-0" />
                         </Link>
-                        {/* View Case Studies - Commented out for now
-                        <Link
-                            href="/portfolio"
-                            className="inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg border transition-all hover:bg-accent"
-                            style={{
-                                borderColor: "var(--border-color)",
-                                color: "var(--foreground)"
-                            }}
-                        >
-                            View Case Studies
-                        </Link>
-                        */}
                     </div>
 
                     {/* Stats strip */}
-                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24 opacity-70" style={{ borderColor: "var(--border-color)" }}>
+                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         <div className="text-center">
                             <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>100k+</p>
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>Followers Gained</p>

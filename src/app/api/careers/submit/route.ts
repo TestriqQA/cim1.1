@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
 import { Readable } from "stream";
-import nodemailer from "nodemailer";
+import { z } from "zod";
+import { createMailTransport, getMissingSmtpConfig } from "@/lib/cim/mail";
 
 export async function POST(req: NextRequest) {
     try {
         const formData = await req.formData();
+        if (formData.get("hp_field")) return NextResponse.json({ success: true }); // honeypot
 
         const fullName = formData.get("fullName") as string;
         const email = formData.get("email") as string;
@@ -15,6 +17,26 @@ export async function POST(req: NextRequest) {
         const jobTitle = formData.get("jobTitle") as string;
         const coverLetter = formData.get("coverLetter") as string;
         const resumeFile = formData.get("resume") as File | null;
+
+        const CareersSchema = z.object({
+            fullName: z.string().trim().min(1).max(100),
+            email: z.string().trim().email().max(150),
+            phone: z.string().trim().min(1).max(30),
+            jobTitle: z.string().trim().min(1).max(150),
+            linkedin: z.string().trim().max(300).nullish(),
+            portfolio: z.string().trim().max(300).nullish(),
+            coverLetter: z.string().trim().max(10000).nullish(),
+        });
+        const parsed = CareersSchema.safeParse({ fullName, email, phone, jobTitle, linkedin, portfolio, coverLetter });
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Invalid input', details: parsed.error.issues.map((i) => i.path.join('.') + ': ' + i.message) },
+                { status: 400 }
+            );
+        }
+        if (resumeFile && resumeFile.size > 5 * 1024 * 1024) {
+            return NextResponse.json({ error: 'Resume exceeds 5MB limit' }, { status: 400 });
+        }
 
         // 1. Google Sheets & Drive Authentication
         const auth = new google.auth.GoogleAuth({
@@ -59,9 +81,9 @@ export async function POST(req: NextRequest) {
 
                 resumeUrl = driveResponse.data.webViewLink || "Upload Failed";
 
-            } catch (driveError: any) {
+            } catch (driveError) {
                 console.error("Drive Upload Error:", driveError);
-                resumeUrl = "Upload Failed: " + (driveError.message || "Unknown Error");
+                resumeUrl = "Upload Failed: " + (driveError instanceof Error ? driveError.message : "Unknown Error");
             }
         }
 
@@ -91,16 +113,17 @@ export async function POST(req: NextRequest) {
         });
 
         // 5. Send Email Notifications (New Step)
+        // Email is best-effort: the application is already persisted to
+        // Sheets/Drive above, so a mail failure must NOT fail the request.
+        // We surface it via `emailSent` in the response instead of a 500.
+        let emailSent = false;
         try {
-            const transporter = nodemailer.createTransport({
-                host: process.env.SMTP_HOST,
-                port: Number(process.env.SMTP_PORT),
-                secure: true, // true for 465, false for other ports
-                auth: {
-                    user: process.env.SMTP_USER,
-                    pass: process.env.SMTP_PASSWORD,
-                },
-            });
+            const missingVars = getMissingSmtpConfig();
+            if (missingVars.length > 0) {
+                throw new Error(`Missing SMTP configuration: ${missingVars.join(", ")}`);
+            }
+            const transporter = createMailTransport();
+            await transporter.verify();
 
             // --- HTML Templates ---
             const BRAND_BLUE = "#008ac1";
@@ -206,12 +229,13 @@ export async function POST(req: NextRequest) {
                 `,
             });
 
+            emailSent = true;
         } catch (emailError) {
             console.error("Email Sending Error:", emailError);
             // We don't fail the request if email fails, but we log it.
         }
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ success: true, emailSent });
 
     } catch (error) {
         console.error("Handler Error:", error);

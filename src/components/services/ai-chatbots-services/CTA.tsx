@@ -32,19 +32,19 @@ export default function CTA() {
                     >
                         {/* Heading */}
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                            Ready to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Scale with AI?</Link>
+                            Ready to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--accent-indigo-text)] transition-colors">Scale with AI?</Link>
                         </h2>
 
                         {/* Subheading */}
                         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                            Don't let your competition beat you to the future. Partner with a top-tier AI Chatbot Agency today.
+                            Don't let your competition beat you to the future. Partner with an expert AI Chatbot Agency today.
                         </p>
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[var(--brand-chatbot)] to-[#008ac1] hover:from-[var(--brand-chatbot)] hover:to-[var(--brand-chatbot)] text-white rounded-full text-sm md:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[var(--brand-chatbot)] to-[#006d97] hover:from-[var(--brand-chatbot)] hover:to-[var(--brand-chatbot)] text-white rounded-full text-sm md:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                             >
                                 Get a Quick Quote
                                 <ArrowRight className="w-5 h-5" />
@@ -54,7 +54,7 @@ export default function CTA() {
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 border-2 rounded-full text-sm md:text-lg font-semibold transition-all"
                                 style={{
                                     borderColor: "var(--brand-chatbot)",
-                                    color: "var(--brand-chatbot)",
+                                    color: "var(--accent-indigo-text)",
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.backgroundColor = "color-mix(in srgb, var(--brand-chatbot) 10%, transparent)";

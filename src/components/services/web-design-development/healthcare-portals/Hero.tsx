@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Heart, Shield, Users, Clock, Stethoscope, FileText,
     Activity, ChevronRight, ArrowRight, CheckCircle2
@@ -19,7 +17,7 @@ export default function Hero() {
 
     const stats = [
         { value: "50K+", label: "Patients Served" },
-        { value: "99.9%", label: "Uptime" },
+        { value: "High", label: "Uptime" },
         { value: "HIPAA", label: "Certified" },
     ];
 
@@ -56,7 +54,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#3b82f6" }}>Healthcare Portals</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Healthcare Portals</span>
                         </nav>
 
                         {/* Badge */}
@@ -68,7 +66,7 @@ export default function Hero() {
                             }}
                         >
                             <Heart className="w-4 h-4" style={{ color: "#3b82f6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#3b82f6" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Healthcare Portal Development
                             </span>
                         </div>
@@ -123,7 +121,7 @@ export default function Hero() {
                                 <div key={idx} className="text-center">
                                     <div
                                         className="text-3xl md:text-4xl font-bold"
-                                        style={{ color: "#3b82f6" }}
+                                        style={{ color: "var(--brand-blue-text)" }}
                                     >
                                         {stat.value}
                                     </div>
@@ -193,7 +191,7 @@ export default function Hero() {
                                 { label: "Data Encryption", value: "256-bit" },
                                 { label: "Response Time", value: "<100ms" },
                                 { label: "Patient Satisfaction", value: "98%" },
-                                { label: "System Uptime", value: "99.99%" },
+                                { label: "System Uptime", value: "High" },
                             ].map((metric, idx) => (
                                 <div
                                     key={idx}
@@ -203,7 +201,7 @@ export default function Hero() {
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="text-xl font-bold" style={{ color: "#3b82f6" }}>
+                                    <div className="text-xl font-bold" style={{ color: "var(--brand-blue-text)" }}>
                                         {metric.value}
                                     </div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>

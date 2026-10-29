@@ -69,12 +69,12 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Link2 className="w-4 h-4" style={{ color: linkCyan }} />
-                        <span className="text-sm font-semibold" style={{ color: linkCyan }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Services
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Link Building <span style={{ color: linkCyan }}>Services</span>
+                        Link Building <span style={{ color: "var(--accent-cyan-text)" }}>Services</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Strategic approaches to acquire high-quality backlinks that boost your authority and rankings.

@@ -31,8 +31,8 @@ export default function CTA() {
                                 borderColor: "rgba(0, 115, 170, 0.2)",
                             }}
                         >
-                            <Globe className="w-4 h-4 text-[#0073AA]" />
-                            <span className="text-sm font-semibold text-[#0073AA]">
+                            <Globe className="w-4 h-4 text-[var(--brand-blue-text)]" />
+                            <span className="text-sm font-semibold text-[var(--brand-blue-text)]">
                                 Free WordPress Consultation
                             </span>
                         </div>
@@ -67,17 +67,6 @@ export default function CTA() {
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
 
-                            {/* <Link
-                                href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent w-full sm:w-auto"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Case Studies
-                            </Link> */}
                         </div>
                     </div>
                 </div>

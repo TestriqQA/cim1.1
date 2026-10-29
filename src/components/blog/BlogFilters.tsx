@@ -70,7 +70,7 @@ export default function BlogFilters({
                     onClick={() => onCategorySelect(null)}
                     className="px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 border"
                     style={{
-                        backgroundColor: !selectedCategory ? "var(--brand-purple)" : "transparent",
+                        backgroundColor: !selectedCategory ? "var(--brand-purple-btn)" : "transparent",
                         color: !selectedCategory ? "white" : "var(--foreground)",
                         borderColor: !selectedCategory ? "var(--brand-purple)" : "var(--border-color)",
                     }}
@@ -82,9 +82,9 @@ export default function BlogFilters({
                             className="px-2 py-0.5 rounded-full text-xs"
                             style={{
                                 backgroundColor: !selectedCategory
-                                    ? "rgba(255,255,255,0.2)"
+                                    ? "rgba(0,0,0,0.2)"
                                     : "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                color: !selectedCategory ? "white" : "var(--brand-purple)",
+                                color: !selectedCategory ? "white" : "var(--brand-purple-text)",
                             }}
                         >
                             {totalPostsCount}
@@ -102,7 +102,7 @@ export default function BlogFilters({
                                 selectedCategory === cat.name
                                     ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)"
                                     : "transparent",
-                            color: selectedCategory === cat.name ? "var(--brand-purple)" : "var(--foreground)",
+                            color: selectedCategory === cat.name ? "var(--brand-purple-text)" : "var(--foreground)",
                             borderColor: selectedCategory === cat.name ? "var(--brand-purple)" : "var(--border-color)",
                         }}
                     >
@@ -113,7 +113,7 @@ export default function BlogFilters({
                                 className="px-2 py-0.5 rounded-full text-xs"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                    color: "var(--brand-purple)",
+                                    color: "var(--brand-purple-text)",
                                 }}
                             >
                                 {cat.count}

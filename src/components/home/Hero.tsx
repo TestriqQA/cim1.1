@@ -37,7 +37,7 @@ export default function Hero() {
             {/* Animated Background (uses brand colors) */}
             <div className="absolute inset-0 overflow-hidden">
                 <div
-                    className="absolute w-[800px] h-[800px] rounded-full mix-blend-multiply filter blur-3xl opacity-16 transition-all duration-500 ease-out"
+                    className="hidden md:block absolute w-[800px] h-[800px] rounded-full mix-blend-multiply filter blur-3xl opacity-16 transition-all duration-500 ease-out"
                     style={{
                         background: `radial-gradient(circle, var(--brand-purple) 0%, transparent 70%)`,
                         transform: `translate(${mousePosition.x - 400}px, ${mousePosition.y - 400}px)`,
@@ -65,7 +65,7 @@ export default function Hero() {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-                            Leading Web Development Company
+                            Expert Web Development Company
                             <br />
                             <span
                                 className="bg-clip-text text-transparent"
@@ -91,13 +91,6 @@ export default function Hero() {
                                 </span>
                             </Link>
 
-                            {/* <button
-                                className="group px-6 py-3 md:px-8 md:py-4 text-sm md:text-base border rounded-full font-bold hover:border-color transition-all duration-300 flex items-center gap-2"
-                                style={{ borderColor: "var(--border-color)" }}
-                            >
-                                <Play className="w-5 h-5" />
-                                Watch Success Stories
-                            </button> */}
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -150,77 +143,37 @@ export default function Hero() {
                                         >
                                             <Image
                                                 src="/images/logos/testriq-logo.png"
-                                                alt="Testriq"
+                                                alt="Testriq QA Lab"
                                                 width={40}
                                                 height={40}
                                                 className="w-10 h-10 object-contain"
                                             />
                                         </div>
                                         <div>
-                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>Testriq</h3>
+                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>Testriq QA Lab</h3>
                                             <p className="text-xs" style={{ color: "var(--secondary-text)" }}>QA & Testing Solutions</p>
                                         </div>
                                     </div>
-                                    <div style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", color: "#fff", fontWeight: 600, fontSize: 12 }}>
+                                    {/* The accessible name spells out which case study this
+                                        opens, and keeps the visible label inside it (WCAG 2.5.3). */}
+                                    <Link
+                                        href="/portfolio/testriq-organic-growth"
+                                        aria-label="Case Study: Testriq QA Lab organic growth"
+                                        className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                                        style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", color: "#fff", fontWeight: 600, fontSize: 12 }}
+                                    >
                                         Case Study
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4 mb-4">
                                     <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>+180%</div>
+                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>Strong</div>
                                         <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Lead Generation</div>
                                     </div>
                                     <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>3x</div>
+                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))", WebkitBackgroundClip: "text", color: "transparent" }}>Strong</div>
                                         <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Website Traffic</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* CDPL Case Study Card */}
-                            <div
-                                className="relative p-6 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    border: "1px solid var(--border-color)",
-                                }}
-                            >
-                                <div style={{ position: "absolute", left: -20, bottom: -20, width: 80, height: 80, borderRadius: "50%", background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", filter: "blur(30px)", opacity: 0.2 }} />
-
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="flex items-center gap-3">
-                                        {/* CDPL Logo Placeholder */}
-                                        <div
-                                            className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden"
-                                            style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}
-                                        >
-                                            <Image
-                                                src="/images/logos/cdpl-logo.png"
-                                                alt="CDPL"
-                                                width={40}
-                                                height={40}
-                                                className="w-10 h-10 object-contain"
-                                            />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold" style={{ color: "var(--foreground)" }}>CDPL</h3>
-                                            <p className="text-xs" style={{ color: "var(--secondary-text)" }}>Software Training Institute</p>
-                                        </div>
-                                    </div>
-                                    <div style={{ padding: "4px 12px", borderRadius: 999, background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", color: "#fff", fontWeight: 600, fontSize: 12 }}>
-                                        Case Study
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 mb-4">
-                                    <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))", WebkitBackgroundClip: "text", color: "transparent" }}>+250%</div>
-                                        <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Online Inquiries</div>
-                                    </div>
-                                    <div className="p-3 rounded-xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border-color)" }}>
-                                        <div className="text-2xl font-black" style={{ background: "linear-gradient(90deg, var(--brand-orange), var(--brand-yellow))", WebkitBackgroundClip: "text", color: "transparent" }}>45%</div>
-                                        <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Cost Reduction</div>
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +185,7 @@ export default function Hero() {
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Projects</div>
                                 </div>
                                 <div className="flex-1 p-4 rounded-2xl" style={{ backgroundColor: "var(--card-bg)", border: "1px solid var(--border-color)" }}>
-                                    <div className="text-2xl font-black" style={{ color: "var(--foreground)" }}>98%</div>
+                                    <div className="text-2xl font-black" style={{ color: "var(--foreground)" }}>High</div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>Satisfaction</div>
                                 </div>
                                 <div className="flex-1 p-4 rounded-2xl" style={{ backgroundColor: "var(--card-bg)", border: "1px solid var(--border-color)" }}>

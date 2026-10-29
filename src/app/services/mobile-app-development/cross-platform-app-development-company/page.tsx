@@ -12,7 +12,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
     title: "Cross-Platform App Development Services | React Native & Flutter",
     description:
-        "🚀 Award-winning Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. 70% faster delivery. 40% cost savings. Start your project today! 📱",
+        "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
     keywords: [
         "cross platform app development",
         "React Native development",
@@ -22,6 +22,28 @@ export const metadata: Metadata = {
         "iOS Android app",
         "single codebase",
     ],
+    openGraph: {
+        title: "Cross-Platform App Development Services | React Native & Flutter",
+        description:
+            "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
+        url: "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/cross-platform-app-development.webp",
+                width: 1200,
+                height: 630,
+                alt: "Cross-Platform App Development Services by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Cross-Platform App Development Services | React Native & Flutter",
+        description:
+            "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
+        images: ["/og-images/cross-platform-app-development.webp"],
+    },
     alternates: {
         canonical: "/services/mobile-app-development/cross-platform-app-development-company",
     },
@@ -29,7 +51,7 @@ export const metadata: Metadata = {
 
 export default function CrossPlatformAppDevelopmentPage() {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen" style={{ "--page-selection-bg": "#667eea" } as React.CSSProperties}>
             <Script
                 id="cross-platform-schema"
                 type="application/ld+json"

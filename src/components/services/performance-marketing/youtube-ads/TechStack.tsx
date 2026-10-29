@@ -65,7 +65,7 @@ export default function TechStack() {
                             onClick={() => setActiveTab(cat.id)}
                             className="px-6 py-3 rounded-full text-sm font-bold transition-all duration-300"
                             style={{
-                                backgroundColor: activeTab === cat.id ? youtubeRed : "var(--card-bg)",
+                                backgroundColor: activeTab === cat.id ? "#c5221f" : "var(--card-bg)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: `1px solid ${activeTab === cat.id ? youtubeRed : "var(--border-color)"}`,
                             }}
@@ -105,9 +105,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-bold mb-1 transition-colors group-hover:text-red-500" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold mb-1 transition-colors group-hover:text-[var(--accent-red-text)]" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

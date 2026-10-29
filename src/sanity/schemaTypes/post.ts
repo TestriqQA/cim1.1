@@ -70,6 +70,48 @@ export default defineType({
             ]
         }),
         defineField({
+            name: 'schema',
+            title: 'Schema / Structured Data',
+            type: 'object',
+            description: 'Optional overrides for JSON-LD structured data. Leave empty to auto-generate from post data.',
+            fields: [
+                {
+                    name: 'articleType',
+                    title: 'Article Type',
+                    type: 'string',
+                    options: {
+                        list: [
+                            { title: 'Blog Posting', value: 'BlogPosting' },
+                            { title: 'Article', value: 'Article' },
+                            { title: 'Tech Article', value: 'TechArticle' },
+                            { title: 'News Article', value: 'NewsArticle' },
+                        ],
+                    },
+                    initialValue: 'BlogPosting',
+                    description: 'Defaults to BlogPosting if not set',
+                },
+                {
+                    name: 'keywords',
+                    title: 'Schema Keywords',
+                    type: 'array',
+                    of: [{ type: 'string' }],
+                    description: 'Override keywords for schema markup. Falls back to post tags if empty.',
+                },
+                {
+                    name: 'dateModified',
+                    title: 'Date Modified',
+                    type: 'datetime',
+                    description: 'Last significant content update. Falls back to publishedAt if empty.',
+                },
+                {
+                    name: 'wordCount',
+                    title: 'Word Count',
+                    type: 'number',
+                    description: 'Approximate word count. Auto-estimated from content if empty.',
+                },
+            ],
+        }),
+        defineField({
             name: 'tags',
             title: 'Tags',
             type: 'array',
@@ -79,6 +121,9 @@ export default defineType({
             name: 'publishedAt',
             title: 'Published at',
             type: 'datetime',
+            description: 'Shown as the post date and used to order posts, newest first.',
+            initialValue: () => new Date().toISOString(),
+            validation: (rule) => rule.required(),
         }),
         defineField({
             name: 'readTime',

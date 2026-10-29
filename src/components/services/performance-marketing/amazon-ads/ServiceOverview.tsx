@@ -61,7 +61,7 @@ export default function ServiceOverview() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Comprehensive{" "}
                         <span
-                            style={{ color: amazonOrange }}
+                            style={{ color: "var(--accent-orange-text)" }}
                         >
                             Ad Solutions
                         </span>

@@ -67,7 +67,7 @@ export default function CalloutBlock({ block }: CalloutBlockProps) {
                                 )
                                 .replace(
                                     /\[([^\]]+)\]\(([^)]+)\)/g,
-                                    "<a href='$2' class='text-[var(--brand-purple)] transition-colors'>$1</a>"
+                                    "<a href='$2' class='text-[var(--brand-purple-text)] underline underline-offset-2 transition-colors'>$1</a>"
                                 ),
                         }}
                     />

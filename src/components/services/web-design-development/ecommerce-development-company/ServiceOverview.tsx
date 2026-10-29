@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ShoppingCart, TrendingUp, CreditCard, Package, BarChart3, Users } from "lucide-react";
 
@@ -18,7 +16,7 @@ export default function ServiceOverview() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #00b5ca 8%, transparent), color-mix(in srgb, #00efd6 8%, transparent))",
                             borderColor: "color-mix(in srgb, #00b5ca 20%, transparent)",
-                            color: "#00b5ca",
+                            color: "var(--accent-cyan-text)",
                         }}
                     >
                         <ShoppingCart className="w-4 h-4" />
@@ -26,7 +24,7 @@ export default function ServiceOverview() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Your <span style={{ color: "#00b5ca" }}>24/7 Sales Machine</span> That Never Stops Selling
+                        Your <span style={{ color: "var(--accent-cyan-text)" }}>24/7 Sales Machine</span> That Never Stops Selling
                     </h2>
 
                     <div
@@ -42,15 +40,15 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            In today’s hyper-competitive digital landscape, your online store is more than just a shop window - it’s the engine of your business growth. As a premier E-commerce development company, we specialize in building robust, high-performance storefronts that turn visitors into loyal customers. Our E-commerce Website Development Services are designed to solve complex scalability challenges for B2B, B2C, and D2C brands across the US, EU, and APAC regions.
+                            In today’s hyper-competitive digital landscape, your online store is more than just a shop window - it’s the engine of your business growth. As an expert E-commerce development company, we specialize in building robust, high-performance storefronts that turn visitors into loyal customers. Our E-commerce Website Development Services are designed to solve complex scalability challenges for B2B, B2C, and D2C brands across the US, EU, and APAC regions.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            Whether you need a <Link href="/services/web-design-development/shopify-development-services" className="hover:underline" style={{ color: "#00b5ca" }}>Shopify store development</Link> and optimization partner or a custom <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline" style={{ color: "#00b5ca" }}>Headless ecommerce development</Link> service, our team brings 15+ years of Experience to the table. We don&apos;t just write code; we engineer digital ecosystems using next-gen tech stacks like <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline" style={{ color: "#00b5ca" }}>React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline" style={{ color: "#00b5ca" }}>Next.js</Link>, and <Link href="/services/web-design-development/nodejs-backend" className="hover:underline" style={{ color: "#00b5ca" }}>Node.js</Link> to ensure your site loads instantly and handles high-volume traffic with ease.
+                            Whether you need a <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Shopify store development</Link> and optimization partner or a custom <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Headless ecommerce development</Link> service, our team brings deep Experience to the table. We don&apos;t just write code; we engineer digital ecosystems using next-gen tech stacks like <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Next.js</Link>, and <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Node.js</Link> to ensure your site loads instantly and handles high-volume traffic with ease.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            We understand that Ecommerce Management Services require a blend of technical precision and marketing acumen. That’s why our solutions focus on Experience (UX) and Expertise (<Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: "#00b5ca" }}>Technical SEO</Link>) to deliver measurable ROI. From <Link href="/services/web-design-development/shopify-development-services" className="hover:underline" style={{ color: "#00b5ca" }}>Magento to Shopify migration services</Link> to B2B ecommerce platform development, we empower you to outperform global competitors with a store that is secure, compliant, and conversion-focused.
+                            We understand that Ecommerce Management Services require a blend of technical precision and marketing acumen. That’s why our solutions focus on Experience (UX) and Expertise (<Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Technical SEO</Link>) to deliver measurable ROI. From <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Magento to Shopify migration services</Link> to B2B ecommerce platform development, we empower you to outperform global competitors with a store that is secure, compliant, and conversion-focused.
                         </p>
                     </div>
 
@@ -100,12 +98,12 @@ export default function ServiceOverview() {
                                                 background: "linear-gradient(135deg, color-mix(in srgb, #00b5ca 15%, transparent), color-mix(in srgb, #00efd6 15%, transparent))",
                                             }}
                                         >
-                                            <Icon className="w-6 h-6" style={{ color: "#00b5ca" }} />
+                                            <Icon className="w-6 h-6" style={{ color: "var(--accent-cyan-text)" }} />
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                                            <h3 className="text-lg font-bold mb-2" style={{ color: "var(--foreground)" }}>
                                                 {item.title}
-                                            </h4>
+                                            </h3>
                                             <p className="text-sm" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
                                                 {item.description}
                                             </p>

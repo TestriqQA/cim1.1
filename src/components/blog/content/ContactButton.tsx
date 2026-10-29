@@ -18,8 +18,8 @@ export default function ContactButton({ block }: ContactButtonProps) {
                     inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-base
                     transition-all duration-200 transform hover:scale-105
                     ${isPrimary
-                        ? 'bg-[var(--brand-purple)] text-white hover:opacity-90 shadow-lg hover:shadow-xl'
-                        : 'border-2 border-[var(--brand-purple)] text-[var(--brand-purple)] hover:bg-[var(--brand-purple)] hover:text-white'
+                        ? 'bg-[var(--brand-purple-btn)] text-white hover:opacity-90 shadow-lg hover:shadow-xl'
+                        : 'border-2 border-[var(--brand-purple)] text-[var(--brand-purple-text)] hover:bg-[var(--brand-purple-btn)] hover:text-white'
                     }
                 `}
             >

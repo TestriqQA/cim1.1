@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import { CategoryDetails, BlogPost } from "@/data/blog";
+import { BlogCategoryLink, CategoryDetails, BlogPost } from "@/data/blog";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import {
     Code,
@@ -33,10 +33,13 @@ const iconMap: Record<string, React.ReactNode> = {
     FileText: <FileText className="w-6 h-6" />,
 };
 
+// Map CMS-provided accent hexes to theme-aware, WCAG AA-safe text tokens (text sites only)
+const textAccent = (c?: string) => (({"#6b00d7":"var(--accent-violet-text)","#00b5ca":"var(--accent-cyan-text)","#ff6b35":"var(--accent-orange-text)","#9b59b6":"var(--brand-purple-text)","#e91e63":"var(--accent-pink-text)","#27ae60":"var(--accent-green-text)","#3498db":"var(--accent-sky-text)","#f39c12":"var(--accent-amber-text)","#1a56db":"var(--accent-indigo-text)"} as Record<string,string>)[(c ?? "").toLowerCase()] ?? "var(--brand-purple-text)");
+
 interface CategoriesContentProps {
     categories: CategoryDetails[];
     posts: BlogPost[];
-    sidebarCategories: string[];
+    sidebarCategories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }
@@ -71,15 +74,15 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
             <section className="relative overflow-hidden">
                 {/* ... existing hero code ... */}
                 <div
-                    className="absolute inset-0 opacity-5"
+                    className="absolute inset-0"
                     style={{
-                        background: "radial-gradient(ellipse at top, var(--brand-purple), transparent 70%)",
+                        background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                     }}
                 />
                 <div className="relative px-6 md:px-12 xl:px-16 py-12">
                     {/* Breadcrumb */}
                     <nav className="flex items-center gap-2 text-sm mb-8" style={{ color: "var(--secondary-text)" }}>
-                        <Link href="/blog" className="hover:text-[var(--brand-purple)] transition-colors">
+                        <Link href="/blog" className="hover:text-[var(--brand-purple-text)] transition-colors">
                             Blog
                         </Link>
                         <span>/</span>
@@ -96,13 +99,13 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
                                     }}
                                 >
-                                    <Sparkles className="w-6 h-6 text-[var(--brand-purple)]" />
+                                    <Sparkles className="w-6 h-6 text-[var(--brand-purple-text)]" />
                                 </div>
                                 <span
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                        color: "var(--brand-purple)",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     {categories.length} CATEGORIES
@@ -123,7 +126,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                         className="w-10 h-10 rounded-lg flex items-center justify-center"
                                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)" }}
                                     >
-                                        <BookOpen className="w-5 h-5 text-[var(--brand-purple)]" />
+                                        <BookOpen className="w-5 h-5 text-[var(--brand-purple-text)]" />
                                     </div>
                                     <div>
                                         <p className="text-2xl font-bold">{totalArticles}</p>
@@ -135,7 +138,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                         className="w-10 h-10 rounded-lg flex items-center justify-center"
                                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-cyan) 15%, transparent)" }}
                                     >
-                                        <Clock className="w-5 h-5 text-[var(--brand-cyan)]" />
+                                        <Clock className="w-5 h-5 text-[var(--accent-cyan-text)]" />
                                     </div>
                                     <div>
                                         <p className="text-2xl font-bold">{totalReadTime}</p>
@@ -147,7 +150,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                         className="w-10 h-10 rounded-lg flex items-center justify-center"
                                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)" }}
                                     >
-                                        <Users className="w-5 h-5 text-[var(--brand-purple)]" />
+                                        <Users className="w-5 h-5 text-[var(--brand-purple-text)]" />
                                     </div>
                                     <div>
                                         <p className="text-2xl font-bold">{categories.length}</p>
@@ -335,9 +338,9 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                             >
                                                 {/* Background gradient */}
                                                 <div
-                                                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                     style={{
-                                                        background: `linear-gradient(135deg, ${category.color}, transparent)`,
+                                                        background: `linear-gradient(135deg, color-mix(in srgb, ${category.color} 10%, transparent), transparent)`,
                                                     }}
                                                 />
 
@@ -348,14 +351,14 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                                             className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                                                             style={{
                                                                 backgroundColor: `color-mix(in srgb, ${category.color} 15%, transparent)`,
-                                                                color: category.color,
+                                                                color: textAccent(category.color),
                                                             }}
                                                         >
                                                             {iconMap[category.icon] || <BookOpen className="w-6 h-6" />}
                                                         </div>
                                                         <ArrowRight
                                                             className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                                                            style={{ color: category.color }}
+                                                            style={{ color: textAccent(category.color) }}
                                                         />
                                                     </div>
 
@@ -364,7 +367,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                                         className="text-xl font-bold mb-2 transition-colors"
                                                         style={{ color: "var(--foreground)" }}
                                                     >
-                                                        <span className="group-hover:text-[var(--brand-purple)]">{category.name}</span>
+                                                        <span className="group-hover:text-[var(--brand-purple-text)]">{category.name}</span>
                                                     </h2>
                                                     <p
                                                         className="text-sm mb-4 line-clamp-2"
@@ -387,19 +390,19 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
 
                                                     {/* Featured Tags */}
                                                     <div className="flex flex-wrap gap-2">
-                                                        {category.featuredTags.slice(0, 3).map((tag) => (
+                                                        {(category.featuredTags ?? []).slice(0, 3).map((tag) => (
                                                             <span
                                                                 key={tag}
                                                                 className="text-xs px-2.5 py-1 rounded-full font-medium"
                                                                 style={{
                                                                     backgroundColor: `color-mix(in srgb, ${category.color} 10%, transparent)`,
-                                                                    color: category.color,
+                                                                    color: textAccent(category.color),
                                                                 }}
                                                             >
                                                                 {tag}
                                                             </span>
                                                         ))}
-                                                        {category.featuredTags.length > 3 && (
+                                                        {(category.featuredTags ?? []).length > 3 && (
                                                             <span
                                                                 className="text-xs px-2.5 py-1 rounded-full font-medium"
                                                                 style={{
@@ -429,7 +432,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                                     className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                                     style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)" }}
                                 >
-                                    <Search className="w-8 h-8 text-[var(--brand-purple)]" />
+                                    <Search className="w-8 h-8 text-[var(--brand-purple-text)]" />
                                 </div>
                                 <h2 className="text-xl font-bold mb-2">No categories found</h2>
                                 <p style={{ color: "var(--secondary-text)" }}>

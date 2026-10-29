@@ -37,7 +37,7 @@ export default function SolutionTypes() {
         {
             icon: Megaphone,
             title: "Marketing Websites",
-            description: <>High-performance marketing sites that rank well and convert visitors with <Link href="/services/seo-services/technical-seo-services" className="text-[#7C3AED] hover:underline">Astro SEO audit</Link> and optimization services built-in.</>,
+            description: <>High-performance marketing sites that rank well and convert visitors with <Link href="/services/seo-services/technical-seo-services" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Astro SEO audit</Link> and optimization services built-in.</>,
             features: [
                 "SaaS & B2B focus",
                 "SEO audit included",
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         {
             icon: Building2,
             title: "Corporate Sites",
-            description: <><Link href="/services/web-design-development/business-corporate" className="text-[#FF5D01] hover:underline">Professional company websites</Link> that establish credibility and trust. Custom Astro website development with brand consistency.</>,
+            description: <><Link href="/services/web-design-development/business-corporate" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">Professional company websites</Link> that establish credibility and trust. Custom Astro website development with brand consistency.</>,
             features: [
                 "Enterprise security",
                 "Brand consistency",
@@ -85,7 +85,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "E-commerce Catalogs",
-            description: <>Fast product showcases that drive purchases with <Link href="/services/web-design-development/headless-traditional-cms" className="text-[#7C3AED] hover:underline">Astro headless CMS integration services</Link> for flexible management.</>,
+            description: <>Fast product showcases that drive purchases with <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Astro headless CMS integration services</Link> for flexible management.</>,
             features: [
                 "Headless CMS sync",
                 "Product filtering",
@@ -120,8 +120,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(124, 58, 237, 0.2)",
                         }}
                     >
-                        <Megaphone className="w-4 h-4" style={{ color: "#7C3AED" }} />
-                        <span className="text-sm font-medium" style={{ color: "#7C3AED" }}>
+                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Solutions We Deliver
                         </span>
                     </div>
@@ -201,7 +201,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#7C3AED]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-violet-text)]"
                                             }`}
                                     />
                                 </div>
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#7C3AED]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-violet-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -233,7 +233,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#7C3AED]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-violet-text)]" />
                                 </div>
                             </div>
                         );

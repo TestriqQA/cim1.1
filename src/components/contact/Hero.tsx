@@ -65,8 +65,8 @@ export default function Hero() {
         {
             icon: Mail,
             title: "Email Us",
-            info: "contact@cinuteinfomedia.com",
-            description: "24-hour response guaranteed",
+            info: "",
+            description: "Fast response times",
             colorStartVar: "--brand-blue",
             colorEndVar: "--brand-teal",
             href: "mailto:contact@cinuteinfomedia.com",
@@ -143,6 +143,7 @@ export default function Hero() {
     const [messageError, setMessageError] = useState<string | null>(null);
     const [consentError, setConsentError] = useState<string | null>(null);
 
+    const hpRef = useRef<HTMLInputElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [charCount, setCharCount] = useState(0);
@@ -216,6 +217,16 @@ export default function Hero() {
         if (k === "consent" && v) setConsentError(null);
     };
 
+    // The six ₹ (U+20B9) in the budget options are the only characters on this
+    // page inside Inter's latin-ext subset, and rendering them in Inter pulls an
+    // extra 84 KB woff2 at VeryHigh priority right through the LCP window. An
+    // <option> may only contain text, so a per-glyph <span> is not legal here and
+    // the stack goes on the controls. It must be an INLINE style: a styled-jsx
+    // rule is injected only after hydration, by which point Chrome has already
+    // laid the options out and requested the font. Applied to all three selects
+    // so the row stays consistent; native select popups are OS-rendered anyway.
+    const selectFont = 'system-ui, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif';
+
     // Handle phone change separately due to PhoneInput component
     const handlePhoneChange = (value: string | undefined) => {
         setForm((prev) => ({ ...prev, phone: value || "" }));
@@ -267,7 +278,7 @@ export default function Hero() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, hp_field: hpRef.current?.value || "" }),
             });
 
             if (!response.ok) {
@@ -276,6 +287,7 @@ export default function Hero() {
             }
 
             setIsSuccess(true);
+            try { (window as any).gtag?.("event", "generate_lead", { form_id: "contact" }); } catch { /* analytics best-effort */ }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (error: any) {
             console.error('Error submitting form:', error);
@@ -386,7 +398,7 @@ export default function Hero() {
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Whether you need a high-performance website, AI-powered marketing automation, or a complete digital transformation, our team of experts is ready to help you succeed.
                                 <span className="block mt-2 font-semibold" style={{ color: "var(--foreground)" }}>
-                                    With 300+ successful projects and 95% client retention, we're your trusted partner for scalable digital growth.
+                                    With 300+ successful projects and strong client retention, we're your trusted partner for scalable digital growth.
                                 </span>
                             </p>
                         </div>
@@ -490,7 +502,7 @@ export default function Hero() {
                                         ✓
                                     </span>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                        <strong style={{ color: "var(--foreground)" }}>Trusted Partner</strong> - 2,500+ businesses trust us globally with zero security breaches since 2014.
+                                        <strong style={{ color: "var(--foreground)" }}>Trusted Partner</strong> - businesses across the globe trust us.
                                     </p>
                                 </li>
                             </ul>
@@ -544,6 +556,7 @@ export default function Hero() {
                                         </div>
 
                                         <form onSubmit={submitForm} className="space-y-6" id="contact-form" noValidate>
+                                            <input ref={hpRef} type="text" name="hp_field" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
                                             {/* row 1 */}
                                             <div className="grid grid-cols-1 gap-6">
                                                 <div>
@@ -626,7 +639,7 @@ export default function Hero() {
                                                         required
                                                         aria-invalid={!!subjectError}
                                                         className="w-full mt-2 px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                        style={{ borderColor: subjectError ? "var(--brand-orange)" : "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                        style={{ borderColor: subjectError ? "var(--brand-orange)" : "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                     >
                                                         <option value="">Select topic</option>
                                                         <option value="Web Design & Development">Web Design & Development</option>
@@ -656,7 +669,7 @@ export default function Hero() {
                                                             value={form.budget}
                                                             onChange={(e) => handleChange("budget", e.target.value)}
                                                             className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                         >
                                                             <option value="">Select budget</option>
                                                             <option value="under-5k">Under ₹5,000</option>
@@ -677,7 +690,7 @@ export default function Hero() {
                                                             value={form.timeframe}
                                                             onChange={(e) => handleChange("timeframe", e.target.value)}
                                                             className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                         >
                                                             <option value="">Select timeframe</option>
                                                             <option value="1-2 weeks">1 - 2 weeks</option>

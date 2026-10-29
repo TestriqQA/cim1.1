@@ -1,5 +1,3 @@
-"use client";
-
 import { Building2, Target, TrendingUp, Users, FileText, Globe } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ export default function ServiceOverview() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #f97316 8%, transparent), color-mix(in srgb, #ea580c 8%, transparent))",
                             borderColor: "color-mix(in srgb, #f97316 20%, transparent)",
-                            color: "#f97316",
+                            color: "var(--accent-orange-text)",
                         }}
                     >
                         <Building2 className="w-4 h-4" />
@@ -26,7 +24,7 @@ export default function ServiceOverview() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Your <span style={{ color: "#f97316" }}>Digital Headquarters</span> for Business Excellence
+                        Your <span style={{ color: "var(--accent-orange-text)" }}>Digital Headquarters</span> for Business Excellence
                     </h2>
 
                     <div
@@ -42,7 +40,7 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            A <Link href="/services/web-design-development" className="hover:underline" style={{ color: "#f97316", fontWeight: 700 }}>corporate website</Link> is more than a digital brochure-it's the foundation of your organization's online identity and the first impression for investors, partners, and potential clients.
+                            A <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-orange-text)", fontWeight: 700 }}>corporate website</Link> is more than a digital brochure-it's the foundation of your organization's online identity and the first impression for investors, partners, and potential clients.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
@@ -50,7 +48,7 @@ export default function ServiceOverview() {
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            From <Link href="/services/web-design-development/fintech-solutions" className="hover:underline" style={{ color: "#f97316" }}>investor relations portals</Link> to global enterprise sites with multi-region support, we engineer solutions that meet the rigorous standards of modern corporate governance and brand excellence.
+                            From <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-orange-text)" }}>investor relations portals</Link> to global enterprise sites with multi-region support, we engineer solutions that meet the rigorous standards of modern corporate governance and brand excellence.
                         </p>
 
                         <div className="pt-4">
@@ -112,7 +110,7 @@ export default function ServiceOverview() {
                                 <div className="p-3 rounded-lg bg-orange-50">
                                     <Target className="w-6 h-6 text-orange-600" />
                                 </div>
-                                <Link href="/blog/digital-marketing-strategy-planning-execution" className="text-sm font-bold text-center hover:underline" style={{ color: "var(--foreground)" }}>Strategic Positioning</Link>
+                                <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="text-sm font-bold text-center hover:underline" style={{ color: "var(--foreground)" }}>Strategic Positioning</Link>
                             </div>
                         </div>
 

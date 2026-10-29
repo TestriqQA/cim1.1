@@ -31,8 +31,8 @@ export default function CTA() {
                                 borderColor: "rgba(255, 45, 32, 0.2)",
                             }}
                         >
-                            <Server className="w-4 h-4 text-[#FF2D20]" />
-                            <span className="text-sm font-semibold text-[#FF2D20]">
+                            <Server className="w-4 h-4 text-[var(--accent-red-text)]" />
+                            <span className="text-sm font-semibold text-[var(--accent-red-text)]">
                                 Free Consultation
                             </span>
                         </div>

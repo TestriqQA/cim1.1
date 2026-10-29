@@ -1,9 +1,5 @@
 import { Suspense } from "react";
-import { Metadata } from "next";
-import { blogMetadata } from "@/lib/metadata";
 import BlogNavbar from "@/components/blog/BlogNavbar";
-
-export const metadata: Metadata = blogMetadata;
 
 function BlogNavbarFallback() {
     return (
@@ -31,7 +27,7 @@ function BlogNavbarFallback() {
 
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesWithPostCountQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 
 export default async function BlogLayout({
     children,
@@ -43,7 +39,8 @@ export default async function BlogLayout({
         client.fetch(allPostsQuery)
     ]);
 
-    const posts = sanityPosts.map(mapSanityPostToBlogPost);
+    // The navbar only searches titles, tags, authors and categories.
+    const posts = sanityPosts.map(mapSanityPostToBlogPost).map(toListPost);
 
     return (
         <>

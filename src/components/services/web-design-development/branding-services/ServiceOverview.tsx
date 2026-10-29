@@ -29,19 +29,19 @@ export default function ServiceOverview() {
         {
             icon: Users,
             title: "About & Bio",
-            description: <>People buy from people. We specialize in <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-[#06b6d4]">professional bio writing</Link> and branding services that humanize your digital presence and foster genuine connection.</>,
+            description: <>People buy from people. We specialize in <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">professional bio writing</Link> and branding services that humanize your digital presence and foster genuine connection.</>,
             details: ["Professional bio writing", "Authentic storytelling", "Personal journey", "Humanized presence"]
         },
         {
             icon: Award,
             title: "Testimonials",
-            description: <>Social proof is non-negotiable. We integrate dynamic testimonial sections and <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#06b6d4]">Knowledge Panel Optimization</Link> signals that validate your expertise.</>,
+            description: <>Social proof is non-negotiable. We integrate dynamic testimonial sections and <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Knowledge Panel Optimization</Link> signals that validate your expertise.</>,
             details: ["Dynamic testimonials", "Knowledge Panel Optimization", "Real feedback", "Professional credibility"]
         },
         {
             icon: Globe,
             title: "Contact Integration",
-            description: <>Turn traffic into conversations. Our <Link href="/services/seo-services" className="hover:underline text-[#06b6d4]">personal website SEO</Link> and visibility optimization includes strategic CTA placement and seamless contact forms.</>,
+            description: <>Turn traffic into conversations. Our <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">personal website SEO</Link> and visibility optimization includes strategic CTA placement and seamless contact forms.</>,
             details: ["Strategic CTA placement", "Seamless contact forms", "Calendar booking", "Effortless inquiry"]
         }
     ];
@@ -59,7 +59,7 @@ export default function ServiceOverview() {
                         style={{
                             background: "linear-gradient(90deg, color-mix(in srgb, #06b6d4 8%, transparent), color-mix(in srgb, #0891b2 8%, transparent))",
                             borderColor: "color-mix(in srgb, #06b6d4 20%, transparent)",
-                            color: "#06b6d4",
+                            color: "var(--accent-cyan-text)",
                         }}
                     >
                         <Palette className="w-4 h-4" />
@@ -67,7 +67,7 @@ export default function ServiceOverview() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Complete <span style={{ color: "#06b6d4" }}>Portfolio</span> Solutions
+                        Complete <span style={{ color: "var(--accent-cyan-text)" }}>Portfolio</span> Solutions
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -152,7 +152,7 @@ export default function ServiceOverview() {
                         </div>
 
                         <div className="space-y-3">
-                            <h4 className="text-sm font-bold uppercase tracking-wider" style={{ color: "#06b6d4" }}>
+                            <h4 className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--accent-cyan-text)" }}>
                                 Key Features
                             </h4>
                             <ul className="grid grid-cols-2 gap-3">

@@ -135,7 +135,7 @@ export default function Process() {
                         }}
                     >
                         <GitBranch className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "#339933" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -272,7 +272,7 @@ export default function Process() {
 
                                         {/* Details - Always Visible */}
                                         <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                            <p className="text-sm font-semibold mb-3" style={{ color: "#339933" }}>
+                                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-green-text)" }}>
                                                 Key Activities:
                                             </p>
                                             <ul className="space-y-2">

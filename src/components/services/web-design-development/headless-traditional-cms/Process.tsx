@@ -19,7 +19,7 @@ export default function Process() {
         {
             number: "01",
             icon: Search,
-            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[#9333ea] transition-colors">Discovery & Strategy</Link>,
+            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-violet-text)] transition-colors">Discovery & Strategy</Link>,
             description: "Deep dive into your content needs, workflows, and integration requirements.",
             details: [
                 "Content audit and analysis",
@@ -63,7 +63,7 @@ export default function Process() {
             details: [
                 "Custom theme development",
                 "Plugin/extension creation",
-                <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#9333ea] transition-colors">API integration</Link>,
+                <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">API integration</Link>,
                 "Frontend connection",
                 "Workflow automation",
             ],
@@ -136,7 +136,7 @@ export default function Process() {
                         }}
                     >
                         <Settings className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#9333ea" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -277,7 +277,7 @@ export default function Process() {
 
                                         {/* Details - Always Visible */}
                                         <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                            <p className="text-sm font-semibold mb-3" style={{ color: "#9333ea" }}>
+                                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-violet-text)" }}>
                                                 Key Activities:
                                             </p>
                                             <ul className="space-y-2">

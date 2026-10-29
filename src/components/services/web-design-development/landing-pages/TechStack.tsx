@@ -70,7 +70,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#10b981" }}>Conversion</span> Tech Stack
+                        <span style={{ color: "var(--accent-green-text)" }}>Conversion</span> Tech Stack
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>

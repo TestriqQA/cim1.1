@@ -10,7 +10,7 @@ import CTA from "@/components/services/social-media-marketing-services/facebook-
 export const metadata: Metadata = {
     title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
     description:
-        "Scale your brand with top-tier Facebook marketing services. Expert Meta ads management delivered by a global agency. 10x ROAS focus. Get a FREE audit today!",
+        "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
     keywords: [
         "Facebook marketing services",
         "Facebook marketing agency",
@@ -19,6 +19,29 @@ export const metadata: Metadata = {
         "Facebook marketing expert",
         "social media strategy",
     ],
+    openGraph: {
+        title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
+        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
+        url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/facebook-marketing-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "Facebook Marketing Services | Lead Gen & Ads Management Agency by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
+        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
+        images: ["/og-images/facebook-marketing-services.webp"],
+    },
+    alternates: {
+        canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services",
+    },
 };
 
 const jsonLd = {
@@ -100,7 +123,7 @@ const faqJsonLd = {
 
 export default function FacebookMarketingPage() {
     return (
-        <main>
+        <main style={{ "--page-selection-bg": "#1877F2" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

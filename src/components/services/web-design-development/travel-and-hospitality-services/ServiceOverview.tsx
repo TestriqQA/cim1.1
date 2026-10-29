@@ -1,5 +1,3 @@
-"use client";
-
 import { Plane, Calendar, Globe, CreditCard, Users, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
@@ -13,17 +11,17 @@ export default function ServiceOverview() {
         {
             icon: Globe,
             title: "GDS & OTA Integration",
-            description: <span>Seamless <Link href="/services/web-design-development/nodejs-backend" className="hover:underline">Travel API Integration Services</Link> (GDS/OTA) for Amadeus, Sabre, Expedia, and Airbnb with bidirectional data sync.</span>,
+            description: <span>Seamless <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:underline">Travel API Integration Services</Link> (GDS/OTA) for Amadeus, Sabre, Expedia, and Airbnb with bidirectional data sync.</span>,
         },
         {
             icon: Users,
             title: "Guest Experience Platforms",
-            description: <span>Elevate engagement with Hospitality Guest Experience Optimization Services, from mobile check-in to <Link href="/services/ai-chatbots-services" className="hover:underline">AI concierge chatbots</Link>.</span>,
+            description: <span>Elevate engagement with Hospitality Guest Experience Optimization Services, from mobile check-in to <Link href="/services/ai-chatbots-services" className="underline underline-offset-2 hover:underline">AI concierge chatbots</Link>.</span>,
         },
         {
             icon: CreditCard,
             title: "Revenue Management Systems",
-            description: <span>Implement advanced <Link href="/services/ai-workflows-automations-services" className="hover:underline">Hospitality Revenue Management Services</Link> using AI to predict demand and optimize dynamic pricing.</span>,
+            description: <span>Implement advanced <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">Hospitality Revenue Management Services</Link> using AI to predict demand and optimize dynamic pricing.</span>,
         },
     ];
 
@@ -37,7 +35,7 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            A <span style={{ color: "#0d9488", fontWeight: 700 }}>travel platform</span> is more than a booking interface: it's a complete digital ecosystem that connects travelers with unforgettable experiences while maximizing your operational efficiency.
+                            A <span style={{ color: "var(--accent-teal-text)", fontWeight: 700 }}>travel platform</span> is more than a booking interface: it's a complete digital ecosystem that connects travelers with unforgettable experiences while maximizing your operational efficiency.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
@@ -62,12 +60,12 @@ export default function ServiceOverview() {
 
                     {/* Right Content - Deliverables */}
                     <div className="space-y-4">
-                        <h3
+                        <h2
                             className="text-2xl font-bold mb-6"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Core <span style={{ color: "#0d9488" }}>Deliverables</span>
-                        </h3>
+                            Core <span style={{ color: "var(--accent-teal-text)" }}>Deliverables</span>
+                        </h2>
 
                         <div className="grid gap-4">
                             {deliverables.map((item, idx) => {
@@ -89,12 +87,12 @@ export default function ServiceOverview() {
                                                 <Icon className="w-6 h-6 text-white" />
                                             </div>
                                             <div>
-                                                <h4
+                                                <h3
                                                     className="font-semibold text-lg mb-1"
                                                     style={{ color: "var(--foreground)" }}
                                                 >
                                                     {item.title}
-                                                </h4>
+                                                </h3>
                                                 <p
                                                     className="text-sm"
                                                     style={{ color: "var(--secondary-text)" }}

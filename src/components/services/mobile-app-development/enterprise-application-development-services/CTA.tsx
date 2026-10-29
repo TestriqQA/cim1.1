@@ -100,7 +100,7 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Active Users</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">99.9%</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">High</div>
                                 <div className="text-xs sm:text-sm text-white/70">Uptime SLA</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">

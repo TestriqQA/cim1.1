@@ -1,0 +1,74 @@
+/* ==========================================================================
+   /portfolio — motion layer
+   --------------------------------------------------------------------------
+   Deliberately small. The portfolio pages are built from the site's own theme
+   tokens and Tailwind utilities; this file only holds the two things Tailwind
+   cannot express — a scroll-linked reveal and its reduced-motion/print resets.
+
+   Rules carried over from the rest of the codebase:
+   1. PROGRESSIVE. The reveal lives inside `@supports (animation-timeline:
+      view())`. Without support the element renders in its FINAL state, never
+      hidden behind a feature the browser cannot run.
+   2. NO `overflow: hidden` ANCESTORS on revealed content — that creates a
+      scroll container which never scrolls, stranding the element at 0%
+      progress and leaving it invisible.
+   3. MOTION IS OPT-IN, behind `prefers-reduced-motion: no-preference`.
+   ========================================================================== */
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Base state is the finished state — see rule 1. */
+.reveal,
+.cascade {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation-name: riseIn;
+      animation-duration: auto;
+      animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    .cascade > * {
+      animation-name: riseIn;
+      animation-duration: auto;
+      animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 62%;
+    }
+
+    .cascade > *:nth-child(2n) {
+      animation-range: entry 0% entry 74%;
+    }
+
+    .cascade > *:nth-child(3n) {
+      animation-range: entry 0% entry 86%;
+    }
+  }
+}
+
+@media print {
+
+  .reveal,
+  .cascade > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

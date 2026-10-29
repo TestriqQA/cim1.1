@@ -111,17 +111,17 @@ export default function AppTypes() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple)" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Development Services
                         </span>
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--brand-purple)" }}>Types</span> of Mobile App Development
+                        <span style={{ color: "var(--brand-purple-text)" }}>Types</span> of Mobile App Development
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        We specialize in all types of mobile app development, from <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">native platforms</Link> to <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">cross-platform solutions</Link>. Choose the approach that best fits your business needs.
+                        We specialize in all types of mobile app development, from <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] hover:underline transition-colors">native platforms</Link> to <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] hover:underline transition-colors">cross-platform solutions</Link>. Choose the approach that best fits your business needs.
                     </p>
                 </div>
 
@@ -303,7 +303,7 @@ export default function AppTypes() {
                                                 style={{
                                                     backgroundColor:
                                                         "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
-                                                    color: "var(--brand-purple)",
+                                                    color: "var(--brand-purple-text)",
                                                 }}
                                             >
                                                 <Clock className="w-3.5 h-3.5" />

@@ -22,7 +22,7 @@ export default function Faq() {
         },
         {
             question: "How much does brand identity design cost?",
-            answer: <span>Costs vary based on scope. An affordable brand identity design service for a small business might start from $1,500 - $3,000. Comprehensive agencies packages for <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-yellow)]">B2B</Link> or <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-yellow)]">SaaS companies</Link> often range from $5,000 to $20,000+ depending on the depth of strategy, number of deliverables, and market research required.</span>
+            answer: <span>Costs vary based on scope. An affordable brand identity design service for a small business might start from $1,500 - $3,000. Comprehensive agencies packages for <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">B2B</Link> or <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">SaaS companies</Link> often range from $5,000 to $20,000+ depending on the depth of strategy, number of deliverables, and market research required.</span>
         },
         {
             question: "What are the key elements of a brand identity?",
@@ -30,7 +30,7 @@ export default function Faq() {
         },
         {
             question: "Do you offer rebranding services for established companies?",
-            answer: <span>Yes, we specialize in <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--brand-yellow)]">rebranding services</Link> for small business and large enterprises. We carefully audit your existing brand equity to ensure we retain what works while modernizing your visual language to meet current market standards and Graphic Design Principles.</span>
+            answer: <span>Yes, we specialize in <Link href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">rebranding services</Link> for small business and large enterprises. We carefully audit your existing brand equity to ensure we retain what works while modernizing your visual language to meet current market standards and Graphic Design Principles.</span>
         },
         {
             question: "Will I own the copyright to my brand files?",
@@ -50,13 +50,13 @@ export default function Faq() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             FAQs
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Frequently Asked <span style={{ color: "var(--brand-yellow)" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-amber-text)" }}>Questions</span>
                     </h2>
                     <p className="text-lg md:text-xl text-center" style={{ color: "var(--secondary-text)" }}>
                         Expert Answers to Your Branding Questions
@@ -81,7 +81,7 @@ export default function Faq() {
                                     onClick={() => setOpenIndex(isOpen ? null : index)}
                                     className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                                 >
-                                    <span className={`text-lg font-bold transition-colors ${isOpen ? '' : ''}`} style={{ color: isOpen ? "var(--brand-yellow)" : "var(--foreground)" }}>
+                                    <span className={`text-lg font-bold transition-colors ${isOpen ? '' : ''}`} style={{ color: isOpen ? "var(--accent-amber-text)" : "var(--foreground)" }}>
                                         {faq.question}
                                     </span>
                                     <div

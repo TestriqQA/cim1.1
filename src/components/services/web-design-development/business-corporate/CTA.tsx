@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
 
@@ -37,7 +35,7 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #f97316 8%, transparent), color-mix(in srgb, #ea580c 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #f97316 20%, transparent)",
-                                color: "#f97316",
+                                color: "var(--accent-orange-text)",
                             }}
                         >
                             <Building2 className="w-4 h-4" />
@@ -102,8 +100,8 @@ export default function CTA() {
                             label: "Corporate Sites Delivered",
                         },
                         {
-                            number: "99.9%",
-                            label: "Uptime Guarantee",
+                            number: "High",
+                            label: "High Availability",
                         },
                         {
                             number: "Enterprise",

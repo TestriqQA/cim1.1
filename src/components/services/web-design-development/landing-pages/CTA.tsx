@@ -37,7 +37,7 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                                color: "#10b981",
+                                color: "var(--accent-green-text)",
                             }}
                         >
                             <Target className="w-4 h-4" />

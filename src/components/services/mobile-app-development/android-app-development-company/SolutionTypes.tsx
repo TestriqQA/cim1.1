@@ -37,8 +37,8 @@ export default function SolutionTypes() {
     const solutions = [
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#3DDC84] transition-colors">Ecommerce and Retail Android App Solutions</Link>,
-            description: <><span className="text-inherit">Boost sales with custom shopping apps. Features include </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[#3DDC84] hover:underline">Google Pay integration</Link>, AR product previews, <Link href="/services/ai-workflows-automations-services" className="text-[#3DDC84] hover:underline">AI recommendations</Link>, and 1-click checkout.</>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-green-text)] transition-colors">Ecommerce and Retail Android App Solutions</Link>,
+            description: <><span className="text-inherit">Boost sales with custom shopping apps. Features include </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">Google Pay integration</Link>, AR product previews, <Link href="/services/ai-workflows-automations-services" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">AI recommendations</Link>, and 1-click checkout.</>,
             features: [
                 "45% mobile conversion uplift",
                 "Google Pay integration",
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Building2,
-            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[#3DDC84] transition-colors">B2B Android App Development</Link>,
+            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--accent-green-text)] transition-colors">B2B Android App Development</Link>,
             description: "Streamline workflows with secure enterprise mobility solutions. We build employee portals, inventory trackers, and CRM apps integrated with your existing ERP.",
             features: [
                 "Employee portals",
@@ -61,8 +61,8 @@ export default function SolutionTypes() {
         },
         {
             icon: Heart,
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#3DDC84] transition-colors">Healthcare and HIPAA-Compliant Apps</Link>,
-            description: <><span className="text-inherit">Patient-first apps with telemedicine features, appointment booking, and </span><Link href="/services/web-design-development/healthcare-portals" className="text-[#3DDC84] hover:underline">secure health records</Link> access. Fully compliant with HIPAA, GDPR, and Google Play Protect.</>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-green-text)] transition-colors">Healthcare and HIPAA-Compliant Apps</Link>,
+            description: <><span className="text-inherit">Patient-first apps with telemedicine features, appointment booking, and </span><Link href="/services/web-design-development/healthcare-portals" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">secure health records</Link> access. Fully compliant with HIPAA, GDPR, and Google Play Protect.</>,
             features: [
                 "Telemedicine features",
                 "HIPAA compliance",
@@ -73,19 +73,19 @@ export default function SolutionTypes() {
         },
         {
             icon: Wallet,
-            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[#3DDC84] transition-colors">Fintech & Banking Apps</Link>,
+            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-green-text)] transition-colors">Fintech & Banking Apps</Link>,
             description: "Fort Knox-level security for digital wallets and trading platforms. We implement biometric auth, real-time fraud detection, and custom API integration.",
             features: [
                 "Biometric auth",
                 "Real-time fraud detection",
                 "Custom API integration",
-                <Link key="security" href="/services/web-design-development/fintech-solutions" className="text-[#3DDC84] hover:underline">Bank-grade security</Link>,
+                <Link key="security" href="/services/web-design-development/fintech-solutions" className="text-[var(--accent-green-text)] hover:underline">Bank-grade security</Link>,
             ],
             gradient: "from-[#3DDC84] to-[#073042]",
         },
         {
             icon: Gamepad2,
-            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[#3DDC84] transition-colors">Gaming & Entertainment</Link>,
+            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[var(--accent-green-text)] transition-colors">Gaming & Entertainment</Link>,
             description: "Immersive 2D/3D games built with Unity and native Android NDK. High-performance rendering for lag-free multiplayer experiences.",
             features: [
                 "Unity & Native NDK",
@@ -121,8 +121,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(61, 220, 132, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#3DDC84" }} />
-                        <span className="text-sm font-medium" style={{ color: "#3DDC84" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
@@ -202,7 +202,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#3DDC84]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-green-text)]"
                                             }`}
                                     />
                                 </div>
@@ -221,7 +221,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#3DDC84]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -234,7 +234,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#3DDC84]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-green-text)]" />
                                 </div>
                             </div>
                         );

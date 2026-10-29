@@ -24,8 +24,11 @@ export default function Footer() {
     // Quick Links (matching reference image)
     const quickLinks = [
         { name: "About Us", href: "/about" },
+        { name: "Our Team", href: "/our-team" },
         { name: "Careers", href: "/careers" },
         { name: "Our Services", href: "/services" },
+        { name: "Portfolio", href: "/portfolio" },
+        { name: "Products", href: "/products/chimegenius-ai-pro" },
         { name: "Contact Us", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-of-service" },
@@ -147,11 +150,52 @@ export default function Footer() {
         border: { borderColor: "var(--border-color)" },
     } as const;
 
+    // SSR-safe placeholder — includes navigation links for Googlebot crawlability
     if (!mounted) {
         return (
-            <footer style={styles.footerBg} className="w-full border-t">
-                <div className="mx-auto px-6 md:px-12 xl:px-16">
-                    <div className="py-12"><div className="h-40" /></div>
+            <footer className="w-full border-t">
+                <div className="mx-auto px-6 md:px-12 xl:px-16 py-12">
+                    {/* SSR footer links — visible to Googlebot's HTML crawl */}
+                    <nav aria-label="Footer navigation">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <h3 className="text-sm font-bold uppercase tracking-wider mb-4">Our Services</h3>
+                                <ul className="space-y-2">
+                                    {ourServices.map((service, i) => (
+                                        <li key={i}><Link href={service.href} className="text-sm">{service.name}</Link></li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-bold uppercase tracking-wider mb-4">Quick Links</h3>
+                                <ul className="space-y-2">
+                                    {quickLinks.map((link, i) => (
+                                        <li key={i}><Link href={link.href} className="text-sm">{link.name}</Link></li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-bold uppercase tracking-wider mb-4">Service Categories</h3>
+                                <ul className="space-y-2">
+                                    {serviceCategories.map((category, idx) => (
+                                        <li key={idx}>
+                                            <Link href={category.href} className="text-sm font-medium">{category.title}</Link>
+                                            <ul className="ml-3 mt-1 space-y-1">
+                                                {category.items.map((item, i) => (
+                                                    <li key={i}><Link href={item.href} className="text-xs">{item.name}</Link></li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div className="mt-8 pt-6 border-t flex flex-wrap gap-4 text-xs">
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                        <Link href="/terms-of-service">Terms of Service</Link>
+                        <Link href="/cookies-policy">Cookies Policy</Link>
+                    </div>
                 </div>
             </footer>
         );
@@ -180,16 +224,16 @@ export default function Footer() {
 
                             {/* Social Icons */}
                             <div className="flex items-center gap-4">
-                                <Link href="https://www.linkedin.com/company/cinute-infomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#0A66C2] group">
+                                <Link href="https://www.linkedin.com/company/cinute-infomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on LinkedIn (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#0A66C2] group">
                                     <Linkedin className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://www.instagram.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#E1306C] group">
+                                <Link href="https://www.instagram.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on Instagram (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#E1306C] group">
                                     <Instagram className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://x.com/cinute_infomedia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-black group">
+                                <Link href="https://x.com/cinuteinfomedia" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on X (Twitter) (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1DA1F2] group">
                                     <TwitterX className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://www.facebook.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1877F2] group">
+                                <Link href="https://www.facebook.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on Facebook (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1877F2] group">
                                     <Facebook className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
                             </div>

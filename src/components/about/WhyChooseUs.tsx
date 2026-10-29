@@ -6,21 +6,21 @@ export default function WhyChooseUs() {
         {
             icon: Rocket,
             title: "Full-Stack Strategy & Execution",
-            description: <span>From <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] transition-colors">custom website development</Link> to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-blue)] transition-colors">AI-powered marketing automation</Link>, we provide end-to-end services that eliminate the need for multiple vendors. Our integrated approach ensures your web design, <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-blue)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] transition-colors">SEO</Link>, and <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue)] transition-colors">performance marketing</Link> work in perfect harmony to drive business growth.</span>,
+            description: <span>From <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue-text)] transition-colors">custom website development</Link> to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-blue-text)] transition-colors">AI-powered marketing automation</Link>, we provide end-to-end services that eliminate the need for multiple vendors. Our integrated approach ensures your web design, <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-blue-text)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">SEO</Link>, and <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue-text)] transition-colors">performance marketing</Link> work in perfect harmony to drive business growth.</span>,
             colorFrom: "var(--brand-blue)",
             colorTo: "var(--brand-teal)",
         },
         {
             icon: TrendingUp,
             title: "Measurable ROI & Transparent Reporting",
-            description: "Every project comes with clear KPIs and real-time analytics dashboards. We track what matters: conversion rates, page performance, organic visibility, lead quality, and revenue impact - not vanity metrics. Our clients see an average 300% organic traffic growth and consistently measurable business outcomes.",
+            description: "Every project comes with clear KPIs and real-time analytics dashboards. We track what matters: conversion rates, page performance, organic visibility, lead quality, and revenue impact - not vanity metrics. Our clients see an average sustained organic traffic growth and consistently measurable business outcomes.",
             colorFrom: "var(--brand-purple)",
             colorTo: "var(--brand-yellow)",
         },
         {
             icon: Users,
             title: "Partner-Centric Approach & Long-Term Success",
-            description: "We're not a transactional agency - we're your growth co-pilot. With a 95% client retention rate, our clients stay because we treat their business goals as our own. We build long-term partnerships focused on sustainable growth, continuous optimization, and mutual success.",
+            description: "We're not a transactional agency - we're your growth co-pilot. With strong client retention, our clients stay because we treat their business goals as our own. We build long-term partnerships focused on sustainable growth, continuous optimization, and mutual success.",
             colorFrom: "var(--brand-cyan)",
             colorTo: "var(--brand-teal)",
         },
@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         {
             icon: Shield,
             title: "Cutting-Edge Technology & Innovation",
-            description: <span>We leverage the latest technologies - from <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-purple)] transition-colors">Next.js</Link> and React to advanced AI models and automation tools - to future-proof your digital infrastructure. Our enterprise-grade security, performance-first architecture, and scalable systems ensure your business stays ahead of the curve.</span>,
+            description: <span>We leverage the latest technologies - from <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-purple-text)] transition-colors">Next.js</Link> and React to advanced AI models and automation tools - to future-proof your digital infrastructure. Our enterprise-grade security, performance-first architecture, and scalable systems ensure your business stays ahead of the curve.</span>,
             colorFrom: "var(--brand-blue)",
             colorTo: "var(--brand-purple)",
         },
@@ -42,10 +42,10 @@ export default function WhyChooseUs() {
 
     const stats = [
         { value: "300+", label: "Successful projects delivered" },
-        { value: "2,500+", label: "Businesses trust our solutions globally" },
+        { value: "Trusted", label: "Businesses trust our solutions globally" },
         { value: "95%", label: "Client retention rate" },
-        { value: "98.7%", label: "Bug-free delivery in mobile apps" },
-        { value: "Zero", label: "Security breaches since 2014" },
+        { value: "80%+", label: "Test coverage in mobile apps" },
+        { value: "AES-256", label: "Encryption standard" },
         { value: "Sub-2s", label: "Core Web Vitals performance" },
     ];
 
@@ -78,8 +78,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(90deg, color-mix(in srgb,var(--brand-blue) 8%,transparent), color-mix(in srgb,var(--brand-purple) 8%,transparent))",
                         }}
                     >
-                        <Award className="w-4 h-4 text-[var(--brand-blue)]" />
-                        <span className="text-sm font-semibold text-[var(--brand-blue)]">Why Choose Us</span>
+                        <Award className="w-4 h-4 text-[var(--brand-blue-text)]" />
+                        <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Why Choose Us</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--foreground)]">

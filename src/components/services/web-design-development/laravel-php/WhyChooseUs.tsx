@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Performance Optimized",
-            description: <>We fine-tune database queries, caching strategies, and server configs for <Link href="/services/performance-marketing" className="text-[#FF2D20] hover:underline">maximum speed</Link>.</>,
+            description: <>We fine-tune database queries, caching strategies, and server configs for <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">maximum speed</Link>.</>,
             gradient: "from-[#FF2D20] to-[#C92218]",
         },
         {
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         {
             icon: HeartHandshake,
             title: "Long-Term Partnership",
-            description: <>We provide ongoing <Link href="/services/additional-support-services" className="text-[#FF2D20] hover:underline">maintenance, updates, and support</Link> to ensure your app grows with you.</>,
+            description: <>We provide ongoing <Link href="/services/additional-support-services" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">maintenance, updates, and support</Link> to ensure your app grows with you.</>,
             gradient: "from-[#FF2D20] to-[#F05340]",
         },
     ];
@@ -69,8 +69,8 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(255, 45, 32, 0.2)",
                         }}
                     >
-                        <Users className="w-4 h-4" style={{ color: "#FF2D20" }} />
-                        <span className="text-sm font-medium" style={{ color: "#FF2D20" }}>
+                        <Users className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -129,10 +129,10 @@ export default function WhyChooseUs() {
                                         background: "linear-gradient(135deg, rgba(255, 45, 32, 0.1), rgba(240, 83, 64, 0.1))",
                                     }}
                                 >
-                                    <Icon className="w-7 h-7 text-[#FF2D20]" />
+                                    <Icon className="w-7 h-7 text-[var(--accent-red-text)]" />
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? "#FF2D20" : "var(--foreground)" }}>
+                                <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? "var(--accent-red-text)" : "var(--foreground)" }}>
                                     {reason.title}
                                 </h3>
                                 <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

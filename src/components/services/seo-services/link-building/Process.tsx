@@ -13,7 +13,7 @@ export default function Process() {
             icon: Search,
             title: "Research & Analysis",
             description: "We analyze your backlink profile, study competitors, and identify high-value link opportunities in your niche.",
-            details: [<Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: linkCyan }}>Competitor backlink audit</Link>, "Gap analysis", "Industry opportunity mapping"],
+            details: [<Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Competitor backlink audit</Link>, "Gap analysis", "Industry opportunity mapping"],
         },
         {
             id: 2,
@@ -41,7 +41,7 @@ export default function Process() {
             icon: CheckCircle,
             title: "Link Placement",
             description: "We secure contextual, do-follow backlinks from approved, high-quality sources.",
-            details: ["Editorial review", <Link href="/services/seo-services/on-page-seo-services" className="hover:underline" style={{ color: linkCyan }}>Anchor text optimization</Link>, "Contextual placement"],
+            details: ["Editorial review", <Link href="/services/seo-services/on-page-seo-services" className="hover:underline" style={{ color: "var(--accent-cyan-text)" }}>Anchor text optimization</Link>, "Contextual placement"],
         },
         {
             id: 6,
@@ -79,12 +79,12 @@ export default function Process() {
                         }}
                     >
                         <Link2 className="w-4 h-4" style={{ color: linkCyan }} />
-                        <span className="text-sm font-semibold" style={{ color: linkCyan }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Process
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Link Building <span style={{ color: linkCyan }}>Process</span>
+                        Link Building <span style={{ color: "var(--accent-cyan-text)" }}>Process</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Our proven 6-step methodology for sustainable link acquisition.
@@ -137,7 +137,7 @@ export default function Process() {
                                                     className="px-3 py-1 rounded-full text-xs font-medium border"
                                                     style={{
                                                         borderColor: `${linkCyan}40`,
-                                                        color: linkCyan,
+                                                        color: "var(--accent-cyan-text)",
                                                         backgroundColor: `${linkCyan}10`,
                                                     }}
                                                 >

@@ -19,7 +19,7 @@ export default function TechStack() {
         core: [
             { name: "ArkTS", description: "TypeScript-based", logo: "/images/techstack_logos/ArkUI-logo.png" },
             { name: "ArkUI", description: "Declarative UI", logo: "/images/techstack_logos/ArkUI-logo.png" },
-            { name: "JavaScript", description: <Link href="/services/web-design-development" className="hover:text-[#C7000B] transition-colors">Web Runtime</Link>, logo: "/images/techstack_logos/javascript-logo.svg" },
+            { name: "JavaScript", description: <Link href="/services/web-design-development" className="hover:text-[var(--accent-red-text)] transition-colors">Web Runtime</Link>, logo: "/images/techstack_logos/javascript-logo.svg" },
             { name: "C/C++", description: "Native APIs", logo: "/images/techstack_logos/c++-logo.png" },
             { name: "Cangjie", description: "New Language", logo: "" },
             { name: "DevEco Studio", description: "Official IDE", logo: "/images/techstack_logos/DevEco-Studio-logo.png" },
@@ -35,7 +35,7 @@ export default function TechStack() {
         ui: [
             { name: "ArkUI", description: "Declarative UI", logo: "/images/techstack_logos/ArkUI-logo.png" },
             { name: "HarmonyOS Design", description: "Design System", logo: "" },
-            { name: "Figma", description: <Link href="/services/brand-identity-design" className="hover:text-[#C7000B] transition-colors">Design Tool</Link>, logo: "/images/techstack_logos/figma-logo.svg" },
+            { name: "Figma", description: <Link href="/services/brand-identity-design" className="hover:text-[var(--accent-red-text)] transition-colors">Design Tool</Link>, logo: "/images/techstack_logos/figma-logo.svg" },
             { name: "Atomic Design", description: "Component System", logo: "" },
             { name: "Motion Design", description: "Animations", logo: "" },
             { name: "Adaptive Layout", description: "Multi-device", logo: "" },
@@ -68,7 +68,7 @@ export default function TechStack() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>HarmonyOS</span>{" "}
-                        <span style={{ color: "#C7000B" }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Technology Stack
                         </span>
                     </h2>
@@ -138,9 +138,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

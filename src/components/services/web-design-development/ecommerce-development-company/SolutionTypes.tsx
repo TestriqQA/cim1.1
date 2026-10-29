@@ -11,7 +11,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingBag,
             title: "B2C Online Stores",
-            description: "Capture the consumer market with visually stunning, high-converting storefronts. As a leading Ecommerce website design company, we craft immersive brand experiences with Ecommerce product page optimization that showcases your catalog in its best light.",
+            description: "Capture the consumer market with visually stunning, high-converting storefronts. As an expert Ecommerce website design company, we craft immersive brand experiences with Ecommerce product page optimization that showcases your catalog in its best light.",
             features: [
                 { icon: Package, text: "Product galleries" },
                 { icon: ShoppingCart, text: "Wishlist & favorites" },
@@ -24,7 +24,7 @@ export default function SolutionTypes() {
         {
             icon: Building2,
             title: "B2B E-commerce Platforms",
-            description: <>Streamline your wholesale operations with sophisticated <Link href="/services/web-design-development/business-corporate" className="hover:underline text-[#008ac1]">B2B ecommerce platform development</Link>. We enable complex features like tiered pricing, bulk ordering, and <Link href="/services/web-design-development/nodejs-backend" className="hover:underline text-[#008ac1]">Custom API integrations</Link> for ecommerce stores (ERP/CRM) to automate your back-office workflows.</>,
+            description: <>Streamline your wholesale operations with sophisticated <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline text-[var(--brand-blue-text)]">B2B ecommerce platform development</Link>. We enable complex features like tiered pricing, bulk ordering, and <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:underline text-[var(--brand-blue-text)]">Custom API integrations</Link> for ecommerce stores (ERP/CRM) to automate your back-office workflows.</>,
             features: [
                 { icon: CreditCard, text: "Custom pricing tiers" },
                 { icon: Package, text: "Quote requests" },
@@ -50,7 +50,7 @@ export default function SolutionTypes() {
         {
             icon: RefreshCw,
             title: "Subscription Commerce",
-            description: <>Build predictable revenue streams with <Link href="/services/web-design-development/saas-development-services" className="hover:underline text-[#00b5ca]">Subscription-based ecommerce</Link> store setup. We integrate flexible billing engines and churn-reduction tools, ensuring seamless recurring payments and superior subscriber management.</>,
+            description: <>Build predictable revenue streams with <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Subscription-based ecommerce</Link> store setup. We integrate flexible billing engines and churn-reduction tools, ensuring seamless recurring payments and superior subscriber management.</>,
             features: [
                 { icon: RefreshCw, text: "Recurring billing" },
                 { icon: Package, text: "Skip/pause options" },
@@ -63,7 +63,7 @@ export default function SolutionTypes() {
         {
             icon: Layers,
             title: "Headless Commerce",
-            description: <>Future-proof your business with <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-[#008ac1]">Headless ecommerce development</Link> services. By decoupling the frontend from the backend, we deliver lightning-fast omnichannel experiences that let you sell anywhere - web, mobile, IoT, or voice.</>,
+            description: <>Future-proof your business with <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:underline text-[var(--brand-blue-text)]">Headless ecommerce development</Link> services. By decoupling the frontend from the backend, we deliver lightning-fast omnichannel experiences that let you sell anywhere - web, mobile, IoT, or voice.</>,
             features: [
                 { icon: Zap, text: "API-first design" },
                 { icon: Layers, text: "Custom frontends" },
@@ -91,15 +91,15 @@ export default function SolutionTypes() {
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <Zap className="w-4 h-4" style={{ color: "#00b5ca" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#00b5ca" }}>
+                            <Zap className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                                 Our Solutions
                             </span>
                         </div>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#00b5ca" }}>E-commerce Solutions</span> We Build
+                        <span style={{ color: "var(--accent-cyan-text)" }}>E-commerce Solutions</span> We Build
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>

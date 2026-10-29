@@ -48,7 +48,7 @@ export default function SolutionTypes() {
         },
         {
             icon: GraduationCap,
-            title: <Link href="/services/web-design-development/edtech-lms" className="hover:text-[#0678BE] transition-colors">Higher Education</Link>,
+            title: <Link href="/services/web-design-development/edtech-lms" className="hover:text-[var(--accent-sky-text)] transition-colors">Higher Education</Link>,
             description: "University websites, student portals, and learning management systems for academic institutions.",
             features: [
                 "Student portals",
@@ -60,7 +60,7 @@ export default function SolutionTypes() {
         },
         {
             icon: HeartPulse,
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#0678BE] transition-colors">Healthcare Organizations</Link>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-sky-text)] transition-colors">Healthcare Organizations</Link>,
             description: "HIPAA-compliant healthcare portals with patient engagement and provider directories.",
             features: [
                 "HIPAA compliance",
@@ -84,7 +84,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Newspaper,
-            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[#0678BE] transition-colors">Media & Publishing</Link>,
+            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[var(--accent-sky-text)] transition-colors">Media & Publishing</Link>,
             description: "High-traffic content platforms with editorial workflows and subscription management.",
             features: [
                 "Editorial workflows",
@@ -96,7 +96,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Building2,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[#0678BE] transition-colors">Enterprise Corporations</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-sky-text)] transition-colors">Enterprise Corporations</Link>,
             description: "Large-scale corporate websites and intranets with complex content hierarchies.",
             features: [
                 "Multisite management",
@@ -187,7 +187,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#0678BE]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-sky-text)]"
                                             }`}
                                     />
                                 </div>
@@ -206,7 +206,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#0678BE]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-sky-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -219,7 +219,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#0678BE]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-sky-text)]" />
                                 </div>
                             </div>
                         );

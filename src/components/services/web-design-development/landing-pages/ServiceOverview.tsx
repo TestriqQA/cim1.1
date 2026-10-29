@@ -17,7 +17,7 @@ export default function ServiceOverview() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
                             borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                            color: "#10b981",
+                            color: "var(--accent-green-text)",
                         }}
                     >
                         <Target className="w-4 h-4" />
@@ -25,7 +25,7 @@ export default function ServiceOverview() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Your <span style={{ color: "#10b981" }}>Growth Engine</span> For Digital Campaigns
+                        Your <span style={{ color: "var(--accent-green-text)" }}>Growth Engine</span> For Digital Campaigns
                     </h2>
 
                     <div
@@ -41,7 +41,7 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            A <span style={{ color: "#10b981", fontWeight: 700 }}>Landing Page</span> is not just another website page-it's a focused destination designed with one singular goal: <span style={{ color: "#0ea5e9", fontWeight: 700 }}>Conversion</span>.
+                            A <span style={{ color: "var(--accent-green-text)", fontWeight: 700 }}>Landing Page</span> is not just another website page-it's a focused destination designed with one singular goal: <span style={{ color: "var(--accent-sky-text)", fontWeight: 700 }}>Conversion</span>.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
@@ -117,7 +117,7 @@ export default function ServiceOverview() {
                             <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
                                 style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                                 <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(14, 165, 233, 0.1))" }}>
-                                    <Zap className="w-6 h-6" style={{ color: "#10b981" }} />
+                                    <Zap className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                 </div>
                                 <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Ultra Fast</span>
                             </div>
@@ -128,7 +128,7 @@ export default function ServiceOverview() {
                             <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
                                 style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                                 <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(16, 185, 129, 0.1))" }}>
-                                    <Smartphone className="w-6 h-6" style={{ color: "#0ea5e9" }} />
+                                    <Smartphone className="w-6 h-6" style={{ color: "var(--accent-sky-text)" }} />
                                 </div>
                                 <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Mobile First</span>
                             </div>
@@ -139,7 +139,7 @@ export default function ServiceOverview() {
                             <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
                                 style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                                 <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(14, 165, 233, 0.1))" }}>
-                                    <Palette className="w-6 h-6" style={{ color: "#10b981" }} />
+                                    <Palette className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                 </div>
                                 <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Persuasive Design</span>
                             </div>
@@ -150,7 +150,7 @@ export default function ServiceOverview() {
                             <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
                                 style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                                 <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(16, 185, 129, 0.1))" }}>
-                                    <MessageSquare className="w-6 h-6" style={{ color: "#0ea5e9" }} />
+                                    <MessageSquare className="w-6 h-6" style={{ color: "var(--accent-sky-text)" }} />
                                 </div>
                                 <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Compelling Copy</span>
                             </div>
@@ -161,7 +161,7 @@ export default function ServiceOverview() {
                             <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
                                 style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                                 <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(14, 165, 233, 0.1))" }}>
-                                    <BarChart className="w-6 h-6" style={{ color: "#10b981" }} />
+                                    <BarChart className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                 </div>
                                 <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Analytics</span>
                             </div>

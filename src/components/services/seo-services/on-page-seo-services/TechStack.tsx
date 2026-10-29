@@ -48,10 +48,10 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Precision Tools for <span style={{ color: seoGreen }}>Data-Backed Results</span>
+                        Precision Tools for <span style={{ color: "var(--accent-green-text)" }}>Data-Backed Results</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        We leverage the industry's most advanced tools to conduct your <strong><Link href="/contact" className="hover:underline">on-page SEO audit</Link></strong> and monitor performance in real-time.
+                        We leverage the industry's most advanced tools to conduct your <strong><Link href="/contact" className="hover:underline underline underline-offset-2">on-page SEO audit</Link></strong> and monitor performance in real-time.
                     </p>
                 </div>
 
@@ -66,7 +66,7 @@ export default function TechStack() {
                                 : ""
                                 }`}
                             style={{
-                                backgroundColor: activeTab === cat.id ? seoGreen : "var(--card-bg)",
+                                backgroundColor: activeTab === cat.id ? "#166534" : "var(--card-bg)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 boxShadow: activeTab === cat.id ? `0 4px 20px ${seoGreen}40` : "none"
                             }}
@@ -105,7 +105,7 @@ export default function TechStack() {
                                             className="object-contain"
                                         />
                                     ) : (
-                                        <span className="font-bold text-lg" style={{ color: seoGreen }}>
+                                        <span className="font-bold text-lg" style={{ color: "var(--accent-green-text)" }}>
                                             {tech.name.charAt(0)}
                                         </span>
                                     )}
@@ -113,15 +113,15 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.link ? (
-                                            <Link href={tech.link} className="hover:underline hover:text-blue-400 transition-colors">
+                                            <Link href={tech.link} className="hover:underline hover:text-[var(--brand-blue-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (
                                             tech.name
                                         )}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

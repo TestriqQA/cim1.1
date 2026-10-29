@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, Zap, Star, Crown, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { RupeeSign } from "@/components/RupeeSign";
 
 export default function SupportPlans() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -31,7 +32,7 @@ export default function SupportPlans() {
         {
             name: "Professional",
             icon: Star,
-            description: <span>Ideal for <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#4b277a]">startups</Link> requiring Supplementary administrative services and tech maintenance.</span>,
+            description: <span>Ideal for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)]">startups</Link> requiring Supplementary administrative services and tech maintenance.</span>,
             monthlyPrice: 599,
             yearlyPrice: 5990,
             color: "#fab900",
@@ -68,6 +69,16 @@ export default function SupportPlans() {
         },
     ];
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${plan.color}15`-style interpolation stays valid.
+    const textAccent = (c: string) =>
+        c === "#fab900" ? "var(--accent-amber-text)" :
+            c === "#4b277a" ? "var(--accent-violet-text)" :
+                c === "#97288e" ? "var(--brand-purple-text)" : c;
+
+    // Opaque fill that keeps a white label readable (white on #fab900 is only 2.15:1).
+    const solidAccent = (c: string) => (c === "#fab900" ? "#b45309" : c);
+
     return (
         <section
             className="py-12 md:py-16 lg:py-24 relative overflow-hidden transition-colors duration-300"
@@ -85,17 +96,17 @@ export default function SupportPlans() {
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-4 md:px-5 py-2 md:py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
-                            backgroundColor: "color-mix(in srgb, #97288e 10%, transparent)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "#97288e",
                         }}
                     >
-                        <Star className="w-4 h-4" style={{ color: "#97288e" }} />
-                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "#97288e" }}>
+                        <Star className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "var(--brand-purple-text)" }}>
                             SUPPORT PLANS
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-                        Flexible <span style={{ color: "#97288e" }}>Pricing</span> Options
+                        Flexible <span style={{ color: "var(--brand-purple-text)" }}>Pricing</span> Options
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-6 md:mb-8 px-4" style={{ color: "var(--secondary-text)" }}>
                         Choose Scalable business support for growing companies. All plans include customized onboarding.
@@ -192,8 +203,8 @@ export default function SupportPlans() {
 
                                     {/* Price */}
                                     <div className="mb-3 sm:mb-4">
-                                        <span className="text-2xl sm:text-3xl md:text-4xl font-black" style={{ color: plan.color }}>
-                                            ₹{price}
+                                        <span className="text-2xl sm:text-3xl md:text-4xl font-black" style={{ color: textAccent(plan.color) }}>
+                                            <RupeeSign />{price}
                                         </span>
                                         <span className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>
                                             /{billingCycle === "yearly" ? "year" : "month"}
@@ -210,7 +221,7 @@ export default function SupportPlans() {
                                         {plan.features.map((feature, idx) => (
                                             <div
                                                 key={idx}
-                                                className={`flex items-center gap-2 sm:gap-3 ${!feature.included ? "opacity-50" : ""}`}
+                                                className={`flex items-center gap-2 sm:gap-3 ${!feature.included ? "opacity-60" : ""}`}
                                             >
                                                 <div
                                                     className="w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0"
@@ -238,8 +249,8 @@ export default function SupportPlans() {
                                         href="/contact"
                                         className="flex items-center justify-center gap-2 w-full py-3 sm:py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                                         style={{
-                                            backgroundColor: isPopular ? plan.color : `${plan.color}15`,
-                                            color: isPopular ? "#fff" : plan.color,
+                                            backgroundColor: isPopular ? solidAccent(plan.color) : `${plan.color}15`,
+                                            color: isPopular ? "#fff" : textAccent(plan.color),
                                         }}
                                     >
                                         Get Started
@@ -254,7 +265,7 @@ export default function SupportPlans() {
                 {/* Custom Note */}
                 <p className="text-center mt-8 md:mt-12 text-xs sm:text-sm px-4" style={{ color: "var(--secondary-text)" }}>
                     Need Custom business support packages for agencies?{" "}
-                    <a href="/contact" className="font-bold underline" style={{ color: "#fab900" }}>
+                    <a href="/contact" className="font-bold underline underline-offset-2" style={{ color: "var(--accent-amber-text)" }}>
                         Contact our sales team
                     </a>{" "}
                     for a tailored quote.

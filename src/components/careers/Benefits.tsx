@@ -154,7 +154,7 @@ export default function Benefits() {
                         Why Join <span className="bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-purple)] bg-clip-text text-transparent">CIM?</span>
                     </h2>
                     <p className="text-[var(--secondary-text)] text-lg max-w-2xl mx-auto leading-relaxed">
-                        We don&apos;t just offer a job; we offer a platform to launch your career.
+                        We don&apos;t just offer a job, we offer a platform to launch your career.
                     </p>
                 </div>
 

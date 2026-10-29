@@ -8,27 +8,33 @@ export default function Testimonials() {
 
     const testimonials = [
         {
-            company: "Testriq Technologies",
+            // NAME CORRECTION ONLY — the quote text is untouched. The client is
+            // Testriq QA Lab: their own site's Organization schema uses that
+            // name and the string "Technologies" appears nowhere on
+            // www.testriq.com. This quote was credited to "Testriq
+            // Technologies" here while /portfolio credited the same engagement
+            // to Testriq QA Lab, so the site contradicted itself.
+            company: "Testriq QA Lab",
             industry: "QA & Testing Solutions",
             quote:
-                "Cinute InfoMedia transformed our outdated website into a lead-generation powerhouse. The custom web development solution they delivered exceeded our expectations, and the ongoing SEO support has tripled our organic traffic.",
-            result: "3x Organic Traffic",
+                "Cinute InfoMedia transformed our outdated website into a lead-generation powerhouse. The custom web development solution they delivered exceeded our expectations, and the ongoing SEO support has significantly grown our organic traffic.",
+            result: "Strong Organic Traffic",
             avatar: "T",
         },
         {
             company: "CloudScale.io",
             industry: "SaaS Startup",
             quote:
-                "As a fast-growing SaaS startup, we needed a web development company that understood scalability. Their team delivered a Next.js application that handles 10,000+ concurrent users with blazing performance.",
-            result: "10K+ Concurrent Users",
+                "As a fast-growing SaaS startup, we needed a web development company that understood scalability. Their team delivered a Next.js application that handles high concurrent traffic with strong performance.",
+            result: "High Concurrency",
             avatar: "C",
         },
         {
             company: "CDPL Institute",
             industry: "Education Technology",
             quote:
-                "The AI chatbot they built has transformed our customer support. We're saving 200+ hours monthly while providing better, faster service to our students.",
-            result: "200+ Hours Saved",
+                "The AI chatbot they built has transformed our customer support. We're saving significant hours monthly while providing better, faster service to our students.",
+            result: "Significant Hours Saved",
             avatar: "D",
         },
     ];

@@ -39,7 +39,7 @@ export default function ServiceOverview() {
         {
             icon: Layout,
             title: <span><Link href="/services/seo-services/on-page-seo-services" className="hover:underline">On-Page Localization</Link> & <Link href="/services/web-design-development/landing-pages" className="hover:underline">Landing Pages</Link></span>,
-            description: <>Location-specific schema, keywords & geo-targeted content - We create dedicated <Link href="/services/web-design-development/landing-pages" className="hover:text-purple-500 transition-colors">landing pages</Link> for each service area with unique LocalBusiness schema markup and city-specific keywords.</>,
+            description: <>Location-specific schema, keywords & geo-targeted content - We create dedicated <Link href="/services/web-design-development/landing-pages" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">landing pages</Link> for each service area with unique LocalBusiness schema markup and city-specific keywords.</>,
             color: "#8B5CF6",
         },
         {
@@ -82,9 +82,9 @@ export default function ServiceOverview() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border"
                             style={{
-                                backgroundColor: `${localAmber}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${localAmber}30`,
-                                color: localAmber,
+                                color: "var(--accent-amber-text)",
                             }}
                         >
                             Our Services
@@ -94,7 +94,7 @@ export default function ServiceOverview() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Local SEO <span style={{ color: localAmber }}>Solutions</span>
+                        Local SEO <span style={{ color: "var(--accent-amber-text)" }}>Solutions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"

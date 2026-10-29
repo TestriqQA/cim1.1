@@ -72,13 +72,13 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Target className="w-4 h-4" style={{ color: metaBlue }} />
-                        <span className="text-sm font-medium" style={{ color: metaBlue }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Campaign Objectives
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Campaign <span style={{ color: metaBlue }}>Objectives</span>
+                        Campaign <span style={{ color: "var(--brand-blue-text)" }}>Objectives</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Full-funnel strategies aligned with your business goals.

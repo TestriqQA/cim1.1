@@ -10,7 +10,7 @@ export default function FAQ() {
     const faqs = [
         {
             q: "What is the difference between digital marketing and performance marketing?",
-            a: <span>While <Link href="/blog/category/digital-marketing" className="hover:text-[var(--brand-orange)]">digital marketing</Link> encompasses all online efforts, performance marketing is specifically focused on paid channels where you pay only for results - clicks, leads, or sales. It is highly measurable and ROI-centric.</span>,
+            a: <span>While <Link href="/blog/category/digital-marketing" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">digital marketing</Link> encompasses all online efforts, performance marketing is specifically focused on paid channels where you pay only for results - clicks, leads, or sales. It is highly measurable and ROI-centric.</span>,
         },
         {
             q: "How much do your performance marketing services cost?",
@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
             q: "Can you help with B2B lead generation?",
-            a: <span>Absolutely. We specialize in B2B performance marketing, leveraging <Link href="/services/performance-marketing/linkedin-ads" className="hover:text-[var(--brand-orange)]">LinkedIn Ads</Link> and high-intent <Link href="/services/performance-marketing/google-ads" className="hover:text-[var(--brand-orange)]">Google Search</Link> to fill your pipeline with qualified decision-makers.</span>,
+            a: <span>Absolutely. We specialize in B2B performance marketing, leveraging <Link href="/services/performance-marketing/linkedin-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">LinkedIn Ads</Link> and high-intent <Link href="/services/performance-marketing/google-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Google Search</Link> to fill your pipeline with qualified decision-makers.</span>,
         },
     ];
 
@@ -65,7 +65,7 @@ export default function FAQ() {
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
                                                 backgroundColor: faqOpen === i ? "var(--brand-orange)" : "color-mix(in srgb, var(--brand-orange) 10%, transparent)",
-                                                color: faqOpen === i ? "white" : "var(--brand-orange)"
+                                                color: faqOpen === i ? "white" : "var(--accent-orange-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

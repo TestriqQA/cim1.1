@@ -32,7 +32,7 @@ export default function Process() {
         {
             icon: Layers,
             title: "UI/UX Design",
-            description: <><Link href="/services/brand-identity-design" className="text-[#C7000B] hover:underline">Design intuitive interfaces</Link> following HarmonyOS design guidelines with adaptive layouts for multi-device support.</>,
+            description: <><Link href="/services/brand-identity-design" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Design intuitive interfaces</Link> following HarmonyOS design guidelines with adaptive layouts for multi-device support.</>,
             details: [
                 "HarmonyOS design system",
                 "Multi-device layouts",
@@ -77,7 +77,7 @@ export default function Process() {
                 "ASO optimization",
                 "AppGallery submission",
                 "Launch monitoring",
-                <Link href="/services/additional-support-services" className="text-[#C7000B] hover:underline">Post-launch support</Link>,
+                <Link href="/services/additional-support-services" className="text-[var(--accent-red-text)] hover:underline">Post-launch support</Link>,
             ],
             duration: "1-2 Weeks",
         },
@@ -92,19 +92,19 @@ export default function Process() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(199, 0, 11, 0.1)",
+                            backgroundColor: "rgba(199, 0, 11, 0.05)",
                             borderColor: "rgba(199, 0, 11, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#C7000B" }} />
-                        <span className="text-sm font-medium" style={{ color: "#C7000B" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our HarmonyOS</span>{" "}
-                        <span style={{ color: "#C7000B" }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Development Process
                         </span>
                     </h2>
@@ -187,13 +187,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(199, 0, 11, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#C7000B]" />
+                                                        <Icon className="w-5 h-5 text-[var(--accent-red-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(199, 0, 11, 0.1)",
-                                                            color: "#C7000B",
+                                                            color: "var(--accent-red-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -216,7 +216,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#C7000B] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-red-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             icon: Layers,
             title: "Multi-Platform Expertise",
             description:
-                <>Deep experience across <Link href="/services/web-design-development/wordpress-development-services" className="hover:text-[#9333ea] transition-colors">WordPress</Link>, <Link href="/services/web-design-development/drupal-cms" className="hover:text-[#9333ea] transition-colors">Drupal</Link>, <Link href="/services/web-design-development/contentful-headless-cms" className="hover:text-[#9333ea] transition-colors">Contentful</Link>, <Link href="/services/web-design-development/strapi-headless-cms" className="hover:text-[#9333ea] transition-colors">Strapi</Link>, and <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="hover:text-[#9333ea] transition-colors">Sanity</Link>. We know the strengths of each platform.</>,
+                <>Deep experience across <Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">WordPress</Link>, <Link href="/services/web-design-development/drupal-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Drupal</Link>, <Link href="/services/web-design-development/contentful-headless-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Contentful</Link>, <Link href="/services/web-design-development/strapi-headless-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Strapi</Link>, and <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Sanity</Link>. We know the strengths of each platform.</>,
             gradient: "from-[#9333ea] to-[#a855f7]",
         },
         {
@@ -122,7 +122,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#9333ea" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Why Work With Us
                         </span>
                     </div>

@@ -75,7 +75,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#0678BE" }}>Drupal CMS</span>
+                            <span style={{ color: "var(--accent-sky-text)" }}>Drupal CMS</span>
                         </nav>
 
                         {/* Badge */}
@@ -86,8 +86,8 @@ export default function Hero() {
                                 borderColor: "rgba(6, 120, 190, 0.3)",
                             }}
                         >
-                            <Droplets className="w-4 h-4" style={{ color: "#29A8DF" }} />
-                            <span className="text-sm font-medium" style={{ color: "#0678BE" }}>
+                            <Droplets className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
                                 <Link href="/services/web-design-development/business-corporate" className="hover:underline">Enterprise-Grade Open Source CMS</Link>
                             </span>
                         </div>
@@ -128,7 +128,7 @@ export default function Hero() {
                             {[
                                 "Drupal 10/11",
                                 "Multisite",
-                                <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[#29A8DF] transition-colors">Headless CMS</Link>,
+                                <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[var(--accent-sky-text)] transition-colors">Headless CMS</Link>,
                                 "100+ Languages",
                             ].map((feature, idx) => (
                                 <div
@@ -175,17 +175,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0678BE" }}>50,000+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>50,000+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Modules Available</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0678BE" }}>20+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>20+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Trusted</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0678BE" }}>1M+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>1M+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Websites Powered</p>
                             </div>
                         </div>
@@ -284,7 +284,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#0678BE" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-sky-text)" }}>
                                 Built With Modern Stack
                             </p>
                             <div className="flex flex-wrap gap-2">

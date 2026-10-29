@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             icon: Award,
             title: "Senior Engineers Only",
             description:
-                "Your project is handled by experienced backend engineers with 5+ years building production systems.",
+                "Your project is handled by experienced backend engineers building production systems.",
             gradient: "from-[#339933] to-[#215732]",
         },
         {
@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "#339933" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Why Work With Us
                         </span>
                     </div>

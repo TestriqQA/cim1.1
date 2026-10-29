@@ -55,6 +55,13 @@ export default function CTA() {
         },
     ];
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${method.color}15`-style interpolation stays valid.
+    const textAccent = (c: string) =>
+        c === "#fab900" ? "var(--accent-amber-text)" :
+            c === "#4b277a" ? "var(--accent-violet-text)" :
+                c === "#97288e" ? "var(--brand-purple-text)" : c;
+
 
     return (
         <section
@@ -74,17 +81,17 @@ export default function CTA() {
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
-                            backgroundColor: "color-mix(in srgb, #4b277a 10%, transparent)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "#4b277a",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#4b277a" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "#4b277a" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-violet-text)" }}>
                             GET STARTED TODAY
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Ready to <span style={{ color: "#fab900" }}>Elevate</span> Your Support?
+                        Ready to <span style={{ color: "var(--accent-amber-text)" }}>Elevate</span> Your Support?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Stop struggling with overhead. Partner with a leader in Business Assistance services.
@@ -94,7 +101,7 @@ export default function CTA() {
                 <div className="flex flex-col items-center max-w-4xl mx-auto">
                     {/* Contact Methods */}
                     <div className="space-y-6 w-full">
-                        <h3 className="text-xl md:text-2xl font-bold mb-6" style={{ color: "#4b277a" }}>Choose Your Preferred Way to Connect</h3>
+                        <h3 className="text-xl md:text-2xl font-bold mb-6" style={{ color: "var(--accent-violet-text)" }}>Choose Your Preferred Way to Connect</h3>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {contactMethods.map((method, index) => {
@@ -128,7 +135,7 @@ export default function CTA() {
                                         </div>
                                         <h4 className="text-base md:text-lg font-bold mb-1">{method.title}</h4>
                                         <p className="text-xs md:text-sm mb-2 md:mb-3" style={{ color: "var(--secondary-text)" }}>{method.description}</p>
-                                        <span className="text-xs md:text-sm font-semibold break-all" style={{ color: method.color }}>
+                                        <span className="text-xs md:text-sm font-semibold break-all" style={{ color: textAccent(method.color) }}>
                                             {method.action}
                                         </span>
                                     </Wrapper>
@@ -150,7 +157,7 @@ export default function CTA() {
                                 { value: "<2hr", label: "Avg Response" },
                             ].map((stat, index) => (
                                 <div key={index} className="text-center flex-1">
-                                    <div className="text-2xl font-black" style={{ color: "#fab900" }}>{stat.value}</div>
+                                    <div className="text-2xl font-black" style={{ color: "var(--accent-amber-text)" }}>{stat.value}</div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
                                 </div>
                             ))}
@@ -165,7 +172,7 @@ export default function CTA() {
                         <a
                             href="/services"
                             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold border-2 transition-all duration-300 hover:scale-105"
-                            style={{ borderColor: "#fab900", color: "#fab900" }}
+                            style={{ backgroundColor: "var(--card-bg)", borderColor: "#fab900", color: "var(--accent-amber-text)" }}
                         >
                             View All Services
                             <ArrowRight className="w-5 h-5" />

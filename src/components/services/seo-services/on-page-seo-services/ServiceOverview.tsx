@@ -84,7 +84,7 @@ export default function ServiceOverview() {
                             style={{
                                 backgroundColor: `${seoGreen}10`,
                                 borderColor: `${seoGreen}30`,
-                                color: seoGreen,
+                                color: "var(--accent-green-text)",
                             }}
                         >
                             Our Services
@@ -95,7 +95,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         Expert On-Page SEO{" "}
-                        <span style={{ color: seoGreen }}>
+                        <span style={{ color: "var(--accent-green-text)" }}>
                             Optimization for Scalable Growth
                         </span>
                     </h2>
@@ -103,7 +103,7 @@ export default function ServiceOverview() {
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        Generic SEO is dead. Our framework focuses on deep <strong><Link href="/services/seo-services/technical-seo-services" className="hover:underline">on-page SEO technical audits</Link> and implementation</strong> to ensure your site is crawlable, relevant, and authoritative.
+                        Generic SEO is dead. Our framework focuses on deep <strong><Link href="/services/seo-services/technical-seo-services" className="hover:underline underline underline-offset-2">on-page SEO technical audits</Link> and implementation</strong> to ensure your site is crawlable, relevant, and authoritative.
                     </p>
                 </div>
 

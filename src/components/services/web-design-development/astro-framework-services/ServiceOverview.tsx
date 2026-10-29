@@ -25,14 +25,14 @@ export default function ServiceOverview() {
         {
             icon: FileText,
             title: "Content-Driven Websites",
-            description: <>Best Astro agency for high-performance <Link href="/services/web-design-development/headless-traditional-cms" className="text-[#FF5D01] hover:underline">blogs, portfolios, and publishing platforms</Link> optimized for SEO and reader experience. Built-in MDX support.</>,
+            description: <>Best Astro agency for high-performance <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">blogs, portfolios, and publishing platforms</Link> optimized for SEO and reader experience. Built-in MDX support.</>,
             gradient: "from-orange-500 to-amber-400",
             shadowColor: "rgba(255, 93, 1, 0.4)",
         },
         {
             icon: ShoppingBag,
             title: "E-commerce Storefronts",
-            description: <>Fast Astro framework for <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#ec4899] hover:underline">ecommerce websites</Link> with product catalogs and storefronts that convert. Integrate with Shopify or headless CMSs.</>,
+            description: <>Fast Astro framework for <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-pink-text)] hover:underline underline underline-offset-2">ecommerce websites</Link> with product catalogs and storefronts that convert. Integrate with Shopify or headless CMSs.</>,
             gradient: "from-pink-500 to-rose-400",
             shadowColor: "rgba(236, 72, 153, 0.4)",
         },
@@ -53,7 +53,7 @@ export default function ServiceOverview() {
         {
             icon: ArrowRightLeft,
             title: "Migration to Astro",
-            description: <>Astro migration services from <Link href="/services/web-design-development/nextjs-development-services" className="text-[#6366f1] hover:underline">Next.js</Link> or Gatsby to reduce bundle sizes by 90% and improve <Link href="/blog/web-performance-optimization-speed" className="text-[#6366f1] hover:underline">Core Web Vitals</Link> instantly.</>,
+            description: <>Astro migration services from <Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Next.js</Link> or Gatsby to reduce bundle sizes by 90% and improve <Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Core Web Vitals</Link> instantly.</>,
             gradient: "from-indigo-500 to-violet-400",
             shadowColor: "rgba(99, 102, 241, 0.4)",
         },
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(168, 85, 247, 0.1))",
-                                color: "#7C3AED",
+                                color: "var(--accent-violet-text)",
                             }}
                         >
                             Our Services

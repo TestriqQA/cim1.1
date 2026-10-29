@@ -41,7 +41,7 @@ export default function ToolsReporting() {
             icon: Monitor,
             decorIcon: Eye,
             title: "Custom Data Studio Reports",
-            description: <span>Real-time <Link href="/services/performance-marketing" className="hover:text-[var(--brand-seo)]">ROI-focused</Link> organic SEO services reporting.</span>,
+            description: <span>Real-time <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-green-text)]">ROI-focused</Link> organic SEO services reporting.</span>,
             tools: [
                 { name: "Google Data Studio", logo: "/images/organic_growth_and_seo/google-data-studio-logo.webp" },
                 { name: "Tableau", logo: "/images/organic_growth_and_seo/tableau-logo.svg" },
@@ -53,7 +53,7 @@ export default function ToolsReporting() {
             icon: Layers,
             decorIcon: Zap,
             title: "Screaming Frog",
-            description: <span><Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)]">Deep technical crawls</Link>.</span>,
+            description: <span><Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)]">Deep technical crawls</Link>.</span>,
             tools: [
                 { name: "Screaming Frog", logo: "/images/organic_growth_and_seo/screaming-frog-logo.png" },
                 { name: "Moz", logo: "/images/organic_growth_and_seo/Moz_logo.png" },
@@ -62,6 +62,15 @@ export default function ToolsReporting() {
             metric: "Deep Analysis",
         },
     ];
+
+    // Map per-card brand hue (used for borders/gradients/icons) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textColorMap: Record<string, string> = {
+        "#4285f4": "var(--brand-blue-text)",
+        "#ea4335": "var(--accent-red-text)",
+        "#fbbc04": "var(--accent-amber-text)",
+        "#34a853": "var(--accent-green-text)",
+    };
 
     return (
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
@@ -91,12 +100,12 @@ export default function ToolsReporting() {
                         }}
                     >
                         <Settings className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             TOOLS & REPORTING
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Tools, Analytics & <span style={{ color: "var(--brand-seo)" }}>Transparent Reporting</span>
+                        Tools, Analytics & <span style={{ color: "var(--accent-green-text)" }}>Transparent Reporting</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We use the best to deliver the best.
@@ -145,9 +154,8 @@ export default function ToolsReporting() {
                                         className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-500"
                                         style={{
                                             backgroundColor: `${feature.color}20`,
-                                            color: feature.color,
+                                            color: textColorMap[feature.color],
                                             transform: isHovered ? "scale(1.05) translateX(0)" : "scale(0.95) translateX(10px)",
-                                            opacity: isHovered ? 1 : 0.7,
                                         }}
                                     >
                                         <Sparkles className="w-3 h-3" />
@@ -200,7 +208,7 @@ export default function ToolsReporting() {
                                     <h3
                                         className="text-lg font-bold mb-3 transition-all duration-300 relative z-10 flex items-center gap-2"
                                         style={{
-                                            color: isHovered ? feature.color : "var(--foreground)",
+                                            color: isHovered ? textColorMap[feature.color] : "var(--foreground)",
                                         }}
                                     >
                                         {feature.title}
@@ -250,7 +258,7 @@ export default function ToolsReporting() {
                                                 <span
                                                     className="text-xs font-medium text-center transition-colors duration-300"
                                                     style={{
-                                                        color: isHovered ? feature.color : "var(--secondary-text)",
+                                                        color: isHovered ? textColorMap[feature.color] : "var(--secondary-text)",
                                                     }}
                                                 >
                                                     {tool.name}

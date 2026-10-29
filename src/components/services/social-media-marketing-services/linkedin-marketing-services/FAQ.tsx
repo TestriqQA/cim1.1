@@ -11,7 +11,7 @@ export default function FAQ() {
     const faqs = [
         {
             q: "How much do LinkedIn marketing services cost in 2026?",
-            a: <><Link href="/services/social-media-marketing-services" className="hover:underline text-blue-500">LinkedIn marketing cost</Link> for small business typically ranges from $1,500 to $5,000+ per month for management, depending on ad spend and complexity. We offer tiered packages to ensure ROI at every level.</>,
+            a: <><Link href="/services/social-media-marketing-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">LinkedIn marketing cost</Link> for small business typically ranges from $1,500 to $5,000+ per month for management, depending on ad spend and complexity. We offer tiered packages to ensure ROI at every level.</>,
         },
         {
             q: "What are the benefits of hiring a LinkedIn advertising agency?",
@@ -19,7 +19,7 @@ export default function FAQ() {
         },
         {
             q: "How do I generate B2B leads on LinkedIn?",
-            a: <>We utilize a mix of <Link href="/services/performance-marketing" className="hover:underline text-blue-500">LinkedIn lead generation services</Link>, including Lead Gen Forms, LinkedIn ABM (Account Based Marketing), and high-value lead magnet creation services to capture high-intent data.</>,
+            a: <>We utilize a mix of <Link href="/services/performance-marketing" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">LinkedIn lead generation services</Link>, including Lead Gen Forms, LinkedIn ABM (Account Based Marketing), and high-value lead magnet creation services to capture high-intent data.</>,
         },
         {
             q: "What is included in LinkedIn ads management services?",
@@ -36,9 +36,9 @@ export default function FAQ() {
             <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{ backgroundColor: `${linkedinBlue}15`, borderColor: `${linkedinBlue}30` }}>
-                        <MessageSquare className="w-4 h-4" style={{ color: linkedinBlue }} />
-                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: linkedinBlue }}>FAQ</span>
+                        style={{ backgroundColor: "var(--card-bg)", borderColor: `${linkedinBlue}30` }}>
+                        <MessageSquare className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--brand-blue-text)" }}>FAQ</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
                     <p className="text-lg text-[var(--foreground)] max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ export default function FAQ() {
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
                                                 backgroundColor: faqOpen === i ? linkedinBlue : `${linkedinBlue}10`,
-                                                color: faqOpen === i ? "white" : linkedinBlue
+                                                color: faqOpen === i ? "white" : "var(--brand-blue-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BlogPost } from "@/data/blog";
+import { sanityImageLoader } from "@/sanity/lib/imageLoader";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 interface BlogCardProps {
@@ -26,7 +27,6 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           backgroundColor: "var(--card-bg)",
           borderColor: "var(--border-color)",
         }}
-        aria-label={`Read more about ${post.title}`}
       >
         <div className="relative h-64 md:h-80 overflow-hidden">
           <Image
@@ -35,20 +35,20 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
-            unoptimized
+            loader={sanityImageLoader}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4">
             <span
               className="inline-block px-3 py-1 rounded-full text-sm font-medium text-white"
-              style={{ backgroundColor: "var(--brand-purple)" }}
+              style={{ backgroundColor: "var(--brand-purple-btn)" }}
             >
               {post.category}
             </span>
           </div>
         </div>
         <div className="p-6 md:p-8">
-          <h3 className="text-xl md:text-2xl font-bold mb-3 line-clamp-2 group-hover:text-[var(--brand-purple)] transition-colors">
+          <h3 className="text-xl md:text-2xl font-bold mb-3 line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
             {post.title}
           </h3>
           <p className="text-sm mb-4 line-clamp-2" style={{ color: "var(--secondary-text)" }}>
@@ -70,12 +70,11 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <object>
+            <object aria-label={`Author: ${post.author.name}`}>
               <Link
                 href={`/blog/author/${authorSlug}`}
                 className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
                 onClick={(e) => e.stopPropagation()}
-                aria-label={`View posts by ${post.author.name}`}
               >
                 <Image
                   src={post.author.image}
@@ -84,14 +83,14 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
                   height={32}
                   className="w-8 h-8 rounded-full object-cover"
                   aria-hidden="true"
-                  unoptimized
+                  loader={sanityImageLoader}
                 />
-                <span className="text-sm font-medium hover:text-[var(--brand-purple)] transition-colors">
+                <span className="text-sm font-medium hover:text-[var(--brand-purple-text)] transition-colors">
                   {post.author.name}
                 </span>
               </Link>
             </object>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[var(--brand-purple)]" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[var(--brand-purple-text)]" />
           </div>
         </div>
       </Link>
@@ -107,7 +106,6 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           backgroundColor: "var(--card-bg)",
           borderColor: "var(--border-color)",
         }}
-        aria-label={`Read more about ${post.title}`}
       >
         <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
           <Image
@@ -116,11 +114,11 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
             fill
             sizes="80px"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
-            unoptimized
+            loader={sanityImageLoader}
           />
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold line-clamp-2 mb-2 group-hover:text-[var(--brand-purple)] transition-colors">
+          <h4 className="font-semibold line-clamp-2 mb-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
             {post.title}
           </h4>
           <div className="flex items-center space-x-3 text-xs" style={{ color: "var(--secondary-text)" }}>
@@ -142,7 +140,6 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
         backgroundColor: "var(--card-bg)",
         borderColor: "var(--border-color)",
       }}
-      aria-label={`Read more about ${post.title}`}
     >
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -151,7 +148,7 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-300"
-          unoptimized
+          loader={sanityImageLoader}
         />
       </div>
       <div className="p-5">
@@ -160,7 +157,7 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
             className="text-xs font-semibold px-2 py-1 rounded-full"
             style={{
               backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-              color: "var(--brand-purple)",
+              color: "var(--brand-purple-text)",
             }}
           >
             {post.category}
@@ -170,7 +167,7 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
             <span>{post.readTime}m</span>
           </span>
         </div>
-        <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-[var(--brand-purple)] transition-colors">
+        <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
           {post.title}
         </h3>
         <p className="text-sm mb-4 line-clamp-2" style={{ color: "var(--secondary-text)" }}>
@@ -180,12 +177,11 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
           className="flex items-center justify-between pt-4 border-t"
           style={{ borderColor: "var(--border-color)" }}
         >
-          <object>
+          <object aria-label={`Author: ${post.author.name}`}>
             <Link
               href={`/blog/author/${authorSlug}`}
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
               onClick={(e) => e.stopPropagation()}
-              aria-label={`View posts by ${post.author.name}`}
             >
               <Image
                 src={post.author.image}
@@ -193,9 +189,9 @@ export default function BlogCard({ post, variant = "default" }: BlogCardProps) {
                 width={24}
                 height={24}
                 className="w-6 h-6 rounded-full object-cover"
-                unoptimized
+                loader={sanityImageLoader}
               />
-              <span className="text-xs font-medium hover:text-[var(--brand-purple)] transition-colors">
+              <span className="text-xs font-medium hover:text-[var(--brand-purple-text)] transition-colors">
                 {post.author.name}
               </span>
             </Link>

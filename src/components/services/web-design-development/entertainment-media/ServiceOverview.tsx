@@ -1,5 +1,3 @@
-"use client";
-
 import { Play, Zap, Shield, Globe, Smartphone, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +6,7 @@ export default function ServiceOverview() {
         {
             icon: Play,
             title: "Streaming Excellence",
-            description: <span>Build Netflix-quality streaming experiences with adaptive bitrate, <Link href="/services/mobile-app-development" className="hover:underline">multi-device support</Link>, and seamless playback.</span>,
+            description: <span>Build Netflix-quality streaming experiences with adaptive bitrate, <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline">multi-device support</Link>, and seamless playback.</span>,
         },
         {
             icon: Zap,
@@ -33,7 +31,7 @@ export default function ServiceOverview() {
         {
             icon: BarChart3,
             title: "Deep Analytics",
-            description: <span>Real-time viewer insights, engagement metrics, and <Link href="/services/ai-workflows-automations-services" className="hover:underline">AI-powered</Link> content recommendations.</span>,
+            description: <span>Real-time viewer insights, engagement metrics, and <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">AI-powered</Link> content recommendations.</span>,
         },
     ];
 
@@ -65,7 +63,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Play className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "#8b5cf6" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             What We Offer
                         </span>
                     </div>

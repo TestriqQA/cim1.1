@@ -7,7 +7,7 @@ export default function ServiceOverview() {
     const highlights = [
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development" className="hover:text-[#96bf48] transition-colors">Shopify Store Design</Link>,
+            title: <Link href="/services/web-design-development" className="hover:text-[var(--accent-lime-text)] transition-colors">Shopify Store Design</Link>,
             description: "Custom themes that reflect your brand identity. We don't just use templates; we create unique visual experiences.",
         },
         {
@@ -17,13 +17,13 @@ export default function ServiceOverview() {
         },
         {
             icon: Play,
-            title: <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[#96bf48] transition-colors">Headless & Hydrogen</Link>,
-            description: <span>Future-proof your store with <Link href="/services/web-design-development/nextjs-development-services" className="text-[#96bf48] hover:underline">Next.js</Link> or Hydrogen. Blazing fast load times and ultimate design flexibility.</span>,
+            title: <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[var(--accent-lime-text)] transition-colors">Headless & Hydrogen</Link>,
+            description: <span>Future-proof your store with <Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">Next.js</Link> or Hydrogen. Blazing fast load times and ultimate design flexibility.</span>,
         },
         {
             icon: RefreshCw,
             title: "Seamless Migration",
-            description: <span>Moving from <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#96bf48] hover:underline">Magento</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="text-[#96bf48] hover:underline">WooCommerce</Link>, or BigCommerce? We ensure zero data loss and minimal downtime.</span>,
+            description: <span>Moving from <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">Magento</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">WooCommerce</Link>, or BigCommerce? We ensure zero data loss and minimal downtime.</span>,
         },
         {
             icon: TrendingUp,
@@ -32,7 +32,7 @@ export default function ServiceOverview() {
         },
         {
             icon: Smartphone,
-            title: <Link href="/services/mobile-app-development" className="hover:text-[#96bf48] transition-colors">Mobile App Development</Link>,
+            title: <Link href="/services/mobile-app-development" className="hover:text-[var(--accent-lime-text)] transition-colors">Mobile App Development</Link>,
             description: "Turn your Shopify store into a native iOS/Android app. Increase retention with push notifications and one-tap checkout.",
         },
     ];
@@ -64,7 +64,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "#96bf48" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
                             Build a Revenue-Driving Store
                         </span>
                     </div>

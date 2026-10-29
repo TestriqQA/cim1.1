@@ -63,7 +63,7 @@ export default function Process() {
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-sm font-bold tracking-widest uppercase mb-2 block" style={{ color: youtubeRed }}>
+                    <span className="text-sm font-bold tracking-widest uppercase mb-2 block" style={{ color: "var(--accent-red-text)" }}>
                         Our Workflow
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
@@ -136,7 +136,7 @@ export default function Process() {
                                                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                                                     style={{ backgroundColor: `${youtubeRed}15` }}
                                                 >
-                                                    <step.icon className="w-6 h-6" style={{ color: youtubeRed }} />
+                                                    <step.icon className="w-6 h-6" style={{ color: "var(--accent-red-text)" }} />
                                                 </div>
 
                                                 <div>

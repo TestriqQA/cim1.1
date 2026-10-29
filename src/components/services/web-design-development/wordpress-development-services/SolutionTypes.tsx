@@ -41,7 +41,7 @@ export default function SolutionTypes() {
             features: [
                 "Advanced editorial interfaces",
                 "WordPress SEO setup",
-                <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[#0073AA] transition-colors">Content marketing optimization</Link>,
+                <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Content marketing optimization</Link>,
                 "Lightning-fast performance",
             ],
             gradient: "from-[#0073AA] to-[#005177]",
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "WooCommerce E-commerce Stores",
-            description: <>Scalable <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#0073AA] hover:underline">online shops</Link> designed for high-volume transactions. Custom checkout flows and seamless API integrations.</>,
+            description: <>Scalable <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">online shops</Link> designed for high-volume transactions. Custom checkout flows and seamless API integrations.</>,
             features: [
                 "High-volume transaction support",
                 "Custom checkout flows",
@@ -73,7 +73,7 @@ export default function SolutionTypes() {
         {
             icon: Building2,
             title: "Enterprise & Corporate Portals",
-            description: <>Stable, secure, and accessible <Link href="/services/web-design-development/business-corporate" className="text-[#0073AA] hover:underline">corporate solutions</Link>. Prioritizing WCAG 2.2 accessibility compliance for 100% reach.</>,
+            description: <>Stable, secure, and accessible <Link href="/services/web-design-development/business-corporate" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">corporate solutions</Link>. Prioritizing WCAG 2.2 accessibility compliance for 100% reach.</>,
             features: [
                 "WCAG 2.2 accessibility compliance",
                 "Enterprise-grade security",
@@ -97,7 +97,7 @@ export default function SolutionTypes() {
         {
             icon: Zap,
             title: "Headless WordPress Solutions",
-            description: <>Leverage <Link href="/services/web-design-development/nextjs-development-services" className="text-[#0073AA] hover:underline">React/Next.js</Link> for decoupling your frontend, delivering unmatched speed and enterprise security.</>,
+            description: <>Leverage <Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">React/Next.js</Link> for decoupling your frontend, delivering unmatched speed and enterprise security.</>,
             features: [
                 "Next.js / React integration",
                 "Decoupled architecture",
@@ -120,8 +120,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(0, 115, 170, 0.2)",
                         }}
                     >
-                        <Building2 className="w-4 h-4" style={{ color: "#0073AA" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0073AA" }}>
+                        <Building2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Solution Types
                         </span>
                     </div>
@@ -201,7 +201,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#0073AA]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--brand-blue-text)]"
                                             }`}
                                     />
                                 </div>
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#0073AA]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -233,7 +233,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#0073AA]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                 </div>
                             </div>
                         );

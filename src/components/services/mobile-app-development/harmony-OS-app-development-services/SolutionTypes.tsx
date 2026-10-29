@@ -38,7 +38,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "E-commerce Apps",
-            description: <><Link href="/services/web-design-development/ecommerce-development-company" className="text-[#C7000B] hover:underline">Shopping apps</Link> optimized for Huawei AppGallery with HMS payment and push notifications.</>,
+            description: <><Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Shopping apps</Link> optimized for Huawei AppGallery with HMS payment and push notifications.</>,
             features: [
                 "Huawei Pay integration",
                 "Push Kit notifications",
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         {
             icon: Heart,
             title: "Health & Fitness",
-            description: <><Link href="/services/web-design-development/healthcare-portals" className="text-[#C7000B] hover:underline">Health apps</Link> leveraging Huawei Health Kit. Sync with Huawei Watch and fitness bands.</>,
+            description: <><Link href="/services/web-design-development/healthcare-portals" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Health apps</Link> leveraging Huawei Health Kit. Sync with Huawei Watch and fitness bands.</>,
             features: [
                 "Health Kit integration",
                 "Wearable sync",
@@ -60,7 +60,7 @@ export default function SolutionTypes() {
         {
             icon: Gamepad2,
             title: "Gaming Apps",
-            description: <><Link href="/services/web-design-development/entertainment-media" className="text-[#C7000B] hover:underline">High-performance games</Link> using HarmonyOS graphics APIs and Huawei Game Center.</>,
+            description: <><Link href="/services/web-design-development/entertainment-media" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">High-performance games</Link> using HarmonyOS graphics APIs and Huawei Game Center.</>,
             features: [
                 "Game Service",
                 "Leaderboards",
@@ -71,7 +71,7 @@ export default function SolutionTypes() {
         {
             icon: GraduationCap,
             title: "Education Apps",
-            description: <><Link href="/services/web-design-development/edtech-lms" className="text-[#C7000B] hover:underline">E-learning platforms</Link> with multi-device screen sharing and distributed learning features.</>,
+            description: <><Link href="/services/web-design-development/edtech-lms" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">E-learning platforms</Link> with multi-device screen sharing and distributed learning features.</>,
             features: [
                 "Screen sharing",
                 "Multi-device sync",
@@ -82,7 +82,7 @@ export default function SolutionTypes() {
         {
             icon: Wallet,
             title: "Fintech Apps",
-            description: <><Link href="/services/web-design-development/fintech-solutions" className="text-[#C7000B] hover:underline">Secure financial apps</Link> with HMS Safety Detect and FIDO authentication.</>,
+            description: <><Link href="/services/web-design-development/fintech-solutions" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Secure financial apps</Link> with HMS Safety Detect and FIDO authentication.</>,
             features: [
                 "Safety Detect",
                 "FIDO authentication",
@@ -111,19 +111,19 @@ export default function SolutionTypes() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(199, 0, 11, 0.1)",
+                            backgroundColor: "rgba(199, 0, 11, 0.05)",
                             borderColor: "rgba(199, 0, 11, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#C7000B" }} />
-                        <span className="text-sm font-medium" style={{ color: "#C7000B" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>HarmonyOS Solutions by</span>{" "}
-                        <span style={{ color: "#C7000B" }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Industry
                         </span>
                     </h2>
@@ -188,7 +188,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#C7000B]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-red-text)]"
                                             }`}
                                     />
                                 </div>
@@ -207,7 +207,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#C7000B]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-red-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#C7000B]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-red-text)]" />
                                 </div>
                             </div>
                         );

@@ -12,6 +12,16 @@ export default function ServiceOverview() {
     const metaPurple = "#8b5cf6";
     const instaGradient = "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)";
 
+    // Theme-aware token for the brand hue when used as TEXT (backgrounds keep the raw hue)
+    const textAccent = (hex: string) => ({
+        "#1877f2": "var(--brand-blue-text)",
+        "#0084ff": "var(--brand-blue-text)",
+        "#e4405f": "var(--accent-pink-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#00b894": "var(--accent-teal-text)",
+        "#6c5ce7": "var(--accent-violet-text)",
+    }[hex.toLowerCase()] ?? hex);
+
     const services = [
         {
             icon: Facebook,
@@ -72,7 +82,7 @@ export default function ServiceOverview() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Meta Ads <span style={{ color: metaBlue }}>Services</span>
+                        Meta Ads <span style={{ color: "var(--brand-blue-text)" }}>Services</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Full-funnel advertising across the entire Meta ecosystem.
@@ -152,7 +162,7 @@ export default function ServiceOverview() {
                                             className="px-2 py-1 rounded-full text-xs font-medium transition-all duration-300"
                                             style={{
                                                 backgroundColor: activeCard === idx ? `${service.color}20` : "var(--background)",
-                                                color: activeCard === idx ? service.color : "var(--secondary-text)",
+                                                color: activeCard === idx ? textAccent(service.color) : "var(--secondary-text)",
                                                 transform: activeCard === idx ? `translateY(-${fIdx * 2}px)` : "translateY(0)",
                                                 transitionDelay: `${fIdx * 50}ms`,
                                             }}

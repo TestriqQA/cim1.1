@@ -52,7 +52,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "E-commerce Platforms",
-            description: <>High-performance, scalable <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#FF2D20] hover:underline">online stores</Link> built with Laravel to handle high traffic and sales.</>,
+            description: <>High-performance, scalable <Link href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">online stores</Link> built with Laravel to handle high traffic and sales.</>,
             features: [
                 "Multi-vendor support",
                 "Custom checkout flows",
@@ -64,7 +64,7 @@ export default function SolutionTypes() {
         {
             icon: LayoutDashboard,
             title: "SaaS Applications",
-            description: <>Multi-tenant <Link href="/services/web-design-development/saas-development-services" className="text-[#FF2D20] hover:underline">SaaS solutions</Link> with robust subscription billing and user management.</>,
+            description: <>Multi-tenant <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">SaaS solutions</Link> with robust subscription billing and user management.</>,
             features: [
                 "Tenant isolation",
                 "Subscription billing (Stripe/Paddle)",
@@ -100,7 +100,7 @@ export default function SolutionTypes() {
         {
             icon: Zap,
             title: "API Backends",
-            description: <>Robust REST and GraphQL APIs to power <Link href="/services/mobile-app-development" className="text-[#FF2D20] hover:underline">mobile apps</Link> and frontend frameworks.</>,
+            description: <>Robust REST and GraphQL APIs to power <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">mobile apps</Link> and frontend frameworks.</>,
             features: [
                 "High performance",
                 "Swagger documentation",
@@ -123,8 +123,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(255, 45, 32, 0.2)",
                         }}
                     >
-                        <Building2 className="w-4 h-4" style={{ color: "#FF2D20" }} />
-                        <span className="text-sm font-medium" style={{ color: "#FF2D20" }}>
+                        <Building2 className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Solution Types
                         </span>
                     </div>
@@ -194,7 +194,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#FF2D20]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-red-text)]"
                                             }`}
                                     />
                                 </div>
@@ -213,7 +213,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#FF2D20]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-red-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -226,7 +226,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#FF2D20]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-red-text)]" />
                                 </div>
                             </div>
                         );

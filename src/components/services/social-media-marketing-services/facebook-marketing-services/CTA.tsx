@@ -8,7 +8,7 @@ export default function CTA() {
         "Free account audit",
         "Custom strategy",
         "No long-term contracts",
-        "Performance guarantee",
+        "Performance-focused",
     ];
 
     const fbBlue = "#1877F2";
@@ -86,7 +86,7 @@ export default function CTA() {
                                     href="/contact"
                                     className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
                                     style={{
-                                        backgroundColor: fbBlue,
+                                        backgroundColor: "#1d4ed8",
                                         boxShadow: `0 4px 20px ${fbBlue}40`
                                     }}
                                 >
@@ -103,7 +103,7 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Meta Users</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">8.5x</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Strong</div>
                                 <div className="text-xs sm:text-sm text-white/70">Avg. ROAS</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
@@ -111,7 +111,7 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Campaigns Managed</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">45%</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Significant</div>
                                 <div className="text-xs sm:text-sm text-white/70">Lower CPA</div>
                             </div>
                         </div>

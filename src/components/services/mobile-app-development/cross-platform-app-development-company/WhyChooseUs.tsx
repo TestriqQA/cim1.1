@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
         {
             icon: DollarSign,
             title: "40% Cost Savings",
-            description: <><span className="text-inherit">Developing two separate native apps is expensive. Our </span><Link href="/services/mobile-app-development/hybrid-app-development-services" className="text-[#667eea] hover:underline">Hybrid Mobile App Development Company</Link> approach saves you up to 40% by maintaining a Unified Codebase, reducing resource requirements.</>,
+            description: <><span className="text-inherit">Developing two separate native apps is expensive. Our </span><Link href="/services/mobile-app-development/hybrid-app-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Hybrid Mobile App Development Company</Link> approach saves you up to 40% by maintaining a Unified Codebase, reducing resource requirements.</>,
             gradient: "from-[#764ba2] to-[#667eea]",
             shadowColor: "rgba(118, 75, 162, 0.3)",
         },
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {
             icon: HeartHandshake,
             title: "Post-Launch Support",
-            description: <><span className="text-inherit">We are your long-term partner. We provide ongoing cross-platform app </span><Link href="/services/additional-support-services" className="text-[#667eea] hover:underline">maintenance and support</Link>, ensuring your app remains compatible with the latest OS versions and devices.</>,
+            description: <><span className="text-inherit">We are your long-term partner. We provide ongoing cross-platform app </span><Link href="/services/additional-support-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">maintenance and support</Link>, ensuring your app remains compatible with the latest OS versions and devices.</>,
             gradient: "from-[#00d4ff] to-[#764ba2]",
             shadowColor: "rgba(0, 212, 255, 0.3)",
         },
@@ -88,8 +88,8 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(102, 126, 234, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#667eea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#667eea" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -163,7 +163,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#667eea" : "var(--foreground)",
+                                            color: isHovered ? "var(--accent-indigo-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

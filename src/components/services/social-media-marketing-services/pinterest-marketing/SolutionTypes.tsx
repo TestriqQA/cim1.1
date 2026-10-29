@@ -71,7 +71,7 @@ export default function SolutionTypes() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Industry <span style={{ color: pinterestRed }}>Solutions</span>
+                        Industry <span style={{ color: "var(--accent-red-text)" }}>Solutions</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Pinterest marketing strategies tailored to your industry's unique audience and buying journey.

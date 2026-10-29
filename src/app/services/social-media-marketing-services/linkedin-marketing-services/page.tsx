@@ -9,9 +9,9 @@ import FAQ from "@/components/services/social-media-marketing-services/linkedin-
 import CTA from "@/components/services/social-media-marketing-services/linkedin-marketing-services/CTA";
 
 export const metadata: Metadata = {
-    title: "LinkedIn Marketing Services | #1 B2B Lead Generation Agency 2026",
+    title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
     description:
-        "Scale your B2B growth with expert LinkedIn ads management & lead generation services. 300% ROI boost via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
+        "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
     keywords: [
         "LinkedIn marketing",
         "LinkedIn ads agency",
@@ -25,8 +25,29 @@ export const metadata: Metadata = {
         "LinkedIn strategy",
     ],
     alternates: {
-        canonical: "/services/social-media-marketing-services/linkedin-marketing-services",
+        canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
     },
+    openGraph: {
+        title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
+        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
+        url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/linkedin-marketing-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026 by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "LinkedIn Marketing Services | B2B Lead Generation Agency 2026",
+        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services. strong ROI growth via AI-driven ABM & thought leadership. Book your free LinkedIn audit!",
+        images: ["/og-images/linkedin-marketing-services.webp"],
+    },
+
 };
 
 const jsonLd = {
@@ -74,7 +95,7 @@ const jsonLd = {
 
 export default function LinkedInMarketingPage() {
     return (
-        <main>
+        <main style={{ "--page-selection-bg": "#0A66C2" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

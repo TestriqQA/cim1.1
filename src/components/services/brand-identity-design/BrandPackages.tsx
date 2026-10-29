@@ -7,6 +7,17 @@ import Link from "next/link";
 export default function BrandPackages() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${color}NN`-style interpolation stays valid.
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#fab900": "var(--accent-amber-text)",
+            "#bc3feb": "var(--brand-purple-text)",
+            "#00b5ca": "var(--accent-teal-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const packages = [
         {
             name: "Startup / SME",
@@ -32,7 +43,7 @@ export default function BrandPackages() {
         {
             name: "Growth / Corporate",
             icon: Star,
-            description: <span>Complete brand identity for <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#fab900]">SaaS</Link> & <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#fab900]">Healthcare</Link> companies</span>,
+            description: <span>Complete brand identity for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">SaaS</Link> & <Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">Healthcare</Link> companies</span>,
             price: "Investment",
             amount: "Most Popular",
             popular: true,
@@ -53,7 +64,7 @@ export default function BrandPackages() {
         {
             name: "Enterprise / Global",
             icon: Crown,
-            description: <span>Premium brand ecosystem for Multi-National & <Link href="/services/web-design-development/business-corporate" className="hover:text-[#bc3feb]">Luxury Brands</Link></span>,
+            description: <span>Premium brand ecosystem for Multi-National & <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">Luxury Brands</Link></span>,
             price: "Investment",
             amount: "Contact Us",
             popular: false,
@@ -80,8 +91,8 @@ export default function BrandPackages() {
         >
             {/* Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500 rounded-full blur-3xl opacity-10 animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-10 animate-pulse" style={{ animationDelay: "2s" }} />
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -94,13 +105,13 @@ export default function BrandPackages() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Package className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <Package className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             PACKAGES
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Brand Identity <span style={{ color: "var(--brand-yellow)" }}>Packages</span>
+                        Brand Identity <span style={{ color: "var(--accent-amber-text)" }}>Packages</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Choose the perfect package for your business needs. All packages include dedicated support.
@@ -168,7 +179,7 @@ export default function BrandPackages() {
 
                                     {/* Price */}
                                     <div className="mb-4">
-                                        <span className="text-4xl font-black" style={{ color: pkg.color }}>
+                                        <span className="text-4xl font-black" style={{ color: textAccent(pkg.color) }}>
                                             {pkg.amount}
                                         </span>
                                     </div>
@@ -196,7 +207,7 @@ export default function BrandPackages() {
                                                     />
                                                 </div>
                                                 <span
-                                                    className={`text-sm ${feature.included ? '' : 'line-through opacity-50'}`}
+                                                    className={`text-sm ${feature.included ? '' : 'line-through'}`}
                                                     style={{ color: "var(--foreground)" }}
                                                 >
                                                     {feature.text}
@@ -211,7 +222,7 @@ export default function BrandPackages() {
                                         className="flex items-center justify-center gap-2 w-full py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
                                         style={{
                                             backgroundColor: isPopular ? "var(--brand-yellow)" : `${pkg.color}20`,
-                                            color: isPopular ? "#000" : pkg.color,
+                                            color: isPopular ? "#000" : textAccent(pkg.color),
                                         }}
                                     >
                                         {pkg.cta}
@@ -225,7 +236,7 @@ export default function BrandPackages() {
 
                 {/* Custom Note */}
                 <p className="text-center mt-10 text-sm" style={{ color: "var(--secondary-text)" }}>
-                    Need a custom solution? <a href="/contact" className="font-semibold underline" style={{ color: "var(--brand-yellow)" }}>Contact us</a> for a tailored quote.
+                    Need a custom solution? <a href="/contact" className="font-semibold underline underline-offset-2" style={{ color: "var(--accent-amber-text)" }}>Contact us</a> for a tailored quote.
                 </p>
             </div>
         </section>

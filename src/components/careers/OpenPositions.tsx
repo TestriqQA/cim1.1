@@ -76,8 +76,8 @@ export default function OpenPositions({ jobs }: OpenPositionsProps) {
 
                 <ul className="grid gap-4">
                     {jobs.map((job) => (
-                        <li
-                            key={job.id}
+                        <li key={job.id}>
+                        <div
                             onClick={() => handleJobClick(job)}
                             onKeyDown={(e) => {
                                 if (e.key === "Enter" || e.key === " ") {
@@ -123,12 +123,13 @@ export default function OpenPositions({ jobs }: OpenPositionsProps) {
 
                                     {/* Mobile Button - changed to div to avoid nested interactive controls since parent is button-role */}
                                     <div
-                                        className="md:hidden w-full text-center py-3 rounded-xl font-semibold bg-[var(--brand-blue)] text-white hover:bg-[var(--brand-blue)]/90 transition-colors"
+                                        className="md:hidden w-full text-center py-3 rounded-xl font-semibold bg-[#006d97] text-white hover:bg-[#006d97]/90 transition-colors"
                                     >
                                         View Details
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </li>
                     ))}
                 </ul>

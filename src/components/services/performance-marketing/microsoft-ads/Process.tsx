@@ -49,7 +49,7 @@ export default function Process() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Execution{" "}
                         <span
-                            style={{ color: msBlue }}
+                            style={{ color: "var(--brand-blue-text)" }}
                         >
                             Framework
                         </span>
@@ -90,7 +90,7 @@ export default function Process() {
                                 >
                                     <div
                                         className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
-                                        style={{ backgroundColor: `${msBlue}10`, color: msBlue }}
+                                        style={{ backgroundColor: `${msBlue}10`, color: "var(--brand-blue-text)" }}
                                     >
                                         Step 0{idx + 1}
                                     </div>

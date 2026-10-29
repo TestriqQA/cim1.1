@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Zap,
     Shield,
@@ -34,7 +32,7 @@ export default function WhyChooseUs() {
         {
             icon: Smartphone,
             title: "Cross-Platform",
-            description: <span>Seamless experience across web, <Link href="/services/mobile-app-development" className="hover:underline">mobile apps</Link>, smart TVs, and gaming consoles with unified user profiles.</span>,
+            description: <span>Seamless experience across web, <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline">mobile apps</Link>, smart TVs, and gaming consoles with unified user profiles.</span>,
         },
         {
             icon: TrendingUp,
@@ -78,7 +76,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "#8b5cf6" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Why Work With Us
                         </span>
                     </div>

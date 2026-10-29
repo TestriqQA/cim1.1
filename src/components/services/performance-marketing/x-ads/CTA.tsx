@@ -40,7 +40,7 @@ export default function CTA() {
                         />
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Start the Conversation
                     </h2>
 

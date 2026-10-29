@@ -171,7 +171,7 @@ export default function TechStack() {
                     {[
                         { label: "Page Speed", value: "95+" },
                         { label: "SEO Score", value: "90+" },
-                        { label: "Uptime", value: "99.9%" },
+                        { label: "Uptime", value: "High" },
                         { label: "Security", value: "A+" },
                     ].map((stat, idx) => (
                         <div
@@ -184,7 +184,7 @@ export default function TechStack() {
                         >
                             <div
                                 className="text-3xl font-bold mb-2"
-                                style={{ color: "#a855f7" }}
+                                style={{ color: "var(--brand-purple-text)" }}
                             >
                                 {stat.value}
                             </div>

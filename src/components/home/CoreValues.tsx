@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import { Layers, Briefcase, Heart } from 'lucide-react';
@@ -17,13 +15,13 @@ export default function CoreValues() {
             icon: <Briefcase className="w-6 h-6" />,
             title: "Measurable ROI & Transparent Reporting",
             description: <>Every web development project comes with clear KPIs and real-time analytics dashboards. We track what matters: <Link href="/services/performance-marketing" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">conversion rates</Link>, <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-yellow)] hover:underline transition-colors">page performance</Link>, organic visibility, and revenue impact - not vanity metrics.</>,
-            bullets: ["Sub-2s Core Web Vitals", "300% avg organic growth", "40% faster time-to-market", "98.7% bug-free delivery"],
+            bullets: ["Sub-2s Core Web Vitals", "sustained organic growth", "faster time-to-market", "Rigorous QA process"],
             color: "var(--brand-yellow)",
         },
         {
             icon: <Heart className="w-6 h-6" />,
             title: "Partner-Centric Approach & Long-Term Success",
-            description: <>We&apos;re not a transactional <Link href="/services/web-design-development" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">web development company</Link> - we&apos;re your growth co-pilot. With a 95% client retention rate, our clients stay because we treat their business goals as our own.</>,
+            description: <>We&apos;re not a transactional <Link href="/services/web-design-development" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">web development company</Link> - we&apos;re your growth co-pilot. With strong client retention, our clients stay because we treat their business goals as our own.</>,
             bullets: ["Dedicated account teams", "Proactive optimization", "Ongoing training", "24/7 priority support"],
             color: "var(--brand-purple)",
         },

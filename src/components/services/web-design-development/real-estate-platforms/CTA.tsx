@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Building, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -51,7 +49,7 @@ export default function CTA() {
                         }}
                     >
                         <Building className="w-4 h-4" style={{ color: "#0d9488" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#0d9488" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                             Ready to Transform Your Real Estate Business?
                         </span>
                     </div>

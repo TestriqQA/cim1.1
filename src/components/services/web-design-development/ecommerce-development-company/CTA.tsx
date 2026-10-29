@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ShoppingCart } from "lucide-react";
 
@@ -37,7 +35,7 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #00b5ca 8%, transparent), color-mix(in srgb, #00efd6 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #00b5ca 20%, transparent)",
-                                color: "#00b5ca",
+                                color: "var(--accent-cyan-text)",
                             }}
                         >
                             <ShoppingCart className="w-4 h-4" />
@@ -81,11 +79,11 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {[
                         {
-                            number: "$50M+",
+                            number: "Significant",
                             label: "Revenue Generated",
                         },
                         {
-                            number: "35%",
+                            number: "Higher",
                             label: "Avg. Conversion Lift",
                         },
                         {

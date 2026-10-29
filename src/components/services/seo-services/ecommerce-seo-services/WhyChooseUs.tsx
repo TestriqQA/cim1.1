@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
         {
             icon: DollarSign,
             title: "Revenue-First Mindset",
-            description: <>We obsess over <Link href="/services/seo-services" className="hover:underline" style={{ color: commerceBlue }}>ecommerce SEO ranking factors</Link> that drive sales, not vanity traffic metrics. Every optimization decision is filtered through: &apos;Will this increase revenue?&apos; Our hire ecommerce SEO expert team focuses on transactional keywords, product page conversion optimization, and customer lifetime value - not just rankings.</>,
+            description: <>We obsess over <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>ecommerce SEO ranking factors</Link> that drive sales, not vanity traffic metrics. Every optimization decision is filtered through: &apos;Will this increase revenue?&apos; Our hire ecommerce SEO expert team focuses on transactional keywords, product page conversion optimization, and customer lifetime value - not just rankings.</>,
         },
         {
             icon: Search,
@@ -24,17 +24,17 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Deep Technical Expertise",
-            description: <>Our developers and SEO specialists work in perfect harmony to fix critical site speed issues, JavaScript rendering problems, server response time bottlenecks, and architectural inefficiencies. We speak the language of CTOs and can implement complex <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>technical solutions</Link> that most agencies can&apos;t handle.</>,
+            description: <>Our developers and SEO specialists work in perfect harmony to fix critical site speed issues, JavaScript rendering problems, server response time bottlenecks, and architectural inefficiencies. We speak the language of CTOs and can implement complex <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>technical solutions</Link> that most agencies can&apos;t handle.</>,
         },
         {
             icon: Globe,
             title: "Multi-Platform Ecommerce Pros",
-            description: <>Extensive experience with <Link href="/services/web-design-development/shopify-development-services" className="hover:underline" style={{ color: commerceBlue }}>Shopify</Link>, Magento, WooCommerce, BigCommerce, and custom headless builds. We understand each platform&apos;s unique technical limitations, optimization opportunities, and best practices - no cookie-cutter strategies.</>,
+            description: <>Extensive experience with <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>Shopify</Link>, Magento, WooCommerce, BigCommerce, and custom headless builds. We understand each platform&apos;s unique technical limitations, optimization opportunities, and best practices - no cookie-cutter strategies.</>,
         },
         {
             icon: Users,
             title: "UX & CRO Integration",
-            description: <>We optimize for both search bots AND human shoppers. Every change considers <Link href="/services/web-design-development" className="hover:underline" style={{ color: commerceBlue }}>user experience</Link>, conversion rate optimization, cart abandonment reduction, and mobile usability. Our ecommerce conversion rate optimization approach ensures traffic actually converts.</>,
+            description: <>We optimize for both search bots AND human shoppers. Every change considers <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>user experience</Link>, conversion rate optimization, cart abandonment reduction, and mobile usability. Our ecommerce conversion rate optimization approach ensures traffic actually converts.</>,
         },
         {
             icon: TrendingUp,
@@ -62,14 +62,14 @@ export default function WhyChooseUs() {
                                 }}
                             >
                                 <Sparkles className="w-4 h-4" style={{ color: commerceBlue }} />
-                                <span className="text-sm font-medium" style={{ color: commerceBlue }}>
+                                <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
                                     Why Choose Us
                                 </span>
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                                 Why Top Brands <br />
-                                <span style={{ color: commerceBlue }}>Choose Our Ecommerce SEO Agency</span>
+                                <span style={{ color: "var(--accent-sky-text)" }}>Choose Our Ecommerce SEO Agency</span>
                             </h2>
                             <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Ecommerce SEO is a different beast. You need the best ecommerce SEO agency for high-growth brands who understands merchandise, not just metadata. We don't just drive traffic - we optimize for buyers ready to purchase. Every tactic aligns with conversion rate optimization, targeting transactional searches that drive sales, not vanity metrics. Whether you're a small business online store or an enterprise ecommerce brand, we deliver results.
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                                     backgroundColor: `${commerceBlue}05`
                                 }}
                             >
-                                <div className="text-4xl font-bold mb-2" style={{ color: commerceBlue }}>300%+</div>
+                                <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-sky-text)" }}>300%+</div>
                                 <p style={{ color: "var(--secondary-text)" }}>average increase in organic revenue in first 6 months (based on 50+ client case studies).</p>
                             </div>
                         </div>
@@ -116,9 +116,9 @@ export default function WhyChooseUs() {
                                     >
                                         <Icon className="w-6 h-6" />
                                     </div>
-                                    <h4 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                                         {reason.title}
-                                    </h4>
+                                    </h3>
                                     <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                         {reason.description}
                                     </p>

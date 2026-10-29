@@ -11,9 +11,9 @@ import CTA from "@/components/services/seo-services/on-page-seo-services/CTA";
 export const metadata: Metadata = {
     title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
     description:
-        "Scaling ROI with data-backed On-page SEO optimization. Rank #1, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
     alternates: {
-        canonical: "/services/seo-services/on-page-seo-services",
+        canonical: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
     },
     keywords: [
         "on-page SEO",
@@ -27,6 +27,27 @@ export const metadata: Metadata = {
         "schema markup",
         "core web vitals",
     ],
+    openGraph: {
+        title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
+        description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        url: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/on-page-seo-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026 by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
+        description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        images: ["/og-images/on-page-seo-services.webp"],
+    },
+
 };
 
 const jsonLd = {
@@ -77,7 +98,7 @@ const jsonLd = {
 
 export default function OnPageSEOPage() {
     return (
-        <main>
+        <main style={{ "--page-selection-bg": "#22C55E" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

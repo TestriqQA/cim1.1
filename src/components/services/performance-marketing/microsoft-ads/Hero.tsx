@@ -56,7 +56,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: msBlue }}>Microsoft Ads</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Microsoft Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -73,7 +73,7 @@ export default function Hero() {
                                 <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: "#00A4EF" }} />
                                 <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: "#FFB900" }} />
                             </div>
-                            <span className="text-sm font-semibold" style={{ color: msBlue }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 <Link href="/services/performance-marketing/linkedin-ads" className="hover:underline">Reach High-Value Audiences</Link>
                             </span>
                         </div>
@@ -87,7 +87,7 @@ export default function Hero() {
                                 <span
                                     className="relative z-10"
                                     style={{
-                                        color: msBlue
+                                        color: "var(--brand-blue-text)"
                                     }}
                                 >
                                     Google

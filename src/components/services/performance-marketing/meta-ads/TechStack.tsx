@@ -46,7 +46,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: metaBlue }}>Tech Stack</span>
+                        Our <span style={{ color: "var(--brand-blue-text)" }}>Tech Stack</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Premium tools for campaign management, creative production, and analytics.
@@ -64,7 +64,7 @@ export default function TechStack() {
                                 : ""
                                 }`}
                             style={{
-                                backgroundColor: activeTab === cat.id ? metaBlue : "var(--card-bg)",
+                                backgroundColor: activeTab === cat.id ? "#1d4ed8" : "var(--card-bg)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 boxShadow: activeTab === cat.id ? `0 4px 20px ${metaBlue}40` : "none"
                             }}
@@ -106,9 +106,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold mb-1" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

@@ -38,8 +38,8 @@ export default function SolutionTypes() {
             description:
                 "High-performance storefronts with Shopify or BigCommerce integration. Boost your sales with blazing-fast shopping experiences.",
             features: [
-                <Link href="/services/web-design-development/shopify-development-services" className="hover:text-[#00d4ff] transition-colors">Shopify & BigCommerce</Link>,
-                "20%+ CTR Boost",
+                <Link href="/services/web-design-development/shopify-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Shopify & BigCommerce</Link>,
+                "Measurable CTR Boost",
                 "Lower Bounce Rates",
                 "Optimized Checkout",
             ],
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
             icon: LayoutDashboard,
             title: <Link href="/services/web-design-development/saas-development-services" className="hover:text-inherit">SaaS Product Development</Link>,
             description:
-                "Best Next.js agency for SaaS products and dashboards. Secure, scalable, and high-performance applications.",
+                "Expert Next.js agency for SaaS products and dashboards. Secure, scalable, and high-performance applications.",
             features: [
                 "SaaS Dashboards",
                 "Security-First Approach",
@@ -64,7 +64,7 @@ export default function SolutionTypes() {
             description:
                 "Integration with Contentful, Strapi, or Sanity. Manage your content dynamically with lightning-fast updates.",
             features: [
-                <><Link href="/services/web-design-development/contentful-headless-cms" className="hover:text-[#00d4ff] transition-colors">Contentful</Link> & <Link href="/services/web-design-development/strapi-headless-cms" className="hover:text-[#00d4ff] transition-colors">Strapi</Link></>,
+                <><Link href="/services/web-design-development/contentful-headless-cms" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Contentful</Link> & <Link href="/services/web-design-development/strapi-headless-cms" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Strapi</Link></>,
                 "Sanity Integration",
                 "Dynamic Content",
                 "Faster CMS Updates",
@@ -88,7 +88,7 @@ export default function SolutionTypes() {
             icon: Server,
             title: "Next.js Migration Services",
             description:
-                "Seamless transition from legacy React, Vue, or Angular. Modernize your tech stack with zero downtime.",
+                "Seamless transition from legacy React, Vue, or Angular. Modernize your tech stack with minimal downtime.",
             features: [
                 "Legacy Migration",
                 "Zero Downtime",
@@ -158,8 +158,8 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Core Services
                         </span>
                     </div>
@@ -204,7 +204,7 @@ export default function SolutionTypes() {
                         return (
                             <div
                                 key={idx}
-                                className="group relative card-float"
+                                className="group relative card-float cursor-pointer"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}
@@ -383,9 +383,9 @@ export default function SolutionTypes() {
                                             className={`
                                                 mt-4 flex items-center gap-2 text-sm font-medium
                                                 transition-all duration-500
-                                                ${isActive ? "opacity-0 h-0" : isHovered ? "opacity-100" : "opacity-50"}
+                                                ${isActive ? "opacity-0 h-0" : "opacity-100"}
                                             `}
-                                            style={{ color: solution.accentColor }}
+                                            style={{ color: "var(--accent-cyan-text)" }}
                                         >
                                             <span>Click to explore</span>
                                             <ArrowUpRight className="w-4 h-4" />

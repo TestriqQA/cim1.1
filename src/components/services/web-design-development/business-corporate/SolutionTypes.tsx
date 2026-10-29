@@ -140,11 +140,11 @@ export default function SolutionTypes() {
                             boxShadow: "0 0 30px rgba(249, 115, 22, 0.1)"
                         }}
                     >
-                        <Sparkles className="w-5 h-5" style={{ color: "#f97316" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "#f97316" }}>
+                        <Sparkles className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             COMPREHENSIVE SOLUTIONS
                         </span>
-                        <Sparkles className="w-5 h-5" style={{ color: "#f97316" }} />
+                        <Sparkles className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
                     </div>
 
                     <h2

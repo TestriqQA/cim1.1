@@ -18,13 +18,13 @@ export default function ServiceOverview() {
         {
             icon: Megaphone,
             title: "X Advertising & Twitter Ads Management",
-            description: <>ROI-driven <Link href="/services/performance-marketing" className="hover:underline">Twitter ads management</Link> including promoted tweets, <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline">X video ads</Link>, and <Link href="/services/seo-services/technical-seo-services" className="hover:underline">Twitter conversion tracking</Link> setup.</>,
+            description: <>ROI-driven <Link href="/services/performance-marketing" className="hover:underline underline underline-offset-2">Twitter ads management</Link> including promoted tweets, <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline underline underline-offset-2">X video ads</Link>, and <Link href="/services/seo-services/technical-seo-services" className="hover:underline underline underline-offset-2">Twitter conversion tracking</Link> setup.</>,
             color: "var(--secondary-text)",
         },
         {
             icon: MessageSquare,
             title: "Professional X Account Management",
-            description: <>Comprehensive <Link href="/services/social-media-marketing-services" className="hover:underline">X channel audit</Link> and strategy with technical X profile optimization for maximum business authority.</>,
+            description: <>Comprehensive <Link href="/services/social-media-marketing-services" className="hover:underline underline underline-offset-2">X channel audit</Link> and strategy with technical X profile optimization for maximum business authority.</>,
             color: "#1D9BF0", // Twitter Blue accent
         },
         {

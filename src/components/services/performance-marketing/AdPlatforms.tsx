@@ -8,6 +8,18 @@ import { ExternalLink, TrendingUp, Users, Target } from "lucide-react";
 export default function AdPlatforms() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#4285f4": "var(--brand-blue-text)",
+            "#1877f2": "var(--brand-blue-text)",
+            "#0a66c2": "var(--brand-blue-text)",
+            "#0078d4": "var(--brand-blue-text)",
+            "#ff9900": "var(--accent-orange-text)",
+            "#ff0000": "var(--accent-red-text)",
+            "#ff59ffff": "var(--accent-pink-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
 
     const platforms = [
         {
@@ -105,13 +117,13 @@ export default function AdPlatforms() {
                         }}
                     >
                         <ExternalLink className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-orange)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             AD PLATFORMS
                         </span>
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        We Manage Ads Across <span style={{ color: "var(--brand-orange)" }}>All Major Platforms</span>
+                        We Manage Ads Across <span style={{ color: "var(--accent-orange-text)" }}>All Major Platforms</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -166,7 +178,7 @@ export default function AdPlatforms() {
                                         <div>
                                             <h3
                                                 className="text-xl font-bold transition-colors duration-300"
-                                                style={{ color: isHovered ? platform.color : "var(--foreground)" }}
+                                                style={{ color: isHovered ? textAccent(platform.color) : "var(--foreground)" }}
                                             >
                                                 {platform.name}
                                             </h3>
@@ -218,7 +230,7 @@ export default function AdPlatforms() {
                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 5%, var(--card-bg))", borderColor: "var(--brand-orange)" }}
                     >
                         <Target className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                        <span className="font-semibold text-center text-sm sm:text-base" style={{ color: "var(--brand-orange)" }}>
+                        <span className="font-semibold text-center text-sm sm:text-base" style={{ color: "var(--accent-orange-text)" }}>
                             Google Partner | Meta Business Partner | LinkedIn Marketing Partner
                         </span>
                     </div>

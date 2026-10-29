@@ -108,7 +108,7 @@ export default function JobDrawer({ job, isOpen, onClose }: JobDrawerProps) {
                                 <h3 className="text-2xl font-bold mb-2">Application Received!</h3>
                                 <p className="text-[var(--secondary-text)]">
                                     Thanks for applying for the <strong>{job.title}</strong> position. <br />
-                                    We've received your application and will be in touch soon.
+                                    We&apos;ve received your application and will be in touch soon.
                                 </p>
                             </div>
                             <button

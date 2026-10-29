@@ -12,9 +12,9 @@ export default function TechStack() {
             id: "core",
             title: "Core Technologies",
             icon: Rocket,
-            description: "Astro ecosystem fundamentals for 100% PageSpeed",
+            description: "Astro ecosystem fundamentals for near-perfect PageSpeed",
             technologies: [
-                { name: "Astro", description: "Zero JS by default, Islands Architecture, 100% PageSpeed", logo: "/images/techstack_logos/Astro-logo.svg" },
+                { name: "Astro", description: "Zero JS by default, Islands Architecture, near-perfect PageSpeed", logo: "/images/techstack_logos/Astro-logo.svg" },
                 { name: "TypeScript", description: "Type safety, better IDE support, enterprise-ready", logo: "/images/techstack_logos/typescript-logo.svg" },
                 { name: "JavaScript", description: "Universal language, ecosystem compatibility", logo: "/images/techstack_logos/javascript-logo.svg" },
                 { name: "HTML5", description: "SEO excellence, accessibility, web standards", logo: "/images/techstack_logos/html5-logo.svg" },
@@ -79,8 +79,8 @@ export default function TechStack() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "#7C3AED" }} />
-                        <span className="text-sm font-medium" style={{ color: "#7C3AED" }}>
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Our Tech Stack
                         </span>
                     </div>
@@ -118,6 +118,7 @@ export default function TechStack() {
                         return (
                             <button
                                 key={category.id}
+                                aria-label={category.title}
                                 onClick={() => setActiveCategory(idx)}
                                 className={`
                                     flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-xs sm:text-sm
@@ -174,7 +175,7 @@ export default function TechStack() {
                                     ) : (
                                         <span
                                             className="text-lg font-bold"
-                                            style={{ color: "#7C3AED" }}
+                                            style={{ color: "var(--accent-violet-text)" }}
                                         >
                                             {tech.name.charAt(0)}
                                         </span>
@@ -185,7 +186,7 @@ export default function TechStack() {
                                 <div className="flex-1 min-w-0">
                                     <p
                                         className="font-semibold truncate"
-                                        style={{ color: "#7C3AED" }}
+                                        style={{ color: "var(--accent-violet-text)" }}
                                     >
                                         {tech.name}
                                     </p>

@@ -29,7 +29,7 @@ export default function CTA() {
 
                     <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Ready to Start{" "}
-                        <span style={{ color: youtubeRed }}>Recording?</span>
+                        <span style={{ color: "var(--accent-red-text)" }}>Recording?</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
@@ -41,7 +41,7 @@ export default function CTA() {
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl"
                             style={{
-                                backgroundColor: youtubeRed,
+                                backgroundColor: "#c5221f",
                                 boxShadow: `0 4px 20px ${youtubeRed}40`
                             }}
                         >

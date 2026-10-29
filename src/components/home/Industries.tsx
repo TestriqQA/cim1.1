@@ -1,17 +1,15 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import { Briefcase } from 'lucide-react';
 
 export default function Industries() {
     const industriesServed = [
-        <>IT & <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">SaaS</Link></>,
-        <><Link href="/services/web-design-development/edtech-lms" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">EdTech</Link> & E-Learning</>,
-        <><Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Healthcare</Link> & Wellness</>,
-        <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Financial Services</Link>,
-        <><Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">E-Commerce</Link> & <Link href="/blog/ecommerce-ux-designing-conversion" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Retail</Link></>,
-        <><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">B2B</Link> <Link href="/blog/digital-marketing-strategy-planning-execution" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Professional Services</Link></>,
+        <>IT & <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">SaaS</Link></>,
+        <><Link href="/services/web-design-development/edtech-lms" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">EdTech</Link> & E-Learning</>,
+        <><Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Healthcare</Link> & Wellness</>,
+        <><Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Financial Services</Link></>,
+        <><Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">E-Commerce</Link> & <Link href="/blog/ecommerce-ux-designing-conversion" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Retail</Link></>,
+        <><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">B2B</Link> <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Professional Services</Link></>,
     ];
 
     return (

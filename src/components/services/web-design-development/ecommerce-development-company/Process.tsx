@@ -75,7 +75,7 @@ export default function Process() {
             number: "05",
             icon: TestTube,
             title: "Testing & Quality Assurance",
-            description: "Rigorous testing for bugs, Ecommerce ADA compliance and accessibility, and security vulnerabilities, ensuring 95% bug-free launches.",
+            description: "Rigorous testing for bugs, Ecommerce ADA compliance and accessibility, and security vulnerabilities, ensuring rigorously tested launches.",
             deliverables: [
                 { icon: ShoppingCart, text: "Checkout testing" },
                 { icon: CheckCircle2, text: "Payment validation" },
@@ -89,7 +89,7 @@ export default function Process() {
             number: "06",
             icon: Rocket,
             title: "Launch & Optimization",
-            description: <>Smooth go-live support followed by immediate monitoring and <Link href="/services/seo-services/ecommerce-seo-services" className="hover:underline text-[#00efd6]">Ecommerce SEO</Link> and <Link href="/services/performance-marketing" className="hover:underline text-[#00efd6]">digital marketing services</Link>.</>,
+            description: <>Smooth go-live support followed by immediate monitoring and <Link href="/services/seo-services/ecommerce-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-teal-text)]">Ecommerce SEO</Link> and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-teal-text)]">digital marketing services</Link>.</>,
             deliverables: [
                 { icon: Globe, text: "SEO setup" },
                 { icon: LineChart, text: "Analytics config" },
@@ -134,15 +134,15 @@ export default function Process() {
                 <div className="text-center mb-20">
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <Rocket className="w-4 h-4" style={{ color: "#00b5ca" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#00b5ca" }}>
+                            <Rocket className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                                 Our Process
                             </span>
                         </div>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "#00b5ca" }}>E-commerce Development</span> Process
+                        Our <span style={{ color: "var(--accent-cyan-text)" }}>E-commerce Development</span> Process
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>

@@ -9,7 +9,7 @@ import FAQ from "@/components/services/web-design-development/astro-framework-se
 import CTA from "@/components/services/web-design-development/astro-framework-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Expert Astro Framework Services | 100% PageSpeed 🚀 2026",
+    title: "Expert Astro Framework Services | near-perfect PageSpeed 🚀 2026",
     description:
         "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
     keywords: [
@@ -21,6 +21,30 @@ export const metadata: Metadata = {
         "static site generation",
         "islands architecture"
     ]
+,
+    openGraph: {
+        title: "Expert Astro Framework Services | near-perfect PageSpeed 🚀 2026",
+        description: "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
+        url: "https://www.cinuteinfomedia.com/services/web-design-development/astro-framework-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/astro-framework-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "Expert Astro Framework Services | near-perfect PageSpeed 🚀 2026 by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Expert Astro Framework Services | near-perfect PageSpeed 🚀 2026",
+        description: "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
+        images: ["/og-images/astro-framework-services.webp"],
+    },
+    alternates: {
+        canonical: "https://www.cinuteinfomedia.com/services/web-design-development/astro-framework-services",
+    },
 };
 
 const jsonLd = {
@@ -36,33 +60,28 @@ const jsonLd = {
                 "width": 250,
                 "height": 60
             },
-            "description": "Leading Astro development agency delivering lightning-fast websites with 100% PageSpeed scores and exceptional SEO performance.",
+            "description": "Expert Astro development agency delivering lightning-fast websites with near-perfect PageSpeed scores and exceptional SEO performance.",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Web Dev Street",
-                "addressLocality": "San Francisco",
-                "addressRegion": "CA",
-                "postalCode": "94105",
-                "addressCountry": "US"
+                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
+                "addressLocality": "Mira Road, Mira Bhayandar",
+                "addressRegion": "Maharashtra",
+                "postalCode": "401107",
+                "addressCountry": "IN"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+1-555-123-4567",
+                "telephone": "+919004988859",
                 "contactType": "Sales",
-                "email": "astro@yourcompany.com",
-                "availableLanguage": ["English", "Spanish", "French"]
+                "email": "contact@cinuteinfomedia.com",
+                "availableLanguage": ["English", "Hindi"]
             },
             "sameAs": [
-                "https://twitter.com/yourcompany",
-                "https://linkedin.com/company/yourcompany",
-                "https://github.com/yourcompany"
-            ],
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "127",
-                "bestRating": "5"
-            }
+                "https://www.linkedin.com/company/cinute-infomedia/",
+                "https://www.instagram.com/cinuteinfomedia/",
+                "https://x.com/cinuteinfomedia",
+                "https://www.facebook.com/cinuteinfomedia/"
+            ]
         },
         {
             "@type": "Service",
@@ -168,7 +187,7 @@ const jsonLd = {
                     "name": "What are the benefits of using Astro.js for business?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Astro.js delivers exceptional performance with zero JavaScript by default, resulting in 98-100 PageSpeed scores, sub-1-second load times, and superior SEO rankings. Businesses benefit from higher conversion rates (25-40% better), lower costs (30-50% reduction in hosting), better SEO rankings, 40% faster development, and flexibility to mix React, Vue, Svelte components."
+                        "text": "Astro.js delivers exceptional performance with zero JavaScript by default, resulting in 98-100 PageSpeed scores, sub-1-second load times, and superior SEO rankings. Businesses benefit from higher conversion rates, lower hosting costs, better SEO rankings, faster development, and flexibility to mix React, Vue, Svelte components."
                     }
                 },
                 {
@@ -200,7 +219,7 @@ const jsonLd = {
                     "name": "How long does it take to develop an Astro.js web application?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Development timelines vary by complexity: Small projects (5-10 pages) take 3-4 weeks, Medium projects (20-50 pages) take 6-8 weeks, Large projects (100+ pages) take 12-14 weeks, Enterprise projects (multi-site platforms) take 16-20 weeks. Most Astro projects launch 30% faster than React/Next.js equivalents due to simplified build processes."
+                        "text": "Development timelines vary by complexity: Small projects (5-10 pages) take 3-4 weeks, Medium projects (20-50 pages) take 6-8 weeks, Large projects (100+ pages) take 12-14 weeks, Enterprise projects (multi-site platforms) take 16-20 weeks. Most Astro projects launch faster than React/Next.js equivalents due to simplified build processes."
                     }
                 },
                 {
@@ -255,7 +274,7 @@ const jsonLd = {
 
 export default function AstroFrameworkPage() {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen" style={{ "--page-selection-bg": "#7C3AED" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

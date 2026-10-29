@@ -21,7 +21,7 @@ export default function Process() {
             deliverables: [
                 { icon: ShieldCheck, text: "Compliance roadmap" },
                 { icon: Lock, text: "Security audit" },
-                { icon: Users, text: <Link href="/blog/stunning-ui-ux-design-principles" className="hover:underline">User personas</Link> },
+                { icon: Users, text: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline">User personas</Link> },
                 { icon: Target, text: "Risk assessment" }
             ],
             color: "#0ea5e9", // Sky blue
@@ -59,7 +59,7 @@ export default function Process() {
             number: "04",
             icon: Lock,
             title: "Penetration Testing & QA",
-            description: "Rigorous testing protocols including penetration testing, load testing, and smart contract audits to ensure zero vulnerabilities before launch.",
+            description: "Rigorous testing protocols including penetration testing, load testing, and smart contract audits to minimize vulnerabilities before launch.",
             deliverables: [
                 { icon: ShieldCheck, text: "Penetration testing" },
                 { icon: CheckCircle2, text: "Smart contract audit" },
@@ -119,14 +119,14 @@ export default function Process() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Code className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0ea5e9" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                 Our Process
                             </span>
                         </div>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "#0ea5e9" }}>Secured FinTech</span> Process
+                        Our <span style={{ color: "var(--accent-sky-text)" }}>Secured FinTech</span> Process
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -346,7 +346,7 @@ export default function Process() {
                         <Link
                             href="/contact"
                             className="px-8 py-4 rounded-full font-semibold text-white text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2 group"
-                            style={{ background: "#0ea5e9" }}
+                            style={{ background: "var(--brand-blue-btn)" }}
                         >
                             Schedule a FinTech Consultation
                             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

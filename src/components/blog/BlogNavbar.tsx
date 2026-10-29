@@ -44,6 +44,11 @@ const categoryColors: Record<string, string> = {
     "Case Studies": "#F39C12",
 };
 
+// WCAG AA theme-aware text tokens for the category hues above.
+// The raw hex values stay in categoryColors (they feed color-mix backgrounds);
+// use textAccent(color) wherever a category colour is applied as CSS `color:`.
+const textAccent = (c: string) => (({"#6b00d7":"var(--accent-violet-text)","#00b5ca":"var(--accent-cyan-text)","#ff6b35":"var(--accent-orange-text)","#9b59b6":"var(--brand-purple-text)","#e91e63":"var(--accent-pink-text)","#27ae60":"var(--accent-green-text)","#3498db":"var(--accent-sky-text)","#f39c12":"var(--accent-amber-text)","#1a56db":"var(--accent-indigo-text)"} as Record<string,string>)[c?.toLowerCase?.() ?? ""] ?? "var(--brand-purple-text)");
+
 import { BlogPost } from "@/data/blog";
 
 interface BlogNavbarProps {
@@ -204,7 +209,7 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                 style={{
                                     backgroundColor:
                                         pathname === "/blog" && !hasActiveFilters
-                                            ? "var(--brand-purple)"
+                                            ? "var(--brand-purple-btn)"
                                             : "transparent",
                                     color:
                                         pathname === "/blog" && !hasActiveFilters ? "white" : "var(--foreground)",
@@ -258,7 +263,7 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                             backgroundColor: isActive
                                                 ? `color-mix(in srgb, ${color} 12%, transparent)`
                                                 : "transparent",
-                                            color: isActive ? color : "var(--foreground)",
+                                            color: isActive ? textAccent(color) : "var(--foreground)",
                                             borderColor: isActive ? color : "var(--border-color)",
                                         }}
                                     >
@@ -268,7 +273,7 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                             className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
                                             style={{
                                                 backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
-                                                color: color,
+                                                color: textAccent(color),
                                             }}
                                         >
                                             {categoryCounts[category] || 0}
@@ -287,7 +292,7 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                             : "border-[var(--border-color)]"
                                             }`}
                                         style={{
-                                            color: showCategoryDropdown ? "var(--brand-purple)" : "var(--foreground)",
+                                            color: showCategoryDropdown ? "var(--brand-purple-text)" : "var(--foreground)",
                                         }}
                                     >
                                         <Grid3X3 className="w-4 h-4" />
@@ -327,16 +332,16 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                                             onClick={() => handleCategorySelect(category)}
                                                             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-[var(--hover-bg)]"
                                                             style={{
-                                                                color: isActive ? color : "var(--foreground)",
+                                                                color: isActive ? textAccent(color) : "var(--foreground)",
                                                             }}
                                                         >
-                                                            <span style={{ color: color }}>{categoryIcons[category]}</span>
+                                                            <span style={{ color: textAccent(color) }}>{categoryIcons[category]}</span>
                                                             <span className="flex-1 text-left">{category}</span>
                                                             <span
                                                                 className="px-2 py-0.5 rounded-md text-xs font-bold"
                                                                 style={{
                                                                     backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
-                                                                    color: color,
+                                                                    color: textAccent(color),
                                                                 }}
                                                             >
                                                                 {categoryCounts[category] || 0}
@@ -418,17 +423,17 @@ export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarPr
                                             backgroundColor: isActive
                                                 ? `color-mix(in srgb, ${color} 12%, transparent)`
                                                 : "transparent",
-                                            color: isActive ? color : "var(--foreground)",
+                                            color: isActive ? textAccent(color) : "var(--foreground)",
                                             borderColor: isActive ? color : "var(--border-color)",
                                         }}
                                     >
-                                        <span style={{ color: color }}>{categoryIcons[category]}</span>
+                                        <span style={{ color: textAccent(color) }}>{categoryIcons[category]}</span>
                                         <span className="flex-1 text-left truncate">{category}</span>
                                         <span
                                             className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
                                             style={{
                                                 backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
-                                                color: color,
+                                                color: textAccent(color),
                                             }}
                                         >
                                             {categoryCounts[category] || 0}

@@ -8,7 +8,7 @@ export default function ServiceOverview() {
         {
             icon: Bot,
             title: "Automation",
-            description: <span>Automate repetitive customer interactions and reduce manual workload by up to 80% with <Link href="/services/ai-workflows-automations-services" className="hover:text-blue-500 transition-colors">intelligent workflows</Link>.</span>,
+            description: <span>Automate repetitive customer interactions and reduce manual workload by up to 80% with <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">intelligent workflows</Link>.</span>,
             gradient: "from-cyan-500 via-blue-500 to-indigo-600",
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
@@ -19,7 +19,7 @@ export default function ServiceOverview() {
         {
             icon: MessageCircle,
             title: "Customer Engagement",
-            description: <span>Deliver personalized, context-aware conversations that improve <Link href="/services/social-media-marketing-services" className="hover:text-purple-500">customer satisfaction</Link> and loyalty.</span>,
+            description: <span>Deliver personalized, context-aware conversations that improve <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)]">customer satisfaction</Link> and loyalty.</span>,
             gradient: "from-purple-500 via-pink-500 to-rose-500",
             iconBg: "bg-purple-500/10",
             iconColor: "text-purple-500",
@@ -148,21 +148,21 @@ export default function ServiceOverview() {
                                 borderColor: "var(--brand-chatbot)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-chatbot)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-chatbot)" }}>
+                            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
+                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 Intelligent Conversations Powered by Next-Gen AI
                             </span>
                         </div>
 
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                            What Are <span style={{ color: "var(--brand-chatbot)" }}>AI-Powered Chatbots</span>?
+                            What Are <span style={{ color: "var(--accent-indigo-text)" }}>AI-Powered Chatbots</span>?
                         </h2>
                         <div className="max-w-6xl mx-auto space-y-4 relative z-10">
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                Gone are the days of clunky, rule-based responses. Our AI Chatbot Services leverage state-of-the-art Generative AI and Machine Learning (ML) in Chatbots to create dynamic, human-like experiences. Unlike traditional scripts, our bots utilize <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Retrieval-Augmented Generation (RAG)</Link> to pull real-time, accurate data from your internal knowledge base, ensuring every answer is precise, trustworthy, and compliant with 2026 E-E-A-T guidelines.
+                                Gone are the days of clunky, rule-based responses. Our AI Chatbot Services leverage state-of-the-art Generative AI and Machine Learning (ML) in Chatbots to create dynamic, human-like experiences. Unlike traditional scripts, our bots utilize <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Retrieval-Augmented Generation (RAG)</Link> to pull real-time, accurate data from your internal knowledge base, ensuring every answer is precise, trustworthy, and compliant with 2026 E-E-A-T guidelines.
                             </p>
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                From Sentiment Analysis for <Link href="/services/additional-support-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Customer Support</Link> to Intent Detection and Classification, our intelligent agents adapt to user behavior in real-time. We help you move beyond simple automation to true <Link href="/services/social-media-marketing-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Omnichannel Customer Experience (CX)</Link> excellence.
+                                From Sentiment Analysis for <Link href="/services/additional-support-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Customer Support</Link> to Intent Detection and Classification, our intelligent agents adapt to user behavior in real-time. We help you move beyond simple automation to true <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Omnichannel Customer Experience (CX)</Link> excellence.
                             </p>
                         </div>
                     </div>
@@ -237,7 +237,7 @@ export default function ServiceOverview() {
 
                                         {/* Content */}
                                         <div className="relative z-10">
-                                            <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--brand-chatbot)]">
+                                            <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--accent-indigo-text)]">
                                                 {feature.title}
                                             </h3>
                                             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--secondary-text)" }}>
@@ -247,7 +247,7 @@ export default function ServiceOverview() {
                                             {/* Stat label */}
                                             <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                 <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`} />
-                                                <span className="text-xs font-semibold" style={{ color: "var(--brand-chatbot)" }}>
+                                                <span className="text-xs font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                                                     {feature.statLabel}
                                                 </span>
                                             </div>

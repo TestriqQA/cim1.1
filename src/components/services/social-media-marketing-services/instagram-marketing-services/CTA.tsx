@@ -61,7 +61,7 @@ export default function CTA() {
                             </h2>
 
                             <p className="text-base md:text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
-                                Don't let your brand get lost in the scroll. Partner with an <Link href="/about" className="text-white hover:underline decoration-white/50">Instagram Marketing Company</Link> that knows how to turn views into value.
+                                Don't let your brand get lost in the scroll. Partner with an <Link href="/about" className="text-white underline underline-offset-2 decoration-white/50">Instagram Marketing Company</Link> that knows how to turn views into value.
                             </p>
 
                             {/* Benefits */}
@@ -97,15 +97,15 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Monthly Users</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">300%</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Strong</div>
                                 <div className="text-xs sm:text-sm text-white/70">Avg. Growth</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">4x</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Strong</div>
                                 <div className="text-xs sm:text-sm text-white/70">Engagement Boost</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">83%</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">High</div>
                                 <div className="text-xs sm:text-sm text-white/70">Discovery Rate</div>
                             </div>
                         </div>

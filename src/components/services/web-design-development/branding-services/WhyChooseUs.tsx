@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckCircle2, Award, Palette, Eye, Zap, Shield } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +6,7 @@ export default function WhyChooseUs() {
         {
             icon: Palette,
             title: "Design Excellence",
-            description: "We don't use cookie-cutter templates. Our interactive portfolio features are bespoke, award-winning creations. We focus on \"wow\" moments - micro-interactions, smooth scroll effects, and unique layouts - that keep users engaged and impressed."
+            description: "We don't use cookie-cutter templates. Our interactive portfolio features are bespoke, distinctive creations. We focus on \"wow\" moments - micro-interactions, smooth scroll effects, and unique layouts - that keep users engaged and impressed."
         },
         {
             icon: Eye,
@@ -18,17 +16,17 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Fast Performance",
-            description: <>Speed is a feature. In the era of <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#06b6d4]">Core Web Vitals</Link>, we optimize images and leverage global CDNs to ensure instant loads.</>
+            description: <>Speed is a feature. In the era of <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Core Web Vitals</Link>, we optimize images and leverage global CDNs to ensure instant loads.</>
         },
         {
             icon: Award,
             title: "SEO Optimized",
-            description: <>Get found by the people who matter. We <Link href="/services/seo-services" className="hover:underline text-[#06b6d4]">optimize for SEO</Link> and long-tail queries like &quot;Personal branding for entrepreneurs&quot;.</>
+            description: <>Get found by the people who matter. We <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">optimize for SEO</Link> and long-tail queries like &quot;Personal branding for entrepreneurs&quot;.</>
         },
         {
             icon: Shield,
             title: "Future-Proof",
-            description: <>We build with modern frameworks like Next.js allowing easy updates and features like <Link href="/blog/future-web-development-nextjs" className="hover:underline text-[#06b6d4]">Video portfolio development</Link> as the web evolves.</>
+            description: <>We build with modern frameworks like Next.js allowing easy updates and features like <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Video portfolio development</Link> as the web evolves.</>
         }
     ];
 
@@ -50,7 +48,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: "#06b6d4" }} />
-                            <span className="text-sm font-medium" style={{ color: "#06b6d4" }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

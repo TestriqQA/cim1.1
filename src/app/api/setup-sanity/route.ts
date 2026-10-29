@@ -95,7 +95,18 @@ function convertMarkdownToBlocks(markdown: string) {
     return blocks;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+    // SECURITY: this is a one-time, DESTRUCTIVE seed migration — `createOrReplace`
+    // overwrites live Sanity content (categories/authors/posts) with local seed data.
+    // It must NOT be publicly triggerable (a random GET/crawler/prefetch would wipe
+    // live blog edits). Gate behind a secret; the endpoint is DISABLED unless the
+    // server has SANITY_SETUP_SECRET set AND the caller passes the matching ?secret=.
+    const setupSecret = process.env.SANITY_SETUP_SECRET;
+    const provided = new URL(request.url).searchParams.get('secret');
+    if (!setupSecret || provided !== setupSecret) {
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
     const token = process.env.SANITY_API_TOKEN;
     if (!token) {
         return NextResponse.json({ error: 'Missing SANITY_API_TOKEN' }, { status: 401 });
@@ -239,7 +250,7 @@ export async function GET() {
                 seo: {
                     metaTitle: post.title,
                     metaDescription: post.excerpt,
-                    canonicalUrl: `https://cinutedigital.com/blog/${post.slug}`
+                    canonicalUrl: `https://www.cinuteinfomedia.com/blog/${post.slug}`
                 },
                 content: mainContent,
                 markdownContent: post.content,

@@ -1,6 +1,5 @@
 "use client";
 
-import { getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 import Image from "next/image";
@@ -27,9 +26,9 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
             <section className="relative overflow-hidden">
                 {/* Background Gradient */}
                 <div
-                    className="absolute inset-0 opacity-5"
+                    className="absolute inset-0"
                     style={{
-                        background: "radial-gradient(ellipse at top, var(--brand-purple), transparent 70%)",
+                        background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                     }}
                 />
 
@@ -44,9 +43,9 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                         }}
                     >
                         <div
-                            className="absolute inset-0 opacity-10"
+                            className="absolute inset-0"
                             style={{
-                                background: "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
+                                background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent))",
                             }}
                         />
 
@@ -57,8 +56,8 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                     {/* Author Image with Ring */}
                                     <div className="relative mb-6 ">
                                         <div
-                                            className="absolute -inset-2 rounded-full opacity-30"
-                                            style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))" }}
+                                            className="absolute -inset-2 rounded-full"
+                                            style={{ background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 30%, transparent), color-mix(in srgb, var(--brand-cyan) 30%, transparent))" }}
                                         />
                                         <Image
                                             src={author.image}
@@ -94,7 +93,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
                                                     borderColor: "var(--border-color)",
-                                                    color: "var(--brand-purple)",
+                                                    color: "var(--brand-purple-text)",
                                                 }}
                                                 title="LinkedIn"
                                             >
@@ -110,7 +109,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
                                                     borderColor: "var(--border-color)",
-                                                    color: "var(--brand-purple)",
+                                                    color: "var(--brand-purple-text)",
                                                 }}
                                                 title="Twitter"
                                             >
@@ -126,7 +125,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
                                                     borderColor: "var(--border-color)",
-                                                    color: "var(--brand-purple)",
+                                                    color: "var(--brand-purple-text)",
                                                 }}
                                                 title="GitHub"
                                             >
@@ -140,7 +139,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                         <a
                                             href={`mailto:${author.email}`}
                                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
-                                            style={{ backgroundColor: "var(--brand-purple)" }}
+                                            style={{ backgroundColor: "var(--brand-purple-btn)" }}
                                         >
                                             <Mail className="w-4 h-4" />
                                             Get in Touch
@@ -153,7 +152,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                     {/* Name & Title */}
                                     <div className="text-center lg:text-left mb-6">
                                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{author.name}</h1>
-                                        <p className="text-lg font-medium" style={{ color: "var(--brand-purple)" }}>
+                                        <p className="text-lg font-medium" style={{ color: "var(--brand-purple-text)" }}>
                                             {author.title}
                                         </p>
                                     </div>
@@ -174,14 +173,14 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                             Expertise
                                         </h2>
                                         <div className="flex flex-wrap gap-2">
-                                            {Array.from(new Set(authorPosts.map((p) => p.category))).map((category) => (
+                                            {Array.from(new Map(authorPosts.map((p) => [p.categorySlug, p.category])).entries()).map(([categorySlug, category]) => (
                                                 <Link
-                                                    key={category}
-                                                    href={`/blog/category/${getCategorySlug(category)}`}
-                                                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple)]"
+                                                    key={categorySlug}
+                                                    href={`/blog/category/${categorySlug}`}
+                                                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple-text)]"
                                                     style={{
                                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
-                                                        color: "var(--brand-purple)",
+                                                        color: "var(--brand-purple-text)",
                                                         borderColor: "var(--border-color)",
                                                     }}
                                                 >
@@ -200,7 +199,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-purple)" }}>
+                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                                 {authorPosts.length}
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
@@ -214,7 +213,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-cyan)" }}>
+                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>
                                                 {new Set(authorPosts.map((p) => p.category)).size}
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
@@ -228,7 +227,7 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-purple)" }}>
+                                            <div className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                                 {authorPosts.reduce((acc, p) => acc + p.readTime, 0)}
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>

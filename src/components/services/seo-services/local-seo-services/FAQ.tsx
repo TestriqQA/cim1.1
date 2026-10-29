@@ -13,11 +13,11 @@ export default function FAQ() {
     const faqs: { question: string; answer: string | React.ReactNode }[] = [
         {
             question: "What is local SEO and how does it work?",
-            answer: <><Link href="/services/seo-services" className="hover:underline text-amber-500">Local SEO</Link> (local search engine optimization) is the process of optimizing your online presence to attract customers searching for businesses 'near me' or in specific geographic areas. Unlike traditional SEO that targets national/global rankings, local SEO focuses on appearing in the Google Map Pack (top 3 local results), Google Business Profile panels, and geo-modified organic results.\n\nHow it works: Google's local algorithm evaluates three core factors:\n\n• Proximity - How close your business is to the searcher\n• Relevance - How well your GBP categories/description match the query\n• Prominence - Your reputation (reviews, citations, <Link href="/services/seo-services/link-building" className="hover:underline text-amber-500">backlinks</Link>)\n\nOur local SEO services optimize all three signals to rank you #1 for high-intent local searches that drive calls, direction requests, and foot traffic.</>
+            answer: <><Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">Local SEO</Link> (local search engine optimization) is the process of optimizing your online presence to attract customers searching for businesses 'near me' or in specific geographic areas. Unlike traditional SEO that targets national/global rankings, local SEO focuses on appearing in the Google Map Pack (top 3 local results), Google Business Profile panels, and geo-modified organic results.\n\nHow it works: Google's local algorithm evaluates three core factors:\n\n• Proximity - How close your business is to the searcher\n• Relevance - How well your GBP categories/description match the query\n• Prominence - Your reputation (reviews, citations, <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">backlinks</Link>)\n\nOur local SEO services optimize all three signals to rank you prominently for high-intent local searches that drive calls, direction requests, and foot traffic.</>
         },
         {
             question: "How much do local SEO services cost per month in 2026?",
-            answer: "Local SEO cost for small business 2026 ranges based on competition and business complexity:\n\n• Single-Location SMB: $800 - $1,500/mo (GBP optimization, 20 citations, review management)\n• Multi-Location (2-5): $1,500 - $3,500/mo (Per-location GBP, 40+ citations, localized landing pages)\n• Franchise/Enterprise (6+): $3,500 - $8,000/mo (Bulk location management, advanced schema, competitive markets)\n\nROI Perspective: Our clients average $12-$18 in revenue for every $1 spent on local SEO (1200-1800% ROI), primarily from increased phone calls and in-store visits tracked via Google Analytics 4 and call tracking.\n\nWhat determines cost: Market competition (legal/medical = higher), number of locations/service areas, current online presence (starting from scratch vs. optimization), and industry-specific requirements (schema, compliance)."
+            answer: "Local SEO cost for small business 2026 ranges based on competition and business complexity:\n\n• Single-Location SMB: $800 - $1,500/mo (GBP optimization, 20 citations, review management)\n• Multi-Location (2-5): $1,500 - $3,500/mo (Per-location GBP, 40+ citations, localized landing pages)\n• Franchise/Enterprise (6+): $3,500 - $8,000/mo (Bulk location management, advanced schema, competitive markets)\n\nROI Perspective: Our clients average $12-$18 in revenue for every $1 spent on local SEO, primarily from increased phone calls and in-store visits tracked via Google Analytics 4 and call tracking.\n\nWhat determines cost: Market competition (legal/medical = higher), number of locations/service areas, current online presence (starting from scratch vs. optimization), and industry-specific requirements (schema, compliance)."
         },
         {
             question: "How do I rank my business on Google Maps?",
@@ -25,11 +25,11 @@ export default function FAQ() {
         },
         {
             question: "What is the difference between SEO and local SEO?",
-            answer: <>Traditional SEO: Targets national/global rankings with focus on backlink authority + content depth. Goal is to rank for broad keywords targeting anyone searching. Key metrics include organic traffic and domain authority. Top ranking signals are content quality, backlinks, and <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-amber-500">technical SEO</Link>.\n\nLocal SEO: Focuses on rankings in specific cities/neighborhoods through Google Business Profile + proximity optimization. Goal is to appear in the Google Map Pack for users within 5-25 mile radius. Key metrics include Map Pack rank, calls, directions, and foot traffic. Top ranking signals are NAP citations, reviews, and GBP optimization.\n\nWhen to use Traditional SEO: SaaS products, ecommerce sites selling nationally, informational blogs\n\nWhen to use Local SEO: Restaurants, medical practices, law firms, contractors, retail stores, real estate agents—any business serving a specific geographic area.\n\nOur approach: We combine both! Our local search engine optimization includes <Link href="/services/seo-services/on-page-seo-services" className="hover:underline text-amber-500">traditional on-page SEO</Link> + technical optimizations PLUS hyperlocal GBP and citation strategies for maximum visibility.</>
+            answer: <>Traditional SEO: Targets national/global rankings with focus on backlink authority + content depth. Goal is to rank for broad keywords targeting anyone searching. Key metrics include organic traffic and domain authority. Top ranking signals are content quality, backlinks, and <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">technical SEO</Link>.\n\nLocal SEO: Focuses on rankings in specific cities/neighborhoods through Google Business Profile + proximity optimization. Goal is to appear in the Google Map Pack for users within 5-25 mile radius. Key metrics include Map Pack rank, calls, directions, and foot traffic. Top ranking signals are NAP citations, reviews, and GBP optimization.\n\nWhen to use Traditional SEO: SaaS products, ecommerce sites selling nationally, informational blogs\n\nWhen to use Local SEO: Restaurants, medical practices, law firms, contractors, retail stores, real estate agents—any business serving a specific geographic area.\n\nOur approach: We combine both! Our local search engine optimization includes <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">traditional on-page SEO</Link> + technical optimizations PLUS hyperlocal GBP and citation strategies for maximum visibility.</>
         },
         {
             question: "How long does it take to see results from local SEO?",
-            answer: "30 Days:\n• GBP insights show increased impressions (search appearances)\n• Initial citation submissions indexed by Google\n• Review count starts increasing\n\n60 Days:\n• Map Pack rankings improve 3-8 positions on average\n• Phone calls increase 40-80%\n• Direction requests up 50-100%\n• Reviews reach 10-15 new (with our generation system)\n\n90 Days:\n• Top 5 Map Pack rankings for primary keywords (87% of our clients)\n• 2-3x more phone calls from Google Business Profile\n• 150%+ increase in website traffic from local searches\n• Measurable foot traffic increase (if tracking enabled)\n\n6 Months:\n• Dominant #1-#3 Map Pack positions (stable)\n• 300%+ review growth\n• Established authority in local market\n• Consistent 10-20 high-quality leads per month\n\nFactors that speed up results: Low current competition, consistent review generation, existing website with good domain authority, active Google Business Profile with post history.\n\nOur Guarantee: If we don't get you into the top 5 Map Pack for at least 3 primary keywords within 90 days, we'll continue working for free until we do."
+            answer: "30 Days:\n• GBP insights show increased impressions (search appearances)\n• Initial citation submissions indexed by Google\n• Review count starts increasing\n\n60 Days:\n• Map Pack rankings improve\n• Phone calls increase\n• Direction requests increase\n• Reviews reach 10-15 new (with our generation system)\n\n90 Days:\n• Top 5 Map Pack rankings for primary keywords (most of our clients)\n• More phone calls from Google Business Profile\n• Significant increase in website traffic from local searches\n• Measurable foot traffic increase (if tracking enabled)\n\n6 Months:\n• Dominant #1-#3 Map Pack positions (stable)\n• Strong review growth\n• Established authority in local market\n• Consistent 10-20 high-quality leads per month\n\nFactors that speed up results: Low current competition, consistent review generation, existing website with good domain authority, active Google Business Profile with post history."
         }
     ];
 
@@ -45,9 +45,9 @@ export default function FAQ() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border"
                             style={{
-                                backgroundColor: `${localAmber}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${localAmber}30`,
-                                color: localAmber,
+                                color: "var(--accent-amber-text)",
                             }}
                         >
                             FAQ
@@ -57,7 +57,7 @@ export default function FAQ() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Frequently Asked <span style={{ color: localAmber }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-amber-text)" }}>Questions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--foreground)" }}
@@ -96,7 +96,7 @@ export default function FAQ() {
                                         </div>
                                         <h3
                                             className="text-lg md:text-xl font-bold transition-colors duration-300"
-                                            style={{ color: isOpen ? localAmber : "var(--foreground)" }}
+                                            style={{ color: isOpen ? "var(--accent-amber-text)" : "var(--foreground)" }}
                                         >
                                             {faq.question}
                                         </h3>
@@ -105,7 +105,7 @@ export default function FAQ() {
                                         className="w-6 h-6 flex-shrink-0 transition-transform duration-300"
                                         style={{
                                             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                            color: isOpen ? localAmber : "var(--secondary-text)"
+                                            color: isOpen ? "var(--accent-amber-text)" : "var(--secondary-text)"
                                         }}
                                     />
                                 </button>

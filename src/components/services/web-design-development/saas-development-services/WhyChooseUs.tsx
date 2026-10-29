@@ -1,5 +1,3 @@
-"use client";
-
 import { Code, Layers, Rocket, Shield, Users, RefreshCw } from "lucide-react";
 import Link from "next/link";
 
@@ -8,13 +6,13 @@ export default function WhyChooseUs() {
         {
             icon: Code,
             title: "Clean, Maintainable Code",
-            description: "SOLID principles, comprehensive unit and integration testing, and thorough documentation enable your engineering team to iterate, extend, and scale your custom SaaS platform development long-term. We follow industry-proven patterns that reduce technical debt and accelerate feature velocity. Real-world expertise: Our React & Next.js architecture reduced code complexity by 40% for a fintech SaaS client managing $10M+ monthly transactions.",
+            description: "SOLID principles, comprehensive unit and integration testing, and thorough documentation enable your engineering team to iterate, extend, and scale your custom SaaS platform development long-term. We follow industry-proven patterns that reduce technical debt and accelerate feature velocity. Real-world expertise: Our React & Next.js architecture reduced code complexity by 40% for a fintech SaaS client managing high-volume monthly transactions.",
             color: "from-[#008ac1] to-[#00b5ca]",
         },
         {
             icon: Layers,
             title: "Scalable Architecture for Cloud-Based SaaS Development",
-            description: "Microservices architecture, serverless functions, or modular monolith - we select the optimal pattern for your current scale and future growth trajectory. Our scalable SaaS app development company approach ensures your infrastructure handles 10x user growth without rewrites. Horizontal scaling with Kubernetes orchestration, database sharding for multi-tenant isolation, CDN edge caching for global performance, and event-driven architecture for decoupled services.",
+            description: "Microservices architecture, serverless functions, or modular monolith - we select the optimal pattern for your current scale and future growth trajectory. Our scalable SaaS app development company approach ensures your infrastructure handles significant user growth without rewrites. Horizontal scaling with Kubernetes orchestration, database sharding for multi-tenant isolation, CDN edge caching for global performance, and event-driven architecture for decoupled services.",
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
@@ -38,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: RefreshCw,
             title: "DevOps & CI/CD for Reliable SaaS Delivery",
-            description: "Automated testing pipelines, infrastructure-as-code with Terraform, and zero-downtime deployments ensure your users experience 99.9% uptime. Continuous integration via GitHub Actions, monitoring with Datadog/Sentry, and rollback capabilities protect your MRR growth.",
+            description: "Automated testing pipelines, infrastructure-as-code with Terraform, and zero-downtime deployments ensure your users experience high availability. Continuous integration via GitHub Actions, monitoring with Datadog/Sentry, and rollback capabilities protect your MRR growth.",
             color: "from-[#ee6500] to-[#fab900]",
         },
     ];
@@ -63,7 +61,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Users className="w-4 h-4" style={{ color: "#008ac1" }} />
-                        <span className="text-sm font-medium" style={{ color: "#008ac1" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

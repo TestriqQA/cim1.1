@@ -10,6 +10,10 @@ export default function SolutionTypes() {
     // LinkedIn brand color
     const linkedInBlue = "#0a66c2";
 
+    // Map each solution's brand hue to a theme-aware, contrast-safe text token (both themes)
+    const textAccent = (hex: string) =>
+        hex.toLowerCase() === "#00a0dc" ? "var(--accent-sky-text)" : "var(--brand-blue-text)";
+
     const solutions = [
         {
             icon: Building2,
@@ -71,14 +75,14 @@ export default function SolutionTypes() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: linkedInBlue }} />
-                        <span className="text-sm font-medium" style={{ color: linkedInBlue }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             B2B Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        B2B <span style={{ color: linkedInBlue }}>Solutions</span>
+                        B2B <span style={{ color: "var(--brand-blue-text)" }}>Solutions</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Tailored strategies for every B2B marketing objective.
@@ -124,13 +128,13 @@ export default function SolutionTypes() {
                                         transform: hoveredCard === idx ? "translateY(-8px)" : "translateY(0)",
                                     }}
                                 >
-                                    <solution.icon className="w-7 h-7" style={{ color: solution.color }} />
+                                    <solution.icon className="w-7 h-7" style={{ color: textAccent(solution.color) }} />
                                 </div>
 
                                 {/* Content */}
                                 <h3
                                     className="text-xl font-bold mb-2 transition-colors duration-300"
-                                    style={{ color: hoveredCard === idx ? solution.color : "var(--foreground)" }}
+                                    style={{ color: hoveredCard === idx ? textAccent(solution.color) : "var(--foreground)" }}
                                 >
                                     {solution.title}
                                 </h3>

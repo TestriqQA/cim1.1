@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { MessageSquare, Palette, Code2, Rocket, Settings, HeartHandshake } from "lucide-react";
 
@@ -8,7 +6,7 @@ export default function Process() {
         {
             icon: MessageSquare,
             title: "Discovery & Topical Authority",
-            description: <>We analyze your niche, competitors, and <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#a855f7]">Topical Authority</Link> and E-E-A-T gaps to plan a winning structure.</>,
+            description: <>We analyze your niche, competitors, and <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Topical Authority</Link> and E-E-A-T gaps to plan a winning structure.</>,
             details: ["Niche analysis", "Competitor audit", "Keyword planning", "Structure mapping"]
         },
         {
@@ -20,7 +18,7 @@ export default function Process() {
         {
             icon: Code2,
             title: "Agile Dev & CMS Setup",
-            description: <>Building robust <Link href="/services/web-design-development/wordpress-development-services" className="hover:underline text-[#a855f7]">Multi-author blog management</Link> systems with role-based access control.</>,
+            description: <>Building robust <Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Multi-author blog management</Link> systems with role-based access control.</>,
             details: ["Role-based access", "Workflow automation", "Custom post types", "Security setup"]
         },
         {
@@ -32,7 +30,7 @@ export default function Process() {
         {
             icon: Settings,
             title: "Growth & Monetization",
-            description: <>Post-launch <Link href="/services/seo-services" className="hover:underline text-[#a855f7]">News portal SEO</Link> and audience growth services and <Link href="/services/performance-marketing" className="hover:underline text-[#a855f7]">Content Monetization Models</Link> setup.</>,
+            description: <>Post-launch <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">News portal SEO</Link> and audience growth services and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Content Monetization Models</Link> setup.</>,
             details: ["AdSense/AdManager setup", "Paywall configuration", "Analytics dashboard", "Growth strategy"]
         }
     ];
@@ -54,7 +52,7 @@ export default function Process() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "#a855f7" }} />
-                        <span className="text-sm font-medium" style={{ color: "#a855f7" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>

@@ -17,9 +17,9 @@ export default function WhyChooseUs() {
     const reasons = [
         {
             icon: Zap,
-            title: "30+ Years Experience",
+            title: "Deep Experience",
             description:
-                <>Our team brings 30+ years of combined expertise in <Link href="/services/web-design-development" className="hover:text-[#61dafb] transition-colors">web design and development</Link>, ensuring enterprise-grade solutions for every project.</>,
+                <>Our team brings deep combined expertise in <Link href="/services/web-design-development" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">web design and development</Link>, ensuring enterprise-grade solutions for every project.</>,
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
@@ -47,14 +47,14 @@ export default function WhyChooseUs() {
             icon: TrendingUp,
             title: "Performance Obsessed",
             description:
-                "Our implementations consistently achieve 100 Lighthouse scores, focusing on Next.js speed optimization and Core Web Vitals.",
+                "Our implementations consistently achieve near-perfect Lighthouse scores, focusing on Next.js speed optimization and Core Web Vitals.",
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
             icon: HeadphonesIcon,
             title: "E-E-A-T Driven",
             description:
-                <>We follow Google&apos;s <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[#61dafb] transition-colors">E-E-A-T</Link> guidelines to ensure your platform is authoritative, trustworthy, and expert-led.</>,
+                <>We follow Google&apos;s <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">E-E-A-T</Link> guidelines to ensure your platform is authoritative, trustworthy, and expert-led.</>,
             gradient: "from-[#00d4ff] to-[#61dafb]",
         },
     ];
@@ -121,8 +121,8 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <Zap className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             E-E-A-T Verified
                         </span>
                     </div>
@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        Our Next.js development services leverage the latest JavaScript framework expertise to solve complex needs for disruptive startups and established brands. We maintain a track record of delivering 95% bug-free applications globally.
+                        Our Next.js development services leverage the latest JavaScript framework expertise to solve complex needs for disruptive startups and established brands. We maintain a track record of delivering rigorously tested applications globally.
                     </p>
                 </div>
 
@@ -300,7 +300,7 @@ export default function WhyChooseUs() {
                             </div>
                             <div className="text-left">
                                 <p className="font-bold" style={{ color: "var(--foreground)" }}>Testriq QA Lab</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Leading Software Testing Provider</p>
+                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Trusted Software Testing Provider</p>
                             </div>
                         </div>
                     </div>

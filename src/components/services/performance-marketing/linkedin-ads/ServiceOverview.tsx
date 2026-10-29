@@ -64,7 +64,7 @@ export default function ServiceOverview() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        LinkedIn Ads <span style={{ color: linkedInBlue }}>Formats</span>
+                        LinkedIn Ads <span style={{ color: "var(--brand-blue-text)" }}>Formats</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Every ad format optimized for B2B lead generation and brand building.
@@ -110,7 +110,7 @@ export default function ServiceOverview() {
                                         transform: activeCard === idx ? "translateY(-4px)" : "translateY(0)",
                                     }}
                                 >
-                                    <service.icon className="w-7 h-7" style={{ color: linkedInBlue }} />
+                                    <service.icon className="w-7 h-7" style={{ color: "var(--brand-blue-text)" }} />
                                 </div>
 
                                 {/* Content */}
@@ -129,7 +129,7 @@ export default function ServiceOverview() {
                                             className="px-2 py-1 rounded-full text-xs font-medium transition-all duration-300"
                                             style={{
                                                 backgroundColor: activeCard === idx ? `${linkedInBlue}15` : "var(--background)",
-                                                color: activeCard === idx ? linkedInBlue : "var(--secondary-text)",
+                                                color: activeCard === idx ? "var(--brand-blue-text)" : "var(--secondary-text)",
                                                 transitionDelay: `${fIdx * 30}ms`,
                                             }}
                                         >
@@ -146,7 +146,7 @@ export default function ServiceOverview() {
                                     }}
                                 >
                                     <p className="text-xs" style={{ color: "var(--secondary-text)" }}>
-                                        <span className="font-semibold" style={{ color: linkedInBlue }}>Best for:</span> {service.bestFor}
+                                        <span className="font-semibold" style={{ color: "var(--brand-blue-text)" }}>Best for:</span> {service.bestFor}
                                     </p>
                                 </div>
 

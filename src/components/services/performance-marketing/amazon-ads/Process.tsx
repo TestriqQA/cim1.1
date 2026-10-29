@@ -10,12 +10,15 @@ export default function Process() {
     const amazonOrange = "#FF9900";
     const amazonBlue = "#232F3E";
 
+    const textAccent = (c: string) =>
+        c.toLowerCase() === "#ff9900" ? "var(--accent-orange-text)" : c;
+
     const steps = [
         {
             id: 1,
             icon: Search,
             title: "Listing Audit",
-            description: <>Deep dive into product content, <Link href="/services/seo-services" className="hover:text-[var(--primary)] transition-colors">SEO keywords</Link>, and conversion rate readiness.</>,
+            description: <>Deep dive into product content, <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--primary)] transition-colors">SEO keywords</Link>, and conversion rate readiness.</>,
             color: amazonOrange,
         },
         {
@@ -63,13 +66,13 @@ export default function Process() {
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-sm font-bold tracking-widest uppercase mb-2 block" style={{ color: amazonOrange }}>
+                    <span className="text-sm font-bold tracking-widest uppercase mb-2 block" style={{ color: "var(--accent-orange-text)" }}>
                         Our Workflow
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Path to{" "}
                         <span
-                            style={{ color: amazonOrange }}
+                            style={{ color: "var(--accent-orange-text)" }}
                         >
                             Best Seller
                         </span>
@@ -103,7 +106,7 @@ export default function Process() {
                                         }}
                                     >
                                         <div className="transform -rotate-45">
-                                            <span className="font-bold text-lg" style={{ color: isHovered ? step.color : "var(--secondary-text)" }}>
+                                            <span className="font-bold text-lg" style={{ color: isHovered ? textAccent(step.color) : "var(--secondary-text)" }}>
                                                 {step.id}
                                             </span>
                                         </div>

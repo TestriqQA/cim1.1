@@ -50,9 +50,9 @@ export default function TechStack() {
         ],
         cloud: [
             { name: "Firebase", description: "Backend Services", logo: "/images/techstack_logos/firebase-logo.svg" },
-            { name: "AWS Amplify", description: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#007AFF] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/aws-logo.png" },
+            { name: "AWS Amplify", description: <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/aws-logo.png" },
             { name: "Supabase", description: "Open Source BaaS", logo: "/images/techstack_logos/supabase-logo.webp" },
-            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#007AFF] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
             { name: "GraphQL", description: "API Layer", logo: "/images/techstack_logos/graphql-logo.svg" },
             { name: "REST APIs", description: "Web Services", logo: "/images/techstack_logos/REST-API-logo.png" },
         ],
@@ -97,7 +97,7 @@ export default function TechStack() {
                                 }
                             `}
                             style={{
-                                backgroundColor: activeTab === cat.id ? "#007AFF" : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#006d97" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -144,9 +144,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

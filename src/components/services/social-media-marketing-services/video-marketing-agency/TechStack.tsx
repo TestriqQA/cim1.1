@@ -7,8 +7,6 @@ import Link from "next/link";
 export default function TechStack() {
     const [activeTab, setActiveTab] = useState("ads");
 
-    const youtubeRed = "#FF0000";
-
     const categories = [
         { id: "ads", label: "Ads & Analytics" },
         { id: "production", label: "Video Production" },
@@ -61,7 +59,7 @@ export default function TechStack() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our YouTube</span>{" "}
-                        <span style={{ color: youtubeRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Tech Stack
                         </span>
                     </h2>
@@ -78,7 +76,7 @@ export default function TechStack() {
                             onClick={() => setActiveTab(cat.id)}
                             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === cat.id ? "text-white shadow-lg transform scale-105" : "hover:bg-accent"}`}
                             style={{
-                                backgroundColor: activeTab === cat.id ? youtubeRed : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#c5221f" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -104,7 +102,7 @@ export default function TechStack() {
                                 <div
                                     className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                                     style={{
-                                        backgroundColor: tech.logo ? "var(--card-bg)" : youtubeRed,
+                                        backgroundColor: tech.logo ? "var(--card-bg)" : "#c5221f",
                                         border: tech.logo ? "1px solid var(--border-color)" : "none",
                                     }}
                                 >
@@ -125,15 +123,15 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.link ? (
-                                            <Link href={tech.link} className="hover:text-red-500 transition-colors">
+                                            <Link href={tech.link} className="hover:text-[var(--accent-red-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (
                                             tech.name
                                         )}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

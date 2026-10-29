@@ -1,5 +1,3 @@
-"use client";
-
 import {
     ShieldCheck, TrendingUp, Wallet, Globe, Lock, Smartphone,
     ChevronRight, ArrowRight, Activity, PieChart, Building2
@@ -18,8 +16,8 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "$10B+", label: "Transaction Volume" },
-        { value: "99.99%", label: "System Uptime" },
+        { value: "High-Volume", label: "Transaction Volume" },
+        { value: "High", label: "System Uptime" },
         { value: "PCI-DSS", label: "Compliant" },
     ];
 
@@ -56,7 +54,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#0ea5e9" }}>FinTech Solutions</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>FinTech Solutions</span>
                         </nav>
 
                         {/* Badge */}
@@ -68,7 +66,7 @@ export default function Hero() {
                             }}
                         >
                             <ShieldCheck className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0ea5e9" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                 FinTech & Banking Solutions
                             </span>
                         </div>
@@ -82,7 +80,7 @@ export default function Hero() {
                             <span
                                 className="bg-clip-text text-transparent"
                                 style={{
-                                    color: "#0ea5e9"
+                                    color: "var(--accent-sky-text)"
                                 }}
                             >
                                 Digital Finance
@@ -121,7 +119,7 @@ export default function Hero() {
                                 <div key={idx} className="text-center">
                                     <div
                                         className="text-3xl md:text-4xl font-bold"
-                                        style={{ color: "#0ea5e9" }}
+                                        style={{ color: "var(--accent-sky-text)" }}
                                     >
                                         {stat.value}
                                     </div>
@@ -137,7 +135,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                                style={{ backgroundColor: "#0ea5e9" }}
+                                style={{ backgroundColor: "var(--brand-blue-btn)" }}
                             >
                                 Start Your FinTech Project
                                 <ArrowRight className="w-5 h-5" />
@@ -188,7 +186,7 @@ export default function Hero() {
                         <div className="grid grid-cols-2 gap-4 mt-6 w-full z-10 relative">
                             {[
                                 { label: "Transaction Speed", value: "<100ms" },
-                                { label: "Availability", value: "99.999%" },
+                                { label: "Availability", value: "High" },
                                 { label: "Security Score", value: "A+" },
                                 { label: "API Latency", value: "Low" },
                             ].map((metric, idx) => (
@@ -200,7 +198,7 @@ export default function Hero() {
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="text-xl font-bold" style={{ color: "#0ea5e9" }}>
+                                    <div className="text-xl font-bold" style={{ color: "var(--accent-sky-text)" }}>
                                         {metric.value}
                                     </div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>

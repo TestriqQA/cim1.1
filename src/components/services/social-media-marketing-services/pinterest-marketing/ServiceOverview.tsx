@@ -84,7 +84,7 @@ export default function ServiceOverview() {
                             style={{
                                 backgroundColor: `${pinterestRed}10`,
                                 borderColor: `${pinterestRed}30`,
-                                color: pinterestRed,
+                                color: "var(--accent-red-text)",
                             }}
                         >
                             Our Services
@@ -95,7 +95,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         Pinterest{" "}
-                        <span style={{ color: pinterestRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Marketing Services
                         </span>
                     </h2>

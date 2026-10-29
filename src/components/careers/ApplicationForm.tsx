@@ -4,7 +4,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Loader2, Upload, Paperclip, CheckCircle2 } from "lucide-react";
 
 // Define validation schema
@@ -51,6 +51,7 @@ export default function ApplicationForm({ jobTitle, onSuccess, onCancel }: Appli
         setFileName(file[0].name);
     }
 
+    const hpRef = useRef<HTMLInputElement>(null);
     const onSubmit = async (data: FormData) => {
         setIsSubmitting(true);
 
@@ -63,6 +64,7 @@ export default function ApplicationForm({ jobTitle, onSuccess, onCancel }: Appli
             formData.append("portfolio", data.portfolio || "");
             formData.append("coverLetter", data.coverLetter || "");
             formData.append("jobTitle", jobTitle);
+            formData.append("hp_field", hpRef.current?.value || "");
 
             if (data.resume && data.resume.length > 0) {
                 formData.append("resume", data.resume[0]);
@@ -78,6 +80,7 @@ export default function ApplicationForm({ jobTitle, onSuccess, onCancel }: Appli
 
             console.log("Application Submitted Successfully");
             onSuccess();
+            try { (window as any).gtag?.("event", "generate_lead", { form_id: "careers" }); } catch { /* analytics best-effort */ }
         } catch (error) {
             console.error(error);
             alert("Something went wrong. Please try again.");
@@ -88,6 +91,7 @@ export default function ApplicationForm({ jobTitle, onSuccess, onCancel }: Appli
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <input ref={hpRef} type="text" name="hp_field" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
             <div className="grid md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div className="space-y-2">

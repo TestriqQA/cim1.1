@@ -61,7 +61,7 @@ export default function Hero() {
                             }}
                         >
                             <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                <span style={{ color: xBlue }}>#1</span> <Link href="/services/social-media-marketing-services" className="hover:underline decoration-dotted underline-offset-4">Platform for Brand Interaction</Link>
+                                <span style={{ color: "var(--brand-blue-text)" }}>#1</span> <Link href="/services/social-media-marketing-services" className="hover:underline decoration-dotted underline-offset-4">Platform for Brand Interaction</Link>
                             </span>
                         </div>
 

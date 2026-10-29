@@ -11,7 +11,7 @@ const faqs = [
     },
     {
         question: "How much does it cost to build a custom Next.js website?",
-        answer: <>The cost vary significantly depending on complexity, features, and integrations. Typically, a professional Next.js project can range from $5,000 for a straightforward <Link href="/services/web-design-development/branding-services" className="hover:text-[#61dafb] transition-colors">marketing site</Link> to $50,000+ for complex enterprise <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#61dafb] transition-colors">SaaS</Link> platforms or large-scale <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#61dafb] transition-colors">e-commerce</Link> solutions. We provide tailored quotes after a strategic discovery phase.</>
+        answer: <>The cost vary significantly depending on complexity, features, and integrations. Typically, a professional Next.js project can range from $5,000 for a straightforward <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">marketing site</Link> to $50,000+ for complex enterprise <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">SaaS</Link> platforms or large-scale <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">e-commerce</Link> solutions. We provide tailored quotes after a strategic discovery phase.</>
     },
     {
         question: "How do I choose the best React development agency?",
@@ -40,8 +40,8 @@ export default function FAQ() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Common Questions
                         </span>
                     </div>

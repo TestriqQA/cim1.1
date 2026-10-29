@@ -94,8 +94,8 @@ export default function TechStack() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Server className="w-4 h-4" style={{ color: "#FF2D20" }} />
-                        <span className="text-sm font-medium" style={{ color: "#FF2D20" }}>
+                        <Server className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Our Tech Stack
                         </span>
                     </div>
@@ -134,6 +134,7 @@ export default function TechStack() {
                             <button
                                 key={category.id}
                                 onClick={() => setActiveCategory(idx)}
+                                aria-label={category.title}
                                 className={`
                                     flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-xs sm:text-sm
                                     transition-all duration-300
@@ -189,7 +190,7 @@ export default function TechStack() {
                                     ) : (
                                         <span
                                             className="text-lg font-bold"
-                                            style={{ color: "#FF2D20" }}
+                                            style={{ color: "var(--accent-red-text)" }}
                                         >
                                             {tech.name.charAt(0)}
                                         </span>
@@ -200,7 +201,7 @@ export default function TechStack() {
                                 <div className="flex-1 min-w-0">
                                     <p
                                         className="font-semibold truncate"
-                                        style={{ color: "#FF2D20" }}
+                                        style={{ color: "var(--accent-red-text)" }}
                                     >
                                         {tech.name}
                                     </p>

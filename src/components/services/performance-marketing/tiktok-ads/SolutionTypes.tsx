@@ -11,6 +11,10 @@ export default function SolutionTypes() {
     const tiktokPink = "#ff0050";
     const tiktokCyan = "#00f2ea";
 
+    // Map brand color -> theme-aware text token (contrast-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === tiktokCyan ? "var(--accent-cyan-text)" : "var(--accent-pink-text)";
+
     const solutions = [
         {
             icon: Eye,
@@ -73,7 +77,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: tiktokPink }} />
-                        <span className="text-sm font-medium" style={{ color: tiktokPink }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>
                             Ad Solutions
                         </span>
                     </div>
@@ -143,7 +147,7 @@ export default function SolutionTypes() {
                                         borderColor: solution.color,
                                     }}
                                 >
-                                    <h3 className="text-lg font-bold mb-4" style={{ color: solution.color }}>
+                                    <h3 className="text-lg font-bold mb-4" style={{ color: textAccent(solution.color) }}>
                                         {solution.title}
                                     </h3>
                                     <div className="space-y-3 flex-1">

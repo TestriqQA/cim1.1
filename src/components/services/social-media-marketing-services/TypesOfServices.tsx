@@ -19,14 +19,14 @@ export default function TypesOfServices() {
         {
             icon: Sprout,
             title: "Organic Social Media Marketing",
-            description: <>Building genuine, lasting connections with your audience through high-quality, non-promoted content. This is the foundation of brand loyalty and <Link href="/blog/social-media-strategy-building-brand" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">organic social media follower growth strategy</Link>. We craft compounding content strategies that educate, entertain, and inspire, naturally attracting an audience that actually cares about your mission. Over time, this builds a fortress of trust that paid ads alone cannot replicate, reducing your reliance on ad spend and increasing customer lifetime value.</>,
+            description: <>Building genuine, lasting connections with your audience through high-quality, non-promoted content. This is the foundation of brand loyalty and <Link href="/blog/social-media-strategy-building-brand" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">organic social media follower growth strategy</Link>. We craft compounding content strategies that educate, entertain, and inspire, naturally attracting an audience that actually cares about your mission. Over time, this builds a fortress of trust that paid ads alone cannot replicate, reducing your reliance on ad spend and increasing customer lifetime value.</>,
             gradient: "linear-gradient(135deg, #10b981, #059669)",
             accentColor: "#10b981",
         },
         {
             icon: Megaphone,
             title: "Paid Social Media Advertising",
-            description: <>Targeted, high-impact campaigns across platforms to drive immediate results. Our <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">paid social media advertising agency</Link> expertise ensures your budget is spent efficiently to maximize leads and sales. We utilize advanced audience segmentation, lookalike modeling, and retargeting sequences to put your offer in front of the people most likely to buy. From <Link href="/services/performance-marketing/meta-ads" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Meta Ads</Link> to <Link href="/services/performance-marketing/linkedin-ads" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">LinkedIn Sponsored Content</Link>, our precise targeting lowers your CPA and scales your revenue predictably.</>,
+            description: <>Targeted, high-impact campaigns across platforms to drive immediate results. Our <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">paid social media advertising agency</Link> expertise ensures your budget is spent efficiently to maximize leads and sales. We utilize advanced audience segmentation, lookalike modeling, and retargeting sequences to put your offer in front of the people most likely to buy. From <Link href="/services/performance-marketing/meta-ads" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Meta Ads</Link> to <Link href="/services/performance-marketing/linkedin-ads" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">LinkedIn Sponsored Content</Link>, our precise targeting lowers your CPA and scales your revenue predictably.</>,
             gradient: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))",
             accentColor: "var(--brand-teal)",
         },
@@ -40,7 +40,7 @@ export default function TypesOfServices() {
         {
             icon: PenTool,
             title: "Content Creation & Scheduling",
-            description: <>Developing visually engaging and contextually relevant content (graphics, videos, copy) and utilizing <Link href="/blog/content-marketing-strategies-work" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">custom social media content calendar services</Link> for optimal posting times to capture maximum audience attention. Content is king, but context is queen. We produce high-fidelity assets-from scroll-stopping motion graphics to thought-leadership articles-that stop the scroll. Our strategic scheduling ensures your content hits the feed exactly when your audience is most active, maximizing visibility and engagement.</>,
+            description: <>Developing visually engaging and contextually relevant content (graphics, videos, copy) and utilizing <Link href="/blog/content-marketing-strategies-work" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">custom social media content calendar services</Link> for optimal posting times to capture maximum audience attention. Content is king, but context is queen. We produce high-fidelity assets-from scroll-stopping motion graphics to thought-leadership articles-that stop the scroll. Our strategic scheduling ensures your content hits the feed exactly when your audience is most active, maximizing visibility and engagement.</>,
             gradient: "linear-gradient(135deg, #f59e0b, #d97706)",
             accentColor: "#f59e0b",
         },
@@ -110,7 +110,7 @@ export default function TypesOfServices() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                             borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                            color: "var(--brand-teal)",
+                            color: "var(--accent-teal-text)",
                         }}
                     >
                         <Sparkles className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function TypesOfServices() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-teal)" }}>Comprehensive Social Media Solutions</span> for Every Business Need
+                        <span style={{ color: "var(--accent-teal-text)" }}>Comprehensive Social Media Solutions</span> for Every Business Need
                     </h2>
 
                     <div

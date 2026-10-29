@@ -1,5 +1,3 @@
-"use client";
-
 import { ShoppingBag, Sparkles, Apple, Home, Dumbbell, Gift } from "lucide-react";
 
 export default function UseCases() {
@@ -54,7 +52,7 @@ export default function UseCases() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Industries We <span style={{ color: "#00b5ca" }}>Power</span>
+                        Industries We <span style={{ color: "var(--accent-cyan-text)" }}>Power</span>
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
@@ -88,7 +86,7 @@ export default function UseCases() {
                                         background: "linear-gradient(135deg, color-mix(in srgb, #00b5ca 15%, transparent), color-mix(in srgb, #00efd6 15%, transparent))",
                                     }}
                                 >
-                                    <Icon className="w-7 h-7" style={{ color: "#00b5ca" }} />
+                                    <Icon className="w-7 h-7" style={{ color: "var(--accent-cyan-text)" }} />
                                 </div>
 
                                 <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
@@ -105,7 +103,7 @@ export default function UseCases() {
                                         backgroundColor: "color-mix(in srgb, #00b5ca 5%, transparent)",
                                     }}
                                 >
-                                    <p className="text-xs font-medium" style={{ color: "#00b5ca" }}>
+                                    <p className="text-xs font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                                         Success: {industry.example}
                                     </p>
                                 </div>

@@ -23,11 +23,21 @@ const CTA = dynamic(() => import('@/components/services/mobile-app-development/C
 });
 
 import { getPageMetadata } from '@/lib/metadata';
-import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import {
+    generateGraphSchema,
+    generateOrganizationSchema,
+    generateWebSiteSchema,
+    generateWebPageSchema,
+    generateBreadcrumbSchema,
+    generateServiceSchema,
+    generateItemListSchema,
+    generateHowToSchema,
+    generateNavigationSchema,
+} from '@/lib/schema';
 
 export const metadata = getPageMetadata({
     title: 'Top Mobile App Development Company | Custom Apps 2026',
-    description: 'Leading mobile app development company delivering custom iOS, Android & cross-platform apps. 300+ successful projects. Get free consultation today!',
+    description: 'Expert mobile app development company delivering custom iOS, Android & cross-platform apps. 300+ successful projects. Get free consultation today!',
     url: '/services/mobile-app-development',
     keywords: [
         'Mobile App Development Company',
@@ -41,89 +51,105 @@ export const metadata = getPageMetadata({
         'Flutter Development',
         'React Native Development',
     ],
+    image: '/og-images/mobile_app_development.webp',
 });
 
 export default function MobileAppDevelopmentPage() {
-    const serviceSchema = generateServiceSchema({
-        name: 'Mobile App Development',
-        description: 'Native and cross-platform mobile application development.',
-        urlPath: '/services/mobile-app-development',
-    });
+    const mobileSchema = generateGraphSchema(
+        generateOrganizationSchema({
+            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
+            slogan: "Build. Market. Scale.",
+        }),
 
-    const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: 'Home', url: '/' },
-        { name: 'Services', url: '/services' },
-        { name: 'Mobile App Development', url: '/services/mobile-app-development' },
-    ]);
+        generateWebSiteSchema(),
 
-    const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Cinute Infomedia",
-        "description": "Leading mobile app development company delivering custom iOS, Android & cross-platform apps globally since 2014.",
-        "url": "https://www.cinuteinfomedia.com",
-        "logo": "https://www.cinuteinfomedia.com/logo.png",
-        "foundingDate": "2014",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Mumbai",
-            "addressCountry": "India"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "350"
-        }
-    };
+        generateWebPageSchema({
+            name: "Top Mobile App Development Company | Custom Apps 2026",
+            description: "Expert mobile app development company delivering custom iOS, Android & cross-platform apps. 300+ successful projects. Get free consultation today!",
+            urlPath: "/services/mobile-app-development",
+            datePublished: "2025-01-01",
+            dateModified: "2026-04-10",
+            aboutId: "https://www.cinuteinfomedia.com/services/mobile-app-development/#service",
+            mainEntityId: "https://www.cinuteinfomedia.com/services/mobile-app-development/#service",
+            breadcrumbId: "https://www.cinuteinfomedia.com/services/mobile-app-development/#breadcrumb",
+        }),
 
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is the difference between native and cross-platform app development?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Native apps (Swift for iOS, Kotlin for Android) offer best performance and full device feature access but require separate codebases and cost more. Cross-platform apps (Flutter, React Native) use single codebase, save 40% cost, and launch faster but may have slightly lower performance for complex tasks. Choose native for gaming/AR/complex apps; cross-platform for MVPs, startups, and standard features."
-                }
+        generateBreadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Mobile App Development", url: "/services/mobile-app-development" },
+        ], "https://www.cinuteinfomedia.com/services/mobile-app-development/#breadcrumb"),
+
+        generateServiceSchema({
+            name: "Mobile App Development Services",
+            description: "Transform your vision into high-performance mobile apps that drive business growth. As an expert mobile app development company with deep expertise, we craft custom iOS, Android, and cross-platform solutions globally. apps delivered globally, applications used at scale, strong client retention, a rigorous QA process.",
+            urlPath: "/services/mobile-app-development",
+            serviceType: "Mobile App Development",
+            areaServed: ["IN", "US", "GB", "AU", "AE"],
+            offer: {
+                url: "/contact",
+                priceCurrency: "USD",
+                validFrom: "2025-01-01",
+                description: "Free 30-minute strategy session valued at $1,500. Includes business goals analysis, technical feasibility review, cost and timeline estimate, and MVP roadmap.",
             },
-            {
-                "@type": "Question",
-                "name": "How long does it take to develop a mobile app?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Development time varies by complexity. Simple MVP: 2-3 months ($15K-$40K); Medium complexity: 4-6 months ($40K-$100K); Complex enterprise: 6-12 months ($100K-$300K+); Fintech apps: 6-10 months ($120K-$350K) including security compliance. Cross-platform development can reduce timelines by 40% compared to building separate native apps."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide post-launch support and maintenance?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! We offer 3 support tiers: Bronze ($500/month) with business hours support and 72-hour bug fixes; Silver ($1,200/month) with extended hours and 48-hour fixes; Gold ($2,500/month) with 24/7 support, 24-hour fixes, and dedicated manager. All plans include OS updates, security patches, crash monitoring, and analytics."
-                }
-            }
-        ]
-    };
+        }),
+
+        generateItemListSchema({
+            id: "/services/mobile-app-development/#coreServicesList",
+            name: "Core Mobile App Development Capabilities",
+            description: "End-to-end mobile development capabilities from native apps to enterprise security and performance optimization.",
+            items: [
+                { name: "Native App Development", description: "iOS (Swift 6) and Android (Kotlin) development with AR/VR capabilities and platform-specific optimizations." },
+                { name: "Cross-Platform Solutions", description: "Unified performance using Flutter and React Native with 90%+ code reusability across platforms." },
+                { name: "Performance Optimization", description: "Sub-2-second launch times, 60 FPS fluidity, and under 50MB app size for optimal user experience." },
+                { name: "User-Centric Design", description: "WCAG 2.2 AA compliant, research-driven UI/UX design focused on engagement and conversions." },
+                { name: "Scalable Backend", description: "Supporting 10,000+ concurrent users with Node.js, Python, and .NET backend architecture." },
+                { name: "Enterprise Security", description: "AES-256 encryption, OAuth 2.0 authentication, and multi-compliance (GDPR, HIPAA, SOC 2, PCI-DSS, ISO 27001)." },
+            ],
+        }),
+
+        generateItemListSchema({
+            id: "/services/mobile-app-development/#platformsList",
+            name: "Mobile App Development Platforms",
+            description: "Platform-specific mobile app development services for iOS, Android, cross-platform, hybrid, enterprise, and HarmonyOS.",
+            items: [
+                { name: "iOS App Development", description: "Swift, SwiftUI, App Store Optimization, and iCloud integration for premium Apple ecosystem experiences.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/ios-app-development-company" },
+                { name: "Android App Development", description: "Kotlin, Jetpack Compose, Firebase, and Material Design for powerful Android applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/android-app-development-company" },
+                { name: "Cross-Platform App Development", description: "React Native and Flutter development with 90%+ code reusability across iOS and Android.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company" },
+                { name: "Hybrid App Development", description: "Ionic and Cordova for quick-to-market web-based mobile applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services" },
+                { name: "Enterprise Application Development", description: "Legacy integration, high security, and scalability for enterprise mobile solutions.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/enterprise-application-development-services" },
+                { name: "HarmonyOS App Development", description: "Huawei HarmonyOS SDK, distributed architecture, and IoT-focused mobile applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/harmony-OS-app-development-services" },
+            ],
+        }),
+
+        generateHowToSchema({
+            name: "Our 6-Phase Agile Development Process",
+            description: "A proven 6-phase agile methodology for building mobile apps that has delivered 300+ successful projects with a rigorous QA process and faster time-to-market.",
+            steps: [
+                { name: "Discovery & Strategy", text: "Stakeholder interviews, MoSCoW feature prioritization, competitive analysis, and technical roadmap creation. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-discovery" },
+                { name: "UI/UX Design", text: "Figma wireframes, interactive prototyping, usability testing, and design system creation. Timeline: Week 3-5.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-design" },
+                { name: "Development & Coding", text: "2-week agile sprints, 80%+ unit test coverage, CI/CD pipelines, and modular architecture implementation. Timeline: Week 6-16.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-development" },
+                { name: "Testing & QA", text: "Integration testing, UI automation with Appium, performance stress tests, and security validation. Timeline: Week 17-19.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-testing" },
+                { name: "Deployment & Launch", text: "App Store and Google Play submission, App Store Optimization (ASO), and beta testing via TestFlight. Timeline: Week 20-21.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-deployment" },
+                { name: "Maintenance & Support", text: "24/7 monitoring, 24-72 hour SLA for bug fixes, OS updates, performance optimization, and feature enhancements. Ongoing.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/#step-maintenance" },
+            ],
+        }),
+
+        generateNavigationSchema([
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Blog", url: "/blog" },
+            { name: "About", url: "/about" },
+            { name: "Careers", url: "/careers" },
+            { name: "Contact", url: "/contact" },
+        ])
+    );
 
     return (
-        <main className="bg-white dark:bg-black" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}>
+        <main data-page-theme="purple" className="bg-white dark:bg-black" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(mobileSchema) }}
             />
             <Hero />
             <ServiceOverview />

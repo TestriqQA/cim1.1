@@ -59,7 +59,7 @@ export default function Culture() {
                     </div>
 
                     <div className="lg:pl-8">
-                        <span style={{ color: "var(--brand-blue)", fontWeight: 600, letterSpacing: "0.05em" }} className="uppercase text-sm mb-4 block">
+                        <span style={{ color: "var(--brand-blue-text)", fontWeight: 600, letterSpacing: "0.05em" }} className="uppercase text-sm mb-4 block">
                             Our Culture
                         </span>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">

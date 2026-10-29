@@ -16,6 +16,14 @@ export default function ServiceOverview() {
 
     const youtubeRed = "#FF0000";
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#ff0000": "var(--accent-red-text)",
+            "#cc0000": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const services = [
         {
             icon: PlayCircle,
@@ -88,8 +96,8 @@ export default function ServiceOverview() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
-                                backgroundColor: `${youtubeRed}15`,
-                                color: youtubeRed,
+                                backgroundColor: "var(--card-bg)",
+                                color: "var(--accent-red-text)",
                             }}
                         >
                             Full-Funnel Excellence
@@ -100,7 +108,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         Comprehensive YouTube{" "}
-                        <span style={{ color: youtubeRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Marketing Solutions
                         </span>
                     </h2>
@@ -194,7 +202,7 @@ export default function ServiceOverview() {
                                     {/* Content */}
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
-                                        style={{ color: isHovered ? service.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(service.color) : "var(--foreground)" }}
                                     >
                                         {service.title}
                                     </h3>

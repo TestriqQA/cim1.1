@@ -31,7 +31,7 @@ export default function CTA() {
                     </div>
 
                     <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Ready to <span style={{ color: msBlue }}>Expand Reach?</span>
+                        Ready to <span style={{ color: "var(--brand-blue-text)" }}>Expand Reach?</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>

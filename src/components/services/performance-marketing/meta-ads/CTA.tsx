@@ -65,14 +65,14 @@ export default function CTA() {
 
                     {/* Trust Badges */}
                     <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        {["Meta Business Partner", "400% Avg ROAS", "300+ Campaigns"].map((badge, idx) => (
+                        {["Meta Business Partner", "Strong Avg ROAS", "300+ Campaigns"].map((badge, idx) => (
                             <span
                                 key={idx}
                                 className="px-4 py-2 rounded-full text-sm font-medium border"
                                 style={{
                                     borderColor: `${metaBlue}30`,
                                     backgroundColor: `${metaBlue}10`,
-                                    color: metaBlue,
+                                    color: "var(--brand-blue-text)",
                                 }}
                             >
                                 {badge}

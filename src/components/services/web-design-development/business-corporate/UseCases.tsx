@@ -130,8 +130,8 @@ export default function UseCases() {
                             boxShadow: "0 0 40px rgba(249, 115, 22, 0.15)"
                         }}
                     >
-                        <TrendingUp className="w-5 h-5" style={{ color: "#f97316" }} />
-                        <span className="text-sm font-bold tracking-wider" style={{ color: "#f97316" }}>
+                        <TrendingUp className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-bold tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
                             TRUSTED ACROSS SECTORS
                         </span>
                     </div>
@@ -165,7 +165,7 @@ export default function UseCases() {
                             }`}
                     >
                         <div className="w-12 h-1.5 rounded-full bg-gradient-to-r from-transparent to-[#f97316]" />
-                        <Sparkle className="w-5 h-5" style={{ color: "#f97316" }} />
+                        <Sparkle className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
                         <div className="w-12 h-1.5 rounded-full bg-gradient-to-l from-transparent to-[#f97316]" />
                     </div>
                 </div>
@@ -295,7 +295,7 @@ export default function UseCases() {
                                                 style={{ color: industry.color }}
                                             />
                                             <div>
-                                                <p className="text-xs font-semibold mb-1" style={{ color: industry.color }}>
+                                                <p className="text-xs font-semibold mb-1" style={{ color: industry.color === "#f97316" ? "var(--accent-orange-text)" : industry.color }}>
                                                     Success Story
                                                 </p>
                                                 <p className="text-xs font-medium leading-relaxed" style={{ color: "var(--foreground)" }}>
@@ -357,7 +357,7 @@ export default function UseCases() {
 
                         {/* Decorative Elements */}
                         <div className="absolute top-4 right-4">
-                            <Sparkle className="w-6 h-6 text-[#f97316] opacity-30 animate-pulse" />
+                            <Sparkle className="w-6 h-6 text-[var(--accent-orange-text)] opacity-30 animate-pulse" />
                         </div>
                         <div className="absolute bottom-4 left-4">
                             <Sparkle className="w-6 h-6 text-[#00b5ca] opacity-30 animate-pulse" style={{ animationDelay: "1s" }} />

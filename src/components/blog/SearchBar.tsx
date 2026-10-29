@@ -68,7 +68,8 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
         type: "tag" as const,
         title: tag,
         subtitle: `Browse ${tag} articles`,
-        url: `/blog?tag=${encodeURIComponent(tag)}`,
+        // `search` is the param the blog index actually reads; `tag` was ignored.
+        url: `/blog?search=${encodeURIComponent(tag)}`,
       }));
     results.push(...matchingTags);
 
@@ -88,16 +89,17 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
       }));
     results.push(...matchingAuthors);
 
-    // Search categories
-    const categories = Array.from(new Set(posts.map((p) => p.category)));
+    // Search categories — keyed by the CMS slug, which is the only reliable
+    // way to build the URL (it cannot be derived from the display name).
+    const categories = Array.from(new Map(posts.map((p) => [p.categorySlug, p.category])).entries());
     const matchingCategories = categories
-      .filter((cat) => cat && cat.toLowerCase().includes(q))
+      .filter(([, cat]) => cat && cat.toLowerCase().includes(q))
       .slice(0, 2)
-      .map((cat) => ({
+      .map(([categorySlug, cat]) => ({
         type: "category" as const,
         title: cat,
         subtitle: `Explore ${cat} category`,
-        url: `/blog/category/${cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")}`,
+        url: `/blog/category/${categorySlug}`,
       }));
     results.push(...matchingCategories);
 
@@ -197,13 +199,14 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
     }
   };
 
-  // Get type badge color
+  // Get type badge color: mixColor feeds the color-mix() tint background,
+  // textColor is the WCAG AA theme-aware token used for the badge text.
   const getTypeBadge = (type: Suggestion["type"]) => {
     const badges = {
-      post: { label: "Article", color: "var(--brand-purple)" },
-      tag: { label: "Tag", color: "var(--brand-cyan)" },
-      author: { label: "Author", color: "#10b981" },
-      category: { label: "Category", color: "#f59e0b" },
+      post: { label: "Article", mixColor: "var(--brand-purple)", textColor: "var(--brand-purple-text)" },
+      tag: { label: "Tag", mixColor: "var(--brand-cyan)", textColor: "var(--accent-cyan-text)" },
+      author: { label: "Author", mixColor: "#10b981", textColor: "var(--accent-green-text)" },
+      category: { label: "Category", mixColor: "#f59e0b", textColor: "var(--accent-amber-text)" },
     };
     return badges[type];
   };
@@ -225,7 +228,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
           <Search
             className="w-4 h-4 lg:w-5 lg:h-5 transition-all duration-300"
             style={{
-              color: "var(--brand-purple)",
+              color: "var(--brand-purple-text)",
               opacity: isFocused ? 1 : 0.7
             }}
           />
@@ -276,12 +279,12 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
             onClick={handleSearch}
             className="px-2.5 lg:px-3 py-1.5 lg:py-2 rounded-lg font-semibold text-white text-xs lg:text-sm transition-all duration-300 hover:shadow-lg active:scale-95 flex items-center gap-1"
             style={{
-              backgroundColor: query.length >= 2 ? "var(--brand-purple)" : "var(--secondary-text)",
+              backgroundColor: query.length >= 2 ? "var(--brand-purple-btn)" : "var(--secondary-text)",
               opacity: query.length >= 2 ? 1 : 0.5,
               cursor: query.length >= 2 ? "pointer" : "not-allowed",
             }}
             disabled={query.length < 2}
-            aria-label="Search"
+            aria-label="Go"
             type="button"
           >
             <span className="hidden sm:inline">Go</span>
@@ -308,15 +311,15 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
             style={{ borderColor: "var(--border-color)" }}
           >
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
-              <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--brand-purple)" }}>
+              <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+              <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--brand-purple-text)" }}>
                 Quick Results
               </p>
             </div>
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full"
               style={{
                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
-                color: "var(--brand-purple)"
+                color: "var(--brand-purple-text)"
               }}
             >
               {suggestions.length}
@@ -363,7 +366,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
                           className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center flex-shrink-0"
                           style={{
                             backgroundColor: "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
-                            color: "var(--brand-purple)",
+                            color: "var(--brand-purple-text)",
                           }}
                         >
                           {getIcon(suggestion.type)}
@@ -376,14 +379,14 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
                           <span
                             className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
                             style={{
-                              backgroundColor: `color-mix(in srgb, ${badge.color} 15%, transparent)`,
-                              color: badge.color,
+                              backgroundColor: `color-mix(in srgb, ${badge.mixColor} 15%, transparent)`,
+                              color: badge.textColor,
                             }}
                           >
                             {badge.label}
                           </span>
                         </div>
-                        <p className="font-semibold text-sm truncate group-hover:text-[var(--brand-purple)] transition-colors" style={{ color: "var(--foreground)" }}>
+                        <p className="font-semibold text-sm truncate group-hover:text-[var(--brand-purple-text)] transition-colors" style={{ color: "var(--foreground)" }}>
                           {suggestion.title}
                         </p>
                         {suggestion.subtitle && (
@@ -396,7 +399,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
                       {/* Arrow */}
                       <ArrowRight
                         className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 flex-shrink-0"
-                        style={{ color: "var(--brand-purple)" }}
+                        style={{ color: "var(--brand-purple-text)" }}
                       />
                     </Link>
                   );
@@ -461,17 +464,17 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
               backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
             }}
           >
-            <Search className="w-7 h-7 lg:w-8 lg:h-8" style={{ color: "var(--brand-purple)" }} />
+            <Search className="w-7 h-7 lg:w-8 lg:h-8" style={{ color: "var(--brand-purple-text)" }} />
           </div>
           <h3 className="text-base lg:text-lg font-bold mb-2">No results found</h3>
           <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
-            No matches for "<span className="font-semibold" style={{ color: "var(--brand-purple)" }}>{query}</span>"
+            No matches for "<span className="font-semibold" style={{ color: "var(--brand-purple-text)" }}>{query}</span>"
           </p>
           <button
             onClick={handleClear}
             className="px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg"
             style={{
-              backgroundColor: "var(--brand-purple)",
+              backgroundColor: "var(--brand-purple-btn)",
             }}
           >
             Clear Search

@@ -1,56 +1,42 @@
 
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { z } from 'zod';
+import { createMailTransport, getMissingSmtpConfig } from '@/lib/cim/mail';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, subject, message, budget, timeframe, fileName } = body;
-
-        // Simple validation
-        if (!name || !email || !subject || !message) {
+        if (body.hp_field) return NextResponse.json({ success: true }); // honeypot: bots fill hidden field
+        const ContactSchema = z.object({
+            name: z.string().trim().min(1).max(100),
+            email: z.string().trim().email().max(150),
+            subject: z.string().trim().min(1).max(150),
+            message: z.string().trim().min(1).max(5000),
+            phone: z.string().trim().max(30).optional(),
+            budget: z.string().trim().max(100).optional(),
+            timeframe: z.string().trim().max(100).optional(),
+            fileName: z.string().trim().max(255).optional(),
+        });
+        const parsed = ContactSchema.safeParse(body);
+        if (!parsed.success) {
             return NextResponse.json(
-                { error: 'Missing required fields' },
+                { error: 'Invalid input', details: parsed.error.issues.map((i) => i.path.join('.') + ': ' + i.message) },
                 { status: 400 }
             );
         }
+        const { name, email, phone, subject, message, budget, timeframe, fileName } = parsed.data;
 
         // Configuration validation
-        const missingVars = [];
-        if (!process.env.SMTP_HOST) missingVars.push('SMTP_HOST');
-        if (!process.env.SMTP_USER) missingVars.push('SMTP_USER');
-        if (!process.env.SMTP_PASSWORD) missingVars.push('SMTP_PASSWORD');
-
+        const missingVars = getMissingSmtpConfig();
         if (missingVars.length > 0) {
             console.error('Missing SMTP configuration variables:', missingVars.join(', '));
-            console.error('Current Env Keys (Generic):', Object.keys(process.env).filter(k => k.includes('SMTP') || k.includes('SMPT')));
             return NextResponse.json(
-                { error: `Server configuration error: Missing vars: ${missingVars.join(', ')}. Did you restart the server?` },
+                { error: `Server configuration error. Please try again later.` },
                 { status: 500 }
             );
         }
 
-        const smtpHost = process.env.SMTP_HOST;
-        // Auto-detect port if not specified (default to 587)
-        const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
-
-        // Auto-determine secure setting:
-        // Force secure: true if port is 465 (Zoho/Gmail SSL)
-        const isSecure = process.env.SMTP_SECURE === 'true' || smtpPort === 465;
-
-        const transporter = nodemailer.createTransport({
-            host: smtpHost,
-            port: smtpPort,
-            secure: isSecure, // true for 465, false for other ports
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASSWORD,
-            },
-            tls: {
-                // Do not fail on invalid certs
-                rejectUnauthorized: process.env.NODE_ENV === 'production'
-            }
-        });
+        const transporter = createMailTransport();
 
         // Verify connection configuration
         try {
@@ -58,7 +44,7 @@ export async function POST(request: Request) {
         } catch (verifyError) {
             console.error('SMTP Connection verification failed:', verifyError);
             return NextResponse.json(
-                { error: `SMTP Connection failed: ${(verifyError as Error).message}` },
+                { error: `Email service temporarily unavailable. Please try again later.` },
                 { status: 500 }
             );
         }

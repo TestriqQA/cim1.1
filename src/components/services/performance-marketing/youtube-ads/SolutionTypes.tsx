@@ -21,13 +21,13 @@ export default function SolutionTypes() {
             icon: Users,
             title: <Link href="/services/web-design-development/landing-pages" className="hover:text-[var(--primary)] transition-colors">Lead Generation</Link>,
             description: "Capture leads directly from video ads with custom forms.",
-            metric: "2x Leads",
+            metric: "More Leads",
         },
         {
             icon: ShoppingBag,
             title: <Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-[var(--primary)] transition-colors">E-commerce Sales</Link>,
             description: "Drive purchases with shoppable video ads and product feeds.",
-            metric: "3.5x ROAS",
+            metric: "Strong ROAS",
         },
         {
             icon: Smartphone,
@@ -39,7 +39,7 @@ export default function SolutionTypes() {
             icon: TrendingUp,
             title: "Website Traffic",
             description: "Drive qualified traffic to your landing pages.",
-            metric: "+50% CTR",
+            metric: "Higher CTR",
         },
         {
             icon: Megaphone,
@@ -64,8 +64,8 @@ export default function SolutionTypes() {
                             borderColor: `${youtubeRed}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: youtubeRed }} />
-                        <span className="text-sm font-medium" style={{ color: youtubeRed }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Business Objectives
                         </span>
                     </div>
@@ -115,7 +115,7 @@ export default function SolutionTypes() {
                                         className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all"
                                         style={{ border: `1px solid ${youtubeRed}` }}
                                     />
-                                    <solution.icon className="w-8 h-8 relative z-10" style={{ color: youtubeRed }} />
+                                    <solution.icon className="w-8 h-8 relative z-10" style={{ color: "var(--accent-red-text)" }} />
                                 </div>
 
                                 <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
@@ -131,7 +131,7 @@ export default function SolutionTypes() {
                                     style={{
                                         borderColor: `${youtubeRed}30`,
                                         backgroundColor: hoveredCard === idx ? youtubeRed : "transparent",
-                                        color: hoveredCard === idx ? "white" : youtubeRed,
+                                        color: hoveredCard === idx ? "white" : "var(--accent-red-text)",
                                     }}
                                 >
                                     {solution.metric}

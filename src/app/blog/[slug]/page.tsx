@@ -1,11 +1,11 @@
 import BlogDetailClient from "./BlogDetailClient";
 import { generateBlogPostMetadata } from "@/lib/metadata";
-import { generateBlogPostSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateBlogPostGraphSchema } from "@/lib/schema";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { postQuery, allPostsQuery, moreStoriesQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 
 type Props = {
@@ -51,25 +51,16 @@ export default async function BlogDetailPage({ params }: Props) {
 
   const { categories, popularPosts, tags } = await getSidebarData();
   const relatedPostsRaw = await client.fetch(moreStoriesQuery, { skip: sanityPost._id, limit: 3 });
-  const relatedPosts = relatedPostsRaw.map(mapSanityPostToBlogPost);
+  const relatedPosts = relatedPostsRaw.map(mapSanityPostToBlogPost).map(toListPost);
 
-  const blogSchema = generateBlogPostSchema(post);
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Blog", url: "/blog" },
-    { name: post.category, url: `/blog/category/${post.category?.toLowerCase().replace(/\s+/g, "-") || 'uncategorized'}` },
-    { name: post.title, url: `/blog/${post.slug}` },
-  ]);
+  // Unified @graph schema — auto-generated from post data with CMS overrides
+  const blogPostSchema = generateBlogPostGraphSchema(post);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
       <BlogDetailClient
         post={post}

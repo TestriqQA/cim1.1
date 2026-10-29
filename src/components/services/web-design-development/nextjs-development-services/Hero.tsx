@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Code2, Zap, Server, Globe, Shield, Rocket,
     ChevronRight, ArrowRight, CheckCircle2, Sparkles, Terminal, Layers
@@ -13,13 +11,13 @@ export default function Hero() {
         { icon: Layers, text: "App Router" },
         { icon: Zap, text: "SSR & SSG" },
         { icon: Code2, text: "TypeScript" },
-        { icon: Globe, text: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#61dafb] transition-colors">API Routes</Link> },
+        { icon: Globe, text: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-cyan-text)] transition-colors">API Routes</Link> },
         { icon: Shield, text: "Edge Functions" },
     ];
 
     const stats = [
         { value: "<100ms", label: "Load Time" },
-        { value: "100", label: <Link href="/blog/lazy-loading-image-optimization-boost-lighthouse-scores" className="hover:text-[#61dafb] transition-colors">Lighthouse Score</Link> },
+        { value: "100", label: <Link href="/blog/lazy-loading-image-optimization-core-web-vitals" className="hover:text-[var(--accent-cyan-text)] transition-colors">Lighthouse Score</Link> },
         { value: "-70%", label: "Bundle Size" },
     ];
 
@@ -65,7 +63,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#61dafb" }}>Next.js & React</span>
+                            <span style={{ color: "var(--accent-cyan-text)" }}>Next.js & React</span>
                         </nav>
 
                         {/* Badge */}
@@ -76,8 +74,8 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, #61dafb 30%, transparent)",
                             }}
                         >
-                            <Terminal className="w-4 h-4" style={{ color: "#61dafb" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#61dafb" }}>
+                            <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                                 Modern React Development
                             </span>
                         </div>
@@ -87,7 +85,7 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Premier{" "}
+                            Expert{" "}
                             <span
                                 style={{
                                     background: "linear-gradient(135deg, #61dafb, #00d4ff)",
@@ -102,7 +100,7 @@ export default function Hero() {
 
                         <div className="space-y-4">
                             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                As a premier Next.js development agency and React JS development company, we build lightning-fast, SEO-optimized, and highly scalable web applications. Our expert React development services deliver seamless user experiences that dominate search rankings and maximize ROI for global brands.
+                                As an expert Next.js development agency and React JS development company, we build lightning-fast, SEO-optimized, and highly scalable web applications. Our expert React development services deliver seamless user experiences that dominate search rankings and maximize ROI for global brands.
                             </p>
                         </div>
 
@@ -119,7 +117,7 @@ export default function Hero() {
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "#61dafb" }} />
+                                        <Icon className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                                         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                             {feature.text}
                                         </span>
@@ -258,7 +256,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#61dafb" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-cyan-text)" }}>
                                 Tech Stack
                             </p>
                             <div className="flex flex-wrap gap-2">

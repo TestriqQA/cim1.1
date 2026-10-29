@@ -1,5 +1,3 @@
-"use client";
-
 import { Building2, Heart, Stethoscope, Pill, Brain } from "lucide-react";
 import Link from "next/link";
 

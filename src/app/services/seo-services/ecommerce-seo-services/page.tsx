@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
     description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
     alternates: {
-        canonical: "/services/seo-services/ecommerce-seo-services",
+        canonical: "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services",
     },
     keywords: [
         "ecommerce SEO services",
@@ -26,6 +26,27 @@ export const metadata: Metadata = {
         "BigCommerce SEO",
         "ecommerce conversion rate optimization",
     ],
+    openGraph: {
+        title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
+        description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
+        url: "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/ecommerce-seo-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026 by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
+        description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
+        images: ["/og-images/ecommerce-seo-services.webp"],
+    },
+
 };
 
 export default function EcommerceSEOPage() {
@@ -48,11 +69,6 @@ export default function EcommerceSEOPage() {
                 "telephone": "+91-9004988859",
                 "contactType": "Sales",
                 "availableLanguage": ["English", "Hindi"]
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "312"
             }
         },
         "areaServed": ["United States", "India", "United Kingdom", "Australia", "Europe", "Asia Pacific"],
@@ -129,7 +145,7 @@ export default function EcommerceSEOPage() {
                 "name": "How much do ecommerce SEO services cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ecommerce SEO cost in 2026: Small stores (100-500 products) $1,500-$3,000/month, Mid-size (500-5,000 products) $3,000-$7,000/month, Enterprise (5,000+ products) $7,000-$15,000/month. Most clients see 3-5x ROI within 6-9 months."
+                    "text": "Ecommerce SEO cost in 2026: Small stores (100-500 products) $1,500-$3,000/month, Mid-size (500-5,000 products) $3,000-$7,000/month, Enterprise (5,000+ products) $7,000-$15,000/month. Most clients see a strong ROI within 6-9 months."
                 }
             },
             {
@@ -153,7 +169,7 @@ export default function EcommerceSEOPage() {
                 "name": "How long does it take to see results from ecommerce SEO?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ecommerce SEO timeline: 30-60 days (technical fixes, low-competition rankings), 60-90 days (25-50% traffic increase), 90-120 days (50-100% traffic increase), 6 months (150-300% traffic, measurable revenue), 12 months (300-500% traffic, market dominance). Results vary by competition and starting authority."
+                    "text": "Ecommerce SEO timeline: 30-60 days (technical fixes, low-competition rankings), 60-90 days (growing organic traffic), 90-120 days (continued traffic growth), 6 months (significant traffic, measurable revenue), 12 months (sustained traffic, market dominance). Results vary by competition and starting authority."
                 }
             }
         ]
@@ -169,7 +185,7 @@ export default function EcommerceSEOPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <main>
+            <main style={{ "--page-selection-bg": "#0EA5E9" } as React.CSSProperties}>
                 <Hero />
                 <ServiceOverview />
                 <SolutionTypes />

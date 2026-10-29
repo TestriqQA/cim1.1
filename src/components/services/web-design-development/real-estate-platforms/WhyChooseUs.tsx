@@ -15,10 +15,10 @@ export default function WhyChooseUs() {
         {
             icon: Home,
             title: "Real Estate Expertise",
-            description: <>Deep understanding of property marketing, MLS integration, and <Link href="/services/performance-marketing" className="hover:underline">lead generation</Link> strategies tailored for real estate professionals.</>,
+            description: <>Deep understanding of property marketing, MLS integration, and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">lead generation</Link> strategies tailored for real estate professionals.</>,
             highlights: [
                 { icon: Map, text: "Market insights" },
-                { icon: Target, text: <Link href="/services/performance-marketing" className="hover:underline">Lead generation</Link> },
+                { icon: Target, text: <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Lead generation</Link> },
                 { icon: BarChart3, text: "Analytics" }
             ],
             color: "#0d9488",
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
             description: "Platforms that grow with your business, from startup to enterprise, with robust infrastructure and performance optimization.",
             highlights: [
                 { icon: TrendingUp, text: "Growth ready" },
-                { icon: Award, text: <Link href="/services/web-design-development/business-corporate" className="hover:underline">Enterprise</Link> },
+                { icon: Award, text: <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline">Enterprise</Link> },
                 { icon: Zap, text: "Optimized" }
             ],
             color: "#14b8a6",
@@ -118,7 +118,7 @@ export default function WhyChooseUs() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Star className="w-4 h-4" style={{ color: "#0d9488" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0d9488" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>
@@ -289,7 +289,7 @@ export default function WhyChooseUs() {
                                             background: isHovered
                                                 ? `linear-gradient(135deg, ${reason.color}, ${reason.color}cc)`
                                                 : `${reason.color}20`,
-                                            color: isHovered ? "white" : reason.color,
+                                            color: isHovered ? "white" : "var(--accent-teal-text)",
                                             transform: isHovered ? "scale(1.2) rotate(360deg)" : "scale(1) rotate(0deg)",
                                         }}
                                     >

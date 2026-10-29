@@ -11,7 +11,7 @@ export default function UseCases() {
             icon: Newspaper,
             title: "Media Agencies",
             description: "High-Traffic News Portals designed for breaking news cycles.",
-            metrics: ["99.9% Uptime", "Real-time indexing", "Ad revenue optimization"],
+            metrics: ["High Availability", "Real-time indexing", "Ad revenue optimization"],
             bgColor: "#a855f7",
         },
         {
@@ -25,7 +25,7 @@ export default function UseCases() {
             icon: Laptop,
             title: "Independent Creators",
             description: "Subscription-Based Magazines with built-in paywalls and newsletters.",
-            metrics: ["2x Revenue via Paywalls", "Member management", "Exclusive content"],
+            metrics: ["Higher Revenue via Paywalls", "Member management", "Exclusive content"],
             bgColor: "#ec4899",
         },
         {

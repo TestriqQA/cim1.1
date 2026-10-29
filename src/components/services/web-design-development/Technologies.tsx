@@ -120,17 +120,17 @@ export default function Technologies() {
                         }}
                     >
                         <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue)" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Tech Stack
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Cutting-Edge <span style={{ fontWeight: 700, color: "var(--brand-blue)" }}>Technology Stack</span> for Global Performance
+                        Cutting-Edge <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Technology Stack</span> for Global Performance
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As a forward-leaning <span className="font-bold text-[var(--brand-blue)]">web development company</span>, we utilize the most advanced tools to build fast, secure, and scalable digital solutions.
+                        As a forward-leaning <span className="font-bold text-[var(--brand-blue-text)]">web development company</span>, we utilize the most advanced tools to build fast, secure, and scalable digital solutions.
                     </p>
 
                     <div
@@ -251,7 +251,7 @@ export default function Technologies() {
                     </h3>
 
                     <p className="mb-8 max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)", fontSize: "1.1rem" }}>
-                        Our <span className="text-[var(--brand-blue)] font-bold">web development agency</span> leverages this robust tech stack to deliver 99.9% uptime and <span className="text-[var(--brand-teal)] font-bold">sub-2s load times</span> for enterprise clients worldwide.
+                        Our <span className="text-[var(--brand-blue-text)] font-bold">web development agency</span> leverages this robust tech stack to deliver high availability and <span className="text-[var(--accent-teal-text)] font-bold">sub-2s load times</span> for enterprise clients worldwide.
                     </p>
 
                     <Link

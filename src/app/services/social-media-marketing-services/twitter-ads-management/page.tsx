@@ -10,11 +10,32 @@ import CTA from "@/components/services/social-media-marketing-services/twitter-a
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'X Marketing Services | Best Twitter Marketing Agency for 20% CTR',
-    description: 'Scaling your X business? Our Twitter marketing company delivers 300% ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+    title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+    description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
     alternates: {
-        canonical: "/services/social-media-marketing-services/twitter-ads-management",
+        canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
     },
+    openGraph: {
+        title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+        description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+        url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/twitter-ads-management.webp",
+                width: 1200,
+                height: 630,
+                alt: "X Marketing Services | Expert Twitter Marketing Agency for Higher CTR by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: 'X Marketing Services | Expert Twitter Marketing Agency for Higher CTR',
+        description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+        images: ["/og-images/twitter-ads-management.webp"],
+    },
+
 };
 
 export default function XMarketingPage() {
@@ -110,7 +131,7 @@ export default function XMarketingPage() {
     };
 
     return (
-        <main>
+        <main style={{ "--page-selection-bg": "#1D9BF0" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

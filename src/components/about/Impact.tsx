@@ -4,7 +4,7 @@ export default function Impact() {
     const stats = [
         { value: '100%', label: 'Client Satisfaction', icon: Star },
         { value: '5/5', label: 'Client Ratings', icon: Award },
-        { value: '1,500+', label: 'Leads Generated Monthly', icon: TrendingUp },
+        { value: 'Consistent', label: 'Leads Generated Monthly', icon: TrendingUp },
         { value: '4×', label: 'Average ROI Increase', icon: Target }
     ];
 
@@ -36,7 +36,7 @@ export default function Impact() {
                                 className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 group"
                             >
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                    <Icon className="w-6 h-6 text-[#008ac1]" />
+                                    <Icon className="w-6 h-6 text-[var(--brand-blue-text)]" />
                                 </div>
                                 <div className="mt-4">
                                     <div className="text-5xl md:text-6xl font-bold text-white mb-3">

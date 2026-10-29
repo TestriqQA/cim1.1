@@ -286,7 +286,7 @@ const CookiesPolicyClient: React.FC = () => {
                             <div className="space-y-4">
                                 {section.content.map((item, idx) => (
                                     <div key={idx}>
-                                        {item.subtitle && <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--brand-yellow)" }}>{item.subtitle}</h3>}
+                                        {item.subtitle && <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--accent-amber-text)" }}>{item.subtitle}</h3>}
                                         <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)", whiteSpace: "pre-line" }}>{item.text}</p>
                                     </div>
                                 ))}

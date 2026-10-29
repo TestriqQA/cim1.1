@@ -8,7 +8,7 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What is SaaS web application development?",
-            answer: <><Link href="/services/web-design-development" className="text-[#008ac1] hover:underline">SaaS web application development</Link> is the process of building cloud-based software platforms delivered over the internet via subscription models. Unlike traditional software, SaaS applications are hosted on <Link href="/blog/category/web-development" className="text-[#008ac1] hover:underline">cloud infrastructure</Link> (AWS, GCP, Azure), support multiple users (multi-tenancy), and offer features like automated billing, user management, and API integrations. Examples include Salesforce, Slack, and Zoom.</>
+            answer: <><Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] underline">SaaS web application development</Link> is the process of building cloud-based software platforms delivered over the internet via subscription models. Unlike traditional software, SaaS applications are hosted on <Link href="/blog/category/web-development" className="text-[var(--brand-blue-text)] underline">cloud infrastructure</Link> (AWS, GCP, Azure), support multiple users (multi-tenancy), and offer features like automated billing, user management, and API integrations. Examples include Salesforce, Slack, and Zoom.</>
         },
         {
             question: "How much does SaaS development cost in India?",
@@ -50,7 +50,7 @@ export default function FAQ() {
                         }}
                     >
                         <HelpCircle className="w-4 h-4" style={{ color: "#008ac1" }} />
-                        <span className="text-sm font-medium" style={{ color: "#008ac1" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             FAQ
                         </span>
                     </div>
@@ -83,7 +83,7 @@ export default function FAQ() {
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                                 className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none"
                             >
-                                <span className={`text-lg font-semibold transition-colors duration-300 ${openIndex === idx ? "text-[#008ac1]" : "text-[var(--foreground)]"}`}>
+                                <span className={`text-lg font-semibold transition-colors duration-300 ${openIndex === idx ? "text-[var(--brand-blue-text)]" : "text-[var(--foreground)]"}`}>
                                     {faq.question}
                                 </span>
                                 <div

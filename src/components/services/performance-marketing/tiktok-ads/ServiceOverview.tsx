@@ -11,11 +11,15 @@ export default function ServiceOverview() {
     const tiktokPink = "#ff0050";
     const tiktokCyan = "#00f2ea";
 
+    // Map brand color -> theme-aware text token (contrast-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === tiktokCyan ? "var(--accent-cyan-text)" : "var(--accent-pink-text)";
+
     const services = [
         {
             icon: Play,
             title: "In-Feed Ads",
-            description: <><Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:text-[var(--primary)] transition-colors">Native video ads</Link> that appear in users' For You feed with full-screen immersive experience.</>,
+            description: <><Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2 hover:text-[var(--primary)] transition-colors">Native video ads</Link> that appear in users' For You feed with full-screen immersive experience.</>,
             highlights: ["Up to 60s video", "CTA buttons", "Sound-on default", "Full-screen"],
             color: tiktokPink,
         },
@@ -124,7 +128,7 @@ export default function ServiceOverview() {
                                 {/* Content */}
                                 <h3
                                     className="text-xl font-bold mb-2 relative z-10 transition-colors duration-300"
-                                    style={{ color: hoveredCard === idx ? service.color : "var(--foreground)" }}
+                                    style={{ color: hoveredCard === idx ? textAccent(service.color) : "var(--foreground)" }}
                                 >
                                     {service.title}
                                 </h3>
@@ -140,7 +144,7 @@ export default function ServiceOverview() {
                                             className="px-2 py-1 rounded-full text-xs font-medium transition-all duration-300"
                                             style={{
                                                 backgroundColor: hoveredCard === idx ? `${service.color}20` : "var(--background)",
-                                                color: hoveredCard === idx ? service.color : "var(--secondary-text)",
+                                                color: hoveredCard === idx ? textAccent(service.color) : "var(--secondary-text)",
                                                 transform: hoveredCard === idx ? `translateY(-${hIdx * 2}px)` : "translateY(0)",
                                                 transitionDelay: `${hIdx * 50}ms`,
                                             }}

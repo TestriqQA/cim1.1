@@ -15,6 +15,7 @@ export const metadata = getPageMetadata({
     title: 'Careers at Cinute InfoMedia | Join Our Growth Team',
     description: 'Build the future of digital growth with Cinute InfoMedia. We are hiring Frontend Developers, UI/UX Designers, and Digital Marketers. Apply now!',
     url: '/careers',
+    image: '/og-images/Career.webp',
 });
 
 export default async function CareersPage() {

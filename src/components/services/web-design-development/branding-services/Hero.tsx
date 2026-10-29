@@ -64,7 +64,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#06b6d4" }}
+                        style={{ color: "var(--accent-cyan-text)" }}
                     >
                         Portfolio & Personal
                     </span>
@@ -80,7 +80,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #06b6d4 8%, transparent), color-mix(in srgb, #0891b2 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #06b6d4 20%, transparent)",
-                                color: "#06b6d4",
+                                color: "var(--accent-cyan-text)",
                             }}
                         >
                             <Palette className="w-4 h-4" style={{ color: "#06b6d4" }} />
@@ -113,10 +113,10 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8 animate-fadeIn leading-relaxed" style={{ color: "var(--secondary-text)", animationDelay: "0.2s" }}>
-                            In the competitive landscape of 2026, a generic resume isn't enough. You need a powerful, automated 24/7 <Link href="/blog/stunning-ui-ux-design-principles" className="hover:underline text-[#06b6d4] font-bold">personal branding engine</Link>.
+                            In the competitive landscape of 2026, a generic resume isn't enough. You need a powerful, automated 24/7 <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)] font-bold">personal branding engine</Link>.
                         </p>
                         <p className="text-base md:text-lg mb-8 animate-fadeIn leading-relaxed" style={{ color: "var(--secondary-text)", animationDelay: "0.3s" }}>
-                            As a premier <Link href="/services/seo-services" className="hover:underline text-[#06b6d4]">online reputation management</Link> agency and <Link href="/services/web-design-development" className="hover:underline text-[#06b6d4]">website design services</Link> provider, we specialize in crafting <Link href="/blog/future-web-development-nextjs" className="hover:underline text-[#06b6d4]">high-impact digital narratives</Link> for global leaders. We don't just build websites; we engineer Personal Branding Services that position you as an undisputed authority in your niche.
+                            As an expert <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">online reputation management</Link> agency and <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">website design services</Link> provider, we specialize in crafting <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">high-impact digital narratives</Link> for global leaders. We don't just build websites; we engineer Personal Branding Services that position you as an undisputed authority in your niche.
                         </p>
 
                         {/* Feature Highlights */}
@@ -254,17 +254,6 @@ export default function Hero() {
                                 Control Your Narrative
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/contact"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300 hover:bg-cyan-500/5"
-                                style={{
-                                    borderColor: "#06b6d4",
-                                    color: "#06b6d4",
-                                }}
-                            >
-                                See Our Work
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 
@@ -318,7 +307,7 @@ export default function Hero() {
                                     <div key={i} className="text-center flex-1">
                                         <div
                                             className="text-xl font-bold mb-1"
-                                            style={{ color: "#06b6d4" }}
+                                            style={{ color: "var(--accent-cyan-text)" }}
                                         >
                                             {metric.value}
                                         </div>

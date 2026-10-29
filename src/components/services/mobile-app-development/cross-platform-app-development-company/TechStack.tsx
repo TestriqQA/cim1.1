@@ -40,7 +40,7 @@ export default function TechStack() {
         ],
         backend: [
             { name: "Firebase", description: "Backend Services", logo: "/images/techstack_logos/firebase-logo.svg" },
-            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#667eea] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-indigo-text)] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
         ],
     };
 
@@ -83,7 +83,7 @@ export default function TechStack() {
                                 }
                             `}
                             style={{
-                                backgroundColor: activeTab === cat.id ? "#667eea" : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#4338ca" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -130,9 +130,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

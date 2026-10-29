@@ -26,7 +26,7 @@ export default function TechStack() {
         ],
         frontend: [
             { name: "Angular", description: "TypeScript Framework", logo: "/images/techstack_logos/angularjs-logo.svg" },
-            { name: "React", description: <Link href="/services/nextjs-development-services" className="hover:text-[#00b4d8] transition-colors">UI Library</Link>, logo: "/images/techstack_logos/react-logo.svg" },
+            { name: "React", description: <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors">UI Library</Link>, logo: "/images/techstack_logos/react-logo.svg" },
             { name: "Vue.js", description: "Progressive Framework", logo: "/images/techstack_logos/vuejs-logo.svg" },
             { name: "TypeScript", description: "Type Safety", logo: "/images/techstack_logos/typescript-logo.svg" },
             { name: "Sass", description: "CSS Preprocessor", logo: "/images/techstack_logos/Sass-SCSS-logo.png" },
@@ -50,7 +50,7 @@ export default function TechStack() {
         ],
         backend: [
             { name: "Firebase", description: "Backend Services", logo: "/images/techstack_logos/firebase-logo.svg" },
-            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#00b4d8] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-cyan-text)] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
             { name: "Supabase", description: "Open Source BaaS", logo: "/images/techstack_logos/supabase-logo.webp" },
             { name: "AWS Amplify", description: "Cloud Platform", logo: "/images/techstack_logos/aws-logo.png" },
             { name: "GraphQL", description: "API Layer", logo: "/images/techstack_logos/graphql-logo.svg" },
@@ -97,7 +97,7 @@ export default function TechStack() {
                                 }
                             `}
                             style={{
-                                backgroundColor: activeTab === cat.id ? "#00b4d8" : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#155e75" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -144,9 +144,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

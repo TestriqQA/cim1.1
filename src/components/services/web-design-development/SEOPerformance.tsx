@@ -1,5 +1,3 @@
-"use client";
-
 import { Zap, Smartphone, Eye, Lock, Gauge, Accessibility } from "lucide-react";
 import Link from "next/link";
 
@@ -14,15 +12,15 @@ export default function SEOPerformance() {
         },
         {
             icon: Eye,
-            title: "300% Organic Growth",
-            description: "Our technical SEO foundation has delivered 300% organic traffic growth for enterprise clients in competitive global markets.",
+            title: "Sustained Organic Growth",
+            description: "Our technical SEO foundation has delivered sustained organic traffic growth for enterprise clients in competitive global markets.",
             items: ["Semantic hierarchy", "Schema.org graph", "Keyword authority", "Global indexing"],
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
             icon: Smartphone,
             title: "Responsive Web Design",
-            description: "Mobile-first approach ensuring flawless display on all devices. Average 20% conversion rate improvement post-launch.",
+            description: "Mobile-first approach ensuring flawless display on all devices. Average conversion rate improvement post-launch.",
             items: ["Fluid grid system", "Cross-device QA", "Touch-optimized UI", "Adaptive images"],
             color: "from-[#00efd6] to-[#00b5ca]",
         },
@@ -43,7 +41,7 @@ export default function SEOPerformance() {
         {
             icon: Lock,
             title: "Enterprise Security",
-            description: "Advanced protocols and AWS-secured architecture ensuring 99.9% uptime and data protection for global operations.",
+            description: "Advanced protocols and AWS-secured architecture ensuring high availability and data protection for global operations.",
             items: ["SSL/TLS encryption", "Security headers", "Real-time monitoring", "DDoS protection"],
             color: "from-[#008ac1] to-[#00b5ca]",
         },
@@ -93,17 +91,17 @@ export default function SEOPerformance() {
                         }}
                     >
                         <Gauge className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue)" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             SEO & Performance
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ fontWeight: 700, color: "var(--brand-blue)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
+                        <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As an expert <span className="font-bold text-[var(--brand-blue)]">web development agency</span>, we don&apos;t just build sites-we engineer high-performance business assets that deliver measurable global ROI.
+                        As an expert <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span>, we don&apos;t just build sites-we engineer high-performance business assets that deliver measurable global ROI.
                     </p>
 
                     <div
@@ -199,7 +197,7 @@ export default function SEOPerformance() {
                 {/* Bottom CTA */}
                 <div className="text-center">
                     <p className="text-lg md:text-xl mb-8 text-[var(--secondary-text)] max-w-2xl mx-auto">
-                        Ready to build a website that performs globally? Partner with a professional <span className="font-bold text-[var(--brand-blue)]">web development agency</span> today.
+                        Ready to build a website that performs globally? Partner with a professional <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span> today.
                     </p>
 
                     <Link

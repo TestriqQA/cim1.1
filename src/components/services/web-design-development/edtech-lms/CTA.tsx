@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, GraduationCap, BookOpen, Video, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
@@ -34,7 +32,7 @@ export default function CTA() {
                 >
                     {/* Decorative icons */}
                     <div className="absolute top-8 right-8 opacity-10">
-                        <GraduationCap className="w-32 h-32" style={{ color: "#a855f7" }} />
+                        <GraduationCap className="w-32 h-32" style={{ color: "var(--brand-purple-text)" }} />
                     </div>
                     <div className="absolute bottom-8 left-8 opacity-10">
                         <BookOpen className="w-24 h-24" style={{ color: "#ec4899" }} />
@@ -43,7 +41,7 @@ export default function CTA() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                         <div>
                             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                                Ready to Transform <span style={{ color: "#a855f7" }}>Learning</span>?
+                                Ready to Transform <span style={{ color: "var(--brand-purple-text)" }}>Learning</span>?
                             </h2>
 
                             <p className="text-base md:text-xl mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -64,7 +62,7 @@ export default function CTA() {
                                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg border transition-all duration-300 hover:scale-105"
                                     style={{
                                         borderColor: "#a855f7",
-                                        color: "#a855f7",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     <Video className="w-5 h-5 flex-shrink-0" />
@@ -83,7 +81,7 @@ export default function CTA() {
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "#a855f7" }} />
+                                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                     <span className="font-medium" style={{ color: "var(--foreground)" }}>
                                         {feature}
                                     </span>

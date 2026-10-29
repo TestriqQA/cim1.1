@@ -49,7 +49,7 @@ export default function CTA() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                             <Link
                                 href="/contact"
-                                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--brand-purple)] bg-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[#a21caf] bg-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                             >
                                 Start Your Project
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

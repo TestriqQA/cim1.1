@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
         {
             icon: Trophy,
             title: "Verified Expertise",
-            description: <>500+ successful projects delivered globally, including retail sites seeing <Link href="/services/seo-services" className="text-[#f59e0b] hover:underline">300% traffic growth</Link>.</>,
+            description: <>500+ successful projects delivered globally, including retail sites seeing <Link href="/services/seo-services" className="text-[var(--accent-amber-text)] underline underline-offset-2 hover:underline">sustained traffic growth</Link>.</>,
             gradient: "from-amber-500 via-yellow-500 to-orange-500",
             bgColor: "rgba(251, 191, 36, 0.15)",
             iconColor: "#f59e0b",
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: ShieldCheck,
             title: "Security Hardening",
-            description: "Hardening fintech platforms with 95% bug-free deployment and military-grade encryption.",
+            description: "Hardening fintech platforms with rigorously tested deployment and military-grade encryption.",
             gradient: "from-red-500 via-orange-500 to-amber-500",
             bgColor: "rgba(239, 68, 68, 0.15)",
             iconColor: "#ef4444",
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {
             icon: Globe,
             title: "Global Reach",
-            description: <>Expertise in complex multilingual setups and <Link href="/services/seo-services" className="text-[#6366f1] hover:underline">International WordPress SEO</Link>.</>,
+            description: <>Expertise in complex multilingual setups and <Link href="/services/seo-services" className="text-[var(--accent-indigo-text)] underline underline-offset-2 hover:underline">International WordPress SEO</Link>.</>,
             gradient: "from-indigo-500 via-violet-500 to-purple-500",
             bgColor: "rgba(99, 102, 241, 0.15)",
             iconColor: "#6366f1",
@@ -106,13 +106,13 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(0, 115, 170, 0.1), rgba(0, 150, 214, 0.1))",
                             border: "1px solid rgba(0, 115, 170, 0.2)",
                         }}>
-                        <Trophy className="w-4 h-4" style={{ color: "#0073AA" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#0073AA" }}>
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Cinute
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                        <span style={{ color: "var(--foreground)" }}>Why We’re the #1 WordPress Agency for </span>{" "}
+                        <span style={{ color: "var(--foreground)" }}>Why We’re a Trusted WordPress Agency for </span>{" "}
                         <span
                             className="inline-block"
                             style={{
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         In an era where digital first impressions are everything, generic templates no longer cut it.
-                        We combine 10+ years of technical mastery with ROI-driven marketing strategies to help you dominate search results.
+                        We combine deep technical mastery with ROI-driven marketing strategies to help you dominate search results.
                     </p>
                 </div>
 

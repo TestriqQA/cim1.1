@@ -60,7 +60,7 @@ export default function UseCases() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Who We <span style={{ color: "#06b6d4" }}>Help</span>
+                        Who We <span style={{ color: "var(--accent-cyan-text)" }}>Help</span>
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>

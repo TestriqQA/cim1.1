@@ -17,6 +17,18 @@ import Link from "next/link";
 export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
+    // Map the decorative step colour -> theme-aware text token (contrast-safe in light & dark).
+    // Only used where the colour is applied to TEXT; gradients/borders/icons keep the raw value.
+    const accentTextMap: Record<string, string> = {
+        "#3b82f6": "var(--brand-blue-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#ec4899": "var(--accent-pink-text)",
+        "#f59e0b": "var(--accent-amber-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#06b6d4": "var(--accent-cyan-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex.toLowerCase()] ?? hex;
+
     const steps = [
         {
             icon: Search,
@@ -36,7 +48,7 @@ export default function Process() {
         {
             icon: Target,
             title: "Strategy & Audience Building",
-            description: <>We develop a custom <Link href="/services/social-media-marketing-services" className="hover:underline text-blue-600">social media marketing strategy</Link> using Lookalike audience creation and specific interest clusters. We map out the full funnel from awareness to conversion.</>,
+            description: <>We develop a custom <Link href="/services/social-media-marketing-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">social media marketing strategy</Link> using Lookalike audience creation and specific interest clusters. We map out the full funnel from awareness to conversion.</>,
             details: [
                 "TOFU/MOFU/BOFU funnel mapping",
                 "Lookalike audience creation",
@@ -51,7 +63,7 @@ export default function Process() {
         {
             icon: Palette,
             title: "Creative Development",
-            description: <>Our designers provide professional <Link href="/services/web-design-development/branding-services" className="hover:underline text-pink-600">Facebook ad creative design services</Link>, crafting a mix of carousel ads and high-definition <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline text-pink-600">video ads</Link> that stops the scroll.</>,
+            description: <>Our designers provide professional <Link href="/services/web-design-development/branding-services" className="text-[var(--accent-pink-text)] hover:underline underline underline-offset-2">Facebook ad creative design services</Link>, crafting a mix of carousel ads and high-definition <Link href="/services/social-media-marketing-services/video-marketing-agency" className="text-[var(--accent-pink-text)] hover:underline underline underline-offset-2">video ads</Link> that stops the scroll.</>,
             details: [
                 "Scroll-stopping video ads",
                 "Carousel ads optimization",
@@ -83,7 +95,7 @@ export default function Process() {
         {
             icon: BarChart3,
             title: "Optimization & Scaling",
-            description: <>Data leads the way. We monitor <Link href="/blog/data-analytics-insights-action" className="hover:underline text-green-600">Facebook ads reporting</Link> and analytics services daily, killing underperforming ads and aggressively scaling winners.</>,
+            description: <>Data leads the way. We monitor <Link href="/blog/data-analytics-insights-action" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">Facebook ads reporting</Link> and analytics services daily, killing underperforming ads and aggressively scaling winners.</>,
             details: [
                 "Daily performance monitoring",
                 "Bid & budget optimization",
@@ -123,9 +135,9 @@ export default function Process() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
                         <Zap className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm font-medium text-blue-500">6-Step Framework</span>
+                        <span className="text-sm font-medium text-[var(--brand-blue-text)]">6-Step Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Facebook Ads</span>{" "}
@@ -253,7 +265,7 @@ export default function Process() {
                                                 `}
                                                 style={{
                                                     backgroundColor: isHovered ? `${step.color}20` : `${step.color}10`,
-                                                    color: step.color,
+                                                    color: textAccent(step.color),
                                                 }}
                                             >
                                                 <Clock className="w-3 h-3" />
@@ -267,7 +279,7 @@ export default function Process() {
                                                 text-xl font-bold mb-3 transition-all duration-500
                                             `}
                                             style={{
-                                                color: isHovered ? step.color : "var(--foreground)",
+                                                color: isHovered ? textAccent(step.color) : "var(--foreground)",
                                             }}
                                         >
                                             {step.title}

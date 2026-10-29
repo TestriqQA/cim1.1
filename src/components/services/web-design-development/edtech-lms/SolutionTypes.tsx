@@ -15,21 +15,22 @@ export default function SolutionTypes() {
         {
             icon: BookOpen,
             title: "Online Course Platforms",
-            description: <>Create and sell <Link href="/services/web-design-development/edtech-lms" className="hover:underline text-[#a855f7]">online courses</Link> with video lessons, quizzes, assignments, and progress tracking like Udemy or Skillshare.</>,
+            description: <>Create and sell <Link href="/services/web-design-development/edtech-lms" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">online courses</Link> with video lessons, quizzes, assignments, and progress tracking like Udemy or Skillshare.</>,
             features: [
                 { icon: Video, text: "Video Lessons" },
                 { icon: FileText, text: "Downloadable Resources" },
                 { icon: Award, text: "Course Certificates" },
                 { icon: BarChart3, text: "Student Analytics" }
             ],
-            color: "#a855f7",
+            color: "var(--brand-purple-text)",
+            textColor: "var(--brand-purple-text)",
             gradient: "from-[#a855f7] to-[#c084fc]",
             accentColor: "#c084fc",
         },
         {
             icon: Building2,
             title: "Corporate LMS",
-            description: <>Enterprise <Link href="/services/web-design-development/business-corporate" className="hover:underline text-[#ec4899]">learning management</Link> for employee training, onboarding, compliance, and skill development.</>,
+            description: <>Enterprise <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline text-[var(--accent-pink-text)]">learning management</Link> for employee training, onboarding, compliance, and skill development.</>,
             features: [
                 { icon: Users, text: "Team Management" },
                 { icon: Target, text: "Skill Tracking" },
@@ -37,6 +38,7 @@ export default function SolutionTypes() {
                 { icon: BarChart3, text: "Performance Reports" }
             ],
             color: "#ec4899",
+            textColor: "var(--accent-pink-text)",
             gradient: "from-[#ec4899] to-[#f472b6]",
             accentColor: "#f472b6",
         },
@@ -51,20 +53,22 @@ export default function SolutionTypes() {
                 { icon: MessageSquare, text: "Discussion Forums" }
             ],
             color: "#f97316",
+            textColor: "var(--accent-orange-text)",
             gradient: "from-[#f97316] to-[#fb923c]",
             accentColor: "#fb923c",
         },
         {
             icon: Video,
             title: "Live Learning Platforms",
-            description: <>Real-time <Link href="/services/web-design-development/entertainment-media" className="hover:underline text-[#a855f7]">virtual classrooms</Link> with video conferencing, screen sharing, and interactive whiteboards.</>,
+            description: <>Real-time <Link href="/services/web-design-development/entertainment-media" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">virtual classrooms</Link> with video conferencing, screen sharing, and interactive whiteboards.</>,
             features: [
                 { icon: Video, text: "Live Video Classes" },
                 { icon: MessageSquare, text: "Real-time Chat" },
                 { icon: Play, text: "Recording & Replay" },
                 { icon: Users, text: "Breakout Rooms" }
             ],
-            color: "#a855f7",
+            color: "var(--brand-purple-text)",
+            textColor: "var(--brand-purple-text)",
             gradient: "from-[#a855f7] to-[#ec4899]",
             accentColor: "#ec4899",
         },
@@ -79,6 +83,7 @@ export default function SolutionTypes() {
                 { icon: Award, text: "Instructor Verification" }
             ],
             color: "#ec4899",
+            textColor: "var(--accent-pink-text)",
             gradient: "from-[#ec4899] to-[#f97316]",
             accentColor: "#f97316",
         },
@@ -93,6 +98,7 @@ export default function SolutionTypes() {
                 { icon: MessageSquare, text: "Community Forums" }
             ],
             color: "#f97316",
+            textColor: "var(--accent-orange-text)",
             gradient: "from-[#f97316] to-[#a855f7]",
             accentColor: "#a855f7",
         },
@@ -114,15 +120,15 @@ export default function SolutionTypes() {
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <GraduationCap className="w-4 h-4" style={{ color: "#a855f7" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#a855f7" }}>
+                            <GraduationCap className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                                 Learning Solutions
                             </span>
                         </div>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        EdTech <span style={{ color: "#a855f7" }}>Solutions</span> We Build
+                        EdTech <span style={{ color: "var(--brand-purple-text)" }}>Solutions</span> We Build
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         Comprehensive learning platforms designed for modern education and training needs.
@@ -195,7 +201,7 @@ export default function SolutionTypes() {
                                                     background: isHovered
                                                         ? `linear-gradient(135deg, ${solution.color}, ${solution.accentColor})`
                                                         : "var(--card-bg)",
-                                                    color: isHovered ? "white" : solution.color,
+                                                    color: isHovered ? "white" : solution.textColor,
                                                     borderColor: isHovered ? "transparent" : solution.color,
                                                     transform: isHovered ? "scale(1.2) rotate(360deg)" : "scale(1)",
                                                 }}
@@ -207,7 +213,7 @@ export default function SolutionTypes() {
                                         {/* Title */}
                                         <h3
                                             className="text-xl md:text-2xl font-bold mb-4 transition-all duration-300"
-                                            style={{ color: isHovered ? solution.color : "var(--foreground)" }}
+                                            style={{ color: isHovered ? solution.textColor : "var(--foreground)" }}
                                         >
                                             {solution.title}
                                         </h3>
@@ -241,7 +247,7 @@ export default function SolutionTypes() {
                                                         </div>
                                                         <span
                                                             className="text-sm font-medium transition-colors duration-300 flex-1"
-                                                            style={{ color: isHovered ? solution.color : "var(--secondary-text)" }}
+                                                            style={{ color: isHovered ? solution.textColor : "var(--secondary-text)" }}
                                                         >
                                                             {feature.text}
                                                         </span>

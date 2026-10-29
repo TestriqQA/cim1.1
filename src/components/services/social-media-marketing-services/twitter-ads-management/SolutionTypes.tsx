@@ -26,8 +26,8 @@ export default function SolutionTypes() {
         },
         {
             id: "saas",
-            title: <Link href="/services/web-design-development/saas-application-development" className="hover:underline">Tech & SaaS Startups</Link>,
-            description: "Ranked as the best X agency for tech startups, we help generate B2B leads through strategic threads and targeted X Campaign Manager tactics.",
+            title: <Link href="/services/web-design-development/saas-development-services" className="hover:underline">Tech & SaaS Startups</Link>,
+            description: "A trusted X agency for tech startups, we help generate B2B leads through strategic threads and targeted X Campaign Manager tactics.",
             icon: Laptop,
             color: "#00E676", // Tech Green
         },
@@ -69,8 +69,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(29, 155, 240, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#1D9BF0" }} />
-                        <span className="text-sm font-medium" style={{ color: "#1D9BF0" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Solutions Directory
                         </span>
                     </div>

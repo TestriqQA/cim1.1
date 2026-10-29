@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
         "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
     alternates: {
-        canonical: "/services/seo-services/local-seo-services",
+        canonical: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
     },
     keywords: [
         "local SEO services",
@@ -33,6 +33,27 @@ export const metadata: Metadata = {
         "Google Maps ranking",
         "local business SEO",
     ],
+    openGraph: {
+        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
+        url: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/local-seo-services.webp",
+                width: 1200,
+                height: 630,
+                alt: "Local SEO Services , Google Maps Marketing Agency 2026 by Cinute Infomedia",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
+        images: ["/og-images/local-seo-services.webp"],
+    },
+
 };
 
 export default function LocalSEOPage() {
@@ -53,18 +74,17 @@ export default function LocalSEOPage() {
                             "description": "Global Web Design, Development & Digital Marketing Agency specializing in local SEO services",
                             "address": {
                                 "@type": "PostalAddress",
-                                "addressCountry": "US"
+                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
+                                "addressLocality": "Mira Road, Mira Bhayandar",
+                                "addressRegion": "Maharashtra",
+                                "postalCode": "401107",
+                                "addressCountry": "IN"
                             },
                             "contactPoint": {
                                 "@type": "ContactPoint",
-                                "telephone": "+1-555-123-4567",
+                                "telephone": "+919004988859",
                                 "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Spanish"]
-                            },
-                            "aggregateRating": {
-                                "@type": "AggregateRating",
-                                "ratingValue": "4.9",
-                                "reviewCount": "247"
+                                "availableLanguage": ["English", "Hindi"]
                             }
                         },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
@@ -169,14 +189,14 @@ export default function LocalSEOPage() {
                                 "name": "How long does it take to see results from local SEO?",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Local SEO results timeline: 30 days (increased GBP impressions), 60 days (Map Pack rankings improve 3-8 positions, 40-80% more calls), 90 days (top 5 Map Pack for primary keywords - 87% of clients, 2-3x phone calls), 6 months (dominant #1-#3 positions, 300%+ review growth). We guarantee top 5 rankings within 90 days or continue working for free."
+                                    "text": "Local SEO results timeline: 30 days (increased GBP impressions), 60 days (Map Pack rankings improve, more calls), 90 days (top 5 Map Pack for primary keywords - most clients, more phone calls), 6 months (dominant #1-#3 positions, strong review growth)."
                                 }
                             }
                         ]
                     })
                 }}
             />
-            <main>
+            <main style={{ "--page-selection-bg": "#F59E0B" } as React.CSSProperties}>
                 <Hero />
                 <ServiceOverview />
                 <SolutionTypes />

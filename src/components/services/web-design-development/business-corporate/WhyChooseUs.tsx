@@ -45,10 +45,10 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Performance Excellence",
-            description: "Sub-second load times and 99.99% uptime SLAs ensure your corporate presence is always available and lightning fast.",
+            description: "Sub-second load times and high availability ensure your corporate presence is always available and lightning fast.",
             color: "from-[#00efd6] to-[#00b5ca]",
             accentColor: "#00efd6",
-            features: ["<1s Load Time", "99.99% Uptime", "CDN Optimized"]
+            features: ["<1s Load Time", "High Availability", "CDN Optimized"]
         },
         {
             icon: Clock,
@@ -102,8 +102,8 @@ export default function WhyChooseUs() {
                             border: "1px solid var(--border-color)"
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "#f97316" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#f97316" }}>
+                        <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             TRUSTED BY INDUSTRY LEADERS
                         </span>
                     </div>
@@ -141,8 +141,8 @@ export default function WhyChooseUs() {
                     {[
                         { value: "500+", label: "Projects Delivered", icon: FileCheck },
                         { value: "98%", label: "Client Satisfaction", icon: Users },
-                        { value: "15+", label: "Years Experience", icon: Award },
-                        { value: "99.99%", label: "Uptime SLA", icon: TrendingUp },
+                        { value: "12+", label: "Years Experience", icon: Award },
+                        { value: "High", label: "Uptime SLA", icon: TrendingUp },
                     ].map((stat, idx) => {
                         const StatIcon = stat.icon;
                         return (
@@ -154,7 +154,7 @@ export default function WhyChooseUs() {
                                     border: "1px solid var(--border-color)",
                                 }}
                             >
-                                <StatIcon className="w-8 h-8 mx-auto mb-3" style={{ color: "#f97316" }} />
+                                <StatIcon className="w-8 h-8 mx-auto mb-3" style={{ color: "var(--accent-orange-text)" }} />
                                 <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-[#f97316] to-[#ea580c] bg-clip-text text-transparent">
                                     {stat.value}
                                 </div>
@@ -226,7 +226,7 @@ export default function WhyChooseUs() {
                                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 group-hover:scale-105"
                                                 style={{
                                                     backgroundColor: `${reason.accentColor}15`,
-                                                    color: reason.accentColor,
+                                                    color: reason.accentColor === "#f97316" ? "var(--accent-orange-text)" : reason.accentColor,
                                                 }}
                                             >
                                                 <CheckCircle2 className="w-3 h-3" />

@@ -71,14 +71,14 @@ export default function CTA() {
 
                     {/* Trust Badges */}
                     <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        {["TikTok Partner", "500+ Videos Created", "50M+ Views Generated"].map((badge, idx) => (
+                        {["TikTok Partner", "High Video Output", "High View Volume"].map((badge, idx) => (
                             <span
                                 key={idx}
                                 className="px-4 py-2 rounded-full text-sm font-medium border"
                                 style={{
                                     borderColor: `${tiktokPink}30`,
                                     backgroundColor: `${tiktokPink}10`,
-                                    color: tiktokPink,
+                                    color: "var(--accent-pink-text)",
                                 }}
                             >
                                 {badge}

@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Heart,
-            title: <Link href="/blog/stunning-ui-ux-design-principles" className="hover:underline">Patient-Centered Design</Link>,
+            title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline">Patient-Centered Design</Link>,
             description: "Accessible, intuitive interfaces designed for patients of all ages and abilities with empathy-driven UX.",
             highlights: [
                 { icon: Eye, text: "Accessibility" },
@@ -70,11 +70,11 @@ export default function WhyChooseUs() {
         {
             icon: Award,
             title: "Proven Track Record",
-            description: "Trusted by healthcare organizations to build secure, reliable patient platforms with 99.9% uptime guarantee.",
+            description: "Trusted by healthcare organizations to build secure, reliable patient platforms with high availability.",
             highlights: [
-                { icon: Star, text: "Award-winning" },
+                { icon: Star, text: "Proven expertise" },
                 { icon: UserCheck, text: "Trusted partner" },
-                { icon: TrendingUp, text: "99.9% uptime" }
+                { icon: TrendingUp, text: "high availability" }
             ],
             color: "#6366f1",
             gradient: "from-[#6366f1] to-[#3b82f6]",
@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Activity className="w-4 h-4" style={{ color: "#3b82f6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#3b82f6" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Healthcare Excellence
                             </span>
                         </div>
@@ -471,7 +471,7 @@ export default function WhyChooseUs() {
                         { Icon: Hospital, number: "200+", label: "Healthcare Clients", color: "#3b82f6" },
                         { Icon: Users, number: "1M+", label: "Patients Served", color: "#6366f1" },
                         { Icon: Shield, number: "100%", label: "HIPAA Compliant", color: "#8b5cf6" },
-                        { Icon: Star, number: "99.9%", label: "System Uptime", color: "#a78bfa" },
+                        { Icon: Star, number: "High", label: "System Uptime", color: "#a78bfa" },
                     ].map((stat, idx) => (
                         <div
                             key={idx}
@@ -486,7 +486,7 @@ export default function WhyChooseUs() {
                             >
                                 <stat.Icon className="w-6 h-6 text-white" />
                             </div>
-                            <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: stat.color }}>
+                            <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: stat.color === "#a78bfa" ? "var(--accent-violet-text)" : stat.color }}>
                                 {stat.number}
                             </div>
                             <div className="text-sm" style={{ color: "var(--secondary-text)" }}>

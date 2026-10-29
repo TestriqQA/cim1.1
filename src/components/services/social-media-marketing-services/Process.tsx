@@ -9,7 +9,7 @@ export default function Process() {
             number: "01",
             icon: Search,
             title: "Strategy & Research",
-            description: <>Deep dive into your brand, audience <Link href="/blog/digital-marketing-strategy-planning-execution" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">customer avatar & persona research</Link>, competitors, and industry trends to define clear, measurable goals.</>,
+            description: <>Deep dive into your brand, audience <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">customer avatar & persona research</Link>, competitors, and industry trends to define clear, measurable goals.</>,
         },
         {
             number: "02",
@@ -21,13 +21,13 @@ export default function Process() {
             number: "03",
             icon: Palette,
             title: "Creative Design",
-            description: <>Producing high-quality, on-brand visual assets and compelling <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">social media content creation services</Link> copy tailored for each platform.</>,
+            description: <>Producing high-quality, on-brand visual assets and compelling <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">social media content creation services</Link> copy tailored for each platform.</>,
         },
         {
             number: "04",
             icon: Send,
             title: "Publishing & Promotion",
-            description: <>Executing the content calendar and launching targeted <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">paid social media advertising agency</Link> campaigns.</>,
+            description: <>Executing the content calendar and launching targeted <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">paid social media advertising agency</Link> campaigns.</>,
         },
         {
             number: "05",
@@ -39,7 +39,7 @@ export default function Process() {
             number: "06",
             icon: TrendingUp,
             title: "Optimization & Reporting",
-            description: <>Analyzing data, identifying areas for improvement, and providing monthly <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">social media audit and analysis services</Link> reports with clear insights.</>,
+            description: <>Analyzing data, identifying areas for improvement, and providing monthly <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">social media audit and analysis services</Link> reports with clear insights.</>,
         },
     ];
 
@@ -57,7 +57,7 @@ export default function Process() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                             borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                            color: "var(--brand-teal)",
+                            color: "var(--accent-teal-text)",
                         }}
                     >
                         <Sparkles className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function Process() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-teal)" }}>A Proven 6-Step Process</span> for Guaranteed Social Success
+                        <span style={{ color: "var(--accent-teal-text)" }}>A Proven 6-Step Process</span> for Measurable Social Growth
                     </h2>
 
                     <div

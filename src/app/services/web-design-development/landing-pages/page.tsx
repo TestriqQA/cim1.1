@@ -36,6 +36,7 @@ export const metadata = getPageMetadata({
         'Lead Generation Pages',
         'PPC Landing Pages',
     ],
+    image: '/og-images/Landing.webp',
 });
 
 export default function LandingPagesPage() {
@@ -53,7 +54,7 @@ export default function LandingPagesPage() {
     ]);
 
     return (
-        <main className="bg-white dark:bg-black" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}>
+        <main className="bg-white dark:bg-black" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem", "--page-selection-bg": "#10b981" } as React.CSSProperties}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

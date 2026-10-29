@@ -59,12 +59,12 @@ export default function SolutionTypes() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
-                            <span className="text-sm font-medium" style={{ color: xBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Targeting Precision
                             </span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                             Targeting Precision
                         </h2>
                     </div>

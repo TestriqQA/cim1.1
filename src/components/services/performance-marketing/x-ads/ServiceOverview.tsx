@@ -58,7 +58,7 @@ export default function ServiceOverview() {
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Formats that Stop the Scroll
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>

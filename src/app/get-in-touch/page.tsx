@@ -6,7 +6,8 @@ import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/sche
 export const metadata: Metadata = getPageMetadata({
     title: "Get in Touch | Cinute Infomedia",
     description: "Ready to grow your business? Let's discuss your project and build something amazing together.",
-    url: "/get-in-touch"
+    url: "/get-in-touch",
+    image: "/og-images/get_in_touch.webp"
 });
 
 export default function GetInTouchPage() {

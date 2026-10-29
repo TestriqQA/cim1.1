@@ -46,7 +46,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: linkedInBlue }}>Tech Stack</span>
+                        Our <span style={{ color: "var(--brand-blue-text)" }}>Tech Stack</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Enterprise-grade tools for LinkedIn advertising success.
@@ -102,9 +102,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold mb-1 group-hover:text-[#0a66c2] transition-colors" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold mb-1 group-hover:text-[var(--brand-blue-text)] transition-colors" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

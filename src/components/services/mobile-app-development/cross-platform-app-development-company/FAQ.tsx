@@ -12,7 +12,7 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What is cross-platform app development?",
-            answer: <><span className="text-inherit">Cross-platform app development helps in building mobile applications that are compatible with multiple operating systems, such as </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#667eea] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#667eea] hover:underline">Android</Link>, using a single codebase. This approach saves time and reduces costs compared to native development.</>
+            answer: <><span className="text-inherit">Cross-platform app development helps in building mobile applications that are compatible with multiple operating systems, such as </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Android</Link>, using a single codebase. This approach saves time and reduces costs compared to native development.</>
         },
         {
             question: "Which is better: Flutter or React Native in 2026?",
@@ -28,7 +28,7 @@ export default function FAQ() {
         },
         {
             question: "How long does it take to develop a multi-platform mobile app?",
-            answer: <><span className="text-inherit">A typical MVP (Minimum Viable Product) can be delivered in 3-4 months. More complex </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[#667eea] hover:underline">enterprise solutions</Link> may take 6-8 months. Our agile process ensures you see progress every sprint.</>
+            answer: <><span className="text-inherit">A typical MVP (Minimum Viable Product) can be delivered in 3-4 months. More complex </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">enterprise solutions</Link> may take 6-8 months. Our agile process ensures you see progress every sprint.</>
         },
         {
             question: "Can you convert my existing native app to cross-platform?",
@@ -46,7 +46,7 @@ export default function FAQ() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
                         <span className="text-foreground">Frequently Asked </span>
-                        <span className="text-[#667eea]">Questions</span>
+                        <span className="text-[var(--accent-indigo-text)]">Questions</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto" style={{ color: "var(--foreground)" }}>
                         Common questions about our efficient cross-platform development services.
@@ -61,7 +61,7 @@ export default function FAQ() {
                                 value={`item-${index}`}
                                 className="border rounded-lg px-4 bg-card"
                             >
-                                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-[#667eea] hover:no-underline py-4 text-base md:text-lg">
+                                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-[var(--accent-indigo-text)] hover:no-underline py-4 text-base md:text-lg">
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground text-base pb-4 leading-relaxed" style={{ color: "var(--foreground)" }}>

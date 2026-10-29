@@ -13,6 +13,20 @@ export default function SolutionTypes() {
     const googleYellow = "#fbbc04";
     const googleRed = "#ea4335";
 
+    // Map brand hue → theme-aware text token (WCAG-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === googleBlue ? "var(--brand-blue-text)" :
+        c === googleGreen ? "var(--accent-green-text)" :
+        c === googleYellow ? "var(--accent-amber-text)" :
+        c === googleRed ? "var(--accent-red-text)" : c;
+
+    // Darker brand shades for the flip-card BACK face, so its white text clears AA
+    const cardBack = (c: string) =>
+        c === googleBlue ? "#1d4ed8" :
+        c === googleGreen ? "#166534" :
+        c === googleYellow ? "#a16207" :
+        c === googleRed ? "#c5221f" : c;
+
     const solutions = [
         {
             icon: ShoppingBag,
@@ -74,14 +88,14 @@ export default function SolutionTypes() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: googleBlue }} />
-                        <span className="text-sm font-medium" style={{ color: googleBlue }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Solutions for <span style={{ color: googleBlue }}>Every Business</span>
+                        Solutions for <span style={{ color: "var(--brand-blue-text)" }}>Every Business</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Tailored Google Ads strategies for your specific industry and goals.
@@ -118,7 +132,7 @@ export default function SolutionTypes() {
                                         className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
                                         style={{ backgroundColor: `${solution.color}15` }}
                                     >
-                                        <solution.icon className="w-8 h-8" style={{ color: solution.color }} />
+                                        <solution.icon className="w-8 h-8" style={{ color: textAccent(solution.color) }} />
                                     </div>
                                     <h3 className="text-xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
                                         {solution.title}
@@ -132,7 +146,7 @@ export default function SolutionTypes() {
                                 <div
                                     className="absolute inset-0 p-6 rounded-2xl border flex flex-col justify-center"
                                     style={{
-                                        backgroundColor: solution.color,
+                                        backgroundColor: cardBack(solution.color),
                                         borderColor: solution.color,
                                         backfaceVisibility: "hidden",
                                         transform: "rotateY(180deg)",
@@ -148,7 +162,7 @@ export default function SolutionTypes() {
                                     </h4>
                                     <ul className="space-y-2">
                                         {solution.backDetails.map((detail, dIdx) => (
-                                            <li key={dIdx} className="flex items-center gap-2 text-white/90 text-sm">
+                                            <li key={dIdx} className="flex items-center gap-2 text-white text-sm">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
                                                 {detail}
                                             </li>

@@ -11,19 +11,19 @@ export default function Process() {
         {
             icon: Search,
             title: "Comprehensive Technical Ecommerce SEO Audit",
-            description: <>Deep crawl of your entire store using enterprise tools (Screaming Frog, Sitebulb, SEMrush) to identify indexing issues, orphan product pages, duplicate content, crawl budget wasters, broken links, and mobile usability errors. We analyze site architecture, internal linking structure, page speed metrics, and Core Web Vitals. Deliverable: 40+ page <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>audit report</Link> with prioritized fixes.</>,
+            description: <>Deep crawl of your entire store using enterprise tools (Screaming Frog, Sitebulb, SEMrush) to identify indexing issues, orphan product pages, duplicate content, crawl budget wasters, broken links, and mobile usability errors. We analyze site architecture, internal linking structure, page speed metrics, and Core Web Vitals. Deliverable: 40+ page <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>audit report</Link> with prioritized fixes.</>,
             animation: "slide-right"
         },
         {
             icon: PenTool,
             title: "Keyword Research & Mapping",
-            description: <>Exhaustive research into high-value transactional <Link href="/services/seo-services" className="hover:underline" style={{ color: commerceBlue }}>keywords</Link> specific to your products. We analyze search volume, competition, buyer intent, and commercial value - then assign specific keywords to product pages, category pages, and blog content. Focus on ecommerce SEO ranking factors for 2026 including semantic search, featured snippets, and voice search optimization.</>,
+            description: <>Exhaustive research into high-value transactional <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>keywords</Link> specific to your products. We analyze search volume, competition, buyer intent, and commercial value - then assign specific keywords to product pages, category pages, and blog content. Focus on ecommerce SEO ranking factors for 2026 including semantic search, featured snippets, and voice search optimization.</>,
             animation: "slide-left"
         },
         {
             icon: Layout,
             title: "Site Architecture & Internal Linking Optimization",
-            description: <>Refining URL structure, breadcrumb navigation, and <Link href="/services/seo-services/link-building" className="hover:underline" style={{ color: commerceBlue }}>internal linking</Link> to pass authority to your highest-converting products. We create topic clusters, implement hub-and-spoke linking, fix orphan pages, and optimize faceted navigation SEO to prevent indexing issues while maintaining user experience.</>,
+            description: <>Refining URL structure, breadcrumb navigation, and <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>internal linking</Link> to pass authority to your highest-converting products. We create topic clusters, implement hub-and-spoke linking, fix orphan pages, and optimize faceted navigation SEO to prevent indexing issues while maintaining user experience.</>,
             animation: "fade-up"
         },
         {
@@ -35,13 +35,13 @@ export default function Process() {
         {
             icon: Link2,
             title: "Ecommerce Link Building & Authority Services",
-            description: <>Building high-quality backlinks from relevant industry niches, trade publications, and authoritative blogs. Strategies include digital PR, product reviews, influencer outreach, broken link building, and resource page placements. Focus on editorial links that boost domain authority and drive referral traffic. Perfect for ecommerce <Link href="/services/seo-services/link-building" className="hover:underline" style={{ color: commerceBlue }}>link building</Link> and authority services needs.</>,
+            description: <>Building high-quality backlinks from relevant industry niches, trade publications, and authoritative blogs. Strategies include digital PR, product reviews, influencer outreach, broken link building, and resource page placements. Focus on editorial links that boost domain authority and drive referral traffic. Perfect for ecommerce <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>link building</Link> and authority services needs.</>,
             animation: "rotate"
         },
         {
             icon: BarChart,
             title: "Revenue Reporting & Monthly Ecommerce SEO Maintenance",
-            description: <>Tracking rankings, organic traffic, conversion rates, and most importantly - revenue generated from organic search. Monthly reports show keyword movements, technical health scores, backlink growth, and <Link href="/services/performance-marketing" className="hover:underline" style={{ color: commerceBlue }}>ROI</Link>. Ecommerce SEO maintenance and monthly reporting includes ongoing optimization, content updates, and algorithm response.</>,
+            description: <>Tracking rankings, organic traffic, conversion rates, and most importantly - revenue generated from organic search. Monthly reports show keyword movements, technical health scores, backlink growth, and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>ROI</Link>. Ecommerce SEO maintenance and monthly reporting includes ongoing optimization, content updates, and algorithm response.</>,
             animation: "flip"
         },
     ];
@@ -141,7 +141,7 @@ export default function Process() {
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                     <div className="text-center mb-20">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Our Ecommerce SEO <span style={{ color: commerceBlue }}>Playbook</span>
+                            Our Ecommerce SEO <span style={{ color: "var(--accent-sky-text)" }}>Playbook</span>
                         </h2>
                         <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             A rigorous, data-driven process designed to scale your store revenue through organic search. We optimize thousands of product pages and implement our ecommerce SEO strategy combining mobile-first ecommerce SEO, Core Web Vitals optimization, and semantic search for online shopping to dominate 2026 rankings.
@@ -244,8 +244,8 @@ export default function Process() {
 
                                                 {/* Number Watermark */}
                                                 <div
-                                                    className="step-number absolute top-4 right-6 text-6xl font-black opacity-[0.5] pointer-events-none"
-                                                    style={{ color: commerceBlue }}
+                                                    className="step-number absolute top-4 right-6 text-6xl font-black pointer-events-none"
+                                                    style={{ color: "var(--accent-sky-text)" }}
                                                 >
                                                     0{idx + 1}
                                                 </div>

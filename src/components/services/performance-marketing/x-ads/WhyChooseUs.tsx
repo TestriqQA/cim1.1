@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
         },
         {
             title: "Brand Safety",
-            description: "Industry-leading controls to ensure your ads appear in safe contexts.",
+            description: "Advanced controls to ensure your ads appear in safe contexts.",
             icon: ShieldCheck,
         },
         {
@@ -48,12 +48,12 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
-                            <span className="text-sm font-medium" style={{ color: xBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 The X Factor
                             </span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: "var(--foreground)" }}>
                             The X Factor
                         </h2>
                         <div className="space-y-8">
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
                                         <reason.icon className="w-7 h-7" style={{ color: "var(--foreground)" }} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold mb-2 transition-colors group-hover:text-blue-500" style={{ color: "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-2 transition-colors group-hover:text-[var(--brand-blue-text)]" style={{ color: "var(--foreground)" }}>
                                             {reason.title}
                                         </h3>
                                         <p className="text-lg" style={{ color: "var(--secondary-text)" }}>
@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--secondary-text)" }}>Brand Follower Growth</span>
-                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>+28%</span>
+                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>Higher</span>
                                     </div>
                                     <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: "var(--muted-bg)" }}>
                                         <div className="h-full rounded-full w-[28%]" style={{ backgroundColor: "var(--foreground)" }} />
@@ -106,7 +106,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--secondary-text)" }}>Launch Awareness</span>
-                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>+45%</span>
+                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>Higher</span>
                                     </div>
                                     <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: "var(--muted-bg)" }}>
                                         <div className="h-full rounded-full w-[45%] bg-blue-500" />
@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--secondary-text)" }}>Video Completion Rate</span>
-                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>90%</span>
+                                        <span className="font-bold" style={{ color: "var(--foreground)" }}>High</span>
                                     </div>
                                     <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: "var(--muted-bg)" }}>
                                         <div className="h-full rounded-full w-[90%] bg-gray-400" />

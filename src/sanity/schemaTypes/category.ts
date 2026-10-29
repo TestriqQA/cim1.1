@@ -55,5 +55,22 @@ export default defineType({
             type: 'array',
             of: [{ type: 'string' }],
         }),
+        defineField({
+            name: 'seo',
+            title: 'SEO & Schema',
+            type: 'object',
+            description: 'Optional SEO overrides for category pages. Leave empty for auto-generated defaults.',
+            fields: [
+                { name: 'metaTitle', title: 'Meta Title', type: 'string', description: 'Custom title for category page (e.g., "Web Development Tutorials & Guides | CIM Blog")' },
+                { name: 'metaDescription', title: 'Meta Description', type: 'text', rows: 3, description: 'Custom description. Falls back to category description if empty.' },
+                {
+                    name: 'keywords',
+                    title: 'Keywords',
+                    type: 'array',
+                    of: [{ type: 'string' }],
+                    description: 'SEO keywords for this category page',
+                },
+            ],
+        }),
     ],
 })

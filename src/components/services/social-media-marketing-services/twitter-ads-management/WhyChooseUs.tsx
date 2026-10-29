@@ -7,18 +7,18 @@ export default function WhyChooseUs() {
     const benefits = [
         {
             icon: Trophy,
-            title: "30+ Years Leadership",
-            description: "As a global agency, we bring three decades of marketing excellence, navigating every shift from microblogging to the current X ecosystem.",
+            title: "Proven Leadership",
+            description: "As a global agency, we bring deep marketing excellence, navigating every shift from microblogging to the current X ecosystem.",
         },
         {
             icon: Zap,
-            title: "300% Traffic Growth",
-            description: <>We've consistently delivered 300% <Link href="/services/seo-services" className="hover:underline text-blue-500">traffic growth</Link> for tech and SaaS clients, helping them dominate through aggressive X business strategies.</>,
+            title: "Sustained Traffic Growth",
+            description: <>We've consistently delivered 300% <Link href="/services/seo-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">traffic growth</Link> for tech and SaaS clients, helping them dominate through aggressive X business strategies.</>,
         },
         {
             icon: ShieldCheck,
             title: "95% Precision Targeting",
-            description: "Using proprietary data layers and audience segments, we achieve 95% accuracy in reaching decision-makers, skyrocketing conversion success.",
+            description: "Using proprietary data layers and audience segments, we achieve high accuracy in reaching decision-makers, skyrocketing conversion success.",
         },
         {
             icon: Users,
@@ -54,8 +54,8 @@ export default function WhyChooseUs() {
                                 borderColor: "rgba(29, 155, 240, 0.2)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "#1D9BF0" }} />
-                            <span className="text-sm font-medium" style={{ color: "#1D9BF0" }}>
+                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

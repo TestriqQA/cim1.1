@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(255, 93, 1, 0.3)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "#FF5D01" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#7C3AED" }}>
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Free Astro Consultation
                         </span>
                     </div>
@@ -63,17 +63,17 @@ export default function CTA() {
                         className="text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        Ready to create a website that loads instantly and ranks higher? Our Astro development agency delivers 100% PageSpeed scores, SEO-first architecture, and 24/7 technical support.
+                        Ready to create a website that loads instantly and ranks higher? Our Astro development agency delivers near-perfect PageSpeed scores, SEO-first architecture, and 24/7 technical support.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm md:text-base font-medium" style={{ color: "var(--foreground)" }}>
-                        <span>✓ 100% Performance Guarantee</span>
+                        <span>✓ Performance-Optimized</span>
                         <span>✓ Expert Migration Support</span>
                         <span>✓ Headless CMS Integration</span>
                     </div>
 
                     <div className="mb-8 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-dashed border-border">
-                        <p className="text-sm font-semibold mb-2" style={{ color: "#7C3AED" }}>GET IN TOUCH TODAY</p>
+                        <p className="text-sm font-semibold mb-2" style={{ color: "var(--accent-violet-text)" }}>GET IN TOUCH TODAY</p>
                         <p className="text-base" style={{ color: "var(--foreground)" }}>
                             Email: contact@cinuteinfomedia.com | Phone: +91 9004988859, +91 7700995410
                         </p>

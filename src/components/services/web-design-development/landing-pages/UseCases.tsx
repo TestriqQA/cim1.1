@@ -31,7 +31,7 @@ export default function UseCases() {
             icon: Rocket,
             title: "SaaS & Tech Startups",
             description: "Drive free trials, demo requests, and webinar signups for your software products. Explain complex value props simply.",
-            example: "30% increase in demo requests",
+            example: "Increase in demo requests",
             gradient: "from-emerald-600 via-green-600 to-teal-600",
             bgColor: "#10b981",
             stats: "Demo Requests",
@@ -41,7 +41,7 @@ export default function UseCases() {
             icon: ShoppingBag,
             title: "E-commerce Brands",
             description: "Dedicated product launch pages and seasonal promo pages that convert traffic better than standard product pages.",
-            example: "2x conversion on Black Friday",
+            example: "Higher conversion on Black Friday",
             gradient: "from-blue-600 via-cyan-600 to-sky-600",
             bgColor: "#0ea5e9",
             stats: "Sales Boost",
@@ -89,6 +89,15 @@ export default function UseCases() {
         },
     ];
 
+    const accentTextMap: Record<string, string> = {
+        "#10b981": "var(--accent-green-text)",
+        "#0ea5e9": "var(--accent-sky-text)",
+        "#14b8a6": "var(--accent-teal-text)",
+        "#06b6d4": "var(--accent-cyan-text)",
+        "#22c55e": "var(--accent-green-text)",
+        "#3b82f6": "var(--accent-sky-text)",
+    };
+
     return (
         <section
             ref={sectionRef}
@@ -120,7 +129,7 @@ export default function UseCases() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
                             borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                            color: "#10b981",
+                            color: "var(--accent-green-text)",
                         }}
                     >
                         <Users className="w-4 h-4" />
@@ -128,7 +137,7 @@ export default function UseCases() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Who Needs <span style={{ color: "#10b981" }}>Landing Pages?</span>
+                        Who Needs <span style={{ color: "var(--accent-green-text)" }}>Landing Pages?</span>
                     </h2>
 
                     <p
@@ -195,7 +204,7 @@ export default function UseCases() {
                                                 className="px-3 py-1.5 rounded-full border bg-white/5 backdrop-blur-sm"
                                                 style={{ borderColor: "rgba(16, 185, 129, 0.2)" }}
                                             >
-                                                <p className="text-xs font-bold" style={{ color: "#10b981" }}>
+                                                <p className="text-xs font-bold" style={{ color: "var(--accent-green-text)" }}>
                                                     {industry.stats}
                                                 </p>
                                             </div>
@@ -211,7 +220,7 @@ export default function UseCases() {
                                             {industry.tags.map((tag, tidx) => (
                                                 <span
                                                     key={tidx}
-                                                    className="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-300 group-hover:bg-[#10b981]/10 group-hover:text-[#10b981]"
+                                                    className="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-300 group-hover:bg-[#10b981]/10 group-hover:text-[var(--accent-green-text)]"
                                                     style={{
                                                         backgroundColor: "var(--background)",
                                                         color: "var(--secondary-text)",
@@ -264,7 +273,7 @@ export default function UseCases() {
                                                 </div>
 
                                                 <div className="flex-1">
-                                                    <p className="text-xs font-semibold mb-1 uppercase tracking-wide" style={{ color: industry.bgColor }}>
+                                                    <p className="text-xs font-semibold mb-1 uppercase tracking-wide" style={{ color: accentTextMap[industry.bgColor] }}>
                                                         Proven Result
                                                     </p>
                                                     <p className="text-sm font-medium leading-relaxed" style={{ color: "var(--foreground)" }}>
@@ -274,20 +283,6 @@ export default function UseCases() {
                                             </div>
                                         </div>
 
-                                        {/* Learn More Link */}
-                                        {/* <button
-                                            className={`mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 group/btn ${isActive ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isActive ? industry.bgColor : `${industry.bgColor}10`,
-                                                color: isActive ? "white" : industry.bgColor,
-                                                border: `1.5px solid ${industry.bgColor}30`,
-                                            }}
-                                        >
-                                            <span>See Examples</span>
-                                            <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? "translate-x-1 -translate-y-1" : ""
-                                                }`} />
-                                        </button> */}
                                     </div>
 
                                     {/* Corner Glow */}
@@ -349,8 +344,8 @@ export default function UseCases() {
                                 backgroundColor: "var(--card-bg)",
                                 border: "1px solid var(--border-color)",
                             }}>
-                                <Target className="w-5 h-5" style={{ color: "#10b981" }} />
-                                <span className="text-sm font-bold" style={{ color: "#10b981" }}>
+                                <Target className="w-5 h-5" style={{ color: "var(--accent-green-text)" }} />
+                                <span className="text-sm font-bold" style={{ color: "var(--accent-green-text)" }}>
                                     INDUSTRY-AGNOSTIC APPROACH
                                 </span>
                             </div>
@@ -380,7 +375,7 @@ export default function UseCases() {
                                     className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
-                                        color: "#10b981",
+                                        color: "var(--accent-green-text)",
                                         border: "2px solid var(--border-color)",
                                     }}
                                 >
@@ -391,8 +386,8 @@ export default function UseCases() {
                         </div>
 
                         {/* Decorative Elements */}
-                        <Sparkles className="absolute top-8 right-8 w-8 h-8 text-[#10b981] opacity-20 animate-pulse" />
-                        <Sparkles className="absolute bottom-8 left-8 w-6 h-6 text-[#0ea5e9] opacity-20 animate-pulse" style={{ animationDelay: "1s" }} />
+                        <Sparkles className="absolute top-8 right-8 w-8 h-8 text-[var(--accent-green-text)] opacity-20 animate-pulse" />
+                        <Sparkles className="absolute bottom-8 left-8 w-6 h-6 text-[var(--accent-sky-text)] opacity-20 animate-pulse" style={{ animationDelay: "1s" }} />
                     </div>
                 </div>
             </div>

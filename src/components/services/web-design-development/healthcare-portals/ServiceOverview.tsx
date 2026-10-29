@@ -1,5 +1,3 @@
-"use client";
-
 import { Heart, Shield, Clock, Users, FileText, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
 

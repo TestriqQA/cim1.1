@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -46,7 +44,7 @@ export default function CTA() {
                         }}
                     >
                         <Heart className="w-4 h-4" style={{ color: "#3b82f6" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#3b82f6" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Ready to Transform Healthcare Delivery?
                         </span>
                     </div>
@@ -71,7 +69,7 @@ export default function CTA() {
                         className="text-base md:text-xl mb-8 max-w-2xl mx-auto"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        From patient portals to telehealth platforms, we create secure <Link href="/services/web-design-development" className="hover:underline">healthcare solutions</Link> that improve outcomes and enhance the patient experience.
+                        From patient portals to telehealth platforms, we create secure <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline">healthcare solutions</Link> that improve outcomes and enhance the patient experience.
                     </p>
 
                     {/* CTA Buttons */}

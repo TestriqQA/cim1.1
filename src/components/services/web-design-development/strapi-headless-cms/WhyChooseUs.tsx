@@ -22,6 +22,7 @@ export default function WhyChooseUs() {
             gradient: "from-violet-600 via-purple-500 to-indigo-500",
             bgColor: "rgba(73, 69, 255, 0.15)",
             iconColor: "#4945FF",
+            textColor: "var(--accent-indigo-text)",
             particles: 3,
         },
         {
@@ -31,6 +32,7 @@ export default function WhyChooseUs() {
             gradient: "from-purple-500 via-fuchsia-500 to-pink-500",
             bgColor: "rgba(123, 121, 255, 0.15)",
             iconColor: "#7B79FF",
+            textColor: "var(--accent-indigo-text)",
             particles: 4,
         },
         {
@@ -40,15 +42,17 @@ export default function WhyChooseUs() {
             gradient: "from-indigo-500 via-violet-500 to-purple-500",
             bgColor: "rgba(99, 102, 241, 0.15)",
             iconColor: "#6366f1",
+            textColor: "var(--accent-indigo-text)",
             particles: 5,
         },
         {
             icon: Lock,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[#c084fc] transition-colors">Enterprise Security</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-violet-text)] transition-colors">Enterprise Security</Link>,
             description: "Role-based access control, SSO integration, audit logs, and SOC 2 certified cloud hosting.",
             gradient: "from-fuchsia-500 via-pink-500 to-rose-500",
             bgColor: "rgba(192, 132, 252, 0.15)",
             iconColor: "#c084fc",
+            textColor: "var(--accent-violet-text)",
             particles: 3,
         },
         {
@@ -58,15 +62,17 @@ export default function WhyChooseUs() {
             gradient: "from-pink-500 via-rose-500 to-red-500",
             bgColor: "rgba(236, 72, 153, 0.15)",
             iconColor: "#ec4899",
+            textColor: "var(--accent-pink-text)",
             particles: 4,
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#8b5cf6] transition-colors">Community & Support</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-violet-text)] transition-colors">Community & Support</Link>,
             description: "Active Discord community, extensive documentation, and enterprise support options.",
             gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
             bgColor: "rgba(139, 92, 246, 0.15)",
             iconColor: "#8b5cf6",
+            textColor: "var(--accent-violet-text)",
             particles: 5,
         },
     ];
@@ -106,8 +112,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(73, 69, 255, 0.1), rgba(47, 45, 200, 0.1))",
                             border: "1px solid rgba(73, 69, 255, 0.2)",
                         }}>
-                        <Award className="w-4 h-4" style={{ color: "#4945FF" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#4945FF" }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-indigo-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -244,7 +250,7 @@ export default function WhyChooseUs() {
                                         <h3
                                             className="text-xl font-bold mb-3 transition-all duration-500"
                                             style={{
-                                                color: isHovered ? reason.iconColor : "var(--foreground)",
+                                                color: isHovered ? reason.textColor : "var(--foreground)",
                                                 transform: isHovered ? "translateX(4px)" : "translateX(0)",
                                             }}
                                         >
@@ -278,7 +284,7 @@ export default function WhyChooseUs() {
                                         <div
                                             className="absolute top-0 right-0 w-12 h-12 flex items-center justify-center rounded-full font-bold text-2xl opacity-0 group-hover:opacity-10 transition-all duration-500"
                                             style={{
-                                                color: reason.iconColor,
+                                                color: reason.textColor,
                                                 transform: isHovered ? "scale(1)" : "scale(0.5)",
                                             }}
                                         >

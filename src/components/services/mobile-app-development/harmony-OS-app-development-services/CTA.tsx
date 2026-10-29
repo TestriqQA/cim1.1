@@ -64,7 +64,7 @@ export default function CTA() {
                             </h2>
 
                             <p className="text-base md:text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
-                                Join 700M+ HarmonyOS users with your <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-white hover:underline underline-offset-4 decoration-2">distributed app</Link>. Our team will help you
+                                Join 700M+ HarmonyOS users with your <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-white underline hover:underline underline-offset-4 decoration-2">distributed app</Link>. Our team will help you
                                 navigate HMS Core, multi-device development, and AppGallery submission.
                             </p>
 

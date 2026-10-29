@@ -41,7 +41,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-teal)" }}
+                        style={{ color: "var(--accent-teal-text)" }}
                     >
                         Social Media Marketing
                     </span>
@@ -60,7 +60,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-cyan) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                                color: "var(--brand-teal)",
+                                color: "var(--accent-teal-text)",
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: "var(--brand-teal)" }} />
@@ -78,7 +78,7 @@ export default function Hero() {
                                     color: "transparent",
                                 }}
                             >
-                                <span style={{ color: "var(--brand-teal)", fontWeight: 800 }}>Social Media Marketing Services</span> That Convert
+                                <span style={{ color: "var(--accent-teal-text)", fontWeight: 800 }}>Social Media Marketing Services</span> That Convert
                             </span>
                         </h1>
 
@@ -93,7 +93,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            In today's hyper-competitive digital landscape, your brand needs more than just "likes"-it needs a strategic engine that drives real business results. As a premier Social Media Marketing Agency, we don't just post content; we engineer comprehensive social media marketing ecosystems designed to dominate your niche.
+                            In today's hyper-competitive digital landscape, your brand needs more than just "likes"-it needs a strategic engine that drives real business results. As an expert Social Media Marketing Agency, we don't just post content; we engineer comprehensive social media marketing ecosystems designed to dominate your niche.
                         </p>
 
                         {/* Feature Highlights */}
@@ -217,10 +217,6 @@ export default function Hero() {
                                 Start Growing Now
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link href="#overview" className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-semibold border transition-all hover:scale-105" style={{ borderColor: "var(--border-color)", color: "var(--foreground)" }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
-                                Learn More
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 
@@ -269,14 +265,14 @@ export default function Hero() {
                                 Why Choose Us?
                             </h2>
                             <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
-                                We combine <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">data-driven strategies</Link> with creative storytelling to build meaningful connections and drive real business growth.
+                                We combine <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">data-driven strategies</Link> with creative storytelling to build meaningful connections and drive real business growth.
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 <Link href="/blog/content-marketing-strategies-work"
                                     className="px-3 py-1 rounded-full text-xs font-semibold hover:bg-[color-mix(in srgb, var(--brand-teal) 25%, transparent)] transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-teal) 15%, transparent)",
-                                        color: "var(--brand-teal)",
+                                        color: "var(--accent-teal-text)",
                                     }}
                                 >
                                     Content Strategy
@@ -285,7 +281,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-teal) 15%, transparent)",
-                                        color: "var(--brand-teal)",
+                                        color: "var(--accent-teal-text)",
                                     }}
                                 >
                                     Community Mgmt
@@ -294,7 +290,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold hover:bg-[color-mix(in srgb, var(--brand-teal) 25%, transparent)] transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-teal) 15%, transparent)",
-                                        color: "var(--brand-teal)",
+                                        color: "var(--accent-teal-text)",
                                     }}
                                 >
                                     Paid Ads
@@ -303,7 +299,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold hover:bg-[color-mix(in srgb, var(--brand-teal) 25%, transparent)] transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-teal) 15%, transparent)",
-                                        color: "var(--brand-teal)",
+                                        color: "var(--accent-teal-text)",
                                     }}
                                 >
                                     Analytics

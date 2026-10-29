@@ -72,7 +72,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <BookOpen className="w-4 h-4" style={{ color: "#a855f7" }} />
-                        <span className="text-sm font-medium" style={{ color: "#a855f7" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Solution Types
                         </span>
                     </div>

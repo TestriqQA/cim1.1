@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#7C3AED" }}>Astro Framework</span>
+                            <span style={{ color: "var(--accent-violet-text)" }}>Astro Framework</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(255, 93, 1, 0.3)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "#FF5D01" }} />
-                            <span className="text-sm font-medium" style={{ color: "#7C3AED" }}>
+                            <Sparkles className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                                 The Web Framework for Content
                             </span>
                         </div>
@@ -116,7 +116,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Build blazing-fast content sites, marketing pages, and <Link href="/services/web-design-development" className="text-[#7C3AED] hover:underline">modern web applications</Link> with our expert Astro framework services. As a leading Astro development agency, we harness Astro&apos;s revolutionary Islands Architecture and zero JavaScript by default to deliver custom Astro website development that achieves 100% <Link href="/blog/web-performance-optimization-speed" className="text-[#7C3AED] hover:underline">PageSpeed scores</Link> and sub-1-second load times.
+                            Build blazing-fast content sites, marketing pages, and <Link href="/services/web-design-development" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">modern web applications</Link> with our expert Astro framework services. As a leading Astro development agency, we harness Astro&apos;s revolutionary Islands Architecture and zero JavaScript by default to deliver custom Astro website development that achieves 100% <Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">PageSpeed scores</Link> and sub-1-second load times.
                         </p>
 
                         {/* Feature Pills */}
@@ -171,17 +171,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#7C3AED" }}>100+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>100+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Sites Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#7C3AED" }}>&lt;1s</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>&lt;1s</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Average Load Time</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#7C3AED" }}>100</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>100</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>PageSpeed Score</p>
                             </div>
                         </div>
@@ -280,7 +280,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#7C3AED" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-violet-text)" }}>
                                 Works With Your Favorite Frameworks
                             </p>
                             <div className="flex flex-wrap gap-2">

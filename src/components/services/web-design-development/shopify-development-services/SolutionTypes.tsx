@@ -40,7 +40,7 @@ export default function SolutionTypes() {
             features: [
                 "Custom App Development",
                 "Theme Customization",
-                <Link key="react" href="/services/web-design-development/nextjs-development-services" className="hover:text-[#96bf48] transition-colors">Custom React Components</Link>,
+                <Link key="react" href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-lime-text)] transition-colors">Custom React Components</Link>,
                 "Checkout Extensions",
             ],
             accentColor: "#5c8a1e",
@@ -51,9 +51,9 @@ export default function SolutionTypes() {
             title: "Migration Solutions",
             description: "Safe and secure platform migration services.",
             features: [
-                <Link key="woo" href="/services/web-design-development/wordpress-development-services" className="hover:text-[#96bf48] transition-colors">WooCommerce to Shopify</Link>,
-                <Link key="big" href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#96bf48] transition-colors">BigCommerce to Shopify</Link>,
-                <Link key="mag" href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#96bf48] transition-colors">Magento to Shopify</Link>,
+                <Link key="woo" href="/services/web-design-development/wordpress-development-services" className="hover:text-[var(--accent-lime-text)] transition-colors">WooCommerce to Shopify</Link>,
+                <Link key="big" href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-lime-text)] transition-colors">BigCommerce to Shopify</Link>,
+                <Link key="mag" href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-lime-text)] transition-colors">Magento to Shopify</Link>,
                 "Data Integrity Check",
             ],
             accentColor: "#b4d97c",
@@ -78,8 +78,8 @@ export default function SolutionTypes() {
             title: "Headless Commerce",
             description: "Decoupled front-end for maximum flexibility.",
             features: [
-                <Link key="next" href="/services/web-design-development/nextjs-development-services" className="hover:text-[#96bf48] transition-colors">Next.js Storefronts</Link>,
-                <Link key="hydro" href="/services/web-design-development/headless-traditional-cms" className="hover:text-[#96bf48] transition-colors">Shopify Hydrogen</Link>,
+                <Link key="next" href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-lime-text)] transition-colors">Next.js Storefronts</Link>,
+                <Link key="hydro" href="/services/web-design-development/headless-traditional-cms" className="hover:text-[var(--accent-lime-text)] transition-colors">Shopify Hydrogen</Link>,
                 "Sanity CMS Integration",
                 "Omnichannel APIs",
             ],
@@ -143,7 +143,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "#96bf48" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
                             E-commerce Solutions
                         </span>
                     </div>
@@ -188,7 +188,7 @@ export default function SolutionTypes() {
                         return (
                             <div
                                 key={idx}
-                                className="group relative card-float"
+                                className="group relative card-float cursor-pointer"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}
@@ -228,7 +228,7 @@ export default function SolutionTypes() {
                                         className="absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-medium uppercase"
                                         style={{
                                             backgroundColor: `${solution.accentColor}15`,
-                                            color: solution.accentColor,
+                                            color: "var(--accent-lime-text)",
                                         }}
                                     >
                                         {solution.type}
@@ -328,9 +328,9 @@ export default function SolutionTypes() {
                                             className={`
                                                 mt-4 flex items-center gap-2 text-sm font-medium
                                                 transition-all duration-500
-                                                ${isActive ? "opacity-0 h-0" : isHovered ? "opacity-100" : "opacity-50"}
+                                                ${isActive ? "opacity-0 h-0" : "opacity-100"}
                                             `}
-                                            style={{ color: solution.accentColor }}
+                                            style={{ color: "var(--accent-lime-text)" }}
                                         >
                                             <span>Click to explore</span>
                                             <ArrowUpRight className="w-4 h-4" />

@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, Building, MapPin, Search, Users, Shield, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +58,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#0d9488" }}
+                        style={{ color: "var(--accent-teal-text)" }}
                     >
                         Real Estate Platforms
                     </span>
@@ -76,7 +74,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #0d9488 8%, transparent), color-mix(in srgb, #14b8a6 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #0d9488 20%, transparent)",
-                                color: "#0d9488",
+                                color: "var(--accent-teal-text)",
                             }}
                         >
                             <Building className="w-4 h-4" style={{ color: "#0d9488" }} />
@@ -203,7 +201,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    2,500+
+                                    Growing
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Agents Served
@@ -290,7 +288,7 @@ export default function Hero() {
                             <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>Platform Performance</p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(13, 148, 136, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>+85%</span>
+                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>Strong</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Lead Capture</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(13, 148, 136, 0.1)" }}>
@@ -298,11 +296,11 @@ export default function Hero() {
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Search Speed</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(13, 148, 136, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>+120%</span>
+                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>Strong</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>User Engagement</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(13, 148, 136, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>99.9%</span>
+                                    <span className="text-xl font-bold" style={{ color: "#0d9488" }}>High</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Uptime</span>
                                 </div>
                             </div>

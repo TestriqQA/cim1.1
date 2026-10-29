@@ -2,6 +2,11 @@ import { defineQuery } from "next-sanity";
 
 export const settingsQuery = defineQuery(`*[_type == "settings"][0]`);
 
+// A post's effective date. `publishedAt` is set by editors and can be empty;
+// null sorts first in GROQ but reads as 1970 in the browser, so fall back to
+// when the document was created.
+const postDate = /* groq */ `coalesce(publishedAt, _createdAt)`;
+
 const postFields = /* groq */ `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -9,29 +14,31 @@ const postFields = /* groq */ `
   "slug": slug.current,
   excerpt,
   mainImage,
-  "author": author->{name, image, slug, bio, title},
+  "author": author->{name, image, slug, bio, title, email, social, seo},
   "category": category->{name, slug, color},
-  publishedAt,
+  "publishedAt": ${postDate},
   readTime,
   featured,
-  tags
+  tags,
+  seo,
+  schema
 `;
 
 export const heroQuery = defineQuery(`
-  *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {
+  *[_type == "post" && defined(slug.current)] | order(${postDate} desc, _updatedAt desc) [0] {
     content,
     ${postFields}
   }
 `);
 
 export const moreStoriesQuery = defineQuery(`
-  *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {
+  *[_type == "post" && _id != $skip && defined(slug.current)] | order(${postDate} desc, _updatedAt desc) [0...$limit] {
     ${postFields}
   }
 `);
 
 export const allPostsQuery = defineQuery(`
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc, _updatedAt desc) {
+  *[_type == "post" && defined(slug.current)] | order(${postDate} desc, _updatedAt desc) {
     ${postFields}
   }
 `);
@@ -75,12 +82,13 @@ export const categoryQuery = defineQuery(`
     icon,
     color,
     relatedTopics,
-    featuredTags
+    featuredTags,
+    seo
   }
 `);
 
 export const categoryPostsQuery = defineQuery(`
-  *[_type == "post" && category->slug.current == $slug] | order(publishedAt desc) {
+  *[_type == "post" && category->slug.current == $slug] | order(${postDate} desc) {
     ${postFields}
   }
 `);
@@ -108,13 +116,14 @@ export const authorQuery = defineQuery(`
     title,
     social,
     postsCount,
-    email
+    email,
+    seo
   }
 `);
 
 
 export const authorPostsQuery = defineQuery(`
-  *[_type == "post" && author->slug.current == $slug] | order(publishedAt desc) {
+  *[_type == "post" && author->slug.current == $slug] | order(${postDate} desc) {
     ${postFields}
   }
 `);

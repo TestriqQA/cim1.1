@@ -24,19 +24,19 @@ export default function ServiceOverview() {
         {
             icon: ShoppingCart,
             title: "E-commerce & Catalog Ads (DPAs)",
-            description: <>Scale your online store with Facebook ads management for <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline text-blue-500">ecommerce</Link>. We implement Facebook dynamic product ads for retail that automatically showcase the right products to the right shoppers. Our experts are a leading <Link href="/services/web-design-development/shopify-development-services" className="hover:underline text-blue-500">Shopify</Link> Facebook ads management agency, integrating directly with your store for real-time inventory syncing.</>,
+            description: <>Scale your online store with Facebook ads management for <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">ecommerce</Link>. We implement Facebook dynamic product ads for retail that automatically showcase the right products to the right shoppers. Our experts are a leading <Link href="/services/web-design-development/shopify-development-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Shopify</Link> Facebook ads management agency, integrating directly with your store for real-time inventory syncing.</>,
             shadowColor: "rgba(24, 119, 242, 0.4)",
         },
         {
             icon: Video,
             title: "Video & Reels Campaigns",
-            description: <>Engage audiences with high-impact Facebook <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline text-blue-500">video ads</Link> marketing strategy. We design scroll-stopping Reels and video content optimized for mobile-first consumption, driving higher engagement and lower Facebook ads cost for small business 2026.</>,
+            description: <>Engage audiences with high-impact Facebook <Link href="/services/social-media-marketing-services/video-marketing-agency" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">video ads</Link> marketing strategy. We design scroll-stopping Reels and video content optimized for mobile-first consumption, driving higher engagement and lower Facebook ads cost for small business 2026.</>,
             shadowColor: "rgba(24, 119, 242, 0.4)",
         },
         {
             icon: Users,
             title: "Lookalike & Custom Audiences",
-            description: <>Scale your reach by targeting users identical to your best customers. Using Lookalike audience creation and Custom audience targeting, we find high-intent users who are ready to buy, maximizing your paid <Link href="/services/social-media-marketing-services" className="hover:underline text-blue-500">social media management</Link> budget.</>,
+            description: <>Scale your reach by targeting users identical to your best customers. Using Lookalike audience creation and Custom audience targeting, we find high-intent users who are ready to buy, maximizing your paid <Link href="/services/social-media-marketing-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">social media management</Link> budget.</>,
             shadowColor: "rgba(24, 119, 242, 0.4)",
         },
         {
@@ -86,8 +86,8 @@ export default function ServiceOverview() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
-                                background: "rgba(24, 119, 242, 0.1)",
-                                color: "#1877F2",
+                                background: "var(--card-bg)",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             Our Services
@@ -98,7 +98,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         Comprehensive Facebook{" "}
-                        <span style={{ color: "#1877F2" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Advertising
                         </span>{" "}
                         Services

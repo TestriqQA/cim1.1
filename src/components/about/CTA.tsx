@@ -48,7 +48,7 @@ export default function CTA() {
                                 className="
                   group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 
                   bg-white dark:bg-[var(--card-bg)] 
-                  text-[var(--brand-blue)] dark:text-[var(--brand-teal)]
+                  text-[var(--brand-blue-text)] dark:text-[var(--accent-teal-text)]
                   rounded-2xl text-sm md:text-lg font-semibold 
                   transition-all shadow-xl hover:shadow-2xl hover:scale-105
                 "
