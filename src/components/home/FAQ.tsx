@@ -178,17 +178,19 @@ export default function FAQ() {
           <div
             style={{
               display: "inline-flex",
-              gap: 8,
-              padding: "8px 16px",
+              alignItems: "center",
+              gap: 6,
+              padding: "7px 14px",
               borderRadius: 999,
               backgroundColor: "var(--background)",
               border: "1px solid var(--border-color)",
               marginBottom: 12,
+              lineHeight: 1,
             }}
           >
             <MessageSquare
               className="w-4 h-4"
-              style={{ color: "var(--brand-cyan)" }}
+              style={{ color: "var(--brand-cyan)", flexShrink: 0 }}
             />
             <span style={{ fontWeight: 700 }}>FAQ</span>
           </div>
@@ -214,46 +216,116 @@ export default function FAQ() {
               className="hover:shadow-md"
             >
               <button
+                type="button"
                 onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                aria-expanded={faqOpen === i}
+                aria-controls={`faq-answer-${i}`}
                 style={{
                   width: "100%",
                   textAlign: "left",
                   background: "transparent",
                   border: "none",
                   padding: 0,
+                  cursor: "pointer",
                 }}
               >
                 <div
-                  style={{ display: "flex", gap: 12, alignItems: "flex-start" }}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "center",
+                  }}
                 >
+                  {/* FAQ icon */}
                   <div
                     style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 8,
+                      width: 36,
+                      height: 36,
+                      minWidth: 36,
+                      borderRadius: 10,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       background:
                         "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
                       color: "#fff",
-                      flexShrink: 0,
                     }}
                   >
-                    <MessageSquare className="w-5 h-5" />
+                    <MessageSquare size={17} />
                   </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 700, marginBottom: 8 }}>
-                      {faq.q}
-                    </div>
-                    {faqOpen === i && (
-                      <div style={{ color: "var(--foreground)", marginTop: 8 }}>
-                        {faq.a}
-                      </div>
-                    )}
+
+                  {/* FAQ question */}
+                  <div
+                    style={{
+                      flex: 1,
+                      fontSize: "16px",
+                      fontWeight: 650,
+                      lineHeight: 1.5,
+                      color: "var(--foreground)",
+                      letterSpacing: "0.1px",
+                    }}
+                  >
+                    {faq.q}
+                  </div>
+
+                  {/* Plus / X icon */}
+                  {/* Smooth Plus / X icon */}
+                  <div
+                    style={{
+                      width: 30,
+                      height: 30,
+                      minWidth: 30,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: 8,
+                      color: "var(--brand-cyan)",
+                      backgroundColor: "var(--card-bg)",
+                      position: "relative",
+                    }}
+                  >
+                    <Plus
+                      size={18}
+                      style={{
+                        position: "absolute",
+                        transform:
+                          faqOpen === i
+                            ? "rotate(90deg) scale(0.5)"
+                            : "rotate(0deg) scale(1)",
+                        opacity: faqOpen === i ? 0 : 1,
+                        transition: "transform 0.3s ease, opacity 0.2s ease",
+                      }}
+                    />
+                    <X
+                      size={18}
+                      style={{
+                        position: "absolute",
+                        transform:
+                          faqOpen === i
+                            ? "rotate(0deg) scale(1)"
+                            : "rotate(-90deg) scale(0.5)",
+                        opacity: faqOpen === i ? 1 : 0,
+                        transition: "transform 0.3s ease, opacity 0.2s ease",
+                      }}
+                    />
                   </div>
                 </div>
               </button>
+
+              {/* FAQ answer */}
+              {faqOpen === i && (
+                <div
+                  id={`faq-answer-${i}`}
+                  style={{
+                    color: "var(--foreground)",
+                    marginTop: 16,
+                    marginLeft: 52,
+                    lineHeight: 1.7,
+                  }}
+                >
+                  {faq.a}
+                </div>
+              )}
             </div>
           ))}
         </div>
