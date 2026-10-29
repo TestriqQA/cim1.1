@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#4945FF" }}>Strapi Headless CMS</span>
+                            <span style={{ color: "var(--accent-indigo-text)" }}>Strapi Headless CMS</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(73, 69, 255, 0.3)",
                             }}
                         >
-                            <Layers className="w-4 h-4" style={{ color: "#7B79FF" }} />
-                            <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-sm font-medium" style={{ color: "#4945FF" }}>
+                            <Layers className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                            <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                                 API-First Headless CMS
                             </Link>
                         </div>
@@ -171,17 +171,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#4945FF" }}>75K+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>75K+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>GitHub Stars</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#4945FF" }}>700K+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>700K+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Created</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#4945FF" }}>100+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>100+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Plugins Available</p>
                             </div>
                         </div>
@@ -280,11 +280,11 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#4945FF" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-indigo-text)" }}>
                                 Built With Modern Stack
                             </p>
                             <div className="flex flex-wrap gap-2">
-                                {["Strapi v5", <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#4945FF] transition-colors">Node.js</Link>, "TypeScript", "PostgreSQL", "GraphQL", "React Admin"].map((tech, idx) => (
+                                {["Strapi v5", <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-indigo-text)] transition-colors">Node.js</Link>, "TypeScript", "PostgreSQL", "GraphQL", "React Admin"].map((tech, idx) => (
                                     <span
                                         key={idx}
                                         className="px-3 py-1.5 rounded-full text-xs font-medium border"

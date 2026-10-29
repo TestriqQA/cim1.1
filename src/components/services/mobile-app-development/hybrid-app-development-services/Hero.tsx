@@ -79,7 +79,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#00b4d8" }}>Hybrid Apps</span>
+                            <span style={{ color: "var(--accent-cyan-text)" }}>Hybrid Apps</span>
                         </nav>
 
                         {/* Badge */}
@@ -90,8 +90,8 @@ export default function Hero() {
                                 borderColor: "rgba(0, 180, 216, 0.3)",
                             }}
                         >
-                            <Globe className="w-4 h-4" style={{ color: "#00b4d8" }} />
-                            <span className="text-sm font-medium" style={{ color: "#00b4d8" }}>
+                            <Globe className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                                 Ionic • Capacitor • PWA
                             </span>
                         </div>
@@ -123,9 +123,9 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Forge a formidable mobile presence with the speed of <Link href="/services/web-design-development" className="text-[#00b4d8] hover:underline">web development</Link> and the punch of native performance. In 2026, staying ahead means deploying faster without sacrificing quality. Our hybrid mobile app development company leverages HTML5, CSS3, and JavaScript, encapsulated in a robust native shell, to deliver seamless experiences on both the App Store and Play Store.
+                            Forge a formidable mobile presence with the speed of <Link href="/services/web-design-development" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">web development</Link> and the punch of native performance. In 2026, staying ahead means deploying faster without sacrificing quality. Our hybrid mobile app development company leverages HTML5, CSS3, and JavaScript, encapsulated in a robust native shell, to deliver seamless experiences on both the App Store and Play Store.
                             <br /><br />
-                            Whether you are seeking custom hybrid app development for startups or <Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[#00b4d8] hover:underline">enterprise-grade</Link> multi-platform hybrid tablet and mobile apps, our team ensures a single codebase efficiency that slashes time-to-market by 60%.
+                            Whether you are seeking custom hybrid app development for startups or <Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">enterprise-grade</Link> multi-platform hybrid tablet and mobile apps, our team ensures a single codebase efficiency that slashes time-to-market by 60%.
                         </p>
 
                         {/* Feature Pills */}
@@ -180,18 +180,18 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#00b4d8" }}>120+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>120+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Apps Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#00b4d8" }}>Faster</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>Faster</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Faster Cycles</p>
                             </div>
 
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#00b4d8" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Stable Deployment</p>
                             </div>
                         </div>
@@ -292,7 +292,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#00b4d8" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-cyan-text)" }}>
                                 Hybrid Technologies
                             </p>
                             <div className="flex flex-wrap gap-2">

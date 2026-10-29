@@ -18,15 +18,15 @@ export default function SocialMediaFAQ() {
         },
         {
             q: "Which social media platforms are best for my business?",
-            a: <>The best platforms depend on your target audience and industry. For B2B, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">LinkedIn marketing services</Link> are essential. For visual brands and ecommerce, Instagram and Pinterest are key. We conduct a thorough <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">social media audit and analysis</Link> to recommend the most effective mix for you.</>,
+            a: <>The best platforms depend on your target audience and industry. For B2B, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">LinkedIn marketing services</Link> are essential. For visual brands and ecommerce, Instagram and Pinterest are key. We conduct a thorough <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">social media audit and analysis</Link> to recommend the most effective mix for you.</>,
         },
         {
             q: "How do I measure the ROI of social media marketing?",
-            a: <>We track specific Key Performance Indicators (KPIs) such as conversion rates, lead generation costs, and direct sales. Our <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">social media reporting and analytics services</Link> provide transparent insights, showing you exactly how our efforts translate into revenue.</>,
+            a: <>We track specific Key Performance Indicators (KPIs) such as conversion rates, lead generation costs, and direct sales. Our <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">social media reporting and analytics services</Link> provide transparent insights, showing you exactly how our efforts translate into revenue.</>,
         },
         {
             q: "What is included in social media management services?",
-            a: <>Our full-service social media marketing company packages typically include strategy development, content creation, community management, paid advertising, and monthly reporting. We also offer specialized add-ons like <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">influencer marketing management services</Link>.</>,
+            a: <>Our full-service social media marketing company packages typically include strategy development, content creation, community management, paid advertising, and monthly reporting. We also offer specialized add-ons like <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">influencer marketing management services</Link>.</>,
         },
     ];
 
@@ -35,7 +35,7 @@ export default function SocialMediaFAQ() {
             <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background)] border border-[var(--border-color)] mb-6">
-                        <MessageSquare className="w-4 h-4 text-[var(--brand-teal)]" />
+                        <MessageSquare className="w-4 h-4 text-[var(--accent-teal-text)]" />
                         <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--foreground)" }}>FAQ</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
@@ -65,7 +65,7 @@ export default function SocialMediaFAQ() {
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
                                                 backgroundColor: faqOpen === i ? "var(--brand-teal)" : "color-mix(in srgb, var(--brand-teal) 10%, transparent)",
-                                                color: faqOpen === i ? "white" : "var(--brand-teal)"
+                                                color: faqOpen === i ? "white" : "var(--accent-teal-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

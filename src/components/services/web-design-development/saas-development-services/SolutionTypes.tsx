@@ -88,7 +88,7 @@ export default function SolutionTypes() {
         {
             icon: Puzzle,
             title: "API-Driven Applications",
-            description: <>Backend services and RESTful/GraphQL APIs that power <Link href="/blog/category/mobile-apps" className="hover:underline text-[#008ac1]">mobile apps</Link>, third-party integrations, and headless frontend experiences. SDK generation and comprehensive documentation.</>,
+            description: <>Backend services and RESTful/GraphQL APIs that power <Link href="/blog/category/mobile-apps" className="underline text-[var(--brand-blue-text)]">mobile apps</Link>, third-party integrations, and headless frontend experiences. SDK generation and comprehensive documentation.</>,
             features: ["REST & GraphQL API development", "Webhook systems for events", "SDK generation (JS, Python)", "OpenAPI/Swagger documentation"],
             color: "from-[#ee6500] to-[#fab900]",
             accentColor: "#ee6500",
@@ -130,7 +130,7 @@ export default function SolutionTypes() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #008ac1 8%, transparent), color-mix(in srgb, #bc3feb 8%, transparent))",
                             borderColor: "color-mix(in srgb, #008ac1 20%, transparent)",
-                            color: "#008ac1",
+                            color: "var(--brand-blue-text)",
                         }}
                     >
                         <Code2 className="w-4 h-4" />
@@ -324,19 +324,6 @@ export default function SolutionTypes() {
                                             </div>
                                         </div>
 
-                                        {/* CTA Button */}
-                                        {/* <button
-                                            className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${isHovered ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isHovered ? solution.accentColor : `${solution.accentColor}15`,
-                                                color: isHovered ? "white" : solution.accentColor,
-                                                border: `1px solid ${solution.accentColor}30`,
-                                            }}
-                                        >
-                                            <span>Learn More</span>
-                                            <ArrowRight className="w-4 h-4" />
-                                        </button> */}
                                     </div>
 
                                     {/* Bottom Shine Effect */}
@@ -394,7 +381,7 @@ export default function SolutionTypes() {
                             <div className="text-center md:text-left max-w-2xl">
                                 <div className="flex items-center gap-2 justify-center md:justify-start mb-4">
                                     <TrendingUp className="w-6 h-6" style={{ color: "#008ac1" }} />
-                                    <span className="text-sm font-bold uppercase tracking-wider" style={{ color: "#008ac1" }}>
+                                    <span className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--brand-blue-text)" }}>
                                         Ready to Build?
                                     </span>
                                 </div>

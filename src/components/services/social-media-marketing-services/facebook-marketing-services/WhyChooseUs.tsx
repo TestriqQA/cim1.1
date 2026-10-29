@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Proven ROAS Results",
-            description: <>Our clients average a strong <Link href="/services/performance-marketing" className="hover:underline text-blue-500">Return on Ad Spend</Link>, verified via third-party audits. We focus on profit, not just impressions.</>,
+            description: <>Our clients average a strong <Link href="/services/performance-marketing" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Return on Ad Spend</Link>, verified via third-party audits. We focus on profit, not just impressions.</>,
             shadowColor: "rgba(24, 119, 242, 0.3)",
         },
         {
@@ -83,14 +83,14 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#1877F2" }} />
-                        <span className="text-sm font-medium" style={{ color: "#1877F2" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us for</span>{" "}
-                        <span style={{ color: "#1877F2" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Facebook Ads
                         </span>
                     </h2>
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#1877F2" : "var(--foreground)",
+                                            color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

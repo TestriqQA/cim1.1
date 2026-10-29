@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         {
             icon: Heart,
             title: "Healthcare",
-            description: <><span className="text-inherit">Launch HIPAA and GDPR compliant enterprise software designed for patient engagement, clinical workflows, and secure health record administration. Our </span><Link href="/services/web-design-development/healthcare-portals" className="text-[#2563eb] hover:underline">healthcare</Link> apps meet the highest standards of Application Lifecycle Management (ALM).</>,
+            description: <><span className="text-inherit">Launch HIPAA and GDPR compliant enterprise software designed for patient engagement, clinical workflows, and secure health record administration. Our </span><Link href="/services/web-design-development/healthcare-portals" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">healthcare</Link> apps meet the highest standards of Application Lifecycle Management (ALM).</>,
             features: [
                 "HIPAA & GDPR compliant",
                 "Patient engagement",
@@ -60,7 +60,7 @@ export default function SolutionTypes() {
         {
             icon: Landmark,
             title: "Financial Services",
-            description: <><span className="text-inherit">Our Custom </span><Link href="/services/web-design-development/fintech-solutions" className="text-[#2563eb] hover:underline">fintech</Link> and banking enterprise applications feature bank-level encryption and regulatory compliance. We have a proven track record of delivering 100% secure transactional platforms for global financial institutions.</>,
+            description: <><span className="text-inherit">Our Custom </span><Link href="/services/web-design-development/fintech-solutions" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">fintech</Link> and banking enterprise applications feature bank-level encryption and regulatory compliance. We have a proven track record of delivering 100% secure transactional platforms for global financial institutions.</>,
             features: [
                 "Custom fintech solutions",
                 "Bank-level encryption",
@@ -82,7 +82,7 @@ export default function SolutionTypes() {
         {
             icon: Store,
             title: "Retail Enterprise",
-            description: <><span className="text-inherit">Scale your </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[#2563eb] hover:underline">retail</Link> operations with omnichannel solutions, automated inventory management, and high-performance employee apps designed for global retail chains.</>,
+            description: <><span className="text-inherit">Scale your </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">retail</Link> operations with omnichannel solutions, automated inventory management, and high-performance employee apps designed for global retail chains.</>,
             features: [
                 "Omnichannel solutions",
                 "Inventory automation",
@@ -93,7 +93,7 @@ export default function SolutionTypes() {
         {
             icon: Building,
             title: "Government & Public Sector",
-            description: <><span className="text-inherit">Deliver secure, compliant </span><Link href="/services/web-design-development" className="text-[#2563eb] hover:underline">citizen portals</Link> and internal operations apps. We specialize in FedRAMP-ready solutions for field inspections and complex case management.</>,
+            description: <><span className="text-inherit">Deliver secure, compliant </span><Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">citizen portals</Link> and internal operations apps. We specialize in FedRAMP-ready solutions for field inspections and complex case management.</>,
             features: [
                 "Secure citizen portals",
                 "Field inspection apps",
@@ -111,19 +111,19 @@ export default function SolutionTypes() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(37, 99, 235, 0.1)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "rgba(37, 99, 235, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#2563eb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Industry-Specific Expertise in</span>{" "}
-                        <span style={{ color: "#2563eb" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Global Markets
                         </span>
                     </h2>
@@ -188,7 +188,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#2563eb]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--brand-blue-text)]"
                                             }`}
                                     />
                                 </div>
@@ -207,7 +207,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#2563eb]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#2563eb]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                 </div>
                             </div>
                         );

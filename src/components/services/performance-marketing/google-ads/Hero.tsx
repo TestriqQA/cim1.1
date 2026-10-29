@@ -65,7 +65,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: googleBlue }}>Google Ads</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Google Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -76,8 +76,8 @@ export default function Hero() {
                                 borderColor: `${googleBlue}30`,
                             }}
                         >
-                            <Search className="w-4 h-4" style={{ color: googleBlue }} />
-                            <span className="text-sm font-semibold" style={{ color: googleBlue }}>
+                            <Search className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Google Premier Partner
                             </span>
                         </div>
@@ -111,7 +111,7 @@ export default function Hero() {
                                         backgroundColor: "var(--card-bg)",
                                     }}
                                 >
-                                    <CheckCircle2 className="w-4 h-4" style={{ color: googleBlue }} />
+                                    <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                                     <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                         {feature}
                                     </span>
@@ -191,7 +191,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${googleBlue}15` }}
                                     >
-                                        <TrendingUp className="w-6 h-6" style={{ color: googleBlue }} />
+                                        <TrendingUp className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -217,7 +217,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${googleGreen}15` }}
                                     >
-                                        <DollarSign className="w-6 h-6" style={{ color: googleGreen }} />
+                                        <DollarSign className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

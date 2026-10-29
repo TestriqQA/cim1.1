@@ -1,0 +1,355 @@
+/* ==========================================================================
+   /our-team — motion & interaction layer
+   --------------------------------------------------------------------------
+   The whole route is a Server Component tree with ZERO client JavaScript, so
+   every interaction here is pure CSS: hover/focus-within states, a marquee that
+   pauses under the pointer, and scroll-linked reveals driven by
+   `animation-timeline`.
+
+   Three rules this file is built on:
+
+   1. PROGRESSIVE, NEVER DESTRUCTIVE. The scroll reveals live inside
+      `@supports (animation-timeline: view())`. A browser without scroll-driven
+      animations (the browserslist floor here is Safari 15.4) simply renders the
+      final state — nothing is ever hidden behind a feature it cannot run.
+   2. NO `overflow: hidden` ANCESTORS on revealed elements. A view() timeline
+      resolves against its nearest scroll container, and `overflow: hidden`
+      creates one that never scrolls — which would strand the element at 0%
+      progress, i.e. invisible. Decorative layers are therefore clipped inside
+      their own absolutely-positioned wrapper that contains no revealed content.
+   3. MOTION IS OPT-IN. Everything non-essential sits behind
+      `prefers-reduced-motion: no-preference`, and print resets the lot.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Keyframes
+   ---------------------------------------------------------------------- */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes growLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(4%, -5%, 0) scale(1.16);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    /* The track renders the list twice, so -50% is one seamless lap. */
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Scroll-linked reveals
+   `.reveal`  — a single element.
+   `.cascade` — applied to a list or grid; staggers its direct children by
+                giving each a slightly longer entry range, so a row of cards
+                resolves in sequence instead of snapping in together.
+   ---------------------------------------------------------------------- */
+.reveal,
+.cascade {
+  /* Base state is the finished state — see rule 1 above. */
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation-name: revealUp;
+      animation-duration: auto;
+      animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 78%;
+    }
+
+    .cascade > * {
+      animation-name: revealUp;
+      animation-duration: auto;
+      animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 68%;
+    }
+
+    .cascade > *:nth-child(2n) {
+      animation-range: entry 0% entry 82%;
+    }
+
+    .cascade > *:nth-child(3n) {
+      animation-range: entry 0% entry 96%;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Ambient background
+   ---------------------------------------------------------------------- */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .blobDrift {
+    animation: drift 24s ease-in-out infinite alternate;
+  }
+
+  .blobDriftSlow {
+    animation: drift 34s ease-in-out infinite alternate-reverse;
+  }
+}
+
+.gridTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    linear-gradient(var(--brand-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--brand-blue) 1px, transparent 1px);
+  background-size: 58px 58px;
+  /* Fades the grid out before it reaches the section edge, so it reads as
+     texture rather than as a table. */
+  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 0%, #000 30%, transparent 76%);
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 0%, #000 30%, transparent 76%);
+}
+
+/* -------------------------------------------------------------------------
+   Headline underline flourish — decorative, drawn under the LCP text. The
+   text itself is never animated, so the LCP paint is not delayed.
+   ---------------------------------------------------------------------- */
+.markline {
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .markline {
+    animation: growLine 1s cubic-bezier(0.22, 0.7, 0.3, 1) 0.15s both;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Buttons — a light sweep crosses the face on hover/focus
+   ---------------------------------------------------------------------- */
+.sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(115deg,
+      transparent 28%,
+      rgb(255 255 255 / 30%) 48%,
+      transparent 68%);
+  transform: translate3d(-130%, 0, 0);
+  transition: transform 0.75s cubic-bezier(0.22, 0.7, 0.3, 1);
+}
+
+.sheen:hover::after,
+.sheen:focus-visible::after {
+  transform: translate3d(130%, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheen::after {
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Cards — lift on hover OR focus-within, so keyboard users get the same
+   affordance as pointer users.
+   ---------------------------------------------------------------------- */
+.lift {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 0.7, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 0.7, 0.3, 1),
+    border-color 0.4s ease;
+}
+
+.lift:hover,
+.lift:focus-within {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 26px 52px -30px rgb(0 0 0 / 55%);
+  border-color: color-mix(in srgb, var(--brand-blue) 42%, var(--border-color));
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .lift:hover,
+  .lift:focus-within {
+    transform: none;
+  }
+}
+
+/* A gradient hairline that draws itself across the top edge of a card. */
+.rail::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-teal), var(--brand-purple));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.3, 1);
+}
+
+.rail:hover::before,
+.rail:focus-within::before {
+  transform: scaleX(1);
+}
+
+/* -------------------------------------------------------------------------
+   Portraits — a conic gradient ring that only spins while pointed at or
+   focused, so the page is not burning compositor frames at rest.
+   ---------------------------------------------------------------------- */
+.ring {
+  position: relative;
+}
+
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg,
+      var(--brand-blue),
+      var(--brand-teal),
+      var(--brand-purple),
+      var(--brand-blue));
+  animation: orbit 9s linear infinite;
+  animation-play-state: paused;
+}
+
+.ring:hover::before,
+.ring:focus-within::before {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring::before {
+    animation: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Directory rows — a tint sweeps in from the leading edge on hover/focus.
+   ---------------------------------------------------------------------- */
+.indexRow {
+  position: relative;
+  isolation: isolate;
+}
+
+.indexRow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--brand-blue) 14%, transparent),
+      color-mix(in srgb, var(--brand-teal) 7%, transparent) 55%,
+      transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.22, 0.7, 0.3, 1);
+}
+
+.indexRow:hover::before,
+.indexRow:focus-visible::before {
+  transform: scaleX(1);
+}
+
+/* -------------------------------------------------------------------------
+   Marquee — decorative, aria-hidden, pauses under the pointer.
+   ---------------------------------------------------------------------- */
+.marqueeViewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marqueeTrack {
+    animation: marquee 42s linear infinite;
+  }
+
+  .marqueeViewport:hover .marqueeTrack {
+    animation-play-state: paused;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Leadership spread — the portrait column pins while the dossier scrolls past.
+   `align-self: start` is required: a stretched grid item is as tall as its row
+   and therefore has no room to stick.
+   ---------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .stickyCol {
+    position: sticky;
+    top: 6.5rem;
+    align-self: start;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Print / no-motion safety net
+   ---------------------------------------------------------------------- */
+@media print {
+
+  .reveal,
+  .cascade > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

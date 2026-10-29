@@ -1,5 +1,3 @@
-"use client";
-
 import { CreditCard, TrendingUp, ShieldCheck, Landmark, Smartphone, Globe, ArrowRight, Wallet } from "lucide-react";
 import Link from "next/link";
 
@@ -24,7 +22,7 @@ export default function ServiceOverview() {
                     <div className="space-y-6">
                         <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "var(--foreground)" }}>
                             FinTech Platforms That{" "}
-                            <span style={{ color: "#0ea5e9" }}>Drive Innovation</span>
+                            <span style={{ color: "var(--accent-sky-text)" }}>Drive Innovation</span>
                         </h2>
 
                         <p className="text-lg leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -42,7 +40,7 @@ export default function ServiceOverview() {
                         <Link
                             href="/contact"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                            style={{ backgroundColor: "#0ea5e9" }}
+                            style={{ backgroundColor: "var(--brand-blue-btn)" }}
                         >
                             Start Your FinTech Build
                             <ArrowRight className="w-5 h-5" />

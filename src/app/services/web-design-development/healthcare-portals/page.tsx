@@ -1,8 +1,11 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/healthcare-portals/Hero';
 import ServiceOverview from '@/components/services/web-design-development/healthcare-portals/ServiceOverview';
+import TechStack from '@/components/services/web-design-development/healthcare-portals/TechStack';
+import UseCases from '@/components/services/web-design-development/healthcare-portals/UseCases';
+import CTA from '@/components/services/web-design-development/healthcare-portals/CTA';
 
-// Lazy load below-the-fold components for better performance
+// Lazy load below-the-fold interactive components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/healthcare-portals/WhyChooseUs'), {
     loading: () => <div className="py-20" />,
 });
@@ -10,15 +13,6 @@ const SolutionTypes = dynamic(() => import('@/components/services/web-design-dev
     loading: () => <div className="py-20" />,
 });
 const Process = dynamic(() => import('@/components/services/web-design-development/healthcare-portals/Process'), {
-    loading: () => <div className="py-20" />,
-});
-const TechStack = dynamic(() => import('@/components/services/web-design-development/healthcare-portals/TechStack'), {
-    loading: () => <div className="py-20" />,
-});
-const UseCases = dynamic(() => import('@/components/services/web-design-development/healthcare-portals/UseCases'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/healthcare-portals/CTA'), {
     loading: () => <div className="py-20" />,
 });
 

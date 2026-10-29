@@ -82,7 +82,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/social-media-marketing-services" className="hover:underline">Social Media</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: pinterestRed }}>Pinterest Marketing</span>
+                            <span style={{ color: "var(--accent-red-text)" }}>Pinterest Marketing</span>
                         </nav>
 
                         {/* Badge */}
@@ -97,7 +97,7 @@ export default function Hero() {
                             <svg className="w-4 h-4" style={{ color: pinterestRed }} viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
                             </svg>
-                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: pinterestRed }}>
+                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: "var(--accent-red-text)" }}>
                                 Pinterest Marketing Partner
                             </Link>
                         </div>
@@ -108,7 +108,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Inspire & Convert with{" "}
-                            <span className="relative inline-block" style={{ color: pinterestRed }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-red-text)" }}>
                                 <Link href="/services/web-design-development/branding-services" className="hover:underline">Visual Discovery</Link>
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -174,17 +174,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: pinterestRed }}>450M+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>450M+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Monthly Users</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: pinterestRed }}>97%</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>97%</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Unbranded Searches</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: pinterestRed }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher ROAS</p>
                             </div>
                         </div>

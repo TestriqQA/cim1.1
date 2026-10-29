@@ -13,7 +13,7 @@ export default function FAQ() {
     const faqs: { question: string; answer: string | React.ReactNode }[] = [
         {
             question: "What is local SEO and how does it work?",
-            answer: <><Link href="/services/seo-services" className="hover:underline text-amber-500">Local SEO</Link> (local search engine optimization) is the process of optimizing your online presence to attract customers searching for businesses 'near me' or in specific geographic areas. Unlike traditional SEO that targets national/global rankings, local SEO focuses on appearing in the Google Map Pack (top 3 local results), Google Business Profile panels, and geo-modified organic results.\n\nHow it works: Google's local algorithm evaluates three core factors:\n\n• Proximity - How close your business is to the searcher\n• Relevance - How well your GBP categories/description match the query\n• Prominence - Your reputation (reviews, citations, <Link href="/services/seo-services/link-building" className="hover:underline text-amber-500">backlinks</Link>)\n\nOur local SEO services optimize all three signals to rank you prominently for high-intent local searches that drive calls, direction requests, and foot traffic.</>
+            answer: <><Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">Local SEO</Link> (local search engine optimization) is the process of optimizing your online presence to attract customers searching for businesses 'near me' or in specific geographic areas. Unlike traditional SEO that targets national/global rankings, local SEO focuses on appearing in the Google Map Pack (top 3 local results), Google Business Profile panels, and geo-modified organic results.\n\nHow it works: Google's local algorithm evaluates three core factors:\n\n• Proximity - How close your business is to the searcher\n• Relevance - How well your GBP categories/description match the query\n• Prominence - Your reputation (reviews, citations, <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">backlinks</Link>)\n\nOur local SEO services optimize all three signals to rank you prominently for high-intent local searches that drive calls, direction requests, and foot traffic.</>
         },
         {
             question: "How much do local SEO services cost per month in 2026?",
@@ -25,7 +25,7 @@ export default function FAQ() {
         },
         {
             question: "What is the difference between SEO and local SEO?",
-            answer: <>Traditional SEO: Targets national/global rankings with focus on backlink authority + content depth. Goal is to rank for broad keywords targeting anyone searching. Key metrics include organic traffic and domain authority. Top ranking signals are content quality, backlinks, and <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-amber-500">technical SEO</Link>.\n\nLocal SEO: Focuses on rankings in specific cities/neighborhoods through Google Business Profile + proximity optimization. Goal is to appear in the Google Map Pack for users within 5-25 mile radius. Key metrics include Map Pack rank, calls, directions, and foot traffic. Top ranking signals are NAP citations, reviews, and GBP optimization.\n\nWhen to use Traditional SEO: SaaS products, ecommerce sites selling nationally, informational blogs\n\nWhen to use Local SEO: Restaurants, medical practices, law firms, contractors, retail stores, real estate agents—any business serving a specific geographic area.\n\nOur approach: We combine both! Our local search engine optimization includes <Link href="/services/seo-services/on-page-seo-services" className="hover:underline text-amber-500">traditional on-page SEO</Link> + technical optimizations PLUS hyperlocal GBP and citation strategies for maximum visibility.</>
+            answer: <>Traditional SEO: Targets national/global rankings with focus on backlink authority + content depth. Goal is to rank for broad keywords targeting anyone searching. Key metrics include organic traffic and domain authority. Top ranking signals are content quality, backlinks, and <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">technical SEO</Link>.\n\nLocal SEO: Focuses on rankings in specific cities/neighborhoods through Google Business Profile + proximity optimization. Goal is to appear in the Google Map Pack for users within 5-25 mile radius. Key metrics include Map Pack rank, calls, directions, and foot traffic. Top ranking signals are NAP citations, reviews, and GBP optimization.\n\nWhen to use Traditional SEO: SaaS products, ecommerce sites selling nationally, informational blogs\n\nWhen to use Local SEO: Restaurants, medical practices, law firms, contractors, retail stores, real estate agents—any business serving a specific geographic area.\n\nOur approach: We combine both! Our local search engine optimization includes <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">traditional on-page SEO</Link> + technical optimizations PLUS hyperlocal GBP and citation strategies for maximum visibility.</>
         },
         {
             question: "How long does it take to see results from local SEO?",
@@ -45,9 +45,9 @@ export default function FAQ() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border"
                             style={{
-                                backgroundColor: `${localAmber}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${localAmber}30`,
-                                color: localAmber,
+                                color: "var(--accent-amber-text)",
                             }}
                         >
                             FAQ
@@ -57,7 +57,7 @@ export default function FAQ() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Frequently Asked <span style={{ color: localAmber }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-amber-text)" }}>Questions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--foreground)" }}
@@ -96,7 +96,7 @@ export default function FAQ() {
                                         </div>
                                         <h3
                                             className="text-lg md:text-xl font-bold transition-colors duration-300"
-                                            style={{ color: isOpen ? localAmber : "var(--foreground)" }}
+                                            style={{ color: isOpen ? "var(--accent-amber-text)" : "var(--foreground)" }}
                                         >
                                             {faq.question}
                                         </h3>
@@ -105,7 +105,7 @@ export default function FAQ() {
                                         className="w-6 h-6 flex-shrink-0 transition-transform duration-300"
                                         style={{
                                             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                            color: isOpen ? localAmber : "var(--secondary-text)"
+                                            color: isOpen ? "var(--accent-amber-text)" : "var(--secondary-text)"
                                         }}
                                     />
                                 </button>

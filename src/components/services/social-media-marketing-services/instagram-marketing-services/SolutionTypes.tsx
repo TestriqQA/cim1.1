@@ -15,6 +15,18 @@ import Link from "next/link";
 export default function SolutionTypes() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+    // Theme-aware TEXT variants of the per-industry accent hues below.
+    // The raw hues stay in the data (they drive gradients/borders/icons/tints);
+    // this map is applied ONLY where a hue colors text.
+    const accentTextMap: Record<string, string> = {
+        "#E1306C": "var(--accent-pink-text)",
+        "#C13584": "var(--accent-violet-text)",
+        "#F77737": "var(--accent-orange-text)",
+        "#833AB4": "var(--accent-violet-text)",
+        "#405DE6": "var(--accent-indigo-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex] ?? hex;
+
     const solutions = [
         {
             icon: Store,
@@ -90,7 +102,7 @@ export default function SolutionTypes() {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(193, 53, 132, 0.1))", border: "1px solid rgba(225, 48, 108, 0.2)" }}>
                         <Sparkles className="w-4 h-4" style={{ color: "#E1306C" }} />
-                        <span className="text-sm font-medium" style={{ color: "#E1306C" }}>Industry Solutions</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>Industry Solutions</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Instagram for Your Industry:</span>{" "}
@@ -157,7 +169,7 @@ export default function SolutionTypes() {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? solution.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? textAccent(solution.color) : "var(--foreground)" }}>
                                             {solution.title}
                                         </h3>
 

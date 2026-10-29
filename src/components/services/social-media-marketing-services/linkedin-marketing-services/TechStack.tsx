@@ -69,7 +69,7 @@ export default function TechStack() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our LinkedIn</span>{" "}
-                        <span style={{ color: linkedinBlue }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Tech Stack
                         </span>
                     </h2>
@@ -133,15 +133,15 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.link ? (
-                                            <Link href={tech.link} className="hover:text-blue-600 transition-colors">
+                                            <Link href={tech.link} className="hover:text-[var(--brand-blue-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (
                                             tech.name
                                         )}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

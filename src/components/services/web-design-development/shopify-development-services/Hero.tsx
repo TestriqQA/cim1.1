@@ -65,7 +65,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#96bf48" }}>Shopify & E-commerce</span>
+                            <span style={{ color: "var(--accent-lime-text)" }}>Shopify & E-commerce</span>
                         </nav>
 
                         {/* Badge */}
@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <ShoppingCart className="w-4 h-4" style={{ color: "#96bf48" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#96bf48" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                                 E-commerce Experts
                             </span>
                         </div>
@@ -258,7 +258,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#96bf48" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-lime-text)" }}>
                                 Platforms We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

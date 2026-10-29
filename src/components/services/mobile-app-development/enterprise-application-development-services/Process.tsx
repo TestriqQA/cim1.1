@@ -91,19 +91,19 @@ export default function Process() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(37, 99, 235, 0.1)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "rgba(37, 99, 235, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#2563eb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>A Security-First Lifecycle for</span>{" "}
-                        <span style={{ color: "#2563eb" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Enterprise Stability
                         </span>
                     </h2>
@@ -186,13 +186,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(37, 99, 235, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#2563eb]" />
+                                                        <Icon className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(37, 99, 235, 0.1)",
-                                                            color: "#2563eb",
+                                                            color: "var(--brand-blue-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -215,7 +215,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#2563eb] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

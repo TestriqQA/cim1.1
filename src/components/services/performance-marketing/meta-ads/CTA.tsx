@@ -72,7 +72,7 @@ export default function CTA() {
                                 style={{
                                     borderColor: `${metaBlue}30`,
                                     backgroundColor: `${metaBlue}10`,
-                                    color: metaBlue,
+                                    color: "var(--brand-blue-text)",
                                 }}
                             >
                                 {badge}

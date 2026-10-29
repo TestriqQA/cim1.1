@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "#339933" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Why Work With Us
                         </span>
                     </div>

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { authorQuery, authorPostsQuery, authorsQuery } from "@/sanity/lib/queries";
-import { mapSanityAuthorToAuthor, mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityAuthorToAuthor, mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 
 type Props = {
   params: Promise<{ name: string }>;
@@ -54,7 +54,7 @@ export default async function AuthorPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
       />
-      <AuthorClient author={author} posts={posts} />
+      <AuthorClient author={author} posts={posts.map(toListPost)} />
     </>
   );
 }

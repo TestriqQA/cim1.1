@@ -49,7 +49,7 @@ export default function Location() {
                                     style={{
                                         background: gradient("--brand-blue", "--brand-teal", "90deg"),
                                     }}
-                                    aria-label="Load Interactive Google Map"
+                                    aria-label="Load Interactive Map for our office location"
                                 >
                                     <MapPin className="w-5 h-5" />
                                     <span>Load Interactive Map</span>

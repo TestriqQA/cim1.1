@@ -10,6 +10,17 @@ export default function SolutionTypes() {
     // Microsoft brand colors
     const msBlue = "#0078D4";
 
+    // Map per-item brand hue -> theme-aware text token (text sites only)
+    const textAccent = (c: string) => {
+        switch (c) {
+            case "#0077B5": return "var(--brand-blue-text)";
+            case "#107C10": return "var(--accent-green-text)";
+            case "#FFB900": return "var(--accent-amber-text)";
+            case "#D83B01": return "var(--accent-orange-text)";
+            default: return c;
+        }
+    };
+
     const solutions = [
         {
             title: <Link href="/services/performance-marketing/linkedin-ads" className="hover:text-[var(--primary)] transition-colors">B2B Targeting</Link>,
@@ -61,7 +72,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: msBlue }} />
-                        <span className="text-sm font-medium" style={{ color: msBlue }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Platform Benefits
                         </span>
                     </div>
@@ -69,7 +80,7 @@ export default function SolutionTypes() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Strategic{" "}
                         <span
-                            style={{ color: msBlue }}
+                            style={{ color: "var(--brand-blue-text)" }}
                         >
                             Advantages
                         </span>
@@ -118,7 +129,7 @@ export default function SolutionTypes() {
                                             {solution.frontDescription}
                                         </p>
                                     </div>
-                                    <div className="flex items-center text-sm font-semibold" style={{ color: solution.color }}>
+                                    <div className="flex items-center text-sm font-semibold" style={{ color: textAccent(solution.color) }}>
                                         Uncover Details <ArrowRight className="w-4 h-4 ml-2" />
                                     </div>
                                 </div>
@@ -136,7 +147,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <div>
-                                        <h3 className="text-xl font-bold mb-4" style={{ color: solution.color }}>
+                                        <h3 className="text-xl font-bold mb-4" style={{ color: textAccent(solution.color) }}>
                                             {solution.title}
                                         </h3>
                                         <p className="text-base leading-relaxed mb-6" style={{ color: "var(--secondary-text)" }}>
@@ -146,7 +157,7 @@ export default function SolutionTypes() {
                                             className="inline-block px-4 py-2 rounded-lg text-sm font-semibold"
                                             style={{
                                                 backgroundColor: `${solution.color}10`,
-                                                color: solution.color
+                                                color: textAccent(solution.color)
                                             }}
                                         >
                                             {solution.stats}

@@ -7,7 +7,7 @@ export default function IndustriesAndUseCases() {
     const industries = [
         {
             icon: Heart,
-            name: <Link href="/services/web-design-development/healthcare-portals" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">Healthcare</Link>,
+            name: <Link href="/services/web-design-development/healthcare-portals" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">Healthcare</Link>,
             useCases: [
                 "Patient intake automation",
                 "Appointment scheduling",
@@ -21,7 +21,7 @@ export default function IndustriesAndUseCases() {
         },
         {
             icon: DollarSign,
-            name: <Link href="/services/web-design-development/fintech-solutions" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">Finance</Link>,
+            name: <Link href="/services/web-design-development/fintech-solutions" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">Finance</Link>,
             useCases: [
                 "AI-powered financial forecasting",
                 "Fraud detection & prevention",
@@ -35,7 +35,7 @@ export default function IndustriesAndUseCases() {
         },
         {
             icon: ShoppingBag,
-            name: <Link href="/blog/case-study-local-business-digital-transformation" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">E-commerce</Link>,
+            name: <Link href="/blog/case-study-local-business-digital-transformation" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">E-commerce</Link>,
             useCases: [
                 "AI-driven supply chain & logistics",
                 "Inventory prediction",
@@ -49,7 +49,7 @@ export default function IndustriesAndUseCases() {
         },
         {
             icon: TrendingUp,
-            name: <Link href="/services/performance-marketing" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">Marketing Agencies</Link>,
+            name: <Link href="/services/performance-marketing" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">Marketing Agencies</Link>,
             useCases: [
                 "Scalable AI workflows",
                 "Automated client reporting",
@@ -63,7 +63,7 @@ export default function IndustriesAndUseCases() {
         },
         {
             icon: Factory,
-            name: <Link href="/services/web-design-development/business-corporate" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">Manufacturing</Link>,
+            name: <Link href="/services/web-design-development/business-corporate" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">Manufacturing</Link>,
             useCases: [
                 "Predictive maintenance",
                 "Supply chain resilience",
@@ -77,7 +77,7 @@ export default function IndustriesAndUseCases() {
         },
         {
             icon: Briefcase,
-            name: <Link href="/services/web-design-development/saas-development-services" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">SaaS & Startups</Link>,
+            name: <Link href="/services/web-design-development/saas-development-services" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">SaaS & Startups</Link>,
             useCases: [
                 "End-to-end AI implementation",
                 "User onboarding automation",
@@ -145,7 +145,7 @@ export default function IndustriesAndUseCases() {
                     {/* Section Header */}
                     <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ color: "var(--foreground)" }}>
-                            Industries & <span style={{ color: "var(--brand-orange)" }}>Use Cases</span>
+                            Industries & <span style={{ color: "var(--accent-orange-text)" }}>Use Cases</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             AI automation transforms operations across industries. See how we're helping organizations like yours achieve operational excellence.
@@ -339,7 +339,7 @@ export default function IndustriesAndUseCases() {
                             </p>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#ee6500] hover:to-[#fab900] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button"
                             >
                                 <span>Discuss Your Custom Solution</span>
                                 <GitBranch className="w-5 h-5 group-hover/button:rotate-12 transition-transform duration-300" />

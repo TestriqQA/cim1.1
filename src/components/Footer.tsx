@@ -24,9 +24,11 @@ export default function Footer() {
     // Quick Links (matching reference image)
     const quickLinks = [
         { name: "About Us", href: "/about" },
+        { name: "Our Team", href: "/our-team" },
         { name: "Careers", href: "/careers" },
         { name: "Our Services", href: "/services" },
-        { name: "Products", href: "/products" },
+        { name: "Portfolio", href: "/portfolio" },
+        { name: "Products", href: "/products/chimegenius-ai-pro" },
         { name: "Contact Us", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-of-service" },
@@ -222,16 +224,16 @@ export default function Footer() {
 
                             {/* Social Icons */}
                             <div className="flex items-center gap-4">
-                                <Link href="https://www.linkedin.com/company/cinute-infomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#0A66C2] group">
+                                <Link href="https://www.linkedin.com/company/cinute-infomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on LinkedIn (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#0A66C2] group">
                                     <Linkedin className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://www.instagram.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#E1306C] group">
+                                <Link href="https://www.instagram.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on Instagram (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#E1306C] group">
                                     <Instagram className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://x.com/cinuteinfomedia" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1DA1F2] group">
+                                <Link href="https://x.com/cinuteinfomedia" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on X (Twitter) (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1DA1F2] group">
                                     <TwitterX className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
-                                <Link href="https://www.facebook.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1877F2] group">
+                                <Link href="https://www.facebook.com/cinuteinfomedia/" target="_blank" rel="noopener noreferrer" aria-label="Cinute InfoMedia on Facebook (opens in a new tab)" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-[var(--hover-bg)] hover:!bg-[#1877F2] group">
                                     <Facebook className="h-6 w-6 group-hover:text-white transition-colors" style={{ color: "var(--foreground)" }} />
                                 </Link>
                             </div>

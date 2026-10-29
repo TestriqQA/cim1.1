@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         {
             icon: Cloud,
             title: "SaaS Platforms",
-            description: <>Multi-tenant <Link href="/services/web-design-development/saas-development-services" className="text-[#306998] hover:underline">software-as-a-service applications</Link> with subscription billing and user management.</>,
+            description: <>Multi-tenant <Link href="/services/web-design-development/saas-development-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">software-as-a-service applications</Link> with subscription billing and user management.</>,
             features: [
                 "Multi-tenancy",
                 "Subscription billing",
@@ -73,7 +73,7 @@ export default function SolutionTypes() {
         {
             icon: FileText,
             title: "Content Management Systems",
-            description: <>Flexible <Link href="/services/web-design-development/headless-traditional-cms" className="text-[#306998] hover:underline">CMS solutions</Link> with Wagtail or custom Django admin for content teams.</>,
+            description: <>Flexible <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">CMS solutions</Link> with Wagtail or custom Django admin for content teams.</>,
             features: [
                 "Drag-and-drop editing",
                 "Workflow management",
@@ -85,7 +85,7 @@ export default function SolutionTypes() {
         {
             icon: Layers,
             title: "API-First Backends",
-            description: <>Headless architectures and <Link href="/services/mobile-app-development" className="text-[#306998] hover:underline">microservices</Link> with robust API layers.</>,
+            description: <>Headless architectures and <Link href="/services/mobile-app-development" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">microservices</Link> with robust API layers.</>,
             features: [
                 "RESTful APIs",
                 "GraphQL support",
@@ -97,7 +97,7 @@ export default function SolutionTypes() {
         {
             icon: Brain,
             title: "AI/ML Integrations",
-            description: <>Leverage Python&apos;s ML ecosystem to <Link href="/services/ai-workflows-automations-services" className="text-[#306998] hover:underline">integrate intelligent features</Link> into your applications.</>,
+            description: <>Leverage Python&apos;s ML ecosystem to <Link href="/services/ai-workflows-automations-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">integrate intelligent features</Link> into your applications.</>,
             features: [
                 "Model integration",
                 "Data pipelines",
@@ -120,8 +120,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(48, 105, 152, 0.2)",
                         }}
                     >
-                        <Building2 className="w-4 h-4" style={{ color: "#306998" }} />
-                        <span className="text-sm font-medium" style={{ color: "#306998" }}>
+                        <Building2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Solution Types
                         </span>
                     </div>
@@ -201,7 +201,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#306998]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--brand-blue-text)]"
                                             }`}
                                     />
                                 </div>
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#306998]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -233,7 +233,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#306998]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                 </div>
                             </div>
                         );

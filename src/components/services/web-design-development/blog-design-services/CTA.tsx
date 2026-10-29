@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -90,7 +88,7 @@ export default function CTA() {
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-4 md:px-10 md:py-5 rounded-2xl font-bold text-sm sm:text-base md:text-lg border transition-all duration-300 hover:bg-violet-500/5"
                                 style={{
                                     borderColor: "#a855f7",
-                                    color: "#a855f7",
+                                    color: "var(--brand-purple-text)",
                                 }}
                             >
                                 Schedule a Consultation

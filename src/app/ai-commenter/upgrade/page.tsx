@@ -300,8 +300,7 @@ function BrandMark({ className }: { className?: string }) {
         <svg
             viewBox="0 0 128 128"
             className={className}
-            role="img"
-            aria-label="ChimeGenius AI Pro logo"
+            aria-hidden="true"
         >
             <defs>
                 <linearGradient

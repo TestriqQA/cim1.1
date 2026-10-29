@@ -68,7 +68,7 @@ export default function TechStack() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Facebook Ads</span>{" "}
-                        <span style={{ color: "#1877F2" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Tech Stack
                         </span>
                     </h2>
@@ -91,7 +91,7 @@ export default function TechStack() {
                                 }
                             `}
                             style={{
-                                backgroundColor: activeTab === cat.id ? "#1877F2" : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#1d4ed8" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -117,7 +117,7 @@ export default function TechStack() {
                                 <div
                                     className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                                     style={{
-                                        backgroundColor: tech.logo ? "var(--card-bg)" : "#1877F2",
+                                        backgroundColor: tech.logo ? "var(--card-bg)" : "#1d4ed8",
                                         border: tech.logo ? "1px solid var(--border-color)" : "none",
                                     }}
                                 >
@@ -138,15 +138,15 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.link ? (
-                                            <Link href={tech.link} className="hover:underline hover:text-blue-500 transition-colors">
+                                            <Link href={tech.link} className="hover:underline hover:text-[var(--brand-blue-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (
                                             tech.name
                                         )}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -62,7 +60,7 @@ export default function CTA() {
                             }}
                         >
                             <Play className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#8b5cf6" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                                 Ready to Create?
                             </span>
                         </div>
@@ -88,7 +86,7 @@ export default function CTA() {
                             className="text-base md:text-xl mb-10 leading-relaxed"
                             style={{ color: "var(--secondary-text)" }}
                         >
-                            Whether you&apos;re launching a <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline">streaming service</Link>, podcast network, or
+                            Whether you&apos;re launching a <Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2 hover:underline">streaming service</Link>, podcast network, or
                             interactive media platform, we have the expertise to bring your vision to life.
                         </p>
 

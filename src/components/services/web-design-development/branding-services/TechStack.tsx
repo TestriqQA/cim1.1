@@ -65,7 +65,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Built with <span style={{ color: "#06b6d4" }}>Modern Tech</span>
+                        Built with <span style={{ color: "var(--accent-cyan-text)" }}>Modern Tech</span>
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -182,7 +182,7 @@ export default function TechStack() {
                         >
                             <div
                                 className="text-3xl font-bold mb-2"
-                                style={{ color: "#06b6d4" }}
+                                style={{ color: "var(--accent-cyan-text)" }}
                             >
                                 {stat.value}
                             </div>

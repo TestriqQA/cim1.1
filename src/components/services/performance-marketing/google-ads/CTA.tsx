@@ -73,7 +73,7 @@ export default function CTA() {
                                 style={{
                                     borderColor: `${googleBlue}30`,
                                     backgroundColor: `${googleBlue}10`,
-                                    color: googleBlue,
+                                    color: "var(--brand-blue-text)",
                                 }}
                             >
                                 {badge}

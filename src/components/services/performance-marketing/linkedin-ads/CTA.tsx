@@ -32,10 +32,10 @@ export default function CTA() {
                 >
                     {/* Decorative icons */}
                     <div className="absolute top-10 left-10 opacity-5">
-                        <Briefcase className="w-20 h-20" style={{ color: linkedInBlue }} />
+                        <Briefcase className="w-20 h-20" style={{ color: "var(--brand-blue-text)" }} />
                     </div>
                     <div className="absolute bottom-10 right-10 opacity-5">
-                        <Briefcase className="w-28 h-28" style={{ color: linkedInBlue }} />
+                        <Briefcase className="w-28 h-28" style={{ color: "var(--brand-blue-text)" }} />
                     </div>
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
@@ -75,7 +75,7 @@ export default function CTA() {
                                 style={{
                                     borderColor: `${linkedInBlue}30`,
                                     backgroundColor: `${linkedInBlue}10`,
-                                    color: linkedInBlue,
+                                    color: "var(--brand-blue-text)",
                                 }}
                             >
                                 {badge}

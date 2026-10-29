@@ -64,7 +64,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Server className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "#339933" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Why Backend Matters
                         </span>
                     </div>

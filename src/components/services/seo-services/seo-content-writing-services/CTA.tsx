@@ -32,11 +32,11 @@ export default function CTA() {
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
                         Ready to Scale Your <br />
-                        <span style={{ color: contentEmerald }}>Organic Growth?</span>
+                        <span style={{ color: "var(--accent-green-text)" }}>Organic Growth?</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
-                        Don't let your competitors own the first page. Partner with the best <Link href="/about" className="hover:text-emerald-500 transition-colors">SEO content agency</Link> for startups and enterprises today.
+                        Don't let your competitors own the first page. Partner with the best <Link href="/about" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">SEO content agency</Link> for startups and enterprises today.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -44,7 +44,7 @@ export default function CTA() {
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
                             style={{
-                                backgroundColor: contentEmerald,
+                                backgroundColor: "#15803d",
                                 boxShadow: `0 4px 20px ${contentEmerald}40`
                             }}
                         >
@@ -64,7 +64,7 @@ export default function CTA() {
                     </div>
 
                     {/* Stats strip */}
-                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24 opacity-70" style={{ borderColor: "var(--border-color)" }}>
+                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         <div className="text-center">
                             <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>Strong</p>
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>Content ROI in 12 Months</p>

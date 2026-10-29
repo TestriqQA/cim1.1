@@ -35,7 +35,7 @@ export default function Analytics() {
         {
             icon: ShoppingCart,
             title: "Lead & Conversion Tracking",
-            description: <>Implementing robust tracking and <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)] hover:underline transition-colors">Conversion Rate Optimization (CRO)</Link> to attribute leads, sales, and sign-ups directly to social media campaigns.</>,
+            description: <>Implementing robust tracking and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">Conversion Rate Optimization (CRO)</Link> to attribute leads, sales, and sign-ups directly to social media campaigns.</>,
             gradient: "linear-gradient(135deg, #8b5cf6, #6366f1)",
             accentColor: "#8b5cf6",
         },
@@ -109,7 +109,7 @@ export default function Analytics() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                             borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                            color: "var(--brand-teal)",
+                            color: "var(--accent-teal-text)",
                         }}
                     >
                         <Sparkles className="w-4 h-4" />
@@ -117,7 +117,7 @@ export default function Analytics() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-teal)" }}>Measuring What Matters:</span> Transparent Performance and Real ROI
+                        <span style={{ color: "var(--accent-teal-text)" }}>Measuring What Matters:</span> Transparent Performance and Real ROI
                     </h2>
 
                     <div

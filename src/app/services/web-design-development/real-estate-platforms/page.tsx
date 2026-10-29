@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/real-estate-platforms/Hero';
 import ServiceOverview from '@/components/services/web-design-development/real-estate-platforms/ServiceOverview';
+import TechStack from '@/components/services/web-design-development/real-estate-platforms/TechStack';
+import CTA from '@/components/services/web-design-development/real-estate-platforms/CTA';
 
 // Lazy load below-the-fold components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/real-estate-platforms/WhyChooseUs'), {
@@ -12,13 +14,7 @@ const SolutionTypes = dynamic(() => import('@/components/services/web-design-dev
 const Process = dynamic(() => import('@/components/services/web-design-development/real-estate-platforms/Process'), {
     loading: () => <div className="py-20" />,
 });
-const TechStack = dynamic(() => import('@/components/services/web-design-development/real-estate-platforms/TechStack'), {
-    loading: () => <div className="py-20" />,
-});
 const UseCases = dynamic(() => import('@/components/services/web-design-development/real-estate-platforms/UseCases'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/real-estate-platforms/CTA'), {
     loading: () => <div className="py-20" />,
 });
 

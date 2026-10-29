@@ -79,7 +79,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: contentEmerald }}>Content SEO</span>
+                            <span style={{ color: "var(--accent-green-text)" }}>Content SEO</span>
                         </nav>
 
                         {/* Badge */}
@@ -90,8 +90,8 @@ export default function Hero() {
                                 borderColor: `${contentEmerald}30`,
                             }}
                         >
-                            <PenTool className="w-4 h-4" style={{ color: contentEmerald }} />
-                            <span className="text-sm font-medium" style={{ color: contentEmerald }}>
+                            <PenTool className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                                 Scale with ROI-First Content
                             </span>
                         </div>
@@ -102,7 +102,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Drive Exponential ROI with{" "}
-                            <span className="relative inline-block" style={{ color: contentEmerald }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-green-text)" }}>
                                 Strategic SEO Content
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -123,10 +123,10 @@ export default function Hero() {
                         {/* Feature Pills */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
-                                <Link href="/services/seo-services" className="hover:text-emerald-500 transition-colors">Keyword Research</Link>,
-                                <Link href="/services/seo-services/on-page-seo-services" className="hover:text-emerald-500 transition-colors">Topic Clusters</Link>,
+                                <Link href="/services/seo-services" className="hover:text-[var(--accent-green-text)] transition-colors">Keyword Research</Link>,
+                                <Link href="/services/seo-services/on-page-seo-services" className="hover:text-[var(--accent-green-text)] transition-colors">Topic Clusters</Link>,
                                 "Blog Writing",
-                                <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-emerald-500 transition-colors">Content Strategy</Link>,
+                                <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-[var(--accent-green-text)] transition-colors">Content Strategy</Link>,
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
@@ -147,7 +147,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: contentEmerald }}
+                                style={{ backgroundColor: "#15803d" }}
                             >
                                 Get My Free Content Audit Today
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -167,17 +167,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: contentEmerald }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Content Traffic Growth</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: contentEmerald }}>Top 3</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Top 3</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Sustainable Keyword Rankings</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: contentEmerald }}>Higher</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Higher</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Engagement Rate Lift</p>
                             </div>
                         </div>
@@ -230,7 +230,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${contentEmerald}15` }}
                                     >
-                                        <MessageSquare className="w-6 h-6" style={{ color: contentEmerald }} />
+                                        <MessageSquare className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -256,7 +256,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${contentEmerald}15` }}
                                     >
-                                        <TrendingUp className="w-6 h-6" style={{ color: contentEmerald }} />
+                                        <TrendingUp className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

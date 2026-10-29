@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(248, 152, 32, 0.3)",
                         }}
                     >
-                        <Coffee className="w-4 h-4" style={{ color: "#F89820" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#6DB33F" }}>
+                        <Coffee className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Free Enterprise Consultation
                         </span>
                     </div>

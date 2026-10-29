@@ -22,7 +22,7 @@ export default function FAQ() {
         },
         {
             question: "What is the difference between Astro.js and Next.js?",
-            answer: <>Astro.js outputs static HTML with zero JavaScript by default, achieving 98-100 PageSpeed scores and &lt;1s load times, ideal for content sites, blogs, and marketing pages. <Link href="/services/web-design-development/nextjs-development-services" className="text-[#6366f1] hover:underline">Next.js</Link> is JavaScript-heavy with React runtime, achieving 85-95 PageSpeed and 1-3s load times, best for dynamic apps and SaaS. Astro bundles are 10-50 KB vs Next.js 200-500 KB, resulting in lower hosting costs and better SEO.</>
+            answer: <>Astro.js outputs static HTML with zero JavaScript by default, achieving 98-100 PageSpeed scores and &lt;1s load times, ideal for content sites, blogs, and marketing pages. <Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Next.js</Link> is JavaScript-heavy with React runtime, achieving 85-95 PageSpeed and 1-3s load times, best for dynamic apps and SaaS. Astro bundles are 10-50 KB vs Next.js 200-500 KB, resulting in lower hosting costs and better SEO.</>
         },
         {
             question: "How long does it take to develop an Astro.js web application?",
@@ -34,7 +34,7 @@ export default function FAQ() {
         },
         {
             question: "Do you offer ongoing Astro maintenance and support?",
-            answer: <>Yes! We offer <Link href="/services/additional-support-services" className="text-[#7C3AED] hover:underline">Standard Support</Link> ($500/month) with content updates, 48-hour bug fixes, CMS training, monthly reports, and security updates; Premium Support ($1,200/month) with 24/7 emergency support, 15 hours development time, A/B testing, and quarterly audits; Enterprise Support (custom pricing) with dedicated account manager, 1-hour SLA, unlimited updates, and multi-site management.</>
+            answer: <>Yes! We offer <Link href="/services/additional-support-services" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Standard Support</Link> ($500/month) with content updates, 48-hour bug fixes, CMS training, monthly reports, and security updates; Premium Support ($1,200/month) with 24/7 emergency support, 15 hours development time, A/B testing, and quarterly audits; Enterprise Support (custom pricing) with dedicated account manager, 1-hour SLA, unlimited updates, and multi-site management.</>
         }
     ];
 
@@ -53,14 +53,14 @@ export default function FAQ() {
                             borderColor: "rgba(124, 58, 237, 0.2)",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#7C3AED" }} />
-                        <span className="text-sm font-medium" style={{ color: "#7C3AED" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             FAQ
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "#7C3AED" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-violet-text)" }}>Questions</span>
                     </h2>
                 </div>
 

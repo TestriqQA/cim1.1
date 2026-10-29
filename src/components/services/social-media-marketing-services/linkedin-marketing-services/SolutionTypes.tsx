@@ -91,13 +91,13 @@ export default function SolutionTypes() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: `${linkedinBlue}15`, border: `1px solid ${linkedinBlue}30` }}>
-                        <Sparkles className="w-4 h-4" style={{ color: linkedinBlue }} />
-                        <span className="text-sm font-medium" style={{ color: linkedinBlue }}>Industry Solutions</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${linkedinBlue}30` }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>Industry Solutions</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>LinkedIn for</span>{" "}
-                        <span style={{ color: linkedinBlue }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Your Industry
                         </span>
                     </h2>
@@ -154,13 +154,13 @@ export default function SolutionTypes() {
                                             >
                                                 <Icon
                                                     className={`w-8 h-8 transition-all duration-500 ${isHovered ? "text-white scale-110" : ""}`}
-                                                    style={{ color: isHovered ? "white" : solution.color }}
+                                                    style={{ color: isHovered ? "white" : "var(--brand-blue-text)" }}
                                                 />
                                             </div>
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? solution.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}>
                                             {solution.title}
                                         </h3>
 
@@ -180,7 +180,7 @@ export default function SolutionTypes() {
                                                         className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isHovered ? "scale-110" : "scale-100"}`}
                                                         style={{ backgroundColor: `${solution.color}15` }}
                                                     >
-                                                        <CheckCircle2 className="w-3 h-3" style={{ color: solution.color }} />
+                                                        <CheckCircle2 className="w-3 h-3" style={{ color: "var(--brand-blue-text)" }} />
                                                     </div>
                                                     <span className={isHovered ? "font-medium" : ""}>{feature}</span>
                                                 </div>

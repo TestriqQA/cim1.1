@@ -124,7 +124,7 @@ export default function TechStack() {
                         }}
                     >
                         <Layers className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "#8b5cf6" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Technology Stack
                         </span>
                     </div>
@@ -163,13 +163,14 @@ export default function TechStack() {
                             <button
                                 key={category.id}
                                 onClick={() => setActiveCategory(idx)}
+                                aria-label={category.title}
                                 className={`
                                     flex items-center gap-2 px-5 py-3 rounded-xl font-medium
                                     transition-all duration-300
                                     ${isActive ? "scale-105" : "hover:scale-105"}
                                 `}
                                 style={{
-                                    backgroundColor: isActive ? "#8b5cf6" : "var(--card-bg)",
+                                    backgroundColor: isActive ? "var(--brand-purple-btn)" : "var(--card-bg)",
                                     color: isActive ? "#fff" : "var(--foreground)",
                                     border: `2px solid ${isActive ? "#8b5cf6" : "var(--border-color)"}`,
                                     boxShadow: isActive ? "0 4px 16px rgba(139, 92, 246, 0.4)" : "none",
@@ -230,7 +231,7 @@ export default function TechStack() {
                                     ) : (
                                         <span
                                             className="text-lg font-bold"
-                                            style={{ color: "#8b5cf6" }}
+                                            style={{ color: "var(--accent-violet-text)" }}
                                         >
                                             {typeof tech.name === 'string' ? tech.name.charAt(0) : "*"}
                                         </span>
@@ -241,7 +242,7 @@ export default function TechStack() {
                                 <div className="flex-1 min-w-0">
                                     <p
                                         className="font-semibold truncate"
-                                        style={{ color: "#8b5cf6" }}
+                                        style={{ color: "var(--brand-purple-text)" }}
                                     >
                                         {tech.name}
                                     </p>

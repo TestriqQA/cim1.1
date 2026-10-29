@@ -95,7 +95,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/social-media-marketing-services" className="hover:underline">Social Media</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: instagramPink }}>Instagram Marketing</span>
+                            <span style={{ color: "var(--accent-pink-text)" }}>Instagram Marketing</span>
                         </nav>
 
                         {/* Badge */}
@@ -107,7 +107,7 @@ export default function Hero() {
                             }}
                         >
                             <Instagram className="w-4 h-4" style={{ color: instagramPink }} />
-                            <span className="text-sm font-medium" style={{ color: instagramPink }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>
                                 Instagram Partner
                             </span>
                         </div>
@@ -134,13 +134,13 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Dominate the world's most visual stage. With over 2+ billion monthly active users, Instagram is no longer just a photo-sharing app - it’s a global marketplace. As an expert <Link href="/services/social-media-marketing-services" className="text-pink-500 hover:text-pink-600 transition-colors">Instagram Marketing Company</Link>, we help brands transition from "just posting" to high-impact ROI systems. Our data-driven Instagram Marketing Services leverage the latest 2026 algorithm updates to ensure your content doesn’t just look good - it converts.
+                            Dominate the world's most visual stage. With over 2+ billion monthly active users, Instagram is no longer just a photo-sharing app - it’s a global marketplace. As an expert <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 text-[var(--accent-pink-text)] hover:text-[var(--accent-pink-text)] transition-colors">Instagram Marketing Company</Link>, we help brands transition from "just posting" to high-impact ROI systems. Our data-driven Instagram Marketing Services leverage the latest 2026 algorithm updates to ensure your content doesn’t just look good - it converts.
                         </p>
 
                         {/* Feature Pills */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
-                                <span key="1">95% Success Rate for <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-pink-500 transition-colors">High-Growth E-commerce Brands</Link></span>,
+                                <span key="1">95% Success Rate for <Link href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:text-[var(--accent-pink-text)] transition-colors">High-Growth E-commerce Brands</Link></span>,
                                 "300% Average Increases in Organic Reach & Engagement",
                                 "Deep Combined Digital Marketing & Creative Expertise",
                                 "Direct-to-Consumer (D2C) & B2B Strategic Specialists",
@@ -185,17 +185,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: instagramPink }}>2B+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>2B+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Monthly Users</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: instagramPink }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Product Discovery</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: instagramPink }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher Engagement</p>
                             </div>
                         </div>
@@ -294,7 +294,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: instagramPink }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-pink-text)" }}>
                                 Content Formats We Optimize
                             </p>
                             <div className="flex flex-wrap gap-2">

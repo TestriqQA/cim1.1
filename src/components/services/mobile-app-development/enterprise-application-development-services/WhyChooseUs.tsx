@@ -31,13 +31,13 @@ export default function WhyChooseUs() {
         {
             icon: Sparkles,
             title: "Deep Collective Authority",
-            description: <><span className="text-inherit">Our strategists have seen the evolution of the web. We apply deep, hard-won experience to ensure your </span><Link href="/services/web-design-development" className="text-[#2563eb] hover:underline">Enterprise Software Development</Link> project avoids common pitfalls.</>,
+            description: <><span className="text-inherit">Our strategists have seen the evolution of the web. We apply deep, hard-won experience to ensure your </span><Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Enterprise Software Development</Link> project avoids common pitfalls.</>,
             shadowColor: "rgba(37, 99, 235, 0.3)",
         },
         {
             icon: Headphones,
             title: "24/7 Enterprise Support",
-            description: <><span className="text-inherit">Dedicated </span><Link href="/services/additional-support-services" className="text-[#2563eb] hover:underline">support</Link> team with clear SLAs, proactive monitoring, and rapid incident response.</>,
+            description: <><span className="text-inherit">Dedicated </span><Link href="/services/additional-support-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">support</Link> team with clear SLAs, proactive monitoring, and rapid incident response.</>,
             shadowColor: "rgba(37, 99, 235, 0.3)",
         },
         {
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Global Multi-Platform Reach",
-            description: <><span className="text-inherit">Target users across the globe with Multi-platform enterprise app development (</span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#2563eb] hover:underline">iOS</Link>/<Link href="/services/mobile-app-development/android-app-development-company" className="text-[#2563eb] hover:underline">Android</Link>/<Link href="/services/web-design-development" className="text-[#2563eb] hover:underline">Web</Link>). We ensure your apps are localization-ready.</>,
+            description: <><span className="text-inherit">Target users across the globe with Multi-platform enterprise app development (</span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">iOS</Link>/<Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Android</Link>/<Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Web</Link>). We ensure your apps are localization-ready.</>,
             shadowColor: "rgba(37, 99, 235, 0.3)",
         },
     ];
@@ -78,19 +78,19 @@ export default function WhyChooseUs() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(37, 99, 235, 0.1)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "rgba(37, 99, 235, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#2563eb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us as Your</span>{" "}
-                        <span style={{ color: "#2563eb" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Enterprise App Development Company?
                         </span>
                     </h2>
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#2563eb" : "var(--foreground)",
+                                            color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

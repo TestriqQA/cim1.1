@@ -69,8 +69,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(29, 155, 240, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#1D9BF0" }} />
-                        <span className="text-sm font-medium" style={{ color: "#1D9BF0" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Solutions Directory
                         </span>
                     </div>

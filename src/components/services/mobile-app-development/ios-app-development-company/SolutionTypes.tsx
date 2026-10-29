@@ -37,7 +37,7 @@ export default function SolutionTypes() {
     const solutions = [
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#007AFF] transition-colors">E-commerce & Retail</Link>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-blue-text)] transition-colors">E-commerce & Retail</Link>,
             description: "Boost sales with Ecommerce and retail iOS app solutions. We integrate Apple Pay, ARKit, and personalized recommendation engines.",
             features: [
                 "Apple Pay checkout",
@@ -49,7 +49,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Building2,
-            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[#5AC8FA] transition-colors">Enterprise & B2B</Link>,
+            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--accent-sky-text)] transition-colors">Enterprise & B2B</Link>,
             description: "Streamline operations with B2B iOS app development. Secure MDM-compatible apps featuring SSO, VPN, and custom analytics.",
             features: [
                 "MDM compatibility",
@@ -61,7 +61,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Heart,
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#0055D4] transition-colors">Healthcare & Fitness</Link>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--brand-blue-text)] transition-colors">Healthcare & Fitness</Link>,
             description: "Trust is paramount. We deliver HIPAA-compliant iOS apps. Secure patient portals, telemedicine, and fitness trackers with HealthKit.",
             features: [
                 "HIPAA compliance",
@@ -73,7 +73,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Wallet,
-            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[#007AFF] transition-colors">Fintech & Banking</Link>,
+            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--brand-blue-text)] transition-colors">Fintech & Banking</Link>,
             description: "Bank on security. Fintech solutions with biometric auth (FaceID/TouchID), data privacy consulting, and secure Metal visualization.",
             features: [
                 "Biometric auth",
@@ -85,7 +85,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Gamepad2,
-            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[#5AC8FA] transition-colors">Gaming & Entertainment</Link>,
+            title: <Link href="/services/web-design-development/entertainment-media" className="hover:text-[var(--accent-sky-text)] transition-colors">Gaming & Entertainment</Link>,
             description: "Create immersive worlds. We utilize Metal, SpriteKit, and SceneKit to build console-quality games and AR adventures.",
             features: [
                 "Metal graphics",
@@ -97,13 +97,13 @@ export default function SolutionTypes() {
         },
         {
             icon: GraduationCap,
-            title: <Link href="/services/web-design-development/edtech-lms" className="hover:text-[#0055D4] transition-colors">Education & eLearning</Link>,
+            title: <Link href="/services/web-design-development/edtech-lms" className="hover:text-[var(--brand-blue-text)] transition-colors">Education & eLearning</Link>,
             description: "Revolutionize learning. Interactive apps leveraging ClassKit for progress tracking, PencilKit for drawing, and AR demonstrations.",
             features: [
                 "ClassKit tracking",
                 "PencilKit drawing",
                 "AR demonstrations",
-                <Link key="ui" href="/services/web-design-development/branding-services" className="hover:text-[#007AFF] transition-colors">Interactive UI/UX</Link>,
+                <Link key="ui" href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Interactive UI/UX</Link>,
             ],
             gradient: "from-[#0055D4] to-[#5AC8FA]",
         },
@@ -117,12 +117,12 @@ export default function SolutionTypes() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(0, 122, 255, 0.1)",
+                            backgroundColor: "rgba(0, 122, 255, 0.05)",
                             borderColor: "rgba(0, 122, 255, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#007AFF" }} />
-                        <span className="text-sm font-medium" style={{ color: "#007AFF" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
@@ -202,7 +202,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#007AFF]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--brand-blue-text)]"
                                             }`}
                                     />
                                 </div>
@@ -221,7 +221,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#007AFF]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -234,7 +234,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#007AFF]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                 </div>
                             </div>
                         );

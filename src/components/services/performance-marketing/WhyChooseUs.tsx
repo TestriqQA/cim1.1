@@ -7,6 +7,15 @@ import { BarChart3, Shield, Eye, Award, CheckCircle2, Sparkles } from "lucide-re
 export default function WhyChooseUs() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#4285f4": "var(--brand-blue-text)",
+            "#34a853": "var(--accent-green-text)",
+            "#fbbc04": "var(--accent-amber-text)",
+            "#ea4335": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
 
     const benefits = [
         {
@@ -21,7 +30,7 @@ export default function WhyChooseUs() {
             icon: Shield,
             decorIcon: CheckCircle2,
             title: "Transparent Reporting & Analytics",
-            description: <span>Tired of vague reports? You get 24/7 access to <Link href="/blog/data-analytics-insights-action" className="hover:text-[var(--brand-orange)]">live dashboards showing ROAS, CAC, LTV</Link>, and Net Profit - not just clicks.</span>,
+            description: <span>Tired of vague reports? You get 24/7 access to <Link href="/blog/data-analytics-insights-action" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">live dashboards showing ROAS, CAC, LTV</Link>, and Net Profit - not just clicks.</span>,
             highlight: "Full Visibility",
             color: "#34a853",
         },
@@ -63,13 +72,13 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-orange)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             WHY CHOOSE US
                         </span>
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Why Partner with Our <span style={{ color: "var(--brand-orange)" }}>Performance Marketing Team?</span>
+                        Why Partner with Our <span style={{ color: "var(--accent-orange-text)" }}>Performance Marketing Team?</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -117,7 +126,7 @@ export default function WhyChooseUs() {
                                         className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
                                         style={{
                                             backgroundColor: `${benefit.color}20`,
-                                            color: benefit.color,
+                                            color: textAccent(benefit.color),
                                             transform: isHovered ? "translateX(0) scale(1)" : "translateX(-20px) scale(0.9)",
                                             opacity: isHovered ? 1 : 0,
                                         }}
@@ -141,7 +150,7 @@ export default function WhyChooseUs() {
                                     {/* Content */}
                                     <h3
                                         className="text-lg font-bold mb-3 transition-all duration-300"
-                                        style={{ color: isHovered ? benefit.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(benefit.color) : "var(--foreground)" }}
                                     >
                                         {benefit.title}
                                     </h3>

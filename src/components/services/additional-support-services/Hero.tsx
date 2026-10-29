@@ -63,7 +63,7 @@ export default function Hero() {
                         Services
                     </Link>
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <span className="font-semibold p-2" style={{ color: "#fab900" }}>
+                    <span className="font-semibold p-2" style={{ color: "var(--accent-amber-text)" }}>
                         Business Support Services
                     </span>
                 </nav>
@@ -78,11 +78,11 @@ export default function Hero() {
                                 style={{
                                     background: "linear-gradient(90deg, color-mix(in srgb, #4b277a 10%, transparent), color-mix(in srgb, #97288e 10%, transparent))",
                                     borderColor: "color-mix(in srgb, #4b277a 30%, transparent)",
-                                    color: "#4b277a",
+                                    color: "var(--accent-violet-text)",
                                 }}
                             >
-                                <Headphones className="w-4 h-4" style={{ color: "#4b277a" }} />
-                                <span className="text-sm font-semibold" style={{ color: "#4b277a" }}>Business Support Services</span>
+                                <Headphones className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>Business Support Services</span>
                             </div>
                         </div>
 
@@ -94,15 +94,15 @@ export default function Hero() {
                             >
                                 Ongoing Support.
                             </span>
-                            <span style={{ color: "var(--foreground)" }}>Lasting <span style={{ color: "#fab900" }}>Success.</span></span>
+                            <span style={{ color: "var(--foreground)" }}>Lasting <span style={{ color: "var(--accent-amber-text)" }}>Success.</span></span>
                         </h1>
 
                         <p className="mt-6 text-lg md:text-xl max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Optimize your operations with our premium Business Support Services designed for global scalability. Whether you need Outsourced Administrative assistance, <Link href="/services/web-design-development" className="hover:text-[#fab900] transition-colors">IT Business Support Services</Link>, or Managed Support Services, our team ensures your business runs flawlessly 24/7. We combine deep digital expertise with cutting-edge technology to deliver Business Assistance Services that drive efficiency and growth.
+                            Optimize your operations with our premium Business Support Services designed for global scalability. Whether you need Outsourced Administrative assistance, <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">IT Business Support Services</Link>, or Managed Support Services, our team ensures your business runs flawlessly 24/7. We combine deep digital expertise with cutting-edge technology to deliver Business Assistance Services that drive efficiency and growth.
                         </p>
 
                         <p className="mt-4 text-sm md:text-base max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Join 50+ global <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[#fab900] transition-colors">fintech</Link> and <Link href="/services/web-design-development/business-corporate" className="hover:text-[#fab900] transition-colors">enterprise</Link> clients who trust us for rigorously tested technical maintenance and significant operational efficiency improvements.
+                            Join 50+ global <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">fintech</Link> and <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">enterprise</Link> clients who trust us for rigorously tested technical maintenance and significant operational efficiency improvements.
                         </p>
 
                         {/* Feature Pills */}
@@ -131,7 +131,7 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center lg:text-left">
-                                    <div className="text-3xl font-black" style={{ color: "#fab900" }}>
+                                    <div className="text-3xl font-black" style={{ color: "var(--accent-amber-text)" }}>
                                         {stat.value}
                                     </div>
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
@@ -154,7 +154,7 @@ export default function Hero() {
                             <Link
                                 href="#services"
                                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full border-2 transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "#4b277a", color: "#4b277a" }}
+                                style={{ borderColor: "#4b277a", color: "var(--accent-violet-text)" }}
                             >
                                 Explore Services
                             </Link>
@@ -179,7 +179,7 @@ export default function Hero() {
                                 <Headphones className="w-8 h-8 md:w-10 md:h-10 text-white" />
                             </div>
 
-                            <h2 className="text-xl md:text-2xl font-bold mb-5 md:mb-6" style={{ color: "#4b277a" }}>Why Choose Our Support?</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-5 md:mb-6" style={{ color: "var(--accent-violet-text)" }}>Why Choose Our Support?</h2>
 
                             <div className="space-y-4">
                                 {[
@@ -206,7 +206,7 @@ export default function Hero() {
                                     { value: "50+", label: "Support Staff" },
                                 ].map((stat, index) => (
                                     <div key={index} className="text-center">
-                                        <div className="text-2xl font-black" style={{ color: "#97288e" }}>{stat.value}</div>
+                                        <div className="text-2xl font-black" style={{ color: "var(--brand-purple-text)" }}>{stat.value}</div>
                                         <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
                                     </div>
                                 ))}
@@ -222,8 +222,8 @@ export default function Hero() {
                             }}
                         >
                             <div className="flex items-center gap-3 mb-4">
-                                <Sparkles className="w-6 h-6" style={{ color: "#fab900" }} />
-                                <h3 className="font-bold text-xl" style={{ color: "#fab900" }}>
+                                <Sparkles className="w-6 h-6" style={{ color: "var(--accent-amber-text)" }} />
+                                <h3 className="font-bold text-xl" style={{ color: "var(--accent-amber-text)" }}>
                                     Your Infrastructure, Our Priority
                                 </h3>
                             </div>
@@ -237,7 +237,7 @@ export default function Hero() {
                                         className="px-4 py-1.5 rounded-full text-sm font-medium"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, #fab900 15%, transparent)",
-                                            color: "#fab900",
+                                            color: "var(--accent-amber-text)",
                                         }}
                                     >
                                         {tag}

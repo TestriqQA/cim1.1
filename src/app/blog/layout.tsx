@@ -27,7 +27,7 @@ function BlogNavbarFallback() {
 
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesWithPostCountQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 
 export default async function BlogLayout({
     children,
@@ -39,7 +39,8 @@ export default async function BlogLayout({
         client.fetch(allPostsQuery)
     ]);
 
-    const posts = sanityPosts.map(mapSanityPostToBlogPost);
+    // The navbar only searches titles, tags, authors and categories.
+    const posts = sanityPosts.map(mapSanityPostToBlogPost).map(toListPost);
 
     return (
         <>

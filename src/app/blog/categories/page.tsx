@@ -19,7 +19,7 @@ export const metadata: Metadata = getPageMetadata({
 
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 
 export const revalidate = 60;
@@ -32,7 +32,7 @@ export default async function BlogCategoriesPage() {
 
   const posts = sanityPosts.map(mapSanityPostToBlogPost);
   const { popularPosts, tags } = await getSidebarData();
-  const sidebarCategories = categories.map((c: any) => c.name);
+  const sidebarCategories = categories.map((c: any) => ({ name: c.name as string, slug: c.slug as string }));
 
   // Unified @graph schema
   const categoriesSchema = generateGraphSchema(
@@ -91,7 +91,7 @@ export default async function BlogCategoriesPage() {
       />
       <BlogCategoriesClient
         categories={categories}
-        posts={posts}
+        posts={posts.map(toListPost)}
         sidebarCategories={sidebarCategories}
         popularPosts={popularPosts}
         tags={tags}

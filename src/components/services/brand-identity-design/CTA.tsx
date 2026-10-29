@@ -44,16 +44,16 @@ export default function CTA() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold" style={{ color: "var(--brand-yellow)" }}>FREE CONSULTATION</span>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold" style={{ color: "var(--accent-amber-text)" }}>FREE CONSULTATION</span>
                     </div>
 
                     {/* Icon */}
-                    <Palette className="w-16 h-16 mx-auto mb-6" style={{ color: "var(--brand-yellow)" }} />
+                    <Palette className="w-16 h-16 mx-auto mb-6" style={{ color: "var(--accent-amber-text)" }} />
 
                     {/* Heading */}
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6">
-                        Ready to <span style={{ color: "var(--brand-yellow)" }}>Transform Your Brand</span>?
+                        Ready to <span style={{ color: "var(--accent-amber-text)" }}>Transform Your Brand</span>?
                     </h2>
                     <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Don't Settle for Generic. Build a Brand That Leads. Join 500+ successful companies who trusted us with their visual identity.
@@ -63,7 +63,7 @@ export default function CTA() {
                     <div className="flex flex-wrap justify-center gap-8 mb-10">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center">
-                                <div className="text-2xl md:text-3xl font-black" style={{ color: "var(--brand-yellow)" }}>
+                                <div className="text-2xl md:text-3xl font-black" style={{ color: "var(--accent-amber-text)" }}>
                                     {stat.value}
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
@@ -84,7 +84,7 @@ export default function CTA() {
                         <Link
                             href="/contact"
                             className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 font-semibold hover:scale-105 transition-transform text-base sm:text-lg"
-                            style={{ borderColor: "var(--brand-yellow)", color: "var(--brand-yellow)" }}
+                            style={{ borderColor: "var(--brand-yellow)", color: "var(--accent-amber-text)" }}
                         >
                             <Phone className="w-5 h-5" />
                             Schedule a Call

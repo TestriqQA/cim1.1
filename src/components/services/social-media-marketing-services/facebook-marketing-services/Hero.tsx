@@ -83,7 +83,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/social-media-marketing-services" className="hover:underline">Social Media</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#1877F2" }}>Facebook Ads</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Facebook Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -95,7 +95,7 @@ export default function Hero() {
                             }}
                         >
                             <Facebook className="w-4 h-4" style={{ color: "#1877F2" }} />
-                            <span className="text-sm font-medium" style={{ color: "#1877F2" }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Meta Business Partner
                             </span>
                         </div>
@@ -108,7 +108,7 @@ export default function Hero() {
                             Scale Your Business with{" "}
                             <span
                                 className="relative inline-block"
-                                style={{ color: "#1877F2" }}
+                                style={{ color: "var(--brand-blue-text)" }}
                             >
                                 Expert Facebook Marketing Services
                                 <svg
@@ -123,7 +123,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Master your presence on the world's largest social network with a Facebook marketing agency that prioritizes ROI over vanity metrics. In the competitive <Link href="/blog/category/digital-marketing" className="hover:underline text-blue-500">digital landscape</Link> of 2026, simply "posting" isn't enough. You need an expert Facebook marketing company that leverages the latest Meta AI algorithms and <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-blue-500">high-E-E-A-T content</Link> principles to drive measurable growth.
+                            Master your presence on the world's largest social network with a Facebook marketing agency that prioritizes ROI over vanity metrics. In the competitive <Link href="/blog/category/digital-marketing" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">digital landscape</Link> of 2026, simply "posting" isn't enough. You need an expert Facebook marketing company that leverages the latest Meta AI algorithms and <Link href="/services/seo-services/seo-content-writing-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">high-E-E-A-T content</Link> principles to drive measurable growth.
                         </p>
 
                         {/* Feature Pills */}
@@ -154,7 +154,7 @@ export default function Hero() {
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
                                 style={{
-                                    backgroundColor: "#1877F2",
+                                    backgroundColor: "#1d4ed8",
                                     boxShadow: "0 4px 20px rgba(24, 119, 242, 0.25)",
                                 }}
                             >
@@ -178,17 +178,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#1877F2" }}>3B+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>3B+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Daily Active Users</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#1877F2" }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. ROAS</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#1877F2" }}>Significant</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Significant</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Lower CPA</p>
                             </div>
                         </div>
@@ -289,7 +289,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#1877F2" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 Meta Platforms We Manage
                             </p>
                             <div className="flex flex-wrap gap-2">

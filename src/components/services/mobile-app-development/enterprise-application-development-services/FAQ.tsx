@@ -25,11 +25,11 @@ export default function FAQ() {
         },
         {
             question: "How long does it take to build an enterprise-grade app?",
-            answer: <><span className="text-inherit">A typical timeline for a production-ready enterprise app is 4 to 9 months. This includes strategy, </span><Link href="/services/brand-identity-design" className="text-[#2563eb] hover:underline">UI/UX design</Link>, integration, security hardening, and deployment. Our Agile and DevOps approach allows for faster time-to-market through continuous delivery cycles.</>,
+            answer: <><span className="text-inherit">A typical timeline for a production-ready enterprise app is 4 to 9 months. This includes strategy, </span><Link href="/services/brand-identity-design" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">UI/UX design</Link>, integration, security hardening, and deployment. Our Agile and DevOps approach allows for faster time-to-market through continuous delivery cycles.</>,
         },
         {
             question: "What is the difference between enterprise and regular app development?",
-            answer: <><span className="text-inherit">The primary differences lie in security, scale, and integration. Enterprise apps must meet strict compliance standards (SOC 2, HIPAA), integrate with complex corporate databases, and support massive concurrent user loads, whereas </span><Link href="/services/mobile-app-development" className="text-[#2563eb] hover:underline">regular apps</Link> often focus on single-use cases for the general consumer.</>,
+            answer: <><span className="text-inherit">The primary differences lie in security, scale, and integration. Enterprise apps must meet strict compliance standards (SOC 2, HIPAA), integrate with complex corporate databases, and support massive concurrent user loads, whereas </span><Link href="/services/mobile-app-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">regular apps</Link> often focus on single-use cases for the general consumer.</>,
         },
     ];
 
@@ -40,12 +40,12 @@ export default function FAQ() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(37, 99, 235, 0.1)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "rgba(37, 99, 235, 0.2)",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#2563eb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Common Questions
                         </span>
                     </div>
@@ -54,7 +54,7 @@ export default function FAQ() {
                         <span style={{ color: "var(--foreground)" }}>Enterprise App</span>{" "}
                         <span
                             style={{
-                                color: "#2563eb"
+                                color: "var(--brand-blue-text)"
                             }}
                         >
                             FAQs
@@ -77,7 +77,7 @@ export default function FAQ() {
                                     borderColor: "var(--border-color)",
                                 }}
                             >
-                                <AccordionTrigger className="text-left py-6 hover:no-underline hover:text-[#2563eb] font-bold text-lg" style={{ color: "var(--foreground)" }}>
+                                <AccordionTrigger className="text-left py-6 hover:no-underline hover:text-[var(--brand-blue-text)] font-bold text-lg" style={{ color: "var(--foreground)" }}>
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-lg leading-relaxed pb-6" style={{ color: "var(--foreground)" }}>

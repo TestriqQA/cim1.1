@@ -1,5 +1,3 @@
-"use client";
-
 import { Zap, Globe, Shield, Users, BarChart3, HeadphonesIcon, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -14,7 +12,7 @@ export default function WhyChooseUs() {
         {
             icon: BarChart3,
             title: "Data-Driven Results",
-            description: <span>Our <Link href="/services/ai-workflows-automations-services" className="hover:underline">Travel Data Analytics</Link> and Business Intelligence focus ensures every feature drives ROI and maximizes profitability.</span>,
+            description: <span>Our <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">Travel Data Analytics</Link> and Business Intelligence focus ensures every feature drives ROI and maximizes profitability.</span>,
             color: "#0d9488",
         },
         {
@@ -32,7 +30,7 @@ export default function WhyChooseUs() {
         {
             icon: Users,
             title: "360° Digital Partnership",
-            description: <span>Beyond development, we offer <Link href="/services/social-media-marketing-services" className="hover:underline">Hospitality Social Media Management</Link>, SEO, and <Link href="/services/performance-marketing" className="hover:underline">Travel Lead Generation</Link> to ensure your platform thrives.</span>,
+            description: <span>Beyond development, we offer <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:underline">Hospitality Social Media Management</Link>, SEO, and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Travel Lead Generation</Link> to ensure your platform thrives.</span>,
             color: "#0d9488",
         },
         {
@@ -67,7 +65,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#0d9488" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0d9488" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-teal-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -76,7 +74,7 @@ export default function WhyChooseUs() {
                         className="text-4xl md:text-5xl font-bold mb-6"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Why <span style={{ color: "#0d9488" }}>Choose Us</span>
+                        Why <span style={{ color: "var(--accent-teal-text)" }}>Choose Us</span>
                     </h2>
                     <p
                         className="text-xl max-w-3xl mx-auto mb-8"

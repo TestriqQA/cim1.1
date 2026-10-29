@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, Building, MapPin, Search, Users, Shield, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +58,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#0d9488" }}
+                        style={{ color: "var(--accent-teal-text)" }}
                     >
                         Real Estate Platforms
                     </span>
@@ -76,7 +74,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #0d9488 8%, transparent), color-mix(in srgb, #14b8a6 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #0d9488 20%, transparent)",
-                                color: "#0d9488",
+                                color: "var(--accent-teal-text)",
                             }}
                         >
                             <Building className="w-4 h-4" style={{ color: "#0d9488" }} />

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { categoryQuery, categoryPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 
 type Props = {
@@ -71,7 +71,7 @@ export default async function CategoryPage({ params }: Props) {
       <CategoryClient
         categoryName={normalizedCategoryInfo.name}
         categoryInfo={normalizedCategoryInfo}
-        posts={posts}
+        posts={posts.map(toListPost)}
         categories={categories}
         popularPosts={popularPosts}
         tags={tags}

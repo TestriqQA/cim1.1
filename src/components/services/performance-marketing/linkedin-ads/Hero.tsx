@@ -60,7 +60,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: linkedInBlue }}>LinkedIn Ads</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>LinkedIn Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -71,8 +71,8 @@ export default function Hero() {
                                 borderColor: `${linkedInBlue}30`,
                             }}
                         >
-                            <Briefcase className="w-4 h-4" style={{ color: linkedInBlue }} />
-                            <span className="text-sm font-semibold" style={{ color: linkedInBlue }}>
+                            <Briefcase className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:underline">LinkedIn Marketing Partner</Link>
                             </span>
                         </div>
@@ -92,7 +92,7 @@ export default function Hero() {
 
                         {/* Description */}
                         <p className="text-lg md:text-xl max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Target 900M+ professionals by job title, company, industry, and seniority. The ultimate <Link href="/services/performance-marketing" className="hover:text-[var(--primary)] transition-colors">B2B advertising</Link> platform.
+                            Target 900M+ professionals by job title, company, industry, and seniority. The ultimate <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--primary)] transition-colors">B2B advertising</Link> platform.
                         </p>
 
                         {/* Feature Pills */}
@@ -106,7 +106,7 @@ export default function Hero() {
                                         backgroundColor: "var(--card-bg)",
                                     }}
                                 >
-                                    <CheckCircle2 className="w-4 h-4" style={{ color: linkedInBlue }} />
+                                    <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                                     <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                         {feature}
                                     </span>
@@ -188,7 +188,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${linkedInBlue}15` }}
                                     >
-                                        <Users className="w-6 h-6" style={{ color: linkedInBlue }} />
+                                        <Users className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -214,7 +214,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${linkedInBlue}15` }}
                                     >
-                                        <Building2 className="w-6 h-6" style={{ color: linkedInBlue }} />
+                                        <Building2 className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

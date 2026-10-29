@@ -46,7 +46,7 @@ export default function Process() {
         {
             number: "04",
             title: "Integration",
-            description: <span>We connect the chatbot to your <Link href="/services/web-design-development" className="hover:text-blue-500 transition-colors">Tech Stack</Link>-CRM, ERP, Helpdesk, and eCommerce platforms-for real-time data sync.</span>,
+            description: <span>We connect the chatbot to your <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Tech Stack</Link>-CRM, ERP, Helpdesk, and eCommerce platforms-for real-time data sync.</span>,
             icon: Plug,
             color: "#F59E0B",
         },
@@ -66,6 +66,18 @@ export default function Process() {
         },
     ];
 
+    // Map per-step brand hue (used for borders/gradients/shadows) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textAccentMap: Record<string, string> = {
+        "#6366f1": "var(--accent-indigo-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#ec4899": "var(--accent-pink-text)",
+        "#f59e0b": "var(--accent-amber-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#06b6d4": "var(--accent-cyan-text)",
+    };
+    const textAccent = (c: string) => textAccentMap[c.toLowerCase()] ?? c;
+
     return (
         <section
             className="relative transition-colors duration-300 py-20 md:py-28"
@@ -80,13 +92,13 @@ export default function Process() {
                             border: "1px solid color-mix(in srgb, var(--brand-chatbot) 30%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-chatbot)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-chatbot)" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                             Our Methodology
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Our 6-Step Custom AI Chatbot <span style={{ color: "var(--brand-chatbot)" }}>Development Process</span>
+                        Our 6-Step Custom AI Chatbot <span style={{ color: "var(--accent-indigo-text)" }}>Development Process</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         From initial strategy to post-launch optimization, we follow a rigorous agile framework to ensure your chatbot delivers ROI from Day 1.
@@ -156,7 +168,7 @@ export default function Process() {
                                                 <div
                                                     className="text-8xl font-black opacity-10 transition-all duration-500"
                                                     style={{
-                                                        color: step.color,
+                                                        color: textAccent(step.color),
                                                     }}
                                                 >
                                                     {step.number}
@@ -171,7 +183,7 @@ export default function Process() {
                                                 style={{
                                                     backgroundColor: "var(--background)",
                                                     borderColor: isHovered ? step.color : "var(--border-color)",
-                                                    color: isHovered ? step.color : "var(--foreground)",
+                                                    color: isHovered ? textAccent(step.color) : "var(--foreground)",
                                                     transform: isHovered ? "scale(1.3)" : "scale(1)",
                                                     boxShadow: isHovered ? `0 0 30px ${step.color}60` : "none",
                                                 }}
@@ -228,7 +240,7 @@ export default function Process() {
                                                 <div
                                                     className="text-8xl font-black opacity-10 transition-all duration-500"
                                                     style={{
-                                                        color: step.color,
+                                                        color: textAccent(step.color),
                                                     }}
                                                 >
                                                     {step.number}
@@ -246,7 +258,7 @@ export default function Process() {
                                                 style={{
                                                     backgroundColor: "var(--background)",
                                                     borderColor: isHovered ? step.color : "var(--border-color)",
-                                                    color: isHovered ? step.color : "var(--foreground)",
+                                                    color: isHovered ? textAccent(step.color) : "var(--foreground)",
                                                 }}
                                             >
                                                 {step.number}

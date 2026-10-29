@@ -83,7 +83,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/social-media-marketing-services" className="hover:underline">Social Media</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: linkedinBlue }}>LinkedIn Marketing</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>LinkedIn Marketing</span>
                         </nav>
 
                         {/* Badge */}
@@ -94,8 +94,8 @@ export default function Hero() {
                                 borderColor: `${linkedinBlue}30`,
                             }}
                         >
-                            <Linkedin className="w-4 h-4" style={{ color: linkedinBlue }} />
-                            <span className="text-sm font-medium" style={{ color: linkedinBlue }}>
+                            <Linkedin className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 LinkedIn Marketing Partner
                             </span>
                         </div>
@@ -106,7 +106,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             LinkedIn Marketing Services for{" "}
-                            <span className="relative inline-block" style={{ color: linkedinBlue }}>
+                            <span className="relative inline-block" style={{ color: "var(--brand-blue-text)" }}>
                                 <Link href="/services/performance-marketing" className="hover:underline decoration-blue-500/30">B2B Growth</Link>
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-30"
@@ -172,17 +172,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: linkedinBlue }}>1.2B+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>1.2B+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Professional Reach</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: linkedinBlue }}>Higher</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Higher</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher B2B Lead Quality</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: linkedinBlue }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>ROI Growth (Tech/SaaS)</p>
                             </div>
                         </div>
@@ -283,7 +283,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: linkedinBlue }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 LinkedIn Ad Formats We Manage
                             </p>
                             <div className="flex flex-wrap gap-2">

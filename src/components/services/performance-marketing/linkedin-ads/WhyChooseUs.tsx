@@ -71,14 +71,14 @@ export default function WhyChooseUs() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: linkedInBlue }} />
-                        <span className="text-sm font-medium" style={{ color: linkedInBlue }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose <span style={{ color: linkedInBlue }}>Us</span>
+                        Why Choose <span style={{ color: "var(--brand-blue-text)" }}>Us</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         B2B advertising expertise that delivers qualified leads.
@@ -118,7 +118,7 @@ export default function WhyChooseUs() {
                                 className="absolute -top-0 right-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 z-10"
                                 style={{
                                     backgroundColor: hoveredCard === benefit.id ? linkedInBlue : `${linkedInBlue}20`,
-                                    color: hoveredCard === benefit.id ? "white" : linkedInBlue,
+                                    color: hoveredCard === benefit.id ? "white" : "var(--brand-blue-text)",
                                     transform: hoveredCard === benefit.id ? "translateY(-4px) scale(1.05)" : "translateY(0)",
                                 }}
                             >
@@ -133,7 +133,7 @@ export default function WhyChooseUs() {
                                     transform: hoveredCard === benefit.id ? "rotate(360deg) scale(1.1)" : "rotate(0deg)",
                                 }}
                             >
-                                <benefit.icon className="w-7 h-7" style={{ color: linkedInBlue }} />
+                                <benefit.icon className="w-7 h-7" style={{ color: "var(--brand-blue-text)" }} />
                             </div>
 
                             {/* Content */}
@@ -146,8 +146,8 @@ export default function WhyChooseUs() {
 
                             {/* Checkmark */}
                             <div className="mt-4 flex items-center gap-2 relative z-10">
-                                <CheckCircle className="w-4 h-4" style={{ color: linkedInBlue }} />
-                                <span className="text-xs font-medium" style={{ color: linkedInBlue }}>
+                                <CheckCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                                <span className="text-xs font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                     Included
                                 </span>
                             </div>

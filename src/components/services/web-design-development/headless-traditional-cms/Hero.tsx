@@ -65,7 +65,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#9333ea" }}>Headless & Traditional CMS</span>
+                            <span style={{ color: "var(--accent-violet-text)" }}>Headless & Traditional CMS</span>
                         </nav>
 
                         {/* Badge */}
@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <Code2 className="w-4 h-4" style={{ color: "#9333ea" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#9333ea" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                                 CMS Development Experts
                             </span>
                         </div>
@@ -100,8 +100,8 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            From headless platforms like <Link href="/services/web-design-development/contentful-headless-cms" className="hover:text-[#9333ea] transition-colors">Contentful</Link>, <Link href="/services/web-design-development/strapi-headless-cms" className="hover:text-[#9333ea] transition-colors">Strapi</Link>, and <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="hover:text-[#9333ea] transition-colors">Sanity</Link> to traditional powerhouses
-                            like <Link href="/services/web-design-development/wordpress-development-services" className="hover:text-[#9333ea] transition-colors">WordPress</Link> and <Link href="/services/web-design-development/drupal-cms" className="hover:text-[#9333ea] transition-colors">Drupal</Link> - we build CMS solutions that empower your content teams.
+                            From headless platforms like <Link href="/services/web-design-development/contentful-headless-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Contentful</Link>, <Link href="/services/web-design-development/strapi-headless-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Strapi</Link>, and <Link href="/blog/headless-cms-sanity-nextjs-decoupled-frontends-2026" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Sanity</Link> to traditional powerhouses
+                            like <Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">WordPress</Link> and <Link href="/services/web-design-development/drupal-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Drupal</Link> - we build CMS solutions that empower your content teams.
                         </p>
 
                         {/* Feature Pills */}
@@ -256,7 +256,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#9333ea" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-violet-text)" }}>
                                 Platforms We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

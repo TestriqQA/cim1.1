@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose Us for <span style={{ color: "#0ea5e9" }}>FinTech</span>?
+                        Why Choose Us for <span style={{ color: "var(--accent-sky-text)" }}>FinTech</span>?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         We combine deep financial domain knowledge with elite engineering to build platforms that investors trust.
@@ -167,7 +167,7 @@ export default function WhyChooseUs() {
                                                         }}
                                                     >
                                                         <HighlightIcon className="w-4 h-4" style={{ color: reason.color }} />
-                                                        <span className="text-sm font-medium" style={{ color: reason.color }}>
+                                                        <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
                                                             {highlight.text}
                                                         </span>
                                                     </div>
@@ -202,7 +202,7 @@ export default function WhyChooseUs() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat, idx) => (
                             <div key={idx} className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#0ea5e9" }}>
+                                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--accent-sky-text)" }}>
                                     {stat.value}
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
@@ -218,7 +218,7 @@ export default function WhyChooseUs() {
                     <Link
                         href="/contact"
                         className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                        style={{ backgroundColor: "#0ea5e9" }}
+                        style={{ backgroundColor: "var(--brand-blue-btn)" }}
                     >
                         Start Your Project
                     </Link>

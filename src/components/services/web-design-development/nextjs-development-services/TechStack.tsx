@@ -122,8 +122,8 @@ export default function TechStack() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <Layers className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Technology Stack
                         </span>
                     </div>
@@ -162,6 +162,7 @@ export default function TechStack() {
                         return (
                             <button
                                 key={category.id}
+                                aria-label={category.title}
                                 onClick={() => setActiveCategory(idx)}
                                 className={`
                                     flex items-center gap-2 px-5 py-3 rounded-xl font-medium
@@ -230,7 +231,7 @@ export default function TechStack() {
                                     ) : (
                                         <span
                                             className="text-lg font-bold"
-                                            style={{ color: "#61dafb" }}
+                                            style={{ color: "var(--accent-cyan-text)" }}
                                         >
                                             {tech.name.charAt(0)}
                                         </span>
@@ -241,10 +242,10 @@ export default function TechStack() {
                                 <div className="flex-1 min-w-0">
                                     <p
                                         className="font-semibold"
-                                        style={{ color: "#61dafb" }}
+                                        style={{ color: "var(--accent-cyan-text)" }}
                                     >
                                         {(tech as any).link ? (
-                                            <Link href={(tech as any).link} className="hover:text-[#61dafb] transition-colors">
+                                            <Link href={(tech as any).link} className="hover:text-[var(--accent-cyan-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (

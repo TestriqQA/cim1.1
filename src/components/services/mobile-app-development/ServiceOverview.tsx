@@ -9,7 +9,7 @@ export default function ServiceOverview() {
         {
             icon: Smartphone,
             title: "Native App Development",
-            description: <span>Build high-performance <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple)]">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--brand-purple)]">Android apps</Link> with Swift 6/SwiftUI and Kotlin/Jetpack Compose. Leverage 100% device capabilities and AR/VR integration.</span>,
+            description: <span>Build high-performance <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">Android apps</Link> with Swift 6/SwiftUI and Kotlin/Jetpack Compose. Leverage 100% device capabilities and AR/VR integration.</span>,
             gradient: "from-[#667eea] to-[#764ba2]"
         },
         {
@@ -27,19 +27,19 @@ export default function ServiceOverview() {
         {
             icon: Palette,
             title: "User-Centric Design",
-            description: <span>Create conversion-optimized interfaces with higher engagement. <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple)]">WCAG 2.2 AA compliant designs</Link> backed by 10,000+ hours of user research and A/B testing data.</span>,
+            description: <span>Create conversion-optimized interfaces with higher engagement. <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">WCAG 2.2 AA compliant designs</Link> backed by 10,000+ hours of user research and A/B testing data.</span>,
             gradient: "from-[#43e97b] to-[#38f9d7]"
         },
         {
             icon: Server,
             title: "Scalable Backend",
-            description: <span>Build enterprise-grade infrastructure supporting 10,000+ concurrent users. Multi-tenant architecture with <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-purple)]">Node.js</Link>, Python, .NET, and cloud services (AWS, Google Cloud, Azure).</span>,
+            description: <span>Build enterprise-grade infrastructure supporting 10,000+ concurrent users. Multi-tenant architecture with <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">Node.js</Link>, Python, .NET, and cloud services (AWS, Google Cloud, Azure).</span>,
             gradient: "from-[#fa709a] to-[#fee140]"
         },
         {
             icon: Shield,
             title: "Enterprise Security",
-            description: <span>Implement AES-256 encryption, OAuth 2.0 authentication, and OWASP Mobile Top 10 compliance. GDPR, HIPAA, PCI-DSS, and <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple)]">SOC 2-aligned practices</Link> with a strong security track record.</span>,
+            description: <span>Implement AES-256 encryption, OAuth 2.0 authentication, and OWASP Mobile Top 10 compliance. GDPR, HIPAA, PCI-DSS, and <Link href="/services/mobile-app-development/enterprise-application-development-services" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">SOC 2-aligned practices</Link> with a strong security track record.</span>,
             gradient: "from-[#30cfd0] to-[#330867]"
         }
     ];
@@ -54,10 +54,10 @@ export default function ServiceOverview() {
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl mx-auto font-extrabold mb-4">
-                        Comprehensive <span style={{ color: "var(--brand-purple)" }}>Mobile App Development Services</span>
+                        Comprehensive <span style={{ color: "var(--brand-purple-text)" }}>Mobile App Development Services</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-5xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        End-to-end mobile application development services tailored to your business needs. From MVP to enterprise-grade solutions, we deliver measurable results across iOS, Android, and cross-platform ecosystems. Many businesses pair mobile apps with <Link href="/services/web-design-development" style={{ color: "var(--brand-purple)" }}>custom web development</Link> for a complete digital presence.
+                        End-to-end mobile application development services tailored to your business needs. From MVP to enterprise-grade solutions, we deliver measurable results across iOS, Android, and cross-platform ecosystems. Many businesses pair mobile apps with <Link href="/services/web-design-development" className="underline underline-offset-2" style={{ color: "var(--brand-purple-text)" }}>custom web development</Link> for a complete digital presence.
                     </p>
                 </div>
 
@@ -150,14 +150,14 @@ export default function ServiceOverview() {
                         <Link href="/blog/mobile-app-development-trends-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">📱</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-purple)] transition-colors">Mobile App Development Trends in 2026</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--brand-purple-text)] transition-colors">Mobile App Development Trends in 2026</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Discover the latest trends shaping mobile development</p>
                             </div>
                         </Link>
                         <Link href="/blog/ui-ux-design-principles-best-practices" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">🎨</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-purple)] transition-colors">Mobile UX Design Principles</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--brand-purple-text)] transition-colors">Mobile UX Design Principles</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Latest design patterns and UX best practices</p>
                             </div>
                         </Link>

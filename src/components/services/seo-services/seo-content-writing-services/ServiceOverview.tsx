@@ -39,7 +39,7 @@ export default function ServiceOverview() {
         {
             icon: RefreshCw,
             title: "SEO Copywriting Agency",
-            description: <>Conversion-focused <Link href="/services/web-design-development/landing-pages" className="hover:text-purple-500 transition-colors">landing pages</Link> elevating CTR by 20% and conversion by 15%.</>,
+            description: <>Conversion-focused <Link href="/services/web-design-development/landing-pages" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">landing pages</Link> elevating CTR by 20% and conversion by 15%.</>,
             color: "#8B5CF6",
         },
         {
@@ -84,7 +84,7 @@ export default function ServiceOverview() {
                             style={{
                                 backgroundColor: `${contentEmerald}10`,
                                 borderColor: `${contentEmerald}30`,
-                                color: contentEmerald,
+                                color: "var(--accent-green-text)",
                             }}
                         >
                             Elite SEO Content Agency
@@ -94,7 +94,7 @@ export default function ServiceOverview() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Elite SEO Content Agency for <span style={{ color: contentEmerald }}>Global Market Leaders</span>
+                        Elite SEO Content Agency for <span style={{ color: "var(--accent-green-text)" }}>Global Market Leaders</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed"

@@ -1,29 +1,12 @@
-import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/ecommerce-development-company/Hero';
 import ServiceOverview from '@/components/services/web-design-development/ecommerce-development-company/ServiceOverview';
-
-// Lazy load below-the-fold components for better performance
-const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
-});
-const SolutionTypes = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/SolutionTypes'), {
-    loading: () => <div className="py-20" />,
-});
-const Process = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/Process'), {
-    loading: () => <div className="py-20" />,
-});
-const TechStack = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/TechStack'), {
-    loading: () => <div className="py-20" />,
-});
-const UseCases = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/UseCases'), {
-    loading: () => <div className="py-20" />,
-});
-const FAQ = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/FAQ'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/ecommerce-development-company/CTA'), {
-    loading: () => <div className="py-20" />,
-});
+import WhyChooseUs from '@/components/services/web-design-development/ecommerce-development-company/WhyChooseUs';
+import SolutionTypes from '@/components/services/web-design-development/ecommerce-development-company/SolutionTypes';
+import Process from '@/components/services/web-design-development/ecommerce-development-company/Process';
+import TechStack from '@/components/services/web-design-development/ecommerce-development-company/TechStack';
+import UseCases from '@/components/services/web-design-development/ecommerce-development-company/UseCases';
+import FAQ from '@/components/services/web-design-development/ecommerce-development-company/FAQ';
+import CTA from '@/components/services/web-design-development/ecommerce-development-company/CTA';
 
 import { getPageMetadata } from '@/lib/metadata';
 import {

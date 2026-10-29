@@ -120,7 +120,7 @@ export default function Process() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Rocket className="w-4 h-4" style={{ color: "#3b82f6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#3b82f6" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Our Process
                             </span>
                         </div>

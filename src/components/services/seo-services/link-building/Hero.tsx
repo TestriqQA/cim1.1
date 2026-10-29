@@ -66,7 +66,7 @@ export default function Hero() {
                             <span>/</span>
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <span>/</span>
-                            <span style={{ color: linkCyan }}>Link Building</span>
+                            <span style={{ color: "var(--accent-cyan-text)" }}>Link Building</span>
                         </nav>
 
                         {/* Badge */}
@@ -78,7 +78,7 @@ export default function Hero() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: linkCyan }} />
-                            <span className="text-sm font-semibold" style={{ color: linkCyan }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                                 Authority Building
                             </span>
                         </div>
@@ -98,7 +98,7 @@ export default function Hero() {
 
                         {/* Description */}
                         <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Acquire high-quality, relevant backlinks from authoritative websites. Our white-hat link building strategies boost your <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: linkCyan }}>domain authority</Link> and <Link href="/services/seo-services/on-page-seo-services" className="hover:underline" style={{ color: linkCyan }}>organic rankings</Link>.
+                            Acquire high-quality, relevant backlinks from authoritative websites. Our white-hat link building strategies boost your <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>domain authority</Link> and <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>organic rankings</Link>.
                         </p>
 
                         {/* Feature Pills */}

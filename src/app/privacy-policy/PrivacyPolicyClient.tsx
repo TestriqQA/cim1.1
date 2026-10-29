@@ -322,7 +322,7 @@ const PrivacyPolicyClient: React.FC = () => {
                                 {section.content.map((item, idx) => (
                                     <div key={idx}>
                                         {item.subtitle && (
-                                            <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--brand-yellow)" }}>
+                                            <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--accent-amber-text)" }}>
                                                 {item.subtitle}
                                             </h3>
                                         )}

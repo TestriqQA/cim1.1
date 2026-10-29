@@ -1,5 +1,3 @@
-"use client";
-
 import { Search, Palette, Code, TestTube, Rocket, Headphones } from "lucide-react";
 import Link from "next/link";
 
@@ -68,14 +66,14 @@ export default function Process() {
                             borderColor: "rgba(249, 115, 22, 0.2)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "#f97316" }} />
-                        <span className="text-sm font-medium" style={{ color: "#f97316" }}>
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-orange-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "#f97316" }}>Corporate Development</span> Process
+                        Our <span style={{ color: "var(--accent-orange-text)" }}>Corporate Development</span> Process
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
@@ -157,7 +155,7 @@ export default function Process() {
                                                 className="px-4 py-2 rounded-full text-sm font-medium"
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, #f97316 10%, transparent)",
-                                                    color: "#f97316",
+                                                    color: "var(--accent-orange-text)",
                                                 }}
                                             >
                                                 {deliverable}

@@ -6,6 +6,7 @@ import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
 import { products } from "@/data/products";
 import { productPrivacyPolicies } from "@/data/productPrivacy";
 import { productSupportData } from "@/data/productSupport";
+import { clientProjects } from "@/data/portfolio";
 
 // ISR: regenerate the sitemap periodically so newly-published Sanity blog posts
 // appear without a full redeploy. Uses the public read client (no token).
@@ -15,18 +16,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.cinuteinfomedia.com';
 
     // Build-time constant — only update when static content actually changes
-    const staticLastModified = '2026-04-16T00:00:00.000Z';
+    const staticLastModified = '2026-09-27T00:00:00.000Z';
 
     // 1. Static Routes (with realistic, stable lastModified dates)
     const staticRoutes: MetadataRoute.Sitemap = [
         { route: '', priority: 1, changeFrequency: 'weekly' as const },
         { route: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
+        { route: '/our-team', priority: 0.7, changeFrequency: 'monthly' as const },
         { route: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
         { route: '/get-in-touch', priority: 0.7, changeFrequency: 'monthly' as const },
         { route: '/blog', priority: 0.9, changeFrequency: 'daily' as const },
         { route: '/blog/categories', priority: 0.6, changeFrequency: 'weekly' as const },
         { route: '/services', priority: 0.9, changeFrequency: 'monthly' as const },
-        { route: '/products', priority: 0.8, changeFrequency: 'monthly' as const },
+        { route: '/portfolio', priority: 0.8, changeFrequency: 'monthly' as const },
         { route: '/careers', priority: 0.7, changeFrequency: 'weekly' as const },
         { route: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' as const },
         { route: '/terms-of-service', priority: 0.3, changeFrequency: 'yearly' as const },
@@ -130,12 +132,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.5,
     }));
 
+    // 9. Portfolio Case Study Routes (the /portfolio hub itself is a static route)
+    const portfolioRoutes: MetadataRoute.Sitemap = clientProjects.map((project) => ({
+        url: `${baseUrl}/portfolio/${project.slug}`,
+        lastModified: staticLastModified,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
     return [
         ...staticRoutes,
         ...serviceRoutes,
         ...productRoutes,
         ...productPrivacyRoutes,
         ...productSupportRoutes,
+        ...portfolioRoutes,
         ...blogPostRoutes,
         ...blogCategoryRoutes,
     ];

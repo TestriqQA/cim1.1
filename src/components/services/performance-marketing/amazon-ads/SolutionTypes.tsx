@@ -10,6 +10,9 @@ export default function SolutionTypes() {
     const amazonOrange = "#FF9900";
     const amazonBlue = "#232F3E";
 
+    const textAccent = (c: string) =>
+        c.toLowerCase() === "#ff9900" ? "var(--accent-orange-text)" : c;
+
     const solutions = [
         {
             icon: Search,
@@ -71,7 +74,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Target className="w-4 h-4" style={{ color: amazonOrange }} />
-                        <span className="text-sm font-medium" style={{ color: amazonOrange }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-orange-text)" }}>
                             Strategic Objectives
                         </span>
                     </div>
@@ -79,7 +82,7 @@ export default function SolutionTypes() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Strategic{" "}
                         <span
-                            style={{ color: amazonOrange }}
+                            style={{ color: "var(--accent-orange-text)" }}
                         >
                             Objectives
                         </span>
@@ -138,7 +141,7 @@ export default function SolutionTypes() {
                                         borderColor: solution.color,
                                     }}
                                 >
-                                    <h3 className="text-lg font-bold mb-4 text-center" style={{ color: solution.color }}>
+                                    <h3 className="text-lg font-bold mb-4 text-center" style={{ color: textAccent(solution.color) }}>
                                         {solution.title} Strategies
                                     </h3>
                                     <ul className="space-y-2">

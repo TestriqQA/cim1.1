@@ -24,7 +24,7 @@ export default function FAQ() {
         },
         {
             q: "How long does it take to see results from on-page SEO?",
-            a: <>While technical fixes can show impact in weeks, <Link href="/blog/mastering-seo-organic-growth" className="hover:underline text-blue-500">sustainable organic growth</Link> typically takes 3-6 months. Our clients often see a <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="hover:underline text-blue-500">measurable CTR lift</Link> within the first 60 days.</>,
+            a: <>While technical fixes can show impact in weeks, <Link href="/blog/mastering-seo-organic-growth" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">sustainable organic growth</Link> typically takes 3-6 months. Our clients often see a <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">measurable CTR lift</Link> within the first 60 days.</>,
         },
         {
             q: "What is the difference between on-page and off-page SEO?",
@@ -41,10 +41,10 @@ export default function FAQ() {
                         borderColor: `${seoGreen}30`
                     }}>
                         <MessageSquare className="w-4 h-4" style={{ color: seoGreen }} />
-                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: seoGreen }}>FAQ</span>
+                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--accent-green-text)" }}>FAQ</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: seoGreen }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-green-text)" }}>Questions</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Answers to common questions about our On-Page SEO services.
@@ -71,8 +71,8 @@ export default function FAQ() {
                                         <div
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
-                                                backgroundColor: faqOpen === i ? seoGreen : `${seoGreen}10`,
-                                                color: faqOpen === i ? "white" : seoGreen
+                                                backgroundColor: faqOpen === i ? "#166534" : `${seoGreen}10`,
+                                                color: faqOpen === i ? "white" : "var(--accent-green-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

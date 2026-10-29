@@ -7,6 +7,20 @@ import Link from "next/link";
 export default function BrandElements() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${color}NN`-style interpolation stays valid.
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#fab900": "var(--accent-amber-text)",
+            "#ee6500": "var(--accent-orange-text)",
+            "#bc3feb": "var(--brand-purple-text)",
+            "#008ac1": "var(--brand-blue-text)",
+            "#00b5ca": "var(--accent-teal-text)",
+            "#6db75c": "var(--accent-green-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const elements = [
         {
             icon: Hexagon,
@@ -19,7 +33,7 @@ export default function BrandElements() {
         {
             icon: Type,
             title: "Typography Systems",
-            description: <span>We select and customize typefaces that embody your brand voice, ensuring specific <Link href="/services/web-design-development" className="hover:text-[var(--brand-yellow)]">readability and accessibility</Link> (WCAG 2.1 compliant).</span>,
+            description: <span>We select and customize typefaces that embody your brand voice, ensuring specific <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">readability and accessibility</Link> (WCAG 2.1 compliant).</span>,
             features: ["Modern sans-serifs", "Elegant serifs", "Readability focused", "WCAG 2.1 compliant"],
             color: "#bc3feb",
             preview: "type",
@@ -35,7 +49,7 @@ export default function BrandElements() {
         {
             icon: MessageSquare,
             title: "Brand Messaging",
-            description: <span>We develop custom brand voice and visual identity guides that define how your brand speaks, from punchy <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-yellow)]">marketing copy</Link> to technical documentation.</span>,
+            description: <span>We develop custom brand voice and visual identity guides that define how your brand speaks, from punchy <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">marketing copy</Link> to technical documentation.</span>,
             features: ["Voice & Tone", "Storytelling", "Key messaging", "Content guidelines"],
             color: "#008ac1",
             preview: "voice",
@@ -65,8 +79,8 @@ export default function BrandElements() {
         >
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: "2s" }} />
+                <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+                <div className="absolute bottom-20 right-10 w-72 h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -79,13 +93,13 @@ export default function BrandElements() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             BRAND ELEMENTS
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        The Building Blocks of <span style={{ color: "var(--brand-yellow)" }}>Your Brand</span>
+                        The Building Blocks of <span style={{ color: "var(--accent-amber-text)" }}>Your Brand</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Each element works together to create a cohesive brand identity that resonates with your audience.
@@ -137,7 +151,7 @@ export default function BrandElements() {
                                     {/* Content */}
                                     <h3
                                         className="text-xl font-bold mb-2 relative z-10 transition-colors duration-300"
-                                        style={{ color: isHovered ? element.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(element.color) : "var(--foreground)" }}
                                     >
                                         {element.title}
                                     </h3>

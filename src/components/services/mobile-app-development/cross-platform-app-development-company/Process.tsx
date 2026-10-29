@@ -19,7 +19,7 @@ export default function Process() {
         {
             icon: Search,
             title: "Discovery & Planning",
-            description: <><span className="text-inherit">We continually audit your requirements. We define the cross-platform mobile app design and </span><Link href="/services/brand-identity-design" className="text-[#667eea] hover:underline">UI/UX strategy</Link>, selecting the right framework (Flutter vs. React Native) based on your specific needs.</>,
+            description: <><span className="text-inherit">We continually audit your requirements. We define the cross-platform mobile app design and </span><Link href="/services/brand-identity-design" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">UI/UX strategy</Link>, selecting the right framework (Flutter vs. React Native) based on your specific needs.</>,
             details: [
                 "Requirement audit",
                 "UI/UX strategy definition",
@@ -31,7 +31,7 @@ export default function Process() {
         {
             icon: Palette,
             title: "UI/UX Design",
-            description: <><span className="text-inherit">Our designers create platform-adaptive UI designs that respect </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#667eea] hover:underline">iOS</Link> (Human Interface Guidelines) and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#667eea] hover:underline">Android</Link> (Material Design) conventions while maintaining your unique brand identity.</>,
+            description: <><span className="text-inherit">Our designers create platform-adaptive UI designs that respect </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">iOS</Link> (Human Interface Guidelines) and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Android</Link> (Material Design) conventions while maintaining your unique brand identity.</>,
             details: [
                 "Platform-adaptive UI",
                 "Human Interface Guidelines",
@@ -91,8 +91,8 @@ export default function Process() {
                             borderColor: "rgba(102, 126, 234, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#667eea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#667eea" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -188,13 +188,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(102, 126, 234, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#667eea]" />
+                                                        <Icon className="w-5 h-5 text-[var(--accent-indigo-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(118, 75, 162, 0.1)",
-                                                            color: "#764ba2",
+                                                            color: "var(--accent-violet-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -217,7 +217,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#667eea] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-indigo-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

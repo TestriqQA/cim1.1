@@ -31,7 +31,7 @@ export default function Process() {
         },
         {
             icon: Palette,
-            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[#5AC8FA]">UI/UX Design</Link>,
+            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-sky-text)]">UI/UX Design</Link>,
             description: "Adhering strictly to Human Interface Guidelines (HIG), we create high-fidelity prototypes. We focus on Spatial computing and visionOS readiness.",
             details: [
                 "HIG compliance",
@@ -74,7 +74,7 @@ export default function Process() {
             description: "We handle the complex App Store Connect submission process. Post-launch, we offer iOS app maintenance and support services.",
             details: [
                 "App Store submission",
-                <Link key="support" href="/services/additional-support-services" className="text-secondary-text hover:text-[#007AFF]">Maintenance & support</Link>,
+                <Link key="support" href="/services/additional-support-services" className="text-secondary-text underline underline-offset-2 hover:text-[var(--brand-blue-text)]">Maintenance & support</Link>,
                 "OS updates",
                 "New features",
                 "Performance monitoring",
@@ -92,12 +92,12 @@ export default function Process() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(0, 122, 255, 0.1)",
+                            backgroundColor: "rgba(0, 122, 255, 0.05)",
                             borderColor: "rgba(0, 122, 255, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#007AFF" }} />
-                        <span className="text-sm font-medium" style={{ color: "#007AFF" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -193,13 +193,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(0, 122, 255, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#007AFF]" />
+                                                        <Icon className="w-5 h-5 text-[var(--brand-blue-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(90, 200, 250, 0.1)",
-                                                            color: "#5AC8FA",
+                                                            color: "var(--accent-sky-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -222,7 +222,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#007AFF] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

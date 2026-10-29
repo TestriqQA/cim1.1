@@ -61,13 +61,13 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: pinterestRed }} />
-                            <span className="text-sm font-medium" style={{ color: pinterestRed }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Why Choose <span style={{ color: pinterestRed }}>Us</span>
+                            Why Choose <span style={{ color: "var(--accent-red-text)" }}>Us</span>
                         </h2>
                         <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                             We understand Pinterest's unique position as a visual discovery and planning platform.
@@ -80,14 +80,14 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: pinterestRed }}>Higher</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-red-text)" }}>Higher</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Users say Pinterest helps them start new projects</p>
                             </div>
                             <div
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: pinterestRed }}>Strong</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-red-text)" }}>Strong</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher conversion rate vs. other platforms</p>
                             </div>
                         </div>
@@ -123,9 +123,9 @@ export default function WhyChooseUs() {
                                             style={{ color: isHovered ? "white" : pinterestRed }}
                                         />
                                     </div>
-                                    <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
                                         {benefit.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                         {benefit.description}
                                     </p>

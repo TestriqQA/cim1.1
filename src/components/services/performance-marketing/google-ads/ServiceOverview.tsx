@@ -13,6 +13,13 @@ export default function ServiceOverview() {
     const googleYellow = "#fbbc04";
     const googleRed = "#ea4335";
 
+    // Map brand hue → theme-aware text token (WCAG-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === googleBlue ? "var(--brand-blue-text)" :
+        c === googleGreen ? "var(--accent-green-text)" :
+        c === googleYellow ? "var(--accent-amber-text)" :
+        c === googleRed ? "var(--accent-red-text)" : c;
+
     const services = [
         {
             icon: Search,
@@ -79,7 +86,7 @@ export default function ServiceOverview() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Google Ads <span style={{ color: googleBlue }}>Services</span>
+                        Google Ads <span style={{ color: "var(--brand-blue-text)" }}>Services</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Full-spectrum Google advertising expertise to capture demand across every touchpoint.
@@ -123,7 +130,7 @@ export default function ServiceOverview() {
                                         transform: hoveredCard === idx ? "scale(1.1) rotate(5deg)" : "scale(1)",
                                     }}
                                 >
-                                    <service.icon className="w-7 h-7" style={{ color: service.color }} />
+                                    <service.icon className="w-7 h-7" style={{ color: textAccent(service.color) }} />
                                 </div>
 
                                 {/* Content */}
@@ -145,8 +152,8 @@ export default function ServiceOverview() {
                                 >
                                     {service.highlights.map((highlight, hIdx) => (
                                         <div key={hIdx} className="flex items-center gap-2">
-                                            <ArrowUpRight className="w-4 h-4" style={{ color: service.color }} />
-                                            <span className="text-sm font-medium" style={{ color: service.color }}>
+                                            <ArrowUpRight className="w-4 h-4" style={{ color: textAccent(service.color) }} />
+                                            <span className="text-sm font-medium" style={{ color: textAccent(service.color) }}>
                                                 {highlight}
                                             </span>
                                         </div>

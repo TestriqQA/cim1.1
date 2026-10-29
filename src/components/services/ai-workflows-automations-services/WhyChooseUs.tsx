@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
         {
             icon: Clock,
             title: "Faster Execution & ROI",
-            description: <span>Accelerate delivery times significantly. Our AI automation for <Link href="/services/performance-marketing/google-ads" className="hover:text-blue-500 underline decoration-dotted transition-colors">lead generation</Link> and sales ensures you never miss an opportunity, instantly qualifying and routing prospects while your team sleeps. Achieve faster <Link href="/services/performance-marketing" className="hover:text-blue-500 underline decoration-dotted transition-colors">ROI</Link> with precision targeting.</span>,
+            description: <span>Accelerate delivery times significantly. Our AI automation for <Link href="/services/performance-marketing/google-ads" className="hover:text-[var(--brand-blue-text)] underline decoration-dotted transition-colors">lead generation</Link> and sales ensures you never miss an opportunity, instantly qualifying and routing prospects while your team sleeps. Achieve faster <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue-text)] underline decoration-dotted transition-colors">ROI</Link> with precision targeting.</span>,
             gradient: "from-blue-500 to-cyan-500",
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Layers,
-            title: <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-purple-500 transition-colors">Scalable Workflows</Link>,
+            title: <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-violet-text)] transition-colors">Scalable Workflows</Link>,
             description: "Grow without the growing pains. Our architectures are designed for infinite scale, handling everything from AI-powered email triage and response automation for startups to complex ERP synchronizations for large enterprises.",
             gradient: "from-purple-500 to-indigo-500",
             iconBg: "bg-purple-500/10",
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
         {
             icon: Link2,
             title: "Seamless Integrations (API-First)",
-            description: <span>No silos. We specialize in <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-amber-500 underline decoration-dotted transition-colors">AI workflow integration</Link> for CRM and ERP systems (Salesforce, HubSpot, SAP), ensuring your Large Language Model (LLM) Integration speaks fluent data with your existing stack.</span>,
+            description: <span>No silos. We specialize in <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-amber-text)] underline decoration-dotted transition-colors">AI workflow integration</Link> for CRM and ERP systems (Salesforce, HubSpot, SAP), ensuring your Large Language Model (LLM) Integration speaks fluent data with your existing stack.</span>,
             gradient: "from-amber-500 to-orange-500",
             iconBg: "bg-amber-500/10",
             iconColor: "text-amber-500",
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
         {
             icon: Lock,
             title: "Enterprise-Grade Security",
-            description: <span>Sleep soundly. We deploy Secure Data Pipelines with end-to-end encryption, ensuring your Automated legal document analysis workflows and sensitive customer data remain compliant with <Link href="/blog/cybersecurity-small-businesses" className="hover:text-slate-600 underline decoration-dotted transition-colors">GDPR/SOC2</Link> standards.</span>,
+            description: <span>Sleep soundly. We deploy Secure Data Pipelines with end-to-end encryption, ensuring your Automated legal document analysis workflows and sensitive customer data remain compliant with <Link href="/blog/cybersecurity-small-businesses" className="hover:text-[var(--foreground)] underline decoration-dotted transition-colors">GDPR/SOC2</Link> standards.</span>,
             gradient: "from-slate-600 to-slate-800",
             iconBg: "bg-slate-500/10",
             iconColor: "text-slate-600",
@@ -131,7 +131,7 @@ export default function WhyChooseUs() {
                     {/* Section Header */}
                     <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ color: "var(--foreground)" }}>
-                            Why Choose Our <span style={{ color: "var(--brand-orange)" }}>AI Automation Solutions?</span>
+                            Why Choose Our <span style={{ color: "var(--accent-orange-text)" }}>AI Automation Solutions?</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             We deliver enterprise-grade AI automation solutions that combine cutting-edge technology with deep business expertise to drive measurable results.
@@ -256,7 +256,7 @@ export default function WhyChooseUs() {
                                     <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
                                         <TrendingUp className="w-5 h-5 text-orange-500" />
                                     </div>
-                                    <h4 className="text-xl font-bold" style={{ color: "var(--brand-orange)" }}>
+                                    <h4 className="text-xl font-bold" style={{ color: "var(--accent-orange-text)" }}>
                                         Success Metrics
                                     </h4>
                                 </div>
@@ -271,7 +271,7 @@ export default function WhyChooseUs() {
                                                 <span className="font-semibold" style={{ color: "var(--foreground)" }}>{metric.label}</span>
                                                 <span
                                                     className="font-bold transition-transform duration-300 group-hover/metric:scale-110"
-                                                    style={{ color: "var(--brand-orange)" }}
+                                                    style={{ color: "var(--accent-orange-text)" }}
                                                 >
                                                     {metric.value}
                                                 </span>

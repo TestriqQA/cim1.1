@@ -22,11 +22,11 @@ export default function FAQ() {
         },
         {
             question: "How can I improve my personal brand's search ranking?",
-            answer: <>Improving rankings requires a mix of <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#06b6d4]">technical SEO</Link> and <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-[#06b6d4]">content strategy</Link>. We focus on optimizing your site for your name, securing high-quality backlinks, creating consistent thought leadership content (blogs/articles), and implementing Schema markup. Brand SERP management is a core part of our service.</>
+            answer: <>Improving rankings requires a mix of <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">technical SEO</Link> and <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">content strategy</Link>. We focus on optimizing your site for your name, securing high-quality backlinks, creating consistent thought leadership content (blogs/articles), and implementing Schema markup. Brand SERP management is a core part of our service.</>
         },
         {
             question: "What are the best platforms for a personal portfolio website?",
-            answer: <>While builders like Squarespace are okay for beginners, the &quot;best&quot; platform for growth is a custom-coded solution (using React, Vue, or <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline text-[#06b6d4]">Next.js</Link>) or a <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-[#06b6d4]">headless CMS</Link>. This offers superior speed, SEO control, and design flexibility. For personal website for academic and research professionals, we often recommend solutions that handle publications and CVs effectively.</>
+            answer: <>While builders like Squarespace are okay for beginners, the &quot;best&quot; platform for growth is a custom-coded solution (using React, Vue, or <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Next.js</Link>) or a <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">headless CMS</Link>. This offers superior speed, SEO control, and design flexibility. For personal website for academic and research professionals, we often recommend solutions that handle publications and CVs effectively.</>
         }
     ];
 
@@ -45,12 +45,12 @@ export default function FAQ() {
                         }}
                     >
                         <HelpCircle className="w-4 h-4" style={{ color: "#06b6d4" }} />
-                        <span className="text-sm font-medium" style={{ color: "#06b6d4" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             FAQ
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "#06b6d4" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-cyan-text)" }}>Questions</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Common questions about building your personal brand and portfolio.

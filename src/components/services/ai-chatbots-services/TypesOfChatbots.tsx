@@ -9,7 +9,7 @@ export default function TypesOfChatbots() {
         {
             icon: ShoppingCart,
             title: "AI Chatbot for Ecommerce Sales and Support",
-            description: <span>Rocket your conversion rates with a <Link href="/services/web-design-development/shopify-development-services" className="hover:text-blue-500 transition-colors">Shopify-integrated AI chatbot</Link>. Automatically recommend products, recover abandoned carts, and track orders 24/7.</span>,
+            description: <span>Rocket your conversion rates with a <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Shopify-integrated AI chatbot</Link>. Automatically recommend products, recover abandoned carts, and track orders 24/7.</span>,
             features: ["Visual product search", "Personalized upsells", "Order tracking", "Cart recovery"],
             gradient: "from-blue-600 to-cyan-500",
             iconBg: "bg-blue-500/10",
@@ -20,7 +20,7 @@ export default function TypesOfChatbots() {
         {
             icon: Users,
             title: "Conversational AI for B2B Lead Generation",
-            description: <span>Automate your top-of-funnel. Our <Link href="/services/performance-marketing" className="hover:text-purple-500 transition-colors">Automated lead qualification</Link> with AI chatbots engages visitors instantly, scores leads based on behavior, and syncs directly with your CRM.</span>,
+            description: <span>Automate your top-of-funnel. Our <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Automated lead qualification</Link> with AI chatbots engages visitors instantly, scores leads based on behavior, and syncs directly with your CRM.</span>,
             features: ["Salesforce integration", "Lead scoring", "Instant engagement", "CRM sync"],
             gradient: "from-purple-600 to-pink-500",
             iconBg: "bg-purple-500/10",
@@ -31,7 +31,7 @@ export default function TypesOfChatbots() {
         {
             icon: Stethoscope,
             title: "AI Chatbot for Healthcare Patient Engagement",
-            description: <span>HIPAA-compliant assistants that handle <Link href="/services/additional-support-services" className="hover:text-emerald-500 transition-colors">Automated appointment booking</Link> and symptom triage, freeing up your medical staff to focus on care.</span>,
+            description: <span>HIPAA-compliant assistants that handle <Link href="/services/additional-support-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Automated appointment booking</Link> and symptom triage, freeing up your medical staff to focus on care.</span>,
             features: ["Secure patient intake", "Medical terminology NLU", "Appointment booking", "Symptom triage"],
             gradient: "from-emerald-600 to-teal-500",
             iconBg: "bg-emerald-500/10",
@@ -65,7 +65,7 @@ export default function TypesOfChatbots() {
             icon: null,
             customIcon: "/images/ai_powered_chatbots_logos/WhatsApp-logo.webp",
             title: "AI Chatbot for WhatsApp and Social Media Automation",
-            description: <span>Meet your customers where they are. We deploy <Link href="/services/social-media-marketing-services" className="hover:text-green-500 transition-colors">AI chatbot for WhatsApp</Link>, Messenger, and Instagram to automate engagement and broadcast updates.</span>,
+            description: <span>Meet your customers where they are. We deploy <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">AI chatbot for WhatsApp</Link>, Messenger, and Instagram to automate engagement and broadcast updates.</span>,
             features: ["Multimedia support", "Broadcast analytics", "Instagram automation", "Messenger bots"],
             gradient: "from-green-600 to-emerald-500",
             iconBg: "bg-green-500/10",
@@ -224,14 +224,14 @@ export default function TypesOfChatbots() {
                                 borderColor: "var(--brand-chatbot)",
                             }}
                         >
-                            <Zap className="w-4 h-4" style={{ color: "var(--brand-chatbot)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-chatbot)" }}>
+                            <Zap className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 COMPREHENSIVE SOLUTIONS
                             </span>
                         </div>
 
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                            Our Comprehensive <span style={{ color: "var(--brand-chatbot)" }}>AI Chatbot Services</span>
+                            Our Comprehensive <span style={{ color: "var(--accent-indigo-text)" }}>AI Chatbot Services</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                             We develop diverse chatbot solutions tailored to your industry and business objectives.
@@ -312,7 +312,7 @@ export default function TypesOfChatbots() {
 
                                         {/* Content */}
                                         <div className="relative z-10">
-                                            <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--brand-chatbot)]">
+                                            <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--accent-indigo-text)]">
                                                 {type.title}
                                             </h3>
                                             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--secondary-text)" }}>
@@ -339,10 +339,10 @@ export default function TypesOfChatbots() {
                                             {/* Explore button */}
                                             {/* Explore button */}
                                             {/* <div className="mt-5 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                                                <span className="text-sm font-semibold" style={{ color: "var(--brand-chatbot)" }}>
+                                                <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                                                     Explore
                                                 </span>
-                                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--brand-chatbot)" }} />
+                                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--accent-indigo-text)" }} />
                                             </div> */}
                                         </div>
 

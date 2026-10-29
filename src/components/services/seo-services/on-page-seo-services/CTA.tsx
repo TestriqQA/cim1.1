@@ -32,7 +32,7 @@ export default function CTA() {
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
                         Stop Guessing. Start Growing with a <br />
-                        <span style={{ color: seoGreen }}>
+                        <span style={{ color: "var(--accent-green-text)" }}>
                             <Link href="/contact" className="hover:underline">Free On-Page SEO Audit.</Link>
                         </span>
                     </h2>
@@ -46,7 +46,7 @@ export default function CTA() {
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
                             style={{
-                                backgroundColor: seoGreen,
+                                backgroundColor: "#166534",
                                 boxShadow: `0 4px 20px ${seoGreen}40`
                             }}
                         >
@@ -56,7 +56,7 @@ export default function CTA() {
                     </div>
 
                     {/* Stats strip */}
-                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24 opacity-70" style={{ borderColor: "var(--border-color)" }}>
+                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         <div className="text-center">
                             <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>100+</p>
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>SEO Factors Checked</p>

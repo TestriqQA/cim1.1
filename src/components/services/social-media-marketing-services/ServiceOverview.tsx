@@ -19,7 +19,7 @@ export default function ServiceOverview() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                             borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                            color: "var(--brand-teal)",
+                            color: "var(--accent-teal-text)",
                         }}
                     >
                         <Zap className="w-4 h-4" />
@@ -27,7 +27,7 @@ export default function ServiceOverview() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-teal)" }}>Transform Your Social Presence:</span> Strategic Social Media Marketing for Business Value
+                        <span style={{ color: "var(--accent-teal-text)" }}>Transform Your Social Presence:</span> Strategic Social Media Marketing for Business Value
                     </h2>
 
                     <div
@@ -43,15 +43,15 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            Our <span style={{ color: "var(--brand-teal)", fontWeight: 700 }}>Social Media Marketing Services</span> go beyond posting content. We focus on building a strategic social presence that translates into tangible business value and measurable growth.
+                            Our <span style={{ color: "var(--accent-teal-text)", fontWeight: 700 }}>Social Media Marketing Services</span> go beyond posting content. We focus on building a strategic social presence that translates into tangible business value and measurable growth.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            From initial strategy to ongoing optimization, we ensure your social channels are powerful assets driving leads, sales, and brand authority. We are your dedicated <span style={{ color: "var(--brand-teal)", fontWeight: 700 }}>Social Media Management Company</span> partner, committed to your long-term success.
+                            From initial strategy to ongoing optimization, we ensure your social channels are powerful assets driving leads, sales, and brand authority. We are your dedicated <span style={{ color: "var(--accent-teal-text)", fontWeight: 700 }}>Social Media Management Company</span> partner, committed to your long-term success.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            We craft campaigns that are not only visually compelling but also strategically aligned with your core business objectives. Explore our specific <Link href="/services/social-media-marketing-services/instagram-marketing-services" style={{ color: "var(--brand-teal)" }}>Instagram marketing services</Link>, <Link href="/services/social-media-marketing-services/facebook-marketing-services" style={{ color: "var(--brand-teal)" }}>Facebook ad strategies</Link>, and professional <Link href="/services/social-media-marketing-services/linkedin-marketing-services" style={{ color: "var(--brand-teal)" }}>LinkedIn marketing</Link> to build genuine community engagement. Amplify your organic reach with <Link href="/services/performance-marketing" style={{ color: "var(--brand-teal)" }}>performance marketing campaigns</Link> or <Link href="/services/social-media-marketing-services/video-marketing-agency" style={{ color: "var(--brand-teal)" }}>video marketing</Link>.
+                            We craft campaigns that are not only visually compelling but also strategically aligned with your core business objectives. Explore our specific <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>Instagram marketing services</Link>, <Link href="/services/social-media-marketing-services/facebook-marketing-services" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>Facebook ad strategies</Link>, and professional <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>LinkedIn marketing</Link> to build genuine community engagement. Amplify your organic reach with <Link href="/services/performance-marketing" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>performance marketing campaigns</Link> or <Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>video marketing</Link>.
                         </p>
 
                         <div className="pt-4">
@@ -60,8 +60,8 @@ export default function ServiceOverview() {
                             </h3>
                             <ul className="space-y-3">
                                 {[
-                                    <span key="1">Data-driven strategies tailored to your <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-[var(--brand-teal)]">audience and goals</Link></span>,
-                                    <span key="2">Transparent reporting with clear <Link href="/services/performance-marketing" className="hover:text-[var(--brand-teal)]">ROI metrics</Link></span>,
+                                    <span key="1">Data-driven strategies tailored to your <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)]">audience and goals</Link></span>,
+                                    <span key="2">Transparent reporting with clear <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)]">ROI metrics</Link></span>,
                                     <span key="3">Continuous optimization based on performance analytics</span>,
                                     <span key="4">Dedicated account management and ongoing support</span>,
                                 ].map((item, idx) => (
@@ -176,14 +176,14 @@ export default function ServiceOverview() {
                         <Link href="/blog/social-media-strategy-building-brand" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">📱</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-teal)] transition-colors">Social Media Marketing Strategy Guide</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--accent-teal-text)] transition-colors">Social Media Marketing Strategy Guide</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Build a winning social media strategy for your business</p>
                             </div>
                         </Link>
                         <Link href="/blog/content-marketing-strategies-work" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">🔥</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-teal)] transition-colors">Social Media Trends in 2026</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--accent-teal-text)] transition-colors">Social Media Trends in 2026</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Latest trends shaping social media marketing</p>
                             </div>
                         </Link>

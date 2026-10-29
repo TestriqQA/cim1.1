@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Gauge,
-            title: <Link href="/blog/web-performance-optimization-speed" className="hover:text-[#F89820] transition-colors">High Performance</Link>,
+            title: <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-orange-text)] transition-colors">High Performance</Link>,
             description: "Optimized JVM applications with sub-millisecond response times and massive throughput.",
             gradient: "from-orange-500 via-amber-500 to-yellow-500",
             bgColor: "rgba(248, 152, 32, 0.15)",
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#06b6d4] transition-colors">24/7 Support</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-cyan-text)] transition-colors">24/7 Support</Link>,
             description: "Round-the-clock monitoring and support for mission-critical applications.",
             gradient: "from-cyan-500 via-sky-500 to-blue-500",
             bgColor: "rgba(6, 182, 212, 0.15)",
@@ -106,8 +106,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(109, 179, 63, 0.1), rgba(90, 154, 50, 0.1))",
                             border: "1px solid rgba(109, 179, 63, 0.2)",
                         }}>
-                        <Award className="w-4 h-4" style={{ color: "#6DB33F" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#6DB33F" }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-green-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

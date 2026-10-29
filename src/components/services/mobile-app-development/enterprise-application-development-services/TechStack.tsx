@@ -49,9 +49,9 @@ export default function TechStack() {
             { name: "Microsoft 365", description: "Office Suite", logo: "/images/techstack_logos/Microsoft-365-logo.webp" },
         ],
         backend: [
-            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#2563eb] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-blue-text)] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
             { name: ".NET", description: "Microsoft Stack", logo: "/images/techstack_logos/dotnet-logo.png" },
-            { name: "Java Spring", description: <Link href="/services/web-design-development/java-spring-boot" className="hover:text-[#2563eb] transition-colors">Enterprise Java</Link>, logo: "/images/techstack_logos/spring-logo.svg" },
+            { name: "Java Spring", description: <Link href="/services/web-design-development/java-spring-boot" className="hover:text-[var(--brand-blue-text)] transition-colors">Enterprise Java</Link>, logo: "/images/techstack_logos/spring-logo.svg" },
             { name: "PostgreSQL", description: "Database", logo: "/images/techstack_logos/postgresql-logo.svg" },
             { name: "MongoDB", description: "NoSQL Database", logo: "/images/techstack_logos/mongodb-logo.svg" },
             { name: "Redis", description: "Caching", logo: "/images/techstack_logos/redis-logo.svg" },
@@ -68,7 +68,7 @@ export default function TechStack() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Cloud-Native Infrastructure &</span>{" "}
-                        <span style={{ color: "#2563eb" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Security Excellence
                         </span>
                     </h2>
@@ -138,9 +138,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

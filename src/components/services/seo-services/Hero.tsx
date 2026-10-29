@@ -63,7 +63,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-seo)" }}
+                        style={{ color: "var(--accent-green-text)" }}
                     >
                         Organic Growth & SEO
                     </span>
@@ -82,7 +82,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-seo) 8%, transparent), color-mix(in srgb, var(--brand-seo) 12%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-seo) 20%, transparent)",
-                                color: "var(--brand-seo)",
+                                color: "var(--accent-green-text)",
                             }}
                         >
                             <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
@@ -92,7 +92,7 @@ export default function Hero() {
                         {/* Heading (H1) */}
                         <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold">
                             <span style={{ color: "var(--foreground)" }}>Organic Growth &</span>{" "}
-                            <span style={{ color: "var(--brand-seo)" }}>SEO Services.</span>
+                            <span style={{ color: "var(--accent-green-text)" }}>SEO Services.</span>
                         </h1>
 
                         {/* Underline */}
@@ -105,10 +105,10 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8" style={{ color: "var(--secondary-text)" }}>
-                            Scale Your Business with <span style={{ color: "var(--brand-seo)", fontWeight: 700 }}>Data-Driven Organic Search Strategies</span> Designed for the 2026 Algorithms.
+                            Scale Your Business with <span style={{ color: "var(--accent-green-text)", fontWeight: 700 }}>Data-Driven Organic Search Strategies</span> Designed for the 2026 Algorithms.
                         </p>
                         <p className="text-base md:text-lg mb-8" style={{ color: "var(--secondary-text)" }}>
-                            Stop relying on paid ads. As an expert global SEO Agency, we Engineer long-term search dominance. Our Organic SEO Services combine <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)] transition-colors">technical precision</Link>, <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-seo)] transition-colors">authority-building content</Link>, and <Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-seo)] transition-colors">white-hat strategies</Link> to deliver consistent leads and revenue. Whether you are a startup needing a sustainable organic traffic growth strategy or an enterprise seeking global dominance, our deep expertise ensures you own your niche.
+                            Stop relying on paid ads. As an expert global SEO Agency, we Engineer long-term search dominance. Our Organic SEO Services combine <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">technical precision</Link>, <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">authority-building content</Link>, and <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">white-hat strategies</Link> to deliver consistent leads and revenue. Whether you are a startup needing a sustainable organic traffic growth strategy or an enterprise seeking global dominance, our deep expertise ensures you own your niche.
                         </p>
 
                         {/* Feature Highlights */}
@@ -165,7 +165,7 @@ export default function Hero() {
                         >
                             <div className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{ color: "var(--brand-seo)" }}
+                                    style={{ color: "var(--accent-green-text)" }}
                                 >
                                     300%
                                 </div>
@@ -175,7 +175,7 @@ export default function Hero() {
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{ color: "var(--brand-seo)" }}
+                                    style={{ color: "var(--accent-green-text)" }}
                                 >
                                     95%
                                 </div>
@@ -185,7 +185,7 @@ export default function Hero() {
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{ color: "var(--brand-seo)" }}
+                                    style={{ color: "var(--accent-green-text)" }}
                                 >
                                     50+
                                 </div>
@@ -200,7 +200,7 @@ export default function Hero() {
                             href="/contact"
                             className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 text-white rounded-full text-sm md:text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                             style={{
-                                backgroundColor: "var(--brand-seo)",
+                                backgroundColor: "#166534",
                             }}
                         >
                             Book Free Audit Today
@@ -261,7 +261,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-seo) 15%, transparent)",
-                                        color: "var(--brand-seo)",
+                                        color: "var(--accent-green-text)",
                                     }}
                                 >
                                     White-Hat SEO
@@ -270,7 +270,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-seo) 15%, transparent)",
-                                        color: "var(--brand-seo)",
+                                        color: "var(--accent-green-text)",
                                     }}
                                 >
                                     Data-Driven
@@ -279,7 +279,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-seo) 15%, transparent)",
-                                        color: "var(--brand-seo)",
+                                        color: "var(--accent-green-text)",
                                     }}
                                 >
                                     Transparent Reporting
@@ -288,7 +288,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-seo) 15%, transparent)",
-                                        color: "var(--brand-seo)",
+                                        color: "var(--accent-green-text)",
                                     }}
                                 >
                                     Results Focused

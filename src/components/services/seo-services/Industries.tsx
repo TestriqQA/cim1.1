@@ -17,7 +17,7 @@ export default function Industries() {
             decorIcon: BarChart3,
             accentIcon: Target,
             title: "Organic SEO for SaaS Companies",
-            description: <span>We understand B2B cycles. We reduce CAC and increase LTV by targeting decision-makers searching for <Link href="/services/web-design-development/saas-development-services" className="hover:text-white transition-colors">software solutions</Link>.</span>,
+            description: <span>We understand B2B cycles. We reduce CAC and increase LTV by targeting decision-makers searching for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-white transition-colors">software solutions</Link>.</span>,
             color: "#14b8a6",
             gradient: "from-emerald-500 to-teal-600",
             stats: "High LTV",
@@ -53,6 +53,15 @@ export default function Industries() {
             stats: "Quality Leads",
         },
     ];
+
+    // Map per-card brand hue (used for borders/gradients/icons) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textColorMap: Record<string, string> = {
+        "#14b8a6": "var(--accent-teal-text)",
+        "#06b6d4": "var(--accent-cyan-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#6366f1": "var(--accent-indigo-text)",
+    };
 
     return (
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
@@ -108,12 +117,12 @@ export default function Industries() {
                         }}
                     >
                         <Users className="w-4 h-4 animate-scale-pulse" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             INDUSTRIES WE SERVE
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Industries & <span style={{ color: "var(--brand-seo)" }}>Growth Use Cases</span>
+                        Industries & <span style={{ color: "var(--accent-green-text)" }}>Growth Use Cases</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Our Organic SEO Services are tailored to the unique challenges and opportunities of diverse sectors.
@@ -192,7 +201,7 @@ export default function Industries() {
                                         className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition-all duration-500"
                                         style={{
                                             background: `linear-gradient(135deg, ${industry.color}30, ${industry.color}15)`,
-                                            color: industry.color,
+                                            color: textColorMap[industry.color],
                                             border: `1px solid ${industry.color}40`,
                                             transform: isHovered ? "scale(1.05) translateY(0)" : "scale(0.9) translateY(-5px)",
                                             opacity: isHovered ? 1 : 0,
@@ -242,7 +251,7 @@ export default function Industries() {
                                     <h3
                                         className="text-lg font-bold mb-3 transition-all duration-300 relative z-10"
                                         style={{
-                                            color: isHovered ? industry.color : "var(--foreground)",
+                                            color: isHovered ? textColorMap[industry.color] : "var(--foreground)",
                                             transform: isHovered ? "scale(1.05)" : "scale(1)",
                                         }}
                                     >

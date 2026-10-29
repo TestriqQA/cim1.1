@@ -11,7 +11,7 @@ export default function Process() {
         {
             icon: ListChecks,
             title: "Organic SEO Audit and Growth Roadmap",
-            description: <span>We start with a deep dive. Our 100+ point audit covers technical health, content gaps, and off-page factors to build a custom <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)] transition-colors">Organic SEO audit</Link> and growth roadmap.</span>,
+            description: <span>We start with a deep dive. Our 100+ point audit covers technical health, content gaps, and off-page factors to build a custom <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Organic SEO audit</Link> and growth roadmap.</span>,
             details: ["Site health analysis", "Competitor research", "Keyword gap analysis", "Content audit"],
         },
         {
@@ -23,19 +23,19 @@ export default function Process() {
         {
             icon: Code,
             title: "Technical Fixes & Enhancements",
-            description: <span>We lay the rails. Our devs fix broken links, improve speed, and implement <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)] transition-colors">structured data</Link> to ensure Google can crawl and index your site without friction.</span>,
+            description: <span>We lay the rails. Our devs fix broken links, improve speed, and implement <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">structured data</Link> to ensure Google can crawl and index your site without friction.</span>,
             details: ["Core Web Vitals", "Mobile optimization", "Schema markup", "Crawl optimization"],
         },
         {
             icon: FileText,
             title: "Content Optimization & Creation",
-            description: <span>We craft content that ranks. Whether it's Organic SEO for startups or established brands, we produce <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-seo)] transition-colors">"Helpful Content"</Link> that satisfies user intent and earns backlinks.</span>,
+            description: <span>We craft content that ranks. Whether it's Organic SEO for startups or established brands, we produce <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">"Helpful Content"</Link> that satisfies user intent and earns backlinks.</span>,
             details: ["Content planning", "On-page optimization", "E-A-T signals", "Content refresh"],
         },
         {
             icon: Shield,
             title: "Authority Building",
-            description: <span>We build your reputation. Through strategic partnerships and outreach, we earn the <Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-seo)] transition-colors">links</Link> that signal authority to Google's algorithms.</span>,
+            description: <span>We build your reputation. Through strategic partnerships and outreach, we earn the <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">links</Link> that signal authority to Google's algorithms.</span>,
             details: ["Outreach campaigns", "Guest posting", "Digital PR", "Broken link building"],
         },
         {
@@ -62,12 +62,12 @@ export default function Process() {
                         }}
                     >
                         <ListChecks className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             OUR PROCESS
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our Proven <span style={{ color: "var(--brand-seo)" }}>SEO Process</span>
+                        Our Proven <span style={{ color: "var(--accent-green-text)" }}>SEO Process</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A clear roadmap to the top. Here is how we deliver Enterprise organic growth SEO solutions:
@@ -114,13 +114,13 @@ export default function Process() {
                                                 >
                                                     {index + 1}
                                                 </div>
-                                                <span className="text-sm font-semibold" style={{ color: "var(--brand-seo)" }}>
+                                                <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                                     Step {index + 1}
                                                 </span>
                                             </div>
 
                                             <h3 className="text-xl md:text-2xl font-bold mb-3 transition-colors"
-                                                style={{ color: isHovered ? "var(--brand-seo)" : "var(--foreground)" }}
+                                                style={{ color: isHovered ? "var(--accent-green-text)" : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -164,7 +164,7 @@ export default function Process() {
                                             <span
                                                 className="text-8xl font-black transition-all duration-300"
                                                 style={{
-                                                    color: isHovered ? "var(--brand-seo)" : "color-mix(in srgb, var(--brand-seo) 20%, transparent)",
+                                                    color: isHovered ? "var(--accent-green-text)" : "color-mix(in srgb, var(--brand-seo) 20%, transparent)",
                                                     textShadow: isHovered ? "0 0 40px color-mix(in srgb, var(--brand-seo) 30%, transparent)" : "none",
                                                 }}
                                             >
@@ -174,8 +174,7 @@ export default function Process() {
                                             <div
                                                 className={`absolute -bottom-2 ${isEven ? 'left-0' : 'right-0'} text-xs font-bold uppercase tracking-widest transition-all duration-300`}
                                                 style={{
-                                                    color: isHovered ? "var(--brand-seo)" : "var(--secondary-text)",
-                                                    opacity: isHovered ? 1 : 0.6,
+                                                    color: isHovered ? "var(--accent-green-text)" : "var(--secondary-text)",
                                                 }}
                                             >
                                                 Step
@@ -193,7 +192,7 @@ export default function Process() {
                     <a
                         href="/contact"
                         className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform shadow-lg"
-                        style={{ backgroundColor: "var(--brand-seo)" }}
+                        style={{ backgroundColor: "#166534" }}
                     >
                         Start Your SEO Journey
                         <ArrowRight className="w-5 h-5" />

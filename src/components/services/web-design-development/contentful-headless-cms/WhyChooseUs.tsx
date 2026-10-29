@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
         {
             icon: Layers,
             title: "Composable Architecture",
-            description: <><span className="text-inherit">Build modular, </span><Link href="/services/web-design-development/headless-traditional-cms" className="text-[#0286FF] hover:underline">reusable content</Link> structures that adapt to any channel or experience without refactoring.</>,
+            description: <><span className="text-inherit">Build modular, </span><Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">reusable content</Link> structures that adapt to any channel or experience without refactoring.</>,
             gradient: "from-blue-600 via-cyan-500 to-sky-500",
             bgColor: "rgba(2, 134, 255, 0.15)",
             iconColor: "#0286FF",
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: Globe,
             title: "Global CDN Delivery",
-            description: <><span className="text-inherit">Content delivered at the edge with </span><Link href="/blog/web-performance-optimization-speed" className="text-[#4DA3FF] hover:underline">99ms average response times</Link> across 200+ points of presence worldwide.</>,
+            description: <><span className="text-inherit">Content delivered at the edge with </span><Link href="/blog/web-performance-optimization-speed" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">99ms average response times</Link> across 200+ points of presence worldwide.</>,
             gradient: "from-sky-500 via-blue-500 to-cyan-500",
             bgColor: "rgba(77, 163, 255, 0.15)",
             iconColor: "#4DA3FF",
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Lock,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[#6366f1] transition-colors">Enterprise Security</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-indigo-text)] transition-colors">Enterprise Security</Link>,
             description: "SOC 2 Type II certified, GDPR compliant, with SSO, role-based access, and comprehensive audit logs.",
             gradient: "from-indigo-500 via-blue-500 to-violet-500",
             bgColor: "rgba(99, 102, 241, 0.15)",
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#14b8a6] transition-colors">Premium Support</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-teal-text)] transition-colors">Premium Support</Link>,
             description: "Dedicated success managers, 24/7 support, and professional services for enterprise customers.",
             gradient: "from-cyan-500 via-teal-500 to-emerald-500",
             bgColor: "rgba(20, 184, 166, 0.15)",
@@ -106,8 +106,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(2, 134, 255, 0.1), rgba(0, 89, 200, 0.1))",
                             border: "1px solid rgba(2, 134, 255, 0.2)",
                         }}>
-                        <Award className="w-4 h-4" style={{ color: "#0286FF" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#0286FF" }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-sky-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

@@ -20,43 +20,47 @@ export default function WhyChooseUs() {
                 { icon: Target, text: "Instructional design" },
                 { icon: TrendingUp, text: "Student success" }
             ],
-            color: "#a855f7",
+            color: "var(--brand-purple-text)",
+            textColor: "var(--brand-purple-text)",
             gradient: "from-[#a855f7] to-[#c084fc]",
         },
         {
             icon: Video,
             title: "Video Streaming Mastery",
-            description: <>HD video delivery with adaptive bitrate streaming, DRM protection, and seamless playback across <Link href="/services/web-design-development/entertainment-media" className="hover:underline text-[#ec4899]">devices</Link>.</>,
+            description: <>HD video delivery with adaptive bitrate streaming, DRM protection, and seamless playback across <Link href="/services/web-design-development/entertainment-media" className="underline underline-offset-2 hover:underline text-[var(--accent-pink-text)]">devices</Link>.</>,
             highlights: [
                 { icon: Video, text: "4K streaming" },
                 { icon: Shield, text: "DRM protection" },
                 { icon: Zap, text: "Fast loading" }
             ],
             color: "#ec4899",
+            textColor: "var(--accent-pink-text)",
             gradient: "from-[#ec4899] to-[#f472b6]",
         },
         {
             icon: Users,
             title: "Engaging User Experience",
-            description: <>Intuitive interfaces that keep learners motivated with <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline text-[#f97316]">gamification</Link>, progress tracking, and social features.</>,
+            description: <>Intuitive interfaces that keep learners motivated with <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:underline text-[var(--accent-orange-text)]">gamification</Link>, progress tracking, and social features.</>,
             highlights: [
                 { icon: Sparkles, text: "Gamification" },
                 { icon: TrendingUp, text: "Progress tracking" },
                 { icon: Users, text: "Social learning" }
             ],
             color: "#f97316",
+            textColor: "var(--accent-orange-text)",
             gradient: "from-[#f97316] to-[#fb923c]",
         },
         {
             icon: BarChart3,
             title: "Data-Driven Insights",
-            description: <>Comprehensive <Link href="/services/seo-services" className="hover:underline text-[#a855f7]">analytics dashboards</Link> that track learner engagement, course completion, and learning outcomes.</>,
+            description: <>Comprehensive <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">analytics dashboards</Link> that track learner engagement, course completion, and learning outcomes.</>,
             highlights: [
                 { icon: BarChart3, text: "Learning analytics" },
                 { icon: Target, text: "Completion tracking" },
                 { icon: TrendingUp, text: "Performance reports" }
             ],
-            color: "#a855f7",
+            color: "var(--brand-purple-text)",
+            textColor: "var(--brand-purple-text)",
             gradient: "from-[#a855f7] to-[#ec4899]",
         },
     ];
@@ -90,14 +94,14 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(168, 85, 247, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#a855f7" }} />
-                        <span className="text-sm font-medium" style={{ color: "#a855f7" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose Us for <span style={{ color: "#a855f7" }}>EdTech</span>?
+                        Why Choose Us for <span style={{ color: "var(--brand-purple-text)" }}>EdTech</span>?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         We combine technical expertise with a passion for education to build platforms that truly impact learners.
@@ -156,7 +160,7 @@ export default function WhyChooseUs() {
                                         {/* Title */}
                                         <h3
                                             className="text-xl md:text-2xl font-bold mb-4 transition-colors duration-300"
-                                            style={{ color: isHovered ? reason.color : "var(--foreground)" }}
+                                            style={{ color: isHovered ? reason.textColor : "var(--foreground)" }}
                                         >
                                             {reason.title}
                                         </h3>
@@ -181,7 +185,7 @@ export default function WhyChooseUs() {
                                                         }}
                                                     >
                                                         <HighlightIcon className="w-4 h-4" style={{ color: reason.color }} />
-                                                        <span className="text-sm font-medium" style={{ color: reason.color }}>
+                                                        <span className="text-sm font-medium" style={{ color: reason.textColor }}>
                                                             {highlight.text}
                                                         </span>
                                                     </div>
@@ -216,7 +220,7 @@ export default function WhyChooseUs() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat, idx) => (
                             <div key={idx} className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#a855f7" }}>
+                                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--brand-purple-text)" }}>
                                     {stat.value}
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>

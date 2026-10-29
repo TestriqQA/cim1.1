@@ -10,11 +10,11 @@ export default function FAQ() {
     const faqs = [
         {
             q: "What are the benefits of using AI chatbots for business?",
-            a: <span>AI Chatbot Services maximize efficiency by handling high volumes of queries 24/7 without human fatigue. Key benefits include a significant reduction in <Link href="/services/additional-support-services" className="hover:text-[var(--brand-chatbot)] transition-colors">customer support costs</Link>, increased lead conversion through instant engagement, and scalable multilingual support. An ROI-driven AI chatbot implementation typically pays for itself within 6 months.</span>,
+            a: <span>AI Chatbot Services maximize efficiency by handling high volumes of queries 24/7 without human fatigue. Key benefits include a significant reduction in <Link href="/services/additional-support-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">customer support costs</Link>, increased lead conversion through instant engagement, and scalable multilingual support. An ROI-driven AI chatbot implementation typically pays for itself within 6 months.</span>,
         },
         {
             q: "How do AI-powered chatbots improve customer service?",
-            a: <span>AI chatbots improve customer service by providing instant, zero-latency responses to inquiries, resolving common issues without wait times. Using <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Sentiment Analysis</Link> for Customer Support, they can detect frustrated users and escalate them to human agents immediately (HITL), ensuring a high-quality Omnichannel Customer Experience (CX).</span>,
+            a: <span>AI chatbots improve customer service by providing instant, zero-latency responses to inquiries, resolving common issues without wait times. Using <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Sentiment Analysis</Link> for Customer Support, they can detect frustrated users and escalate them to human agents immediately (HITL), ensuring a high-quality Omnichannel Customer Experience (CX).</span>,
         },
         {
             q: "What is the difference between a rule-based chatbot and an AI chatbot?",
@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
             q: "How do I choose the right AI chatbot for my company?",
-            a: <span>Look for an AI Chatbot Agency that prioritizes your business goals. If you need sales, choose a bot specialized in <Link href="/services/performance-marketing" className="hover:text-[var(--brand-chatbot)] transition-colors">Automated lead qualification</Link>. For support, ensure it offers integration for Zendesk and Multilingual capabilities. Always check for E-E-A-T compliance and security certifications.</span>,
+            a: <span>Look for an AI Chatbot Agency that prioritizes your business goals. If you need sales, choose a bot specialized in <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Automated lead qualification</Link>. For support, ensure it offers integration for Zendesk and Multilingual capabilities. Always check for E-E-A-T compliance and security certifications.</span>,
         },
     ];
 
@@ -35,10 +35,10 @@ export default function FAQ() {
             <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background)] border border-[var(--border-color)] mb-6">
-                        <MessageSquare className="w-4 h-4" style={{ color: "var(--brand-chatbot)" }} />
+                        <MessageSquare className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
                         <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--foreground)" }}>FAQ</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked <span style={{ color: "var(--brand-chatbot)" }}>Questions</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked <span style={{ color: "var(--accent-indigo-text)" }}>Questions</span></h2>
                     <p className="text-lg text-[var(--foreground)] max-w-2xl mx-auto">
                         Answers to common questions about our AI chatbot services, strategy, and results.
                     </p>
@@ -65,7 +65,7 @@ export default function FAQ() {
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
                                                 backgroundColor: faqOpen === i ? "var(--brand-chatbot)" : "color-mix(in srgb, var(--brand-chatbot) 10%, transparent)",
-                                                color: faqOpen === i ? "white" : "var(--brand-chatbot)"
+                                                color: faqOpen === i ? "white" : "var(--accent-indigo-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

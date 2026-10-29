@@ -47,9 +47,9 @@ export default function Services() {
             brandText: "var(--brand-blue)",
             href: "/services/web-design-development",
             details: [
-                <span><Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-blue)] transition-colors">Custom Web Development & SaaS Solutions</Link></span>,
+                <span><Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-blue-text)] transition-colors">Custom Web Development & SaaS Solutions</Link></span>,
                 "High-Converting Landing Pages",
-                <span><Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-blue)] transition-colors">E-commerce Stores & Complex Portals</Link></span>,
+                <span><Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-blue-text)] transition-colors">E-commerce Stores & Complex Portals</Link></span>,
                 "API Development & Third-Party Integrations",
                 "Performance Optimization (Sub-2s Core Web Vitals)",
                 "Enterprise-Grade Security & SSL Implementation"
@@ -63,8 +63,8 @@ export default function Services() {
             brandText: "var(--brand-teal)",
             href: "/services/mobile-app-development",
             details: [
-                <span><Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-teal)] transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--brand-teal)] transition-colors">Android</Link> & <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--brand-teal)] transition-colors">Cross-Platform Development</Link></span>,
-                <span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-teal)] transition-colors">Enterprise Mobile Applications</Link></span>,
+                <span><Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--accent-teal-text)] transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--accent-teal-text)] transition-colors">Android</Link> & <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--accent-teal-text)] transition-colors">Cross-Platform Development</Link></span>,
+                <span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--accent-teal-text)] transition-colors">Enterprise Mobile Applications</Link></span>,
                 "Faster Time-to-Market",
                 "Rigorous QA Process",
                 "App Store Optimization",
@@ -112,11 +112,11 @@ export default function Services() {
             href: "/services/seo-services",
             details: [
                 "Comprehensive Website Audits",
-                <span><Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-blue)] transition-colors">On-Page & Technical SEO</Link></span>,
+                <span><Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">On-Page & Technical SEO</Link></span>,
                 "Strategic Keyword Research",
-                <span><Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-blue)] transition-colors">Authority Link Building</Link></span>,
-                <span><Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--brand-blue)] transition-colors">Local SEO & Google Business Profile</Link></span>,
-                <span><Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-[var(--brand-blue)] transition-colors">E-commerce SEO Optimization</Link></span>
+                <span><Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-blue-text)] transition-colors">Authority Link Building</Link></span>,
+                <span><Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">Local SEO & Google Business Profile</Link></span>,
+                <span><Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">E-commerce SEO Optimization</Link></span>
             ]
         },
         {
@@ -143,7 +143,7 @@ export default function Services() {
             brandText: "var(--brand-yellow)",
             href: "/services/ai-workflows-automations-services",
             details: [
-                <span><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-yellow)] transition-colors">Business Process Automation (BPA)</Link></span>,
+                <span><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-amber-text)] transition-colors">Business Process Automation (BPA)</Link></span>,
                 "CRM & ERP Integration",
                 "Full-Funnel Lead Nurturing Systems",
                 "Meta DPA & Shopping Feed Automations",
@@ -195,7 +195,7 @@ export default function Services() {
               inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border
               bg-[linear-gradient(90deg,rgba(188,63,235,0.08),rgba(250,185,0,0.06))]
               border-[rgba(188,63,235,0.12)]
-              text-[var(--brand-purple)]
+              text-[var(--brand-purple-text)]
             "
                     >
                         <Zap className="w-4 h-4" />

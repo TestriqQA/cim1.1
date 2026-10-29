@@ -1,5 +1,3 @@
-"use client";
-
 import { Zap, Smartphone, Eye, Lock, Gauge, Accessibility } from "lucide-react";
 import Link from "next/link";
 
@@ -93,17 +91,17 @@ export default function SEOPerformance() {
                         }}
                     >
                         <Gauge className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue)" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             SEO & Performance
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ fontWeight: 700, color: "var(--brand-blue)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
+                        <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As an expert <span className="font-bold text-[var(--brand-blue)]">web development agency</span>, we don&apos;t just build sites-we engineer high-performance business assets that deliver measurable global ROI.
+                        As an expert <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span>, we don&apos;t just build sites-we engineer high-performance business assets that deliver measurable global ROI.
                     </p>
 
                     <div
@@ -199,7 +197,7 @@ export default function SEOPerformance() {
                 {/* Bottom CTA */}
                 <div className="text-center">
                     <p className="text-lg md:text-xl mb-8 text-[var(--secondary-text)] max-w-2xl mx-auto">
-                        Ready to build a website that performs globally? Partner with a professional <span className="font-bold text-[var(--brand-blue)]">web development agency</span> today.
+                        Ready to build a website that performs globally? Partner with a professional <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span> today.
                     </p>
 
                     <Link

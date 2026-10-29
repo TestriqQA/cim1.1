@@ -8,20 +8,20 @@ export default function Process() {
         {
             number: "01",
             title: "Process Analysis",
-            description: <span>We start with a deep-dive audit. We map your current "happy path" and identifying edge cases to design the perfect <Link href="/services/ai-chatbots-services" className="hover:text-blue-500 underline decoration-dotted transition-colors">API-First Automation Strategy</Link>.</span>,
+            description: <span>We start with a deep-dive audit. We map your current "happy path" and identifying edge cases to design the perfect <Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-blue-text)] underline decoration-dotted transition-colors">API-First Automation Strategy</Link>.</span>,
             icon: Search,
             color: "from-blue-500 to-cyan-500",
             iconBg: "bg-blue-500/10",
-            iconColor: "text-blue-500",
+            iconColor: "text-[var(--brand-blue-text)]",
         },
         {
             number: "02",
-            title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-purple-500 transition-colors">Workflow Design</Link>,
+            title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--accent-violet-text)] transition-colors">Workflow Design</Link>,
             description: "Our architects draft the blueprint, selecting the best-fit Machine Learning Model Deployment strategies and defining human touchpoints.",
             icon: Pencil,
             color: "from-purple-500 to-pink-500",
             iconBg: "bg-purple-500/10",
-            iconColor: "text-purple-500",
+            iconColor: "text-[var(--accent-violet-text)]",
         },
         {
             number: "03",
@@ -30,7 +30,7 @@ export default function Process() {
             icon: Brain,
             color: "from-violet-500 to-purple-500",
             iconBg: "bg-violet-500/10",
-            iconColor: "text-violet-500",
+            iconColor: "text-[var(--accent-violet-text)]",
         },
         {
             number: "04",
@@ -39,25 +39,25 @@ export default function Process() {
             icon: Zap,
             color: "from-amber-500 to-orange-500",
             iconBg: "bg-amber-500/10",
-            iconColor: "text-amber-500",
+            iconColor: "text-[var(--accent-amber-text)]",
         },
         {
             number: "05",
             title: "Testing & Optimization",
-            description: <span>We stress-test with <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-green-500 underline decoration-dotted transition-colors">Real-time AI workflow monitoring</Link>. We run thousands of scenarios using <Link href="/blog/web-performance-optimization-speed" className="hover:text-green-500 underline decoration-dotted transition-colors">Testing & Optimization</Link> to ensure your Agentic AI Frameworks don't hallucinate.</span>,
+            description: <span>We stress-test with <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-green-text)] underline decoration-dotted transition-colors">Real-time AI workflow monitoring</Link>. We run thousands of scenarios using <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-green-text)] underline decoration-dotted transition-colors">Testing & Optimization</Link> to ensure your Agentic AI Frameworks don't hallucinate.</span>,
             icon: TestTube,
             color: "from-green-500 to-emerald-500",
             iconBg: "bg-green-500/10",
-            iconColor: "text-green-500",
+            iconColor: "text-[var(--accent-green-text)]",
         },
         {
             number: "06",
             title: "Deployment & Monitoring",
-            description: <span>Go live with confidence. We provide <Link href="/services/web-design-development" className="hover:text-rose-500 underline decoration-dotted transition-colors">ROI-driven AI automation consulting</Link> post-launch to continuously improve efficiency.</span>,
+            description: <span>Go live with confidence. We provide <Link href="/services/web-design-development" className="hover:text-[var(--accent-red-text)] underline decoration-dotted transition-colors">ROI-driven AI automation consulting</Link> post-launch to continuously improve efficiency.</span>,
             icon: Activity,
             color: "from-rose-500 to-red-500",
             iconBg: "bg-rose-500/10",
-            iconColor: "text-rose-500",
+            iconColor: "text-[var(--accent-red-text)]",
         },
     ];
 
@@ -141,16 +141,16 @@ export default function Process() {
                 style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
                 {/* Decorative background elements */}
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-20 left-10 w-64 h-64 bg-orange-500 rounded-full blur-3xl" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl" />
+                <div className="absolute inset-0">
+                    <div className="absolute top-20 left-10 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
                 </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
                     <div className="text-center mb-20 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-                            Our AI Workflow <span style={{ color: "var(--brand-orange)" }}>Development Process</span>
+                            Our AI Workflow <span style={{ color: "var(--accent-orange-text)" }}>Development Process</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             A proven, systematic approach to designing and deploying enterprise-grade AI automation solutions.
@@ -201,7 +201,7 @@ export default function Process() {
                                                 </div>
 
                                                 <div className="relative z-10">
-                                                    <h3 className="text-2xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--brand-orange)]">
+                                                    <h3 className="text-2xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--accent-orange-text)]">
                                                         {step.title}
                                                     </h3>
                                                     <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -350,7 +350,7 @@ export default function Process() {
                                         icon: TestTube,
                                     },
                                     {
-                                        phase: <Link href="/services/web-design-development" className="hover:text-orange-500 transition-colors">Deployment</Link>,
+                                        phase: <Link href="/services/web-design-development" className="hover:text-[var(--accent-orange-text)] transition-colors">Deployment</Link>,
                                         duration: "1 week",
                                         deliverables: "Production setup, documentation, training",
                                         color: "from-amber-500 to-orange-500",
@@ -390,7 +390,7 @@ export default function Process() {
                                                     <h4 className="text-lg font-bold">{item.phase}</h4>
                                                     <CheckCircle className="w-5 h-5 transition-colors duration-300 group-hover:scale-110" style={{ color: "var(--brand-orange)" }} />
                                                 </div>
-                                                <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-orange)" }}>
+                                                <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-orange-text)" }}>
                                                     ⏱ {item.duration}
                                                 </p>
                                                 <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>

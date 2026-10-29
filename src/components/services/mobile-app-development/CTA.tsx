@@ -58,28 +58,28 @@ export default function CTA() {
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-left text-sm" style={{ color: "var(--secondary-text)" }}>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                     <span>Business Goals Analysis</span>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                     <span>Technical Feasibility Review</span>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                     <span>Cost & Timeline Estimate</span>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                     <span>Competitor Analysis</span>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                     <span>MVP Roadmap</span>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <span style={{ color: "var(--brand-purple)" }}>✓</span>
-                                    <span>Free <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple)] hover:underline transition-colors">UI/UX Consultation</Link> ($1,500 value)</span>
+                                    <span style={{ color: "var(--brand-purple-text)" }}>✓</span>
+                                    <span>Free <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] hover:underline transition-colors">UI/UX Consultation</Link> ($1,500 value)</span>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@ export default function CTA() {
                         {/* Contact Info */}
                         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8 border-t" style={{ borderColor: "var(--border-color)" }}>
                             <div className="flex items-center gap-3">
-                                <Mail className="w-5 h-5" style={{ color: "var(--brand-purple)" }} />
+                                <Mail className="w-5 h-5" style={{ color: "var(--brand-purple-text)" }} />
                                 <div className="text-left">
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         Email Us
@@ -127,7 +127,7 @@ export default function CTA() {
                             </div>
                             <div className="hidden sm:block w-px h-8" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="flex items-center gap-3">
-                                <Phone className="w-5 h-5" style={{ color: "var(--brand-yellow)" }} />
+                                <Phone className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />
                                 <div className="text-left">
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         Call Us
@@ -144,7 +144,7 @@ export default function CTA() {
                 {/* Additional Info */}
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="text-center">
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple-text)" }}>
                             300+
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
@@ -152,7 +152,7 @@ export default function CTA() {
                         </p>
                     </div>
                     <div className="text-center">
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-yellow)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-amber-text)" }}>
                             50M+
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
@@ -160,7 +160,7 @@ export default function CTA() {
                         </p>
                     </div>
                     <div className="text-center">
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-blue)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-blue-text)" }}>
                             Strong
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>

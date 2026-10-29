@@ -36,7 +36,7 @@ export default function SolutionTypes() {
     const solutions = [
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#0286FF] transition-colors">E-commerce Experiences</Link>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-sky-text)] transition-colors">E-commerce Experiences</Link>,
             description: "Headless commerce with Contentful powering product content, marketing pages, and personalized shopping experiences.",
             features: [
                 "Product information management",
@@ -60,8 +60,8 @@ export default function SolutionTypes() {
         },
         {
             icon: Smartphone,
-            title: <Link href="/services/mobile-app-development" className="hover:text-[#0286FF] transition-colors">Mobile Applications</Link>,
-            description: <><span className="text-inherit">Power </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#0286FF] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#0286FF] hover:underline">Android</Link> apps with Contentful&apos;s APIs for real-time content updates without app store releases.</>,
+            title: <Link href="/services/mobile-app-development" className="hover:text-[var(--accent-sky-text)] transition-colors">Mobile Applications</Link>,
+            description: <><span className="text-inherit">Power </span><Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">Android</Link> apps with Contentful&apos;s APIs for real-time content updates without app store releases.</>,
             features: [
                 "Over-the-air content",
                 "Push notification content",
@@ -72,7 +72,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Building2,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[#0059C8] transition-colors">Enterprise Portals</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-sky-text)] transition-colors">Enterprise Portals</Link>,
             description: "Internal knowledge bases, documentation sites, and employee portals with role-based content access.",
             features: [
                 "Access control",
@@ -85,7 +85,7 @@ export default function SolutionTypes() {
         {
             icon: Briefcase,
             title: "Digital Products",
-            description: <><Link href="/services/web-design-development/saas-development-services" className="text-[#0286FF] hover:underline">SaaS applications</Link> with content-driven onboarding, help centers, and in-app messaging powered by Contentful.</>,
+            description: <><Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">SaaS applications</Link> with content-driven onboarding, help centers, and in-app messaging powered by Contentful.</>,
             features: [
                 "In-app messaging",
                 "Help documentation",
@@ -187,7 +187,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#0286FF]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-sky-text)]"
                                             }`}
                                     />
                                 </div>
@@ -206,7 +206,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#0286FF]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-sky-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -219,7 +219,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#0286FF]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-sky-text)]" />
                                 </div>
                             </div>
                         );

@@ -20,7 +20,7 @@ export default function ServiceOverview() {
         {
             icon: Target,
             title: "LinkedIn Ads Management",
-            description: <>Our LinkedIn advertising agency specialists manage full-funnel campaigns including Sponsored Content, InMail, and <Link href="/services/performance-marketing/youtube-ads" className="hover:underline text-blue-600">Video Ads</Link>. We leverage LinkedIn Campaign Manager expertise to optimize bidding and creative for maximum ROI.</>,
+            description: <>Our LinkedIn advertising agency specialists manage full-funnel campaigns including Sponsored Content, InMail, and <Link href="/services/performance-marketing/youtube-ads" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">Video Ads</Link>. We leverage LinkedIn Campaign Manager expertise to optimize bidding and creative for maximum ROI.</>,
             color: "#0A66C2",
         },
         {
@@ -38,7 +38,7 @@ export default function ServiceOverview() {
         {
             icon: FileText,
             title: "B2B Content Marketing & Thought Leadership",
-            description: <>Establish dominance with a LinkedIn <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-blue-600">content marketing strategy</Link> for businesses. From newsletters to LinkedIn Live, we turn your executives into industry thought leaders.</>,
+            description: <>Establish dominance with a LinkedIn <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">content marketing strategy</Link> for businesses. From newsletters to LinkedIn Live, we turn your executives into industry thought leaders.</>,
             color: "#0A66C2",
         },
         {
@@ -50,7 +50,7 @@ export default function ServiceOverview() {
         {
             icon: BarChart3,
             title: "ROI Tracking & Analytics",
-            description: <>Navigate your growth with <Link href="/services/performance-marketing" className="hover:underline text-blue-600">LinkedIn ads reporting</Link> and ROI tracking. We set up LinkedIn Insight Tags and Matched Audiences to provide 100% transparency on every dollar spent.</>,
+            description: <>Navigate your growth with <Link href="/services/performance-marketing" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">LinkedIn ads reporting</Link> and ROI tracking. We set up LinkedIn Insight Tags and Matched Audiences to provide 100% transparency on every dollar spent.</>,
             color: "#004182",
         },
     ];
@@ -88,8 +88,8 @@ export default function ServiceOverview() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
-                                backgroundColor: `${linkedinBlue}15`,
-                                color: linkedinBlue,
+                                backgroundColor: "var(--card-bg)",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             Our Services
@@ -100,7 +100,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         LinkedIn{" "}
-                        <span style={{ color: linkedinBlue }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Marketing
                         </span>{" "}
                         Services
@@ -172,7 +172,7 @@ export default function ServiceOverview() {
                                             <Icon
                                                 className={`w-8 h-8 transition-all duration-500 ${isHovered ? "scale-110" : "scale-100"}`}
                                                 style={{
-                                                    color: isHovered ? "white" : service.color,
+                                                    color: isHovered ? "white" : "var(--brand-blue-text)",
                                                 }}
                                             />
                                         </div>
@@ -195,7 +195,7 @@ export default function ServiceOverview() {
                                     {/* Content */}
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
-                                        style={{ color: isHovered ? service.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}
                                     >
                                         {service.title}
                                     </h3>

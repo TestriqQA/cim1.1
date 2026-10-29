@@ -1,6 +1,6 @@
 "use client";
 
-import { CategoryDetails, BlogPost } from "@/data/blog";
+import { BlogCategoryLink, CategoryDetails, BlogPost } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import {
@@ -45,6 +45,9 @@ const smallIconMap: Record<string, React.ReactNode> = {
     FileText: <FileText className="w-5 h-5" />,
 };
 
+// Map CMS-provided accent hexes to theme-aware, WCAG AA-safe text tokens (text sites only)
+const textAccent = (c?: string) => (({"#6b00d7":"var(--accent-violet-text)","#00b5ca":"var(--accent-cyan-text)","#ff6b35":"var(--accent-orange-text)","#9b59b6":"var(--brand-purple-text)","#e91e63":"var(--accent-pink-text)","#27ae60":"var(--accent-green-text)","#3498db":"var(--accent-sky-text)","#f39c12":"var(--accent-amber-text)","#1a56db":"var(--accent-indigo-text)"} as Record<string,string>)[(c ?? "").toLowerCase()] ?? "var(--brand-purple-text)");
+
 export default function CategoryClient({
     categoryName,
     categoryInfo,
@@ -56,7 +59,7 @@ export default function CategoryClient({
     categoryName: string;
     categoryInfo: CategoryDetails;
     posts: BlogPost[];
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }) {
@@ -92,9 +95,9 @@ export default function CategoryClient({
                     >
                         {/* Background Gradient */}
                         <div
-                            className="absolute inset-0 opacity-10"
+                            className="absolute inset-0"
                             style={{
-                                background: `linear-gradient(135deg, ${categoryInfo.color}, transparent 70%)`,
+                                background: `linear-gradient(135deg, color-mix(in srgb, ${categoryInfo.color} 10%, transparent), transparent 70%)`,
                             }}
                         />
 
@@ -106,7 +109,7 @@ export default function CategoryClient({
                                             className="w-16 h-16 rounded-2xl flex items-center justify-center"
                                             style={{
                                                 backgroundColor: `color-mix(in srgb, ${categoryInfo.color} 20%, transparent)`,
-                                                color: categoryInfo.color,
+                                                color: textAccent(categoryInfo.color),
                                             }}
                                         >
                                             {iconMap[categoryInfo.icon] || <BookOpen className="w-8 h-8" />}
@@ -115,7 +118,7 @@ export default function CategoryClient({
                                             className="px-3 py-1 rounded-full text-xs font-semibold"
                                             style={{
                                                 backgroundColor: `color-mix(in srgb, ${categoryInfo.color} 20%, transparent)`,
-                                                color: categoryInfo.color,
+                                                color: textAccent(categoryInfo.color),
                                             }}
                                         >
                                             CATEGORY
@@ -135,7 +138,7 @@ export default function CategoryClient({
                                     <div className="flex flex-wrap gap-6">
                                         <div className="flex items-center gap-2">
                                             <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: `color-mix(in srgb, ${categoryInfo.color} 15%, transparent)` }}>
-                                                <BookOpen className="w-5 h-5" style={{ color: categoryInfo.color }} />
+                                                <BookOpen className="w-5 h-5" style={{ color: textAccent(categoryInfo.color) }} />
                                             </div>
                                             <div>
                                                 <p className="text-2xl font-bold">{categoryPosts.length}</p>
@@ -144,7 +147,7 @@ export default function CategoryClient({
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: `color-mix(in srgb, ${categoryInfo.color} 15%, transparent)` }}>
-                                                <Clock className="w-5 h-5" style={{ color: categoryInfo.color }} />
+                                                <Clock className="w-5 h-5" style={{ color: textAccent(categoryInfo.color) }} />
                                             </div>
                                             <div>
                                                 <p className="text-2xl font-bold">{totalReadTime}</p>
@@ -156,10 +159,10 @@ export default function CategoryClient({
 
                                 <div className="lg:col-span-1 space-y-6">
                                     <div className="rounded-2xl border p-6" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)" }}>
-                                        <h3 className="font-semibold mb-4 flex items-center gap-2">
-                                            <Tag className="w-4 h-4" style={{ color: categoryInfo.color }} />
+                                        <h2 className="font-semibold mb-4 flex items-center gap-2">
+                                            <Tag className="w-4 h-4" style={{ color: textAccent(categoryInfo.color) }} />
                                             Related Topics
-                                        </h3>
+                                        </h2>
                                         <div className="flex flex-wrap gap-2">
                                             {(categoryInfo.relatedTopics ?? []).map((topic) => (
                                                 <span key={topic} className="px-3 py-1.5 rounded-lg text-sm font-medium" style={{ backgroundColor: "var(--hover-bg)" }}>

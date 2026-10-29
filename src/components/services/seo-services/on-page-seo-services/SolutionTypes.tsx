@@ -22,7 +22,7 @@ export default function SolutionTypes() {
         {
             id: "ecommerce",
             title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline">E-commerce Websites</Link>,
-            description: <span>Specialized on-page SEO optimization for <Link href="/services/seo-services/ecommerce-seo-services" className="hover:underline">ecommerce websites</Link> (Shopify/Magento/WooCommerce). We optimize product pages for high-intent keywords and implement merchant-specific schema.</span>,
+            description: <span>Specialized on-page SEO optimization for <Link href="/services/seo-services/ecommerce-seo-services" className="hover:underline underline underline-offset-2">ecommerce websites</Link> (Shopify/Magento/WooCommerce). We optimize product pages for high-intent keywords and implement merchant-specific schema.</span>,
             icon: Store,
             color: seoGreen,
         },
@@ -50,7 +50,7 @@ export default function SolutionTypes() {
         {
             id: "realestate",
             title: <Link href="/services/web-design-development/real-estate-platforms" className="hover:underline">Real Estate & Property Portals</Link>,
-            description: <span>Data-driven on-page SEO for <Link href="/services/web-design-development/real-estate-platforms" className="hover:underline">real estate websites</Link>. We optimize dynamic listing pages and local map signals for hyper-local dominance.</span>,
+            description: <span>Data-driven on-page SEO for <Link href="/services/web-design-development/real-estate-platforms" className="hover:underline underline underline-offset-2">real estate websites</Link>. We optimize dynamic listing pages and local map signals for hyper-local dominance.</span>,
             icon: Building2,
             color: "#F59E0B",
         },
@@ -79,16 +79,16 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: seoGreen }} />
-                        <span className="text-sm font-medium" style={{ color: seoGreen }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Industry Expertise
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Tailored On-Page <span style={{ color: seoGreen }}>SEO Strategy for Every Niche</span>
+                        Tailored On-Page <span style={{ color: "var(--accent-green-text)" }}>SEO Strategy for Every Niche</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Different industries require different signals. We provide specialized <strong><Link href="/services/seo-services/local-seo-services" className="hover:underline">on-page SEO services for small businesses</Link></strong> and global enterprises alike.
+                        Different industries require different signals. We provide specialized <strong><Link href="/services/seo-services/local-seo-services" className="hover:underline underline underline-offset-2">on-page SEO services for small businesses</Link></strong> and global enterprises alike.
                     </p>
                 </div>
 

@@ -102,7 +102,7 @@ export default function Process() {
                 "Develop robust frontend and backend systems with streaming, payments, and analytics integrations.",
             deliverables: [
                 "Frontend development",
-                <Link href="/services/web-design-development/nodejs-backend" key="backend" className="hover:underline">Backend API development</Link>,
+                <Link href="/services/web-design-development/nodejs-backend" key="backend" className="underline underline-offset-2 hover:underline">Backend API development</Link>,
                 "Video player integration",
                 "Payment system setup",
             ],
@@ -159,6 +159,19 @@ export default function Process() {
         },
     ];
 
+    const textAccent = (hex: string) =>
+        (
+            {
+                "#8b5cf6": "var(--accent-violet-text)",
+                "#7c3aed": "var(--accent-violet-text)",
+                "#6366f1": "var(--accent-indigo-text)",
+                "#a855f7": "var(--brand-purple-text)",
+                "#ec4899": "var(--accent-pink-text)",
+                "#d946ef": "var(--accent-pink-text)",
+                "#f43f5e": "var(--accent-pink-text)",
+            } as Record<string, string>
+        )[hex] || hex;
+
     return (
         <section
             id="process-section"
@@ -200,7 +213,7 @@ export default function Process() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "#8b5cf6" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -339,7 +352,7 @@ export default function Process() {
                                         <div className="mt-16 text-center whitespace-nowrap">
                                             <div
                                                 className="text-xs font-bold mb-1 transition-all duration-300"
-                                                style={{ color: step.bgColor }}
+                                                style={{ color: textAccent(step.bgColor) }}
                                             >
                                                 {step.number}
                                             </div>
@@ -349,7 +362,7 @@ export default function Process() {
                                                     ${isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"}
                                                 `}
                                                 style={{
-                                                    color: isActive ? step.bgColor : "var(--foreground)",
+                                                    color: isActive ? textAccent(step.bgColor) : "var(--foreground)",
                                                 }}
                                             >
                                                 {step.subtitle}
@@ -397,7 +410,7 @@ export default function Process() {
                                             </div>
                                             <div
                                                 className="text-5xl font-bold mb-2"
-                                                style={{ color: step.bgColor }}
+                                                style={{ color: textAccent(step.bgColor) }}
                                             >
                                                 {step.number}
                                             </div>
@@ -467,6 +480,7 @@ export default function Process() {
                                                         <button
                                                             key={dotIdx}
                                                             onClick={() => setActiveStep(dotIdx)}
+                                                            aria-label={`Go to step ${dotIdx + 1}`}
                                                             className={`
                                                                 w-2.5 h-2.5 rounded-full transition-all duration-300
                                                                 ${activeStep === dotIdx ? "scale-125" : "hover:scale-110"}
@@ -530,7 +544,7 @@ export default function Process() {
                                     <div className="flex-1">
                                         <div
                                             className="text-sm font-bold mb-1"
-                                            style={{ color: step.bgColor }}
+                                            style={{ color: textAccent(step.bgColor) }}
                                         >
                                             {step.number}
                                         </div>
@@ -542,7 +556,7 @@ export default function Process() {
                                         </h3>
                                         <p
                                             className="text-xs"
-                                            style={{ color: step.bgColor }}
+                                            style={{ color: textAccent(step.bgColor) }}
                                         >
                                             {step.subtitle}
                                         </p>

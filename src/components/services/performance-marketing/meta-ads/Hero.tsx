@@ -10,8 +10,8 @@ export default function Hero() {
     const metaPurple = "#8b5cf6";
 
     const features = [
-        <Link href="/services/social-media-marketing-services/facebook-marketing-services" className="hover:text-blue-600 transition-colors">Facebook Ads</Link>,
-        <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-pink-600 transition-colors">Instagram Ads</Link>,
+        <Link href="/services/social-media-marketing-services/facebook-marketing-services" className="hover:text-[var(--brand-blue-text)] transition-colors">Facebook Ads</Link>,
+        <Link href="/services/social-media-marketing-services/instagram-marketing-services" className="hover:text-[var(--accent-pink-text)] transition-colors">Instagram Ads</Link>,
         "Messenger Ads",
         "Audience Network",
     ];
@@ -61,7 +61,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: metaBlue }}>Meta Ads</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Meta Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -73,7 +73,7 @@ export default function Hero() {
                             }}
                         >
                             <Target className="w-4 h-4" style={{ color: metaBlue }} />
-                            <span className="text-sm font-semibold" style={{ color: metaBlue }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Meta Business Partner
                             </span>
                         </div>

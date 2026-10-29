@@ -82,7 +82,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: techPurple }}>Technical SEO</span>
+                            <span style={{ color: "var(--accent-violet-text)" }}>Technical SEO</span>
                         </nav>
 
                         {/* Badge */}
@@ -95,7 +95,7 @@ export default function Hero() {
                         >
                             <Code className="w-4 h-4" style={{ color: techPurple }} />
                             <Link href="/about" className="hover:underline">
-                                <span className="text-sm font-medium" style={{ color: techPurple }}>
+                                <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                                     Technical SEO Experts
                                 </span>
                             </Link>
@@ -107,7 +107,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Expert <Link href="/services/seo-services" className="hover:underline decoration-2 underline-offset-4">Technical SEO Services</Link> for{" "}
-                            <span className="relative inline-block" style={{ color: techPurple }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-violet-text)" }}>
                                 2026 Peak Performance
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -121,7 +121,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Stop letting technical debt bury your rankings. Our <strong><Link href="/services/seo-services" className="hover:text-purple-500 transition-colors">Technical SEO company</Link></strong> specializes in building a flawless technical foundation that search engines love. From <strong><Link href="/blog/web-performance-optimization-speed" className="hover:text-purple-500 transition-colors">website performance analysis</Link></strong> to advanced <strong><Link href="/contact" className="hover:text-purple-500 transition-colors">technical SEO consulting</Link></strong>, we ensure your site is built for the global stage.
+                            Stop letting technical debt bury your rankings. Our <strong><Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Technical SEO company</Link></strong> specializes in building a flawless technical foundation that search engines love. From <strong><Link href="/blog/web-performance-optimization-speed" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">website performance analysis</Link></strong> to advanced <strong><Link href="/contact" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO consulting</Link></strong>, we ensure your site is built for the global stage.
                         </p>
 
                         {/* Feature Pills */}
@@ -151,7 +151,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: techPurple }}
+                                style={{ backgroundColor: "#6d28d9" }}
                             >
                                 Get Technical Audit
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -172,17 +172,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: techPurple }}>100%</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>100%</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Mobile-First Compliance</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: techPurple }}>&lt;2s</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>&lt;2s</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Load Time Target</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: techPurple }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Server Uptime & SSL</p>
                             </div>
                         </div>

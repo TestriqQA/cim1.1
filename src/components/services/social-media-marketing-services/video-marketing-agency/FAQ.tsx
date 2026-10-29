@@ -10,15 +10,15 @@ export default function FAQ() {
     const faqs = [
         {
             q: "How much do professional YouTube marketing services cost in 2026?",
-            a: <><Link href="/services/social-media-marketing-services" className="hover:underline text-red-500">YouTube marketing cost</Link> for small business starts at $1,500/month for basic management. Full-service YouTube ads management typically ranges from $5,000 to $25,000+ per month, depending on ad spend and content frequency. We offer tiered pricing to fit scalable growth.</>,
+            a: <><Link href="/services/social-media-marketing-services" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">YouTube marketing cost</Link> for small business starts at $1,500/month for basic management. Full-service YouTube ads management typically ranges from $5,000 to $25,000+ per month, depending on ad spend and content frequency. We offer tiered pricing to fit scalable growth.</>,
         },
         {
             q: "How long does it take to see ROI from YouTube marketing?",
-            a: <>While YouTube ads management can drive local leads in 2-4 weeks, organic <Link href="/services/seo-services" className="hover:underline text-red-500">YouTube SEO services</Link> typically take 3-6 months to build significant authority. However, once the "algorithm flywheel" starts, the ROI is compounding and long-term.</>,
+            a: <>While YouTube ads management can drive local leads in 2-4 weeks, organic <Link href="/services/seo-services" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">YouTube SEO services</Link> typically take 3-6 months to build significant authority. However, once the "algorithm flywheel" starts, the ROI is compounding and long-term.</>,
         },
         {
             q: "What are the benefits of hiring a YouTube advertising agency?",
-            a: <><Link href="/services/performance-marketing/youtube-ads" className="hover:underline text-red-500">YouTube advertising agency</Link> provides expertise in creative testing, ad creative testing, and YouTube analytics and reporting that internal teams often lack. We ensure your budget isn't wasted on low-retention audiences, driving a higher ROAS on average.</>,
+            a: <><Link href="/services/performance-marketing/youtube-ads" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">YouTube advertising agency</Link> provides expertise in creative testing, ad creative testing, and YouTube analytics and reporting that internal teams often lack. We ensure your budget isn't wasted on low-retention audiences, driving a higher ROAS on average.</>,
         },
         {
             q: "What is included in a full-service YouTube ads management package?",
@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
             q: "How do I choose the best YouTube marketing service for my business?",
-            a: <>Look for an agency with verified case studies, <Link href="/services/performance-marketing/google-ads" className="hover:underline text-red-500">Google Ads</Link> certifications, and a deep understanding of the YouTube algorithm. At Cinute Infomedia, we provide a transparent audit BEFORE you sign, ensuring we are the right fit for your tech stack and goals.</>,
+            a: <>Look for an agency with verified case studies, <Link href="/services/performance-marketing/google-ads" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">Google Ads</Link> certifications, and a deep understanding of the YouTube algorithm. At Cinute Infomedia, we provide a transparent audit BEFORE you sign, ensuring we are the right fit for your tech stack and goals.</>,
         },
         {
             q: "Can you help with YouTube shorts marketing strategy for brands?",
@@ -39,8 +39,8 @@ export default function FAQ() {
             <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background)] border border-[var(--border-color)] mb-6">
-                        <MessageSquare className="w-4 h-4 text-[#FF0000]" />
-                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "#FF0000" }}>FAQ</span>
+                        <MessageSquare className="w-4 h-4 text-[var(--accent-red-text)]" />
+                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--accent-red-text)" }}>FAQ</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
                     <p className="text-lg text-[var(--foreground)] max-w-2xl mx-auto">
@@ -68,8 +68,8 @@ export default function FAQ() {
                                         <div
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
-                                                backgroundColor: faqOpen === i ? "#FF0000" : "rgba(255, 0, 0, 0.1)",
-                                                color: faqOpen === i ? "white" : "#FF0000"
+                                                backgroundColor: faqOpen === i ? "#c5221f" : "rgba(255, 0, 0, 0.1)",
+                                                color: faqOpen === i ? "white" : "var(--accent-red-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

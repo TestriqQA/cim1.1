@@ -73,13 +73,13 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Award className="w-4 h-4" style={{ color: metaBlue }} />
-                        <span className="text-sm font-medium" style={{ color: metaBlue }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose <span style={{ color: metaBlue }}>Us</span>
+                        Why Choose <span style={{ color: "var(--brand-blue-text)" }}>Us</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Partner with certified experts who deliver measurable results.
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
                                 className="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
                                 style={{
                                     backgroundColor: hoveredCard === benefit.id ? metaBlue : `${metaBlue}20`,
-                                    color: hoveredCard === benefit.id ? "white" : metaBlue,
+                                    color: hoveredCard === benefit.id ? "white" : "var(--brand-blue-text)",
                                     transform: hoveredCard === benefit.id ? "translateY(-4px)" : "translateY(0)",
                                 }}
                             >
@@ -142,7 +142,7 @@ export default function WhyChooseUs() {
                             {/* Checkmark */}
                             <div className="mt-4 flex items-center gap-2">
                                 <CheckCircle className="w-4 h-4" style={{ color: metaPurple }} />
-                                <span className="text-xs font-medium" style={{ color: metaPurple }}>
+                                <span className="text-xs font-medium" style={{ color: "var(--accent-violet-text)" }}>
                                     Included
                                 </span>
                             </div>

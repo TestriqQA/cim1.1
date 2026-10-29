@@ -18,6 +18,14 @@ export default function SolutionTypes() {
 
     const youtubeRed = "#FF0000";
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#ff0000": "var(--accent-red-text)",
+            "#cc0000": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const solutions = [
         {
             icon: Briefcase,
@@ -103,13 +111,13 @@ export default function SolutionTypes() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: `${youtubeRed}15`, border: `1px solid ${youtubeRed}30` }}>
-                        <Sparkles className="w-4 h-4" style={{ color: youtubeRed }} />
-                        <span className="text-sm font-medium" style={{ color: youtubeRed }}>Tailored Expertise</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${youtubeRed}30` }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>Tailored Expertise</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         Sector-Specific{" "}
-                        <span style={{ color: youtubeRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             YouTube Strategies
                         </span>
                     </h2>
@@ -172,7 +180,7 @@ export default function SolutionTypes() {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? solution.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-500" style={{ color: isHovered ? textAccent(solution.color) : "var(--foreground)" }}>
                                             {solution.title}
                                         </h3>
 

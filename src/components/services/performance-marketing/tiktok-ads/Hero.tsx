@@ -26,8 +26,8 @@ export default function Hero() {
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Gradient orbs with TikTok colors */}
                 <div
-                    className="absolute top-20 left-[10%] w-72 h-72 rounded-full blur-3xl opacity-20 animate-pulse"
-                    style={{ backgroundColor: tiktokPink }}
+                    className="absolute top-20 left-[10%] w-72 h-72 rounded-full blur-3xl animate-pulse"
+                    style={{ backgroundColor: "rgba(255, 0, 80, 0.05)" }}
                 />
                 <div
                     className="absolute top-40 left-[15%] w-60 h-60 rounded-full blur-3xl opacity-15 animate-pulse"
@@ -63,19 +63,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: tiktokPink }}>TikTok Ads</span>
+                            <span style={{ color: "var(--accent-pink-text)" }}>TikTok Ads</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm"
                             style={{
-                                backgroundColor: `${tiktokPink}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${tiktokPink}30`,
                             }}
                         >
                             <Play className="w-4 h-4" style={{ color: tiktokPink }} />
-                            <span className="text-sm font-semibold" style={{ color: tiktokPink }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                                 <Link href="/services/social-media-marketing-services" className="hover:underline">TikTok Marketing Partner</Link>
                             </span>
                         </div>

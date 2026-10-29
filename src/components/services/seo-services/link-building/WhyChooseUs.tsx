@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
             id: 2,
             icon: Target,
             title: "Niche Relevance",
-            description: <>Every link we build is from a site relevant to your industry, maximizing <Link href="/services/seo-services" className="hover:underline" style={{ color: linkCyan }}>SEO value</Link>.</>,
+            description: <>Every link we build is from a site relevant to your industry, maximizing <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>SEO value</Link>.</>,
             highlight: "Industry-Targeted",
         },
         {
@@ -58,13 +58,13 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Award className="w-4 h-4" style={{ color: linkCyan }} />
-                        <span className="text-sm font-medium" style={{ color: linkCyan }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose <span style={{ color: linkCyan }}>Us</span>
+                        Why Choose <span style={{ color: "var(--accent-cyan-text)" }}>Us</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Partner with a team that prioritizes quality, transparency, and results.
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                             <div
                                 className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300"
                                 style={{
-                                    backgroundColor: linkCyan,
+                                    backgroundColor: "#155e75",
                                     color: "white",
                                 }}
                             >
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
                             {/* Checkmark */}
                             <div className="mt-4 flex items-center gap-2">
                                 <CheckCircle className="w-4 h-4" style={{ color: linkCyan }} />
-                                <span className="text-xs font-medium" style={{ color: linkCyan }}>
+                                <span className="text-xs font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                                     Included
                                 </span>
                             </div>

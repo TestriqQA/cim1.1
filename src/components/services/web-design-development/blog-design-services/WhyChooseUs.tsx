@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckCircle2, Award, Zap, Users, Shield, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
@@ -8,27 +6,27 @@ export default function WhyChooseUs() {
         {
             icon: Shield,
             title: "E-E-A-T Focused Architecture",
-            description: <>We code with Google&apos;s Experience, Expertise, Authoritativeness, and Trustworthiness guidelines. Your site structure will signal <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-[#a855f7]">authority</Link> from Day 1.</>
+            description: <>We code with Google&apos;s Experience, Expertise, Authoritativeness, and Trustworthiness guidelines. Your site structure will signal <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">authority</Link> from Day 1.</>
         },
         {
             icon: Zap,
             title: "Performance Obsessed",
-            description: <>We prioritize News portal performance and speed optimization. Passing <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#a855f7]">Core Web Vitals</Link> is our baseline, not a goal.</>
+            description: <>We prioritize News portal performance and speed optimization. Passing <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Core Web Vitals</Link> is our baseline, not a goal.</>
         },
         {
             icon: Award,
             title: "Global Reach, Hyper-Local Focus",
-            description: <>Experience in building <Link href="/services/seo-services/local-seo-services" className="hover:underline text-[#a855f7]">Hyper-local news portal</Link> development services that dominate regional search, while scaling to global traffic.</>
+            description: <>Experience in building <Link href="/services/seo-services/local-seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Hyper-local news portal</Link> development services that dominate regional search, while scaling to global traffic.</>
         },
         {
             icon: CheckCircle2,
             title: "Custom CMS Mastery",
-            description: <>Whether it&apos;s <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-[#a855f7]">Custom CMS development</Link> for news websites or headless setups, we give you control.</>
+            description: <>Whether it&apos;s <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Custom CMS development</Link> for news websites or headless setups, we give you control.</>
         },
         {
             icon: TrendingUp,
             title: "Proven ROI",
-            description: <>Our clients see an average of sustained traffic growth within 12 months via our integrated <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-[#a855f7]">technical SEO</Link>.</>
+            description: <>Our clients see an average of sustained traffic growth within 12 months via our integrated <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">technical SEO</Link>.</>
         }
     ];
 
@@ -50,7 +48,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: "#a855f7" }} />
-                            <span className="text-sm font-medium" style={{ color: "#a855f7" }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

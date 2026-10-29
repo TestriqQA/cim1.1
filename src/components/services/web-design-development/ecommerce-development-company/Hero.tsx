@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, ShoppingCart, TrendingUp, CreditCard, Package, BarChart3, Shield } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +58,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#00b5ca" }}
+                        style={{ color: "var(--accent-cyan-text)" }}
                     >
                         E-commerce Stores
                     </span>
@@ -76,10 +74,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #00b5ca 8%, transparent), color-mix(in srgb, #00efd6 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #00b5ca 20%, transparent)",
-                                color: "#00b5ca",
+                                color: "var(--accent-cyan-text)",
                             }}
                         >
-                            <ShoppingCart className="w-4 h-4" style={{ color: "#00b5ca" }} />
+                            <ShoppingCart className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                             <span className="text-sm font-semibold">E-commerce Store Development</span>
                         </div>
 
@@ -118,7 +116,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Revenue Growth
                                 </span>
@@ -128,7 +126,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <CreditCard className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <CreditCard className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Secure Payments
                                 </span>
@@ -138,7 +136,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <Package className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <Package className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Inventory Sync
                                 </span>
@@ -148,7 +146,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Sales Analytics
                                 </span>
@@ -158,7 +156,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     PCI Compliant
                                 </span>
@@ -168,7 +166,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #00b5ca 8%, transparent)",
                                 }}
                             >
-                                <Sparkles className="w-5 h-5 flex-shrink-0" style={{ color: "#00b5ca" }} />
+                                <Sparkles className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     CRO Optimized
                                 </span>
@@ -235,17 +233,6 @@ export default function Hero() {
                                 Get Your Free Audit & Quote
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/portfolio"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                }}
-                            >
-                                View Our Portfolio
-                                <ArrowRight className="w-5 h-5" />
-                            </Link> */}
                         </div>
                     </div>
 
@@ -270,15 +257,15 @@ export default function Hero() {
                         {/* Info Section Below Image */}
                         <div className="mt-12 flex gap-4 justify-center w-full z-10 relative">
                             <Link href="/services/web-design-development/shopify-development-services" className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm hover:scale-105 transition-transform" style={{ borderColor: "rgba(0, 181, 202, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <ShoppingCart className="w-4 h-4" style={{ color: "#00b5ca" }} />
+                                <ShoppingCart className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Shopify</span>
                             </Link>
                             <Link href="/services/web-design-development/wordpress-development-services" className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm hover:scale-105 transition-transform" style={{ borderColor: "rgba(0, 181, 202, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Package className="w-4 h-4" style={{ color: "#00b5ca" }} />
+                                <Package className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>WooCommerce</span>
                             </Link>
                             <Link href="/services/web-design-development/ecommerce-development-company" className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm hover:scale-105 transition-transform" style={{ borderColor: "rgba(0, 181, 202, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <CreditCard className="w-4 h-4" style={{ color: "#00b5ca" }} />
+                                <CreditCard className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Magento Ready</span>
                             </Link>
                         </div>
@@ -288,19 +275,19 @@ export default function Hero() {
                             <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>E-commerce Performance</p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(0, 181, 202, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#00b5ca" }}>Lower</span>
+                                    <span className="text-xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>Lower</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Cart Abandonment</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(0, 181, 202, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#00b5ca" }}>&lt;2s</span>
+                                    <span className="text-xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>&lt;2s</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Page Load</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(0, 181, 202, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#00b5ca" }}>Higher</span>
+                                    <span className="text-xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>Higher</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Mobile Conversion</span>
                                 </div>
                                 <div className="flex flex-col items-center px-4 py-2 rounded-lg" style={{ backgroundColor: "rgba(0, 181, 202, 0.1)" }}>
-                                    <span className="text-xl font-bold" style={{ color: "#00b5ca" }}>High</span>
+                                    <span className="text-xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>High</span>
                                     <span className="text-xs" style={{ color: "var(--secondary-text)" }}>Customer Retention</span>
                                 </div>
                             </div>

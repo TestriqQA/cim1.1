@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
         {
             icon: Sparkles,
             title: "Post-2025 SEO & EEAT Strategy",
-            description: <><span className="text-inherit">Our content and apps are optimized for Google’s latest core updates, ensuring your brand ranks high and builds trust with our </span><Link href="/services/seo-services" className="text-[#00b4d8] hover:underline">SEO</Link> strategy.</>,
+            description: <><span className="text-inherit">Our content and apps are optimized for Google’s latest core updates, ensuring your brand ranks high and builds trust with our </span><Link href="/services/seo-services" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">SEO</Link> strategy.</>,
             gradient: "from-[#48cae4] to-[#00b4d8]",
             shadowColor: "rgba(72, 202, 228, 0.3)",
         },
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
         {
             icon: RefreshCw,
             title: "Proactive Hybrid App Maintenance",
-            description: <><span className="text-inherit">Post-launch support includes performance monitoring, periodic security audits, and regular updates for latest OS versions and comprehensive </span><Link href="/services/additional-support-services" className="text-[#00b4d8] hover:underline">maintenance</Link>.</>,
+            description: <><span className="text-inherit">Post-launch support includes performance monitoring, periodic security audits, and regular updates for latest OS versions and comprehensive </span><Link href="/services/additional-support-services" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">maintenance</Link>.</>,
             gradient: "from-[#0077b6] to-[#48cae4]",
             shadowColor: "rgba(0, 119, 182, 0.3)",
         },
@@ -88,8 +88,8 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(0, 180, 216, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#00b4d8" }} />
-                        <span className="text-sm font-medium" style={{ color: "#00b4d8" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -163,7 +163,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#00b4d8" : "var(--foreground)",
+                                            color: isHovered ? "var(--accent-cyan-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

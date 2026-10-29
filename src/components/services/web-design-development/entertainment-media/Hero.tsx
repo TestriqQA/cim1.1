@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Play, Film, Music, Radio, Users, TrendingUp,
     ChevronRight, ArrowRight, CheckCircle2, Sparkles, Tv, Headphones
@@ -65,7 +63,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#8b5cf6" }}>Entertainment & Media</span>
+                            <span style={{ color: "var(--brand-purple-text)" }}>Entertainment & Media</span>
                         </nav>
 
                         {/* Badge */}
@@ -77,7 +75,7 @@ export default function Hero() {
                             }}
                         >
                             <Play className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#8b5cf6" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                                 Entertainment & Media Solutions
                             </span>
                         </div>
@@ -100,7 +98,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Build powerful streaming platforms, <Link href="/services/web-design-development" className="hover:underline">content management systems</Link>, and engaging
+                            Build powerful streaming platforms, <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline">content management systems</Link>, and engaging
                             entertainment experiences that captivate audiences and drive subscriber growth.
                         </p>
 
@@ -255,7 +253,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#8b5cf6" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-purple-text)" }}>
                                 Platform Integrations
                             </p>
                             <div className="flex flex-wrap gap-2">

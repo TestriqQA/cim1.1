@@ -184,7 +184,7 @@ export default function TechStack() {
                         >
                             <div
                                 className="text-3xl font-bold mb-2"
-                                style={{ color: "#a855f7" }}
+                                style={{ color: "var(--brand-purple-text)" }}
                             >
                                 {stat.value}
                             </div>

@@ -95,6 +95,15 @@ export default function SolutionTypes() {
         },
     ];
 
+    const accentTextMap: Record<string, string> = {
+        "#10b981": "var(--accent-green-text)",
+        "#0ea5e9": "var(--accent-sky-text)",
+        "#22c55e": "var(--accent-green-text)",
+        "#14b8a6": "var(--accent-teal-text)",
+        "#3b82f6": "var(--accent-sky-text)",
+        "#84cc16": "var(--accent-lime-text)",
+    };
+
     return (
         <section
             ref={sectionRef}
@@ -126,7 +135,7 @@ export default function SolutionTypes() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
                             borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                            color: "#10b981",
+                            color: "var(--accent-green-text)",
                         }}
                     >
                         <Target className="w-4 h-4" />
@@ -134,7 +143,7 @@ export default function SolutionTypes() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#10b981" }}>Landing Page Solutions</span> We Build
+                        <span style={{ color: "var(--accent-green-text)" }}>Landing Page Solutions</span> We Build
                     </h2>
 
                     <p
@@ -195,7 +204,7 @@ export default function SolutionTypes() {
                                                 }`}
                                             style={{
                                                 backgroundColor: `${solution.accentColor}20`,
-                                                color: solution.accentColor,
+                                                color: accentTextMap[solution.accentColor],
                                                 border: `1px solid ${solution.accentColor}40`,
                                             }}
                                         >
@@ -235,7 +244,7 @@ export default function SolutionTypes() {
                                         <h3
                                             className="text-2xl font-bold mb-3 transition-colors duration-300"
                                             style={{
-                                                color: isHovered ? solution.accentColor : "var(--foreground)"
+                                                color: isHovered ? accentTextMap[solution.accentColor] : "var(--foreground)"
                                             }}
                                         >
                                             {solution.title}
@@ -252,7 +261,7 @@ export default function SolutionTypes() {
                                         {/* Timeline Badge */}
                                         <div className="flex items-center gap-2 mb-6">
                                             <Clock className="w-4 h-4" style={{ color: solution.accentColor }} />
-                                            <span className="text-xs font-semibold" style={{ color: solution.accentColor }}>
+                                            <span className="text-xs font-semibold" style={{ color: accentTextMap[solution.accentColor] }}>
                                                 {solution.timeline}
                                             </span>
                                         </div>
@@ -303,7 +312,7 @@ export default function SolutionTypes() {
                                                             }`}
                                                         style={{
                                                             backgroundColor: `${solution.accentColor}10`,
-                                                            color: solution.accentColor,
+                                                            color: accentTextMap[solution.accentColor],
                                                             border: `1px solid ${solution.accentColor}20`,
                                                             transitionDelay: `${tidx * 50}ms`,
                                                         }}
@@ -314,19 +323,6 @@ export default function SolutionTypes() {
                                             </div>
                                         </div>
 
-                                        {/* CTA Button */}
-                                        {/* <button
-                                            className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${isHovered ? "gap-4" : "gap-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: isHovered ? solution.accentColor : `${solution.accentColor}15`,
-                                                color: isHovered ? "white" : solution.accentColor,
-                                                border: `1px solid ${solution.accentColor}30`,
-                                            }}
-                                        >
-                                            <span>Learn More</span>
-                                            <ArrowRight className="w-4 h-4" />
-                                        </button> */}
                                     </div>
 
                                     {/* Bottom Shine Effect */}
@@ -383,8 +379,8 @@ export default function SolutionTypes() {
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                             <div className="text-center md:text-left max-w-2xl">
                                 <div className="flex items-center gap-2 justify-center md:justify-start mb-4">
-                                    <TrendingUp className="w-6 h-6" style={{ color: "#10b981" }} />
-                                    <span className="text-sm font-bold uppercase tracking-wider" style={{ color: "#10b981" }}>
+                                    <TrendingUp className="w-6 h-6" style={{ color: "var(--accent-green-text)" }} />
+                                    <span className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--accent-green-text)" }}>
                                         Ready to Scale?
                                     </span>
                                 </div>
@@ -408,8 +404,8 @@ export default function SolutionTypes() {
                         </div>
 
                         {/* Corner Accents */}
-                        <Sparkles className="absolute top-6 right-6 w-8 h-8 text-[#10b981] opacity-20" />
-                        <Sparkles className="absolute bottom-6 left-6 w-6 h-6 text-[#0ea5e9] opacity-20" />
+                        <Sparkles className="absolute top-6 right-6 w-8 h-8 text-[var(--accent-green-text)] opacity-20" />
+                        <Sparkles className="absolute bottom-6 left-6 w-6 h-6 text-[var(--accent-sky-text)] opacity-20" />
                     </div>
                 </div>
             </div>

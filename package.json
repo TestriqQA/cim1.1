@@ -47,7 +47,11 @@
     "typescript": "^5"
   },
   "browserslist": [
-    "defaults",
-    "not IE 11"
+    "chrome >= 92",
+    "edge >= 92",
+    "firefox >= 90",
+    "safari >= 15.4",
+    "ios_saf >= 15.4",
+    "not dead"
   ]
 }

@@ -8,7 +8,7 @@ const reasons = [
     {
         icon: Shield,
         title: "Trusted Expertise",
-        description: <span>Proven experience delivering successful <Link href="/services/web-design-development" className="hover:text-[var(--brand-purple)] transition-colors">digital solutions</Link> across industries.</span>,
+        description: <span>Proven experience delivering successful <Link href="/services/web-design-development" className="hover:text-[var(--brand-purple-text)] transition-colors">digital solutions</Link> across industries.</span>,
         gradient: "linear-gradient(135deg, var(--brand-purple), var(--brand-blue))",
     },
     {
@@ -45,11 +45,11 @@ const reasons = [
 
 const highlights = [
     "Transparent Pricing",
-    <span><Link href="/services/web-design-development" className="hover:text-[var(--brand-cyan)] transition-colors">Scalable Solutions</Link></span>,
+    <span><Link href="/services/web-design-development" className="hover:text-[var(--accent-teal-text)] transition-colors">Scalable Solutions</Link></span>,
     "Custom Development",
     "Modern Tech Stack",
-    <span><Link href="/services/seo-services" className="hover:text-[var(--brand-cyan)] transition-colors">SEO Best Practices</Link></span>,
-    <span><Link href="/services/mobile-app-development" className="hover:text-[var(--brand-cyan)] transition-colors">Mobile-First Approach</Link></span>,
+    <span><Link href="/services/seo-services" className="hover:text-[var(--accent-teal-text)] transition-colors">SEO Best Practices</Link></span>,
+    <span><Link href="/services/mobile-app-development" className="hover:text-[var(--accent-teal-text)] transition-colors">Mobile-First Approach</Link></span>,
 ];
 
 export default function WhyChooseUs() {
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                                 border: "1px solid var(--border-color)",
                             }}
                         >
-                            <Award className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
+                            <Award className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Why Choose Us</span>
                         </div>
 
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
                         <div className="grid grid-cols-2 gap-4 mb-10">
                             {highlights.map((highlight, index) => (
                                 <div key={index} className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-cyan)" }} />
+                                    <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-teal-text)" }} />
                                     <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{highlight}</span>
                                 </div>
                             ))}
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
                             <div
                                 className="absolute -top-3 left-6 text-5xl font-serif"
                                 style={{
-                                    color: "var(--brand-purple)",
+                                    color: "var(--brand-purple-text)",
                                     opacity: 0.3,
                                 }}
                             >

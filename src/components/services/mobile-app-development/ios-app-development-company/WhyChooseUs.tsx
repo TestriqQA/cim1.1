@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Native Performance First",
-            description: <><span className="text-inherit">We prioritize native technologies. </span><Link href="/services/mobile-app-development/hybrid-app-development-services" className="text-[#007AFF] hover:underline">Hybrid</Link> to native iOS app conversion services are a specialty. We help clients migrate from sluggish <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[#5AC8FA] hover:underline">cross-platform apps</Link>.</>,
+            description: <><span className="text-inherit">We prioritize native technologies. </span><Link href="/services/mobile-app-development/hybrid-app-development-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Hybrid</Link> to native iOS app conversion services are a specialty. We help clients migrate from sluggish <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[var(--accent-sky-text)] hover:underline underline underline-offset-2">cross-platform apps</Link>.</>,
             gradient: "from-[#007AFF] to-[#5AC8FA]",
             shadowColor: "rgba(0, 122, 255, 0.3)",
         },
@@ -70,12 +70,12 @@ export default function WhyChooseUs() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(0, 122, 255, 0.1)",
+                            backgroundColor: "rgba(0, 122, 255, 0.05)",
                             borderColor: "rgba(0, 122, 255, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#007AFF" }} />
-                        <span className="text-sm font-medium" style={{ color: "#007AFF" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
                         </span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Expertise that delivers <Link href="/services/performance-marketing" className="text-[#007AFF] hover:underline">measurable ROI</Link>.
+                        Expertise that delivers <Link href="/services/performance-marketing" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">measurable ROI</Link>.
                     </p>
                 </div>
 
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#007AFF" : "var(--foreground)",
+                                            color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

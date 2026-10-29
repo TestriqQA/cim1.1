@@ -11,7 +11,7 @@ export default function DesignProcess() {
         {
             icon: Search,
             title: "Discovery & Brand Audit",
-            description: <span>We begin with a deep dive into your market. We analyze competitors, interview stakeholders, and audit existing assets to define your <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-[var(--brand-yellow)]">Brand Strategy</Link>.</span>,
+            description: <span>We begin with a deep dive into your market. We analyze competitors, interview stakeholders, and audit existing assets to define your <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">Brand Strategy</Link>.</span>,
             details: ["Brand audit", "Competitor analysis", "Stakeholder interviews", "Positioning"],
         },
         {
@@ -23,7 +23,7 @@ export default function DesignProcess() {
         {
             icon: Palette,
             title: "Design & Iteration",
-            description: <span>We move to high-fidelity design using <Link href="#tools" className="hover:text-[var(--brand-yellow)]">industry-standard tools</Link>. You receive interactive presentations and have the opportunity to refine the direction.</span>,
+            description: <span>We move to high-fidelity design using <Link href="#tools" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">industry-standard tools</Link>. You receive interactive presentations and have the opportunity to refine the direction.</span>,
             details: ["High-fidelity design", "Interactive presentations", "Iterative refinement", "Feedback loops"],
         },
         {
@@ -52,13 +52,13 @@ export default function DesignProcess() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <ClipboardList className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             OUR PROCESS
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Our <span style={{ color: "var(--brand-yellow)" }}>Creative Process</span>
+                        Our <span style={{ color: "var(--accent-amber-text)" }}>Creative Process</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A proven 6-step journey from concept to launch, designed to create brands that truly resonate.
@@ -105,14 +105,14 @@ export default function DesignProcess() {
                                                 >
                                                     {index + 1}
                                                 </div>
-                                                <span className="text-sm font-semibold" style={{ color: "var(--brand-yellow)" }}>
+                                                <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                                     Step {index + 1}
                                                 </span>
                                             </div>
 
                                             <h3
                                                 className="text-xl md:text-2xl font-bold mb-3 transition-colors"
-                                                style={{ color: isHovered ? "var(--brand-yellow)" : "var(--foreground)" }}
+                                                style={{ color: isHovered ? "var(--accent-amber-text)" : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -124,7 +124,7 @@ export default function DesignProcess() {
                                             <div className={`flex flex-wrap gap-2 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
                                                 {step.details.map((detail, idx) => (
                                                     <div key={idx} className="flex items-center gap-1">
-                                                        <CheckCircle2 className="w-3 h-3" style={{ color: "var(--brand-yellow)" }} />
+                                                        <CheckCircle2 className="w-3 h-3" style={{ color: "var(--accent-amber-text)" }} />
                                                         <span className="text-xs font-medium">{detail}</span>
                                                     </div>
                                                 ))}
@@ -151,7 +151,7 @@ export default function DesignProcess() {
                                             <span
                                                 className="text-8xl font-black transition-all duration-300"
                                                 style={{
-                                                    color: isHovered ? "var(--brand-yellow)" : "color-mix(in srgb, var(--brand-yellow) 20%, transparent)",
+                                                    color: isHovered ? "var(--accent-amber-text)" : "color-mix(in srgb, var(--brand-yellow) 20%, transparent)",
                                                     textShadow: isHovered ? "0 0 40px color-mix(in srgb, var(--brand-yellow) 30%, transparent)" : "none",
                                                 }}
                                             >
@@ -160,8 +160,7 @@ export default function DesignProcess() {
                                             <div
                                                 className={`absolute -bottom-2 ${isEven ? 'left-0' : 'right-0'} text-xs font-bold uppercase tracking-widest transition-all duration-300`}
                                                 style={{
-                                                    color: isHovered ? "var(--brand-yellow)" : "var(--secondary-text)",
-                                                    opacity: isHovered ? 1 : 0.6,
+                                                    color: isHovered ? "var(--accent-amber-text)" : "var(--secondary-text)",
                                                 }}
                                             >
                                                 Step

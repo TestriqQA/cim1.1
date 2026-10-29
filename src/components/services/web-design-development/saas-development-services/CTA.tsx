@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Code2 } from "lucide-react";
 
@@ -37,7 +35,7 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #008ac1 8%, transparent), color-mix(in srgb, #bc3feb 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #008ac1 20%, transparent)",
-                                color: "#008ac1",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             <Code2 className="w-4 h-4" />
@@ -61,7 +59,7 @@ export default function CTA() {
 
                         {/* Description */}
                         <p className="text-base md:text-xl max-w-3xl mx-auto mb-12" style={{ color: "var(--secondary-text)" }}>
-                            Transform Your Idea Into a Revenue-Generating Platform. Partner with a SaaS development company that's delivered 50+ successful SaaS products across <Link href="/services/web-design-development/fintech-solutions" className="hover:underline text-[#008ac1]">fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="hover:underline text-[#008ac1]">healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline text-[#008ac1]">e-commerce</Link> sectors.
+                            Transform Your Idea Into a Revenue-Generating Platform. Partner with a SaaS development company that's delivered 50+ successful SaaS products across <Link href="/services/web-design-development/fintech-solutions" className="underline text-[var(--brand-blue-text)]">fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline text-[var(--brand-blue-text)]">healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline text-[var(--brand-blue-text)]">e-commerce</Link> sectors.
                         </p>
 
                         {/* CTA Buttons */}

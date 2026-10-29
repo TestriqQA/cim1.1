@@ -21,37 +21,37 @@ export default function ServiceOverview() {
         {
             icon: ShoppingBag,
             title: "Product Page Optimization",
-            description: <>Transform underperforming product pages into revenue engines. Our ecommerce <Link href="/services/seo-services/on-page-seo-services" className="hover:underline" style={{ color: commerceBlue }}>product page SEO</Link> service crafts compelling titles, descriptions, and meta tags optimized for high-intent buyer keywords. We analyze user intent for ecommerce search to match what shoppers actually search for - implementing semantic search optimization that captures long-tail product queries. Each page gets unique, conversion-focused content that ranks and converts.</>,
+            description: <>Transform underperforming product pages into revenue engines. Our ecommerce <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>product page SEO</Link> service crafts compelling titles, descriptions, and meta tags optimized for high-intent buyer keywords. We analyze user intent for ecommerce search to match what shoppers actually search for - implementing semantic search optimization that captures long-tail product queries. Each page gets unique, conversion-focused content that ranks and converts.</>,
             color: commerceBlue,
         },
         {
             icon: Layers,
             title: "Category Architecture & Faceted Navigation SEO",
-            description: <>Structuring intuitive category pages that capture broad search intent while solving the faceted navigation SEO challenge. We implement canonical tags, parameter handling, and crawl budget optimization to ensure search engines index the right pages. Our <Link href="/blog/mastering-seo-organic-growth" className="hover:underline" style={{ color: commerceBlue }}>internal linking</Link> for ecommerce stores strategy passes authority to your best-selling products while improving user navigation.</>,
+            description: <>Structuring intuitive category pages that capture broad search intent while solving the faceted navigation SEO challenge. We implement canonical tags, parameter handling, and crawl budget optimization to ensure search engines index the right pages. Our <Link href="/blog/mastering-seo-organic-growth" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>internal linking</Link> for ecommerce stores strategy passes authority to your best-selling products while improving user navigation.</>,
             color: "#8B5CF6",
         },
         {
             icon: Code,
             title: "Technical SEO for Ecommerce Websites",
-            description: <>Deep <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>technical ecommerce SEO</Link> audit identifies critical issues killing your rankings: duplicate content from filter pages, orphaned products, slow page speed, mobile usability errors, and crawl budget waste. We fix XML sitemap errors, implement proper robots.txt directives, optimize Core Web Vitals for ecommerce sites (LCP, FID, CLS), and ensure clean indexing for thousands of SKUs. Perfect for enterprise ecommerce SEO services requiring complex technical solutions.</>,
+            description: <>Deep <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>technical ecommerce SEO</Link> audit identifies critical issues killing your rankings: duplicate content from filter pages, orphaned products, slow page speed, mobile usability errors, and crawl budget waste. We fix XML sitemap errors, implement proper robots.txt directives, optimize Core Web Vitals for ecommerce sites (LCP, FID, CLS), and ensure clean indexing for thousands of SKUs. Perfect for enterprise ecommerce SEO services requiring complex technical solutions.</>,
             color: "#3B82F6",
         },
         {
             icon: Tag,
             title: "Schema Markup for Ecommerce Products",
-            description: <>Implementing Product, Review, Offer, and Breadcrumb structured data to get rich snippets in search results - increasing CTR by 30-40%. We add <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>schema markup</Link> for price, availability, ratings, brand, and SKU to make your products stand out in SERPs with star ratings, pricing info, and stock status visible before users click.</>,
+            description: <>Implementing Product, Review, Offer, and Breadcrumb structured data to get rich snippets in search results - increasing CTR by 30-40%. We add <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>schema markup</Link> for price, availability, ratings, brand, and SKU to make your products stand out in SERPs with star ratings, pricing info, and stock status visible before users click.</>,
             color: "#F59E0B",
         },
         {
             icon: Smartphone,
             title: "Mobile-First Ecommerce SEO & Page Speed",
-            description: <>Ensuring seamless, fast, responsive shopping experiences for <Link href="/blog/web-performance-optimization-speed" className="hover:underline" style={{ color: commerceBlue }}>mobile-first</Link> users who represent 65%+ of ecommerce traffic. We optimize images, leverage browser caching, minimize JavaScript, and implement lazy loading to achieve sub-2-second load times - critical for ecommerce website optimization and Google&apos;s mobile-first indexing.</>,
+            description: <>Ensuring seamless, fast, responsive shopping experiences for <Link href="/blog/web-performance-optimization-speed" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>mobile-first</Link> users who represent 65%+ of ecommerce traffic. We optimize images, leverage browser caching, minimize JavaScript, and implement lazy loading to achieve sub-2-second load times - critical for ecommerce website optimization and Google&apos;s mobile-first indexing.</>,
             color: "#10B981",
         },
         {
             icon: TrendingUp,
             title: "Ecommerce Conversion Rate Optimization (CRO)",
-            description: <>Aligning user experience with SEO to not just get traffic, but drive sales. We A/B test product page layouts, optimize call-to-action buttons, streamline checkout flows, and reduce cart abandonment. Our ecommerce <Link href="/services/performance-marketing" className="hover:underline" style={{ color: commerceBlue }}>conversion rate optimization</Link> strategy integrates heat mapping, session recording, and user behavior analysis to maximize revenue per visitor.</>,
+            description: <>Aligning user experience with SEO to not just get traffic, but drive sales. We A/B test product page layouts, optimize call-to-action buttons, streamline checkout flows, and reduce cart abandonment. Our ecommerce <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>conversion rate optimization</Link> strategy integrates heat mapping, session recording, and user behavior analysis to maximize revenue per visitor.</>,
             color: "#EF4444",
         },
     ];
@@ -84,7 +84,7 @@ export default function ServiceOverview() {
                             style={{
                                 backgroundColor: `${commerceBlue}10`,
                                 borderColor: `${commerceBlue}30`,
-                                color: commerceBlue,
+                                color: "var(--accent-sky-text)",
                             }}
                         >
                             Our Services
@@ -94,7 +94,7 @@ export default function ServiceOverview() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Comprehensive Ecommerce SEO <span style={{ color: commerceBlue }}>Solutions</span>
+                        Comprehensive Ecommerce SEO <span style={{ color: "var(--accent-sky-text)" }}>Solutions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"

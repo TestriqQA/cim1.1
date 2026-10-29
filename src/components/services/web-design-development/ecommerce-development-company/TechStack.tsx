@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ShoppingCart, CreditCard, Package, BarChart3, Mail, Search } from "lucide-react";
 import Image from "next/image";
@@ -73,7 +71,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#00b5ca" }}>E-commerce</span> Technology Stack
+                        <span style={{ color: "var(--accent-cyan-text)" }}>E-commerce</span> Technology Stack
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>

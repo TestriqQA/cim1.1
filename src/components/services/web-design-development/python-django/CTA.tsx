@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(255, 212, 59, 0.3)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" style={{ color: "#FFD43B" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#306998" }}>
+                        <Code2 className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Free Django Consultation
                         </span>
                     </div>

@@ -18,7 +18,7 @@ export default function ServiceOverview() {
         {
             icon: Smartphone,
             title: "Android Phone Apps",
-            description: <><span className="text-inherit">Custom native Android apps built with Kotlin and </span><Link href="/services/web-design-development/java-spring-boot" className="text-[#3DDC84] hover:underline">Java</Link> that leverage device-specific features like cameras, GPS, and sensors. We ensure silky smooth 120Hz scrolling and instant load times.</>,
+            description: <><span className="text-inherit">Custom native Android apps built with Kotlin and </span><Link href="/services/web-design-development/java-spring-boot" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">Java</Link> that leverage device-specific features like cameras, GPS, and sensors. We ensure silky smooth 120Hz scrolling and instant load times.</>,
             gradient: "from-[#3DDC84] to-[#78C257]",
             shadowColor: "rgba(61, 220, 132, 0.4)",
         },
@@ -39,7 +39,7 @@ export default function ServiceOverview() {
         {
             icon: Tv,
             title: "Android TV and OTT Apps",
-            description: <><span className="text-inherit">Capture the living room with immersive Android TV app development solutions. We build </span><Link href="/services/web-design-development/entertainment-media" className="text-[#3DDC84] hover:underline">streaming platforms</Link> using the Leanback library for intuitive remote-control navigation.</>,
+            description: <><span className="text-inherit">Capture the living room with immersive Android TV app development solutions. We build </span><Link href="/services/web-design-development/entertainment-media" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">streaming platforms</Link> using the Leanback library for intuitive remote-control navigation.</>,
             gradient: "from-[#3DDC84] to-[#073042]",
             shadowColor: "rgba(61, 220, 132, 0.4)",
         },
@@ -52,7 +52,7 @@ export default function ServiceOverview() {
         },
         {
             icon: Sparkles,
-            title: <Link href="/services/seo-services" className="hover:text-[#3DDC84] transition-colors">App Store Optimization (ASO)</Link>,
+            title: <Link href="/services/seo-services" className="hover:text-[var(--accent-green-text)] transition-colors">App Store Optimization (ASO)</Link>,
             description: "Our data-driven ASO services ensure your app ranks higher for high-intent keywords. We optimize titles, descriptions, and visuals significantly improving organic downloads.",
             gradient: "from-[#073042] to-[#78C257]",
             shadowColor: "rgba(7, 48, 66, 0.4)",
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(61, 220, 132, 0.1), rgba(120, 194, 87, 0.1))",
-                                color: "#3DDC84",
+                                color: "var(--accent-green-text)",
                             }}
                         >
                             Our Services

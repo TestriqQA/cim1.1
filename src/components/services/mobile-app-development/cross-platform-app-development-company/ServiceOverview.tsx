@@ -18,7 +18,7 @@ export default function ServiceOverview() {
         {
             icon: Smartphone,
             title: "Custom Cross-Platform Application Solutions",
-            description: <><span className="text-inherit">We design and engineer bespoke mobile applications that operate seamlessly on multiple operating systems. Our single codebase app development for </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#667eea] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#667eea] hover:underline">Android</Link> ensures consistent brand identity and user experience (UX) across all devices.</>,
+            description: <><span className="text-inherit">We design and engineer bespoke mobile applications that operate seamlessly on multiple operating systems. Our single codebase app development for </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Android</Link> ensures consistent brand identity and user experience (UX) across all devices.</>,
             gradient: "from-[#667eea] to-[#764ba2]",
             shadowColor: "rgba(102, 126, 234, 0.4)",
         },
@@ -46,14 +46,14 @@ export default function ServiceOverview() {
         {
             icon: Palette,
             title: "Cross-Platform App Maintenance and Support",
-            description: <><span className="text-inherit">Our commitment doesn&apos;t end at launch. We provide 24/7 cross-platform app </span><Link href="/services/additional-support-services" className="text-[#667eea] hover:underline">maintenance and support</Link> with strict SLAs. From OS updates (iOS 19/Android 16 ready) to security patches and performance tuning, we keep your app running at peak efficiency.</>,
+            description: <><span className="text-inherit">Our commitment doesn&apos;t end at launch. We provide 24/7 cross-platform app </span><Link href="/services/additional-support-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">maintenance and support</Link> with strict SLAs. From OS updates (iOS 19/Android 16 ready) to security patches and performance tuning, we keep your app running at peak efficiency.</>,
             gradient: "from-[#667eea] to-[#00d4ff]",
             shadowColor: "rgba(102, 126, 234, 0.4)",
         },
         {
             icon: Rocket,
             title: "Custom API Integration for Multi-Platform Apps",
-            description: <><span className="text-inherit">Unlock the full potential of your app with custom API integration for multi-platform apps. We securely connect your mobile solutions to </span><Link href="/services/web-design-development/saas-development-services" className="text-[#667eea] hover:underline">cloud backends</Link>, payment gateways, ERPs, and third-party services, ensuring real-time data synchronization.</>,
+            description: <><span className="text-inherit">Unlock the full potential of your app with custom API integration for multi-platform apps. We securely connect your mobile solutions to </span><Link href="/services/web-design-development/saas-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">cloud backends</Link>, payment gateways, ERPs, and third-party services, ensuring real-time data synchronization.</>,
             gradient: "from-[#764ba2] to-[#00d4ff]",
             shadowColor: "rgba(118, 75, 162, 0.4)",
         },
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
-                                color: "#667eea",
+                                color: "var(--accent-indigo-text)",
                             }}
                         >
                             Our Services

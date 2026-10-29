@@ -15,6 +15,19 @@ import Link from "next/link";
 export default function WhyChooseUs() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+    // Theme-aware TEXT variants of the per-reason accent hues below.
+    // The raw hues stay in the data (they drive gradients/borders/icons/tints);
+    // this map is applied ONLY where a hue colors text.
+    const accentTextMap: Record<string, string> = {
+        "#E1306C": "var(--accent-pink-text)",
+        "#C13584": "var(--accent-violet-text)",
+        "#833AB4": "var(--accent-violet-text)",
+        "#F77737": "var(--accent-orange-text)",
+        "#405DE6": "var(--accent-indigo-text)",
+        "#FD1D1D": "var(--accent-red-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex] ?? hex;
+
     const reasons = [
         {
             icon: Award,
@@ -31,7 +44,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Authoritativeness (A)",
-            description: <>Recognized leaders in <Link href="/services/social-media-marketing-services" className="hover:underline text-pink-500">Social Media Marketing</Link> with certifications from Meta Blueprint and a 95% success rate.</>,
+            description: <>Recognized leaders in <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Social Media Marketing</Link> with certifications from Meta Blueprint and a 95% success rate.</>,
             color: "#833AB4",
         },
         {
@@ -49,7 +62,7 @@ export default function WhyChooseUs() {
         {
             icon: Users,
             title: "Industry-Specific Elite",
-            description: <>Custom blueprints for E-commerce, B2B, Luxury, and <Link href="/services/web-design-development/healthcare-portals" className="hover:underline text-pink-500">Healthcare</Link> industries that deliver precision targeting.</>,
+            description: <>Custom blueprints for E-commerce, B2B, Luxury, and <Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Healthcare</Link> industries that deliver precision targeting.</>,
             color: "#FD1D1D",
         },
     ];
@@ -74,7 +87,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#E1306C" }} />
-                        <span className="text-sm font-medium" style={{ color: "#E1306C" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -131,7 +144,7 @@ export default function WhyChooseUs() {
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? reason.color : "var(--foreground)" }}>
+                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? textAccent(reason.color) : "var(--foreground)" }}>
                                         {reason.title}
                                     </h3>
                                     <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

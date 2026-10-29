@@ -105,7 +105,7 @@ export default function AboutPage() {
     );
 
     return (
-        <div className="bg-white" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}>
+        <main className="bg-white" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
@@ -118,6 +118,6 @@ export default function AboutPage() {
             <Impact />
             <LeadJourney />
             <CTA />
-        </div>
+        </main>
     );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { withRupeeSign } from "@/components/RupeeSign";
 
 // Phone input with country codes
 import PhoneInput from 'react-phone-number-input';
@@ -34,6 +35,15 @@ const BRAND = {
     primary: "#4b277a",
     secondary: "#97288e",
     accent: "#fab900",
+};
+
+// BRAND stays vivid for backgrounds, borders and gradients. TEXT uses the
+// theme-aware tokens: #4b277a is only 1.55:1 on the dark background and
+// #fab900 under 2:1 on the light one.
+const BRAND_TEXT = {
+    primary: "var(--accent-violet-text)",
+    secondary: "var(--brand-purple-text)",
+    accent: "var(--accent-amber-text)",
 };
 
 export default function GetInTouchClient() {
@@ -265,7 +275,7 @@ export default function GetInTouchClient() {
                                 </div>
                                 <span
                                     className="text-xs sm:text-sm mt-2 font-medium"
-                                    style={{ color: currentStep === step ? BRAND.primary : "var(--secondary-text)" }}
+                                    style={{ color: currentStep === step ? BRAND_TEXT.primary : "var(--secondary-text)" }}
                                 >
                                     {step === 1 ? "Basic Details" : step === 2 ? "Goals & Budget" : "Confirmation"}
                                 </span>
@@ -276,7 +286,7 @@ export default function GetInTouchClient() {
                     {currentStep === 1 && (
                         <div className="animate-fade-in">
                             <div className="text-center mb-8">
-                                <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: BRAND.primary }}>
+                                <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: BRAND_TEXT.primary }}>
                                     Let&apos;s understand what you&apos;re building
                                 </h2>
                                 <p style={{ color: "var(--secondary-text)" }} className="max-w-xl mx-auto">
@@ -288,7 +298,7 @@ export default function GetInTouchClient() {
                                 <input ref={hpRef} type="text" name="hp_field" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
                                 <div>
                                     <label className="block text-sm font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        We love knowing who we&apos;re speaking to! <span style={{ color: BRAND.accent }}>*</span>
+                                        We love knowing who we&apos;re speaking to! <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <div className="flex flex-col md:flex-row gap-8">
                                         <div className="flex flex-col w-full md:w-1/2">
@@ -326,7 +336,7 @@ export default function GetInTouchClient() {
 
                                 <div>
                                     <label className="block text-sm font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        How can we reach you? <span style={{ color: BRAND.accent }}>*</span>
+                                        How can we reach you? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <p className="text-xs mb-2" style={{ color: "var(--secondary-text)" }}>
                                         Only for sharing your strategy plan. No spam ever.
@@ -335,7 +345,7 @@ export default function GetInTouchClient() {
                                     <div className="flex flex-col md:flex-row gap-8">
                                         <div className="flex flex-col w-full md:w-1/2">
                                             <label className="block text-sm font-medium mb-1" style={{ color: "var(--secondary-text)" }}>
-                                                Email <span style={{ color: BRAND.accent }}>*</span>
+                                                Email <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                             </label>
                                             <input
                                                 type="email"
@@ -353,7 +363,7 @@ export default function GetInTouchClient() {
                                         </div>
                                         <div className="flex flex-col w-full md:w-1/2">
                                             <label className="block text-sm font-medium mb-1" style={{ color: "var(--secondary-text)" }}>
-                                                Phone / WhatsApp <span style={{ color: BRAND.accent }}>*</span>
+                                                Phone / WhatsApp <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                             </label>
                                             <div
                                                 className="phone-input-wrapper"
@@ -376,10 +386,11 @@ export default function GetInTouchClient() {
                                         </div>
                                     </div>
 
-                                    <label className="block text-sm font-semibold mt-5 py-2" style={{ color: "var(--foreground)" }}>
-                                        How did you find us? <span style={{ color: BRAND.accent }}>*</span>
+                                    <label htmlFor="referral" className="block text-sm font-semibold mt-5 py-2" style={{ color: "var(--foreground)" }}>
+                                        How did you find us? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <select
+                                        id="referral"
                                         value={formData.referral}
                                         onChange={(e) => setFormData({ ...formData, referral: e.target.value })}
                                         className="w-full px-4 py-3 rounded-xl border-2 outline-none transition-all cursor-pointer focus:ring-4"
@@ -422,7 +433,7 @@ export default function GetInTouchClient() {
                             <div className="space-y-8">
                                 <div>
                                     <label className="block text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        What are you looking to grow or fix right now? <span style={{ color: BRAND.accent }}>*</span>
+                                        What are you looking to grow or fix right now? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
                                         Pick whichever feels closest. We&apos;ll figure the rest out together.
@@ -464,7 +475,7 @@ export default function GetInTouchClient() {
 
                                 <div>
                                     <label className="block text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        What&apos;s your main goal or challenge? <span style={{ color: BRAND.accent }}>*</span>
+                                        What&apos;s your main goal or challenge? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
                                         This gives us context before suggesting anything.
@@ -485,7 +496,7 @@ export default function GetInTouchClient() {
 
                                 <div>
                                     <label className="block text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        Your monthly budget range? <span style={{ color: BRAND.accent }}>*</span>
+                                        Your monthly budget range? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
                                         This will help us match the right plan.
@@ -521,7 +532,7 @@ export default function GetInTouchClient() {
                                                     </div>
                                                     <div>
                                                         <div className="font-semibold" style={{ color: "var(--foreground)" }}>{option.title}</div>
-                                                        <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{option.desc}</div>
+                                                        <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{withRupeeSign(option.desc)}</div>
                                                     </div>
                                                 </div>
                                             </label>
@@ -532,7 +543,7 @@ export default function GetInTouchClient() {
 
                                 <div>
                                     <label className="block text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
-                                        How soon do you want to get started? <span style={{ color: BRAND.accent }}>*</span>
+                                        How soon do you want to get started? <span style={{ color: BRAND_TEXT.accent }}>*</span>
                                     </label>
                                     <div className="space-y-3">
                                         {timelineOptions.map((option) => (
@@ -594,13 +605,13 @@ export default function GetInTouchClient() {
                     {currentStep === 3 && (
                         <div className="animate-fade-in text-center py-8">
                             <div className="text-6xl mb-6 animate-scale-in">🎉</div>
-                            <h2 className="text-3xl font-bold mb-4" style={{ color: BRAND.primary }}>
+                            <h2 className="text-3xl font-bold mb-4" style={{ color: BRAND_TEXT.primary }}>
                                 Thanks for sharing this!
                             </h2>
                             <p className="text-lg mb-2" style={{ color: "var(--secondary-text)" }}>
                                 Someone from our team will reach out with a tailored plan for your goals.
                             </p>
-                            <p className="text-lg font-semibold mb-4" style={{ color: BRAND.primary }}>
+                            <p className="text-lg font-semibold mb-4" style={{ color: BRAND_TEXT.primary }}>
                                 No spam. No pressure. Just real solutions.
                             </p>
                             <div className="mb-8 p-4 rounded-xl" style={{ background: `linear-gradient(90deg, ${BRAND.primary}15, ${BRAND.secondary}15)` }}>
@@ -611,7 +622,7 @@ export default function GetInTouchClient() {
                                     </p>
                                 ) : (
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                        Redirecting automatically in <span className="font-bold text-lg" style={{ color: BRAND.primary }}>{countdown}</span> seconds...
+                                        Redirecting automatically in <span className="font-bold text-lg" style={{ color: BRAND_TEXT.primary }}>{countdown}</span> seconds...
                                     </p>
                                 )}
                             </div>
@@ -632,23 +643,12 @@ export default function GetInTouchClient() {
                                     className="block p-4 border-2 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
                                     style={{
                                         borderColor: BRAND.primary,
-                                        color: BRAND.primary,
+                                        color: BRAND_TEXT.primary,
                                         background: `linear-gradient(90deg, ${BRAND.primary}08, ${BRAND.secondary}08)`,
                                     }}
                                 >
                                     👉 Learn more about us here
                                 </a>
-                                <button
-                                    onClick={() => alert("Company Profile link would go here")}
-                                    className="block w-full p-4 border-2 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1"
-                                    style={{
-                                        borderColor: BRAND.primary,
-                                        color: BRAND.primary,
-                                        background: `linear-gradient(90deg, ${BRAND.primary}08, ${BRAND.secondary}08)`,
-                                    }}
-                                >
-                                    📄 View Company Profile
-                                </button>
                             </div>
 
                             <div className="flex justify-center flex-col sm:flex-row gap-4">
@@ -687,7 +687,7 @@ export default function GetInTouchClient() {
                         >
                             <div className="text-white text-5xl">✓</div>
                         </div>
-                        <h2 className="text-3xl font-bold mb-2" style={{ color: BRAND.primary }}>Success!</h2>
+                        <h2 className="text-3xl font-bold mb-2" style={{ color: BRAND_TEXT.primary }}>Success!</h2>
                         <p style={{ color: "var(--secondary-text)" }}>Redirecting you to our homepage...</p>
                     </div>
                 </div>

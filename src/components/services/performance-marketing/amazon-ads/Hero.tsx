@@ -24,12 +24,12 @@ export default function Hero() {
             {/* Animated Background - Amazon style subtle mesh */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div
-                    className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: amazonOrange }}
+                    className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] rounded-full blur-3xl animate-pulse"
+                    style={{ backgroundColor: `${amazonOrange}0d` }}
                 />
                 <div
-                    className="absolute top-[30%] -left-[10%] w-[600px] h-[600px] rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: amazonBlue }}
+                    className="absolute top-[30%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl"
+                    style={{ backgroundColor: `${amazonBlue}0d` }}
                 />
             </div>
 
@@ -45,7 +45,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: amazonOrange }}>Amazon Ads</span>
+                            <span style={{ color: "var(--accent-orange-text)" }}>Amazon Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -57,7 +57,7 @@ export default function Hero() {
                             }}
                         >
                             <ShoppingCart className="w-4 h-4" style={{ color: amazonOrange }} />
-                            <span className="text-sm font-semibold" style={{ color: amazonOrange }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                                 <Link href="/services/seo-services/ecommerce-seo-services" className="hover:underline">E-commerce Growth Partners</Link>
                             </span>
                         </div>
@@ -71,7 +71,7 @@ export default function Hero() {
                                 <span
                                     className="relative z-10 text-transparent bg-clip-text"
                                     style={{
-                                        color: amazonOrange
+                                        color: "var(--accent-orange-text)"
                                     }}
                                 >
                                     Marketplace

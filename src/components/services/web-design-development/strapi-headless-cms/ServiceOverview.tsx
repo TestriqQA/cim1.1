@@ -39,21 +39,21 @@ export default function ServiceOverview() {
         {
             icon: Link2,
             title: "Frontend Integration",
-            description: <><span className="text-inherit">Seamlessly connect Strapi with React, </span><Link href="/services/web-design-development/nextjs-development-services" className="text-[#c084fc] hover:underline">Next.js</Link>, Vue, Nuxt, or any frontend framework of your choice.</>,
+            description: <><span className="text-inherit">Seamlessly connect Strapi with React, </span><Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Next.js</Link>, Vue, Nuxt, or any frontend framework of your choice.</>,
             gradient: "from-fuchsia-500 to-purple-400",
             shadowColor: "rgba(192, 132, 252, 0.4)",
         },
         {
             icon: RefreshCcw,
             title: "Migration Services",
-            description: <><span className="text-inherit">Migrate from </span><Link href="/services/web-design-development/wordpress-development-services" className="text-[#ec4899] hover:underline">WordPress</Link>, <Link href="/services/web-design-development/contentful-headless-cms" className="text-[#ec4899] hover:underline">Contentful</Link>, or legacy CMS platforms to Strapi with zero data loss.</>,
+            description: <><span className="text-inherit">Migrate from </span><Link href="/services/web-design-development/wordpress-development-services" className="text-[var(--accent-pink-text)] hover:underline underline underline-offset-2">WordPress</Link>, <Link href="/services/web-design-development/contentful-headless-cms" className="text-[var(--accent-pink-text)] hover:underline underline underline-offset-2">Contentful</Link>, or legacy CMS platforms to Strapi with zero data loss.</>,
             gradient: "from-pink-500 to-fuchsia-400",
             shadowColor: "rgba(236, 72, 153, 0.4)",
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#4945FF] transition-colors">Support & Maintenance</Link>,
-            description: <><span className="text-inherit">Ongoing support with security updates, </span><Link href="/blog/web-performance-optimization-speed" className="text-[#8b5cf6] hover:underline">performance optimization</Link>, and 24/7 technical assistance.</>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-indigo-text)] transition-colors">Support & Maintenance</Link>,
+            description: <><span className="text-inherit">Ongoing support with security updates, </span><Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">performance optimization</Link>, and 24/7 technical assistance.</>,
             gradient: "from-violet-500 to-pink-400",
             shadowColor: "rgba(139, 92, 246, 0.4)",
         },
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(73, 69, 255, 0.1), rgba(47, 45, 200, 0.1))",
-                                color: "#4945FF",
+                                color: "var(--accent-indigo-text)",
                             }}
                         >
                             Our Services

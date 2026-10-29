@@ -19,6 +19,17 @@ export interface ProductFAQ {
   answer: string;
 }
 
+// A single commercial offer, emitted as a schema.org Offer in the product
+// page's SoftwareApplication node. Products list every price they actually
+// publish; a product that publishes none simply omits `offers` and the node
+// carries no price at all, rather than inheriting another product's terms.
+export interface ProductOffer {
+  price: string;
+  priceCurrency: string; // ISO 4217, e.g. "INR", "USD"
+  description?: string;
+  url?: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -27,6 +38,7 @@ export interface Product {
   description: string;
   longDescription: string;
   icon: string; // lucide icon name
+  logo: string,
   color: string; // gradient CSS
   accentColor: string; // single brand color
   features: ProductFeature[];
@@ -35,9 +47,46 @@ export interface Product {
   faqs: ProductFAQ[];
   stats: { label: string; value: string }[];
   supportUrl: string;
-  privacyUrl: string;
+  // Optional: a product whose operator has not published a privacy policy links
+  // to no policy at all rather than to a page we invented for them. A privacy
+  // policy is a binding statement about data handling — it is not ours to write
+  // on a product's behalf. ProductLinks hides the button when this is absent.
+  privacyUrl?: string;
   demoVideoUrl?: string; // Optional URL for product video demo
   extensionUrl?: string; // Optional Chrome Web Store / Edge Add-ons URL for browser-extension products
+  // Canonical home of a product that lives on its own domain. When set, the
+  // hero and closing CTAs point here instead of /contact, so the primary
+  // action is "use the product" rather than "email the agency".
+  externalUrl?: string;
+  // SoftwareApplication JSON-LD, per product. Both used to be hard-coded in
+  // the route to ChimeGenius's shape — a browser extension on a free plan —
+  // which silently published those commercial terms for every other product.
+  // Omit `offers` when a product publishes no price we can cite.
+  applicationCategory?: string; // schema.org, e.g. "WebApplication"
+  offers?: ProductOffer[];
+  // Currently published release, e.g. "1.2.0". Rendered as a pill in the hero
+  // and emitted as `softwareVersion` in the SoftwareApplication JSON-LD, so both
+  // read from this single value. Omit for products that are not versioned.
+  version?: string;
+
+  // --- Optional SEO / page-copy overrides -----------------------------------
+  // When omitted, the page falls back to its derived defaults (meta title built
+  // from name + tagline) and to the components' built-in section headings, so
+  // products that don't set these render exactly as before.
+  seoTitle?: string;          // explicit <title>, replaces "{name} — {tagline} | Cinute InfoMedia"
+  seoDescription?: string;    // explicit meta description, replaces `description`
+  heroHeadline?: string;      // <h1> — keyword-led headline instead of the brand name
+  heroSubheadline?: string;   // supporting line directly under the <h1>
+  heroBody?: string[];        // hero paragraphs, replaces `longDescription` in the hero
+  ctaPrimaryLabel?: string;   // hero primary button label
+  ctaSecondaryLabel?: string; // hero secondary button label
+  featuresHeading?: string;
+  featuresIntro?: string;
+  howItWorksHeading?: string;
+  faqHeading?: string;
+  closingCtaHeading?: string;
+  closingCtaBody?: string;
+  closingCtaLabel?: string;
 }
 
 // ============================================================================
@@ -50,303 +99,455 @@ export const products: Product[] = [
     name: "ChimeGenius AI Pro",
     slug: "chimegenius-ai-pro",
     tagline: "Smart Comment & Reply Generator",
+    logo: "/images/chimegenius-ai-pro-logo.svg",
     description:
-      "Generate intelligent, context-aware comments and replies on any social media post instantly. Choose your tone — bold, professional, funny, or custom — and engage authentically at scale with AI-powered precision.",
+      "Generate smart, context-aware comments & replies on LinkedIn, Instagram, Facebook, X and YouTube instantly. Free AI Chrome extension — try it now.",
     longDescription:
-      "ChimeGenius AI Pro is an AI-powered browser extension and platform that revolutionizes how you engage on social media. Simply click on any comment box across LinkedIn, Instagram, Facebook, X (Twitter), or YouTube — a smart toolbar appears instantly, letting you generate perfectly crafted comments and replies in seconds. Choose from multiple tones like professional, bold, funny, supportive, or witty, and the AI analyzes the original post's context to produce relevant, human-sounding responses. Edit the generated message directly in the comment box before posting. Whether you're a creator building community, a brand manager engaging followers, or a professional networking on LinkedIn, ChimeGenius AI Pro saves hours while keeping your voice authentic.",
-    icon: "MessageCircle",
+      "ChimeGenius AI Pro is an AI comment generator and browser extension that helps you write smarter replies on LinkedIn, Instagram, Facebook, X (Twitter), and YouTube in seconds. Click any comment box and a smart AI toolbar appears instantly — generating relevant, human-sounding comments based on the original post's context. Choose from tones like professional, bold, funny, supportive, or witty, then edit the AI-generated comment before posting. Whether you're a creator, a brand manager, or a professional growing your LinkedIn presence, this AI reply generator helps you engage authentically at scale — without spending hours typing.",
+
+    // --- SEO / page copy (from the ChimeGenius AI Pro SEO rewrite) ----------
+    seoTitle: "ChimeGenius AI Pro – AI Comment Generator Chrome Extension",
+    seoDescription:
+      "Generate smart, context-aware comments & replies on LinkedIn, Instagram, Facebook, X and YouTube instantly. Free AI Chrome extension — try it now.",
+    heroHeadline: "AI Comment & Reply Generator for LinkedIn, Instagram & More",
+    heroSubheadline:
+      "ChimeGenius AI Pro — the AI-powered Chrome extension for smarter social media engagement",
+    heroBody: [
+      "ChimeGenius AI Pro is an AI comment generator and browser extension that helps you write smarter replies on LinkedIn, Instagram, Facebook, X (Twitter), and YouTube in seconds. Click any comment box and a smart AI toolbar appears instantly — generating relevant, human-sounding comments based on the original post's context.",
+      "Choose from tones like professional, bold, funny, supportive, or witty, then edit the AI-generated comment before posting. Whether you're a creator, a brand manager, or a professional growing your LinkedIn presence, this AI reply generator helps you engage authentically at scale — without spending hours typing.",
+    ],
+    ctaPrimaryLabel: "Add to Chrome — Free AI Comment Generator",
+    ctaSecondaryLabel: "Schedule a Demo",
+    featuresHeading: "AI Comment Generator Features Built for Social Media Growth",
+    featuresIntro:
+      "Everything you need to automate social engagement — powered by advanced AI models and built for speed.",
+    howItWorksHeading: "How the AI Comment Generator Works",
+    faqHeading: "ChimeGenius AI Pro FAQs",
+    closingCtaHeading: "Try the Free AI Comment Generator Today",
+    closingCtaBody:
+      "Join thousands of creators, brands, and professionals using ChimeGenius AI Pro to save time and grow their social media presence with AI-powered comments and replies.",
+    closingCtaLabel: "Get Started Free",
+
+    icon: "MessageSquare",
     color: "bg-gradient-to-br from-[#FF6B35] to-[#F72585]",
     accentColor: "#F72585",
     features: [
-      { icon: "Sparkles", title: "AI-Powered Comment Generation", description: "Analyze post context — text, images, hashtags, and sentiment — to generate highly relevant, natural-sounding comments and replies in one click." },
-      { icon: "Palette", title: "Multiple Tone Styles", description: "Choose from Bold, Professional, Funny, Supportive, Witty, Casual, Thought-Provoking, or create your own custom tone presets for consistent brand voice." },
-      { icon: "MousePointerClick", title: "Click-to-Activate Toolbar", description: "Simply click on any comment box on supported platforms and the ChimeGenius toolbar appears automatically — no navigation, no switching tabs." },
-      { icon: "PenLine", title: "Edit Before Posting", description: "Every generated comment is fully editable. Refine the AI suggestion, add personal touches, or merge multiple ideas before hitting post." },
-      { icon: "Globe", title: "Multi-Platform Support", description: "Works seamlessly across LinkedIn, Instagram, Facebook, X (Twitter), YouTube, Reddit, and more. One tool for all your social engagement." },
-      { icon: "Zap", title: "Instant Generation", description: "Powered by advanced LLMs with sub-second response times. Generate, review, and post comments faster than typing them manually." },
+      { icon: "Sparkles", title: "AI-Powered Comment Generation", description: "Analyzes post context — text, images, hashtags, and sentiment — to generate relevant, natural-sounding comments and replies in one click." },
+      { icon: "Wand2", title: "Custom Tone AI Comment Styles", description: "Choose Bold, Professional, Funny, Supportive, Witty, Casual, or Thought-Provoking tones, or create your own custom tone preset for consistent brand voice." },
+      { icon: "MousePointer2", title: "One-Click AI Comment Toolbar", description: "Click any comment box on a supported platform and the ChimeGenius AI toolbar appears automatically — no tab-switching required." },
+      { icon: "FileText", title: "Editable AI-Generated Replies", description: "Every AI comment is fully editable. Refine the suggestion, add a personal touch, or rewrite it entirely before posting." },
+      { icon: "Globe", title: "Multi-Platform Comment Generator", description: "Works across LinkedIn, Instagram, Facebook, X (Twitter), YouTube, Reddit, and more — one AI tool for all your social engagement." },
+      { icon: "Zap", title: "Instant AI Reply Generation", description: "Built on advanced LLMs with sub-second response times — generate, review, and post faster than typing manually." },
     ],
     techStack: ["React", "TypeScript", "Chrome Extension API", "OpenAI", "Claude AI", "Node.js", "Redis", "PostgreSQL", "Vercel", "TailwindCSS"],
     process: [
-      { step: 1, title: "Install the Extension", description: "Add ChimeGenius AI Pro to your browser from the Chrome Web Store or Edge Add-ons. One-click installation, zero configuration needed." },
-      { step: 2, title: "Click Any Comment Box", description: "Navigate to any social media post and click on the comment or reply box. The ChimeGenius toolbar appears automatically, ready to assist." },
-      { step: 3, title: "Choose Your Tone & Generate", description: "Select your preferred tone — Professional, Funny, Bold, Supportive, or Custom. Hit generate and the AI crafts a context-aware comment instantly." },
-      { step: 4, title: "Edit & Post", description: "Review the AI-generated comment, make any edits you like, add your personal touch, and post. Engage authentically at greater speed." },
+      { step: 1, title: "Install the Chrome Extension", description: "Add ChimeGenius AI Pro from the Chrome Web Store or Edge Add-ons. One-click install, zero setup." },
+      { step: 2, title: "Click Any Comment Box", description: "Go to any LinkedIn, Instagram, or X post and click the comment field. The AI toolbar appears automatically." },
+      { step: 3, title: "Choose a Tone & Generate", description: "Pick Professional, Funny, Bold, Supportive, or Custom, then generate a context-aware comment instantly." },
+      { step: 4, title: "Edit & Post", description: "Review, personalize, and post your AI-generated reply in seconds." },
     ],
     faqs: [
-      { question: "Which social media platforms does ChimeGenius AI Pro support?", answer: "ChimeGenius AI Pro works on LinkedIn, Instagram, Facebook, X (Twitter), YouTube, Reddit, and is continuously expanding. The browser extension integrates directly into the native comment boxes of each platform." },
-      { question: "Can I customize the tone and style of generated comments?", answer: "Absolutely! Choose from pre-built tones like Professional, Bold, Funny, Supportive, Witty, and Casual. You can also create unlimited custom tone presets with specific instructions for your brand voice." },
-      { question: "Does the AI read the original post before generating a comment?", answer: "Yes — ChimeGenius AI analyzes the full context of the post including text content, hashtags, mentions, and sentiment before generating a relevant and natural response." },
-      { question: "Can I edit the generated comment before posting?", answer: "Of course! Every generated comment appears directly in the comment box where you can freely edit, refine, or completely rewrite it before posting. You're always in control." },
-      { question: "Is my data safe? Does ChimeGenius store my comments?", answer: "We take privacy seriously. ChimeGenius processes post context only for generation purposes and does not permanently store the content of posts you interact with. See our Privacy Policy for full details." },
-      { question: "Is there a free plan available?", answer: "Yes! We offer a generous free tier with a daily comment generation limit. Pro and Business plans unlock unlimited generations, custom tones, team features, and priority AI models." },
+      { question: "What social media platforms does the AI comment generator support?", answer: "ChimeGenius AI Pro works on LinkedIn, Instagram, Facebook, X (Twitter), YouTube, and Reddit, with more platforms added regularly. The Chrome extension integrates directly into each platform's native comment box." },
+      { question: "Can I customize the tone of AI-generated comments?", answer: "Yes — choose from Professional, Bold, Funny, Supportive, Witty, or Casual tones, or create unlimited custom tone presets for your brand voice." },
+      { question: "Does the AI read the post before generating a comment?", answer: "Yes. ChimeGenius AI analyzes the full post context — text, hashtags, mentions, and sentiment — before generating a relevant, natural response." },
+      { question: "Can I edit AI-generated comments before posting?", answer: "Absolutely. Every comment appears in the comment box, fully editable, so you stay in control before you post." },
+      { question: "Is my data safe with ChimeGenius AI Pro?", answer: "Yes. ChimeGenius processes post context only for generation and does not permanently store post content. See our Privacy Policy for details." },
+      { question: "Is there a free AI comment generator plan?", answer: "Yes — a free tier is available with a daily generation limit. Pro and Business plans unlock unlimited AI comment generation, custom tones, and team features." },
     ],
     stats: [
-      { label: "Comments Generated", value: "At scale" },
+      { label: "Comments Generated", value: "At Scale" },
       { label: "Active Users", value: "Growing" },
-      { label: "Platforms Supported", value: "7+" },
-      { label: "Avg Time Saved", value: "Significant" },
+      { label: "Social Platforms Supported", value: "7+" },
+      { label: "Avg. Time Saved", value: "Significant" },
     ],
     supportUrl: "/products/chimegenius-ai-pro/support",
     privacyUrl: "/products/chimegenius-ai-pro/privacy-policy",
     extensionUrl: "https://chromewebstore.google.com/detail/pnolpjljedjpmbjimpkhhimapgffidbk?utm_source=item-share-cb",
+    version: "1.2.0",
+    // Previously hard-coded in the product route for EVERY product. It is
+    // ChimeGenius's own free-tier offer, so it lives on ChimeGenius.
+    applicationCategory: "BrowserApplication",
+    offers: [
+      {
+        price: "0",
+        priceCurrency: "USD",
+        description:
+          "Free plan with a daily generation limit. Pro and Business plans unlock unlimited generations, custom tones, and team features.",
+        url: "https://www.cinuteinfomedia.com/contact",
+      },
+    ],
   },
+  // ==========================================================================
+  // Kruti.io — ATTRIBUTION IS LOAD-BEARING HERE.
+  //
+  // Kruti.io is built and operated by Cinute Digital Pvt. Ltd., Mumbai — a
+  // sibling company in the Cinute group, NOT Cinute InfoMedia. The string
+  // "Cinute InfoMedia" appears nowhere on kruti.io. CIM lists this product;
+  // it does not operate it, bill for it, or answer its support. No copy in
+  // this entry may imply otherwise.
+  //
+  // Every claim below is sourced from Kruti.io's own published pages (landing,
+  // /terms, /privacy, /refund, /disclaimer). Deliberate omissions, each of
+  // which would be a false statement if added:
+  //   - There is NO free plan. There is a 7-day free trial, then one paid plan.
+  //   - The rupee and dollar prices are two separately quoted prices, not an FX
+  //     conversion. Never write one as an approximation of the other.
+  //   - No outcome is promised. Their /disclaimer rules out guaranteeing
+  //     likes, impressions, follower growth, leads or business results, so all
+  //     copy here is capability-framed.
+  //   - No LinkedIn partnership or endorsement. The API is official; the
+  //     relationship is not — Kruti.io is an independent product.
+  //   - The AI models are exactly "Google Gemini 2.5 Pro" and "Google Imagen 3".
+  //     Google is the only AI provider named anywhere on the product.
+  // ==========================================================================
   {
-    id: "testriq-qa",
-    name: "TestriqQA",
-    slug: "testriq-qa",
-    tagline: "AI-Powered QA & Testing Automation",
+    id: "kruti-io",
+    name: "Kruti.io",
+    slug: "kruti-io",
+    tagline: "AI-Powered LinkedIn Content Platform",
+    logo: "/images/kruti-io-logo.webp",
     description:
-      "Revolutionize your software testing with intelligent automation. TestriqQA uses AI to detect bugs, generate test cases, and ensure production-grade quality at lightning speed.",
+      "Kruti.io is an AI-powered LinkedIn content platform by Cinute Digital Pvt. Ltd. — a personalised strategy, 30 ready-to-publish posts, AI images and newsletter drafts every month, published straight to LinkedIn.",
     longDescription:
-      "TestriqQA is an enterprise-grade QA automation platform that leverages artificial intelligence to transform how teams test software. From automated regression testing to visual UI comparison and performance benchmarking, TestriqQA covers every aspect of quality assurance. Our AI engine learns from your codebase to proactively identify potential failure points before they reach production.",
-    icon: "ShieldCheck",
-    color: "bg-gradient-to-br from-[#6B00D7] to-[#bc3feb]",
-    accentColor: "#bc3feb",
-    features: [
-      { icon: "Brain", title: "AI Test Generation", description: "Automatically generate comprehensive test suites from your codebase using machine learning models trained on millions of test patterns." },
-      { icon: "Eye", title: "Visual Regression Testing", description: "Pixel-perfect screenshot comparison across browsers and devices. Catch UI regressions before your users do." },
-      { icon: "Zap", title: "Parallel Execution", description: "Run thousands of tests simultaneously across cloud infrastructure. Reduce test cycles from hours to minutes." },
-      { icon: "GitBranch", title: "CI/CD Integration", description: "Seamless integration with GitHub Actions, GitLab CI, Jenkins, and all major CI/CD pipelines." },
-      { icon: "BarChart3", title: "Smart Analytics", description: "Real-time dashboards with flakiness detection, coverage maps, and trend analysis for informed decision-making." },
-      { icon: "Shield", title: "Security Scanning", description: "Built-in OWASP vulnerability scanning and dependency audit. Ship secure code with confidence." },
+      "Kruti.io is an AI-powered platform for creating, managing and publishing LinkedIn content. It reads your LinkedIn profile — headline, about section and experience — to build a personalised content plan, then generates a month of posts, images and newsletter drafts that you review before anything goes live. Kruti.io is built and operated by Cinute Digital Pvt. Ltd., Mumbai.",
+
+    // --- SEO / page copy ----------------------------------------------------
+    seoTitle: "Kruti.io — AI-Powered LinkedIn Content Platform",
+    seoDescription:
+      "Kruti.io turns your LinkedIn profile into a content engine: 30 AI-generated posts, images and newsletter drafts a month. 7-day free trial, then ₹999/month (or $19/month international).",
+    heroHeadline: "AI LinkedIn Content Platform — a Month of Posts in One Sitting",
+    heroSubheadline:
+      "Kruti.io — AI-generated LinkedIn strategy, posts, images and newsletters, built and operated by Cinute Digital Pvt. Ltd.",
+    heroBody: [
+      "Kruti.io turns your LinkedIn profile into a content engine, generating 30 strategic posts, professional images and newsletter drafts every month in your own professional voice.",
+      "Text is generated with Google Gemini 2.5 Pro and images with Google Imagen 3. Sign-in and publishing run on LinkedIn's official API via OAuth 2.0, and every post is created as a draft you can review, edit or discard before it goes live.",
     ],
-    techStack: ["React", "Node.js", "Python", "TensorFlow", "Selenium", "Playwright", "Docker", "Kubernetes", "AWS", "PostgreSQL"],
-    process: [
-      { step: 1, title: "Connect Repository", description: "Link your GitHub, GitLab, or Bitbucket repository. TestriqQA auto-discovers your project structure and frameworks." },
-      { step: 2, title: "AI Analyzes Code", description: "Our AI engine scans your codebase, identifies critical paths, and generates intelligent test scenarios." },
-      { step: 3, title: "Run & Monitor", description: "Execute tests in parallel across cloud infrastructure. Monitor results in real-time via the dashboard." },
-      { step: 4, title: "Ship with Confidence", description: "Get detailed reports, fix suggestions, and green-light deployments with confidence scores." },
-    ],
-    faqs: [
-      { question: "What programming languages does TestriqQA support?", answer: "TestriqQA supports JavaScript/TypeScript, Python, Java, C#, Ruby, Go, and PHP. Our AI engine adapts to your tech stack automatically." },
-      { question: "Can TestriqQA integrate with our existing CI/CD pipeline?", answer: "Yes! We offer native integrations with GitHub Actions, GitLab CI, Jenkins, CircleCI, Azure DevOps, and more. Setup takes under 5 minutes." },
-      { question: "How does the AI test generation work?", answer: "Our ML models analyze your codebase, user flows, and API contracts to generate comprehensive test suites. The AI learns from test results to continuously improve coverage." },
-      { question: "Is there a free trial available?", answer: "Yes, we offer a 14-day free trial with full access to all features. No credit card required to get started." },
-      { question: "What kind of support do you offer?", answer: "We provide 24/7 email support, priority Slack channels for enterprise customers, and dedicated onboarding assistance for all plans." },
-    ],
-    stats: [
-      { label: "Test Cases Generated", value: "At scale" },
-      { label: "Bugs Detected", value: "At scale" },
-      { label: "Time Saved", value: "Significant" },
-      { label: "Teams Using", value: "Growing" },
-    ],
-    supportUrl: "/products/testriq-qa/support",
-    privacyUrl: "/products/testriq-qa/privacy-policy",
-  },
-  {
-    id: "cim-chatbot",
-    name: "CIM ChatBot",
-    slug: "cim-chatbot",
-    tagline: "Intelligent Conversational AI for Business",
-    description:
-      "Deploy smart AI chatbots that handle customer support, qualify leads, and drive conversions — no coding required. Built with RAG technology for accurate, contextual responses.",
-    longDescription:
-      "CIM ChatBot is a no-code AI chatbot platform that empowers businesses to build intelligent conversational agents in minutes. Powered by advanced RAG (Retrieval-Augmented Generation) technology, our chatbots deliver accurate, context-aware responses by learning directly from your knowledge base, documents, and FAQs. From customer support automation to lead qualification and appointment scheduling, CIM ChatBot handles it all.",
-    icon: "MessageSquare",
-    color: "bg-gradient-to-br from-[#4e51d2] to-[#7c3aed]",
+    ctaPrimaryLabel: "Start your 7-day free trial",
+    ctaSecondaryLabel: "Talk to us about Kruti.io",
+    featuresHeading: "What Kruti.io Does",
+    featuresIntro:
+      "A personalised strategy, a month of posts, AI images, a content calendar and newsletter drafts — all reviewed by you before anything publishes.",
+    howItWorksHeading: "How Kruti.io Works",
+    faqHeading: "Kruti.io FAQs",
+    closingCtaHeading: "See Kruti.io in Action",
+    closingCtaBody:
+      "Kruti.io starts with a 7-day free trial and no card required. After the trial it is one plan at ₹999/month, or $19/month for international users, billed monthly through Razorpay and cancellable anytime. Prices are exclusive of applicable taxes.",
+    closingCtaLabel: "Start your free trial",
+
+    icon: "Share2",
+    color: "bg-gradient-to-br from-[#008ac1] to-[#4e51d2]",
     accentColor: "#4e51d2",
     features: [
-      { icon: "BookOpen", title: "Knowledge Base RAG", description: "Upload documents, FAQs, and website content. The chatbot learns your business and answers with precision." },
-      { icon: "Globe", title: "Multi-Channel Deploy", description: "Deploy across your website, WhatsApp, Facebook Messenger, Instagram, Slack, and Telegram from one dashboard." },
-      { icon: "UserCheck", title: "Lead Qualification", description: "Automatically qualify leads with intelligent conversational flows. Score and route hot leads to your sales team." },
-      { icon: "Languages", title: "50+ Languages", description: "Communicate with customers in their native language. Real-time translation with cultural context awareness." },
-      { icon: "BarChart", title: "Analytics Dashboard", description: "Track conversation metrics, customer satisfaction scores, and conversion rates in real-time." },
-      { icon: "Workflow", title: "CRM Integration", description: "Native integrations with HubSpot, Salesforce, Zoho, and 100+ tools via Zapier and Make." },
+      { icon: "Target", title: "Strategy Built From Your Profile", description: "A data-driven content roadmap shaped by your expertise, industry and audience, so every post has a reason to exist." },
+      { icon: "FileText", title: "30 Ready-to-Publish Posts a Month", description: "Thought leadership, tips, stories, questions and listicles — drafted in your own professional voice, every month." },
+      { icon: "Wand2", title: "Professional AI Images", description: "On-brand visuals generated for each post with Google Imagen 3. No design work and no stock-photo hunting." },
+      { icon: "CalendarDays", title: "Visual Content Calendar", description: "Plan, schedule and track a full month of LinkedIn content in a single view." },
+      { icon: "Mail", title: "Newsletter Drafts", description: "Complete LinkedIn newsletter editions — hook, sections, insights and a closing call to action — ready for you to review and send." },
+      { icon: "Rocket", title: "One-Click Publishing", description: "Review, refine and publish straight to LinkedIn through the official API, with no copy-paste between tabs." },
     ],
-    techStack: ["Next.js", "Python", "OpenAI", "LangChain", "Pinecone", "Redis", "WebSocket", "AWS Lambda", "Twilio", "MongoDB"],
+    // Only technologies Kruti.io itself names. The first five also feed the
+    // page keywords, so the most defensible sit first. Deliberately NOT listed:
+    // the host (their privacy policy leaves it unnamed on purpose), and every
+    // vendor ChimeGenius uses — none of them is published for Kruti.io.
+    techStack: ["Google Gemini 2.5 Pro", "Google Imagen 3", "LinkedIn OAuth 2.0", "Razorpay", "Resend", "Next.js"],
     process: [
-      { step: 1, title: "Train Your Bot", description: "Upload your knowledge base — documents, FAQs, website URLs. Our AI processes and indexes everything automatically." },
-      { step: 2, title: "Customize Flows", description: "Design conversation flows with our visual builder. Set up lead qualification rules, handoff triggers, and automated responses." },
-      { step: 3, title: "Deploy Everywhere", description: "One click to deploy across website widget, WhatsApp, Messenger, and more. Customize branding to match your identity." },
-      { step: 4, title: "Optimize & Scale", description: "Monitor performance, train on new data, and scale handling capacity as your business grows." },
+      { step: 1, title: "Connect Your LinkedIn", description: "Sign in with LinkedIn OAuth. Kruti.io reads your profile, headline and experience to learn your professional voice — there is no password to hand over." },
+      { step: 2, title: "Generate Your Strategy", description: "The platform builds a personalised content plan — themes, pillars and post types — automatically from your profile and industry. No prompts to write." },
+      { step: 3, title: "Review Your Drafts", description: "Every post is created as a draft first. Review, edit, rewrite or discard anything before it is marked ready." },
+      { step: 4, title: "Publish & Schedule", description: "Add an image in one click and publish straight to LinkedIn, or schedule the whole month from the content calendar." },
     ],
+    // These answers are published verbatim as FAQPage structured data, so each
+    // one is a claim CIM makes on the record. The account-safety answer is
+    // deliberately NOT Kruti.io's own — their landing page says the account is
+    // never at risk, which their own /disclaimer contradicts. The sourced
+    // mechanics are stated instead.
     faqs: [
-      { question: "Do I need coding skills to use CIM ChatBot?", answer: "Not at all! CIM ChatBot is a completely no-code platform. Build, train, and deploy chatbots using our visual drag-and-drop interface." },
-      { question: "How accurate are the AI responses?", answer: "Using RAG technology, our chatbots achieve high accuracy by grounding responses in your actual business data rather than generic AI hallucinations." },
-      { question: "Can the chatbot hand off to a human agent?", answer: "Yes! You can configure automatic handoff rules based on sentiment, topic complexity, or customer request. Seamless transition to live agents." },
-      { question: "What channels does CIM ChatBot support?", answer: "Website widget, WhatsApp Business, Facebook Messenger, Instagram DMs, Slack, Telegram, SMS, and custom API integration." },
-      { question: "How long does setup take?", answer: "Most businesses are up and running within 30 minutes. Upload your content, customize the look, and deploy — it's that simple." },
+      { question: "Will the AI-generated posts sound like me?", answer: "Kruti.io reads your LinkedIn profile — headline, about section, experience and activity — to learn your tone, expertise and audience, and drafts each post to match that professional voice rather than generic AI phrasing. Every post is a draft you can rewrite before it publishes." },
+      { question: "Can I edit posts before publishing?", answer: "Always. Every post is created as a draft first. You can review, edit, rewrite or discard any post before marking it ready, so you stay in full control of what goes live." },
+      { question: "Do I need to write prompts or instructions?", answer: "No. Kruti.io builds your content strategy automatically from your LinkedIn profile and industry — there are no prompts to write. You click generate and then review what comes back." },
+      { question: "How does Kruti.io connect to my LinkedIn account?", answer: "Through LinkedIn's official API using OAuth 2.0, with the scopes openid, profile, email and w_member_social. Kruti.io never stores your LinkedIn password, uses no scrapers or automation, and publishes only the posts you have explicitly approved. You can disconnect it at any time from LinkedIn's Settings, under Data Privacy and Permitted Services. Kruti.io is an independent product and is not affiliated with, endorsed by, or sponsored by LinkedIn Corporation." },
+      { question: "What happens after the 7-day free trial?", answer: "After the trial it is one plan at ₹999/month, or $19/month for international users — everything included, with no tiers or add-ons. You can cancel anytime from your account settings with no lock-in. All prices are exclusive of applicable taxes." },
+      { question: "How does billing work, and can I cancel anytime?", answer: "Payments are processed by Razorpay and billed monthly on the anniversary of your subscription start date. You can cancel or manage your subscription anytime from your account settings, and you keep access until the end of the current billing period." },
+      { question: "Who operates Kruti.io?", answer: "Kruti.io is built and operated by Cinute Digital Pvt. Ltd., Mumbai, India. Cinute InfoMedia handles enquiries and support for it at support@cinuteinfomedia.com. Billing, refunds, account deletion and privacy requests run inside the platform itself and are handled by the Kruti.io team at support@kruti.io." },
     ],
+    // Only figures Kruti.io actually documents. Their hero also advertises
+    // "~5 min" and "100% your authentic voice"; both are marketing figures with
+    // no published methodology, and restating them here would turn Kruti.io's
+    // marketing into Cinute InfoMedia's factual claim.
     stats: [
-      { label: "Messages Handled", value: "At scale" },
-      { label: "Resolution Rate", value: "High" },
-      { label: "Languages", value: "50+" },
-      { label: "Active Bots", value: "Growing" },
+      { label: "AI posts every month", value: "30" },
+      { label: "Free trial, no card", value: "7 days" },
+      { label: "Plan, everything included", value: "1" },
+      { label: "Prompts to write", value: "0" },
     ],
-    supportUrl: "/products/cim-chatbot/support",
-    privacyUrl: "/products/cim-chatbot/privacy-policy",
+    supportUrl: "/products/kruti-io/support",
+    privacyUrl: "/products/kruti-io/privacy-policy",
+    // The product lives on its own domain, so the primary CTA sends people to
+    // the trial rather than to CIM's contact form. No `extensionUrl`: it is a
+    // web platform, and setting one would render a Chrome icon and flip the
+    // JSON-LD to operatingSystem "Chrome, Edge".
+    externalUrl: "https://kruti.io/",
+    applicationCategory: "WebApplication",
+    // Two separately published prices — NOT one price converted. The dollar
+    // price is specifically the international one, and the currency cannot be
+    // changed after activation without cancelling and resubscribing.
+    offers: [
+      {
+        price: "999",
+        priceCurrency: "INR",
+        description:
+          "One plan, everything included. 7-day free trial with no card required, then ₹999/month billed monthly. Exclusive of applicable taxes.",
+        url: "https://kruti.io/#pricing",
+      },
+      {
+        price: "19",
+        priceCurrency: "USD",
+        description:
+          "International pricing for the same single plan. 7-day free trial with no card required, then $19/month billed monthly. Exclusive of applicable taxes.",
+        url: "https://kruti.io/#pricing",
+      },
+    ],
   },
+
+  // ==========================================================================
+  // AssetMon — multi-tenant IT asset management, at assetm.cinuteinfomedia.com.
+  //
+  // Everything below comes from the product's own pages. Deliberately NOT
+  // carried across, each of which would be a false or unsupported claim here:
+  //
+  //   - The "4.8 / 5, 127 reviews" aggregateRating in their homepage JSON-LD.
+  //     No review is published anywhere on the site, and republishing a rating
+  //     with nothing behind it is the kind of thing Search Console penalises.
+  //   - The homepage dashboard and terminal mockups (1,284 assets, $284K book
+  //     value, tenants "acme"/"beta"/"globex") and the ROI calculator's default
+  //     output. All illustrative; the ROI page says so itself.
+  //   - The Northwind testimonial, which is attributed to a company that does
+  //     not exist.
+  //   - The five @assetmon social accounts, all of which 404.
+  //   - The support addresses on assetmon.app: that domain does not resolve, so
+  //     mail to it cannot be delivered. Support routes to CIM instead — see the
+  //     productSupport entry.
+  //
+  // PRICING: the canonical /pricing page quotes INR (₹0 Starter, ₹699 Business,
+  // Enterprise custom). A separate $8/user/month figure appears on the two
+  // /compare pages and implicitly in the ROI calculator. Only the INR prices
+  // are published here, because those are the ones the pricing page itself
+  // states; the two are NOT converted into one another.
+  //
+  // TRIAL WORDING: the homepage says data is "exportable any time, even after",
+  // which their own Terms contradict ("We delete workspace data within 30 days
+  // of cancellation"). The conservative, Terms-consistent version is used.
+  // ==========================================================================
   {
-    id: "cim-autoflow",
-    name: "CIM AutoFlow",
-    slug: "cim-autoflow",
-    tagline: "AI Workflow Automation Engine",
+    id: "assetmon",
+    name: "AssetMon",
+    slug: "assetmon",
+    tagline: "Multi-Tenant IT Asset Management",
+    logo: "/images/assetmon-logo.jpg",
     description:
-      "Automate repetitive business processes with intelligent workflows. Connect your tools, set triggers, and let AI handle the rest — from lead nurturing to invoice processing.",
+      "AssetMon is a browser-based IT asset management platform: hardware inventory, service tickets, preventive maintenance, software licences, procurement and depreciation in one workspace, with every tenant in its own isolated database.",
     longDescription:
-      "CIM AutoFlow is a powerful workflow automation platform designed for businesses that want to eliminate manual, repetitive tasks. With our visual workflow builder and AI-powered decision engine, you can create complex automation pipelines that connect your CRM, email, accounting, and 200+ other tools. From automated lead nurturing sequences to intelligent document processing, AutoFlow transforms how your team works.",
-    icon: "Workflow",
-    color: "bg-gradient-to-br from-[#fab900] to-[#ee6500]",
-    accentColor: "#ee6500",
-    features: [
-      { icon: "Puzzle", title: "200+ Integrations", description: "Connect with Salesforce, HubSpot, Google Workspace, Slack, Stripe, QuickBooks, and 200+ more tools natively." },
-      { icon: "Brain", title: "AI Decision Engine", description: "Let AI analyze data patterns and make intelligent routing decisions. Smart branching based on context and history." },
-      { icon: "Mail", title: "Email Automation", description: "Build drip campaigns, follow-up sequences, and personalized email workflows with dynamic content insertion." },
-      { icon: "FileText", title: "Document Processing", description: "Extract data from invoices, contracts, and forms using AI-powered OCR. Auto-populate your systems." },
-      { icon: "Clock", title: "Scheduled Triggers", description: "Time-based, event-based, and webhook triggers. Run workflows on schedule or in response to real-time events." },
-      { icon: "GitMerge", title: "Conditional Logic", description: "Complex if/then branching, loops, and parallel processing. Build enterprise-grade automation without code." },
+      "AssetMon tracks everything an IT or operations team is responsible for — hardware, software licences, tickets, maintenance schedules, purchase orders and depreciation — in a single browser-based workspace. Each customer workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column, so one workspace's data cannot be read from another. Modules switch on and off as a team needs them, and everything is reachable through a documented REST API with signed webhooks.",
+
+    // --- SEO / page copy ----------------------------------------------------
+    seoTitle: "AssetMon — Multi-Tenant IT Asset Management Software",
+    seoDescription:
+      "Track hardware, software licences, tickets, maintenance, procurement and depreciation in one workspace. Database-per-tenant isolation, open REST API, free Starter plan and a 30-day trial.",
+    heroHeadline: "IT Asset Management With Real Tenant Isolation",
+    heroSubheadline:
+      "AssetMon — hardware, licences, tickets, maintenance, procurement and depreciation in a single workspace",
+    heroBody: [
+      "AssetMon replaces the asset spreadsheet with a system that knows what you own, who has it, what it cost, what it is worth now, and what is due for maintenance next.",
+      "Every workspace runs in its own PostgreSQL database rather than sharing tables behind a tenant column, so a missed filter cannot leak one customer's data into another's. Assets carry QR labels you print from the browser and audit from any phone, and every event is captured in an immutable, exportable log.",
     ],
-    techStack: ["React", "Node.js", "Python", "Apache Kafka", "Redis", "PostgreSQL", "Docker", "AWS SQS", "OpenAI", "GraphQL"],
-    process: [
-      { step: 1, title: "Connect Your Tools", description: "Link your existing business tools — CRM, email, accounting, project management. OAuth-based secure connections." },
-      { step: 2, title: "Build Workflows", description: "Use our visual drag-and-drop builder to create automation flows. Add triggers, conditions, and actions." },
-      { step: 3, title: "Test & Activate", description: "Run test executions to verify your workflows. Debug with step-by-step execution logs." },
-      { step: 4, title: "Monitor & Optimize", description: "Track execution history, success rates, and time saved. AI suggests optimization improvements." },
-    ],
-    faqs: [
-      { question: "How many automations can I create?", answer: "Our plans range from 10 active workflows (Starter) to unlimited workflows (Enterprise). Each workflow can have unlimited steps and branches." },
-      { question: "What tools does AutoFlow integrate with?", answer: "200+ native integrations including Salesforce, HubSpot, Google Workspace, Slack, Stripe, Shopify, QuickBooks, and more. Plus, custom API and webhook support." },
-      { question: "Is my data secure?", answer: "Absolutely. We use AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 Type II compliance, and GDPR-compliant data processing. Your credentials are stored in isolated vaults." },
-      { question: "Can I process documents and forms automatically?", answer: "Yes! Our AI-powered OCR can extract data from invoices, receipts, contracts, and forms. The extracted data flows directly into your connected systems." },
-      { question: "Do you offer team collaboration features?", answer: "Yes — role-based access control, shared workflow libraries, version history, comments, and approval workflows for team collaboration." },
-    ],
-    stats: [
-      { label: "Workflows Running", value: "At scale" },
-      { label: "Hours Saved Monthly", value: "At scale" },
-      { label: "Integrations", value: "200+" },
-      { label: "Uptime", value: "99.99%" },
-    ],
-    supportUrl: "/products/cim-autoflow/support",
-    privacyUrl: "/products/cim-autoflow/privacy-policy",
-  },
-  {
-    id: "cim-analytics",
-    name: "CIM Analytics",
-    slug: "cim-analytics",
-    tagline: "Real-Time Marketing & SEO Dashboard",
-    description:
-      "Unified analytics platform that brings all your marketing data into one beautiful dashboard. Track SEO rankings, ad performance, social metrics, and ROI in real-time.",
-    longDescription:
-      "CIM Analytics is a comprehensive marketing analytics platform that consolidates data from Google Analytics, Search Console, ad platforms, social media, and CRM systems into a single, actionable dashboard. Stop switching between 10+ tabs — get a unified view of your entire digital marketing performance with AI-powered insights, custom reports, and predictive forecasting.",
-    icon: "BarChart3",
+    ctaPrimaryLabel: "Start your 30-day free trial",
+    ctaSecondaryLabel: "Talk to us about AssetMon",
+    featuresHeading: "What AssetMon Does",
+    featuresIntro:
+      "One workspace for the whole asset lifecycle — from purchase order to disposal — with each module switched on only if you need it.",
+    howItWorksHeading: "How AssetMon Works",
+    faqHeading: "AssetMon FAQs",
+    closingCtaHeading: "See AssetMon in Action",
+    closingCtaBody:
+      "Start on the free Starter plan — up to 5 users and 50 assets, no card required — or take a 30-day trial of everything in Business. Paid plans are ₹699 per user per month, billed through Razorpay, with 20% off annual billing.",
+    closingCtaLabel: "Start free",
+
+    icon: "Monitor",
     color: "bg-gradient-to-br from-[#008ac1] to-[#00b5ca]",
     accentColor: "#008ac1",
     features: [
-      { icon: "LayoutDashboard", title: "Unified Dashboard", description: "All your marketing data in one place. Google Analytics, Search Console, Meta Ads, Google Ads, and social media metrics unified." },
-      { icon: "TrendingUp", title: "SEO Rank Tracker", description: "Track keyword rankings across Google, Bing, and YouTube. Daily updates with SERP feature tracking and competitor comparison." },
-      { icon: "Target", title: "Ad Performance", description: "Cross-platform ad analytics for Google, Meta, LinkedIn, and TikTok Ads. ROAS calculation and budget optimization suggestions." },
-      { icon: "PieChart", title: "Custom Reports", description: "Drag-and-drop report builder. Create branded PDF reports for clients with automatic scheduling and delivery." },
-      { icon: "Lightbulb", title: "AI Insights", description: "Proactive anomaly detection, trend identification, and actionable recommendations powered by machine learning." },
-      { icon: "Users", title: "Client Portals", description: "White-labeled client dashboards with custom branding. Give clients real-time access to their performance metrics." },
+      { icon: "LayoutDashboard", title: "A Living Inventory", description: "Custom fields per category, photos, QR-coded labels and an immutable audit trail, with full CSV import and export. The spreadsheet retires." },
+      { icon: "Inbox", title: "Service Tickets", description: "Raise a ticket and the asset flips to In Repair on its own. Priority-routed, vendor-aware, and tied to the asset's own history." },
+      { icon: "CalendarDays", title: "Preventive Maintenance", description: "Recurring schedules that bump their own next due date, so servicing is something the system remembers rather than someone's calendar." },
+      { icon: "TrendingUp", title: "Depreciation Engine", description: "Straight-line and double-declining methods, a fleet-level report and CSV export, so finance and IT work from the same numbers." },
+      { icon: "Shield", title: "Software & Licence Compliance", description: "Seats used against seats owned, with expiry alerts and audit-ready records — before a vendor audit rather than during one." },
+      { icon: "ShoppingCart", title: "Procurement, End to End", description: "Purchase request to purchase order to receipt, creating the asset record automatically the moment a delivery is booked in." },
     ],
-    techStack: ["Next.js", "Python", "ClickHouse", "Redis", "Apache Airflow", "TensorFlow", "D3.js", "Google APIs", "Meta API", "AWS"],
+    // Only technologies AssetMon's own pages name.
+    techStack: ["PostgreSQL", "Prisma", "REST API", "OpenAPI", "SAML 2.0", "SCIM 2.0"],
     process: [
-      { step: 1, title: "Connect Data Sources", description: "One-click OAuth connections to Google Analytics, Search Console, ad platforms, and social media accounts." },
-      { step: 2, title: "Configure Dashboards", description: "Choose from 50+ pre-built dashboard templates or create custom views with our drag-and-drop builder." },
-      { step: 3, title: "Set Alerts & Goals", description: "Define KPIs, set automated alerts for anomalies, and track progress toward marketing goals." },
-      { step: 4, title: "Generate Insights", description: "Let AI analyze your data and surface actionable insights. Schedule automated reports for stakeholders." },
+      { step: 1, title: "Sign Up", description: "Your dedicated database is provisioned in seconds, with sensible default asset categories already seeded." },
+      { step: 2, title: "Import or Add Assets", description: "Bring a CSV across with auto-mapping for category, location and department, or add assets by hand. QR labels print from a normal printer." },
+      { step: 3, title: "Switch On the Modules You Need", description: "Tickets, maintenance, procurement, depreciation, reservations and audits each toggle on or off in two clicks, and the UI and API stay in sync." },
+      { step: 4, title: "Run Your Operation", description: "Scan to audit from any phone, watch discrepancies surface live, and pull any of it out again through the REST API or a CSV export." },
     ],
+    // These answers publish as FAQPage structured data. Where AssetMon's own
+    // homepage and pricing page answer the same question differently, the more
+    // conservative version is used — and where the homepage contradicts the
+    // Terms, the Terms win.
     faqs: [
-      { question: "What data sources does CIM Analytics support?", answer: "Google Analytics 4, Google Search Console, Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads, YouTube Analytics, Instagram, Facebook, Twitter, HubSpot, Salesforce, and 50+ more via API." },
-      { question: "Can I create white-labeled reports for my clients?", answer: "Yes! Full white-labeling support — add your agency logo, colors, and custom domain. Schedule automated PDF report delivery to clients." },
-      { question: "How often is the data updated?", answer: "Most data sources sync every 15 minutes to 1 hour. SEO keyword rankings update daily. Real-time data available for website analytics via our tracking pixel." },
-      { question: "Is CIM Analytics suitable for agencies?", answer: "Absolutely! We have dedicated agency plans with multi-client management, team collaboration, client portals, and bulk reporting features." },
-      { question: "What makes this different from Google Analytics?", answer: "CIM Analytics unifies data across ALL your marketing channels — not just website traffic. Plus, AI-powered insights, cross-channel attribution, and beautiful client-ready reports." },
+      { question: "How long does setup take?", answer: "About five minutes. You sign up, your tenant database is provisioned, default asset categories are seeded, and you can start adding assets straight away — or import a CSV from your existing spreadsheet in one step." },
+      { question: "Can I import my existing inventory?", answer: "Yes. AssetMon imports CSV files with auto-mapping for category, location and department by name, so an existing asset spreadsheet comes across without being rebuilt by hand." },
+      { question: "Do I need to install anything?", answer: "No. AssetMon runs entirely in the browser. Asset QR labels print from a regular printer and scan from any phone camera, so there is no app to roll out." },
+      { question: "How is my data kept separate from other customers?", answer: "Every workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column. Data is encrypted with TLS 1.2 or higher in transit and AES-256 at rest, and backups are encrypted with separate keys." },
+      { question: "Is there a free plan, and how does the trial work?", answer: "There is a free Starter plan — up to 5 users and 50 assets, with core asset tracking, CSV import and export, and email support. Separately, a 30-day trial opens up everything in the Business plan with no card required. Service tickets, maintenance, procurement, the depreciation engine, the API and SSO are Business features rather than Starter ones." },
+      { question: "What happens at the end of the trial?", answer: "Your workspace pauses for 14 days while you decide. Choose a plan and pick up where you left off, or export your data and close the workspace. Exports are available while the workspace is live or paused; after cancellation, workspace data is deleted within 30 days." },
+      { question: "How does billing work, and can I cancel anytime?", answer: "Business is ₹699 per user per month, billed through Razorpay, which accepts UPI, netbanking, major debit and credit cards, wallets and e-mandate. Annual billing takes 20% off, and registered nonprofits and student or academic projects get 50%. You can cancel from the dashboard in two clicks and keep access to the end of the billing period." },
     ],
+    // Product facts, not metrics. AssetMon's own site advertises a 4.8 rating
+    // with 127 reviews and a dashboard full of sample figures; none of it has
+    // anything behind it, so none of it is repeated here.
     stats: [
-      { label: "Data Points Processed", value: "At scale" },
-      { label: "Reports Generated", value: "At scale" },
-      { label: "Data Sources", value: "50+" },
-      { label: "Agencies Using", value: "Growing" },
+      { label: "Free trial, no card", value: "30 days" },
+      { label: "Starter plan, forever", value: "₹0" },
+      { label: "Database per tenant", value: "1" },
+      { label: "To toggle a module", value: "2 clicks" },
     ],
-    supportUrl: "/products/cim-analytics/support",
-    privacyUrl: "/products/cim-analytics/privacy-policy",
+    supportUrl: "/products/assetmon/support",
+    privacyUrl: "/products/assetmon/privacy-policy",
+    externalUrl: "https://assetm.cinuteinfomedia.com",
+    applicationCategory: "BusinessApplication",
+    // The INR prices from AssetMon's own /pricing page. A $8/user/month figure
+    // appears on the two /compare pages; it is not published here, and the two
+    // are not treated as conversions of each other. Enterprise is quoted on
+    // application, so it carries no Offer.
+    offers: [
+      {
+        price: "0",
+        priceCurrency: "INR",
+        description:
+          "Starter — free forever. Up to 5 users and 50 assets, with core asset tracking, CSV import and export, and email support.",
+        url: "https://assetm.cinuteinfomedia.com/pricing",
+      },
+      {
+        price: "699",
+        priceCurrency: "INR",
+        description:
+          "Business — ₹699 per user per month. Unlimited users and assets, service tickets, maintenance, procurement, depreciation, licence compliance, reservations, audits, API, webhooks and SSO. 20% off annual billing.",
+        url: "https://assetm.cinuteinfomedia.com/pricing",
+      },
+    ],
   },
+
+  // ==========================================================================
+  // TopCareerLive — job board at topcareerlive.com.
+  //
+  // This entry is deliberately SPARSE, and it should stay that way until the
+  // product publishes more. What the site advertises but this page does not
+  // repeat, and why:
+  //
+  //   - The homepage "Trusted by world class companies" band showing Google,
+  //     Microsoft, Amazon, Netflix and Stripe logos. The site states no
+  //     customer, client or partner relationship with any of them. Reproducing
+  //     that association on cinuteinfomedia.com would be the single most
+  //     damaging claim on this page.
+  //   - Every advertised figure: "5M+ verified professionals", "50K+ active job
+  //     seekers", "15K+ careers launched", "1,200+ employer partners", "4.8
+  //     rating", "reduce time-to-hire by 40%", "14K+", "SINCE 2014". These are
+  //     hardcoded strings, several mutually inconsistent — "15K+" labels two
+  //     different metrics on one page, and "since 2014" sits under a 2026
+  //     copyright.
+  //   - "Seamless ATS integrations with Workday, Greenhouse & more", which
+  //     names two third-party products with nothing to support the claim.
+  //   - The site's own five FAQ answers, which are one identical block of
+  //     boilerplate that answers none of the five questions asked.
+  //
+  // NO `offers`: no price is published anywhere. /pricing 404s, the footer
+  // "Pricing Plans" link is a dead anchor, and the employers FAQ answers "how
+  // much does it cost" without naming a figure. An empty `offers` is correct —
+  // the JSON-LD then asserts no price at all.
+  //
+  // NO `privacyUrl`: the site publishes no privacy policy, terms or contact
+  // details — /privacy, /terms and /contact all 404. A privacy policy is a
+  // binding statement about data handling and is not ours to write on the
+  // product's behalf, so the Privacy button is simply absent until one exists.
+  // ==========================================================================
   {
-    id: "cim-sitebuilder",
-    name: "CIM SiteBuilder",
-    slug: "cim-sitebuilder",
-    tagline: "Next-Gen Website Builder with AI",
+    id: "topcareerlive",
+    name: "TopCareerLive",
+    slug: "topcareerlive",
+    tagline: "Job Board for Candidates and Employers",
+    logo: "/images/topcareerlive-logo.jpg",
     description:
-      "Build stunning, high-performance websites in minutes with AI-powered design. Drag-and-drop builder backed by Next.js for blazing-fast Core Web Vitals scores.",
+      "TopCareerLive is a job board connecting candidates with verified employers: search and apply with filters for location, experience and freshness, or post roles and manage applicants through a hiring pipeline.",
     longDescription:
-      "CIM SiteBuilder combines the simplicity of drag-and-drop website building with the performance of modern frameworks like Next.js. Unlike traditional website builders that generate bloated code, SiteBuilder produces clean, optimized code that scores 95+ on Google PageSpeed. With AI-powered design suggestions, SEO optimization, and one-click deployment, it's the fastest way to launch a professional website.",
-    icon: "Monitor",
-    color: "bg-gradient-to-br from-[#6db75c] to-[#4a9e3f]",
+      "TopCareerLive is a two-sided job platform. Candidates build a profile through a guided four-step onboarding, search roles filtered by location, experience and how recently a job was posted, and apply directly. Employers create a company page, post roles, and filter, rank and track applicants through their own hiring stages, exporting candidate details and CVs as PDFs for offline review.",
+
+    // --- SEO / page copy ----------------------------------------------------
+    seoTitle: "TopCareerLive — Job Board for Candidates & Employers",
+    seoDescription:
+      "Search and apply for roles with filters for location, experience and freshness, or post jobs and manage applicants through a hiring pipeline with CV export.",
+    heroHeadline: "A Job Board Built Around the Hiring Pipeline",
+    heroSubheadline:
+      "TopCareerLive — candidates find roles that fit, employers manage applicants in one place",
+    heroBody: [
+      "TopCareerLive connects candidates with employers whose listings have been through a verification process, so the search results are roles that actually exist.",
+      "Candidates filter by location, experience level and how recently a role was posted, and can have alerts delivered by email or WhatsApp. Employers post roles from a company profile, then filter, rank and move applicants through their own hiring stages, exporting candidate details and CVs as PDFs when they need to review offline.",
+    ],
+    ctaPrimaryLabel: "Visit TopCareerLive",
+    ctaSecondaryLabel: "Talk to us about TopCareerLive",
+    featuresHeading: "What TopCareerLive Does",
+    featuresIntro:
+      "One platform for both sides of a hire — searching and applying on one, posting and shortlisting on the other.",
+    howItWorksHeading: "How Hiring Works on TopCareerLive",
+    faqHeading: "TopCareerLive FAQs",
+    closingCtaHeading: "See TopCareerLive in Action",
+    closingCtaBody:
+      "Create an account to search and apply, or set up a company profile and post your first role. Talk to us if you would like a walkthrough first.",
+    closingCtaLabel: "Visit TopCareerLive",
+
+    icon: "Workflow",
+    color: "bg-gradient-to-br from-[#6db75c] to-[#00b5ca]",
     accentColor: "#6db75c",
     features: [
-      { icon: "MousePointer2", title: "Drag & Drop Builder", description: "Intuitive visual editor with 100+ pre-built components. No coding required — just drag, drop, and customize." },
-      { icon: "Sparkles", title: "AI Design Assistant", description: "Describe your vision and AI generates a complete website design. Adjust colors, layouts, and content with natural language." },
-      { icon: "Gauge", title: "95+ PageSpeed", description: "Every site is automatically optimized for Core Web Vitals. Server-side rendering, image optimization, and lazy loading built-in." },
-      { icon: "Search", title: "SEO Autopilot", description: "Automatic meta tags, schema markup, sitemap generation, and content optimization suggestions. SEO handled for you." },
-      { icon: "ShoppingCart", title: "E-commerce Ready", description: "Built-in Stripe and PayPal integration. Product catalogs, shopping carts, and checkout flows out of the box." },
-      { icon: "Rocket", title: "One-Click Deploy", description: "Deploy to Vercel, Netlify, or AWS with a single click. Custom domain setup and SSL certificates included." },
+      { icon: "Sparkles", title: "Matching by Skills and Goals", description: "Candidates are connected to roles that fit their skills, experience and career goals rather than to everything that shares a job title." },
+      { icon: "UserCheck", title: "Verified Employers Only", description: "Every employer goes through a verification process before their listings appear, so candidates are not sorting real roles from fake ones." },
+      { icon: "Search", title: "Search That Narrows Properly", description: "Filter by location, experience level from fresher upwards, and freshness — last 24 hours, last 7 days, last 30 days — plus category and role type." },
+      { icon: "LayoutDashboard", title: "Job Management", description: "Full control over live listings. Edit, renew or pause a position in a single click from the employer dashboard." },
+      { icon: "Inbox", title: "Applicant Pipeline", description: "A central list of everyone who has applied, tracked through hiring stages you define, so nobody sits unreviewed." },
+      { icon: "FileText", title: "CV and Candidate Export", description: "Export candidate details and CVs as PDFs for offline review or to share with a hiring manager who does not use the platform." },
     ],
-    techStack: ["Next.js", "React", "TypeScript", "TailwindCSS", "Vercel", "Stripe", "Sanity CMS", "Cloudflare", "PostgreSQL", "Prisma"],
+    // Only capabilities the site itself demonstrates or names.
+    techStack: ["Google Sign-In", "Email & WhatsApp alerts", "PDF CV export", "Applicant tracking"],
     process: [
-      { step: 1, title: "Choose Template", description: "Start with 200+ professionally designed templates for every industry, or let AI generate a custom design from your description." },
-      { step: 2, title: "Customize & Build", description: "Use the visual editor to add sections, modify content, upload images, and fine-tune your design to perfection." },
-      { step: 3, title: "Optimize & Preview", description: "AI auto-optimizes for SEO and performance. Preview across desktop, tablet, and mobile in real-time." },
-      { step: 4, title: "Launch & Grow", description: "One-click deployment with custom domain. Built-in analytics to track visitors, conversions, and growth." },
+      { step: 1, title: "Create Your Profile", description: "Employers build a company page that candidates can research. Candidates complete a guided four-step profile covering account, employment, education and preferences." },
+      { step: 2, title: "Post a Role or Search", description: "Employers write a detailed job description and publish it. Candidates search with filters for location, experience and how recently a role went live." },
+      { step: 3, title: "Review Applicants", description: "Filter, rank and move applicants through your own hiring stages from the review dashboard, exporting CVs as PDFs where a reviewer needs them offline." },
     ],
+    // Written from what the platform verifiably does. The site's own FAQ
+    // answers are a single block of boilerplate repeated under all five
+    // questions, answering none of them, so none of it is reproduced.
     faqs: [
-      { question: "Do I need coding skills to use CIM SiteBuilder?", answer: "Not at all! Our visual drag-and-drop builder is designed for non-technical users. However, developers can access the code directly for advanced customizations." },
-      { question: "How fast are the websites built with SiteBuilder?", answer: "Extremely fast! Every site scores 95+ on Google PageSpeed Insights out of the box. We use Next.js server-side rendering, automatic image optimization, and edge caching." },
-      { question: "Can I use my own domain?", answer: "Yes! Connect any custom domain with free SSL certificates. We also provide free subdomains on cimsites.com for testing." },
-      { question: "Is e-commerce included?", answer: "Yes — Stripe and PayPal integration is built-in. Create product pages, shopping carts, checkout flows, and order management without any plugins." },
-      { question: "Can I export the code?", answer: "Absolutely! Export clean Next.js/React code at any time. No vendor lock-in — your code, your hosting, your choice." },
+      { question: "How do candidates sign up?", answer: "Either with an email address and password, or with a Google account. Registration collects your name, email, mobile number and current location, and lets you upload a CV as a PDF, DOC or DOCX file." },
+      { question: "What can I filter job searches by?", answer: "Location, experience level from fresher through senior, and freshness — any time, the last 24 hours, the last 7 days or the last 30 days — alongside category and role type." },
+      { question: "How do I hear about new roles?", answer: "Job alerts can be delivered by email and on WhatsApp, so a matching role reaches you without you having to check the board." },
+      { question: "What does an employer get?", answer: "A company profile page, job posting with full descriptions, and a review dashboard where applicants can be filtered, ranked and moved through your own hiring stages. Candidate details and CVs export as PDFs." },
+      { question: "Can I edit or pause a live job posting?", answer: "Yes. Listings can be edited, renewed or paused in a single click from the employer dashboard, so a role can come down the moment it is filled." },
+      { question: "How much does it cost to post a job?", answer: "TopCareerLive does not currently publish pricing for job postings. Get in touch with Cinute InfoMedia and we will put you in contact with the right person." },
     ],
+    // Capabilities, not metrics. TopCareerLive advertises a number of figures —
+    // active seekers, placements, a satisfaction rating, a time-to-hire
+    // reduction — that are hardcoded into the markup and in places contradict
+    // each other, so none of them appears here.
     stats: [
-      { label: "Websites Launched", value: "At scale" },
-      { label: "Avg PageSpeed", value: "97" },
-      { label: "Templates", value: "200+" },
-      { label: "Uptime", value: "99.99%" },
+      { label: "Hiring process", value: "3 steps" },
+      { label: "Guided candidate onboarding", value: "4 steps" },
+      { label: "Alerts: email & WhatsApp", value: "2 channels" },
+      { label: "CV export format", value: "PDF" },
     ],
-    supportUrl: "/products/cim-sitebuilder/support",
-    privacyUrl: "/products/cim-sitebuilder/privacy-policy",
-  },
-  {
-    id: "cim-socialhub",
-    name: "CIM SocialHub",
-    slug: "cim-socialhub",
-    tagline: "All-in-One Social Media Management",
-    description:
-      "Schedule, publish, and analyze your social media content across all platforms from one dashboard. AI-powered content suggestions and optimal posting times.",
-    longDescription:
-      "CIM SocialHub is a comprehensive social media management platform designed for brands and agencies. Manage all your social accounts — Instagram, Facebook, LinkedIn, Twitter, TikTok, Pinterest, and YouTube — from a single unified dashboard. With AI-powered content creation, smart scheduling, team collaboration, and in-depth analytics, SocialHub helps you grow your social presence faster.",
-    icon: "Share2",
-    color: "bg-gradient-to-br from-[#00b5ca] to-[#00efd6]",
-    accentColor: "#00b5ca",
-    features: [
-      { icon: "CalendarDays", title: "Visual Scheduler", description: "Drag-and-drop content calendar. Schedule posts across all platforms with optimal timing recommendations." },
-      { icon: "Wand2", title: "AI Content Creator", description: "Generate engaging captions, hashtags, and visual concepts with AI. Create a month's content in minutes." },
-      { icon: "BarChart2", title: "Deep Analytics", description: "Track engagement, reach, follower growth, and competitor performance. Exportable reports for clients." },
-      { icon: "Users", title: "Team Collaboration", description: "Approval workflows, content calendars, role-based permissions, and internal commenting for seamless teamwork." },
-      { icon: "Inbox", title: "Unified Inbox", description: "Manage all DMs, comments, and mentions across platforms in one inbox. Never miss a customer interaction." },
-      { icon: "Hash", title: "Hashtag Research", description: "AI-powered hashtag suggestions based on trending topics, competitor analysis, and audience behavior." },
-    ],
-    techStack: ["Next.js", "Node.js", "Python", "Redis", "PostgreSQL", "Meta API", "Twitter API", "LinkedIn API", "TikTok API", "Bull Queue"],
-    process: [
-      { step: 1, title: "Connect Accounts", description: "Link your social media accounts with secure OAuth. Support for Instagram, Facebook, LinkedIn, Twitter, TikTok, Pinterest, and YouTube." },
-      { step: 2, title: "Plan Content", description: "Use the visual calendar to plan your content strategy. AI suggests optimal posting times and content ideas." },
-      { step: 3, title: "Create & Schedule", description: "Create posts with our built-in editor. Add images, videos, carousels, and stories. Schedule or publish instantly." },
-      { step: 4, title: "Analyze & Grow", description: "Track performance metrics, identify top-performing content, and refine your strategy with AI-powered insights." },
-    ],
-    faqs: [
-      { question: "Which social platforms does SocialHub support?", answer: "Instagram (Posts, Stories, Reels), Facebook (Pages, Groups), LinkedIn (Personal, Company), Twitter/X, TikTok, Pinterest, and YouTube. More platforms added regularly." },
-      { question: "Can I manage multiple clients?", answer: "Yes! Our agency plan supports unlimited client workspaces. Each client gets their own dashboard, content calendar, and reporting." },
-      { question: "Does SocialHub support video content?", answer: "Absolutely! Upload and schedule videos for Reels, TikToks, YouTube Shorts, and Stories. Built-in video trimming and caption overlay tools." },
-      { question: "How does the AI content creator work?", answer: "Describe your topic, target audience, and tone. AI generates multiple caption variants, hashtag sets, and even image concept suggestions based on trending formats." },
-      { question: "Is there a mobile app?", answer: "Yes! iOS and Android apps available for on-the-go content management, quick posts, and notification management." },
-    ],
-    stats: [
-      { label: "Posts Scheduled", value: "At scale" },
-      { label: "Accounts Managed", value: "Growing" },
-      { label: "Engagement Boost", value: "Strong" },
-      { label: "Platforms", value: "7+" },
-    ],
-    supportUrl: "/products/cim-socialhub/support",
-    privacyUrl: "/products/cim-socialhub/privacy-policy",
+    supportUrl: "/products/topcareerlive/support",
+    externalUrl: "https://topcareerlive.com",
+    applicationCategory: "WebApplication",
   },
 ];
 

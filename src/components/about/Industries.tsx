@@ -71,10 +71,10 @@ export default function Industries() {
                                 <CheckCircle2 className="w-7 h-7 text-white" />
                             </div>
 
-                            <p className="text-base font-semibold transition-colors duration-300 text-[var(--foreground)] group-hover:text-[var(--brand-blue)]">
+                            <p className="text-base font-semibold transition-colors duration-300 text-[var(--foreground)] group-hover:text-[var(--brand-blue-text)]">
                                 <Link
                                     href={item.href}
-                                    className="hover:text-[var(--brand-blue)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--brand-blue)] rounded"
+                                    className="hover:text-[var(--brand-blue-text)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--brand-blue)] rounded"
                                 >
                                     {item.name}
                                 </Link>

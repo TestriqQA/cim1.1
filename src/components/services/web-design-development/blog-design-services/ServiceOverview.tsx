@@ -11,7 +11,7 @@ export default function ServiceOverview() {
         {
             icon: Newspaper,
             title: "Custom News Portal Design",
-            description: <>Transform your journalism with a <Link href="/services/web-design-development" className="hover:underline text-[#a855f7]">Custom news portal design</Link> for media agencies. We implement News portal security.</>,
+            description: <>Transform your journalism with a <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Custom news portal design</Link> for media agencies. We implement News portal security.</>,
             details: ["Mobile-responsive layouts", "Video-centric design", "Seamless streaming", "Adaptive user interfaces"]
         },
         {
@@ -23,19 +23,19 @@ export default function ServiceOverview() {
         {
             icon: Zap,
             title: "Automated Publishing",
-            description: <>Efficiency is key. We deploy <Link href="/services/ai-workflows-automations-services" className="hover:underline text-[#a855f7]">Automated news aggregation</Link> and portal setup workflows to keep content fresh.</>,
+            description: <>Efficiency is key. We deploy <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Automated news aggregation</Link> and portal setup workflows to keep content fresh.</>,
             details: ["Global CDN integration", "Reuters/AP API connect", "News portal analytics", "Reader behavior insights"]
         },
         {
             icon: BarChart3,
             title: "Monetization & Growth",
-            description: <>Turn views into revenue. Our <Link href="/services/performance-marketing" className="hover:underline text-[#a855f7]">News portal monetization</Link> strategies optimize AdSense and paywalls.</>,
+            description: <>Turn views into revenue. Our <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">News portal monetization</Link> strategies optimize AdSense and paywalls.</>,
             details: ["Programmatic ad setup", "Paywall integration", "Audience growth SEO", "UGC community modules"]
         },
         {
             icon: FileText,
             title: "Professional Content",
-            description: <><Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-[#a855f7]">Blog writing services</Link> and <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-[#a855f7]">Professional editorial services</Link> providing high-E-E-A-T content that ranks.</>,
+            description: <><Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Blog writing services</Link> and <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Professional editorial services</Link> providing high-E-E-A-T content that ranks.</>,
             details: ["Content strategy", "Topic clusters", "Editorial workflows", "Brief creation"]
         }
     ];
@@ -57,7 +57,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Newspaper className="w-4 h-4" />
-                        <span className="text-sm font-semibold">What We Offer</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>What We Offer</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
@@ -146,7 +146,7 @@ export default function ServiceOverview() {
                         </div>
 
                         <div className="space-y-3">
-                            <h4 className="text-sm font-bold uppercase tracking-wider" style={{ color: "#a855f7" }}>
+                            <h4 className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--brand-purple-text)" }}>
                                 Key Features
                             </h4>
                             <ul className="grid grid-cols-2 gap-3">

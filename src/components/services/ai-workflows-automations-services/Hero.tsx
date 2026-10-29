@@ -63,7 +63,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-orange)" }}
+                        style={{ color: "var(--accent-orange-text)" }}
                     >
                         <Link href="/blog/ai-workflows-automating-business-processes" className="hover:underline">AI Workflows & Automations</Link>
                     </span>
@@ -82,7 +82,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-orange) 8%, transparent), color-mix(in srgb, var(--brand-orange) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-orange) 20%, transparent)",
-                                color: "var(--brand-orange)",
+                                color: "var(--accent-orange-text)",
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
@@ -94,7 +94,7 @@ export default function Hero() {
                             <span
                                 className="bg-clip-text text-transparent"
                             >
-                                <span style={{ color: "var(--brand-orange)" }}>AI Workflow</span> <span style={{ color: "var(--foreground)" }}>Automation Services for</span> <Link href="/blog/mastering-seo-organic-growth" className="hover:opacity-80 transition-opacity"><span style={{ color: "var(--brand-orange)" }}>Scalable Growth</span></Link>
+                                <span style={{ color: "var(--accent-orange-text)" }}>AI Workflow</span> <span style={{ color: "var(--foreground)" }}>Automation Services for</span> <Link href="/blog/mastering-seo-organic-growth" className="hover:opacity-80 transition-opacity"><span style={{ color: "var(--accent-orange-text)" }}>Scalable Growth</span></Link>
                             </span>
                         </h1>
 
@@ -109,7 +109,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Transform your fragmented operations into a unified, intelligent engine. As an expert <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--brand-orange)] transition-colors underline decoration-dotted"><span style={{ color: "var(--brand-orange)", fontWeight: 700 }}>Custom AI Automation Agency</span></Link>, we don&apos;t just connect tools - we build sophisticated, <span style={{ color: "var(--brand-orange)", fontWeight: 700 }}>Agentic Workflow Automations</span> that think, adapt, and execute. From Enterprise AI Automation Solutions to Low-code AI automation for <Link href="/blog/cybersecurity-small-businesses" className="hover:text-[var(--brand-orange)] transition-colors underline decoration-dotted">small businesses</Link>, our architect-led team empowers you to reclaim thousands of hours and drive double-digit <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="hover:text-[var(--brand-orange)] transition-colors underline decoration-dotted">ROI</Link>.
+                            Transform your fragmented operations into a unified, intelligent engine. As an expert <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-orange-text)] transition-colors underline decoration-dotted"><span style={{ color: "var(--accent-orange-text)", fontWeight: 700 }}>Custom AI Automation Agency</span></Link>, we don&apos;t just connect tools - we build sophisticated, <span style={{ color: "var(--accent-orange-text)", fontWeight: 700 }}>Agentic Workflow Automations</span> that think, adapt, and execute. From Enterprise AI Automation Solutions to Low-code AI automation for <Link href="/blog/cybersecurity-small-businesses" className="hover:text-[var(--accent-orange-text)] transition-colors underline decoration-dotted">small businesses</Link>, our architect-led team empowers you to reclaim thousands of hours and drive double-digit <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="hover:text-[var(--accent-orange-text)] transition-colors underline decoration-dotted">ROI</Link>.
                         </p>
 
                         {/* Feature Highlights */}
@@ -295,7 +295,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     Custom Workflows
@@ -304,7 +304,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     Process Automation
@@ -313,7 +313,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     AI Integration
@@ -322,7 +322,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     24/7 Support

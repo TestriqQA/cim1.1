@@ -13,11 +13,11 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What is ecommerce SEO and why is it important?",
-            answer: <>Ecommerce SEO is the process of optimizing online stores to rank higher in search engines for product-related searches, driving organic traffic that converts into sales. Unlike traditional SEO, ecommerce SEO strategy focuses on product page optimization, schema markup for ecommerce products, faceted navigation SEO, and technical challenges unique to large product catalogs.<br /><br />It&apos;s critical because 44% of shoppers begin their buying journey with Google search, and organic search drives 37% of all <Link href="/services/seo-services" className="hover:underline" style={{ color: commerceBlue }}>ecommerce traffic</Link> with the highest conversion rates (2.4% vs. 1.8% for paid). Strategic ecommerce SEO optimization delivers sustainable, long-term revenue growth without ongoing ad spend.</>
+            answer: <>Ecommerce SEO is the process of optimizing online stores to rank higher in search engines for product-related searches, driving organic traffic that converts into sales. Unlike traditional SEO, ecommerce SEO strategy focuses on product page optimization, schema markup for ecommerce products, faceted navigation SEO, and technical challenges unique to large product catalogs.<br /><br />It&apos;s critical because 44% of shoppers begin their buying journey with Google search, and organic search drives 37% of all <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>ecommerce traffic</Link> with the highest conversion rates (2.4% vs. 1.8% for paid). Strategic ecommerce SEO optimization delivers sustainable, long-term revenue growth without ongoing ad spend.</>
         },
         {
             question: "How much do ecommerce SEO services cost in 2026?",
-            answer: <>Ecommerce SEO cost for business 2026 varies by store size and complexity:<br /><br />• Small Online Stores (100-500 products): $1,500-$3,000/month<br />• Mid-Size Ecommerce (500-5,000 products): $3,000-$7,000/month<br />• Enterprise Brands (5,000+ products): $7,000-$15,000/month<br />• Custom/Headless: $10,000-$25,000/month<br /><br />Pricing includes <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>technical SEO for ecommerce websites</Link>, on-page optimization, content creation, <Link href="/services/seo-services/link-building" className="hover:underline" style={{ color: commerceBlue }}>link building</Link>, and monthly reporting. Most clients see a strong ROI within 6-9 months. One-time ecommerce SEO audit and strategy services range from $2,500-$8,000.</>
+            answer: <>Ecommerce SEO cost for business 2026 varies by store size and complexity:<br /><br />• Small Online Stores (100-500 products): $1,500-$3,000/month<br />• Mid-Size Ecommerce (500-5,000 products): $3,000-$7,000/month<br />• Enterprise Brands (5,000+ products): $7,000-$15,000/month<br />• Custom/Headless: $10,000-$25,000/month<br /><br />Pricing includes <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>technical SEO for ecommerce websites</Link>, on-page optimization, content creation, <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>link building</Link>, and monthly reporting. Most clients see a strong ROI within 6-9 months. One-time ecommerce SEO audit and strategy services range from $2,500-$8,000.</>
         },
         {
             question: "How do I optimize my ecommerce product pages for SEO?",
@@ -33,7 +33,7 @@ export default function FAQ() {
         },
         {
             question: "What are ecommerce SEO ranking factors for 2026?",
-            answer: <>Top ecommerce SEO ranking factors post-December 2025 core update:<br /><br />• Core Web Vitals (LCP &lt;2.5s, FID &lt;100ms, CLS &lt;0.1)<br />• Helpful Product Content (Unique descriptions answering buyer questions)<br />• E-E-A-T Signals (Author expertise, brand trust, verified reviews)<br />• <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: commerceBlue }}>Schema Markup</Link> (Rich snippets with pricing, availability, ratings)<br />• <Link href="/services/mobile-app-development" className="hover:underline" style={{ color: commerceBlue }}>Mobile-First Experience</Link> (Responsive design, touch-friendly, fast mobile load)<br />• User Engagement (Low bounce rate, time on page, add-to-cart rate)<br />• Link Authority (Quality backlinks from industry sites)<br />• Semantic Search Optimization (Natural language, topic coverage)<br />• <Link href="/blog/mastering-seo-organic-growth" className="hover:underline" style={{ color: commerceBlue }}>Internal Linking</Link> (Strategic flow of authority to money pages)<br />• Technical Health (No errors, proper canonicals, clean indexing)</>
+            answer: <>Top ecommerce SEO ranking factors post-December 2025 core update:<br /><br />• Core Web Vitals (LCP &lt;2.5s, FID &lt;100ms, CLS &lt;0.1)<br />• Helpful Product Content (Unique descriptions answering buyer questions)<br />• E-E-A-T Signals (Author expertise, brand trust, verified reviews)<br />• <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>Schema Markup</Link> (Rich snippets with pricing, availability, ratings)<br />• <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>Mobile-First Experience</Link> (Responsive design, touch-friendly, fast mobile load)<br />• User Engagement (Low bounce rate, time on page, add-to-cart rate)<br />• Link Authority (Quality backlinks from industry sites)<br />• Semantic Search Optimization (Natural language, topic coverage)<br />• <Link href="/blog/mastering-seo-organic-growth" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>Internal Linking</Link> (Strategic flow of authority to money pages)<br />• Technical Health (No errors, proper canonicals, clean indexing)</>
         },
         {
             question: "Do you offer ecommerce SEO for international markets?",
@@ -55,7 +55,7 @@ export default function FAQ() {
                             style={{
                                 backgroundColor: `${commerceBlue}10`,
                                 borderColor: `${commerceBlue}30`,
-                                color: commerceBlue,
+                                color: "var(--accent-sky-text)",
                             }}
                         >
                             FAQ
@@ -65,7 +65,7 @@ export default function FAQ() {
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        Frequently Asked <span style={{ color: commerceBlue }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-sky-text)" }}>Questions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--foreground)" }}
@@ -104,7 +104,7 @@ export default function FAQ() {
                                         </div>
                                         <h3
                                             className="text-lg md:text-xl font-bold transition-colors duration-300"
-                                            style={{ color: isOpen ? commerceBlue : "var(--foreground)" }}
+                                            style={{ color: isOpen ? "var(--accent-sky-text)" : "var(--foreground)" }}
                                         >
                                             {faq.question}
                                         </h3>

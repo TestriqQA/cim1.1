@@ -102,8 +102,8 @@ export default function WhyChooseUs() {
                             border: "1px solid var(--border-color)"
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "#f97316" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#f97316" }}>
+                        <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             TRUSTED BY INDUSTRY LEADERS
                         </span>
                     </div>
@@ -154,7 +154,7 @@ export default function WhyChooseUs() {
                                     border: "1px solid var(--border-color)",
                                 }}
                             >
-                                <StatIcon className="w-8 h-8 mx-auto mb-3" style={{ color: "#f97316" }} />
+                                <StatIcon className="w-8 h-8 mx-auto mb-3" style={{ color: "var(--accent-orange-text)" }} />
                                 <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-[#f97316] to-[#ea580c] bg-clip-text text-transparent">
                                     {stat.value}
                                 </div>
@@ -226,7 +226,7 @@ export default function WhyChooseUs() {
                                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 group-hover:scale-105"
                                                 style={{
                                                     backgroundColor: `${reason.accentColor}15`,
-                                                    color: reason.accentColor,
+                                                    color: reason.accentColor === "#f97316" ? "var(--accent-orange-text)" : reason.accentColor,
                                                 }}
                                             >
                                                 <CheckCircle2 className="w-3 h-3" />

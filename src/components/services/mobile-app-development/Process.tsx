@@ -14,14 +14,14 @@ export default function Process() {
         },
         {
             icon: Pencil,
-            title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple)] transition-colors">UI/UX Design (Week 3-5)</Link>,
+            title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple-text)] transition-colors">UI/UX Design (Week 3-5)</Link>,
             description: "Low to high-fidelity wireframing, interactive prototypes in Figma/Adobe XD, user flow mapping, and accessibility audit. higher engagement through conversion-focused design backed by 10,000+ hours A/B testing.",
             details: ["Wireframing", "Interactive Prototypes", "Design System", "WCAG 2.2 AA Compliance", "Usability Testing (5+ users)"]
         },
         {
             icon: Code,
             title: "Development & Coding (Week 6-16)",
-            description: <span>2-week agile sprints with backend API development, frontend implementation, third-party integrations, and DevOps CI/CD pipelines. 80%+ unit test coverage with <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-purple)] transition-colors">code review for every PR</Link>.</span>,
+            description: <span>2-week agile sprints with backend API development, frontend implementation, third-party integrations, and DevOps CI/CD pipelines. 80%+ unit test coverage with <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">code review for every PR</Link>.</span>,
             details: ["Sprint Planning", "Backend (Node.js/Python/.NET)", "Frontend (Swift/Kotlin/Flutter)", "API Integration", "Git Workflow (Gitflow)"]
         },
         {
@@ -33,7 +33,7 @@ export default function Process() {
         {
             icon: Rocket,
             title: "Deployment & Launch (Week 20-21)",
-            description: <span>App Store and Play Store submission with compliance docs, beta testing via TestFlight/Internal Track, and <Link href="/services/seo-services" className="hover:text-[var(--brand-purple)] transition-colors">App Store Optimization</Link>. Average increase in organic downloads with top 10 keyword rankings within 90 days.</span>,
+            description: <span>App Store and Play Store submission with compliance docs, beta testing via TestFlight/Internal Track, and <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">App Store Optimization</Link>. Average increase in organic downloads with top 10 keyword rankings within 90 days.</span>,
             details: ["App Store Submission", "ASO (Keyword Research)", "Beta Testing", "Screenshot Optimization", "Pre-Launch Marketing"]
         },
         {
@@ -71,14 +71,14 @@ export default function Process() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple)" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--foreground)" }}>6-Phase Agile Methodology</span> <span style={{ color: "var(--brand-purple)" }}>(Proven Across 300+ Projects)</span>
+                        <span style={{ color: "var(--foreground)" }}>6-Phase Agile Methodology</span> <span style={{ color: "var(--brand-purple-text)" }}>(Proven Across 300+ Projects)</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Our battle-tested development process ensures reliable on-time delivery. Transparent, structured approach delivering measurable results.
@@ -117,7 +117,7 @@ export default function Process() {
                                             />
                                             <Icon className="w-8 h-8 text-white relative z-10" />
                                         </div>
-                                        <div className="text-sm font-bold" style={{ color: "var(--brand-purple)" }}>
+                                        <div className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                             Step {index + 1}
                                         </div>
                                         {index < steps.length - 1 && (
@@ -154,7 +154,7 @@ export default function Process() {
                                         />
 
                                         <div className="relative z-10">
-                                            <h3 className="text-2xl font-bold mb-2 transition-colors duration-300 text-[var(--foreground)] group-hover/card:text-[var(--brand-purple)]">
+                                            <h3 className="text-2xl font-bold mb-2 transition-colors duration-300 text-[var(--foreground)] group-hover/card:text-[var(--brand-purple-text)]">
                                                 {step.title}
                                             </h3>
                                             <p className="text-base mb-4" style={{ color: "var(--secondary-text)" }}>
@@ -229,7 +229,7 @@ export default function Process() {
                 {/* Process Highlights */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="p-6 rounded-2xl border text-center" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple-text)" }}>
                             Agile
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
@@ -237,7 +237,7 @@ export default function Process() {
                         </p>
                     </div>
                     <div className="p-6 rounded-2xl border text-center" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-yellow)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-amber-text)" }}>
                             Transparent
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>
@@ -245,7 +245,7 @@ export default function Process() {
                         </p>
                     </div>
                     <div className="p-6 rounded-2xl border text-center" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-blue)" }}>
+                        <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-blue-text)" }}>
                             Quality
                         </div>
                         <p style={{ color: "var(--secondary-text)" }}>

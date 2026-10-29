@@ -13,7 +13,7 @@ export default function Process() {
         {
             icon: PenTool,
             title: "Audience & Voice Development",
-            description: <>Crafting a unique, authentic brand voice while setting up <Link href="/services/seo-services/technical-seo-services" className="hover:underline text-blue-500">Twitter conversion tracking</Link> to ensure every interaction is measurable.</>,
+            description: <>Crafting a unique, authentic brand voice while setting up <Link href="/services/seo-services/technical-seo-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">Twitter conversion tracking</Link> to ensure every interaction is measurable.</>,
         },
         {
             icon: Calendar,
@@ -28,7 +28,7 @@ export default function Process() {
         {
             icon: Rocket,
             title: "Growth Acceleration & X Ads",
-            description: <>Scaling reach through targeted <Link href="/services/performance-marketing" className="hover:underline text-blue-500">Twitter ads management</Link>, from promoted tweets to <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline text-blue-500">X video ads</Link> using data-driven tactics.</>,
+            description: <>Scaling reach through targeted <Link href="/services/performance-marketing" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">Twitter ads management</Link>, from promoted tweets to <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">X video ads</Link> using data-driven tactics.</>,
         },
         {
             icon: BarChart,
@@ -66,7 +66,7 @@ export default function Process() {
                                 }}
                             >
                                 {/* Step Number */}
-                                <div className="absolute top-8 right-8 text-4xl font-bold transition-colors" style={{ color: "var(--border-color)" }}>
+                                <div aria-hidden="true" className="absolute top-8 right-8 text-4xl font-bold transition-colors" style={{ color: "#8a8a8a" }}>
                                     0{idx + 1}
                                 </div>
 

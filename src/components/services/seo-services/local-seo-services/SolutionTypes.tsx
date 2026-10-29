@@ -18,6 +18,22 @@ export default function SolutionTypes() {
     // Local SEO Amber theme color
     const localAmber = "#F59E0B";
 
+    // Theme-aware TEXT variants of the per-industry accent hues below.
+    // The raw hues stay in the data (they drive borders/tints/indicators/icons);
+    // this map is applied ONLY where a hue colors text.
+    const accentTextMap: Record<string, string> = {
+        "#F59E0B": "var(--accent-amber-text)",
+        "#EF4444": "var(--accent-red-text)",
+        "#1E40AF": "var(--brand-blue-text)",
+        "#EA580C": "var(--accent-orange-text)",
+        "#DB2777": "var(--accent-pink-text)",
+        "#059669": "var(--accent-green-text)",
+        "#06B6D4": "var(--accent-cyan-text)",
+        "#8B5CF6": "var(--accent-violet-text)",
+        "#F97316": "var(--accent-orange-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex] ?? hex;
+
     const solutions = [
         {
             id: "hospitality",
@@ -28,42 +44,42 @@ export default function SolutionTypes() {
         },
         {
             id: "medical",
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-red-500 transition-colors">Medical & Dental</Link>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-red-text)] transition-colors">Medical & Dental</Link>,
             description: "Rank for 'doctor near me' - HIPAA-compliant review strategies, patient testimonial optimization, and medical schema markup help clinics rank for high-intent queries.",
             icon: Stethoscope,
             color: "#EF4444",
         },
         {
             id: "legal",
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-blue-700 transition-colors">Legal Services</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-blue-text)] transition-colors">Legal Services</Link>,
             description: "Dominate 'lawyer near me' - We build authoritative citations on Avvo, Justia, and FindLaw, optimize for practice area + city keywords (e.g., 'DUI attorney Chicago').",
             icon: Scale,
             color: "#1E40AF",
         },
         {
             id: "homeservices",
-            title: <Link href="/services/seo-services" className="hover:text-orange-500 transition-colors">Home Services</Link>,
+            title: <Link href="/services/seo-services" className="hover:text-[var(--accent-orange-text)] transition-colors">Home Services</Link>,
             description: "Rank for 'emergency plumber,' 'HVAC repair' - Service area business (SAB) optimization with radius targeting. Our contractors average more service calls from Maps.",
             icon: Hammer,
             color: "#EA580C",
         },
         {
             id: "retail",
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-pink-600 transition-colors">Local Retail</Link>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-pink-text)] transition-colors">Local Retail</Link>,
             description: "Drive foot traffic from online searches - Product inventory feeds synced to GBP. Brick-and-mortar stores see increase in store visits tracked via Google's foot traffic analytics.",
             icon: ShoppingBag,
             color: "#DB2777",
         },
         {
             id: "realestate",
-            title: <Link href="/services/web-design-development/real-estate-platforms" className="hover:text-emerald-600 transition-colors">Real Estate</Link>,
+            title: <Link href="/services/web-design-development/real-estate-platforms" className="hover:text-[var(--accent-green-text)] transition-colors">Real Estate</Link>,
             description: "Become the go-to expert in your market - Hyperlocal content targeting neighborhood names, MLS integration for property listings. Realtors gain more buyer/seller inquiries.",
             icon: Home,
             color: "#059669",
         },
         {
             id: "dental",
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-cyan-500 transition-colors">Dental Practices</Link>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-cyan-text)] transition-colors">Dental Practices</Link>,
             description: "Top rankings for 'dentist near me' - We optimize appointment booking systems, dental procedure schema, insurance information. Practices achieve more new patient appointments.",
             icon: Stethoscope,
             color: "#06B6D4",
@@ -77,7 +93,7 @@ export default function SolutionTypes() {
         },
         {
             id: "insurance",
-            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-orange-500 transition-colors">Insurance</Link>,
+            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-orange-text)] transition-colors">Insurance</Link>,
             description: "Top 3 for 'insurance agent near me' - We create location-based landing pages for each insurance type, optimize agent bios with local expertise.",
             icon: Building2,
             color: "#F97316",
@@ -96,20 +112,20 @@ export default function SolutionTypes() {
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                             style={{
-                                backgroundColor: `${localAmber}15`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${localAmber}40`,
                             }}
                         >
-                            <Building2 className="w-4 h-4" style={{ color: localAmber }} />
-                            <span className="text-sm font-medium" style={{ color: localAmber }}>
+                            <Building2 className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-amber-text)" }}>
                                 Target Industries
                             </span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Industries We <span style={{ color: localAmber }}>Grow</span>
+                            Industries We <span style={{ color: "var(--accent-amber-text)" }}>Grow</span>
                         </h2>
-                        <p className="text-lg text-gray-400 mb-8">
+                        <p className="text-lg text-[var(--secondary-text)] mb-8">
                             Hyperlocal strategies tailored to your customer's buying journey. We've delivered top 3 rankings for diverse sectors.
                         </p>
                     </div>
@@ -156,7 +172,7 @@ export default function SolutionTypes() {
                                             className="px-3 py-1 rounded-full text-xs font-medium border transition-colors duration-300"
                                             style={{
                                                 borderColor: isActive ? solution.color : "var(--border-color)",
-                                                color: isActive ? solution.color : "var(--secondary-text)"
+                                                color: isActive ? textAccent(solution.color) : "var(--secondary-text)"
                                             }}
                                         >
                                             Local
@@ -165,7 +181,7 @@ export default function SolutionTypes() {
 
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
-                                        style={{ color: isActive ? solution.color : "var(--foreground)" }}
+                                        style={{ color: isActive ? textAccent(solution.color) : "var(--foreground)" }}
                                     >
                                         {solution.title}
                                     </h3>

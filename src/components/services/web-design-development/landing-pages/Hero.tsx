@@ -67,7 +67,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold"
-                        style={{ color: "#10b981" }}
+                        style={{ color: "var(--accent-green-text)" }}
                     >
                         Landing Pages
                     </span>
@@ -83,10 +83,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                                color: "#10b981",
+                                color: "var(--accent-green-text)",
                             }}
                         >
-                            <Target className="w-4 h-4" style={{ color: "#10b981" }} />
+                            <Target className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
                             <span className="text-sm font-semibold">High-Conversion Landing Pages</span>
                         </div>
 
@@ -95,7 +95,7 @@ export default function Hero() {
                             <span
                                 className="bg-clip-text text-transparent"
                                 style={{
-                                    background: "#10b981",
+                                    background: "var(--accent-green-text)",
                                     WebkitBackgroundClip: "text",
                                     color: "transparent",
                                 }}
@@ -160,15 +160,15 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="mt-12 grid grid-cols-3 gap-8 border-t pt-8" style={{ borderColor: "var(--border-color)" }}>
                             <div>
-                                <div className="text-3xl font-bold mb-1" style={{ color: "#10b981" }}>Strong</div>
+                                <div className="text-3xl font-bold mb-1" style={{ color: "var(--accent-green-text)" }}>Strong</div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. ROI Increase</div>
                             </div>
                             <div>
-                                <div className="text-3xl font-bold mb-1" style={{ color: "#0ea5e9" }}>&lt;1s</div>
+                                <div className="text-3xl font-bold mb-1" style={{ color: "var(--accent-sky-text)" }}>&lt;1s</div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>Load Time</div>
                             </div>
                             <div>
-                                <div className="text-3xl font-bold mb-1" style={{ color: "#10b981" }}>20%+</div>
+                                <div className="text-3xl font-bold mb-1" style={{ color: "var(--accent-green-text)" }}>20%+</div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>Conversion Rate</div>
                             </div>
                         </div>
@@ -204,7 +204,7 @@ export default function Hero() {
                                         Real-Time Analysis
                                     </span>
                                 </div>
-                                <div className="text-xs font-medium px-2 py-1 rounded-md bg-emerald-500/10 text-emerald-500">
+                                <div className="text-xs font-medium px-2 py-1 rounded-md bg-emerald-500/10 text-[var(--accent-green-text)]">
                                     Mobile Score
                                 </div>
                             </div>

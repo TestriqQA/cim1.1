@@ -33,11 +33,11 @@ export default function Process() {
             number: "02",
             icon: Palette,
             title: "Design & UX Prototyping",
-            description: <span>Creating interactive wireframes focusing on <Link href="/services/web-design-development" className="text-[#96bf48] hover:underline">Ecommerce UX design</Link> to ensure an intuitive path to purchase.</span>,
+            description: <span>Creating interactive wireframes focusing on <Link href="/services/web-design-development" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">Ecommerce UX design</Link> to ensure an intuitive path to purchase.</span>,
             details: [
                 "Interactive wireframing",
                 "Brand-aligned UI/UX",
-                <Link key="mobile" href="/services/mobile-app-development" className="hover:text-[#96bf48] transition-colors">Mobile-first architecture</Link>,
+                <Link key="mobile" href="/services/mobile-app-development" className="hover:text-[var(--accent-lime-text)] transition-colors">Mobile-first architecture</Link>,
                 "High-conversion mapping",
                 "User journey optimization",
             ],
@@ -85,7 +85,7 @@ export default function Process() {
             number: "06",
             icon: Rocket,
             title: "Launch & SEO Deployment",
-            description: <span>Technical go-live with full <Link href="/services/seo-services" className="text-[#96bf48] hover:underline">SEO implementation</Link> and real-time monitoring post-launch.</span>,
+            description: <span>Technical go-live with full <Link href="/services/seo-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">SEO implementation</Link> and real-time monitoring post-launch.</span>,
             details: [
                 "Technical launch support",
                 "Advanced SEO setup",
@@ -136,7 +136,7 @@ export default function Process() {
                         }}
                     >
                         <Settings className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "#96bf48" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
                             How We Build Your Store
                         </span>
                     </div>
@@ -274,7 +274,7 @@ export default function Process() {
 
                                         {/* Details - Always Visible */}
                                         <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                            <p className="text-sm font-semibold mb-3" style={{ color: "#96bf48" }}>
+                                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-lime-text)" }}>
                                                 Key Activities:
                                             </p>
                                             <ul className="space-y-2">

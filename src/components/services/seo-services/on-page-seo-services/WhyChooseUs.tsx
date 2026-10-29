@@ -61,16 +61,16 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: seoGreen }} />
-                            <span className="text-sm font-medium" style={{ color: seoGreen }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Global Expertise. Local Impact. <span style={{ color: seoGreen }}>Proven ROI.</span>
+                            Global Expertise. Local Impact. <span style={{ color: "var(--accent-green-text)" }}>Proven ROI.</span>
                         </h2>
                         <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Why <strong><Link href="/contact" className="hover:underline">hire an on-page SEO expert</Link></strong> from our team? Because we deliver results, not just reports.
+                            Why <strong><Link href="/contact" className="hover:underline underline underline-offset-2">hire an on-page SEO expert</Link></strong> from our team? Because we deliver results, not just reports.
                         </p>
 
                         {/* Stats */}
@@ -79,14 +79,14 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: seoGreen }}>30+</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>30+</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Combined Exp.</p>
                             </div>
                             <div
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: seoGreen }}>Sustainable</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>Sustainable</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Organic Results</p>
                             </div>
                         </div>
@@ -122,9 +122,9 @@ export default function WhyChooseUs() {
                                             style={{ color: isHovered ? "white" : seoGreen }}
                                         />
                                     </div>
-                                    <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
                                         {benefit.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                         {benefit.description}
                                     </p>

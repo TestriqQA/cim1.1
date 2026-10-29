@@ -1,24 +1,18 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/blog-design-services/Hero';
 import ServiceOverview from '@/components/services/web-design-development/blog-design-services/ServiceOverview';
+import WhyChooseUs from '@/components/services/web-design-development/blog-design-services/WhyChooseUs';
+import Process from '@/components/services/web-design-development/blog-design-services/Process';
+import CTA from '@/components/services/web-design-development/blog-design-services/CTA';
 
-// Lazy load below-the-fold components
-const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/blog-design-services/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
-});
+// Lazy load below-the-fold interactive components
 const SolutionTypes = dynamic(() => import('@/components/services/web-design-development/blog-design-services/SolutionTypes'), {
-    loading: () => <div className="py-20" />,
-});
-const Process = dynamic(() => import('@/components/services/web-design-development/blog-design-services/Process'), {
     loading: () => <div className="py-20" />,
 });
 const TechStack = dynamic(() => import('@/components/services/web-design-development/blog-design-services/TechStack'), {
     loading: () => <div className="py-20" />,
 });
 const UseCases = dynamic(() => import('@/components/services/web-design-development/blog-design-services/UseCases'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/blog-design-services/CTA'), {
     loading: () => <div className="py-20" />,
 });
 const FAQ = dynamic(() => import('@/components/services/web-design-development/blog-design-services/FAQ'), {

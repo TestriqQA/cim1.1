@@ -82,7 +82,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: seoGreen }}>On-Page SEO</span>
+                            <span style={{ color: "var(--accent-green-text)" }}>On-Page SEO</span>
                         </nav>
 
                         {/* Badge */}
@@ -94,7 +94,7 @@ export default function Hero() {
                             }}
                         >
                             <Search className="w-4 h-4" style={{ color: seoGreen }} />
-                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: seoGreen }}>
+                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: "var(--accent-green-text)" }}>
                                 On-Page SEO Experts
                             </Link>
                         </div>
@@ -105,7 +105,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Expert{" "}
-                            <span className="relative inline-block" style={{ color: seoGreen }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-green-text)" }}>
                                 <Link href="/services/seo-services" className="hover:underline">On-Page SEO</Link>
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -120,7 +120,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Stop losing customers to the competition. Our <strong><Link href="/services/seo-services" className="hover:underline">On-page SEO optimization</Link></strong> bridge the gap between "good content" and "Google's top spot." By integrating 2026 EEAT signals and advanced <strong><Link href="/services/seo-services/technical-seo-services" className="hover:underline">on-site SEO services</Link></strong>, we turn your website into a high-performance lead generation engine.
+                            Stop losing customers to the competition. Our <strong><Link href="/services/seo-services" className="hover:underline underline underline-offset-2">On-page SEO optimization</Link></strong> bridge the gap between "good content" and "Google's top spot." By integrating 2026 EEAT signals and advanced <strong><Link href="/services/seo-services/technical-seo-services" className="hover:underline underline underline-offset-2">on-site SEO services</Link></strong>, we turn your website into a high-performance lead generation engine.
                         </p>
 
                         <p className="text-base md:text-lg animate-slideUp delay-200" style={{ color: "var(--secondary-text)" }}>
@@ -132,7 +132,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: seoGreen }}
+                                style={{ backgroundColor: "#166534" }}
                             >
                                 Get Free SEO Audit
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -153,17 +153,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: seoGreen }}>250+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>250+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>SEO Elements</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: seoGreen }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. Core Web Vitals</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: seoGreen }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
                             </div>
                         </div>

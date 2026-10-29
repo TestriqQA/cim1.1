@@ -9,28 +9,28 @@ const steps = [
         number: "01",
         icon: MessageSquare,
         title: "Discovery & Consultation",
-        description: <span>We start by understanding your <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-blue)] transition-colors">business</Link>, goals, and challenges through in-depth discussions.</span>,
+        description: <span>We start by understanding your <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-blue-text)] transition-colors">business</Link>, goals, and challenges through in-depth discussions.</span>,
         gradient: "linear-gradient(135deg, var(--brand-purple), var(--brand-blue))",
     },
     {
         number: "02",
         icon: Lightbulb,
         title: "Strategy & Planning",
-        description: <span>Our team develops a comprehensive <Link href="/services/brand-identity-design" className="hover:text-[var(--brand-cyan)] transition-colors">strategy</Link> and roadmap tailored to your specific needs.</span>,
+        description: <span>Our team develops a comprehensive <Link href="/services/brand-identity-design" className="hover:text-[var(--accent-teal-text)] transition-colors">strategy</Link> and roadmap tailored to your specific needs.</span>,
         gradient: "linear-gradient(135deg, var(--brand-cyan), var(--brand-teal))",
     },
     {
         number: "03",
         icon: Rocket,
         title: "Design & Development",
-        description: <span>We bring your vision to life with cutting-edge <Link href="/services/brand-identity-design" className="hover:text-[var(--brand-orange)] transition-colors">design</Link> and <Link href="/services/web-design-development" className="hover:text-[var(--brand-orange)] transition-colors">development</Link> practices.</span>,
+        description: <span>We bring your vision to life with cutting-edge <Link href="/services/brand-identity-design" className="hover:text-[var(--accent-orange-text)] transition-colors">design</Link> and <Link href="/services/web-design-development" className="hover:text-[var(--accent-orange-text)] transition-colors">development</Link> practices.</span>,
         gradient: "linear-gradient(135deg, var(--brand-orange), var(--brand-purple))",
     },
     {
         number: "04",
         icon: BarChart3,
         title: "Launch & Optimize",
-        description: <span>After launch, we continuously monitor, analyze, and <Link href="/services/seo-services" className="hover:text-[var(--brand-yellow)] transition-colors">optimize</Link> for maximum results.</span>,
+        description: <span>After launch, we continuously monitor, analyze, and <Link href="/services/seo-services" className="hover:text-[var(--accent-amber-text)] transition-colors">optimize</Link> for maximum results.</span>,
         gradient: "linear-gradient(135deg, var(--brand-yellow), var(--brand-orange))",
     },
 ];
@@ -50,7 +50,7 @@ export default function Process() {
                             border: "1px solid var(--border-color)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
+                        <Rocket className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Our Process</span>
                     </div>
 
@@ -116,7 +116,7 @@ export default function Process() {
                                     <div className="relative z-10">
                                         {/* Step Number */}
                                         <div
-                                            className="text-sm font-bold mb-4 opacity-50"
+                                            className="text-sm font-bold mb-4"
                                             style={{ color: "var(--secondary-text)" }}
                                         >
                                             Step {step.number}

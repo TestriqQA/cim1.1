@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, Globe, Database, Cloud, CreditCard, Map } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -69,7 +67,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#0d9488" }}>Travel</span> Technology Stack
+                        <span style={{ color: "var(--accent-teal-text)" }}>Travel</span> Technology Stack
                     </h2>
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
                         Modern, scalable technologies built for global hospitality demands.

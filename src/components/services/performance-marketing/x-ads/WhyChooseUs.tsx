@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
-                            <span className="text-sm font-medium" style={{ color: xBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 The X Factor
                             </span>
                         </div>
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
                                         <reason.icon className="w-7 h-7" style={{ color: "var(--foreground)" }} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold mb-2 transition-colors group-hover:text-blue-500" style={{ color: "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-2 transition-colors group-hover:text-[var(--brand-blue-text)]" style={{ color: "var(--foreground)" }}>
                                             {reason.title}
                                         </h3>
                                         <p className="text-lg" style={{ color: "var(--secondary-text)" }}>

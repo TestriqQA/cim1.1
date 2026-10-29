@@ -79,13 +79,13 @@ export default function Process() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <CheckCircle className="w-4 h-4" style={{ color: googleBlue }} />
-                        <span className="text-sm font-semibold" style={{ color: googleBlue }}>
+                        <CheckCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        How We <span style={{ color: googleBlue }}>Work</span>
+                        How We <span style={{ color: "var(--brand-blue-text)" }}>Work</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A proven 6-step methodology for Google Ads success.
@@ -124,13 +124,13 @@ export default function Process() {
                                             className="lg:hidden w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                                             style={{ backgroundColor: `${googleBlue}15` }}
                                         >
-                                            <step.icon className="w-6 h-6" style={{ color: googleBlue }} />
+                                            <step.icon className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                         </div>
 
                                         <div className="flex items-center gap-2 mb-2" style={{ justifyContent: idx % 2 === 0 ? "flex-end" : "flex-start" }}>
                                             <span
                                                 className="text-xs font-bold px-2 py-1 rounded-full"
-                                                style={{ backgroundColor: `${googleBlue}20`, color: googleBlue }}
+                                                style={{ backgroundColor: `${googleBlue}0d`, color: "var(--brand-blue-text)" }}
                                             >
                                                 Step {step.id}
                                             </span>
@@ -148,7 +148,7 @@ export default function Process() {
                                                     className="px-3 py-1 rounded-full text-xs font-medium border"
                                                     style={{
                                                         borderColor: `${googleBlue}40`,
-                                                        color: googleBlue,
+                                                        color: "var(--brand-blue-text)",
                                                         backgroundColor: `${googleBlue}10`,
                                                     }}
                                                 >
@@ -167,7 +167,7 @@ export default function Process() {
                                         borderColor: googleBlue,
                                     }}
                                 >
-                                    <step.icon className="w-6 h-6" style={{ color: googleBlue }} />
+                                    <step.icon className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                 </div>
 
                                 {/* Empty Space */}

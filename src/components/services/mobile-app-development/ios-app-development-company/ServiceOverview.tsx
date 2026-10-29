@@ -46,13 +46,13 @@ export default function ServiceOverview() {
         {
             icon: Cloud,
             title: "iCloud Integration",
-            description: <><span className="text-inherit">Enable seamless continuity. We implement iOS app cloud integration and </span><Link href="/services/web-design-development/nodejs-backend" className="text-[#007AFF] hover:underline">backend development</Link> using CloudKit with real-time data synchronization.</>,
+            description: <><span className="text-inherit">Enable seamless continuity. We implement iOS app cloud integration and </span><Link href="/services/web-design-development/nodejs-backend" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">backend development</Link> using CloudKit with real-time data synchronization.</>,
             gradient: "from-[#5AC8FA] to-[#0055D4]",
             shadowColor: "rgba(90, 200, 250, 0.4)",
         },
         {
             icon: Sparkles,
-            title: <Link href="/services/seo-services" className="hover:text-[#0055D4] transition-colors">App Store Optimization (ASO)</Link>,
+            title: <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">App Store Optimization (ASO)</Link>,
             description: "Visibility is key. Our App Store Optimization (ASO) for iOS apps ensures your product gets found, optimizing visuals and descriptions.",
             gradient: "from-[#0055D4] to-[#5AC8FA]",
             shadowColor: "rgba(0, 85, 212, 0.4)",
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(0, 122, 255, 0.1), rgba(90, 200, 250, 0.1))",
-                                color: "#007AFF",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             Our Services

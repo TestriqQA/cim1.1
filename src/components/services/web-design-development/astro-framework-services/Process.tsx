@@ -55,7 +55,7 @@ export default function Process() {
             details: [
                 "Core Setup & TypeScript",
                 "Island Components (React/Vue)",
-                <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[#7C3AED] transition-colors">Headless CMS Integration</Link>,
+                <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Headless CMS Integration</Link>,
                 "MDX Setup & Routing",
                 "Analytics & Form Setup",
                 "Peer Code Reviews"
@@ -73,7 +73,7 @@ export default function Process() {
                 "WebP/AVIF Image conversion",
                 "JS Bundle & Tree-shaking",
                 "Caching & CDN Config",
-                <Link href="/blog/web-performance-optimization-speed" className="hover:text-[#7C3AED] transition-colors">LCP, FID & CLS Optimization</Link>,
+                <Link href="/blog/web-performance-optimization-speed" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">LCP, FID & CLS Optimization</Link>,
                 "SEO Validation & Tags"
             ],
             deliverable: "98+ PageSpeed & CWV Report",
@@ -121,8 +121,8 @@ export default function Process() {
                             borderColor: "rgba(124, 58, 237, 0.3)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "#7C3AED" }} />
-                        <span className="text-sm font-semibold tracking-wide" style={{ color: "#7C3AED" }}>
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-violet-text)" }}>
                             OUR PROCESS
                         </span>
                     </div>
@@ -167,7 +167,7 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className={`relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                className={`cursor-pointer relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                                     }`}
                                 onMouseEnter={() => {
                                     if (window.matchMedia("(hover: hover)").matches) {
@@ -213,7 +213,7 @@ export default function Process() {
                                         <div
                                             className="absolute top-4 right-6 text-7xl font-bold opacity-5 transition-all duration-500"
                                             style={{
-                                                color: "#7C3AED",
+                                                color: "var(--accent-violet-text)",
                                                 transform: isHovered ? "scale(1.1)" : "scale(1)",
                                             }}
                                         >
@@ -236,7 +236,7 @@ export default function Process() {
                                                     <Icon
                                                         className="w-8 h-8 transition-all duration-500"
                                                         style={{
-                                                            color: isHovered ? "#fff" : "#7C3AED",
+                                                            color: isHovered ? "#fff" : "var(--accent-violet-text)",
                                                         }}
                                                     />
                                                 </div>
@@ -246,7 +246,7 @@ export default function Process() {
                                                         className="inline-block text-xs font-bold tracking-wider px-2.5 py-1 rounded-full mb-2"
                                                         style={{
                                                             backgroundColor: "rgba(255, 93, 1, 0.15)",
-                                                            color: "#FF5D01",
+                                                            color: "var(--accent-orange-text)",
                                                         }}
                                                     >
                                                         STEP {step.number}
@@ -277,7 +277,7 @@ export default function Process() {
                                                 }}
                                             >
                                                 <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                                    <h4 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "#7C3AED" }}>
+                                                    <h4 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--accent-violet-text)" }}>
                                                         Key Activities
                                                     </h4>
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
@@ -293,7 +293,7 @@ export default function Process() {
                                                             >
                                                                 <CheckCircle2
                                                                     className="w-4 h-4 flex-shrink-0 mt-0.5"
-                                                                    style={{ color: "#A855F7" }}
+                                                                    style={{ color: "var(--brand-purple-text)" }}
                                                                 />
                                                                 <span>{detail}</span>
                                                             </div>
@@ -305,13 +305,13 @@ export default function Process() {
                                                         <div className="flex items-center gap-2">
                                                             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FF5D01" }} />
                                                             <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                <span style={{ color: "#7C3AED" }}>Deliverable:</span> {step.deliverable}
+                                                                <span style={{ color: "var(--accent-violet-text)" }}>Deliverable:</span> {step.deliverable}
                                                             </span>
                                                         </div>
                                                         <div className="flex items-center gap-2">
                                                             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#A855F7" }} />
                                                             <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                <span style={{ color: "#7C3AED" }}>Timeline:</span> {step.duration}
+                                                                <span style={{ color: "var(--accent-violet-text)" }}>Timeline:</span> {step.duration}
                                                             </span>
                                                         </div>
                                                     </div>

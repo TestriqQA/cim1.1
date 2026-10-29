@@ -60,14 +60,14 @@ export default function Process() {
                             borderColor: "rgba(16, 185, 129, 0.2)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "#10b981" }} />
-                        <span className="text-sm font-medium" style={{ color: "#10b981" }}>
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "#10b981" }}>Conversion</span> Process
+                        Our <span style={{ color: "var(--accent-green-text)" }}>Conversion</span> Process
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
@@ -135,7 +135,7 @@ export default function Process() {
                                                 className="px-4 py-2 rounded-full text-sm font-medium"
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, #10b981 10%, transparent)",
-                                                    color: "#10b981",
+                                                    color: "var(--accent-green-text)",
                                                 }}
                                             >
                                                 {deliverable}

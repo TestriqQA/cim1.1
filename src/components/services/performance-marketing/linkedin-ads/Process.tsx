@@ -82,13 +82,13 @@ export default function Process() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <CheckCircle className="w-4 h-4" style={{ color: linkedInBlue }} />
-                        <span className="text-sm font-semibold" style={{ color: linkedInBlue }}>
+                        <CheckCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        How We <span style={{ color: linkedInBlue }}>Work</span>
+                        How We <span style={{ color: "var(--brand-blue-text)" }}>Work</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A proven methodology for LinkedIn Ads success.
@@ -143,7 +143,7 @@ export default function Process() {
                                                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                                                     style={{ backgroundColor: `${linkedInBlue}15` }}
                                                 >
-                                                    <step.icon className="w-6 h-6" style={{ color: linkedInBlue }} />
+                                                    <step.icon className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                                                 </div>
                                             </div>
 
@@ -153,7 +153,7 @@ export default function Process() {
                                                     className="text-xs font-bold px-3 py-1 rounded-full"
                                                     style={{
                                                         backgroundColor: `${linkedInBlue}20`,
-                                                        color: linkedInBlue,
+                                                        color: "var(--brand-blue-text)",
                                                     }}
                                                 >
                                                     Step {step.id}
@@ -162,7 +162,7 @@ export default function Process() {
 
                                             <h3
                                                 className="text-xl font-bold mb-2 transition-colors duration-300"
-                                                style={{ color: isHovered ? linkedInBlue : "var(--foreground)" }}
+                                                style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -178,7 +178,7 @@ export default function Process() {
                                                         className="px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300"
                                                         style={{
                                                             borderColor: isHovered ? linkedInBlue : `${linkedInBlue}30`,
-                                                            color: isHovered ? linkedInBlue : "var(--secondary-text)",
+                                                            color: isHovered ? "var(--brand-blue-text)" : "var(--secondary-text)",
                                                             backgroundColor: isHovered ? `${linkedInBlue}10` : "transparent",
                                                             transitionDelay: `${dIdx * 50}ms`,
                                                         }}
@@ -209,7 +209,7 @@ export default function Process() {
                                             <step.icon
                                                 className="w-6 h-6 transition-transform duration-300"
                                                 style={{
-                                                    color: linkedInBlue,
+                                                    color: "var(--brand-blue-text)",
                                                     transform: isHovered ? "scale(1.2)" : "scale(1)",
                                                 }}
                                             />

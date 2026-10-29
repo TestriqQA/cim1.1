@@ -63,7 +63,7 @@ export default function ServiceOverview() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         More Than Just{" "}
                         <span
-                            style={{ color: msBlue }}
+                            style={{ color: "var(--brand-blue-text)" }}
                         >
                             Search
                         </span>

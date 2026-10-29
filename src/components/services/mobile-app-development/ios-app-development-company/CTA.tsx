@@ -81,7 +81,7 @@ export default function CTA() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                                 <Link
                                     href="/contact"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 bg-white text-[#007AFF] rounded-full font-bold text-sm sm:text-base md:text-lg transition-all hover:shadow-lg hover:scale-105"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 bg-white text-[#006d97] rounded-full font-bold text-sm sm:text-base md:text-lg transition-all hover:shadow-lg hover:scale-105"
                                 >
                                     Book Free Audit Today
                                     <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2 flex-shrink-0" />

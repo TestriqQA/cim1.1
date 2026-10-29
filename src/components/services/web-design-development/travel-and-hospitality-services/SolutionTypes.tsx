@@ -27,7 +27,7 @@ export default function SolutionTypes() {
             icon: Building2,
             title: "Hotel & Resort Websites",
             description:
-                <span>Immersive digital experiences with Travel Agency Website Design and <Link href="/services/seo-services" className="hover:underline">SEO</Link>. Stunning, fast-loading sites for luxury resorts that integrate seamlessly with Hotel Property Management System (PMS).</span>,
+                <span>Immersive digital experiences with Travel Agency Website Design and <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline">SEO</Link>. Stunning, fast-loading sites for luxury resorts that integrate seamlessly with Hotel Property Management System (PMS).</span>,
             features: [
                 "Virtual Tours & Visualizers",
                 "Direct Booking Incentives",
@@ -72,7 +72,7 @@ export default function SolutionTypes() {
             icon: Home,
             title: "Vacation Rental Management",
             description:
-                <span>End-to-end platforms for managing property portfolios. Incorporate <Link href="/services/social-media-marketing-services" className="hover:underline">Hospitality Social Media Management Services</Link>, smart lock sync, and owner reporting portals.</span>,
+                <span>End-to-end platforms for managing property portfolios. Incorporate <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:underline">Hospitality Social Media Management Services</Link>, smart lock sync, and owner reporting portals.</span>,
             features: [
                 "Automated Scheduling",
                 "Smart Lock Sync",
@@ -102,7 +102,7 @@ export default function SolutionTypes() {
             icon: CarFront,
             title: "Transport & Logistics Booking",
             description:
-                <span>Fleet management and transfer solutions. <Link href="/services/mobile-app-development" className="hover:underline">Mobile App Development for Travel Agencies</Link> ensures real-time tracking and seamless customer communication.</span>,
+                <span>Fleet management and transfer solutions. <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline">Mobile App Development for Travel Agencies</Link> ensures real-time tracking and seamless customer communication.</span>,
             features: [
                 "Fleet Management",
                 "Driver Assignment",
@@ -143,7 +143,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#0d9488" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0d9488" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-teal-text)" }}>
                             Our Expertise
                         </span>
                     </div>
@@ -152,13 +152,13 @@ export default function SolutionTypes() {
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
-                        <span style={{ color: "#0d9488" }}>Solutions</span> We Build
+                        <span style={{ color: "var(--accent-teal-text)" }}>Solutions</span> We Build
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        Whether you are a startup needing a Custom Travel Booking Platform Development or an established resort seeking <Link href="/services/performance-marketing" className="hover:underline">Digital Marketing for Luxury Hotels and Resorts</Link>, we deliver measurable results. Partner with us to leverage the power of <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline">Next.js</Link>, AI analytics, and cloud-native infrastructure, ensuring your business stays ahead of the curve.
+                        Whether you are a startup needing a Custom Travel Booking Platform Development or an established resort seeking <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Digital Marketing for Luxury Hotels and Resorts</Link>, we deliver measurable results. Partner with us to leverage the power of <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline">Next.js</Link>, AI analytics, and cloud-native infrastructure, ensuring your business stays ahead of the curve.
                     </p>
                     <div
                         className="w-24 h-1.5 mx-auto mt-8 rounded-full"
@@ -178,7 +178,7 @@ export default function SolutionTypes() {
                         return (
                             <div
                                 key={idx}
-                                className="group relative"
+                                className="group relative cursor-pointer"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}

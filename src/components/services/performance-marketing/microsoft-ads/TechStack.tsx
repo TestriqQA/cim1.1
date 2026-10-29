@@ -43,7 +43,7 @@ export default function TechStack() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Ecosystem{" "}
                         <span
-                            style={{ color: msBlue }}
+                            style={{ color: "var(--brand-blue-text)" }}
                         >
                             Stack
                         </span>
@@ -96,9 +96,9 @@ export default function TechStack() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold mb-1 group-hover:text-blue-500 transition-colors" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold mb-1 group-hover:text-[var(--brand-blue-text)] transition-colors" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

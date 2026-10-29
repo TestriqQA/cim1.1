@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, Building2, Shield, Award, Users, Globe, Briefcase } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +58,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#f97316" }}
+                        style={{ color: "var(--accent-orange-text)" }}
                     >
                         Business & Corporate
                     </span>
@@ -76,10 +74,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #f97316 8%, transparent), color-mix(in srgb, #ea580c 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #f97316 20%, transparent)",
-                                color: "#f97316",
+                                color: "var(--accent-orange-text)",
                             }}
                         >
-                            <Building2 className="w-4 h-4" style={{ color: "#f97316" }} />
+                            <Building2 className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
                             <span className="text-sm font-semibold">Business & Corporate Websites</span>
                         </div>
 
@@ -107,7 +105,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-xl md:text-2xl mb-8" style={{ color: "var(--secondary-text)" }}>
-                            Build a <span style={{ color: "#f97316", fontWeight: 700 }}>professional corporate website</span> that communicates trust, credibility, and brand excellence to stakeholders, investors, and clients.
+                            Build a <span style={{ color: "var(--accent-orange-text)", fontWeight: 700 }}>professional corporate website</span> that communicates trust, credibility, and brand excellence to stakeholders, investors, and clients.
                         </p>
 
                         {/* Feature Highlights */}
@@ -117,7 +115,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Trust Building
                                 </span>
@@ -127,7 +125,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Award className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Award className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <Link href="/services/web-design-development/branding-services" className="text-sm font-semibold hover:underline" style={{ color: "var(--foreground)" }}>
                                     Brand Authority
                                 </Link>
@@ -137,7 +135,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Users className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Users className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Stakeholder Focus
                                 </span>
@@ -147,7 +145,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Globe className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Globe className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Global Reach
                                 </span>
@@ -157,7 +155,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Briefcase className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Briefcase className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Enterprise Ready
                                 </span>
@@ -167,7 +165,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, #f97316 8%, transparent)",
                                 }}
                             >
-                                <Sparkles className="w-5 h-5 flex-shrink-0" style={{ color: "#f97316" }} />
+                                <Sparkles className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-orange-text)" }} />
                                 <Link href="/services/web-design-development" className="text-sm font-semibold hover:underline" style={{ color: "var(--foreground)" }}>
                                     Premium Design
                                 </Link>
@@ -272,15 +270,15 @@ export default function Hero() {
                         {/* Info Section Below Image */}
                         <div className="mt-12 flex gap-4 justify-center w-full z-10 relative">
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(249, 115, 22, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Shield className="w-4 h-4" style={{ color: "#f97316" }} />
+                                <Shield className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>ISO 27001</span>
                             </div>
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(249, 115, 22, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Award className="w-4 h-4" style={{ color: "#f97316" }} />
+                                <Award className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Award Winner</span>
                             </div>
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(249, 115, 22, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Briefcase className="w-4 h-4" style={{ color: "#f97316" }} />
+                                <Briefcase className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Enterprise</span>
                             </div>
                         </div>
@@ -290,10 +288,10 @@ export default function Hero() {
                             <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>Trusted by Industry Leaders</p>
                             <div className="flex flex-wrap justify-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                                 {/* Simple Text Logos for Demo */}
-                                <span className="text-lg font-black" style={{ color: "var(--secondary-text)" }}>ACME<span style={{ color: "#f97316" }}>CORP</span></span>
+                                <span className="text-lg font-black" style={{ color: "var(--secondary-text)" }}>ACME<span style={{ color: "var(--accent-orange-text)" }}>CORP</span></span>
                                 <span className="text-lg font-bold tracking-tight" style={{ color: "var(--secondary-text)" }}>Global<span className="font-light">Tech</span></span>
                                 <span className="text-lg font-serif italic font-bold" style={{ color: "var(--secondary-text)" }}>Nexus</span>
-                                <span className="text-lg font-bold" style={{ color: "var(--secondary-text)" }}>STAR<span style={{ color: "#f97316" }}>LIGHT</span></span>
+                                <span className="text-lg font-bold" style={{ color: "var(--secondary-text)" }}>STAR<span style={{ color: "var(--accent-orange-text)" }}>LIGHT</span></span>
                             </div>
                         </div>
 

@@ -38,7 +38,7 @@ export default function ServiceOverview() {
         },
         {
             icon: Layers,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[#0678BE] transition-colors">Multisite Management</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-sky-text)] transition-colors">Multisite Management</Link>,
             description: "Centralized management of multiple Drupal sites from a single codebase with consistent branding.",
             gradient: "from-purple-500 to-indigo-400",
             shadowColor: "rgba(168, 85, 247, 0.4)",
@@ -52,8 +52,8 @@ export default function ServiceOverview() {
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#0678BE] transition-colors">Support & Maintenance</Link>,
-            description: <><span className="text-inherit">Ongoing security updates, </span><Link href="/blog/web-performance-optimization-speed" className="text-teal-500 hover:underline">performance optimization</Link>, and 24/7 technical support for your Drupal site.</>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-sky-text)] transition-colors">Support & Maintenance</Link>,
+            description: <><span className="text-inherit">Ongoing security updates, </span><Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-teal-text)] hover:underline underline underline-offset-2">performance optimization</Link>, and 24/7 technical support for your Drupal site.</>,
             gradient: "from-emerald-500 to-teal-400",
             shadowColor: "rgba(16, 185, 129, 0.4)",
         },
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(6, 120, 190, 0.1), rgba(5, 74, 145, 0.1))",
-                                color: "#0678BE",
+                                color: "var(--accent-sky-text)",
                             }}
                         >
                             Our Services

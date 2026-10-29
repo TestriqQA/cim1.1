@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, Layers, Database, Zap, Lock, Settings } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ export default function ServiceOverview() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, #008ac1 8%, transparent), color-mix(in srgb, #bc3feb 8%, transparent))",
                             borderColor: "color-mix(in srgb, #008ac1 20%, transparent)",
-                            color: "#008ac1",
+                            color: "var(--brand-blue-text)",
                         }}
                     >
                         <Code2 className="w-4 h-4" />
@@ -42,19 +40,19 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            A <span style={{ color: "#008ac1", fontWeight: 700 }}>SaaS web application</span> is more than a website - it's a revenue-generating software product that solves real business problems, automates complex workflows, and scales to serve millions.
+                            A <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS web application</span> is more than a website - it's a revenue-generating software product that solves real business problems, automates complex workflows, and scales to serve millions.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            We're a <span style={{ color: "#008ac1", fontWeight: 700 }}>SaaS development company</span> specializing in custom SaaS development and cloud-based web applications that handle intricate business logic, support multi-tenant architectures, and maintain enterprise-grade security standards.
+                            We're a <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS development company</span> specializing in custom SaaS development and cloud-based web applications that handle intricate business logic, support multi-tenant architectures, and maintain enterprise-grade security standards.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            From B2B SaaS platforms to B2C customer solutions, our <Link href="/services/web-design-development" className="hover:underline" style={{ color: "#008ac1", fontWeight: 700 }}>SaaS agency</Link> combines product thinking with technical excellence to architect scalable systems. Whether you're a startup launching an MVP to validate market fit or an enterprise scaling an existing product, we deliver <span style={{ color: "#008ac1", fontWeight: 700 }}>SaaS app development services</span> that transform your vision into a market-ready, production-grade solution.
+                            From B2B SaaS platforms to B2C customer solutions, our <Link href="/services/web-design-development" className="underline hover:underline" style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS agency</Link> combines product thinking with technical excellence to architect scalable systems. Whether you're a startup launching an MVP to validate market fit or an enterprise scaling an existing product, we deliver <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS app development services</span> that transform your vision into a market-ready, production-grade solution.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            Our team has delivered <span style={{ color: "#008ac1", fontWeight: 700 }}>rigorously tested SaaS applications</span> for 50+ global clients across <Link href="/services/web-design-development/fintech-solutions" className="hover:underline" style={{ color: "var(--foreground)" }}>fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="hover:underline" style={{ color: "var(--foreground)" }}>healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline" style={{ color: "var(--foreground)" }}>e-commerce</Link> - driving <span style={{ color: "#008ac1", fontWeight: 700 }}>sustained traffic growth</span> through <Link href="/services/seo-services/technical-seo-services" className="hover:underline" style={{ color: "var(--foreground)" }}>technical SEO optimization</Link> and <Link href="/blog/web-performance-optimization-speed" className="hover:underline" style={{ color: "var(--foreground)" }}>performance engineering</Link>.
+                            Our team has delivered <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>rigorously tested SaaS applications</span> for 50+ global clients across <Link href="/services/web-design-development/fintech-solutions" className="underline hover:underline" style={{ color: "var(--foreground)" }}>fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline hover:underline" style={{ color: "var(--foreground)" }}>healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline hover:underline" style={{ color: "var(--foreground)" }}>e-commerce</Link> - driving <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>sustained traffic growth</span> through <Link href="/services/seo-services/technical-seo-services" className="underline hover:underline" style={{ color: "var(--foreground)" }}>technical SEO optimization</Link> and <Link href="/blog/web-performance-optimization-speed" className="underline hover:underline" style={{ color: "var(--foreground)" }}>performance engineering</Link>.
                         </p>
 
                         <div className="pt-4">

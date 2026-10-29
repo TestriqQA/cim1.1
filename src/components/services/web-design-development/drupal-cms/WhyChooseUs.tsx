@@ -14,6 +14,17 @@ import Link from "next/link";
 export default function WhyChooseUs() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    // Map each card's decorative iconColor (which also feeds borders/particles/gradients)
+    // to a theme-aware, AA-contrast token when it is used as TEXT.
+    const iconColorTextToken: Record<string, string> = {
+        "#0678BE": "var(--accent-sky-text)",
+        "#29A8DF": "var(--accent-sky-text)",
+        "#6366f1": "var(--accent-indigo-text)",
+        "#a855f7": "var(--brand-purple-text)",
+        "#14b8a6": "var(--accent-teal-text)",
+        "#10b981": "var(--accent-green-text)",
+    };
+
     const reasons = [
         {
             icon: Shield,
@@ -44,7 +55,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Layers,
-            title: <Link href="/blog/web-performance-optimization-speed" className="hover:text-[#a855f7] transition-colors">Scalable Architecture</Link>,
+            title: <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--brand-purple-text)] transition-colors">Scalable Architecture</Link>,
             description: "Designed for high-traffic sites with caching strategies, CDN integration, and load balancing.",
             gradient: "from-purple-500 via-fuchsia-500 to-pink-500",
             bgColor: "rgba(168, 85, 247, 0.15)",
@@ -62,7 +73,7 @@ export default function WhyChooseUs() {
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#10b981] transition-colors">Ongoing Partnership</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-green-text)] transition-colors">Ongoing Partnership</Link>,
             description: "Long-term support agreements with clear SLAs, training, and continuous improvement.",
             gradient: "from-emerald-500 via-teal-500 to-cyan-500",
             bgColor: "rgba(16, 185, 129, 0.15)",
@@ -106,8 +117,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(6, 120, 190, 0.1), rgba(5, 74, 145, 0.1))",
                             border: "1px solid rgba(6, 120, 190, 0.2)",
                         }}>
-                        <Award className="w-4 h-4" style={{ color: "#0678BE" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#0678BE" }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-sky-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -244,7 +255,7 @@ export default function WhyChooseUs() {
                                         <h3
                                             className="text-xl font-bold mb-3 transition-all duration-500"
                                             style={{
-                                                color: isHovered ? reason.iconColor : "var(--foreground)",
+                                                color: isHovered ? (iconColorTextToken[reason.iconColor] ?? reason.iconColor) : "var(--foreground)",
                                                 transform: isHovered ? "translateX(4px)" : "translateX(0)",
                                             }}
                                         >
@@ -278,7 +289,7 @@ export default function WhyChooseUs() {
                                         <div
                                             className="absolute top-0 right-0 w-12 h-12 flex items-center justify-center rounded-full font-bold text-2xl opacity-0 group-hover:opacity-10 transition-all duration-500"
                                             style={{
-                                                color: reason.iconColor,
+                                                color: iconColorTextToken[reason.iconColor] ?? reason.iconColor,
                                                 transform: isHovered ? "scale(1)" : "scale(0.5)",
                                             }}
                                         >

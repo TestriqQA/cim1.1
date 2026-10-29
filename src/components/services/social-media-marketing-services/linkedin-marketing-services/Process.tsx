@@ -117,13 +117,13 @@ export default function Process() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: `${linkedinBlue}15`, border: `1px solid ${linkedinBlue}30` }}>
-                        <Zap className="w-4 h-4" style={{ color: linkedinBlue }} />
-                        <span className="text-sm font-medium" style={{ color: linkedinBlue }}>6-Step Framework</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${linkedinBlue}30` }}>
+                        <Zap className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>6-Step Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our LinkedIn</span>{" "}
-                        <span style={{ color: linkedinBlue }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Marketing Process
                         </span>
                     </h2>
@@ -166,7 +166,7 @@ export default function Process() {
                         {
                             icon: Palette,
                             title: "Creative & Copy Excellence",
-                            description: <><Link href="/services/web-design-development/branding-services" className="hover:underline text-blue-500">Ad Creative</Link> - Developing high-CTR LinkedIn sponsored content and visuals.</>,
+                            description: <><Link href="/services/web-design-development/branding-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">Ad Creative</Link> - Developing high-CTR LinkedIn sponsored content and visuals.</>,
                             details: [
                                 "Persuasive ad copy",
                                 "Visual asset creation",
@@ -199,7 +199,7 @@ export default function Process() {
                                 "AI bidding management",
                                 "Dynamic ad iterations",
                                 "Real-time adjustments",
-                                <Link key="conv-opt" href="/services/performance-marketing" className="hover:text-blue-500 transition-colors">Conversion optimization</Link>,
+                                <Link key="conv-opt" href="/services/performance-marketing" className="hover:text-[var(--brand-blue-text)] transition-colors">Conversion optimization</Link>,
                                 "Lead quality filtering",
                             ],
                             duration: "Ongoing",
@@ -266,12 +266,12 @@ export default function Process() {
                                                     backgroundColor: isHovered ? step.color : `${step.color}15`,
                                                 }}
                                             >
-                                                <Icon className={`w-7 h-7 transition-all duration-500 ${isHovered ? "scale-110" : "scale-100"}`} style={{ color: isHovered ? "white" : step.color }} />
+                                                <Icon className={`w-7 h-7 transition-all duration-500 ${isHovered ? "scale-110" : "scale-100"}`} style={{ color: isHovered ? "white" : "var(--brand-blue-text)" }} />
                                             </div>
 
                                             <div
                                                 className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-500 ${isHovered ? "scale-105" : "scale-100"}`}
-                                                style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                                                style={{ backgroundColor: `${step.color}15`, color: "var(--brand-blue-text)" }}
                                             >
                                                 <Clock className="w-3 h-3" />
                                                 {step.duration}
@@ -279,7 +279,7 @@ export default function Process() {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? step.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}>
                                             {step.title}
                                         </h3>
 
@@ -300,7 +300,7 @@ export default function Process() {
                                                         className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isHovered ? "scale-110" : "scale-100"}`}
                                                         style={{ backgroundColor: `${step.color}15` }}
                                                     >
-                                                        <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
+                                                        <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "var(--brand-blue-text)" }} />
                                                     </div>
                                                     <span className={`text-sm leading-relaxed transition-all duration-300 ${isHovered ? "font-medium" : ""}`} style={{ color: "var(--secondary-text)" }}>
                                                         {detail}

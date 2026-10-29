@@ -61,7 +61,7 @@ export default function CTA() {
                             </h2>
 
                             <p className="text-base md:text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
-                                Don't let your brand get lost in the scroll. Partner with an <Link href="/about" className="text-white hover:underline decoration-white/50">Instagram Marketing Company</Link> that knows how to turn views into value.
+                                Don't let your brand get lost in the scroll. Partner with an <Link href="/about" className="text-white underline underline-offset-2 decoration-white/50">Instagram Marketing Company</Link> that knows how to turn views into value.
                             </p>
 
                             {/* Benefits */}

@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#306998" }}>Python & Django</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Python & Django</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(255, 212, 59, 0.3)",
                             }}
                         >
-                            <Zap className="w-4 h-4" style={{ color: "#FFD43B" }} />
-                            <span className="text-sm font-medium" style={{ color: "#306998" }}>
+                            <Zap className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Powering Modern Web Applications
                             </span>
                         </div>
@@ -116,7 +116,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            From <Link href="/services/web-design-development/business-corporate" className="text-[#306998] hover:underline">enterprise web applications</Link> to <Link href="/services/mobile-app-development" className="text-[#306998] hover:underline">powerful APIs</Link>, we leverage Python&apos;s versatility and Django&apos;s rapid development to build secure, scalable solutions.
+                            From <Link href="/services/web-design-development/business-corporate" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">enterprise web applications</Link> to <Link href="/services/mobile-app-development" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">powerful APIs</Link>, we leverage Python&apos;s versatility and Django&apos;s rapid development to build secure, scalable solutions.
                         </p>
 
                         {/* Feature Pills */}
@@ -171,17 +171,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#306998" }}>200+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>200+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Apps Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#306998" }}>8+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>8+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Experience</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#306998" }}>Enterprise</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Enterprise</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Grade Solutions</p>
                             </div>
                         </div>
@@ -280,7 +280,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#306998" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 Technologies We Use
                             </p>
                             <div className="flex flex-wrap gap-2">

@@ -10,23 +10,23 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What are travel and hospitality services in the context of digital development?",
-            answer: <span>Travel and hospitality services encompass the strategic design, development, and marketing of digital solutions for the tourism industry. This includes building <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline">custom booking engines</Link>, <Link href="/services/web-design-development/saas-development-services" className="hover:underline">hotel management software</Link>, OTA platforms, and implementing Travel Technology Solutions that streamline operations and enhance the guest experience.</span>
+            answer: <span>Travel and hospitality services encompass the strategic design, development, and marketing of digital solutions for the tourism industry. This includes building <Link href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:underline">custom booking engines</Link>, <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline">hotel management software</Link>, OTA platforms, and implementing Travel Technology Solutions that streamline operations and enhance the guest experience.</span>
         },
         {
             question: "How can technology improve hospitality services for hotels and agencies?",
-            answer: <span>Technology improves hospitality services by automating routine tasks, personalizing guest interactions, and optimizing revenue. Tools like Hotel Property Management Systems (PMS), <Link href="/services/ai-chatbots-services" className="hover:underline">AI-driven chatbots</Link>, and <Link href="/services/ai-workflows-automations-services" className="hover:underline">Travel Data Analytics</Link> allow businesses to offer seamless booking experiences, real-time support, and tailored recommendations, directly boosting satisfaction and loyalty.</span>
+            answer: <span>Technology improves hospitality services by automating routine tasks, personalizing guest interactions, and optimizing revenue. Tools like Hotel Property Management Systems (PMS), <Link href="/services/ai-chatbots-services" className="underline underline-offset-2 hover:underline">AI-driven chatbots</Link>, and <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">Travel Data Analytics</Link> allow businesses to offer seamless booking experiences, real-time support, and tailored recommendations, directly boosting satisfaction and loyalty.</span>
         },
         {
             question: "What makes a top-tier Hospitality Marketing Agency?",
-            answer: <span>A top-tier Hospitality Marketing Agency combines creative storytelling with data-driven strategies. Look for an agency that specializes in <Link href="/services/performance-marketing" className="hover:underline">Digital Marketing for Luxury Hotels and Resorts</Link>, uses advanced <Link href="/services/seo-services" className="hover:underline">SEO</Link> for Travel Lead Generation, and has a proven track record of increasing direct bookings through Hospitality Social Media Management Services and paid campaigns.</span>
+            answer: <span>A top-tier Hospitality Marketing Agency combines creative storytelling with data-driven strategies. Look for an agency that specializes in <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Digital Marketing for Luxury Hotels and Resorts</Link>, uses advanced <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline">SEO</Link> for Travel Lead Generation, and has a proven track record of increasing direct bookings through Hospitality Social Media Management Services and paid campaigns.</span>
         },
         {
             question: "Why is custom Travel Software Development Services better than off-the-shelf solutions?",
-            answer: <span><Link href="/services/web-design-development/saas-development-services" className="hover:underline">Custom Travel Software Development Services</Link> offer flexibility and scalability that off-the-shelf products cannot match. A custom solution is tailored to your specific business workflows, brands, and customer needs, allowing for unique features like specialized Travel API integration services and proprietary Hospitality Revenue Management algorithms that provide a competitive edge.</span>
+            answer: <span><Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline">Custom Travel Software Development Services</Link> offer flexibility and scalability that off-the-shelf products cannot match. A custom solution is tailored to your specific business workflows, brands, and customer needs, allowing for unique features like specialized Travel API integration services and proprietary Hospitality Revenue Management algorithms that provide a competitive edge.</span>
         },
         {
             question: "What are the key Hospitality Technology Trends for 2026?",
-            answer: <span>The key Hospitality Technology Trends 2026 include the rise of hyper-personalization via AI, the adoption of sustainable travel tech for Sustainable Travel and Tourism Consulting, biometric authentication for seamless check-ins, and the increased use of immersive AR/VR in <Link href="/services/web-design-development" className="hover:underline">Travel Agency Website Design</Link> to provide virtual "try-before-you-buy" experiences.</span>
+            answer: <span>The key Hospitality Technology Trends 2026 include the rise of hyper-personalization via AI, the adoption of sustainable travel tech for Sustainable Travel and Tourism Consulting, biometric authentication for seamless check-ins, and the increased use of immersive AR/VR in <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline">Travel Agency Website Design</Link> to provide virtual "try-before-you-buy" experiences.</span>
         },
         {
             question: "How do you handle Travel API Integration Services (GDS/OTA)?",
@@ -50,13 +50,13 @@ export default function FAQ() {
                         }}
                     >
                         <HelpCircle className="w-4 h-4" style={{ color: "#0d9488" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0d9488" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-teal-text)" }}>
                             FAQ
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "#0d9488" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--accent-teal-text)" }}>Questions</span>
                     </h2>
                 </div>
 

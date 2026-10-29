@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/Hero';
 import ServiceOverview from '@/components/services/web-design-development/ServiceOverview';
+import SEOPerformance from '@/components/services/web-design-development/SEOPerformance';
+import CTA from '@/components/services/web-design-development/CTA';
 
 // Lazy load below-the-fold components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/WhyChooseUs'), {
@@ -15,13 +17,7 @@ const Process = dynamic(() => import('@/components/services/web-design-developme
 const Technologies = dynamic(() => import('@/components/services/web-design-development/Technologies'), {
     loading: () => <div className="py-20" />,
 });
-const SEOPerformance = dynamic(() => import('@/components/services/web-design-development/SEOPerformance'), {
-    loading: () => <div className="py-20" />,
-});
 const FAQ = dynamic(() => import('@/components/services/web-design-development/WebDesignFAQ'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/CTA'), {
     loading: () => <div className="py-20" />,
 });
 

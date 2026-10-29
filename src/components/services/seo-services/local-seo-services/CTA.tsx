@@ -36,11 +36,11 @@ export default function CTA() {
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
                         GET FOUND ON THE <br />
-                        <span style={{ color: localAmber }}>FIRST PAGE</span>
+                        <span style={{ color: "var(--accent-amber-text)" }}>FIRST PAGE</span>
                     </h2>
 
                     <p className="text-xl max-w-2xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
-                        Stop losing customers to <Link href="/services/seo-services/technical-seo-services" className="hover:text-amber-500 transition-colors">competitors</Link> who rank higher. 83% of local searches lead to in-store visits within 24 hours. If you're not in the top 3 Google Map Pack results, you're handing high-intent customers to competitors on a silver platter.
+                        Stop losing customers to <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">competitors</Link> who rank higher. 83% of local searches lead to in-store visits within 24 hours. If you're not in the top 3 Google Map Pack results, you're handing high-intent customers to competitors on a silver platter.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -48,7 +48,7 @@ export default function CTA() {
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
                             style={{
-                                backgroundColor: localAmber,
+                                backgroundColor: "#b45309",
                                 boxShadow: `0 4px 20px ${localAmber}40`
                             }}
                         >

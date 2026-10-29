@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
         {
             icon: MapPin,
             title: "Proximity & Relevance Mastery",
-            description: <><Link href="/services/seo-services/on-page-seo-services" className="hover:text-amber-500 transition-colors">By creating neighborhood-specific content clusters</Link>, we ensure your business appears for the highest-converting proximity searches within 1-5 miles.</>,
+            description: <><Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">By creating neighborhood-specific content clusters</Link>, we ensure your business appears for the highest-converting proximity searches within 1-5 miles.</>,
         },
         {
             icon: Search,
@@ -29,12 +29,12 @@ export default function WhyChooseUs() {
         {
             icon: Phone,
             title: "Full Call Tracking & Attribution",
-            description: <><Link href="/services/performance-marketing" className="hover:text-amber-500 transition-colors">Know exactly which keywords generate paying customers</Link> - We implement dynamic number insertion (DNI) and call recording to track every phone lead back to its source.</>,
+            description: <><Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">Know exactly which keywords generate paying customers</Link> - We implement dynamic number insertion (DNI) and call recording to track every phone lead back to its source.</>,
         },
         {
             icon: BarChart,
             title: "Conversion Rate Optimization for GBP",
-            description: <><Link href="/services/performance-marketing" className="hover:underline">Traffic means nothing without conversions</Link> - We A/B test GBP descriptions, service menu layouts, booking button placements, and photo sequences to maximize click-to-call rates. Our optimized profiles convert higher than industry benchmarks.</>,
+            description: <><Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Traffic means nothing without conversions</Link> - We A/B test GBP descriptions, service menu layouts, booking button placements, and photo sequences to maximize click-to-call rates. Our optimized profiles convert higher than industry benchmarks.</>,
         },
         {
             icon: Check,
@@ -57,18 +57,18 @@ export default function WhyChooseUs() {
                             <div
                                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                                 style={{
-                                    backgroundColor: `${localAmber}15`,
+                                    backgroundColor: "var(--card-bg)",
                                     borderColor: `${localAmber}40`,
                                 }}
                             >
-                                <Award className="w-4 h-4" style={{ color: localAmber }} />
-                                <span className="text-sm font-medium" style={{ color: localAmber }}>
+                                <Award className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                                <span className="text-sm font-medium" style={{ color: "var(--accent-amber-text)" }}>
                                     Why Trust Us
                                 </span>
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                                Why Trust Us With Your <span style={{ color: localAmber }}>Local Market?</span>
+                                Why Trust Us With Your <span style={{ color: "var(--accent-amber-text)" }}>Local Market?</span>
                             </h2>
                             <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 We're a global local SEO company serving hospitality, medical, legal, home services, retail, and real estate sectors. Our proprietary geo-targeting strategies combined with Google's 2026 local search algorithms transform your Google Business Profile into a lead-generating powerhouse that drives more phone calls and foot traffic.
@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
                                     backgroundColor: `${localAmber}05`
                                 }}
                             >
-                                <div className="text-4xl font-bold mb-2" style={{ color: localAmber }}>High</div>
+                                <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-amber-text)" }}>High</div>
                                 <p style={{ color: "var(--secondary-text)" }}>Of clients stay with us for more than 12 months because our strategies deliver consistent, measurable results.</p>
                             </div>
                         </div>
@@ -115,9 +115,9 @@ export default function WhyChooseUs() {
                                     >
                                         <Icon className="w-6 h-6" />
                                     </div>
-                                    <h4 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                                         {reason.title}
-                                    </h4>
+                                    </h3>
                                     <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                         {reason.description}
                                     </p>

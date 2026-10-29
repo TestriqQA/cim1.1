@@ -17,6 +17,19 @@ import Link from "next/link";
 export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
+    // Theme-aware TEXT variants of the per-step accent hues below.
+    // The raw hues stay in the data (they drive gradients/borders/icons/tints);
+    // this map is applied ONLY where a hue colors text.
+    const accentTextMap: Record<string, string> = {
+        "#E1306C": "var(--accent-pink-text)",
+        "#C13584": "var(--accent-violet-text)",
+        "#833AB4": "var(--accent-violet-text)",
+        "#F77737": "var(--accent-orange-text)",
+        "#405DE6": "var(--accent-indigo-text)",
+        "#FD1D1D": "var(--accent-red-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex] ?? hex;
+
     const steps = [
         {
             icon: Search,
@@ -77,7 +90,7 @@ export default function Process() {
         {
             icon: Zap,
             title: "Ad Deployment & Scaling",
-            description: <>Launching high-converting <Link href="/services/performance-marketing" className="hover:underline text-pink-500">Instagram Advertising Services</Link> using Meta Pixel and CAPI for measurable ROI.</>,
+            description: <>Launching high-converting <Link href="/services/performance-marketing" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Instagram Advertising Services</Link> using Meta Pixel and CAPI for measurable ROI.</>,
             details: [
                 "Full-funnel ad setup",
                 "Retargeting loop build",
@@ -91,7 +104,7 @@ export default function Process() {
         {
             icon: RefreshCw,
             title: "Analyze, Report & Iterate",
-            description: <>Monthly deep-dives into <Link href="/blog/data-analytics-insights-action" className="hover:underline text-pink-500">ROI</Link>, CTR, and follower quality to ensure consistent exponential growth.</>,
+            description: <>Monthly deep-dives into <Link href="/blog/data-analytics-insights-action" className="underline underline-offset-2 text-[var(--accent-pink-text)]">ROI</Link>, CTR, and follower quality to ensure consistent exponential growth.</>,
             details: [
                 "ROI & CTR performance deep-dive",
                 "Follower quality analysis",
@@ -117,7 +130,7 @@ export default function Process() {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(193, 53, 132, 0.1))", border: "1px solid rgba(225, 48, 108, 0.2)" }}>
                         <Zap className="w-4 h-4" style={{ color: "#E1306C" }} />
-                        <span className="text-sm font-medium" style={{ color: "#E1306C" }}>6-Step Framework</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>6-Step Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Instagram</span>{" "}
@@ -184,7 +197,7 @@ export default function Process() {
 
                                             <div
                                                 className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-500 ${isHovered ? "scale-105" : "scale-100"}`}
-                                                style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                                                style={{ backgroundColor: `${step.color}15`, color: textAccent(step.color) }}
                                             >
                                                 <Clock className="w-3 h-3" />
                                                 {step.duration}
@@ -192,7 +205,7 @@ export default function Process() {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? step.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? textAccent(step.color) : "var(--foreground)" }}>
                                             {step.title}
                                         </h3>
 

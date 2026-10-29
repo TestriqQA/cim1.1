@@ -17,11 +17,19 @@ export default function WhyChooseUs() {
 
     const youtubeRed = "#FF0000";
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#ff0000": "var(--accent-red-text)",
+            "#cc0000": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const reasons = [
         {
             icon: TrendingUp,
             title: "Sustained Traffic Growth",
-            description: <>Proven results using the latest <Link href="/services/seo-services" className="hover:underline text-red-500">video SEO</Link> techniques. We use data to drive real scale.</>,
+            description: <>Proven results using the latest <Link href="/services/seo-services" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">video SEO</Link> techniques. We use data to drive real scale.</>,
             color: "#FF0000",
         },
         {
@@ -71,19 +79,19 @@ export default function WhyChooseUs() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: `${youtubeRed}15`,
+                            backgroundColor: "var(--card-bg)",
                             borderColor: `${youtubeRed}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: youtubeRed }} />
-                        <span className="text-sm font-medium" style={{ color: youtubeRed }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us for</span>{" "}
-                        <span style={{ color: youtubeRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             YouTube Marketing
                         </span>
                     </h2>
@@ -133,7 +141,7 @@ export default function WhyChooseUs() {
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? reason.color : "var(--foreground)" }}>
+                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? textAccent(reason.color) : "var(--foreground)" }}>
                                         {reason.title}
                                     </h3>
                                     <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

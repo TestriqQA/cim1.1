@@ -50,7 +50,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "Ecommerce and Retail Hybrid App Solutions",
-            description: <><span className="text-inherit">Boost your sales with high-conversion mobile shopping. We integrate secure payment gateways and AR-driven product previews using modern </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[#00b4d8] hover:underline">ecommerce</Link> web view architecture.</>,
+            description: <><span className="text-inherit">Boost your sales with high-conversion mobile shopping. We integrate secure payment gateways and AR-driven product previews using modern </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">ecommerce</Link> web view architecture.</>,
             features: [
                 "Secure payments",
                 "AR product previews",
@@ -74,7 +74,7 @@ export default function SolutionTypes() {
         {
             icon: FileText,
             title: "Healthcare and HIPAA-Compliant Hybrid Apps",
-            description: <><span className="text-inherit">Trust and security are paramount. We deliver </span><Link href="/services/web-design-development/healthcare-portals" className="text-[#00b4d8] hover:underline">healthcare</Link> hybrid applications that strictly follow HIPAA guidelines, ensuring patient data privacy and secure telehealth capabilities.</>,
+            description: <><span className="text-inherit">Trust and security are paramount. We deliver </span><Link href="/services/web-design-development/healthcare-portals" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">healthcare</Link> hybrid applications that strictly follow HIPAA guidelines, ensuring patient data privacy and secure telehealth capabilities.</>,
             features: [
                 "HIPAA compliance",
                 "Telehealth features",
@@ -98,7 +98,7 @@ export default function SolutionTypes() {
         {
             icon: GraduationCap,
             title: "Content, Media & EdTech Solutions",
-            description: <><span className="text-inherit">Engage your audience with news portals or learning platforms. Our </span><Link href="/services/web-design-development/edtech-lms" className="text-[#00b4d8] hover:underline">EdTech</Link> apps support offline reading, video streaming, and real-time progress tracking across all devices.</>,
+            description: <><span className="text-inherit">Engage your audience with news portals or learning platforms. Our </span><Link href="/services/web-design-development/edtech-lms" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">EdTech</Link> apps support offline reading, video streaming, and real-time progress tracking across all devices.</>,
             features: [
                 "Offline reading",
                 "Video streaming",
@@ -121,8 +121,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(0, 180, 216, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#00b4d8" }} />
-                        <span className="text-sm font-medium" style={{ color: "#00b4d8" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
@@ -202,7 +202,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#00b4d8]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-cyan-text)]"
                                             }`}
                                     />
                                 </div>
@@ -221,7 +221,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#00b4d8]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-cyan-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -234,7 +234,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#00b4d8]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-cyan-text)]" />
                                 </div>
                             </div>
                         );

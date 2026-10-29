@@ -18,7 +18,7 @@ export default function FAQ() {
         },
         {
             question: "How do I choose the best WordPress development agency?",
-            answer: <>Look for an agency with a deep portfolio, transparent <Link href="/services/additional-support-services" className="text-[#0073AA] hover:underline">WordPress maintenance and support services</Link>, and verifiable reviews. A top-tier agency should prioritize SEO, speed, and mobile responsiveness.</>
+            answer: <>Look for an agency with a deep portfolio, transparent <Link href="/services/additional-support-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">WordPress maintenance and support services</Link>, and verifiable reviews. A top-tier agency should prioritize SEO, speed, and mobile responsiveness.</>
         },
         {
             question: "What is included in WordPress maintenance services?",
@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
             question: "How long does it take to develop a custom WordPress site?",
-            answer: <>A custom project typically takes 4–12 weeks depending on features like <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#0073AA] hover:underline">WooCommerce development</Link> or WordPress API integration. We provide a detailed timeline during the discovery phase.</>
+            answer: <>A custom project typically takes 4–12 weeks depending on features like <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">WooCommerce development</Link> or WordPress API integration. We provide a detailed timeline during the discovery phase.</>
         }
     ];
 
@@ -45,14 +45,14 @@ export default function FAQ() {
                             borderColor: "rgba(0, 115, 170, 0.2)",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#0073AA" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0073AA" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             FAQ
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "#0073AA" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--brand-blue-text)" }}>Questions</span>
                     </h2>
                 </div>
 

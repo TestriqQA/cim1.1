@@ -71,19 +71,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#007AFF" }}>iOS Development</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>iOS Development</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
                             style={{
-                                backgroundColor: "rgba(0, 122, 255, 0.1)",
+                                backgroundColor: "rgba(0, 122, 255, 0.05)",
                                 borderColor: "rgba(0, 122, 255, 0.3)",
                             }}
                         >
-                            <Apple className="w-4 h-4" style={{ color: "#007AFF" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#007AFF" }}>
+                            <Apple className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 iOS App Development Services
                             </span>
                         </div>
@@ -118,7 +118,7 @@ export default function Hero() {
 
                         <div className="space-y-4 animate-slideUp delay-100">
                             <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                                In an era where mobile supremacy defines market leadership, our iOS App Development Services empower startups and <Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[#007AFF] hover:underline">enterprises</Link> to dominate the Apple ecosystem.
+                                In an era where mobile supremacy defines market leadership, our iOS App Development Services empower startups and <Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">enterprises</Link> to dominate the Apple ecosystem.
                             </p>
                             <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 hidden md:block" style={{ color: "var(--secondary-text)" }}>
                                 We specialize in crafting high-impact, user-centric applications that strictly adhere to Apple’s Human Interface Guidelines (HIG).
@@ -177,17 +177,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: "#007AFF" }}>150+</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>150+</h2>
                                 <p className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>iOS Apps Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: "#007AFF" }}>High</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
                                 <p className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>Avg. App Store Rating</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-2xl md:text-3xl font-bold" style={{ color: "#007AFF" }}>10M+</h4>
+                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>10M+</h2>
                                 <p className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>App Downloads</p>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#007AFF" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 Apple Ecosystem Expertise
                             </p>
                             <div className="flex flex-wrap gap-2">

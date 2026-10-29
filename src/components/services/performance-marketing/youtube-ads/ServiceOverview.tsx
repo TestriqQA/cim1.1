@@ -106,7 +106,7 @@ export default function ServiceOverview() {
                                 >
                                     <service.icon
                                         className="w-7 h-7"
-                                        style={{ color: hoveredCard === idx ? "white" : youtubeRed }}
+                                        style={{ color: hoveredCard === idx ? "white" : "var(--accent-red-text)" }}
                                     />
                                 </div>
 

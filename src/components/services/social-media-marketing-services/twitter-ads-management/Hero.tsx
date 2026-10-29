@@ -123,7 +123,7 @@ export default function Hero() {
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
                             Drive real-time engagement and build 100% brand authority with strategic X (Twitter) campaigns.
-                            From viral trend hijacking to high-conversion <Link href="/services/performance-marketing" className="hover:underline text-foreground">Twitter ads management</Link>, we amplify your voice in the global town square.
+                            From viral trend hijacking to high-conversion <Link href="/services/performance-marketing" className="hover:underline underline underline-offset-2 text-foreground">Twitter ads management</Link>, we amplify your voice in the global town square.
                         </p>
 
                         {/* Feature Pills */}
@@ -177,17 +177,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Average ROI</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>20%+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>20%+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>CTR Lifts</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Targeting Precision</p>
                             </div>
                         </div>

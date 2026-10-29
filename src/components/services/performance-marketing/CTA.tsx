@@ -45,7 +45,7 @@ export default function CTA() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold" style={{ color: "var(--brand-orange)" }}>FREE AUDIT</span>
+                        <span className="text-sm font-bold" style={{ color: "var(--accent-orange-text)" }}>FREE AUDIT</span>
                     </div>
 
                     {/* Icon */}
@@ -53,7 +53,7 @@ export default function CTA() {
 
                     {/* Heading */}
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-6">
-                        Ready to <span style={{ color: "var(--brand-orange)" }}>Maximize Your ROI</span>?
+                        Ready to <span style={{ color: "var(--accent-orange-text)" }}>Maximize Your ROI</span>?
                     </h2>
                     <p className="text-base md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Get a free performance audit and discover how much more your ad budget could achieve.
@@ -63,7 +63,7 @@ export default function CTA() {
                     <div className="flex flex-wrap justify-center gap-8 mb-10">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center">
-                                <div className="text-2xl md:text-3xl font-black" style={{ color: "var(--brand-orange)" }}>
+                                <div className="text-2xl md:text-3xl font-black" style={{ color: "var(--accent-orange-text)" }}>
                                     {stat.value}
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
@@ -76,7 +76,7 @@ export default function CTA() {
                         <Link
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform shadow-lg text-sm sm:text-base md:text-lg"
-                            style={{ backgroundColor: "var(--brand-orange)" }}
+                            style={{ backgroundColor: "#c2410c" }}
                         >
                             Get Your Proposal
                             <ArrowRight className="w-5 h-5 flex-shrink-0" />
@@ -84,7 +84,7 @@ export default function CTA() {
                         <Link
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-full border-2 font-semibold hover:scale-105 transition-transform text-sm sm:text-base md:text-lg"
-                            style={{ borderColor: "var(--brand-orange)", color: "var(--brand-orange)" }}
+                            style={{ borderColor: "var(--brand-orange)", color: "var(--accent-orange-text)" }}
                         >
                             <Phone className="w-5 h-5 flex-shrink-0" />
                             Schedule a Call

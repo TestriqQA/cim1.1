@@ -217,6 +217,16 @@ export default function Hero() {
         if (k === "consent" && v) setConsentError(null);
     };
 
+    // The six ₹ (U+20B9) in the budget options are the only characters on this
+    // page inside Inter's latin-ext subset, and rendering them in Inter pulls an
+    // extra 84 KB woff2 at VeryHigh priority right through the LCP window. An
+    // <option> may only contain text, so a per-glyph <span> is not legal here and
+    // the stack goes on the controls. It must be an INLINE style: a styled-jsx
+    // rule is injected only after hydration, by which point Chrome has already
+    // laid the options out and requested the font. Applied to all three selects
+    // so the row stays consistent; native select popups are OS-rendered anyway.
+    const selectFont = 'system-ui, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif';
+
     // Handle phone change separately due to PhoneInput component
     const handlePhoneChange = (value: string | undefined) => {
         setForm((prev) => ({ ...prev, phone: value || "" }));
@@ -629,7 +639,7 @@ export default function Hero() {
                                                         required
                                                         aria-invalid={!!subjectError}
                                                         className="w-full mt-2 px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                        style={{ borderColor: subjectError ? "var(--brand-orange)" : "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                        style={{ borderColor: subjectError ? "var(--brand-orange)" : "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                     >
                                                         <option value="">Select topic</option>
                                                         <option value="Web Design & Development">Web Design & Development</option>
@@ -659,7 +669,7 @@ export default function Hero() {
                                                             value={form.budget}
                                                             onChange={(e) => handleChange("budget", e.target.value)}
                                                             className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                         >
                                                             <option value="">Select budget</option>
                                                             <option value="under-5k">Under ₹5,000</option>
@@ -680,7 +690,7 @@ export default function Hero() {
                                                             value={form.timeframe}
                                                             onChange={(e) => handleChange("timeframe", e.target.value)}
                                                             className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)" }}
+                                                            style={{ borderColor: "var(--border-color)", background: "var(--hover-bg)", color: "var(--foreground)", fontFamily: selectFont }}
                                                         >
                                                             <option value="">Select timeframe</option>
                                                             <option value="1-2 weeks">1 - 2 weeks</option>

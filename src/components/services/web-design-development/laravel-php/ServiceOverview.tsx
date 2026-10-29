@@ -20,12 +20,12 @@ export default function ServiceOverview() {
         {
             icon: Rocket,
             title: "SaaS Application Development",
-            description: <>Scalable multi-tenant <Link href="/services/web-design-development/saas-development-services" className="text-[#FF2D20] hover:underline">SaaS platforms</Link> with subscription management, role-based access, and robust billing systems.</>,
+            description: <>Scalable multi-tenant <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">SaaS platforms</Link> with subscription management, role-based access, and robust billing systems.</>,
         },
         {
             icon: RefreshCw,
             title: "API Development & Integration",
-            description: <>RESTful and GraphQL API development for <Link href="/services/mobile-app-development" className="text-[#FF2D20] hover:underline">mobile apps</Link> and third-party integrations (Stripe, Salesforce, etc.).</>,
+            description: <>RESTful and GraphQL API development for <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">mobile apps</Link> and third-party integrations (Stripe, Salesforce, etc.).</>,
         },
         {
             icon: Database,
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                                         background: "linear-gradient(135deg, rgba(255, 45, 32, 0.1), rgba(240, 83, 64, 0.1))",
                                     }}
                                 >
-                                    <Icon className="w-7 h-7" style={{ color: "#FF2D20" }} />
+                                    <Icon className="w-7 h-7" style={{ color: "var(--accent-red-text)" }} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{service.title}</h3>
                                 <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

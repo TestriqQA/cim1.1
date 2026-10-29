@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(77, 163, 255, 0.3)",
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: "#4DA3FF" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#0286FF" }}>
+                        <Layers className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Free Contentful Consultation
                         </span>
                     </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { Plane, ArrowRight, Calendar, Globe, CreditCard, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
@@ -34,7 +32,7 @@ export default function CTA() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Ready to Pioneer the Future of{" "}
-                            <span style={{ color: "#0d9488" }}>Travel and Hospitality</span>?
+                            <span style={{ color: "var(--accent-teal-text)" }}>Travel and Hospitality</span>?
                         </h2>
 
                         <p
@@ -72,7 +70,7 @@ export default function CTA() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
-                                style={{ backgroundColor: "#0d9488" }}
+                                style={{ backgroundColor: "var(--accent-teal-btn)" }}
                             >
                                 Get Your Free Audit
                                 <ArrowRight className="w-5 h-5" />

@@ -16,35 +16,35 @@ export default function Process() {
             icon: Palette,
             number: "02",
             title: "Strategic Architecture",
-            description: <>Planning for Core Web Vitals and global accessibility. We design high-fidelity <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> that reflects brand authority.</>,
+            description: <>Planning for Core Web Vitals and global accessibility. We design high-fidelity <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> that reflects brand authority.</>,
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
             icon: Code,
             number: "03",
             title: "Agile Engineering",
-            description: <>rigorously tested delivery using modern, secure tech stacks (<Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">Next.js</Link>, <Link href="/blog/future-web-development-nextjs" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">TypeScript</Link>). Clean, modular code for future growth.</>,
+            description: <>rigorously tested delivery using modern, secure tech stacks (<Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Next.js</Link>, <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">TypeScript</Link>). Clean, modular code for future growth.</>,
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
             icon: CheckCircle,
             number: "04",
             title: "Global SEO & Performance",
-            description: <>Rigorous QA with built-in <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for global clients.</>,
+            description: <>Rigorous QA with built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for global clients.</>,
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
             icon: Rocket,
             number: "05",
             title: "Seamless Deployment",
-            description: <>Zero-downtime launch with <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">AWS</Link>/Vercel integration and final cross-region performance monitoring.</>,
+            description: <>Zero-downtime launch with <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">AWS</Link>/Vercel integration and final cross-region performance monitoring.</>,
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
             icon: Wrench,
             number: "06",
             title: "Continuous Optimization",
-            description: <>24/7 <Link href="/contact" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">technical support</Link> and performance tuning based on real-time data to maintain your competitive edge.</>,
+            description: <>24/7 <Link href="/contact" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical support</Link> and performance tuning based on real-time data to maintain your competitive edge.</>,
             color: "from-[#ee6500] to-[#fab900]",
         },
     ];
@@ -85,11 +85,11 @@ export default function Process() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our Professional <span style={{ color: "var(--brand-blue)" }}>Web Development Process</span>
+                        Our Professional <span style={{ color: "var(--brand-blue-text)" }}>Web Development Process</span>
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As a results-driven <span className="font-bold text-[var(--brand-blue)]">web development company</span>, we follow a rigorous, data-backed methodology to ensure global success.
+                        As a results-driven <span className="font-bold text-[var(--brand-blue-text)]">web development company</span>, we follow a rigorous, data-backed methodology to ensure global success.
                     </p>
 
                     <div
@@ -160,7 +160,7 @@ export default function Process() {
                                                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold"
                                                             style={{
                                                                 backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                                                color: "var(--brand-blue)",
+                                                                color: "var(--brand-blue-text)",
                                                             }}
                                                         >
                                                             <span className="w-2 h-2 rounded-full bg-[var(--brand-blue)]"></span>

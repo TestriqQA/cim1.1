@@ -57,9 +57,19 @@ export default function CaseStudies() {
         return () => clearInterval(timer);
     }, [isVisible]);
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#34a853": "var(--accent-green-text)",
+            "#4285f4": "var(--brand-blue-text)",
+            "#fbbc04": "var(--accent-amber-text)",
+            "#ea4335": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const caseStudies = [
         {
-            industry: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-orange)] transition-colors">E-commerce</Link>,
+            industry: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-orange-text)] transition-colors">E-commerce</Link>,
             icon: TrendingUp,
             before: { spend: "$10K/mo", roas: "150%", leads: "500" },
             after: { spend: "$25K/mo", roas: "520%", leads: "3,200" },
@@ -67,7 +77,7 @@ export default function CaseStudies() {
             color: "#34a853",
         },
         {
-            industry: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-orange)] transition-colors">SaaS</Link>,
+            industry: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-orange-text)] transition-colors">SaaS</Link>,
             icon: Users,
             before: { spend: "$5K/mo", cpa: "$120", demos: "25" },
             after: { spend: "$15K/mo", cpa: "$45", demos: "180" },
@@ -75,7 +85,7 @@ export default function CaseStudies() {
             color: "#4285f4",
         },
         {
-            industry: <Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--brand-orange)] transition-colors">Local Services</Link>,
+            industry: <Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--accent-orange-text)] transition-colors">Local Services</Link>,
             icon: Target,
             before: { spend: "$2K/mo", leads: "30", costPerLead: "$67" },
             after: { spend: "$5K/mo", leads: "150", costPerLead: "$33" },
@@ -109,12 +119,12 @@ export default function CaseStudies() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-orange)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             ILLUSTRATIVE SCENARIOS
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Performance We <span style={{ color: "var(--brand-orange)" }}>Engineer Toward</span>
+                        Performance We <span style={{ color: "var(--accent-orange-text)" }}>Engineer Toward</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Illustrative performance scenarios showing the metrics we optimize toward across industries.
@@ -140,7 +150,7 @@ export default function CaseStudies() {
                                 }}
                             >
                                 <Icon className="w-8 h-8 mx-auto mb-3" style={{ color: stat.color }} />
-                                <div className="text-3xl lg:text-4xl font-black mb-1" style={{ color: stat.color }}>
+                                <div className="text-3xl lg:text-4xl font-black mb-1" style={{ color: textAccent(stat.color) }}>
                                     {stat.value}
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
@@ -175,7 +185,7 @@ export default function CaseStudies() {
                                     </div>
                                     <div
                                         className="flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold"
-                                        style={{ backgroundColor: `${study.color}20`, color: study.color }}
+                                        style={{ backgroundColor: `${study.color}20`, color: textAccent(study.color) }}
                                     >
                                         <ArrowUpRight className="w-4 h-4" />
                                         {study.improvement}
@@ -194,11 +204,11 @@ export default function CaseStudies() {
                                         ))}
                                     </div>
                                     <div className="p-4 rounded-xl" style={{ backgroundColor: `${study.color}15` }}>
-                                        <div className="text-xs font-bold mb-2" style={{ color: study.color }}>AFTER</div>
+                                        <div className="text-xs font-bold mb-2" style={{ color: textAccent(study.color) }}>AFTER</div>
                                         {Object.entries(study.after).map(([key, value]) => (
                                             <div key={key} className="text-sm mb-1">
                                                 <span style={{ color: "var(--secondary-text)" }}>{key}: </span>
-                                                <span className="font-bold" style={{ color: study.color }}>{value}</span>
+                                                <span className="font-bold" style={{ color: textAccent(study.color) }}>{value}</span>
                                             </div>
                                         ))}
                                     </div>

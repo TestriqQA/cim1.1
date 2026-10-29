@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(41, 168, 223, 0.3)",
                         }}
                     >
-                        <Droplets className="w-4 h-4" style={{ color: "#29A8DF" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#0678BE" }}>
+                        <Droplets className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Free Drupal Consultation
                         </span>
                     </div>

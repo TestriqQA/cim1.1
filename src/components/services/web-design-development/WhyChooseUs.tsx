@@ -14,19 +14,19 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Global SEO Foundation",
-            description: <>Built-in <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for enterprise clients across 15+ countries.</>,
+            description: <>Built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for enterprise clients across 15+ countries.</>,
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
             icon: Smartphone,
             title: "Responsive Web Design",
-            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">Responsive Web Design</Link>.</>,
+            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Responsive Web Design</Link>.</>,
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
             icon: Lock,
             title: "Enterprise-Grade Security",
-            description: <>Advanced protocols and AWS-secured architecture. <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">Enterprise-Grade Security</Link> ensuring rigorously tested delivery on first deployment for peace of mind.</>,
+            description: <>Advanced protocols and AWS-secured architecture. <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Enterprise-Grade Security</Link> ensuring rigorously tested delivery on first deployment for peace of mind.</>,
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
         {
             icon: Accessibility,
             title: "ROI-Driven UX Design",
-            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites have increased <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">online leads</Link> by up to 425% for our clients.</>,
+            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites have increased <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">online leads</Link> by up to 425% for our clients.</>,
             color: "from-[#00efd6] to-[#bc3feb]",
         },
     ];
@@ -86,17 +86,17 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue)" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Global Excellence
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Beyond Websites: <span style={{ fontWeight: 700, color: "var(--brand-blue)" }}>Strategic Digital Solutions</span>
+                        Beyond Websites: <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Strategic Digital Solutions</span>
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As a leading <span className="font-bold text-[var(--brand-blue)]">Web Development Company</span>, we implement high-performance technical strategies that deliver measurable business value globally.
+                        As a leading <span className="font-bold text-[var(--brand-blue-text)]">Web Development Company</span>, we implement high-performance technical strategies that deliver measurable business value globally.
                     </p>
 
                     <div
@@ -256,7 +256,7 @@ export default function WhyChooseUs() {
                                 Transformation Success Story
                             </h3>
                             <blockquote className="text-xl md:text-2xl italic leading-relaxed mb-8 text-[var(--secondary-text)]">
-                                &quot;This <Link href="/services/web-design-development" className="text-[var(--brand-blue)] font-bold hover:underline transition-colors">web design agency</Link> increased our online leads by <span className="text-[var(--brand-teal)] font-bold">425% in 6 months</span> through their <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">custom web development</Link> approach. Their <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">responsive web design services</Link> transformed our mobile conversion rate from 1.2% to 8.7%.&quot;
+                                &quot;This <Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] font-bold underline hover:underline transition-colors">web design agency</Link> increased our online leads by <span className="text-[var(--accent-teal-text)] font-bold">425% in 6 months</span> through their <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">custom web development</Link> approach. Their <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">responsive web design services</Link> transformed our mobile conversion rate from 1.2% to 8.7%.&quot;
                             </blockquote>
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-teal)]" />
@@ -272,7 +272,7 @@ export default function WhyChooseUs() {
                 {/* Bottom CTA */}
                 <div className="mt-16 text-center">
                     <p className="text-lg md:text-xl mb-8 text-[var(--secondary-text)] max-w-2xl mx-auto">
-                        Ready to experience the CIM difference? Partner with a professional <span className="font-bold text-[var(--brand-blue)]">web development agency</span> today.
+                        Ready to experience the CIM difference? Partner with a professional <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span> today.
                     </p>
 
                     <Link

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { postQuery, allPostsQuery, moreStoriesQuery } from "@/sanity/lib/queries";
-import { mapSanityPostToBlogPost } from "@/sanity/lib/mapper";
+import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 
 type Props = {
@@ -51,7 +51,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
   const { categories, popularPosts, tags } = await getSidebarData();
   const relatedPostsRaw = await client.fetch(moreStoriesQuery, { skip: sanityPost._id, limit: 3 });
-  const relatedPosts = relatedPostsRaw.map(mapSanityPostToBlogPost);
+  const relatedPosts = relatedPostsRaw.map(mapSanityPostToBlogPost).map(toListPost);
 
   // Unified @graph schema — auto-generated from post data with CMS overrides
   const blogPostSchema = generateBlogPostGraphSchema(post);

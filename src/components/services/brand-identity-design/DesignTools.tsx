@@ -8,6 +8,22 @@ import Link from "next/link";
 export default function DesignTools() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${color}NN`-style interpolation stays valid.
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#f7b500": "var(--accent-amber-text)",
+            "#ff9a00": "var(--accent-orange-text)",
+            "#a259ff": "var(--accent-violet-text)",
+            "#9999ff": "var(--accent-violet-text)",
+            "#00c4cc": "var(--accent-teal-text)",
+            "#ff61f6": "var(--accent-pink-text)",
+            "#ff3366": "var(--accent-red-text)",
+            "#31a8ff": "var(--brand-blue-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const tools = [
         {
             name: "Adobe Photoshop",
@@ -23,7 +39,7 @@ export default function DesignTools() {
         },
         {
             name: "Figma",
-            description: <span>Scalable <Link href="/services/web-design-development" className="hover:text-[var(--brand-yellow)]">UI/UX</Link> assets</span>,
+            description: <span>Scalable <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">UI/UX</Link> assets</span>,
             logo: "/images/brand-identity-design-logos/Figma-logo.svg",
             color: "#A259FF", // Figma Purple
         },
@@ -83,13 +99,13 @@ export default function DesignTools() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Wrench className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <Wrench className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             OUR TOOLKIT
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Professional <span style={{ color: "var(--brand-yellow)" }}>Design Tools</span>
+                        Professional <span style={{ color: "var(--accent-amber-text)" }}>Design Tools</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We use professional design software to bring your brand vision to life with precision and creativity.
@@ -145,7 +161,7 @@ export default function DesignTools() {
                                     {/* Tool Name */}
                                     <h3
                                         className="text-sm font-bold mb-1 relative z-10 transition-colors duration-300"
-                                        style={{ color: isHovered ? tool.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(tool.color) : "var(--foreground)" }}
                                     >
                                         {tool.name}
                                     </h3>
@@ -178,7 +194,7 @@ export default function DesignTools() {
                             border: "1px solid color-mix(in srgb, var(--brand-yellow) 20%, var(--border-color))",
                         }}
                     >
-                        <Sparkles className="w-5 h-5" style={{ color: "var(--brand-yellow)" }} />
+                        <Sparkles className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                             Mastery of professional tools for exceptional results
                         </span>

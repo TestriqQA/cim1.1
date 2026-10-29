@@ -63,7 +63,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-chatbot)" }}
+                        style={{ color: "var(--accent-indigo-text)" }}
                     >
                         AI-Powered Chatbots
                     </span>
@@ -82,10 +82,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-chatbot) 8%, transparent), color-mix(in srgb, var(--brand-blue) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-chatbot) 20%, transparent)",
-                                color: "var(--brand-chatbot)",
+                                color: "var(--accent-indigo-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-chatbot)" }} />
+                            <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
                             <span className="text-sm font-semibold">Custom AI Chatbot Development Services</span>
                         </div>
 
@@ -115,7 +115,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            As an expert AI Chatbot Agency, we specialize in <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Custom AI Chatbot Development</Link> that drives real <Link href="/services/performance-marketing" className="hover:text-[var(--brand-chatbot)] transition-colors">ROI</Link>. Our Enterprise AI Chatbot Platform solutions don't just answer questions-they understand context, gauge sentiment, and personalize every interaction using advanced Large Language Models (LLMs) and <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Natural Language Processing (NLP)</Link>.
+                            As an expert AI Chatbot Agency, we specialize in <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Custom AI Chatbot Development</Link> that drives real <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">ROI</Link>. Our Enterprise AI Chatbot Platform solutions don't just answer questions-they understand context, gauge sentiment, and personalize every interaction using advanced Large Language Models (LLMs) and <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Natural Language Processing (NLP)</Link>.
                         </p>
 
                         {/* Feature Highlights */}
@@ -125,7 +125,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
-                                <Brain className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-chatbot)" }} />
+                                <Brain className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
                                     AI-Powered
                                 </span>
@@ -135,7 +135,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
-                                <MessageCircle className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-chatbot)" }} />
+                                <MessageCircle className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
                                     24/7 Support
                                 </span>
@@ -145,7 +145,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
-                                <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-chatbot)" }} />
+                                <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
                                     Lightning Fast
                                 </span>
@@ -155,7 +155,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
-                                <Gauge className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-chatbot)" }} />
+                                <Gauge className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
@@ -217,7 +217,7 @@ export default function Hero() {
                         {/* CTA Button */}
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[var(--brand-chatbot)] to-[#008ac1] hover:from-[var(--brand-chatbot)] hover:to-[var(--brand-chatbot)] text-white rounded-2xl text-base font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[var(--brand-chatbot)] to-[#006d97] hover:from-[var(--brand-chatbot)] hover:to-[var(--brand-chatbot)] text-white rounded-2xl text-base font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                         >
                             Book Free AI Strategy Audit
                             <ArrowRight className="w-5 h-5" />
@@ -277,7 +277,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 15%, transparent)",
-                                        color: "var(--brand-chatbot)",
+                                        color: "var(--accent-indigo-text)",
                                     }}
                                 >
                                     NLP & ML
@@ -286,7 +286,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 15%, transparent)",
-                                        color: "var(--brand-chatbot)",
+                                        color: "var(--accent-indigo-text)",
                                     }}
                                 >
                                     Multi-Platform
@@ -295,7 +295,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 15%, transparent)",
-                                        color: "var(--brand-chatbot)",
+                                        color: "var(--accent-indigo-text)",
                                     }}
                                 >
                                     24/7 Support
@@ -304,7 +304,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 15%, transparent)",
-                                        color: "var(--brand-chatbot)",
+                                        color: "var(--accent-indigo-text)",
                                     }}
                                 >
                                     Analytics

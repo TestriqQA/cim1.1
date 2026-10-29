@@ -78,19 +78,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#2563eb" }}>Enterprise</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>Enterprise</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
                             style={{
-                                background: "rgba(37, 99, 235, 0.1)",
+                                background: "var(--card-bg)",
                                 borderColor: "rgba(37, 99, 235, 0.3)",
                             }}
                         >
-                            <Building2 className="w-4 h-4" style={{ color: "#2563eb" }} />
-                            <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                            <Building2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Enterprise-Grade Solutions
                             </span>
                         </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                             <span
                                 className="relative inline-block"
                                 style={{
-                                    color: "#2563eb",
+                                    color: "var(--brand-blue-text)",
                                 }}
                             >
                                 Driving Global Innovation in 2026
@@ -175,17 +175,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#2563eb" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Stable applications</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#2563eb" }}>85+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>85+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Enterprise Clients</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#2563eb" }}>500K+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>500K+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Daily Active Users</p>
                             </div>
                         </div>
@@ -286,7 +286,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#2563eb" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 Enterprise Technologies
                             </p>
                             <div className="flex flex-wrap gap-2">

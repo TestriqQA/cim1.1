@@ -7,7 +7,7 @@ export default function TypesOfAutomations() {
     const automationTypes = [
         {
             icon: Workflow,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-orange)] transition-colors">Business Process Automation (BPA)</Link>,
+            title: <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-orange-text)] transition-colors">Business Process Automation (BPA)</Link>,
             description: "Revolutionize your back office. We automate end-to-end cycles - from procurement to payroll - reducing cycle times by up to 70%.",
             features: ["Workflow Orchestration", "Multi-step Automation", "Conditional Logic", "Error Handling"],
             gradient: "from-blue-600 to-cyan-500",
@@ -17,7 +17,7 @@ export default function TypesOfAutomations() {
         },
         {
             icon: Bot,
-            title: <Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-orange)] transition-colors">AI-Powered Chatbots & Assistants</Link>,
+            title: <Link href="/services/ai-chatbots-services" className="hover:text-[var(--accent-orange-text)] transition-colors">AI-Powered Chatbots & Assistants</Link>,
             description: "Deploy next-gen support. Unlike basic bots, our agents understand context, sentiment, and intent, resolving 80% of queries instantly.",
             features: ["Natural Language Processing", "Multi-language Support", "Context Awareness", "Escalation Handling"],
             gradient: "from-purple-600 to-pink-500",
@@ -28,7 +28,7 @@ export default function TypesOfAutomations() {
         {
             icon: BarChart3,
             title: "Data & Reporting Automation",
-            description: <span>Stop copy-pasting Excel sheets. We create pipelines that pull from 50+ sources to build live, self-updating <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-emerald-500 underline decoration-dotted transition-colors">BI dashboards</Link>.</span>,
+            description: <span>Stop copy-pasting Excel sheets. We create pipelines that pull from 50+ sources to build live, self-updating <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-green-text)] underline decoration-dotted transition-colors">BI dashboards</Link>.</span>,
             features: ["Data Extraction", "Real-time Dashboards", "Scheduled Reports", "Data Validation"],
             gradient: "from-emerald-600 to-teal-500",
             iconBg: "bg-emerald-500/10",
@@ -38,7 +38,7 @@ export default function TypesOfAutomations() {
         {
             icon: TrendingUp,
             title: "Content & Marketing Automation",
-            description: <span>Multiply your reach. Automatically turn one webinar into blog posts, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-rose-500 underline decoration-dotted transition-colors">LinkedIn carousels</Link>, and tweets with AI-powered <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-rose-500 underline decoration-dotted transition-colors">LinkedIn marketing</Link> and outreach automation using proven <Link href="/blog/content-marketing-strategies-work" className="hover:text-rose-500 underline decoration-dotted transition-colors">Content Repurposing</Link> strategies.</span>,
+            description: <span>Multiply your reach. Automatically turn one webinar into blog posts, <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-[var(--accent-red-text)] underline decoration-dotted transition-colors">LinkedIn carousels</Link>, and tweets with AI-powered <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:text-[var(--accent-red-text)] underline decoration-dotted transition-colors">LinkedIn marketing</Link> and outreach automation using proven <Link href="/blog/content-marketing-strategies-work" className="hover:text-[var(--accent-red-text)] underline decoration-dotted transition-colors">Content Repurposing</Link> strategies.</span>,
             features: ["Content Repurposing", "Social Media Scheduling", "SEO Optimization", "Sentiment Analysis"],
             gradient: "from-rose-600 to-pink-500",
             iconBg: "bg-rose-500/10",
@@ -47,7 +47,7 @@ export default function TypesOfAutomations() {
         },
         {
             icon: FileText,
-            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--brand-orange)] transition-colors">Document Processing & OCR</Link>,
+            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-orange-text)] transition-colors">Document Processing & OCR</Link>,
             description: "Unlock trapped data. Our Topical Authority & Entity Extraction systems read invoices, contracts, and IDs with high accuracy.",
             features: ["OCR Technology", "Document Classification", "Data Extraction", "Compliance Validation"],
             gradient: "from-indigo-600 to-blue-500",
@@ -58,7 +58,7 @@ export default function TypesOfAutomations() {
         {
             icon: Sparkles,
             title: "Custom AI Workflow Solutions",
-            description: <span>Need something unique? We build bespoke <Link href="/services/ai-chatbots-services" className="hover:text-violet-500 underline decoration-dotted transition-colors">Custom AI agents</Link> for business operations tailored to your exact edge cases.</span>,
+            description: <span>Need something unique? We build bespoke <Link href="/services/ai-chatbots-services" className="hover:text-[var(--accent-violet-text)] underline decoration-dotted transition-colors">Custom AI agents</Link> for business operations tailored to your exact edge cases.</span>,
             features: ["Custom Development", "API Integrations", "Predictive Models", "Scalable Architecture"],
             gradient: "from-violet-600 to-purple-500",
             iconBg: "bg-violet-500/10",
@@ -221,7 +221,7 @@ export default function TypesOfAutomations() {
                     {/* Section Header */}
                     <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-                            Types of <span style={{ color: "var(--brand-orange)" }}>AI Workflows & Automations</span>
+                            Types of <span style={{ color: "var(--accent-orange-text)" }}>AI Workflows & Automations</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             We specialize in a comprehensive range of AI-powered automation solutions. Whether you need process automation, intelligent chatbots, or custom workflows, we have the expertise to deliver.
@@ -274,7 +274,7 @@ export default function TypesOfAutomations() {
 
                                     {/* Content */}
                                     <div className="relative z-10 mb-4">
-                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--brand-orange)]">
+                                        <h3 className="text-xl font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--accent-orange-text)]">
                                             {type.title}
                                         </h3>
                                         <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--secondary-text)" }}>
@@ -284,7 +284,7 @@ export default function TypesOfAutomations() {
 
                                     {/* Features with enhanced styling */}
                                     <div className="relative z-10 mb-4">
-                                        <p className="text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: "var(--brand-orange)" }}>
+                                        <p className="text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
                                             Key Features
                                         </p>
                                         <ul className="space-y-2">

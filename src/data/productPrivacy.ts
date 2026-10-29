@@ -7,12 +7,33 @@ export interface PrivacySection {
     content: { subtitle: string; text: string }[];
 }
 
+// Who actually operates the product and answers its privacy requests.
+//
+// This exists because the privacy page used to hard-code Cinute InfoMedia's
+// name, address and phone numbers into EVERY product policy. That is correct
+// for a product CIM operates and false for one it merely lists — a Kruti.io
+// policy naming Cinute Digital Pvt. Ltd. as the data controller cannot then
+// print a different company's contact details underneath it. Omit the field and
+// the page falls back to CIM's own details, so existing products are unchanged.
+export interface PrivacyOperator {
+    name: string;
+    addressLines?: string[];
+    email: string;
+    phones?: string[];
+    websiteLabel: string;
+    websiteUrl: string;
+    // Set when the policy is reproduced from another company's site; rendered as
+    // a pointer to the authoritative version.
+    canonicalUrl?: string;
+}
+
 export interface ProductPrivacyPolicy {
     slug: string;
     productName: string;
     lastUpdated: string;
     intro: string;
     sections: PrivacySection[];
+    operator?: PrivacyOperator;
 }
 
 export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
@@ -104,307 +125,242 @@ export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
             },
         ],
     },
+    // ==========================================================================
+    // Kruti.io — reproduced from the policy published at kruti.io/privacy.
+    //
+    // The data controller is Cinute Digital Pvt. Ltd., NOT Cinute InfoMedia, so
+    // this entry carries its own `operator` block; without it the page would
+    // print CIM's name, Mira Road address and phone numbers directly beneath a
+    // policy that names a different company. `canonicalUrl` points readers at
+    // the authoritative copy, which is the one that governs.
+    //
+    // `lastUpdated` is Kruti.io's own effective date, copied as published.
+    // Re-stamping it with a build date would misstate when the policy took
+    // effect. When Cinute Digital revises the policy, this entry must be
+    // re-synced by hand — nothing here reads from kruti.io at runtime.
+    //
+    // Deliberately NOT carried across from the source, because each would say
+    // more on cinuteinfomedia.com than the original says on kruti.io:
+    //   - The host is left unnamed, exactly as Kruti.io leaves it.
+    //   - The Cookie Policy's "no analytics cookies" claim is not restated;
+    //     their pages ship a Google Analytics tag, and that inconsistency is
+    //     theirs to resolve, not ours to republish.
+    //   - No Grievance Officer is named, because the source names none.
+    //   - No postal address, CIN, GSTIN or phone number is added.
+    // ==========================================================================
     {
-        slug: "testriq-qa",
-        productName: "TestriqQA",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use TestriqQA, our AI-powered QA and testing automation platform. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you use TestriqQA or interact with its services.",
+        slug: "kruti-io",
+        productName: "Kruti.io",
+        lastUpdated: "March 10, 2026",
+        operator: {
+            name: "Cinute Digital Pvt. Ltd.",
+            email: "support@kruti.io",
+            websiteLabel: "kruti.io",
+            websiteUrl: "https://kruti.io/",
+            canonicalUrl: "https://kruti.io/privacy",
+        },
+        intro: "Kruti.io is an AI-powered LinkedIn content generation platform operated by Cinute Digital Pvt. Ltd., a company incorporated under the laws of India. This Privacy Policy explains how Kruti.io collects, uses, stores, shares and protects your personal information when you use the platform at kruti.io. It applies to all users of the service, including those on a free trial and those on a paid subscription. This page reproduces the policy published at kruti.io/privacy; Cinute Digital Pvt. Ltd. is the data controller for Kruti.io.",
         sections: [
             {
-                title: "1. Information We Collect",
+                title: "1. Introduction",
                 content: [
-                    { subtitle: "Account Information", text: "When you create a TestriqQA account, we collect your name, email address, company name, and billing information. If you sign up using a third-party provider (e.g., GitHub, GitLab), we receive basic profile information from that provider." },
-                    { subtitle: "Repository & Code Data", text: "TestriqQA connects to your code repositories to generate and run tests. We access repository metadata, file structures, and code content as needed to provide our services. We do not store your source code permanently — it is processed in memory and discarded after analysis." },
-                    { subtitle: "Test Results & Analytics", text: "We collect test execution logs, coverage reports, performance metrics, and error data generated during testing sessions. This data is used to display dashboards and improve AI test generation accuracy." },
-                    { subtitle: "Usage Data", text: "We automatically collect information about how you interact with TestriqQA, including features used, test configurations, session duration, IP address, browser type, and device information." },
+                    { subtitle: "", text: "Kruti.io (\"the Service\") is an AI-powered LinkedIn content generation platform operated by Cinute Digital Pvt. Ltd. This Privacy Policy describes how the Service collects, uses, stores, shares and protects your personal information. It applies to every user of the Service, whether on a free trial or a paid subscription. By using Kruti.io you agree to the practices described here." },
                 ],
             },
             {
-                title: "2. How We Use Your Information",
+                title: "2. Information We Collect",
                 content: [
-                    { subtitle: "Service Delivery", text: "To provide, maintain, and improve TestriqQA's AI test generation, visual regression testing, parallel execution, and reporting features." },
-                    { subtitle: "AI Model Improvement", text: "Anonymized and aggregated test patterns may be used to improve our AI test generation models. Your proprietary code is never used for training without explicit consent." },
-                    { subtitle: "Communication", text: "To send service-related notifications, product updates, security alerts, and billing information. Marketing communications are sent only with your consent." },
-                    { subtitle: "Security & Compliance", text: "To detect and prevent fraud, abuse, and security incidents. To comply with legal obligations and enforce our terms of service." },
+                    { subtitle: "Account Information via LinkedIn OAuth", text: "When you sign in, Kruti.io receives information from LinkedIn through LinkedIn's OAuth 2.0 and OpenID Connect protocol, using the scopes openid, profile, email and w_member_social. The information received is: your full name; your email address; your profile picture URL; your professional headline; and your LinkedIn profile identifier. Kruti.io never receives or stores your LinkedIn password." },
+                    { subtitle: "Profile Data You Provide", text: "Information you enter to shape your content: your professional summary and industry; your skills and expertise topics; your content positioning and tone preferences; your content goals and styles; a description of your target audience; your posting schedule preferences; your post signature or sign-off text; and your Human Mode preference, which is a writing-style setting." },
+                    { subtitle: "Content Data", text: "The material the Service generates and stores for you: AI-generated content plans, including weekly strategies, pillars and themes; posts, including titles, body text, hashtags, AI image prompts and generated images; newsletter drafts, including titles, subjects and bodies; and content repurposing outputs such as social threads, blog posts and emails." },
+                    { subtitle: "Payment Information", text: "Payments are processed by Razorpay. Kruti.io stores only: your Razorpay customer identifier; your Razorpay subscription identifier; your selected plan and currency preference (INR or USD); and your subscription status and billing period dates.\n\nKruti.io does NOT store your credit card numbers, bank account details, UPI IDs, or any payment instrument information. All sensitive payment data is handled exclusively by Razorpay." },
+                    { subtitle: "Technical Data", text: "Session tokens used for authentication (JWT-based); server access logs, which include IP addresses, timestamps and user agent strings; and error logs used for debugging and service improvement." },
                 ],
             },
             {
-                title: "3. Data Storage & Security",
+                title: "3. How We Use Your Information",
                 content: [
-                    { subtitle: "Infrastructure", text: "TestriqQA runs on AWS infrastructure with data centers in the US and EU. All data is encrypted at rest (AES-256) and in transit (TLS 1.3)." },
-                    { subtitle: "Access Controls", text: "We implement strict role-based access controls. Only authorized personnel can access production systems, and all access is logged and audited." },
-                    { subtitle: "SOC 2 Compliance", text: "TestriqQA maintains SOC 2 Type II compliance. We undergo annual third-party security audits and penetration testing." },
-                    { subtitle: "Data Isolation", text: "Each customer's test data is logically isolated. CI/CD credentials and repository tokens are stored in encrypted vaults with automatic rotation." },
+                    { subtitle: "AI Content Generation", text: "Your profile data and preferences are used to generate content plans, posts, images and newsletter drafts tailored to you." },
+                    { subtitle: "Personalization", text: "Your headline, skills, industry, tone preferences and audience description are used to shape the strategy and the voice of what is generated." },
+                    { subtitle: "LinkedIn Posting", text: "Posts you have approved are published to your LinkedIn account using the w_member_social scope authorization you granted at sign-in." },
+                    { subtitle: "Payment Processing", text: "Your Razorpay identifiers, plan, currency and subscription status are used to manage your subscription, billing and renewals." },
+                    { subtitle: "Transactional Emails", text: "Your email address is used to send service messages such as account, billing and subscription notifications." },
+                    { subtitle: "Service Improvement", text: "Aggregated usage and error information is used to diagnose problems and improve the platform." },
+                    { subtitle: "Legal Compliance", text: "Information may be used or retained where necessary to comply with applicable law and to enforce the Terms of Service." },
                 ],
             },
             {
-                title: "4. Data Sharing & Third Parties",
+                title: "4. AI Data Processing",
                 content: [
-                    { subtitle: "CI/CD Integrations", text: "When you connect TestriqQA to GitHub Actions, GitLab CI, Jenkins, or other CI/CD platforms, we exchange data necessary to trigger and report test results. We only access what is needed for the integration." },
-                    { subtitle: "Subprocessors", text: "We use trusted subprocessors including AWS (hosting), Stripe (payments), SendGrid (email), and Sentry (error tracking). Each subprocessor is contractually bound to data protection obligations." },
-                    { subtitle: "No Selling of Data", text: "We never sell, rent, or trade your personal information or code data to third parties for marketing purposes." },
+                    { subtitle: "Models Used", text: "Kruti.io uses Google Gemini 2.5 Pro for text generation and Google Imagen 3 for image generation." },
+                    { subtitle: "Data Sent to Google", text: "The following is sent to Google's APIs to generate content on your behalf: your professional headline, skills and industry; your tone preferences, content goals and positioning; content context, such as previous posts used for continuity; your target audience description; and image generation prompts for Imagen 3. Google's Generative AI Terms of Service and Privacy Policy govern how Google handles this data." },
+                    { subtitle: "No Model Training", text: "Kruti.io does not use your data to train AI models. Google's API services are used solely to generate content on your behalf." },
                 ],
             },
             {
-                title: "5. Data Retention",
+                title: "5. Third-Party Services",
                 content: [
-                    { subtitle: "Test Results", text: "Test execution results and analytics are retained for 12 months by default. Enterprise customers can configure custom retention periods." },
-                    { subtitle: "Account Data", text: "Account information is retained for the duration of your subscription plus 30 days after cancellation. Billing records are retained for 6 years for legal compliance." },
-                    { subtitle: "Deletion Requests", text: "You can request deletion of your data at any time by contacting our support team. We will process deletion requests within 30 days." },
+                    { subtitle: "LinkedIn Corporation", text: "Authentication via OAuth 2.0 and publishing of approved content to your LinkedIn account." },
+                    { subtitle: "Google (Gemini & Imagen)", text: "AI text and image generation." },
+                    { subtitle: "Razorpay", text: "Payment processing for subscriptions." },
+                    { subtitle: "Resend", text: "Transactional email delivery service." },
                 ],
             },
             {
-                title: "6. Your Rights",
+                title: "6. Cookies and Tracking",
                 content: [
-                    { subtitle: "", text: "Depending on your jurisdiction, you may have the right to: access, correct, or delete your personal data; export your data in a portable format; restrict or object to certain processing; withdraw consent for marketing communications. To exercise these rights, contact us at contact@cinuteinfomedia.com." },
+                    { subtitle: "", text: "Kruti.io uses essential cookies for authentication and session management. Full details are set out in the Kruti.io Cookie Policy at kruti.io/cookies." },
                 ],
             },
             {
-                title: "7. Contact Information",
+                title: "7. Data Storage and Security",
                 content: [
-                    { subtitle: "", text: "Privacy Team — Cinute InfoMedia\nEmail: contact@cinuteinfomedia.com\nPhone: +91-9004988859 / +91-7700995410\nAddress: Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107, India." },
+                    { subtitle: "Security Measures", text: "Data is encrypted in transit using HTTPS and TLS; authentication uses a secure JWT strategy; database access is restricted through application-level controls; payment data is handled exclusively by PCI-DSS compliant Razorpay; and LinkedIn OAuth tokens are stored securely and used only for authorized actions." },
+                    { subtitle: "No Sale of Data", text: "Kruti.io does not sell, rent, or trade your personal data to third parties for marketing or any other purpose." },
+                ],
+            },
+            {
+                title: "8. Data Retention",
+                content: [
+                    { subtitle: "Account data", text: "Retained for as long as your account remains active." },
+                    { subtitle: "Content data", text: "Posts, content plans and newsletters are retained so that you can continue to access and use them." },
+                    { subtitle: "Upon account deletion", text: "All user data, content plans, posts and newsletters are permanently deleted from the database, and the deletion cascades through all related records." },
+                    { subtitle: "Payment records", text: "Razorpay may retain transaction records in accordance with its own policies and applicable financial regulations." },
+                    { subtitle: "Server logs", text: "Access and error logs are retained for up to 90 days." },
+                ],
+            },
+            {
+                title: "9. Your Rights",
+                content: [
+                    { subtitle: "Under Indian Law (IT Act, 2000 & SPDI Rules, 2011)", text: "You have the right to access the personal information held about you; the right to correct information that is inaccurate; and the right to withdraw consent for the processing of sensitive personal data." },
+                    { subtitle: "Under GDPR (for users in the European Union)", text: "If you are located in the EU or EEA, you additionally have the right to data portability; the right to erasure; the right to restriction of processing; the right to object to processing based on legitimate interests; and the right to lodge a complaint with a supervisory authority." },
+                    { subtitle: "How to Exercise Your Rights", text: "To delete your account, email support@kruti.io. To export your data, email support@kruti.io. To revoke Kruti.io's access to your LinkedIn account, use LinkedIn's own Settings, under Data Privacy and Permitted Services." },
+                ],
+            },
+            {
+                title: "10. Children's Privacy",
+                content: [
+                    { subtitle: "", text: "Kruti.io is not intended for individuals under the age of 18. Kruti.io does not knowingly collect personal information from minors." },
+                ],
+            },
+            {
+                title: "11. International Data Transfers",
+                content: [
+                    { subtitle: "Google (United States)", text: "AI content and image generation via the Gemini and Imagen APIs." },
+                    { subtitle: "Razorpay (India)", text: "Payment processing." },
+                    { subtitle: "Infrastructure providers", text: "Hosting and CDN services." },
+                ],
+            },
+            {
+                title: "12. Changes to This Policy",
+                content: [
+                    { subtitle: "", text: "Kruti.io may update this Privacy Policy from time to time. The \"Last Updated\" date will be revised when it does. For significant changes, users will be notified by email or through an in-app notification. Continued use of the Service after a change constitutes acceptance of the revised policy." },
+                ],
+            },
+            {
+                title: "13. Contact Us",
+                content: [
+                    { subtitle: "", text: "Cinute Digital Pvt. Ltd.\nEmail: support@kruti.io\nWebsite: kruti.io" },
+                    { subtitle: "Grievance Officer", text: "In accordance with the Information Technology Act, 2000 and the rules made thereunder, the Grievance Officer can be contacted at support@kruti.io. Grievances are acknowledged within 24 hours and resolved within 30 days." },
                 ],
             },
         ],
     },
+    // ==========================================================================
+    // AssetMon — reproduced from the policy published at
+    // assetm.cinuteinfomedia.com/privacy (last updated May 2026).
+    //
+    // No `operator` override, so the page falls back to Cinute InfoMedia's own
+    // details. That is correct here and NOT an oversight: AssetMon runs on a
+    // cinuteinfomedia.com subdomain and names no other legal entity anywhere on
+    // its own site. Contrast the Kruti.io entry, which carries an operator
+    // block because it is a different company's product.
+    //
+    // Their own policy names sub-processors only generically ("our cloud hosting
+    // provider", "our transactional email provider"), and that restraint is kept
+    // — naming a specific vendor here would say more than the source does.
+    //
+    // TopCareerLive has NO entry in this file on purpose: topcareerlive.com
+    // publishes no privacy policy, terms or contact details at all. `privacyUrl`
+    // is optional on Product and ProductLinks hides the button, so no route is
+    // generated and nothing 404s. Add an entry only when the product publishes
+    // a real policy — this is not a document to draft on its behalf.
+    // ==========================================================================
     {
-        slug: "cim-chatbot",
-        productName: "CIM ChatBot",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use CIM ChatBot, our AI-powered conversational platform. This Privacy Policy explains how we handle data collected through chatbot interactions, knowledge base uploads, and platform usage.",
+        slug: "assetmon",
+        productName: "AssetMon",
+        lastUpdated: "May 2026",
+        intro: "AssetMon is a multi-tenant IT asset management platform. This Privacy Policy explains what the platform collects, how it is used and stored, who it is shared with, and the choices available to you. It applies to everyone using the service, on the free Starter plan, on a trial, and on a paid subscription.",
         sections: [
             {
                 title: "1. Information We Collect",
                 content: [
-                    { subtitle: "Account Information", text: "Name, email, company name, and billing details provided during registration." },
-                    { subtitle: "Knowledge Base Data", text: "Documents, FAQs, and website content you upload to train your chatbot. This data is processed and indexed for retrieval-augmented generation (RAG)." },
-                    { subtitle: "Conversation Data", text: "Messages exchanged between your chatbot and end-users, including text content, timestamps, and session identifiers. This data powers analytics and chatbot improvement." },
-                    { subtitle: "End-User Data", text: "Information provided by visitors interacting with your chatbot, such as names, email addresses, and phone numbers collected through lead qualification flows." },
+                    { subtitle: "Account Information", text: "When a workspace is created we collect the name and email address of the person creating it, the workspace name and its slug, and the details of any users subsequently invited. Passwords are stored hashed, never in readable form." },
+                    { subtitle: "Workspace Content", text: "The asset records, categories, locations, departments, service tickets, maintenance schedules, software licence records, purchase requests and orders, reservations, audit records and any photographs or files attached to them. This is your data; the platform holds it on your behalf." },
+                    { subtitle: "Technical Data", text: "Session and authentication tokens, server access logs including IP address, timestamp and user agent, and error logs used for diagnosis and service improvement." },
+                    { subtitle: "Billing Information", text: "Subscription plan, seat count, billing period and payment status. Card, UPI and bank details are handled by the payment processor and are not stored by AssetMon." },
                 ],
             },
             {
                 title: "2. How We Use Your Information",
                 content: [
-                    { subtitle: "Chatbot Operation", text: "To process and respond to conversations using your knowledge base. RAG queries are processed in real-time and responses are generated based on your uploaded content." },
-                    { subtitle: "Analytics & Improvement", text: "To generate conversation analytics, satisfaction scores, and performance metrics. Anonymized conversation patterns may be used to improve our NLP models." },
-                    { subtitle: "Multi-Channel Delivery", text: "To deploy and manage your chatbot across website widget, WhatsApp, Messenger, Instagram, Slack, and Telegram. Each channel integration requires specific data handling per platform policies." },
-                    { subtitle: "Lead Management", text: "To qualify, score, and route leads captured by your chatbot to your CRM or sales team via configured integrations." },
+                    { subtitle: "", text: "To provide and operate the service; to authenticate users and enforce role-based access; to send transactional email such as invitations, alerts and billing notices; to diagnose faults and improve reliability; to process subscriptions; and to meet legal obligations. We do not use customer workspace data to train models." },
                 ],
             },
             {
-                title: "3. Data Storage & Security",
+                title: "3. Tenant Isolation and Security",
                 content: [
-                    { subtitle: "Encryption", text: "All conversation data is encrypted at rest (AES-256) and in transit (TLS 1.3). Knowledge base vectors are stored in isolated Pinecone namespaces." },
-                    { subtitle: "Data Isolation", text: "Each customer's chatbot data, knowledge base, and conversation history are logically isolated. No cross-tenant data access is possible." },
-                    { subtitle: "PII Handling", text: "End-user PII collected through chatbot interactions is stored securely and can be configured for automatic redaction or anonymization." },
+                    { subtitle: "Database-per-tenant isolation", text: "Each workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant identifier column, so one workspace's records are not reachable from another's queries." },
+                    { subtitle: "Encryption", text: "Data is encrypted in transit using TLS 1.2 or higher, and at rest using AES-256. Backups are encrypted with separate keys." },
+                    { subtitle: "Access controls", text: "Role-based access control within each workspace, security headers, rate limiting, magic-byte verification of uploaded files, and parameterised database access. API keys are tenant-scoped, hashed at rest, can be read-only or read-write, and support revocation and expiry. Two-factor authentication is available using TOTP." },
+                    { subtitle: "Audit logging", text: "Every asset event — creation, update, check-out, check-in, licence assignment and ticket activity — is written to an immutable log that can be exported." },
                 ],
             },
             {
-                title: "4. Data Sharing & Integrations",
+                title: "4. Cookies and Local Storage",
                 content: [
-                    { subtitle: "CRM Integrations", text: "When connected to HubSpot, Salesforce, or Zoho, lead data is transmitted to your CRM account. We act as a data processor in these scenarios." },
-                    { subtitle: "Messaging Platforms", text: "Conversations on WhatsApp, Messenger, and other platforms are subject to those platforms' privacy policies in addition to ours." },
-                    { subtitle: "AI Providers", text: "We use OpenAI APIs for natural language processing. Conversation data sent to OpenAI is not used for model training per our enterprise agreement." },
+                    { subtitle: "", text: "AssetMon sets first-party cookies only, and stores an access token in the browser's local storage to keep you signed in. It uses no advertising trackers, no social media pixels and no third-party analytics." },
                 ],
             },
             {
-                title: "5. Data Retention & Deletion",
+                title: "5. Third-Party Services",
                 content: [
-                    { subtitle: "", text: "Conversation logs are retained for 6 months by default (configurable). Knowledge base data is retained for the duration of your subscription. You can delete individual conversations, entire knowledge bases, or request full account deletion at any time." },
+                    { subtitle: "", text: "AssetMon relies on a small number of sub-processors to operate: a cloud hosting provider, a managed database provider, a transactional email provider, an error-tracking provider, and a payment processor for subscription billing. Each handles data only as needed to deliver its part of the service." },
                 ],
             },
             {
-                title: "6. Your Rights & Contact",
+                title: "6. Data Storage and Location",
                 content: [
-                    { subtitle: "", text: "You have the right to access, correct, delete, or export your data. End-users can request data deletion through your chatbot's privacy controls. Contact us at contact@cinuteinfomedia.com for any privacy-related inquiries." },
-                ],
-            },
-        ],
-    },
-    {
-        slug: "cim-autoflow",
-        productName: "CIM AutoFlow",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use CIM AutoFlow, our AI workflow automation engine. This Privacy Policy explains how we handle data processed through automated workflows, connected integrations, and platform usage.",
-        sections: [
-            {
-                title: "1. Information We Collect",
-                content: [
-                    { subtitle: "Account Information", text: "Name, email, company name, and billing details provided during registration." },
-                    { subtitle: "Integration Credentials", text: "OAuth tokens and API keys for connected services (Salesforce, HubSpot, Google Workspace, etc.). These are encrypted and stored in isolated credential vaults." },
-                    { subtitle: "Workflow Data", text: "Data processed through your automation workflows, including emails, form submissions, CRM records, documents, and any other data flowing through your pipelines." },
-                    { subtitle: "Execution Logs", text: "Workflow execution history, step-by-step logs, error reports, and performance metrics." },
+                    { subtitle: "", text: "Workspace data is stored in the European Union by default. Enterprise customers can request region pinning to the EU, India or the United States." },
                 ],
             },
             {
-                title: "2. How We Use Your Information",
+                title: "7. Data Retention",
                 content: [
-                    { subtitle: "Workflow Execution", text: "To execute your configured automation workflows, process triggers, apply conditional logic, and deliver outputs to connected services." },
-                    { subtitle: "AI Decision Engine", text: "When AI-powered decision nodes are used, data is processed through our ML models to make routing decisions. Data is processed in real-time and not stored for model training." },
-                    { subtitle: "Document Processing", text: "OCR and AI extraction services process documents in memory. Extracted data is sent to your configured destinations. Original documents are not retained beyond processing." },
-                    { subtitle: "Analytics", text: "To generate execution analytics, success rates, and performance reports. Data is aggregated and anonymized for platform-wide improvements." },
+                    { subtitle: "Active workspaces", text: "Workspace data is retained for as long as the workspace is active." },
+                    { subtitle: "After a trial", text: "A workspace pauses for 14 days at the end of a trial. Data remains exportable during that window." },
+                    { subtitle: "After cancellation", text: "Workspace data is deleted within 30 days of cancellation. Encrypted backups are retained for 30 days after that point and then removed." },
+                    { subtitle: "Audit logs", text: "Retained for 365 days." },
                 ],
             },
             {
-                title: "3. Data Storage & Security",
+                title: "8. Your Rights",
                 content: [
-                    { subtitle: "Credential Security", text: "All OAuth tokens and API keys are stored in AES-256 encrypted vaults with automatic key rotation. Credentials are never logged or exposed in execution logs." },
-                    { subtitle: "Data in Transit", text: "All data flowing through workflows is encrypted with TLS 1.3. Internal service communication uses mTLS (mutual TLS)." },
-                    { subtitle: "Compliance", text: "CIM AutoFlow is SOC 2 Type II compliant and supports GDPR, CCPA, and HIPAA configurations for enterprise customers." },
+                    { subtitle: "Access and export", text: "Your data is exportable at any time while the workspace is live or paused, as CSV from the interface or through the REST API." },
+                    { subtitle: "Correction and deletion", text: "Records can be corrected in the interface, and a workspace can be closed from the dashboard. To request deletion of personal data held outside a workspace, contact us using the details below." },
+                    { subtitle: "No sale of data", text: "We do not sell personal data, and we do not share workspace content with third parties except the sub-processors described above." },
                 ],
             },
             {
-                title: "4. Data Sharing & Integrations",
+                title: "9. Data Processing Agreement",
                 content: [
-                    { subtitle: "", text: "Data is shared only with services you explicitly connect to your workflows. We use Apache Kafka for internal event processing and AWS SQS for queue management. Subprocessors include AWS (hosting), Stripe (payments), and SendGrid (notifications). We never sell or share your workflow data with third parties." },
+                    { subtitle: "", text: "A data processing agreement is signed with every paying customer. Contact us for the current version, or for an information-security review." },
                 ],
             },
             {
-                title: "5. Data Retention & Deletion",
+                title: "10. Changes to This Policy",
                 content: [
-                    { subtitle: "", text: "Execution logs are retained for 90 days by default (configurable up to 1 year). Workflow configurations are retained for the duration of your subscription. All data is deleted within 30 days of account cancellation." },
-                ],
-            },
-            {
-                title: "6. Your Rights & Contact",
-                content: [
-                    { subtitle: "", text: "You have the right to access, correct, delete, or export your data at any time. Contact us at contact@cinuteinfomedia.com for privacy inquiries.\n\nAddress: Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Mira Road, Mumbai, Maharashtra 401107, India." },
-                ],
-            },
-        ],
-    },
-    {
-        slug: "cim-analytics",
-        productName: "CIM Analytics",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use CIM Analytics, our marketing and SEO analytics dashboard. This Privacy Policy explains how we handle data collected from connected marketing platforms, analytics services, and platform usage.",
-        sections: [
-            {
-                title: "1. Information We Collect",
-                content: [
-                    { subtitle: "Account Information", text: "Name, email, company name, and billing details." },
-                    { subtitle: "Connected Platform Data", text: "When you connect Google Analytics, Search Console, ad platforms, and social media accounts, we access read-only analytics data through OAuth. We do not modify your connected accounts." },
-                    { subtitle: "Dashboard & Report Data", text: "Custom dashboard configurations, saved reports, alert settings, and annotation data created within CIM Analytics." },
-                    { subtitle: "Client Portal Data", text: "If you use white-labeled client portals, we process client account details, access permissions, and branded report configurations." },
-                ],
-            },
-            {
-                title: "2. How We Use Your Information",
-                content: [
-                    { subtitle: "Data Aggregation", text: "To unify marketing data from multiple sources into a single dashboard. Data is synced at regular intervals (15 minutes to 24 hours depending on the source)." },
-                    { subtitle: "AI Insights", text: "To generate anomaly detection alerts, trend analysis, and optimization recommendations. AI processes aggregated data without accessing individual user records." },
-                    { subtitle: "Report Generation", text: "To create scheduled PDF/CSV reports and deliver them to configured recipients." },
-                ],
-            },
-            {
-                title: "3. Data Storage & Security",
-                content: [
-                    { subtitle: "", text: "Analytics data is stored in ClickHouse databases with encryption at rest. OAuth tokens for connected platforms are stored in encrypted vaults. All data is processed in AWS data centers (US/EU). We maintain SOC 2 Type II compliance." },
-                ],
-            },
-            {
-                title: "4. Data Retention & Deletion",
-                content: [
-                    { subtitle: "", text: "Analytics data is retained for the duration of your subscription plus 30 days. Historical data beyond 24 months is automatically aggregated and anonymized. Full account deletion is available upon request." },
-                ],
-            },
-            {
-                title: "5. Your Rights & Contact",
-                content: [
-                    { subtitle: "", text: "You have the right to access, correct, delete, or export your data. Disconnect any connected platform at any time to stop data collection. Contact us at contact@cinuteinfomedia.com for privacy inquiries." },
-                ],
-            },
-        ],
-    },
-    {
-        slug: "cim-sitebuilder",
-        productName: "CIM SiteBuilder",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use CIM SiteBuilder, our AI-powered website builder. This Privacy Policy explains how we handle data related to websites you build, content you create, and visitor data collected through your sites.",
-        sections: [
-            {
-                title: "1. Information We Collect",
-                content: [
-                    { subtitle: "Account Information", text: "Name, email, company name, and billing details." },
-                    { subtitle: "Website Content", text: "Pages, images, text, configurations, and custom code you create within SiteBuilder. This content is stored to render and serve your websites." },
-                    { subtitle: "Visitor Analytics", text: "If you enable our built-in analytics, we collect anonymized visitor data (page views, session duration, referral sources) for websites you build. No PII is collected from your visitors by default." },
-                    { subtitle: "E-commerce Data", text: "If you use e-commerce features, customer orders, payment information (processed via Stripe/PayPal), and product data are collected as needed." },
-                ],
-            },
-            {
-                title: "2. How We Use Your Information",
-                content: [
-                    { subtitle: "Website Hosting & Delivery", text: "To build, deploy, and serve your websites via our CDN infrastructure (Vercel/Cloudflare). Content is cached at edge locations globally for performance." },
-                    { subtitle: "AI Design Assistant", text: "When you use AI design features, your prompts and selected preferences are processed to generate design suggestions. We do not store AI conversation history beyond the current session." },
-                    { subtitle: "SEO Optimization", text: "To auto-generate meta tags, sitemaps, and schema markup for your websites." },
-                ],
-            },
-            {
-                title: "3. Data Storage & Security",
-                content: [
-                    { subtitle: "", text: "Website content is stored on Vercel/AWS infrastructure with automatic backups. All sites are served with free SSL certificates. E-commerce payment data is processed by Stripe/PayPal and never stored on our servers. We maintain SOC 2 compliance." },
-                ],
-            },
-            {
-                title: "4. Code Export & Portability",
-                content: [
-                    { subtitle: "", text: "You can export your website code (Next.js/React) at any time. Exported code is fully standalone with no vendor lock-in. Your content belongs to you — we claim no ownership rights." },
-                ],
-            },
-            {
-                title: "5. Your Rights & Contact",
-                content: [
-                    { subtitle: "", text: "You have full ownership of your website content and can export or delete it at any time. Contact us at contact@cinuteinfomedia.com for privacy inquiries." },
-                ],
-            },
-        ],
-    },
-    {
-        slug: "cim-socialhub",
-        productName: "CIM SocialHub",
-        lastUpdated: "May 16, 2026",
-        intro: "At Cinute InfoMedia (\"CIM\", \"we\", \"us\"), we are committed to protecting your privacy when you use CIM SocialHub, our social media management platform. This Privacy Policy explains how we handle data from connected social accounts, scheduled content, and analytics.",
-        sections: [
-            {
-                title: "1. Information We Collect",
-                content: [
-                    { subtitle: "Account Information", text: "Name, email, company name, and billing details." },
-                    { subtitle: "Social Account Data", text: "When you connect social media accounts (Instagram, Facebook, LinkedIn, Twitter, TikTok, Pinterest, YouTube), we access account metadata, post history, and engagement metrics via official APIs. We request only the permissions necessary for scheduling and analytics." },
-                    { subtitle: "Content Data", text: "Posts, images, videos, captions, hashtags, and scheduling configurations you create within SocialHub." },
-                    { subtitle: "Inbox & Engagement Data", text: "If you use the unified inbox, we access DMs, comments, and mentions from connected platforms to display in your dashboard." },
-                ],
-            },
-            {
-                title: "2. How We Use Your Information",
-                content: [
-                    { subtitle: "Content Publishing", text: "To schedule and publish posts to your connected social media accounts at configured times." },
-                    { subtitle: "AI Content Creation", text: "When using AI content features, your prompts, brand voice settings, and selected preferences are processed to generate content suggestions. Generated content is stored in your account." },
-                    { subtitle: "Analytics", text: "To aggregate engagement data, follower growth, and content performance metrics from connected platforms into unified dashboards." },
-                    { subtitle: "Hashtag Research", text: "To analyze trending topics and suggest relevant hashtags based on aggregated, anonymized platform data." },
-                ],
-            },
-            {
-                title: "3. Social Platform Compliance",
-                content: [
-                    { subtitle: "", text: "CIM SocialHub complies with the API terms and data policies of all connected platforms (Meta Platform Policy, Twitter Developer Agreement, LinkedIn API Terms, TikTok API Terms). We only access data within the scope of granted permissions and never exceed authorized usage." },
-                ],
-            },
-            {
-                title: "4. Data Storage & Security",
-                content: [
-                    { subtitle: "", text: "Social account tokens are stored in encrypted vaults with automatic rotation. Content and analytics data are stored in PostgreSQL with encryption at rest. All data is processed in AWS data centers. We maintain SOC 2 Type II compliance." },
-                ],
-            },
-            {
-                title: "5. Data Retention & Deletion",
-                content: [
-                    { subtitle: "", text: "Scheduled content is retained indefinitely unless deleted by you. Analytics data is retained for 24 months. Disconnecting a social account immediately revokes our API access. Full account deletion is processed within 30 days." },
-                ],
-            },
-            {
-                title: "6. Your Rights & Contact",
-                content: [
-                    { subtitle: "", text: "You have the right to access, correct, delete, or export your data. Disconnect any social account at any time. Contact us at contact@cinuteinfomedia.com for privacy inquiries." },
+                    { subtitle: "", text: "This policy may be updated to reflect changes in the service, our sub-processors or the law. The \"Last updated\" date above changes when it does, and significant changes are notified by email or in-app notice." },
                 ],
             },
         ],

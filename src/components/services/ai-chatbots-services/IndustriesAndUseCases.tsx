@@ -35,7 +35,7 @@ export default function IndustriesAndUseCases() {
         {
             icon: Zap,
             title: "SaaS",
-            description: <span>Reduced churn by 15% via <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#4ECDC4] transition-colors">guided tours</Link>. Automate customer onboarding and support.</span>,
+            description: <span>Reduced churn by 15% via <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-cyan-text)] transition-colors">guided tours</Link>. Automate customer onboarding and support.</span>,
             benefits: ["Reduced churn", "Guided tours", "Automated onboarding"],
             accentColor: "#4ECDC4",
             secondaryIcon: Star,
@@ -51,7 +51,7 @@ export default function IndustriesAndUseCases() {
         {
             icon: ShoppingBag,
             title: "Retail",
-            description: <span>Increase in average order value. Deliver real-time <Link href="/services/web-design-development/shopify-development-services" className="hover:text-[#A78BFA] transition-colors">personalized shopping</Link> experiences.</span>,
+            description: <span>Increase in average order value. Deliver real-time <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">personalized shopping</Link> experiences.</span>,
             benefits: ["Increased AOV", "Personalized shopping", "Inventory checks"],
             accentColor: "#A78BFA",
             secondaryIcon: ShoppingCart,
@@ -67,7 +67,7 @@ export default function IndustriesAndUseCases() {
         {
             icon: Plane,
             title: "Travel",
-            description: <span>Instant changes & multilingual support. Automate <Link href="/services/web-design-development" className="hover:text-[#10B981] transition-colors">booking</Link> and itinerary management.</span>,
+            description: <span>Instant changes & multilingual support. Automate <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">booking</Link> and itinerary management.</span>,
             benefits: ["Instant changes", "Booking management", "24/7 Support"],
             accentColor: "#10B981",
             secondaryIcon: Globe,
@@ -86,13 +86,13 @@ export default function IndustriesAndUseCases() {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Industries Transforming with <span style={{ color: "var(--brand-chatbot)" }}>Our AI Solutions</span>
+                        Industries Transforming with <span style={{ color: "var(--accent-indigo-text)" }}>Our AI Solutions</span>
                     </h2>
                     <p
                         className="text-lg md:text-xl max-w-3xl mx-auto"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-chatbot)] transition-colors">Intelligent AI chatbots</Link> adapt seamlessly across industries, delivering automation,
+                        <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-indigo-text)] transition-colors">Intelligent AI chatbots</Link> adapt seamlessly across industries, delivering automation,
                         engagement, and real business impact.
                     </p>
                 </div>

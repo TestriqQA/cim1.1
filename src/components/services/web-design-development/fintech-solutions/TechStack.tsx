@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, ShieldCheck, Database, Cloud, Globe, BarChart3, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -71,7 +69,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#0ea5e9" }}>FinTech</span> Intelligence Stack
+                        <span style={{ color: "var(--accent-sky-text)" }}>FinTech</span> Intelligence Stack
                     </h2>
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>
                         Secure, low-latency technologies built for the future of finance.

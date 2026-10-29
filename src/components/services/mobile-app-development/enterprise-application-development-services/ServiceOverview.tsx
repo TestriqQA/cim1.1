@@ -87,12 +87,12 @@ export default function ServiceOverview() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(37, 99, 235, 0.1)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "rgba(37, 99, 235, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#2563eb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#2563eb" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Services
                         </span>
                     </div>
@@ -101,7 +101,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         Custom Enterprise Software Development for{" "}
-                        <span style={{ color: "#2563eb" }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             Scalable Growth
                         </span>
                     </h2>
@@ -109,7 +109,7 @@ export default function ServiceOverview() {
                         className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        We specialize in developing robust <Link href="/services/web-design-development" className="text-[#2563eb] hover:underline">Enterprise Web Applications</Link> and <Link href="/services/mobile-app-development" className="text-[#2563eb] hover:underline">mobile solutions</Link> that solve complex workflow challenges and drive operational efficiency.
+                        We specialize in developing robust <Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Enterprise Web Applications</Link> and <Link href="/services/mobile-app-development" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">mobile solutions</Link> that solve complex workflow challenges and drive operational efficiency.
                     </p>
                 </div>
 

@@ -49,7 +49,7 @@ export default function Process() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our Proven <span style={{ color: pinterestRed }}>Process</span>
+                        Our Proven <span style={{ color: "var(--accent-red-text)" }}>Process</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A strategic framework to turn Pinterest browsers into loyal customers.
@@ -70,8 +70,8 @@ export default function Process() {
                             >
                                 {/* Step Number */}
                                 <div
-                                    className="absolute top-8 right-8 text-4xl font-bold transition-colors group-hover:opacity-100 opacity-30"
-                                    style={{ color: pinterestRed }}
+                                    className="absolute top-8 right-8 text-4xl font-bold transition-colors"
+                                    style={{ color: "var(--accent-red-text)" }}
                                 >
                                     0{idx + 1}
                                 </div>

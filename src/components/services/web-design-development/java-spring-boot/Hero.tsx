@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#6DB33F" }}>Java & Spring Boot</span>
+                            <span style={{ color: "var(--accent-green-text)" }}>Java & Spring Boot</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(248, 152, 32, 0.3)",
                             }}
                         >
-                            <Coffee className="w-4 h-4" style={{ color: "#F89820" }} />
-                            <span className="text-sm font-medium" style={{ color: "#6DB33F" }}>
+                            <Coffee className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                                 <Link href="/services/web-design-development/business-corporate" className="hover:underline">Enterprise-Grade Java Solutions</Link>
                             </span>
                         </div>
@@ -116,7 +116,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Build scalable, secure, and high-performance <Link href="/services/web-design-development/business-corporate" className="text-[#6DB33F] hover:underline">enterprise applications</Link> with the world&apos;s most trusted technology stack.
+                            Build scalable, secure, and high-performance <Link href="/services/web-design-development/business-corporate" className="text-[var(--accent-green-text)] underline underline-offset-2 hover:underline">enterprise applications</Link> with the world&apos;s most trusted technology stack.
                         </p>
 
                         {/* Feature Pills */}
@@ -171,17 +171,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#6DB33F" }}>500+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>500+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Enterprise Apps</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#6DB33F" }}>10+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>10+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Experience</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#6DB33F" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Uptime SLA</p>
                             </div>
                         </div>
@@ -280,7 +280,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#6DB33F" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-green-text)" }}>
                                 Technologies We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

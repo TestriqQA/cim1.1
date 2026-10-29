@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#FF2D20" }}>Laravel & PHP</span>
+                            <span style={{ color: "var(--accent-red-text)" }}>Laravel & PHP</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(255, 45, 32, 0.2)",
                             }}
                         >
-                            <Server className="w-4 h-4" style={{ color: "#FF2D20" }} />
-                            <span className="text-sm font-medium" style={{ color: "#FF2D20" }}>
+                            <Server className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                                 Enterprise PHP Solutions
                             </span>
                         </div>
@@ -115,14 +115,14 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Build scalable, secure, and maintainable <Link href="/services/web-design-development" className="text-[#FF2D20] hover:underline">web applications</Link> with the world's most popular PHP framework. We deliver enterprise-grade solutions tailored to your business.
+                            Build scalable, secure, and maintainable <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">web applications</Link> with the world's most popular PHP framework. We deliver enterprise-grade solutions tailored to your business.
                         </p>
 
                         {/* Feature Pills */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
                                 "Custom Development",
-                                <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#FF2D20] transition-colors">SaaS Platforms</Link>,
+                                <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-red-text)] transition-colors">SaaS Platforms</Link>,
                                 "API Integration",
                                 "Legacy Migration",
                             ].map((feature, idx) => (
@@ -170,17 +170,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex items-center justify-center lg:justify-start gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div>
-                                <h4 className="text-3xl font-bold" style={{ color: "#FF2D20" }}>100+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>100+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <h4 className="text-3xl font-bold" style={{ color: "#FF2D20" }}>5+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>5+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Experience</p>
                             </div>
                             <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <h4 className="text-3xl font-bold" style={{ color: "#FF2D20" }}>24/7</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>24/7</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Support & Maint.</p>
                             </div>
                         </div>
@@ -297,7 +297,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#FF2D20" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-red-text)" }}>
                                 Technologies We Use
                             </p>
                             <div className="flex flex-wrap gap-2">

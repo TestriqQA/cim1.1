@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -172,7 +170,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                                             </div>
                                             <div
                                                 className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
-                                                style={{ color: "var(--brand-purple)" }}
+                                                style={{ color: "var(--brand-purple-text)" }}
                                             >
                                                 Read
                                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

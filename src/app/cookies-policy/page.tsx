@@ -45,7 +45,9 @@ export default function CookiesPolicyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(cookiesSchema) }}
             />
-            <CookiesPolicyClient />
+            <main>
+                <CookiesPolicyClient />
+            </main>
         </>
     );
 }

@@ -7,7 +7,7 @@ export default function SecurityAndSEO() {
     const securityPractices = [
         {
             icon: Shield,
-            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple)] transition-colors">Data Protection (AES-256, TLS 1.3)</Link>,
+            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple-text)] transition-colors">Data Protection (AES-256, TLS 1.3)</Link>,
             description: "End-to-end AES-256 encryption for data at rest, TLS 1.3 for data in transit, certificate pinning, and secure key storage in Keychain/KeyStore.",
             gradient: "from-[#667eea] to-[#764ba2]"
         },
@@ -34,8 +34,8 @@ export default function SecurityAndSEO() {
     const appStoreOptimization = [
         {
             icon: Search,
-            title: <Link href="/services/seo-services" className="hover:text-[var(--brand-purple)] transition-colors">ASO (Strong Organic Growth)</Link>,
-            description: <span>Keyword research, competitor analysis, search volume data, and A/B tested descriptions. Average increase in <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[var(--brand-purple)] transition-colors">organic installs</Link> with top 10 rankings in 90 days.</span>,
+            title: <Link href="/services/seo-services" className="hover:text-[var(--brand-purple-text)] transition-colors">ASO (Strong Organic Growth)</Link>,
+            description: <span>Keyword research, competitor analysis, search volume data, and A/B tested descriptions. Average increase in <Link href="/blog/mastering-seo-organic-growth" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">organic installs</Link> with top 10 rankings in 90 days.</span>,
             gradient: "from-[#fa709a] to-[#fee140]"
         },
         {
@@ -78,7 +78,7 @@ export default function SecurityAndSEO() {
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-purple)" }}>Security, Performance</span> & App Store Optimization
+                        <span style={{ color: "var(--brand-purple-text)" }}>Security, Performance</span> & App Store Optimization
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Enterprise-grade security. Extensively tested apps optimized for maximum app store visibility and strong organic growth.
@@ -90,7 +90,7 @@ export default function SecurityAndSEO() {
                     {/* Security Section */}
                     <div>
                         <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                            <Lock className="w-8 h-8" style={{ color: "var(--brand-purple)" }} />
+                            <Lock className="w-8 h-8" style={{ color: "var(--brand-purple-text)" }} />
                             <span style={{ color: "var(--foreground)" }}>Security Best Practices</span>
                         </h3>
 
@@ -133,7 +133,7 @@ export default function SecurityAndSEO() {
                     {/* App Store Optimization Section */}
                     <div>
                         <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                            <Search className="w-8 h-8" style={{ color: "var(--brand-yellow)" }} />
+                            <Search className="w-8 h-8" style={{ color: "var(--accent-amber-text)" }} />
                             <span style={{ color: "var(--foreground)" }}>App Store Optimization</span>
                         </h3>
 
@@ -202,7 +202,7 @@ export default function SecurityAndSEO() {
                                     e.currentTarget.style.backgroundColor = "color-mix(in srgb, var(--brand-purple) 5%, transparent)";
                                 }}
                             >
-                                <div className="font-bold text-sm mb-1 transition-colors duration-300" style={{ color: "var(--brand-purple)" }}>
+                                <div className="font-bold text-sm mb-1 transition-colors duration-300" style={{ color: "var(--brand-purple-text)" }}>
                                     {item.standard}
                                 </div>
                                 <div className="text-xs" style={{ color: "var(--secondary-text)" }}>

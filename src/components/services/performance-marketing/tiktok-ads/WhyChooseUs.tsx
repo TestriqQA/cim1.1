@@ -11,6 +11,10 @@ export default function WhyChooseUs() {
     const tiktokPink = "#ff0050";
     const tiktokCyan = "#00f2ea";
 
+    // Map brand color -> theme-aware text token (contrast-safe in light & dark)
+    const textAccent = (c: string) =>
+        c === tiktokCyan ? "var(--accent-cyan-text)" : "var(--accent-pink-text)";
+
     const benefits = [
         {
             id: 1,
@@ -79,7 +83,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Award className="w-4 h-4" style={{ color: tiktokPink }} />
-                        <span className="text-sm font-medium" style={{ color: tiktokPink }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -124,7 +128,7 @@ export default function WhyChooseUs() {
                                 className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 z-10"
                                 style={{
                                     backgroundColor: hoveredCard === benefit.id ? benefit.color : `${benefit.color}20`,
-                                    color: hoveredCard === benefit.id ? "white" : benefit.color,
+                                    color: hoveredCard === benefit.id ? "white" : textAccent(benefit.color),
                                     transform: hoveredCard === benefit.id ? "scale(1.05)" : "scale(1)",
                                 }}
                             >
@@ -153,7 +157,7 @@ export default function WhyChooseUs() {
                             {/* Checkmark */}
                             <div className="mt-4 flex items-center gap-2 relative z-10">
                                 <CheckCircle className="w-4 h-4" style={{ color: benefit.color }} />
-                                <span className="text-xs font-medium" style={{ color: benefit.color }}>
+                                <span className="text-xs font-medium" style={{ color: textAccent(benefit.color) }}>
                                     Included
                                 </span>
                             </div>

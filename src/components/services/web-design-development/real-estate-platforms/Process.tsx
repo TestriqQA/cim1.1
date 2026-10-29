@@ -38,7 +38,7 @@ export default function Process() {
                 { icon: FileText, text: "Listing page wireframes" },
                 { icon: Layout, text: "Search interface design" },
                 { icon: Map, text: "Interactive map UX" },
-                { icon: Smartphone, text: <Link href="/services/mobile-app-development" className="hover:underline">Mobile optimization</Link> }
+                { icon: Smartphone, text: <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline">Mobile optimization</Link> }
             ],
             color: "#14b8a6",
             gradient: "from-[#14b8a6] to-[#2dd4bf]",
@@ -75,7 +75,7 @@ export default function Process() {
             number: "05",
             icon: Rocket,
             title: "Launch & Optimization",
-            description: <>Coordinated launch with <Link href="/services/seo-services" className="hover:underline">SEO configuration</Link>, analytics setup, and initial marketing integrations to capture early leads and maximize visibility.</>,
+            description: <>Coordinated launch with <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline">SEO configuration</Link>, analytics setup, and initial marketing integrations to capture early leads and maximize visibility.</>,
             deliverables: [
                 { icon: Globe, text: "Local SEO setup" },
                 { icon: LineChart, text: "Analytics config" },
@@ -121,7 +121,7 @@ export default function Process() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Rocket className="w-4 h-4" style={{ color: "#0d9488" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0d9488" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                                 Our Process
                             </span>
                         </div>

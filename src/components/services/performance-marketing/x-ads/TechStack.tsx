@@ -98,9 +98,9 @@ export default function TechStack() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg transition-colors group-hover:text-blue-500" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold text-lg transition-colors group-hover:text-[var(--brand-blue-text)]" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

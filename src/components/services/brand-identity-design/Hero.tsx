@@ -55,7 +55,7 @@ export default function Hero() {
                         Services
                     </Link>
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <span className="font-semibold p-2" style={{ color: "var(--brand-yellow)" }}>
+                    <span className="font-semibold p-2" style={{ color: "var(--accent-amber-text)" }}>
                         Brand Identity & Design
                     </span>
                 </nav>
@@ -70,10 +70,10 @@ export default function Hero() {
                                 style={{
                                     background: "linear-gradient(90deg, color-mix(in srgb, var(--brand-yellow) 10%, transparent), color-mix(in srgb, var(--brand-orange) 10%, transparent))",
                                     borderColor: "color-mix(in srgb, var(--brand-yellow) 30%, transparent)",
-                                    color: "var(--brand-yellow)",
+                                    color: "var(--accent-amber-text)",
                                 }}
                             >
-                                <Palette className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
+                                <Palette className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                                 <span className="text-sm font-semibold">Brand Identity & Design</span>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="mt-6 text-lg md:text-xl max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Unlock your global potential with a custom visual identity. We craft data-driven brand systems for startups, <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-yellow)] transition-colors">SaaS</Link>, and <Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--brand-yellow)] transition-colors">enterprises</Link> to dominate markets.
+                            Unlock your global potential with a custom visual identity. We craft data-driven brand systems for startups, <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">SaaS</Link>, and <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">enterprises</Link> to dominate markets.
                         </p>
 
                         {/* Feature Pills */}
@@ -107,7 +107,7 @@ export default function Hero() {
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
+                                        <Icon className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                                         <span className="text-sm font-medium">{feature.label}</span>
                                     </div>
                                 );
@@ -118,7 +118,7 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center lg:text-left">
-                                    <div className="text-3xl font-black" style={{ color: "var(--brand-yellow)" }}>
+                                    <div className="text-3xl font-black" style={{ color: "var(--accent-amber-text)" }}>
                                         {stat.value}
                                     </div>
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
@@ -138,13 +138,6 @@ export default function Hero() {
                                 Book Free Brand Audit
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="#portfolio"
-                                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full border-2 transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "var(--brand-yellow)", color: "var(--brand-yellow)" }}
-                            >
-                                View Our Work
-                            </Link> */}
                         </div>
                     </div>
 
@@ -210,13 +203,13 @@ export default function Hero() {
                                 >
                                     <span className="text-[10px] font-bold uppercase tracking-wider text-black/70 relative z-10">Patterns</span>
                                     {/* Pattern Grid */}
-                                    <div className="absolute inset-0 opacity-20">
+                                    <div className="absolute inset-0">
                                         {[...Array(9)].map((_, i) => (
                                             <div
                                                 key={i}
                                                 className="absolute w-6 h-6 rounded-full"
                                                 style={{
-                                                    backgroundColor: "#000",
+                                                    backgroundColor: "#00000033",
                                                     top: `${Math.floor(i / 3) * 33}%`,
                                                     left: `${(i % 3) * 33}%`,
                                                     transform: `scale(${0.4 + (i % 3) * 0.3})`,
@@ -236,9 +229,9 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, var(--brand-yellow) 20%, var(--border-color))",
                             }}
                         >
-                            <h3 className="font-bold text-lg mb-3" style={{ color: "var(--brand-yellow)" }}>
+                            <h2 className="font-bold text-lg mb-3" style={{ color: "var(--accent-amber-text)" }}>
                                 Why Professional Branding?
-                            </h3>
+                            </h2>
                             <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
                                 A strong brand identity builds trust, recognition, and lasting customer relationships.
                             </p>
@@ -249,7 +242,7 @@ export default function Hero() {
                                         className="px-3 py-1 rounded-full text-xs font-medium"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--brand-yellow) 15%, transparent)",
-                                            color: "var(--brand-yellow)",
+                                            color: "var(--accent-amber-text)",
                                         }}
                                     >
                                         {tag}

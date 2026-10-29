@@ -1,5 +1,3 @@
-"use client";
-
 import { Code2, Map, Eye, Users, Database, Cloud } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +8,7 @@ export default function TechStack() {
             category: "Frontend Frameworks",
             icon: Code2,
             items: [
-                { name: <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline">React/Next.js</Link>, description: "Fast, SEO-friendly apps", logos: ["/images/techstack_logos/react-logo.svg", "/images/techstack_logos/nextjs-logo.svg"] },
+                { name: <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:underline">React/Next.js</Link>, description: "Fast, SEO-friendly apps", logos: ["/images/techstack_logos/react-logo.svg", "/images/techstack_logos/nextjs-logo.svg"] },
                 { name: "Vue.js/Nuxt", description: "Progressive web apps", logos: ["/images/techstack_logos/vuejs-logo.svg", "/images/techstack_logos/nuxt-logo.png"] },
                 { name: "TypeScript", description: "Type-safe development", logos: ["/images/techstack_logos/typescript-logo.svg"] },
             ],
@@ -37,7 +35,7 @@ export default function TechStack() {
             category: "CRM Integration",
             icon: Users,
             items: [
-                { name: <Link href="/services/ai-workflows-automations-services" className="hover:underline">Salesforce</Link>, description: "Enterprise CRM", logos: ["/images/ai_automation_logos/salesforce-logo.png"] },
+                { name: <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">Salesforce</Link>, description: "Enterprise CRM", logos: ["/images/ai_automation_logos/salesforce-logo.png"] },
                 { name: "HubSpot", description: "Marketing automation", logos: ["/images/ai_automation_logos/hubspot-logo.png"] },
                 { name: "Follow Up Boss", description: "Real estate CRM", logos: ["/images/techstack_logos/Follow-Up-Boss-logo.png"] },
             ],

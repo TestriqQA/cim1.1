@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Terminal } from "lucide-react";
 import Link from "next/link";
 
@@ -69,8 +67,8 @@ export default function CTA() {
                                 borderColor: "color-mix(in srgb, #61dafb 40%, transparent)",
                             }}
                         >
-                            <Terminal className="w-4 h-4" style={{ color: "#61dafb" }} />
-                            <span className="text-sm font-semibold font-mono" style={{ color: "#61dafb" }}>
+                            <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className="text-sm font-semibold font-mono" style={{ color: "var(--accent-cyan-text)" }}>
                                 npx create-next-app
                             </span>
                         </div>
@@ -96,7 +94,7 @@ export default function CTA() {
                             className="text-base md:text-xl mb-10 leading-relaxed"
                             style={{ color: "var(--secondary-text)" }}
                         >
-                            We are proud to serve as a leading Next.js development agency and React JS development company for clients across the USA, UK, Canada, Australia, and the Middle East. Beyond general web development, we have deep niche expertise in <Link href="/services/web-design-development/real-estate-platforms" className="hover:text-[#61dafb] transition-colors">Real Estate</Link>, <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[#61dafb] transition-colors">Fintech</Link>, <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#61dafb] transition-colors">SaaS</Link>, and <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#61dafb] transition-colors">Healthcare</Link>, providing tailor-made React development services that address the unique challenges of your industry.
+                            We are proud to serve as a leading Next.js development agency and React JS development company for clients across the USA, UK, Canada, Australia, and the Middle East. Beyond general web development, we have deep niche expertise in <Link href="/services/web-design-development/real-estate-platforms" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Real Estate</Link>, <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Fintech</Link>, <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">SaaS</Link>, and <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Healthcare</Link>, providing tailor-made React development services that address the unique challenges of your industry.
                         </p>
 
                         {/* CTA Button */}

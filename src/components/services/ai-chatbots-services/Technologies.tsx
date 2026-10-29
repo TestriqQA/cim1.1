@@ -15,7 +15,7 @@ export default function Technologies() {
         {
             icon: Zap,
             title: "Retrieval-Augmented Generation (RAG)",
-            description: <span>Eliminate hallucinations. Our <Link href="/services/ai-workflows-automations-services" className="hover:text-yellow-500 transition-colors">RAG pipelines</Link> connect your chatbot to your live internal data sources.</span>,
+            description: <span>Eliminate hallucinations. Our <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)] transition-colors">RAG pipelines</Link> connect your chatbot to your live internal data sources.</span>,
             details: ["Vector Databases", "Semantic Search", "Real-time sync", "Source citation"],
         },
         {
@@ -27,7 +27,7 @@ export default function Technologies() {
         {
             icon: BarChart3,
             title: "Predictive Analytics Dashboard",
-            description: <span>Go beyond basic metrics. Track <Link href="/services/performance-marketing" className="hover:text-pink-500 transition-colors">user sentiment</Link>, intent trends, and conversation drop-off points.</span>,
+            description: <span>Go beyond basic metrics. Track <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-pink-text)] transition-colors">user sentiment</Link>, intent trends, and conversation drop-off points.</span>,
             details: ["Sentiment tracking", "Intent heatmaps", "Conversion attribution", "Custom reports"],
         },
     ];
@@ -44,7 +44,7 @@ export default function Technologies() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Technology Stack & <span style={{ color: "var(--brand-chatbot)" }}>Expertise</span>
+                        Technology Stack & <span style={{ color: "var(--accent-indigo-text)" }}>Expertise</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We build on battle-tested frameworks and cutting-edge AI models to ensure scalability, security, and performance.

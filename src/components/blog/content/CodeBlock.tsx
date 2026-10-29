@@ -32,7 +32,7 @@ export default function CodeBlock({ block }: CodeBlockProps) {
                         className="text-xs font-medium px-2 py-0.5 rounded"
                         style={{
                             backgroundColor: "rgba(107, 0, 215, 0.2)",
-                            color: "#a855f7",
+                            color: "#c084fc",
                         }}
                     >
                         {block.language}

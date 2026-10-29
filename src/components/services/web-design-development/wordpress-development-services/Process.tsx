@@ -71,8 +71,8 @@ export default function Process() {
                             borderColor: "rgba(0, 115, 170, 0.2)",
                         }}
                     >
-                        <ClipboardList className="w-4 h-4" style={{ color: "#0073AA" }} />
-                        <span className="text-sm font-medium" style={{ color: "#0073AA" }}>
+                        <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -144,7 +144,7 @@ export default function Process() {
                                             <ul className="space-y-2">
                                                 {step.details.map((detail, dIdx) => (
                                                     <li key={dIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                                        <CheckCircle className="w-4 h-4 text-[#0073AA]" />
+                                                        <CheckCircle className="w-4 h-4 text-[var(--brand-blue-text)]" />
                                                         <span>{detail}</span>
                                                     </li>
                                                 ))}
@@ -171,7 +171,7 @@ export default function Process() {
                                         <div
                                             className="text-[120px] font-bold leading-none opacity-50 transition-all duration-300"
                                             style={{
-                                                color: isHovered ? "#0073AA" : "var(--foreground)",
+                                                color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)",
                                                 transform: isHovered ? "scale(1.1)" : "scale(1)",
                                                 opacity: 0.5,
                                             }}

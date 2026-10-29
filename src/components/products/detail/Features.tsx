@@ -14,6 +14,19 @@ export default function Features({ product }: { product: Product }) {
     const color = product.accentColor;
     const featureColors = [color, "#3B82F6", "#F59E0B", "#8B5CF6", "#EC4899", "#06B6D4"];
 
+    // Vivid accents stay for backgrounds/borders/gradients; TEXT uses the
+    // theme-aware AA tokens so the same hue passes in light and dark.
+    const textAccent = (c: string) => ({
+        "#008ac1": "var(--brand-blue-text)",
+        "#00b5ca": "var(--accent-teal-text)",
+        "#4e51d2": "var(--accent-indigo-text)",
+        "#6db75c": "var(--accent-green-text)",
+        "#f72585": "var(--accent-pink-text)",
+        "#bc3feb": "var(--brand-purple-text)",
+        "#ee6500": "var(--accent-orange-text)",
+    }[c?.toLowerCase()] ?? c);
+    const textColor = textAccent(color);
+
     return (
         <section className="py-24 relative overflow-hidden transition-colors duration-300 border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -22,13 +35,15 @@ export default function Features({ product }: { product: Product }) {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
-                        <span className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border" style={{ backgroundColor: `${color}10`, borderColor: `${color}30`, color }}>Features</span>
+                        <span className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>Features</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
-                        Powerful Features for <span style={{ color }}>Maximum Impact</span>
+                        {product.featuresHeading ?? (
+                            <>Powerful Features for <span style={{ color: textColor }}>Maximum Impact</span></>
+                        )}
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        Everything you need to supercharge your workflow — built with cutting-edge technology and designed for simplicity.
+                        {product.featuresIntro ?? "Everything you need to supercharge your workflow — built with cutting-edge technology and designed for simplicity."}
                     </p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

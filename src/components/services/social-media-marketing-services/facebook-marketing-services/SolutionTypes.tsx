@@ -17,11 +17,23 @@ import Link from "next/link";
 export default function SolutionTypes() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+    // Map the decorative brand colour -> theme-aware text token (contrast-safe in light & dark).
+    // Only used where the colour is applied to TEXT; gradients/borders/icons keep the raw value.
+    const accentTextMap: Record<string, string> = {
+        "#0ea5e9": "var(--accent-sky-text)",
+        "#a855f7": "var(--accent-violet-text)",
+        "#f97316": "var(--accent-orange-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#ef4444": "var(--accent-red-text)",
+        "#6366f1": "var(--accent-indigo-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex.toLowerCase()] ?? hex;
+
     const solutions = [
         {
             icon: Store,
             title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline text-inherit">E-commerce Brands</Link>,
-            description: <>Dynamic Catalog Ads + <Link href="/services/web-design-development/shopify-development-services" className="hover:underline text-blue-500">Shopify</Link> Integration. Scale your online store with Facebook ads management for ecommerce.</>,
+            description: <>Dynamic Catalog Ads + <Link href="/services/web-design-development/shopify-development-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">Shopify</Link> Integration. Scale your online store with Facebook ads management for ecommerce.</>,
             features: [
                 "Strong ROAS Growth",
                 "Product catalog sync",
@@ -108,9 +120,9 @@ export default function SolutionTypes() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
                         <Sparkles className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm font-medium text-blue-500">Industry Solutions</span>
+                        <span className="text-sm font-medium text-[var(--brand-blue-text)]">Industry Solutions</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Facebook Ads by</span>{" "}
@@ -230,7 +242,7 @@ export default function SolutionTypes() {
                                                 text-xl font-bold mb-3 transition-colors duration-500
                                             `}
                                             style={{
-                                                color: isHovered ? solution.color : "var(--foreground)"
+                                                color: isHovered ? textAccent(solution.color) : "var(--foreground)"
                                             }}
                                         >
                                             {solution.title}

@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
         {
             icon: LayoutGrid,
             title: "Scalable Architecture",
-            description: <>We design systems that grow with your business, from <Link href="/services/web-design-development/saas-development-services" className="text-[#306998] hover:underline">startup to enterprise scale</Link>.</>,
+            description: <>We design systems that grow with your business, from <Link href="/services/web-design-development/saas-development-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">startup to enterprise scale</Link>.</>,
             gradient: "from-blue-600 via-blue-500 to-cyan-500",
             bgColor: "rgba(48, 105, 152, 0.15)",
             iconColor: "#306998",
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: Shield,
             title: "Security First",
-            description: <>Leveraging <Link href="/blog/cybersecurity-small-businesses" className="text-[#22c55e] hover:underline">Django&apos;s built-in security features</Link> and industry best practices.</>,
+            description: <>Leveraging <Link href="/blog/cybersecurity-small-businesses" className="text-[var(--accent-green-text)] underline underline-offset-2 hover:underline">Django&apos;s built-in security features</Link> and industry best practices.</>,
             gradient: "from-emerald-500 via-green-500 to-teal-500",
             bgColor: "rgba(34, 197, 94, 0.15)",
             iconColor: "#22c55e",
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {
             icon: Brain,
             title: "Data & AI Ready",
-            description: <>Seamlessly integrate <Link href="/services/ai-workflows-automations-services" className="text-[#ec4899] hover:underline">machine learning</Link> and data science into your applications.</>,
+            description: <>Seamlessly integrate <Link href="/services/ai-workflows-automations-services" className="text-[var(--accent-pink-text)] underline underline-offset-2 hover:underline">machine learning</Link> and data science into your applications.</>,
             gradient: "from-pink-500 via-rose-500 to-red-500",
             bgColor: "rgba(236, 72, 153, 0.15)",
             iconColor: "#ec4899",
@@ -63,13 +63,24 @@ export default function WhyChooseUs() {
         {
             icon: HeartHandshake,
             title: "Ongoing Support",
-            description: <>Long-term partnership with <Link href="/services/additional-support-services" className="text-[#f97316] hover:underline">maintenance, updates</Link>, and continuous improvements.</>,
+            description: <>Long-term partnership with <Link href="/services/additional-support-services" className="text-[var(--accent-orange-text)] underline underline-offset-2 hover:underline">maintenance, updates</Link>, and continuous improvements.</>,
             gradient: "from-orange-500 via-amber-500 to-yellow-500",
             bgColor: "rgba(249, 115, 22, 0.15)",
             iconColor: "#f97316",
             particles: 5,
         },
     ];
+
+    // Map per-card brand hue (used for borders/particles/rings) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textColorMap: Record<string, string> = {
+        "#f59e0b": "var(--accent-amber-text)",
+        "#306998": "var(--brand-blue-text)",
+        "#22c55e": "var(--accent-green-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#ec4899": "var(--accent-pink-text)",
+        "#f97316": "var(--accent-orange-text)",
+    };
 
     return (
         <section
@@ -106,8 +117,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(48, 105, 152, 0.1), rgba(75, 139, 190, 0.1))",
                             border: "1px solid rgba(48, 105, 152, 0.2)",
                         }}>
-                        <Trophy className="w-4 h-4" style={{ color: "#306998" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#306998" }}>
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -242,7 +253,7 @@ export default function WhyChooseUs() {
                                         <h3
                                             className="text-xl font-bold mb-3 transition-all duration-500"
                                             style={{
-                                                color: isHovered ? reason.iconColor : "var(--foreground)",
+                                                color: isHovered ? textColorMap[reason.iconColor] : "var(--foreground)",
                                                 transform: isHovered ? "translateX(4px)" : "translateX(0)",
                                             }}
                                         >
@@ -276,7 +287,7 @@ export default function WhyChooseUs() {
                                         <div
                                             className="absolute top-0 right-0 w-12 h-12 flex items-center justify-center rounded-full font-bold text-2xl opacity-0 group-hover:opacity-10 transition-all duration-500"
                                             style={{
-                                                color: reason.iconColor,
+                                                color: textColorMap[reason.iconColor],
                                                 transform: isHovered ? "scale(1)" : "scale(0.5)",
                                             }}
                                         >

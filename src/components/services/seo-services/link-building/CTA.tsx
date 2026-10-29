@@ -36,7 +36,7 @@ export default function CTA() {
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
                         Ready to Build <br />
-                        <span style={{ color: linkCyan }}>Authority?</span>
+                        <span style={{ color: "var(--accent-cyan-text)" }}>Authority?</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>

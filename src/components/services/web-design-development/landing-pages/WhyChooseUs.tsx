@@ -61,14 +61,14 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(16, 185, 129, 0.2)",
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "#10b981" }} />
-                        <span className="text-sm font-medium" style={{ color: "#10b981" }}>
+                        <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why <span style={{ color: "#10b981" }}>Marketers</span> Choose Us
+                        Why <span style={{ color: "var(--accent-green-text)" }}>Marketers</span> Choose Us
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>

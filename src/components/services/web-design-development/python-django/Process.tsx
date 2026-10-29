@@ -71,7 +71,7 @@ export default function Process() {
             details: [
                 "Unit & integration testing",
                 "API endpoint testing",
-                <Link href="/blog/cybersecurity-small-businesses" className="hover:text-[#306998] transition-colors">Security vulnerability scan</Link>,
+                <Link href="/blog/cybersecurity-small-businesses" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Security vulnerability scan</Link>,
                 "Performance load testing",
                 "Code quality analysis",
                 "Penetration testing"
@@ -121,12 +121,12 @@ export default function Process() {
                     <div
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border mb-6 backdrop-blur-sm"
                         style={{
-                            backgroundColor: "rgba(48, 105, 152, 0.1)",
+                            backgroundColor: "rgba(48, 105, 152, 0.05)",
                             borderColor: "rgba(48, 105, 152, 0.3)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" style={{ color: "#306998" }} />
-                        <span className="text-sm font-semibold tracking-wide" style={{ color: "#306998" }}>
+                        <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--brand-blue-text)" }}>
                             OUR PROCESS
                         </span>
                     </div>
@@ -182,7 +182,7 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className={`relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                    className={`cursor-pointer relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                                         }`}
                                     onMouseEnter={() => {
                                         if (window.matchMedia("(hover: hover)").matches) {
@@ -238,7 +238,7 @@ export default function Process() {
                                             <div
                                                 className="absolute top-4 right-6 text-7xl font-bold opacity-5 transition-all duration-500"
                                                 style={{
-                                                    color: "#306998",
+                                                    color: "var(--brand-blue-text)",
                                                     transform: isHovered ? "scale(1.1)" : "scale(1)",
                                                 }}
                                             >
@@ -261,7 +261,7 @@ export default function Process() {
                                                         <Icon
                                                             className="w-8 h-8 transition-all duration-500"
                                                             style={{
-                                                                color: isHovered ? "#fff" : "#306998",
+                                                                color: isHovered ? "#fff" : "var(--brand-blue-text)",
                                                                 filter: isHovered ? "drop-shadow(0 0 8px rgba(255,255,255,0.5))" : "none",
                                                             }}
                                                         />
@@ -283,7 +283,7 @@ export default function Process() {
                                                             className="inline-block text-xs font-bold tracking-wider px-2.5 py-1 rounded-full mb-2"
                                                             style={{
                                                                 backgroundColor: "rgba(255, 212, 59, 0.15)",
-                                                                color: "#FFD43B",
+                                                                color: "var(--accent-amber-text)",
                                                             }}
                                                         >
                                                             STEP {step.number}
@@ -291,7 +291,7 @@ export default function Process() {
                                                         <h3
                                                             className="text-2xl font-bold mb-2 transition-colors duration-300"
                                                             style={{
-                                                                color: isHovered ? "#306998" : "var(--foreground)",
+                                                                color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)",
                                                             }}
                                                         >
                                                             {step.title}
@@ -314,7 +314,7 @@ export default function Process() {
                                                     }}
                                                 >
                                                     <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                                        <h4 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "#306998" }}>
+                                                        <h4 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                                             Key Activities
                                                         </h4>
                                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
@@ -330,7 +330,7 @@ export default function Process() {
                                                                 >
                                                                     <CheckCircle2
                                                                         className="w-4 h-4 flex-shrink-0 mt-0.5"
-                                                                        style={{ color: "#4B8BBE" }}
+                                                                        style={{ color: "var(--brand-blue-text)" }}
                                                                     />
                                                                     <span>{detail}</span>
                                                                 </div>
@@ -342,13 +342,13 @@ export default function Process() {
                                                             <div className="flex items-center gap-2">
                                                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FFD43B" }} />
                                                                 <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                    <span style={{ color: "#306998" }}>Deliverable:</span> {step.deliverable}
+                                                                    <span style={{ color: "var(--brand-blue-text)" }}>Deliverable:</span> {step.deliverable}
                                                                 </span>
                                                             </div>
                                                             <div className="flex items-center gap-2">
                                                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#4B8BBE" }} />
                                                                 <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                    <span style={{ color: "#306998" }}>Timeline:</span> {step.duration}
+                                                                    <span style={{ color: "var(--brand-blue-text)" }}>Timeline:</span> {step.duration}
                                                                 </span>
                                                             </div>
                                                         </div>

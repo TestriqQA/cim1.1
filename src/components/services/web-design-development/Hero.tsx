@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, Rocket, Zap, Smartphone, TrendingUp, ShieldCheck, Code } from "lucide-react";
 import Link from "next/link";
 import WebDevAnimation from "./WebDevAnimation";
@@ -64,7 +62,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-blue)" }}
+                        style={{ color: "var(--brand-blue-text)" }}
                     >
                         Web Design & Development
                     </span>
@@ -83,7 +81,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-blue) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-blue) 20%, transparent)",
-                                color: "var(--brand-blue)",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
@@ -117,10 +115,10 @@ export default function Hero() {
                         {/* Tagline */}
                         <div className="space-y-4 mb-8 text-lg md:text-xl text-[var(--secondary-text)] leading-relaxed">
                             <p>
-                                As an expert <Link href="/services/web-design-development" className="text-[var(--brand-blue)] font-bold hover:underline transition-colors">web development company</Link> with proven, deep expertise, we deliver <Link href="/services/web-design-development/business-corporate" className="text-[var(--brand-teal)] font-bold hover:underline transition-colors">custom website development</Link> solutions that drive measurable ROI.
+                                As an expert <Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] font-bold underline hover:underline transition-colors">web development company</Link> with proven, deep expertise, we deliver <Link href="/services/web-design-development/business-corporate" className="text-[var(--accent-teal-text)] font-bold underline underline-offset-2 hover:underline transition-colors">custom website development</Link> solutions that drive measurable ROI.
                             </p>
                             <p className="text-base md:text-lg">
-                                Our <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">professional web design agency</Link> has launched 500+ high-performance websites for global clients across <span className="font-semibold text-[var(--foreground)]">US, EU, India, and APAC</span> markets-achieving average <span className="text-[var(--brand-blue)] font-bold">sustained traffic growth</span> and conversion rate improvements.
+                                Our <Link href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">professional web design agency</Link> has launched 500+ high-performance websites for global clients across <span className="font-semibold text-[var(--foreground)]">US, EU, India, and APAC</span> markets-achieving average <span className="text-[var(--brand-blue-text)] font-bold">sustained traffic growth</span> and conversion rate improvements.
                             </p>
                         </div>
 
@@ -170,7 +168,7 @@ export default function Hero() {
                             }}
                         >
                             <div className="text-center">
-                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--brand-blue)]">
+                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--brand-blue-text)]">
                                     500+
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-[var(--secondary-text)]">
@@ -178,7 +176,7 @@ export default function Hero() {
                                 </div>
                             </div>
                             <div className="text-center border-x border-[var(--border-color)]">
-                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--brand-teal)]">
+                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--accent-teal-text)]">
                                     95%
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-[var(--secondary-text)]">
@@ -186,7 +184,7 @@ export default function Hero() {
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--brand-blue)]">
+                                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--brand-blue-text)]">
                                     300%
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-[var(--secondary-text)]">
@@ -251,7 +249,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                        color: "var(--brand-blue)",
+                                        color: "var(--brand-blue-text)",
                                     }}
                                 >
                                     <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">
@@ -262,7 +260,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                        color: "var(--brand-blue)",
+                                        color: "var(--brand-blue-text)",
                                     }}
                                 >
                                     <Link href="/blog/future-web-development-nextjs" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">
@@ -273,7 +271,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                        color: "var(--brand-blue)",
+                                        color: "var(--brand-blue-text)",
                                     }}
                                 >
                                     <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">
@@ -284,7 +282,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                        color: "var(--brand-blue)",
+                                        color: "var(--brand-blue-text)",
                                     }}
                                 >
                                     <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">

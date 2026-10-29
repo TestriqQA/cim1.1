@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             icon: Zap,
             title: "Deep Experience",
             description:
-                <>Our team brings deep combined expertise in <Link href="/services/web-design-development" className="hover:text-[#61dafb] transition-colors">web design and development</Link>, ensuring enterprise-grade solutions for every project.</>,
+                <>Our team brings deep combined expertise in <Link href="/services/web-design-development" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">web design and development</Link>, ensuring enterprise-grade solutions for every project.</>,
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
             icon: HeadphonesIcon,
             title: "E-E-A-T Driven",
             description:
-                <>We follow Google&apos;s <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[#61dafb] transition-colors">E-E-A-T</Link> guidelines to ensure your platform is authoritative, trustworthy, and expert-led.</>,
+                <>We follow Google&apos;s <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">E-E-A-T</Link> guidelines to ensure your platform is authoritative, trustworthy, and expert-led.</>,
             gradient: "from-[#00d4ff] to-[#61dafb]",
         },
     ];
@@ -121,8 +121,8 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <Zap className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             E-E-A-T Verified
                         </span>
                     </div>

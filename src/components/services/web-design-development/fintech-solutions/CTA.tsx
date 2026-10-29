@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Lock, TrendingUp, Smartphone, CheckCircle2, Globe } from "lucide-react";
 import Link from "next/link";
 
@@ -43,7 +41,7 @@ export default function CTA() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                         <div>
                             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                                Building the Future of <span style={{ color: "#0ea5e9" }}>Finance</span>?
+                                Building the Future of <span style={{ color: "var(--accent-sky-text)" }}>Finance</span>?
                             </h2>
 
                             <p className="text-base md:text-xl mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -54,7 +52,7 @@ export default function CTA() {
                                 <Link
                                     href="/contact"
                                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-white font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl group"
-                                    style={{ backgroundColor: "#0ea5e9" }}
+                                    style={{ backgroundColor: "var(--brand-blue-btn)" }}
                                 >
                                     Start FinTech Project
                                     <ArrowRight className="w-5 h-5 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
@@ -64,7 +62,7 @@ export default function CTA() {
                                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg border transition-all duration-300 hover:scale-105"
                                     style={{
                                         borderColor: "#0ea5e9",
-                                        color: "#0ea5e9",
+                                        color: "var(--brand-blue-text)",
                                     }}
                                 >
                                     <Smartphone className="w-5 h-5 flex-shrink-0" />

@@ -7,6 +7,18 @@ import Link from "next/link";
 export default function WhyChooseUs() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${color}NN`-style interpolation stays valid.
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#fab900": "var(--accent-amber-text)",
+            "#ee6500": "var(--accent-orange-text)",
+            "#bc3feb": "var(--brand-purple-text)",
+            "#00b5ca": "var(--accent-teal-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
     const benefits = [
         {
             icon: TrendingUp,
@@ -20,7 +32,7 @@ export default function WhyChooseUs() {
             icon: Target,
             decorIcon: Sparkles,
             title: "Global Expertise",
-            description: <span>We understand how design translates to code. Our assets are optimized for <Link href="/services/web-design-development" className="hover:text-[#ee6500]">React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[#ee6500]">Next.js</Link>, and <Link href="/services/mobile-app-development" className="hover:text-[#ee6500]">mobile frameworks</Link>, ensuring 100% implementation fidelity.</span>,
+            description: <span>We understand how design translates to code. Our assets are optimized for <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Next.js</Link>, and <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">mobile frameworks</Link>, ensuring 100% implementation fidelity.</span>,
             highlight: "Tech-Ready",
             color: "#ee6500",
         },
@@ -28,7 +40,7 @@ export default function WhyChooseUs() {
             icon: Search,
             decorIcon: Award,
             title: "SEO-First Design",
-            description: <span>We integrate <Link href="/services/web-design-development" className="hover:text-[#bc3feb]">Graphic Design Principles</Link> with <Link href="/services/seo-services" className="hover:text-[#bc3feb]">SEO visibility</Link>. Our assets are optimized for Core Web Vitals, aiding your organic ranking efforts.</span>,
+            description: <span>We integrate <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">Graphic Design Principles</Link> with <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">SEO visibility</Link>. Our assets are optimized for Core Web Vitals, aiding your organic ranking efforts.</span>,
             highlight: "SEO-Optimized",
             color: "#bc3feb",
         },
@@ -46,9 +58,9 @@ export default function WhyChooseUs() {
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Animated background blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" />
-                <div className="absolute top-40 right-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" style={{ animationDelay: "2s" }} />
-                <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" style={{ animationDelay: "4s" }} />
+                <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+                <div className="absolute top-40 right-10 w-72 h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
+                <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -61,13 +73,13 @@ export default function WhyChooseUs() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-yellow)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-yellow)" }}>
+                        <CheckCircle2 className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             WHY CHOOSE US
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Why Partner with Our <span style={{ color: "var(--brand-yellow)" }}>Creative Team</span>?
+                        Why Partner with Our <span style={{ color: "var(--accent-amber-text)" }}>Creative Team</span>?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We combine strategic thinking with creative excellence to build brands that truly stand out.
@@ -114,7 +126,7 @@ export default function WhyChooseUs() {
                                         className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
                                         style={{
                                             backgroundColor: `${benefit.color}20`,
-                                            color: benefit.color,
+                                            color: textAccent(benefit.color),
                                             transform: isHovered ? "translateX(0) scale(1)" : "translateX(-20px) scale(0.9)",
                                             opacity: isHovered ? 1 : 0,
                                         }}
@@ -138,7 +150,7 @@ export default function WhyChooseUs() {
                                     {/* Content */}
                                     <h3
                                         className="text-lg font-bold mb-3 transition-all duration-300"
-                                        style={{ color: isHovered ? benefit.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(benefit.color) : "var(--foreground)" }}
                                     >
                                         {benefit.title}
                                     </h3>

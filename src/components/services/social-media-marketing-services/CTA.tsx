@@ -54,7 +54,7 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                                color: "var(--brand-teal)",
+                                color: "var(--accent-teal-text)",
                             }}
                         >
                             <Sparkles className="w-4 h-4" />
@@ -78,7 +78,7 @@ export default function CTA() {
 
                         {/* Description */}
                         <p className="text-base md:text-xl max-w-3xl mx-auto mb-12" style={{ color: "var(--secondary-text)" }}>
-                            Don't let your competitors capture your audience. Partner with the <span style={{ fontWeight: 700, color: "var(--brand-teal)" }}>Social Media Marketing Agency</span> that delivers measurable results. Contact us today to discuss your <span style={{ fontWeight: 700, color: "var(--brand-teal)" }}>Social Media Marketing</span> needs and receive a <Link href="/blog/social-media-strategy-building-brand" className="hover:text-[var(--brand-teal)] hover:underline transition-colors" style={{ fontWeight: 700 }}>personalized strategy</Link>.
+                            Don't let your competitors capture your audience. Partner with the <span style={{ fontWeight: 700, color: "var(--accent-teal-text)" }}>Social Media Marketing Agency</span> that delivers measurable results. Contact us today to discuss your <span style={{ fontWeight: 700, color: "var(--accent-teal-text)" }}>Social Media Marketing</span> needs and receive a <Link href="/blog/social-media-strategy-building-brand" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors" style={{ fontWeight: 700 }}>personalized strategy</Link>.
                         </p>
 
                         {/* CTA Buttons */}
@@ -108,7 +108,7 @@ export default function CTA() {
 
                         {/* Bottom Text */}
                         <p className="mt-8" style={{ color: "var(--secondary-text)", fontSize: "0.95rem" }}>
-                            Have questions? Our team is ready to help. <Link href="/contact" className="font-semibold hover:underline" style={{ color: "var(--brand-teal)" }}>Get in touch</Link> with us today.
+                            Have questions? Our team is ready to help. <Link href="/contact" className="font-semibold underline underline-offset-2 hover:underline" style={{ color: "var(--accent-teal-text)" }}>Get in touch</Link> with us today.
                         </p>
                     </div>
                 </div>

@@ -58,7 +58,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/performance-marketing" className="hover:underline">Performance Marketing</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: youtubeRed }}>YouTube Ads</span>
+                            <span style={{ color: "var(--accent-red-text)" }}>YouTube Ads</span>
                         </nav>
 
                         {/* Badge */}
@@ -69,8 +69,8 @@ export default function Hero() {
                                 borderColor: `${youtubeRed}30`,
                             }}
                         >
-                            <MonitorPlay className="w-4 h-4" style={{ color: youtubeRed }} />
-                            <span className="text-sm font-semibold" style={{ color: youtubeRed }}>
+                            <MonitorPlay className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                                 <Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline">Video Marketing Experts</Link>
                             </span>
                         </div>
@@ -105,7 +105,7 @@ export default function Hero() {
                                         backgroundColor: "var(--card-bg)",
                                     }}
                                 >
-                                    <CheckCircle2 className="w-4 h-4" style={{ color: youtubeRed }} />
+                                    <CheckCircle2 className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                                     <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                         {feature}
                                     </span>
@@ -185,7 +185,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${youtubeRed}15` }}
                                     >
-                                        <Users className="w-6 h-6" style={{ color: youtubeRed }} />
+                                        <Users className="w-6 h-6" style={{ color: "var(--accent-red-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-bold text-lg" style={{ color: "var(--foreground)" }}>
@@ -211,7 +211,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${youtubeRed}15` }}
                                     >
-                                        <BarChart2 className="w-6 h-6" style={{ color: youtubeRed }} />
+                                        <BarChart2 className="w-6 h-6" style={{ color: "var(--accent-red-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-bold text-lg" style={{ color: "var(--foreground)" }}>

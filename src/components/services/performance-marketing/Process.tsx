@@ -12,19 +12,19 @@ export default function Process() {
         {
             icon: ClipboardList,
             title: "Discovery & Deep-Dive Audit",
-            description: <span>We start by understanding your business DNA. We dive deep into your historical data, audit your existing accounts (<Link href="/services/performance-marketing/google-ads" className="hover:text-[var(--brand-orange)]">Google</Link>/<Link href="/services/performance-marketing/meta-ads" className="hover:text-[var(--brand-orange)]">Meta</Link>), and analyze your competitors.</span>,
+            description: <span>We start by understanding your business DNA. We dive deep into your historical data, audit your existing accounts (<Link href="/services/performance-marketing/google-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Google</Link>/<Link href="/services/performance-marketing/meta-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Meta</Link>), and analyze your competitors.</span>,
             details: ["Business DNA", "Data Audit", "Competitor Analysis", "KPI Definition"],
         },
         {
             icon: Search,
             title: "Strategy & Media Planning",
-            description: <span>We craft a tailored <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="hover:text-[var(--brand-orange)]">performance marketing strategy</Link>. We identify the 'low-hanging fruit' for quick wins while building a long-term roadmap.</span>,
+            description: <span>We craft a tailored <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">performance marketing strategy</Link>. We identify the 'low-hanging fruit' for quick wins while building a long-term roadmap.</span>,
             details: ["Channel Mix", "Budget Allocation", "Quick Wins", "Long-term Roadmap"],
         },
         {
             icon: Rocket,
             title: "Creative & Asset Production",
-            description: <span>Performance is 50% media buying and 50% <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--brand-orange)]">creative</Link>. Our design team builds high-converting assets - banners, videos, and carousels.</span>,
+            description: <span>Performance is 50% media buying and 50% <Link href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">creative</Link>. Our design team builds high-converting assets - banners, videos, and carousels.</span>,
             details: ["Ad Banners", "Video Ads", "Copywriting", "High-Converting Assets"],
         },
         {
@@ -60,12 +60,12 @@ export default function Process() {
                         }}
                     >
                         <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-orange)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             OUR PROCESS
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Our Proven <span style={{ color: "var(--brand-orange)" }}>6-Step Process</span>
+                        Our Proven <span style={{ color: "var(--accent-orange-text)" }}>6-Step Process</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A systematic approach to building, optimizing, and scaling high-performance campaigns.
@@ -112,14 +112,14 @@ export default function Process() {
                                                 >
                                                     {index + 1}
                                                 </div>
-                                                <span className="text-sm font-semibold" style={{ color: "var(--brand-orange)" }}>
+                                                <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                                                     Step {index + 1}
                                                 </span>
                                             </div>
 
                                             <h3
                                                 className="text-xl md:text-2xl font-bold mb-3 transition-colors"
-                                                style={{ color: isHovered ? "var(--brand-orange)" : "var(--foreground)" }}
+                                                style={{ color: isHovered ? "var(--accent-orange-text)" : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -158,7 +158,7 @@ export default function Process() {
                                             <span
                                                 className="text-8xl font-black transition-all duration-300"
                                                 style={{
-                                                    color: isHovered ? "var(--brand-orange)" : "color-mix(in srgb, var(--brand-orange) 20%, transparent)",
+                                                    color: isHovered ? "var(--accent-orange-text)" : "color-mix(in srgb, var(--brand-orange) 20%, transparent)",
                                                     textShadow: isHovered ? "0 0 40px color-mix(in srgb, var(--brand-orange) 30%, transparent)" : "none",
                                                 }}
                                             >
@@ -167,7 +167,7 @@ export default function Process() {
                                             <div
                                                 className={`absolute -bottom-2 ${isEven ? 'left-0' : 'right-0'} text-xs font-bold uppercase tracking-widest transition-all duration-300`}
                                                 style={{
-                                                    color: isHovered ? "var(--brand-orange)" : "var(--secondary-text)",
+                                                    color: isHovered ? "var(--accent-orange-text)" : "var(--secondary-text)",
                                                     opacity: isHovered ? 1 : 0.6,
                                                 }}
                                             >
@@ -186,7 +186,7 @@ export default function Process() {
                     <a
                         href="/contact"
                         className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform shadow-lg text-base sm:text-lg w-full sm:w-auto"
-                        style={{ backgroundColor: "var(--brand-orange)" }}
+                        style={{ backgroundColor: "#c2410c" }}
                     >
                         Start Your Campaign
                         <ArrowRight className="w-5 h-5" />

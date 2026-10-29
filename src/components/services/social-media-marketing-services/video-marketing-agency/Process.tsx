@@ -19,6 +19,17 @@ export default function Process() {
 
     const youtubeRed = "#FF0000";
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#ff0000": "var(--accent-red-text)",
+            "#cc0000": "var(--accent-red-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
+
+    // Solid fill behind white text: #FF0000 fails AA (4.00), #c5221f passes (5.80).
+    const solidAccent = (c: string): string => (c.toLowerCase() === "#ff0000" ? "#c5221f" : c);
+
     const steps = [
         {
             icon: Search,
@@ -27,7 +38,7 @@ export default function Process() {
             details: [
                 "2026 Growth Roadmap",
                 "KW Gap Analysis",
-                <Link key="tech-seo" href="/services/seo-services/technical-seo-services" className="hover:text-red-500 transition-colors">Technical SEO check</Link>,
+                <Link key="tech-seo" href="/services/seo-services/technical-seo-services" className="hover:text-[var(--accent-red-text)] transition-colors">Technical SEO check</Link>,
                 "Competitor audit",
                 "Historical data review",
             ],
@@ -37,7 +48,7 @@ export default function Process() {
         {
             icon: PenTool,
             title: "Content & Scripting",
-            description: <>Expert <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-red-500">YouTube video script</Link> writing weaving LSI keywords and EEAT signals for maximum retention.</>,
+            description: <>Expert <Link href="/services/seo-services/seo-content-writing-services" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">YouTube video script</Link> writing weaving LSI keywords and EEAT signals for maximum retention.</>,
             details: [
                 "Retention-hook design",
                 "Conversion-focused CTAs",
@@ -53,7 +64,7 @@ export default function Process() {
             title: "Production Support",
             description: "From professional production to high-CTR thumbnail design, matching your brand's authority.",
             details: [
-                <Link key="thumbnails" href="/services/web-design-development/branding-services" className="hover:text-red-500 transition-colors">High-CTR thumbnails</Link>,
+                <Link key="thumbnails" href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-red-text)] transition-colors">High-CTR thumbnails</Link>,
                 "Production workflow",
                 "Audio optimization",
                 "Visual branding",
@@ -117,13 +128,13 @@ export default function Process() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: `${youtubeRed}15`, border: `1px solid ${youtubeRed}30` }}>
-                        <Zap className="w-4 h-4" style={{ color: youtubeRed }} />
-                        <span className="text-sm font-medium" style={{ color: youtubeRed }}>6-Step Growth Framework</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${youtubeRed}30` }}>
+                        <Zap className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>6-Step Growth Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our YouTube</span>{" "}
-                        <span style={{ color: youtubeRed }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Process
                         </span>
                     </h2>
@@ -167,7 +178,7 @@ export default function Process() {
                                     {/* Step Number */}
                                     <div
                                         className={`absolute -top-2 -left-2 w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold shadow-lg transition-all duration-500 ${isHovered ? "scale-110 rotate-12" : "scale-100 rotate-0"}`}
-                                        style={{ backgroundColor: step.color }}
+                                        style={{ backgroundColor: solidAccent(step.color) }}
                                     >
                                         <span className="text-lg">{idx + 1}</span>
                                     </div>
@@ -186,7 +197,7 @@ export default function Process() {
 
                                             <div
                                                 className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-500 ${isHovered ? "scale-105" : "scale-100"}`}
-                                                style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                                                style={{ backgroundColor: `${step.color}15`, color: textAccent(step.color) }}
                                             >
                                                 <Clock className="w-3 h-3" />
                                                 {step.duration}
@@ -194,7 +205,7 @@ export default function Process() {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? step.color : "var(--foreground)" }}>
+                                        <h3 className="text-xl font-bold mb-3 transition-all duration-500" style={{ color: isHovered ? textAccent(step.color) : "var(--foreground)" }}>
                                             {step.title}
                                         </h3>
 

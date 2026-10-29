@@ -14,25 +14,36 @@ import Link from "next/link";
 export default function ServiceOverview() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-    const instagramPink = "#E1306C";
+    // Theme-aware TEXT variants of the per-service accent hues below.
+    // The raw hues stay in the data (they drive gradients/borders/icons/tints);
+    // this map is applied ONLY where a hue colors text.
+    const accentTextMap: Record<string, string> = {
+        "#E1306C": "var(--accent-pink-text)",
+        "#C13584": "var(--accent-violet-text)",
+        "#F77737": "var(--accent-orange-text)",
+        "#833AB4": "var(--accent-violet-text)",
+        "#FD1D1D": "var(--accent-red-text)",
+        "#405DE6": "var(--accent-indigo-text)",
+    };
+    const textAccent = (hex: string) => accentTextMap[hex] ?? hex;
 
     const services = [
         {
             icon: Film,
             title: "Instagram Reels Marketing & Production Agency",
-            description: <><Link href="/services/social-media-marketing-services/video-marketing-agency" className="hover:underline text-pink-500">Reels</Link> are the primary growth lever in 2026. Our production team crafts viral-worthy, short-form video content that hooks viewers in the first 0.5 seconds.</>,
+            description: <><Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Reels</Link> are the primary growth lever in 2026. Our production team crafts viral-worthy, short-form video content that hooks viewers in the first 0.5 seconds.</>,
             color: "#E1306C",
         },
         {
             icon: Camera,
             title: "Custom Instagram Content Creation Services",
-            description: <>Static images aren't enough. We build a cohesive <Link href="/services/web-design-development/branding-services" className="hover:underline text-pink-500">Brand Identity</Link> and Aesthetic Design Service that makes your profile a destination.</>,
+            description: <>Static images aren't enough. We build a cohesive <Link href="/services/web-design-development/branding-services" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Brand Identity</Link> and Aesthetic Design Service that makes your profile a destination.</>,
             color: "#C13584",
         },
         {
             icon: Megaphone,
             title: "Instagram Advertising Services & Ad Management",
-            description: <>Go beyond 'Boost Post.' Our <Link href="/services/performance-marketing" className="hover:underline text-pink-500">Instagram ad campaign management</Link> for ecommerce utilizes advanced Meta Pixel tracking and CAPI integration.</>,
+            description: <>Go beyond 'Boost Post.' Our <Link href="/services/performance-marketing" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Instagram ad campaign management</Link> for ecommerce utilizes advanced Meta Pixel tracking and CAPI integration.</>,
             color: "#F77737",
         },
         {
@@ -44,7 +55,7 @@ export default function ServiceOverview() {
         {
             icon: ShoppingBag,
             title: "Instagram Shopping & Commerce",
-            description: <>Set up and optimize your <Link href="/services/web-design-development/shopify-development-services" className="hover:underline text-pink-500">Instagram Shop</Link> to drive direct sales with shoppable posts and product tags.</>,
+            description: <>Set up and optimize your <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 text-[var(--accent-pink-text)]">Instagram Shop</Link> to drive direct sales with shoppable posts and product tags.</>,
             color: "#FD1D1D",
         },
         {
@@ -89,7 +100,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(193, 53, 132, 0.1))",
-                                color: instagramPink,
+                                color: "var(--accent-pink-text)",
                             }}
                         >
                             Our Services
@@ -197,7 +208,7 @@ export default function ServiceOverview() {
                                     {/* Content */}
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
-                                        style={{ color: isHovered ? service.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(service.color) : "var(--foreground)" }}
                                     >
                                         {service.title}
                                     </h3>

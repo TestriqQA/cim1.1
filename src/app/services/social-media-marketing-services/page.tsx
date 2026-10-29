@@ -115,11 +115,12 @@ export default function SocialMediaMarketingPage() {
             name: "Social Media Platform Expertise",
             description: "Platform-specific social media marketing services for Facebook, Instagram, LinkedIn, YouTube, Twitter/X, and Pinterest.",
             items: [
-                { name: "Facebook & Instagram Marketing", description: "Lead generation and visual storytelling through Reels, Stories, Shopping, and targeted Meta Ads." },
-                { name: "LinkedIn Marketing", description: "B2B networking, thought leadership, and decision-maker outreach for professional audience engagement." },
-                { name: "YouTube Video Marketing", description: "High-value video content production and search-optimized YouTube Ads for maximum visibility." },
-                { name: "Twitter (X) Ads Management", description: "Real-time engagement, trend-jacking, and targeted advertising on Twitter/X." },
-                { name: "Pinterest Marketing", description: "Visual discovery and early-stage buyer journey capture through optimized Pins and boards." },
+                { name: "Facebook Marketing", url: "/services/social-media-marketing-services/facebook-marketing-services", description: "Lead generation and community building through targeted Meta Ads, Groups, and Marketplace." },
+                { name: "Instagram Marketing", url: "/services/social-media-marketing-services/instagram-marketing-services", description: "Visual storytelling through Reels, Stories, Shopping, and influencer collaborations." },
+                { name: "LinkedIn Marketing", url: "/services/social-media-marketing-services/linkedin-marketing-services", description: "B2B networking, thought leadership, and decision-maker outreach for professional audience engagement." },
+                { name: "YouTube Video Marketing", url: "/services/social-media-marketing-services/video-marketing-agency", description: "High-value video content production and search-optimized YouTube Ads for maximum visibility." },
+                { name: "Twitter (X) Ads Management", url: "/services/social-media-marketing-services/twitter-ads-management", description: "Real-time engagement, trend-jacking, and targeted advertising on Twitter/X." },
+                { name: "Pinterest Marketing", url: "/services/social-media-marketing-services/pinterest-marketing", description: "Visual discovery and early-stage buyer journey capture through optimized Pins and boards." },
             ],
         }),
 

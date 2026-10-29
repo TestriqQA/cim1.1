@@ -72,14 +72,14 @@ export default function WhyChooseUs() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: googleBlue }} />
-                        <span className="text-sm font-medium" style={{ color: googleBlue }}>
+                        <Award className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Choose <span style={{ color: googleBlue }}>Us</span>
+                        Why Choose <span style={{ color: "var(--brand-blue-text)" }}>Us</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Partner with a team that delivers measurable results.
@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
                             <div
                                 className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300"
                                 style={{
-                                    backgroundColor: googleBlue,
+                                    backgroundColor: "#1d4ed8",
                                     color: "white",
                                 }}
                             >
@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
                                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
                                 style={{ backgroundColor: `${googleBlue}15` }}
                             >
-                                <benefit.icon className="w-7 h-7" style={{ color: googleBlue }} />
+                                <benefit.icon className="w-7 h-7" style={{ color: "var(--brand-blue-text)" }} />
                             </div>
 
                             {/* Content */}
@@ -134,8 +134,8 @@ export default function WhyChooseUs() {
 
                             {/* Checkmark */}
                             <div className="mt-4 flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4" style={{ color: googleGreen }} />
-                                <span className="text-xs font-medium" style={{ color: googleGreen }}>
+                                <CheckCircle className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                                <span className="text-xs font-medium" style={{ color: "var(--accent-green-text)" }}>
                                     Included
                                 </span>
                             </div>

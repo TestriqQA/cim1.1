@@ -79,7 +79,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#667eea" }}>Cross-Platform</span>
+                            <span style={{ color: "var(--accent-indigo-text)" }}>Cross-Platform</span>
                         </nav>
 
                         {/* Badge */}
@@ -90,8 +90,8 @@ export default function Hero() {
                                 borderColor: "rgba(102, 126, 234, 0.3)",
                             }}
                         >
-                            <Layers className="w-4 h-4" style={{ color: "#667eea" }} />
-                            <span className="text-sm font-medium" style={{ color: "#667eea" }}>
+                            <Layers className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                                 React Native & Flutter
                             </span>
                         </div>
@@ -131,7 +131,7 @@ export default function Hero() {
                         <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
                             {[
                                 "Single Codebase Efficiency",
-                                <><Link href="/services/mobile-app-development/ios-app-development-company" className="text-inherit hover:text-[#667eea] transition-colors">iOS</Link> & <Link href="/services/mobile-app-development/android-app-development-company" className="text-inherit hover:text-[#667eea] transition-colors">Android</Link> Native Feel</>,
+                                <><Link href="/services/mobile-app-development/ios-app-development-company" className="text-inherit hover:text-[var(--accent-indigo-text)] transition-colors">iOS</Link> & <Link href="/services/mobile-app-development/android-app-development-company" className="text-inherit hover:text-[var(--accent-indigo-text)] transition-colors">Android</Link> Native Feel</>,
                                 "Dual Store Deployment",
                                 "App Store & Play Store Ready",
                                 "Certified Cross-Platform Experts",
@@ -180,17 +180,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#667eea" }}>150+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>150+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Cross-Platform Apps Delivered at Scale</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#667eea" }}>Faster</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>Faster</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Faster Development Time</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#667eea" }}>Greater</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>Greater</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Cost Efficiency</p>
                             </div>
                         </div>
@@ -291,7 +291,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#667eea" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-indigo-text)" }}>
                                 Cross-Platform Expertise
                             </p>
                             <div className="flex flex-wrap gap-2">

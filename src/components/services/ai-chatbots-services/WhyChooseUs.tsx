@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Proven Track Record",
-            description: <span>Sustained Traffic Growth via <Link href="/services/seo-services" className="hover:text-violet-500 transition-colors">SEO-optimized</Link> conversational flows. Rigorously tested apps delivered for 50+ Fintech & Healthcare clients.</span>,
+            description: <span>Sustained Traffic Growth via <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">SEO-optimized</Link> conversational flows. Rigorously tested apps delivered for 50+ Fintech & Healthcare clients.</span>,
             gradient: "from-violet-500 via-purple-500 to-indigo-500",
             iconBg: "bg-violet-500/10",
             iconColor: "text-violet-500",
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
         {
             icon: Languages,
             title: "Global Reach, Local Feel",
-            description: <span>We build Multilingual AI chatbots that speak your customers' language-literally. Target audiences in the US, EU, India, and APAC with seamless <Link href="/services/ai-workflows-automations-services" className="hover:text-emerald-500 transition-colors">Natural Language Understanding (NLU)</Link> in 100+ languages.</span>,
+            description: <span>We build Multilingual AI chatbots that speak your customers' language-literally. Target audiences in the US, EU, India, and APAC with seamless <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Natural Language Understanding (NLU)</Link> in 100+ languages.</span>,
             gradient: "from-emerald-500 via-green-500 to-teal-500",
             iconBg: "bg-emerald-500/10",
             iconColor: "text-emerald-500",
@@ -106,14 +106,14 @@ export default function WhyChooseUs() {
                                 borderColor: "var(--brand-chatbot)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-chatbot)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-chatbot)" }}>
+                            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
+                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 CUTTING-EDGE CAPABILITIES
                             </span>
                         </div>
 
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Why Partner With Our <span style={{ color: "var(--brand-chatbot)" }}>AI Chatbot Agency</span>?
+                            Why Partner With Our <span style={{ color: "var(--accent-indigo-text)" }}>AI Chatbot Agency</span>?
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                             We don't just build bots; we build revenue engines. Our team of 50+ engineers has delivered Custom AI Chatbot Development projects for enterprises and agile startups alike.
@@ -201,10 +201,10 @@ export default function WhyChooseUs() {
                                             {/* Learn more link */}
                                             {/* Learn more link */}
                                             {/* <div className="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                                                <span className="text-sm font-semibold" style={{ color: "var(--brand-chatbot)" }}>
+                                                <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                                                     Learn more
                                                 </span>
-                                                <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--brand-chatbot)" }} />
+                                                <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: "var(--accent-indigo-text)" }} />
                                             </div> */}
                                         </div>
 

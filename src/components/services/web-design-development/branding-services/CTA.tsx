@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 
@@ -92,7 +90,7 @@ export default function CTA() {
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-sm sm:text-base md:text-lg border transition-all duration-300 hover:bg-cyan-500/5"
                                 style={{
                                     borderColor: "#06b6d4",
-                                    color: "#06b6d4",
+                                    color: "var(--accent-cyan-text)",
                                 }}
                             >
                                 Create a Legacy

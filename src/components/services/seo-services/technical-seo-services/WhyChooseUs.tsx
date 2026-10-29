@@ -29,17 +29,17 @@ export default function WhyChooseUs() {
         {
             icon: Award,
             title: "Developer-First Collaboration",
-            description: <>We provide clear <Link href="/services/seo-services" className="hover:text-purple-500 transition-colors">technical SEO checklist</Link> for developers to ensure seamless implementation.</>,
+            description: <>We provide clear <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO checklist</Link> for developers to ensure seamless implementation.</>,
         },
         {
             icon: Clock,
             title: "Platform Specialists",
-            description: <>Expert <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-purple-500 transition-colors">technical SEO for headless CMS websites</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="hover:text-purple-500 transition-colors">WordPress</Link>, Shopify, and custom stacks.</>,
+            description: <>Expert <Link href="/services/web-design-development/headless-traditional-cms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO for headless CMS websites</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">WordPress</Link>, Shopify, and custom stacks.</>,
         },
         {
             icon: Users,
             title: "Transparent Reporting",
-            description: <>See exactly how your <Link href="/contact" className="hover:text-purple-500 transition-colors">technical SEO cost for business websites 2026</Link> translates into performance gains.</>,
+            description: <>See exactly how your <Link href="/contact" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO cost for business websites 2026</Link> translates into performance gains.</>,
         },
     ];
 
@@ -61,16 +61,16 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: techPurple }} />
-                            <span className="text-sm font-medium" style={{ color: techPurple }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Global Technical Expertise. <span style={{ color: techPurple }}>Measurable ROI.</span>
+                            Global Technical Expertise. <span style={{ color: "var(--accent-violet-text)" }}>Measurable ROI.</span>
                         </h2>
                         <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Why hire a <Link href="/about" className="hover:text-purple-500 transition-colors">technical SEO expert</Link> from our team? Because we've delivered sustained traffic growth for clients by fixing the issues others miss.
+                            Why hire a <Link href="/about" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO expert</Link> from our team? Because we've delivered sustained traffic growth for clients by fixing the issues others miss.
                         </p>
 
                         {/* Stats */}
@@ -79,14 +79,14 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: techPurple }}>1M+</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-violet-text)" }}>1M+</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Pages Crawled</p>
                             </div>
                             <div
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h4 className="text-3xl font-bold mb-2" style={{ color: techPurple }}>Faster</h4>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-violet-text)" }}>Faster</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. Speed Boost</p>
                             </div>
                         </div>
@@ -122,9 +122,9 @@ export default function WhyChooseUs() {
                                             style={{ color: isHovered ? "white" : techPurple }}
                                         />
                                     </div>
-                                    <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>
                                         {benefit.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                         {benefit.description}
                                     </p>

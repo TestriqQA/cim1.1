@@ -75,7 +75,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/seo-services" className="hover:underline">SEO</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: commerceBlue }}>E-commerce SEO</span>
+                            <span style={{ color: "var(--accent-sky-text)" }}>E-commerce SEO</span>
                         </nav>
 
                         {/* Badge */}
@@ -87,7 +87,7 @@ export default function Hero() {
                             }}
                         >
                             <ShoppingBag className="w-4 h-4" style={{ color: commerceBlue }} />
-                            <span className="text-sm font-medium" style={{ color: commerceBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
                                 Maximize Online Sales
                             </span>
                         </div>
@@ -98,7 +98,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Turn Traffic Into Revenue With{" "}
-                            <span className="relative inline-block" style={{ color: commerceBlue }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-sky-text)" }}>
                                 Ecommerce SEO Services
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
@@ -116,7 +116,7 @@ export default function Hero() {
                         </p>
 
                         <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100 mt-4" style={{ color: "var(--secondary-text)" }}>
-                            We optimize <Link href="/services/web-design-development/shopify-development-services" className="hover:underline" style={{ color: commerceBlue }}>Shopify</Link>, Magento, WooCommerce, and BigCommerce stores at scale - fixing roadblocks, implementing schema markup, and targeting high-intent buyer keywords that drive sales.
+                            We optimize <Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-sky-text)" }}>Shopify</Link>, Magento, WooCommerce, and BigCommerce stores at scale - fixing roadblocks, implementing schema markup, and targeting high-intent buyer keywords that drive sales.
                         </p>
 
 
@@ -149,7 +149,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: commerceBlue }}
+                                style={{ backgroundColor: "#0369a1" }}
                             >
                                 Get Free Store Audit
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -170,17 +170,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: commerceBlue }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. ROI</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: commerceBlue }}>Significant</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Significant</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Revenue Driven</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: commerceBlue }}>10k+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>10k+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Top Rankings</p>
                             </div>
                         </div>

@@ -19,7 +19,7 @@ export default function Process() {
         {
             icon: Search,
             title: "Discovery & Strategy",
-            description: <><span className="text-inherit">We analyze your market, define user personas, and select the best tech stack (Native vs. Flutter/</span><Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[#3DDC84] hover:underline">React Native</Link>).</>,
+            description: <><span className="text-inherit">We analyze your market, define user personas, and select the best tech stack (Native vs. Flutter/</span><Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">React Native</Link>).</>,
             details: [
                 "Technical Specification Document (TSD)",
                 "Market analysis",
@@ -31,8 +31,8 @@ export default function Process() {
         },
         {
             icon: Palette,
-            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[#3DDC84]">UI/UX Design</Link>,
-            description: <><span className="text-inherit">Distinctive designs following Material Design 3 principles. We create intuitive wireframes and </span><Link href="/services/brand-identity-design" className="text-[#3DDC84] hover:underline">interactive prototypes</Link>.</>,
+            title: <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-green-text)]">UI/UX Design</Link>,
+            description: <><span className="text-inherit">Distinctive designs following Material Design 3 principles. We create intuitive wireframes and </span><Link href="/services/brand-identity-design" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">interactive prototypes</Link>.</>,
             details: [
                 "Material Design 3 compliance",
                 "Interactive prototypes",
@@ -83,7 +83,7 @@ export default function Process() {
         },
         {
             icon: CheckCircle2,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#3DDC84]">Maintenance & Support</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-green-text)]">Maintenance & Support</Link>,
             description: "Ongoing Android app maintenance and support services including OS updates, security patches, and Android app performance optimization.",
             details: [
                 "OS updates support",
@@ -109,8 +109,8 @@ export default function Process() {
                             borderColor: "rgba(61, 220, 132, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#3DDC84" }} />
-                        <span className="text-sm font-medium" style={{ color: "#3DDC84" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -206,13 +206,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(61, 220, 132, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#3DDC84]" />
+                                                        <Icon className="w-5 h-5 text-[var(--accent-green-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(120, 194, 87, 0.1)",
-                                                            color: "#78C257",
+                                                            color: "var(--accent-green-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -235,7 +235,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#3DDC84] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

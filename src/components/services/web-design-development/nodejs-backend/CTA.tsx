@@ -70,7 +70,7 @@ export default function CTA() {
                             }}
                         >
                             <Server className="w-4 h-4" style={{ color: "#339933" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#339933" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Free Consultation
                             </span>
                         </div>

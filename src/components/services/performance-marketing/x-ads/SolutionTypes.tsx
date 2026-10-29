@@ -59,7 +59,7 @@ export default function SolutionTypes() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
-                            <span className="text-sm font-medium" style={{ color: xBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Targeting Precision
                             </span>
                         </div>

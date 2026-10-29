@@ -24,7 +24,7 @@ export default function ServiceOverview() {
         },
         {
             icon: Code2,
-            title: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#0059C8] transition-colors">API Development</Link>,
+            title: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-sky-text)] transition-colors">API Development</Link>,
             description: "Build custom integrations with Contentful's GraphQL and REST APIs, webhooks, and content management SDK.",
             gradient: "from-cyan-500 to-blue-400",
             shadowColor: "rgba(0, 89, 200, 0.4)",
@@ -39,20 +39,20 @@ export default function ServiceOverview() {
         {
             icon: Link2,
             title: "Frontend Integration",
-            description: <><span className="text-inherit">Connect Contentful with React, </span><Link href="/services/web-design-development/nextjs-development-services" className="text-[#6366f1] hover:underline">Next.js</Link>, Gatsby, Vue, or any frontend framework for blazing-fast sites.</>,
+            description: <><span className="text-inherit">Connect Contentful with React, </span><Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 text-[var(--accent-indigo-text)] hover:underline">Next.js</Link>, Gatsby, Vue, or any frontend framework for blazing-fast sites.</>,
             gradient: "from-indigo-500 to-blue-400",
             shadowColor: "rgba(99, 102, 241, 0.4)",
         },
         {
             icon: RefreshCcw,
             title: "Migration Services",
-            description: <><span className="text-inherit">Seamlessly migrate from </span><Link href="/services/web-design-development/wordpress-development-services" className="text-[#0ea5e9] hover:underline">legacy CMS platforms</Link> to Contentful with zero content loss and minimal downtime.</>,
+            description: <><span className="text-inherit">Seamlessly migrate from </span><Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 text-[var(--accent-sky-text)] hover:underline">legacy CMS platforms</Link> to Contentful with zero content loss and minimal downtime.</>,
             gradient: "from-sky-500 to-cyan-400",
             shadowColor: "rgba(14, 165, 233, 0.4)",
         },
         {
             icon: Headphones,
-            title: <Link href="/services/additional-support-services" className="hover:text-[#38bdf8] transition-colors">Support & Training</Link>,
+            title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-sky-text)] transition-colors">Support & Training</Link>,
             description: "Comprehensive support with editor training, documentation, and ongoing maintenance for your Contentful implementation.",
             gradient: "from-blue-500 to-sky-400",
             shadowColor: "rgba(56, 189, 248, 0.4)",
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(2, 134, 255, 0.1), rgba(0, 89, 200, 0.1))",
-                                color: "#0286FF",
+                                color: "var(--accent-sky-text)",
                             }}
                         >
                             Our Services

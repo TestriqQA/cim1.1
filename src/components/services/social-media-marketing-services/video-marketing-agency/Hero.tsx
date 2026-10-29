@@ -83,19 +83,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/social-media-marketing-services" className="hover:underline">Social Media</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: youtubeRed }}>YouTube Marketing</span>
+                            <span style={{ color: "var(--accent-red-text)" }}>YouTube Marketing</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
                             style={{
-                                backgroundColor: `${youtubeRed}10`,
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: `${youtubeRed}30`,
                             }}
                         >
-                            <Youtube className="w-4 h-4" style={{ color: youtubeRed }} />
-                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: youtubeRed }}>
+                            <Youtube className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                            <Link href="/about" className="text-sm font-medium hover:underline" style={{ color: "var(--accent-red-text)" }}>
                                 YouTube Marketing Partner
                             </Link>
                         </div>
@@ -106,7 +106,7 @@ export default function Hero() {
                             style={{ color: "var(--foreground)" }}
                         >
                             Elite{" "}
-                            <span className="relative inline-block" style={{ color: youtubeRed }}>
+                            <span className="relative inline-block" style={{ color: "var(--accent-red-text)" }}>
                                 YouTube Marketing
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-30"
@@ -121,7 +121,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            As a globally recognized YouTube marketing agency with deep collective expertise in <Link href="/services/performance-marketing" className="hover:underline text-red-600">digital growth</Link>, we don't just "post videos", we engineer high-conversion ecosystems. Leveraging 2026 EEAT guidelines, we deliver YouTube marketing services that outrank, outperform, and outscale the competition.
+                            As a globally recognized YouTube marketing agency with deep collective expertise in <Link href="/services/performance-marketing" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">digital growth</Link>, we don't just "post videos", we engineer high-conversion ecosystems. Leveraging 2026 EEAT guidelines, we deliver YouTube marketing services that outrank, outperform, and outscale the competition.
                         </p>
 
                         {/* Feature Pills */}
@@ -152,39 +152,28 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{ backgroundColor: youtubeRed }}
+                                style={{ backgroundColor: "#c5221f" }}
                             >
                                 Book Your Free Audit Today
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
 
-                            {/* <Link
-                                href="#portfolio"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Our Case Studies
-                            </Link> */}
                         </div>
 
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: youtubeRed }}>Significant</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Significant</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Reduction in CPA</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: youtubeRed }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Client Retention</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: youtubeRed }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
                             </div>
                         </div>
@@ -285,7 +274,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: youtubeRed }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-red-text)" }}>
                                 YouTube Ad Formats We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

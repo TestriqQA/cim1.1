@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Zap, TrendingUp, Shield, Smartphone, RefreshCw, BarChart3 } from "lucide-react";
 
@@ -14,7 +12,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Proven CRO Expertise",
-            description: <>Stop leaving money on the table. Our <Link href="/services/performance-marketing" className="hover:underline text-[#fab900]">Ecommerce conversion rate optimization</Link> (CRO) specialists analyze user behavior to craft friction-free paths to purchase. We’ve helped fintech and retail clients achieve 40%+ lifts in checkout completion through data-driven design.</>,
+            description: <>Stop leaving money on the table. Our <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-amber-text)]">Ecommerce conversion rate optimization</Link> (CRO) specialists analyze user behavior to craft friction-free paths to purchase. We’ve helped fintech and retail clients achieve 40%+ lifts in checkout completion through data-driven design.</>,
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
@@ -38,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: BarChart3,
             title: "Revenue Analytics",
-            description: <>Make informed decisions with custom <Link href="/services/performance-marketing" className="hover:underline text-[#ee6500]">Ecommerce analytics</Link> and reporting services. We integrate advanced dashboards that track CLTV, AOV, and Product Information Management (PIM) metrics, giving you full visibility into your store’s financial health.</>,
+            description: <>Make informed decisions with custom <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-orange-text)]">Ecommerce analytics</Link> and reporting services. We integrate advanced dashboards that track CLTV, AOV, and Product Information Management (PIM) metrics, giving you full visibility into your store’s financial health.</>,
             color: "from-[#ee6500] to-[#fab900]",
         },
     ];
@@ -62,14 +60,14 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(0, 181, 202, 0.2)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "#00b5ca" }} />
-                        <span className="text-sm font-medium" style={{ color: "#00b5ca" }}>
+                        <Zap className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why <span style={{ color: "#00b5ca" }}>High-Growth Brands</span> Choose Us
+                        Why <span style={{ color: "var(--accent-cyan-text)" }}>High-Growth Brands</span> Choose Us
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>

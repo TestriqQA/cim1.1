@@ -1,6 +1,5 @@
 "use client";
 
-import { getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import BlogContentRenderer from "@/components/blog/BlogContentRenderer";
@@ -8,7 +7,7 @@ import { Calendar, Clock, Share2, List, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState, useEffect } from "react";
-import { BlogPost } from "@/data/blog";
+import { BlogCategoryLink, BlogPost } from "@/data/blog";
 
 // Type for table of contents items
 interface TocItem {
@@ -108,8 +107,8 @@ function TableOfContents({ markdown = "", blocks = [] }: { markdown?: string; bl
             }}
         >
             <div className="flex items-center gap-2 mb-4">
-                <List className="w-5 h-5 text-[var(--brand-purple)]" />
-                <h3 className="text-lg font-bold">Table of Contents</h3>
+                <List className="w-5 h-5 text-[var(--brand-purple-text)]" />
+                <h2 className="text-lg font-bold">Table of Contents</h2>
             </div>
             <nav className="space-y-1">
                 {headings.map((heading) => (
@@ -117,12 +116,12 @@ function TableOfContents({ markdown = "", blocks = [] }: { markdown?: string; bl
                         key={heading.id}
                         onClick={() => scrollToHeading(heading.id)}
                         className={`w-full text-left py-2 px-3 rounded-lg text-sm transition-all duration-200 flex items-center gap-2 ${activeId === heading.id
-                            ? "bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] text-[var(--brand-purple)] font-medium"
+                            ? "bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] text-[var(--brand-purple-text)] font-medium"
                             : "hover:bg-[var(--hover-bg)]"
                             }`}
                         style={{
                             paddingLeft: `${(heading.level - 1) * 12 + 12}px`,
-                            color: activeId === heading.id ? "var(--brand-purple)" : "var(--secondary-text)",
+                            color: activeId === heading.id ? "var(--brand-purple-text)" : "var(--secondary-text)",
                         }}
                     >
                         {activeId === heading.id && (
@@ -145,7 +144,7 @@ export default function BlogDetailClient({
 }: {
     post: BlogPost;
     relatedPosts: BlogPost[];
-    categories: string[];
+    categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
 }) {
@@ -194,22 +193,22 @@ export default function BlogDetailClient({
                 }}
             >
                 <div
-                    className="absolute inset-0 opacity-5"
+                    className="absolute inset-0"
                     style={{
-                        background: "radial-gradient(ellipse at top, var(--brand-purple), transparent 70%)",
+                        background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                     }}
                 />
 
                 <div className="relative px-6 md:px-12 xl:px-16 py-8 md:py-12">
                     {/* Breadcrumb */}
                     <nav className="hidden md:flex items-center gap-2 text-sm mb-8" style={{ color: "var(--secondary-text)" }}>
-                        <Link href="/blog" className="hover:text-[var(--brand-purple)] transition-colors">
+                        <Link href="/blog" className="hover:text-[var(--brand-purple-text)] transition-colors">
                             Blog
                         </Link>
                         <span>/</span>
                         <Link
-                            href={`/blog/category/${getCategorySlug(post.category)}`}
-                            className="hover:text-[var(--brand-purple)] transition-colors"
+                            href={`/blog/category/${post.categorySlug}`}
+                            className="hover:text-[var(--brand-purple-text)] transition-colors"
                         >
                             {post.category}
                         </Link>
@@ -223,9 +222,9 @@ export default function BlogDetailClient({
                             {/* Category & Date */}
                             <div className="flex flex-wrap items-center gap-3 mb-5">
                                 <Link
-                                    href={`/blog/category/${getCategorySlug(post.category)}`}
+                                    href={`/blog/category/${post.categorySlug}`}
                                     className="px-4 py-1.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-                                    style={{ backgroundColor: "var(--brand-purple)" }}
+                                    style={{ backgroundColor: "var(--brand-purple-btn)" }}
                                 >
                                     {post.category}
                                 </Link>
@@ -265,7 +264,7 @@ export default function BlogDetailClient({
                                         unoptimized
                                     />
                                     <div>
-                                        <p className="font-semibold group-hover:text-[var(--brand-purple)] transition-colors">
+                                        <p className="font-semibold group-hover:text-[var(--brand-purple-text)] transition-colors">
                                             {post.author.name}
                                         </p>
                                         <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
@@ -276,7 +275,7 @@ export default function BlogDetailClient({
 
                                 <button
                                     onClick={handleShare}
-                                    className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 border hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple)]"
+                                    className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 border hover:border-[var(--brand-purple)] hover:text-[var(--brand-purple-text)]"
                                     style={{
                                         borderColor: "var(--border-color)",
                                         color: "var(--foreground)",
@@ -291,8 +290,8 @@ export default function BlogDetailClient({
                         {/* Right Side - Featured Image */}
                         <div className="relative">
                             <div
-                                className="absolute -inset-4 rounded-3xl opacity-20 blur-2xl"
-                                style={{ backgroundColor: "var(--brand-purple)" }}
+                                className="absolute -inset-4 rounded-3xl blur-2xl"
+                                style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)" }}
                             />
                             <div className="relative aspect-[5/3] rounded-2xl overflow-hidden border shadow-xl"
                                 style={{ borderColor: "var(--border-color)" }}>
@@ -343,7 +342,7 @@ export default function BlogDetailClient({
                                             className="px-3 py-1.5 rounded-full text-sm font-medium border"
                                             style={{
                                                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
-                                                color: "var(--brand-purple)",
+                                                color: "var(--brand-purple-text)",
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >

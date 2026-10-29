@@ -43,7 +43,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold"
-                        style={{ color: "var(--brand-blue)" }}
+                        style={{ color: "var(--brand-blue-text)" }}
                     >
                         Services
                     </span>
@@ -65,13 +65,13 @@ export default function Hero() {
 
                 {/* Description */}
                 <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto animate-slideUp" style={{ color: "var(--secondary-text)", animationDelay: "0.1s" }}>
-                    Explore our comprehensive digital services including <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] transition-colors">web development</Link>, <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-teal)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] transition-colors">SEO</Link>, <Link href="/services/social-media-marketing-services" className="hover:text-[var(--brand-orange)] transition-colors">social media marketing</Link>, <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-purple)] transition-colors">AI automation</Link>, and more. Transform your business with CIM.
+                    Explore our comprehensive digital services including <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue-text)] transition-colors">web development</Link>, <Link href="/services/mobile-app-development" className="hover:text-[var(--accent-teal-text)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">SEO</Link>, <Link href="/services/social-media-marketing-services" className="hover:text-[var(--accent-orange-text)] transition-colors">social media marketing</Link>, <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-purple-text)] transition-colors">AI automation</Link>, and more. Transform your business with CIM.
                 </p>
 
                 {/* Decorator */}
                 <div className="flex justify-center animate-slideUp" style={{ animationDelay: "0.2s" }}>
                     <div className="p-2 rounded-full border" style={{ borderColor: "var(--border-color)" }}>
-                        <Sparkles className="w-6 h-6" style={{ color: "var(--brand-blue)" }} />
+                        <Sparkles className="w-6 h-6" style={{ color: "var(--brand-blue-text)" }} />
                     </div>
                 </div>
             </div>

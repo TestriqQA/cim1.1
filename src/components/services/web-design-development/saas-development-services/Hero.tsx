@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Home, ChevronRight, Code2, Layers, Database, Zap, Shield, RefreshCw, Puzzle, CreditCard, BarChart3, Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +58,7 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "#008ac1" }}
+                        style={{ color: "var(--brand-blue-text)" }}
                     >
                         Web Apps & SaaS
                     </span>
@@ -76,7 +74,7 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #008ac1 8%, transparent), color-mix(in srgb, #bc3feb 8%, transparent))",
                                 borderColor: "color-mix(in srgb, #008ac1 20%, transparent)",
-                                color: "#008ac1",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             <Code2 className="w-4 h-4" style={{ color: "#008ac1" }} />
@@ -106,7 +104,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl" style={{ color: "var(--secondary-text)" }}>
-                            Your trusted <Link href="/services/web-design-development" className="hover:underline" style={{ color: "#008ac1", fontWeight: 700 }}>SaaS development company</Link> for building scalable, <Link href="/blog/web-performance-optimization-speed" className="hover:underline" style={{ color: "var(--secondary-text)" }}>high-performance</Link> web applications. We specialize in <span style={{ color: "#008ac1", fontWeight: 700 }}>custom SaaS platform development</span>, <span style={{ color: "#008ac1", fontWeight: 700 }}>multi-tenant architectures</span>, and secure cloud solutions. From rapid <span style={{ color: "#008ac1", fontWeight: 700 }}>MVP development</span> to <Link href="/services/web-design-development/business-corporate" className="hover:underline" style={{ color: "var(--foreground)" }}>enterprise-grade systems</Link>, we engineer products that drive revenue and growth.
+                            Your trusted <Link href="/services/web-design-development" className="underline hover:underline" style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS development company</Link> for building scalable, <Link href="/blog/web-performance-optimization-speed" className="underline hover:underline" style={{ color: "var(--secondary-text)" }}>high-performance</Link> web applications. We specialize in <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>custom SaaS platform development</span>, <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>multi-tenant architectures</span>, and secure cloud solutions. From rapid <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>MVP development</span> to <Link href="/services/web-design-development/business-corporate" className="underline hover:underline" style={{ color: "var(--foreground)" }}>enterprise-grade systems</Link>, we engineer products that drive revenue and growth.
                         </p>
 
                         {/* Feature Highlights */}

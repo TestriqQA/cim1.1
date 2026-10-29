@@ -78,7 +78,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#0073AA" }}>WordPress</span>
+                            <span style={{ color: "var(--brand-blue-text)" }}>WordPress</span>
                         </nav>
 
                         {/* Badge */}
@@ -89,8 +89,8 @@ export default function Hero() {
                                 borderColor: "rgba(0, 115, 170, 0.2)",
                             }}
                         >
-                            <Globe className="w-4 h-4" style={{ color: "#0073AA" }} />
-                            <span className="text-sm font-medium" style={{ color: "#0073AA" }}>
+                            <Globe className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 World&apos;s #1 CMS Platform
                             </span>
                         </div>
@@ -123,7 +123,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-base md:text-lg leading-relaxed text-balance" style={{ color: "var(--secondary-text)" }}>
-                            Scale your business with enterprise-grade WordPress development services built for the 2026 digital landscape. From custom-engineered themes to complex <Link href="/services/web-design-development/ecommerce-development-company" className="text-[#0073AA] hover:underline">WooCommerce solutions</Link>, we blend technical mastery with ROI-driven marketing to turn your digital vision into a global success story.
+                            Scale your business with enterprise-grade WordPress development services built for the 2026 digital landscape. From custom-engineered themes to complex <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">WooCommerce solutions</Link>, we blend technical mastery with ROI-driven marketing to turn your digital vision into a global success story.
                         </p>
 
                         {/* Feature Pills */}
@@ -132,7 +132,7 @@ export default function Hero() {
                                 "Custom Themes",
                                 "WooCommerce",
                                 "Security Audit",
-                                <Link href="/services/seo-services" className="hover:text-[#0073AA] transition-colors">SEO Optimized</Link>,
+                                <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">SEO Optimized</Link>,
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
@@ -162,33 +162,22 @@ export default function Hero() {
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
 
-                            {/* <Link
-                                href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Case Studies
-                            </Link> */}
                         </div>
 
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0073AA" }}>500+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>500+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0073AA" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Stable Deployment</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0073AA" }}>Strong</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
                             </div>
                         </div>
@@ -287,7 +276,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#0073AA" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-blue-text)" }}>
                                 Technologies We Use
                             </p>
                             <div className="flex flex-wrap gap-2">

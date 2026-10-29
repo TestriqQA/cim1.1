@@ -8,7 +8,7 @@ export default function ServiceOverview() {
         {
             icon: Workflow,
             title: "Process Automation",
-            description: <span>Streamline repetitive tasks and eliminate manual work with <Link href="/services/ai-chatbots-services" className="hover:text-blue-500">intelligent automation workflows</Link> that run 24/7.</span>,
+            description: <span>Streamline repetitive tasks and eliminate manual work with <Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-blue-text)] underline underline-offset-2">intelligent automation workflows</Link> that run 24/7.</span>,
             gradient: "from-blue-500 to-cyan-500",
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
@@ -16,7 +16,7 @@ export default function ServiceOverview() {
         {
             icon: Cpu,
             title: "Operational Efficiency",
-            description: <span>Reduce operational costs by automating complex business processes and improving resource allocation with <Link href="/blog/web-performance-optimization-speed" className="hover:text-purple-500">Operational Efficiency</Link>.</span>,
+            description: <span>Reduce operational costs by automating complex business processes and improving resource allocation with <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-violet-text)] underline underline-offset-2">Operational Efficiency</Link>.</span>,
             gradient: "from-purple-500 to-pink-500",
             iconBg: "bg-purple-500/10",
             iconColor: "text-purple-500",
@@ -24,7 +24,7 @@ export default function ServiceOverview() {
         {
             icon: TrendingUp,
             title: "Cost Reduction",
-            description: <span>Achieve significant savings through reduced <Link href="/services/additional-support-services" className="hover:text-green-500">labor costs</Link>, fewer errors, and optimized resource utilization.</span>,
+            description: <span>Achieve significant savings through reduced <Link href="/services/additional-support-services" className="hover:text-[var(--accent-green-text)] underline underline-offset-2">labor costs</Link>, fewer errors, and optimized resource utilization.</span>,
             gradient: "from-green-500 to-emerald-500",
             iconBg: "bg-green-500/10",
             iconColor: "text-green-500",
@@ -32,7 +32,7 @@ export default function ServiceOverview() {
         {
             icon: Sparkles,
             title: "Intelligent Decision-Making",
-            description: <span>Leverage <Link href="/blog/data-analytics-insights-action" className="hover:text-orange-500">Intelligent Decision-Making</Link> and AI-driven insights to make data-backed decisions faster and with greater accuracy.</span>,
+            description: <span>Leverage <Link href="/blog/data-analytics-insights-action" className="hover:text-[var(--accent-orange-text)] underline underline-offset-2">Intelligent Decision-Making</Link> and AI-driven insights to make data-backed decisions faster and with greater accuracy.</span>,
             gradient: "from-orange-500 to-amber-500",
             iconBg: "bg-orange-500/10",
             iconColor: "text-orange-500",
@@ -48,10 +48,10 @@ export default function ServiceOverview() {
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                     <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-                        What Are <span style={{ color: "var(--brand-orange)" }}>AI Workflows & Automations?</span>
+                        What Are <span style={{ color: "var(--accent-orange-text)" }}>AI Workflows & Automations?</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--brand-orange)] transition-colors">AI Workflows & Automations</Link> represent the intersection of intelligent technology and business optimization. By combining artificial intelligence with workflow automation, we help organizations transform their operations into intelligent, self-optimizing systems that work smarter, not harder.
+                        <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-orange-text)] transition-colors underline underline-offset-2">AI Workflows & Automations</Link> represent the intersection of intelligent technology and business optimization. By combining artificial intelligence with workflow automation, we help organizations transform their operations into intelligent, self-optimizing systems that work smarter, not harder.
                     </p>
                 </div>
 
@@ -91,7 +91,7 @@ export default function ServiceOverview() {
 
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    <h3 className="text-lg font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--brand-orange)]">
+                                    <h3 className="text-lg font-bold mb-3 transition-colors duration-300 group-hover:text-[var(--accent-orange-text)]">
                                         {benefit.title}
                                     </h3>
                                     <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -127,7 +127,7 @@ export default function ServiceOverview() {
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
                                 <Shield className="w-5 h-5" style={{ color: "var(--brand-orange)" }} />
-                                <h4 className="font-semibold" style={{ color: "var(--brand-orange)" }}>For Enterprises</h4>
+                                <h4 className="font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Enterprises</h4>
                             </div>
                             <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Large organizations face complex processes across multiple departments. AI automation enables seamless integration, real-time monitoring, and predictive insights that drive strategic growth and competitive advantage.
@@ -136,7 +136,7 @@ export default function ServiceOverview() {
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
                                 <Zap className="w-5 h-5" style={{ color: "var(--brand-orange)" }} />
-                                <h4 className="font-semibold" style={{ color: "var(--brand-orange)" }}>For Growing Businesses</h4>
+                                <h4 className="font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Growing Businesses</h4>
                             </div>
                             <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Scale your operations without proportionally increasing headcount. AI workflows handle increasing volumes of work while maintaining quality and consistency, allowing your team to focus on high-value activities.

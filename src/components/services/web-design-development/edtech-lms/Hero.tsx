@@ -1,5 +1,3 @@
-"use client";
-
 import {
     GraduationCap, BookOpen, Users, Video, Award, BarChart3,
     Play, ChevronRight, ArrowRight, CheckCircle2, Sparkles
@@ -56,7 +54,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#a855f7" }}>EdTech & LMS</span>
+                            <span style={{ color: "var(--brand-purple-text)" }}>EdTech & LMS</span>
                         </nav>
 
                         {/* Badge */}
@@ -67,8 +65,8 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, #a855f7 30%, transparent)",
                             }}
                         >
-                            <GraduationCap className="w-4 h-4" style={{ color: "#a855f7" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#a855f7" }}>
+                            <GraduationCap className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                                 EdTech & LMS Development
                             </span>
                         </div>
@@ -110,7 +108,7 @@ export default function Hero() {
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <Icon className="w-4 h-4" style={{ color: "#a855f7" }} />
+                                            <Icon className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                                             <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                                 {feature.text}
                                             </span>
@@ -128,7 +126,7 @@ export default function Hero() {
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <Icon className="w-4 h-4" style={{ color: "#a855f7" }} />
+                                            <Icon className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                                             <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                                 {feature.text}
                                             </span>
@@ -144,7 +142,7 @@ export default function Hero() {
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "#a855f7" }} />
+                                        <Icon className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                                         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                             {feature.text}
                                         </span>
@@ -159,7 +157,7 @@ export default function Hero() {
                                 <div key={idx} className="text-center">
                                     <div
                                         className="text-3xl md:text-4xl font-bold"
-                                        style={{ color: "#a855f7" }}
+                                        style={{ color: "var(--brand-purple-text)" }}
                                     >
                                         {stat.value}
                                     </div>
@@ -180,14 +178,6 @@ export default function Hero() {
                                 Start Your Project
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            {/* <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg border transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "var(--border-color)", color: "var(--foreground)" }}
-                            >
-                                <Play className="w-5 h-5" />
-                                See Demo
-                            </Link> */}
                         </div>
                     </div>
 
@@ -211,7 +201,7 @@ export default function Hero() {
                         {/* Info Section Below Image */}
                         <div className="flex gap-4 justify-center w-full z-10 relative mt-6">
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(168, 85, 247, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Video className="w-4 h-4" style={{ color: "#a855f7" }} />
+                                <Video className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>HD Streaming</span>
                             </div>
                             <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(236, 72, 153, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
@@ -240,7 +230,7 @@ export default function Hero() {
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="text-xl font-bold" style={{ color: "#a855f7" }}>
+                                    <div className="text-xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                         {metric.value}
                                     </div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>

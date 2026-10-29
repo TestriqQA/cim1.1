@@ -56,13 +56,49 @@ const getServiceSlug = (title: string) => {
   return title.toLowerCase().replace(/[&\s]+/g, "-");
 };
 
+// Products dropdown (mirrors the `services` structure). Local to the Navbar and
+// deliberately NOT imported from data/products.ts — the dropdown needs a short
+// label and a logo, neither of which the product records carry. Feeds four
+// render sites: the desktop dropdown, the mobile accordion, the sr-only crawl
+// nav, and the pre-hydration crawl nav in the `!mounted` branch. Keep in sync
+// with data/products.ts when a product is added or removed.
+const products = [
+  {
+    title: "ChimeGenius AI Pro",
+    description: "Smart comment & reply generator",
+    slug: "chimegenius-ai-pro",
+    logo: "/images/chimegenius-ai-pro-logo.svg",
+  },
+  // {
+  //   title: "Kruti.io",
+  //   description: "AI LinkedIn content platform",
+  //   slug: "kruti-io",
+  //   logo: "/images/kruti-io-logo.webp",
+  // },
+  // {
+  //   title: "AssetMon",
+  //   description: "Multi-tenant IT asset management",
+  //   slug: "assetmon",
+  //   logo: "/images/assetmon-logo.jpg",
+  // },
+  // {
+  //   title: "TopCareerLive",
+  //   description: "Job board for candidates & employers",
+  //   slug: "topcareerlive",
+  //   logo: "/images/topcareerlive-logo.jpg",
+  // },
+];
+
 
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
   const [isThemeOpen, setIsThemeOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const productsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const themeDropdownRef = useRef<HTMLDivElement>(null);
   const mobileThemeRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
@@ -75,7 +111,7 @@ export default function Navbar() {
 
   // Active link styles
   const getNavLinkStyle = (path: string) => ({
-    color: isActive(path) ? "var(--brand-purple)" : "var(--foreground)",
+    color: isActive(path) ? "var(--brand-purple-text)" : "var(--foreground)",
     backgroundColor: isActive(path) ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent",
   });
 
@@ -125,19 +161,35 @@ export default function Navbar() {
     }, 150);
   };
 
+  const handleProductsMouseEnter = () => {
+    if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+    setIsProductsOpen(true);
+  };
+
+  const handleProductsMouseLeave = () => {
+    productsTimeoutRef.current = setTimeout(() => {
+      setIsProductsOpen(false);
+    }, 150);
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsMobileServicesOpen(false);
+    setIsMobileProductsOpen(false);
   };
 
   const toggleMobileServices = () => {
     setIsMobileServicesOpen(!isMobileServicesOpen);
   };
 
+  const toggleMobileProducts = () => {
+    setIsMobileProductsOpen(!isMobileProductsOpen);
+  };
+
   // SSR-safe placeholder — includes navigation links for Googlebot crawlability
   if (!mounted) {
     return (
-      <nav className="fixed top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm">
+      <nav aria-label="Main" className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
         <div className="mx-auto px-6 md:px-12 xl:px-16">
           <div className="flex justify-between items-center h-16 lg:h-20">
             <div className="flex-shrink-0">
@@ -147,15 +199,32 @@ export default function Navbar() {
                 </div>
               </Link>
             </div>
-            {/* SSR nav links — visible to Googlebot's HTML crawl */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <Link href="/" className="px-4 py-2 rounded-lg text-md font-medium">Home</Link>
-              <Link href="/services" className="px-4 py-2 rounded-lg text-md font-medium">Services</Link>
-              <Link href="/products" className="px-4 py-2 rounded-lg text-md font-medium">Products</Link>
-              <Link href="/blog" className="px-4 py-2 rounded-lg text-md font-medium">Blog</Link>
-              <Link href="/about" className="px-4 py-2 rounded-lg text-md font-medium">About</Link>
-              <Link href="/careers" className="px-4 py-2 rounded-lg text-md font-medium">Careers</Link>
-              <Link href="/contact" className="px-4 py-2 rounded-lg text-md font-medium">Contact</Link>
+            {/* SSR nav links — visible to Googlebot's HTML crawl. Centred with
+                the same `flex-1 justify-center` as the mounted bar, and followed
+                by an inert mirror of its right-hand cluster, so the header does
+                not reflow when hydration swaps this block out. */}
+            <div className="hidden lg:flex flex-1 justify-center items-center space-x-1 2xl:space-x-2">
+              <Link href="/" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Home</Link>
+              <Link href="/our-team" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Our Team</Link>
+              <Link href="/services" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Services</Link>
+              <Link href="/portfolio" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Portfolio</Link>
+              <Link href="/products/chimegenius-ai-pro" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Products</Link>
+              <Link href="/blog" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Blog</Link>
+              <Link href="/about" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">About</Link>
+              <Link href="/careers" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Careers</Link>
+              <Link href="/contact" className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium">Contact</Link>
+            </div>
+
+            {/* Inert mirror of the mounted bar's theme button + CTA. The theme
+                switcher needs client state, so only its footprint is reserved
+                here; the CTA is a real link so it is crawlable pre-hydration. */}
+            <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
+              <div aria-hidden="true" className="p-2 2xl:p-2.5">
+                <div className="w-5 h-5" />
+              </div>
+              <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium shadow-lg shadow-[#008ac1]/30">
+                Let’s Talk
+              </Link>
             </div>
           </div>
         </div>
@@ -167,12 +236,26 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
+        {/* Same, for products. The visible Products link above can only point at
+            one product, and the dropdown that lists the rest does not exist until
+            hydration — so without this, every product but that one is absent from
+            the HTML Googlebot crawls. */}
+        <nav aria-label="Product pages" className="sr-only">
+          {products.map((product, i) => (
+            <Link key={i} href={`/products/${product.slug}`}>
+              {product.title}
+            </Link>
+          ))}
+        </nav>
       </nav>
     );
   }
 
   return (
+    // Named because two sr-only <nav>s live inside it; without a label axe
+    // reports landmark-unique on every route that renders the header.
     <nav
+      aria-label="Main"
       className="sticky top-0 w-full z-[150] backdrop-blur-sm border-b shadow-sm transition-colors duration-300"
       style={{
         // use the global background variable so dark mode works
@@ -185,7 +268,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="h-20 w-[180px] flex items-center justify-center overflow-hidden rounded-lg transition-transform group-hover:scale-105">
+              <div className="h-20 w-[128px] 2xl:w-[180px] flex items-center justify-center overflow-hidden rounded-lg transition-transform group-hover:scale-105">
                 <Image
                   src={isDark ? "/images/CIM-LOGO-White.png" : "/images/CIM-LOGO-Black.png"}
                   alt="CIM Logo"
@@ -199,24 +282,38 @@ export default function Navbar() {
           </div>
 
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-center space-x-3">
+          {/* Desktop Navigation — centred in the space between the logo and the
+              right-hand cluster. `flex-1` makes this the only growing track, so
+              the links sit in the middle rather than being pushed against the
+              CTA by `justify-between`. The theme toggle and "Let's Talk" used to
+              live in this same container, which is why the links could not
+              centre; they are now their own group below. */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center space-x-1 2xl:space-x-2">
               <Link
                 href="/"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/")}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
               >
                 Home
               </Link>
+              <Link
+                href="/our-team"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
+                style={getNavLinkStyle("/our-team")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              >
+                Our Team
+              </Link>
               {/* Services Mega Menu */}
               <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <button
-                  className="flex items-center space-x-1 px-4 py-2 rounded-lg text-md font-medium transition-all"
+                  className="flex items-center space-x-1 px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                   style={{
-                    color: isActive("/services") ? "var(--brand-purple)" : "var(--foreground)",
+                    color: isActive("/services") ? "var(--brand-purple-text)" : "var(--foreground)",
                     backgroundColor: isServicesOpen
                       ? "var(--hover-bg)"
                       : isActive("/services")
@@ -293,7 +390,7 @@ export default function Navbar() {
                               Not sure which service you need?
                             </h4>
                             <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
-                              Let's discuss your project and find the perfect solution
+                              Let&apos;s discuss your project and find the perfect solution
                             </p>
                           </div>
                           <Link
@@ -309,18 +406,95 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+              {/* Portfolio — a plain link, so it deliberately does not use the
+                  dropdown shape the Services/Products triggers use. */}
               <Link
-                href="/products"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
-                style={getNavLinkStyle("/products")}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+                href="/portfolio"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
+                style={getNavLinkStyle("/portfolio")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
               >
-                Products
+                Portfolio
               </Link>
+              {/* Products Dropdown */}
+              <div className="relative" onMouseEnter={handleProductsMouseEnter} onMouseLeave={handleProductsMouseLeave}>
+                <button
+                  className="flex items-center space-x-1 px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
+                  style={{
+                    color: isActive("/products") ? "var(--brand-purple-text)" : "var(--foreground)",
+                    backgroundColor: isProductsOpen
+                      ? "var(--hover-bg)"
+                      : isActive("/products")
+                        ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                        : "transparent",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+                  onMouseLeave={(e) => {
+                    if (!isProductsOpen) e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent";
+                  }}
+                  aria-expanded={isProductsOpen}
+                  aria-haspopup="true"
+                  aria-label="Products Menu"
+                >
+                  <span>Products</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {isProductsOpen && (
+                  <div className="absolute left-0 mt-2 w-80 z-[300]">
+                    {/* Bounded and scrollable rather than `overflow-hidden`:
+                        the panel has no intrinsic height limit, so each extra
+                        product grew it further down the viewport with nothing
+                        to stop it clipping off the bottom of the screen. */}
+                    <div
+                      className="rounded-2xl shadow-2xl border p-3 max-h-[70vh] overflow-y-auto"
+                      style={{
+                        backgroundColor: "var(--card-bg)",
+                        borderColor: "var(--border-color)",
+                      }}
+                    >
+                      {products.map((product, index) => {
+                        return (
+                          <Link
+                            key={index}
+                            href={`/products/${product.slug}`}
+                            className="group flex items-start space-x-3 p-4 rounded-xl transition-all duration-200 border"
+                            style={{
+                              backgroundColor: "transparent",
+                              borderColor: "transparent",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = "var(--hover-bg)";
+                              e.currentTarget.style.borderColor = "var(--border-color)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = "transparent";
+                              e.currentTarget.style.borderColor = "transparent";
+                            }}
+                            onClick={() => setIsProductsOpen(false)}
+                          >
+                            <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden group-hover:scale-110 transition-transform shadow-lg">
+                              <Image src={product.logo} alt="" width={48} height={48} className="w-full h-full object-cover" unoptimized />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-sm font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+                                {product.title}
+                              </h3>
+                              <p className="text-xs line-clamp-2" style={{ color: "var(--secondary-text)" }}>
+                                {product.description}
+                              </p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link
                 href="/blog"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/blog")}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/blog") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
@@ -329,7 +503,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/about"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/about")}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/about") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
@@ -338,7 +512,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/careers"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/careers")}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/careers") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
@@ -347,20 +521,25 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-2 rounded-lg text-md font-medium transition-all"
+                className="px-2 2xl:px-3 py-2 rounded-lg text-sm 2xl:text-base font-medium transition-all"
                 style={getNavLinkStyle("/contact")}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/contact") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
               >
                 Contact
               </Link>
+            </div>
+          </div>
 
+          {/* Right-hand cluster — theme switcher + primary CTA. Kept out of the
+              centred link group so the links centre on their own. */}
+          <div className="hidden lg:flex items-center space-x-1 2xl:space-x-2">
               {/* Theme Toggle Button */}
               {/* Theme Dropdown */}
               <div className="relative" ref={themeDropdownRef}>
                 <button
                   onClick={() => setIsThemeOpen(!isThemeOpen)}
-                  className="p-2.5 rounded-lg transition-all hover:scale-110"
+                  className="p-2 2xl:p-2.5 rounded-lg transition-all hover:scale-110"
                   style={{ color: "var(--foreground)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
@@ -419,10 +598,9 @@ export default function Navbar() {
 
               </div>
 
-              <Link href="/contact" className="ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-6 py-2.5 rounded-full text-md font-medium transition-all shadow-lg shadow-[#008ac1]/30 hover:shadow-xl hover:shadow-[#008ac1]/40 hover:scale-105">
+              <Link href="/contact" className="ml-1 2xl:ml-2 bg-gradient-to-r from-[#008ac1] to-[#00b5ca] hover:from-[#008ac1] hover:to-[#008ac1] text-white px-4 2xl:px-5 py-2 2xl:py-2.5 rounded-full text-sm 2xl:text-base font-medium transition-all shadow-lg shadow-[#008ac1]/30 hover:shadow-xl hover:shadow-[#008ac1]/40 hover:scale-105">
                 Let’s Talk
               </Link>
-            </div>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
@@ -486,7 +664,7 @@ export default function Navbar() {
                           e.stopPropagation();
                           toggleTheme(mode.value);
                         }}
-                        className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
+                        className={`cursor-pointer w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isSelected ? "bg-accent text-accent-foreground" : "hover:bg-muted"
                           }`}
                         style={{
                           backgroundColor: isSelected ? "var(--hover-bg)" : "transparent",
@@ -525,6 +703,16 @@ export default function Navbar() {
             >
               Home
             </Link>
+            <Link
+              href="/our-team"
+              onClick={toggleMobileMenu}
+              className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
+              style={getNavLinkStyle("/our-team")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/our-team") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+            >
+              Our Team
+            </Link>
 
             {/* Mobile Services Accordion */}
             <div>
@@ -559,15 +747,45 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/products"
+              href="/portfolio"
               onClick={toggleMobileMenu}
               className="block px-4 py-3 rounded-lg text-base font-medium transition-all"
-              style={getNavLinkStyle("/products")}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/products") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
+              style={getNavLinkStyle("/portfolio")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 15%, transparent)" : "var(--hover-bg)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = isActive("/portfolio") ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent")}
             >
-              Products
+              Portfolio
             </Link>
+
+            {/* Mobile Products Accordion */}
+            <div>
+              <button onClick={toggleMobileProducts} className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all" style={{ color: "var(--foreground)" }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
+                <span>Products</span>
+                <ChevronDown className={`w-5 h-5 transition-transform ${isMobileProductsOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {isMobileProductsOpen && (
+                <div className="mt-2 grid grid-cols-1 gap-3 pl-2">
+                  {products.map((product, index) => {
+                    return (
+                      <Link key={index} href={`/products/${product.slug}`} onClick={toggleMobileMenu} className="flex items-center space-x-3 p-3 rounded-lg transition-all" onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--hover-bg)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}>
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden shadow-md">
+                          <Image src={product.logo} alt="" width={40} height={40} className="w-full h-full object-cover" unoptimized />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                            {product.title}
+                          </h3>
+                          <p className="text-xs truncate" style={{ color: "var(--secondary-text)" }}>
+                            {product.description}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
 
             <Link
               href="/blog"
@@ -621,6 +839,14 @@ export default function Navbar() {
         {services.map((service, i) => (
           <Link key={i} href={`/services/${getServiceSlug(service.title)}`}>
             {service.title}
+          </Link>
+        ))}
+      </nav>
+      {/* Crawlable product links — always in DOM for Googlebot (hidden from users) */}
+      <nav aria-label="All product pages" className="sr-only">
+        {products.map((product, i) => (
+          <Link key={i} href={`/products/${product.slug}`}>
+            {product.title}
           </Link>
         ))}
       </nav>

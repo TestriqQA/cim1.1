@@ -60,7 +60,7 @@ export default function Hero() {
 
                             <span
                                 className="font-semibold p-2"
-                                style={{ color: "var(--brand-blue)" }}
+                                style={{ color: "var(--brand-blue-text)" }}
                             >
                                 About Us
                             </span>
@@ -73,10 +73,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-blue) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-blue) 20%, transparent)",
-                                color: "var(--brand-blue)",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
+                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                             <span className="text-sm font-semibold">Digital Growth Agency</span>
                         </div>
 
@@ -105,11 +105,11 @@ export default function Hero() {
                         {/* Text Content */}
                         <div className="space-y-6 text-base md:text-xl leading-relaxed">
                             <p style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                                <span style={{ color: "var(--brand-blue)", fontWeight: 700 }}>
+                                <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>
                                     Cinute InfoMedia (CIM)
                                 </span>{" "}
                                 is a digital growth agency that helps businesses build, market, and scale through{" "}
-                                <span style={{ color: "var(--brand-purple)", fontWeight: 600 }}>
+                                <span style={{ color: "var(--brand-purple-text)", fontWeight: 600 }}>
                                     creativity, data, and technology
                                 </span>
                                 .
@@ -120,7 +120,7 @@ export default function Hero() {
                                 <span className="relative inline-block">
                                     <span
                                         className="relative z-10"
-                                        style={{ fontWeight: 700, color: "var(--brand-blue)" }}
+                                        style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}
                                     >
                                         growth ecosystems
                                     </span>
@@ -131,7 +131,7 @@ export default function Hero() {
                                         }}
                                     />
                                 </span>{" "}
-                                that seamlessly connect <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] transition-colors">web development</Link>, <Link href="/services/brand-identity-design" className="hover:text-[var(--brand-purple)] transition-colors">brand identity</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] transition-colors">SEO</Link>, <Link href="/services/performance-marketing" className="hover:text-[var(--brand-orange)] transition-colors">performance marketing</Link>, <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-yellow)] transition-colors">AI-powered automations</Link>, and <Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-teal)] transition-colors">intelligent chatbot systems</Link> into a unified revenue engine.
+                                that seamlessly connect <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue-text)] transition-colors">web development</Link>, <Link href="/services/brand-identity-design" className="hover:text-[var(--brand-purple-text)] transition-colors">brand identity</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">SEO</Link>, <Link href="/services/performance-marketing" className="hover:text-[var(--accent-orange-text)] transition-colors">performance marketing</Link>, <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--accent-amber-text)] transition-colors">AI-powered automations</Link>, and <Link href="/services/ai-chatbots-services" className="hover:text-[var(--accent-teal-text)] transition-colors">intelligent chatbot systems</Link> into a unified revenue engine.
                             </p>
 
                             <p

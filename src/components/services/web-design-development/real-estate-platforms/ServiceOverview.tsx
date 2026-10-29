@@ -1,5 +1,3 @@
-"use client";
-
 import { Building, MapPin, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -9,7 +7,7 @@ export default function ServiceOverview() {
         "MLS/IDX integration for real-time listing synchronization",
         "Interactive maps with neighborhood insights",
         "Virtual tour and 3D walkthrough integration",
-        <span key="crm">Lead capture forms with <Link href="/services/ai-workflows-automations-services" className="hover:underline">CRM automation</Link></span>,
+        <span key="crm">Lead capture forms with <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">CRM automation</Link></span>,
         "Agent and broker management dashboards",
     ];
 
@@ -30,7 +28,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Building className="w-4 h-4" />
-                        <span className="text-sm font-semibold">Real Estate Solutions</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>Real Estate Solutions</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
@@ -117,7 +115,7 @@ export default function ServiceOverview() {
                                 background: "linear-gradient(135deg, color-mix(in srgb, #0d9488 10%, transparent), color-mix(in srgb, #14b8a6 10%, transparent))",
                             }}
                         >
-                            <p className="text-sm" style={{ color: "#0d9488", fontWeight: 600 }}>
+                            <p className="text-sm" style={{ color: "var(--accent-teal-text)", fontWeight: 600 }}>
                                 💡 Pro Tip: Platforms with virtual tours see higher engagement and faster sales cycles.
                             </p>
                         </div>

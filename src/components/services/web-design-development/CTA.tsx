@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -54,11 +52,11 @@ export default function CTA() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-blue) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-blue) 20%, transparent)",
-                                color: "var(--brand-blue)",
+                                color: "var(--brand-blue-text)",
                             }}
                         >
                             <Sparkles className="w-4 h-4" />
-                            <span className="text-sm font-semibold text-[var(--brand-blue)]">Global Excellence</span>
+                            <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Global Excellence</span>
                         </div>
 
                         {/* Heading */}
@@ -78,7 +76,7 @@ export default function CTA() {
 
                         {/* Description */}
                         <p className="text-base md:text-xl max-w-4xl mx-auto mb-12 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Partner with a professional <span className="font-bold text-[var(--brand-blue)]">web development agency</span> to build a high-performance, SEO-optimized website that delivers <span className="text-[var(--brand-teal)] font-bold">measurable ROI</span>. Get your free expert audit today.
+                            Partner with a professional <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span> to build a high-performance, SEO-optimized website that delivers <span className="text-[var(--accent-teal-text)] font-bold">measurable ROI</span>. Get your free expert audit today.
                         </p>
 
                         {/* CTA Buttons */}
@@ -106,7 +104,7 @@ export default function CTA() {
 
                         {/* Bottom Text */}
                         <p className="mt-8" style={{ color: "var(--secondary-text)", fontSize: "0.95rem" }}>
-                            Building for US, EU, and APAC markets. <Link href="/contact" className="font-semibold hover:underline" style={{ color: "var(--brand-blue)" }}>Book a session</Link> with our architects.
+                            Building for US, EU, and APAC markets. <Link href="/contact" className="font-semibold underline hover:underline" style={{ color: "var(--brand-blue-text)" }}>Book a session</Link> with our architects.
                         </p>
                     </div>
                 </div>

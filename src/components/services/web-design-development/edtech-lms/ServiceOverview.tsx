@@ -1,5 +1,3 @@
-"use client";
-
 import { BookOpen, Video, Users, Award, BarChart3, Zap, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -24,7 +22,7 @@ export default function ServiceOverview() {
                     <div className="space-y-6">
                         <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "var(--foreground)" }}>
                             Learning Platforms That{" "}
-                            <span style={{ color: "#a855f7" }}>Inspire Growth</span>
+                            <span style={{ color: "var(--brand-purple-text)" }}>Inspire Growth</span>
                         </h2>
 
                         <p className="text-lg leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -34,7 +32,7 @@ export default function ServiceOverview() {
                         </p>
 
                         <p className="text-lg leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            From <Link href="/services/web-design-development/business-corporate" className="hover:underline text-[#a855f7]">corporate training portals</Link> to massive open online courses (<Link href="/services/web-design-development/entertainment-media" className="hover:underline text-[#a855f7]">MOOCs</Link>),
+                            From <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">corporate training portals</Link> to massive open online courses (<Link href="/services/web-design-development/entertainment-media" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">MOOCs</Link>),
                             we deliver solutions that scale with your educational mission and drive
                             measurable learning outcomes.
                         </p>

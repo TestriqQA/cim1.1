@@ -112,9 +112,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold mb-1 transition-colors group-hover:text-[#ff0050]" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold mb-1 transition-colors group-hover:text-[var(--accent-pink-text)]" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

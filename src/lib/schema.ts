@@ -516,7 +516,7 @@ export function generateNavigationSchema(
  */
 export function generateBlogPostGraphSchema(post: BlogPost) {
   const postUrl = `${siteUrl}/blog/${post.slug}`;
-  const categorySlug = post.category?.toLowerCase().replace(/\s+/g, "-") || "uncategorized";
+  const categorySlug = post.categorySlug || "uncategorized";
   const authorSlug = post.author.name.toLowerCase().replace(/\s+/g, "-");
 
   return generateGraphSchema(

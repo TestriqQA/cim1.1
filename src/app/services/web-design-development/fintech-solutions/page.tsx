@@ -2,19 +2,14 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/fintech-solutions/Hero';
 import ServiceOverview from '@/components/services/web-design-development/fintech-solutions/ServiceOverview';
+import TechStack from '@/components/services/web-design-development/fintech-solutions/TechStack';
+import CTA from '@/components/services/web-design-development/fintech-solutions/CTA';
 
 const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/fintech-solutions/WhyChooseUs'), {
     loading: () => <div className="py-20" />,
 });
 
 const Process = dynamic(() => import('@/components/services/web-design-development/fintech-solutions/Process'), {
-    loading: () => <div className="py-20" />,
-});
-const TechStack = dynamic(() => import('@/components/services/web-design-development/fintech-solutions/TechStack'), {
-    loading: () => <div className="py-20" />,
-});
-
-const CTA = dynamic(() => import('@/components/services/web-design-development/fintech-solutions/CTA'), {
     loading: () => <div className="py-20" />,
 });
 

@@ -103,7 +103,7 @@ export default function Platforms() {
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                             borderColor: "color-mix(in srgb, var(--brand-teal) 20%, transparent)",
-                            color: "var(--brand-teal)",
+                            color: "var(--accent-teal-text)",
                         }}
                     >
                         <Sparkles className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function Platforms() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "var(--brand-teal)" }}>Mastering the Ecosystem:</span> Strategies for Key Social Channels
+                        <span style={{ color: "var(--accent-teal-text)" }}>Mastering the Ecosystem:</span> Strategies for Key Social Channels
                     </h2>
 
                     <div

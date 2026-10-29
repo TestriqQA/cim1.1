@@ -71,7 +71,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#0286FF" }}>Contentful Headless CMS</span>
+                            <span style={{ color: "var(--accent-sky-text)" }}>Contentful Headless CMS</span>
                         </nav>
 
                         {/* Badge */}
@@ -82,8 +82,8 @@ export default function Hero() {
                                 borderColor: "rgba(2, 134, 255, 0.3)",
                             }}
                         >
-                            <Layers className="w-4 h-4" style={{ color: "#4DA3FF" }} />
-                            <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-sm font-medium" style={{ color: "#0286FF" }}>
+                            <Layers className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                            <Link href="/services/web-design-development/headless-traditional-cms" className="hover:underline text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
                                 Composable Content Platform
                             </Link>
                         </div>
@@ -171,17 +171,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0286FF" }}>30%+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>30%+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Faster Time-to-Market</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0286FF" }}>High</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>High</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Uptime SLA</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#0286FF" }}>4000+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>4000+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Enterprise Customers</p>
                             </div>
                         </div>
@@ -281,11 +281,11 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#0286FF" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-sky-text)" }}>
                                 Built With Modern Stack
                             </p>
                             <div className="flex flex-wrap gap-2">
-                                {["Contentful", "GraphQL", "REST API", "React", <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[#0286FF] transition-colors">Next.js</Link>, "TypeScript"].map((tech, idx) => (
+                                {["Contentful", "GraphQL", "REST API", "React", <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--accent-sky-text)] transition-colors">Next.js</Link>, "TypeScript"].map((tech, idx) => (
                                     <span
                                         key={idx}
                                         className="px-3 py-1.5 rounded-full text-xs font-medium border"

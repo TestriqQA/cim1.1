@@ -165,7 +165,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#9333ea" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             CMS Solutions
                         </span>
                     </div>
@@ -204,15 +204,15 @@ export default function SolutionTypes() {
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "color-mix(in srgb, #9333ea 10%, transparent)" }}>
                         <Cloud className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#9333ea" }}>Headless CMS</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>Headless CMS</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "color-mix(in srgb, #a855f7 10%, transparent)" }}>
                         <Globe className="w-4 h-4" style={{ color: "#a855f7" }} />
-                        <span className="text-sm font-medium" style={{ color: "#a855f7" }}>Traditional CMS</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>Traditional CMS</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "color-mix(in srgb, #c084fc 10%, transparent)" }}>
                         <Code2 className="w-4 h-4" style={{ color: "#c084fc" }} />
-                        <span className="text-sm font-medium" style={{ color: "#c084fc" }}>Custom Solutions</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>Custom Solutions</span>
                     </div>
                 </div>
 
@@ -226,7 +226,7 @@ export default function SolutionTypes() {
                         return (
                             <div
                                 key={idx}
-                                className="group relative card-float"
+                                className="group relative card-float cursor-pointer"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}
@@ -280,7 +280,7 @@ export default function SolutionTypes() {
                                         className="absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-medium uppercase"
                                         style={{
                                             backgroundColor: `${solution.accentColor}15`,
-                                            color: solution.accentColor,
+                                            color: "var(--accent-violet-text)",
                                         }}
                                     >
                                         {solution.type}
@@ -398,9 +398,9 @@ export default function SolutionTypes() {
                                             className={`
                                                 mt-4 flex items-center gap-2 text-sm font-medium
                                                 transition-all duration-500
-                                                ${isActive ? "opacity-0 h-0" : isHovered ? "opacity-100" : "opacity-50"}
+                                                ${isActive ? "opacity-0 h-0" : "opacity-100"}
                                             `}
-                                            style={{ color: solution.accentColor }}
+                                            style={{ color: "var(--accent-violet-text)" }}
                                         >
                                             <span>Click to explore</span>
                                             <ArrowUpRight className="w-4 h-4" />

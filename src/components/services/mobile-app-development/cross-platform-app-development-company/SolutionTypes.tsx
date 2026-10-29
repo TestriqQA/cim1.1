@@ -50,7 +50,7 @@ export default function SolutionTypes() {
         {
             icon: ShoppingCart,
             title: "E-commerce & Retail Solutions",
-            description: <><span className="text-inherit">Drive sales with immersive </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[#667eea] hover:underline">ecommerce</Link> and retail multi-platform app solutions. We build shoppable apps with unified inventory management, secure checkout, and personalized recommendations that convert visitors into loyal customers.</>,
+            description: <><span className="text-inherit">Drive sales with immersive </span><Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">ecommerce</Link> and retail multi-platform app solutions. We build shoppable apps with unified inventory management, secure checkout, and personalized recommendations that convert visitors into loyal customers.</>,
             features: [
                 "Shoppable apps",
                 "Unified inventory",
@@ -62,7 +62,7 @@ export default function SolutionTypes() {
         {
             icon: Building2,
             title: "Enterprise Mobility",
-            description: <><span className="text-inherit">Empower your workforce. We deliver Flutter app development services for </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[#667eea] hover:underline">enterprise</Link> that streamline internal operations. Secure, scalable, and integrated with your existing IT infrastructure (SAP, Salesforce, Oracle).</>,
+            description: <><span className="text-inherit">Empower your workforce. We deliver Flutter app development services for </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">enterprise</Link> that streamline internal operations. Secure, scalable, and integrated with your existing IT infrastructure (SAP, Salesforce, Oracle).</>,
             features: [
                 "Streamlined operations",
                 "IT infrastructure integration",
@@ -74,7 +74,7 @@ export default function SolutionTypes() {
         {
             icon: MessageCircle,
             title: "Social & Chat Applications",
-            description: <><span className="text-inherit">Build the next big community. We develop real-time </span><Link href="/services/social-media-marketing-services" className="text-[#667eea] hover:underline">social and chat apps</Link> with features like live messaging, video calling, and media sharing, ensuring a consistent and engaging experience across devices.</>,
+            description: <><span className="text-inherit">Build the next big community. We develop real-time </span><Link href="/services/social-media-marketing-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">social and chat apps</Link> with features like live messaging, video calling, and media sharing, ensuring a consistent and engaging experience across devices.</>,
             features: [
                 "Real-time messaging",
                 "Video calling",
@@ -98,7 +98,7 @@ export default function SolutionTypes() {
         {
             icon: Wallet,
             title: "Fintech & Healthcare (HIPAA Compliant)",
-            description: <><span className="text-inherit">Security first. We build </span><Link href="/services/web-design-development/healthcare-portals" className="text-[#667eea] hover:underline">Healthcare</Link> and HIPAA-compliant cross-platform apps and secure <Link href="/services/web-design-development/fintech-solutions" className="text-[#667eea] hover:underline">Fintech apps</Link> with biometric authentication, encryption, and regulatory compliance baked into the core architecture.</>,
+            description: <><span className="text-inherit">Security first. We build </span><Link href="/services/web-design-development/healthcare-portals" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Healthcare</Link> and HIPAA-compliant cross-platform apps and secure <Link href="/services/web-design-development/fintech-solutions" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Fintech apps</Link> with biometric authentication, encryption, and regulatory compliance baked into the core architecture.</>,
             features: [
                 "HIPAA compliance",
                 "Biometric authentication",
@@ -121,8 +121,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(102, 126, 234, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#667eea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#667eea" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
@@ -202,7 +202,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#667eea]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-indigo-text)]"
                                             }`}
                                     />
                                 </div>
@@ -221,7 +221,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#667eea]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-indigo-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -234,7 +234,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#667eea]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-indigo-text)]" />
                                 </div>
                             </div>
                         );

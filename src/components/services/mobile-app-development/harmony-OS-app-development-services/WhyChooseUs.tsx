@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
         {
             icon: Headphones,
             title: "Ongoing Support",
-            description: <><Link href="/services/additional-support-services" className="text-[#C7000B] hover:underline">Post-launch maintenance</Link>, AppGallery optimization, and feature updates to keep your app competitive.</>,
+            description: <><Link href="/services/additional-support-services" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Post-launch maintenance</Link>, AppGallery optimization, and feature updates to keep your app competitive.</>,
             shadowColor: "rgba(199, 0, 11, 0.3)",
         },
     ];
@@ -78,19 +78,19 @@ export default function WhyChooseUs() {
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(199, 0, 11, 0.1)",
+                            backgroundColor: "rgba(199, 0, 11, 0.05)",
                             borderColor: "rgba(199, 0, 11, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#C7000B" }} />
-                        <span className="text-sm font-medium" style={{ color: "#C7000B" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us for</span>{" "}
-                        <span style={{ color: "#C7000B" }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             HarmonyOS
                         </span>
                     </h2>
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-colors duration-300"
                                         style={{
-                                            color: isHovered ? "#C7000B" : "var(--foreground)",
+                                            color: isHovered ? "var(--accent-red-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

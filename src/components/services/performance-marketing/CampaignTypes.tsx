@@ -7,12 +7,20 @@ import { Search, Monitor, Share2, Play, ShoppingCart, RefreshCw, TrendingUp, Dol
 export default function CampaignTypes() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    const textAccent = (c: string): string => {
+        const map: Record<string, string> = {
+            "#4285f4": "var(--brand-blue-text)",
+            "#1877f2": "var(--brand-blue-text)",
+            "#34a853": "var(--accent-green-text)",
+        };
+        return map[c.toLowerCase()] ?? c;
+    };
 
     const campaigns = [
         {
             icon: ShoppingCart,
             title: "Performance Marketing for eCommerce",
-            description: <span>For retail brands, it’s all about ROAS and LTV. We implement advanced <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--brand-orange)]">shopping campaigns</Link>, dynamic retargeting, and influencer whitelisting to drive direct sales.</span>,
+            description: <span>For retail brands, it’s all about ROAS and LTV. We implement advanced <Link href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">shopping campaigns</Link>, dynamic retargeting, and influencer whitelisting to drive direct sales.</span>,
             metrics: { purchases: "Direct Sales", roas: "Maximized", ltv: "Enhanced" },
             features: ["Shopping Campaigns", "Dynamic Retargeting", "Influencer Whitelisting"],
             color: "#4285f4",
@@ -20,7 +28,7 @@ export default function CampaignTypes() {
         {
             icon: Monitor,
             title: "Performance Marketing for SaaS & B2B",
-            description: <span>For software companies, the cycle is longer. We focus on Lead Generation, MQLs, and content syndication for <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-orange)]">SaaS</Link> to fill the top of the funnel.</span>,
+            description: <span>For software companies, the cycle is longer. We focus on Lead Generation, MQLs, and content syndication for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">SaaS</Link> to fill the top of the funnel.</span>,
             metrics: { leads: "MQLs", cost: "Cost Per Demo", arr: "Revenue Growth" },
             features: ["LinkedIn Ads", "Content Syndication", "Email Remarketing"],
             color: "#34a853",
@@ -28,7 +36,7 @@ export default function CampaignTypes() {
         {
             icon: Shield,
             title: "Performance Marketing for Fintech & Healthcare",
-            description: <span>Trust is the currency here. We navigate strict compliance regulations (Google’s YMYL) for <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--brand-orange)]">Fintech</Link> and <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--brand-orange)]">Healthcare</Link> to build authority.</span>,
+            description: <span>Trust is the currency here. We navigate strict compliance regulations (Google’s YMYL) for <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Fintech</Link> and <Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Healthcare</Link> to build authority.</span>,
             metrics: { leads: "Verified Leads", accts: "Account Opens", bookings: "Patient Bookings" },
             features: ["Compliance-Ready", "Authority Building", "High-Value Acquisition"],
             color: "#1877f2",
@@ -48,12 +56,12 @@ export default function CampaignTypes() {
                         }}
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-orange)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             INDUSTRIES
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Performance Marketing Solutions <span style={{ color: "var(--brand-orange)" }}>by Industry</span>
+                        Performance Marketing Solutions <span style={{ color: "var(--accent-orange-text)" }}>by Industry</span>
                     </h2>
 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -105,7 +113,7 @@ export default function CampaignTypes() {
 
                                     <h3
                                         className="text-xl font-bold mb-2 transition-colors duration-300"
-                                        style={{ color: isHovered ? campaign.color : "var(--foreground)" }}
+                                        style={{ color: isHovered ? textAccent(campaign.color) : "var(--foreground)" }}
                                     >
                                         {campaign.title}
                                     </h3>
@@ -123,7 +131,7 @@ export default function CampaignTypes() {
                                     >
                                         {Object.entries(campaign.metrics).map(([key, value], idx) => (
                                             <div key={idx} className="text-center">
-                                                <div className="text-sm font-bold" style={{ color: campaign.color }}>{value}</div>
+                                                <div className="text-sm font-bold" style={{ color: textAccent(campaign.color) }}>{value}</div>
                                                 <div className="text-xs capitalize" style={{ color: "var(--secondary-text)" }}>{key}</div>
                                             </div>
                                         ))}
@@ -137,7 +145,7 @@ export default function CampaignTypes() {
                                                 className="px-2 py-1 rounded-full text-xs font-medium"
                                                 style={{
                                                     backgroundColor: `${campaign.color}15`,
-                                                    color: campaign.color,
+                                                    color: textAccent(campaign.color),
                                                 }}
                                             >
                                                 {feature}

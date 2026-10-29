@@ -112,7 +112,7 @@ export default function UseCases() {
                     <div className="inline-block mb-4">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)", border: "1px solid" }}>
                             <Building2 className="w-4 h-4" style={{ color: "#0d9488" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0d9488" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                                 Use Cases
                             </span>
                         </div>
@@ -238,7 +238,7 @@ export default function UseCases() {
                                                     background: isHovered
                                                         ? `linear-gradient(135deg, ${useCase.color}, ${useCase.accentColor})`
                                                         : `${useCase.color}30`,
-                                                    color: isHovered ? "white" : useCase.color,
+                                                    color: isHovered ? "white" : "var(--accent-teal-text)",
                                                     transform: isHovered ? "scale(1.2) rotate(-10deg)" : "scale(1) rotate(0deg)",
                                                 }}
                                             >
@@ -308,23 +308,6 @@ export default function UseCases() {
                                             })}
                                         </div>
 
-                                        {/* Learn more button - commented out */}
-                                        {/* <div
-                                            className="mt-6 pt-4 border-t transition-all duration-300"
-                                            style={{
-                                                borderColor: isHovered ? `${useCase.color}30` : "transparent",
-                                                opacity: isHovered ? 1 : 0,
-                                                transform: isHovered ? "translateY(0)" : "translateY(-10px)",
-                                            }}
-                                        >
-                                            <button
-                                                className="flex items-center gap-2 text-sm font-semibold group/btn transition-all duration-300"
-                                                style={{ color: useCase.color }}
-                                            >
-                                                Learn More
-                                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                                            </button>
-                                        </div> */}
                                     </div>
 
                                     {/* Animated bottom bar */}

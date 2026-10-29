@@ -45,7 +45,9 @@ export default function TermsOfServicePage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
             />
-            <TermsOfServiceClient />
+            <main>
+                <TermsOfServiceClient />
+            </main>
         </>
     );
 }

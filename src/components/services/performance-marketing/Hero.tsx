@@ -54,7 +54,7 @@ export default function Hero() {
                         Services
                     </Link>
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <span className="font-semibold p-2" style={{ color: "var(--brand-orange)" }}>
+                    <span className="font-semibold p-2" style={{ color: "var(--accent-orange-text)" }}>
                         Performance Marketing
                     </span>
                 </nav>
@@ -69,7 +69,7 @@ export default function Hero() {
                                 style={{
                                     background: "linear-gradient(90deg, color-mix(in srgb, var(--brand-orange) 10%, transparent), color-mix(in srgb, var(--brand-yellow) 10%, transparent))",
                                     borderColor: "color-mix(in srgb, var(--brand-orange) 30%, transparent)",
-                                    color: "var(--brand-orange)",
+                                    color: "var(--accent-orange-text)",
                                 }}
                             >
                                 <Target className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
@@ -92,7 +92,7 @@ export default function Hero() {
 
 
                         <p className="mt-6 text-lg md:text-xl max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Stop guessing where your marketing budget goes. Start scaling with precision. We allow you to lower your <Link href="/blog/data-analytics-insights-action" className="hover:text-[var(--brand-orange)] transition-colors">Customer Acquisition Cost (CAC)</Link> while maximizing your Return on Ad Spend (ROAS). Join 50+ global brands who trust us to manage large-scale annual ad spend.
+                            Stop guessing where your marketing budget goes. Start scaling with precision. We allow you to lower your <Link href="/blog/data-analytics-insights-action" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)] transition-colors">Customer Acquisition Cost (CAC)</Link> while maximizing your Return on Ad Spend (ROAS). Join 50+ global brands who trust us to manage large-scale annual ad spend.
                         </p>
 
                         {/* Feature Pills */}
@@ -119,7 +119,7 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center lg:text-left">
-                                    <div className="text-3xl font-black" style={{ color: "var(--brand-orange)" }}>
+                                    <div className="text-3xl font-black" style={{ color: "var(--accent-orange-text)" }}>
                                         {stat.value}
                                     </div>
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
@@ -135,7 +135,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-white"
-                                style={{ backgroundColor: "var(--brand-orange)" }}
+                                style={{ backgroundColor: "#c2410c" }}
                             >
                                 Get Free Performance Audit
                                 <ArrowRight className="w-5 h-5" />
@@ -143,7 +143,7 @@ export default function Hero() {
                             <Link
                                 href="#case-studies"
                                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full border-2 transition-all duration-300 hover:scale-105"
-                                style={{ borderColor: "var(--brand-orange)", color: "var(--brand-orange)" }}
+                                style={{ borderColor: "var(--brand-orange)", color: "var(--accent-orange-text)" }}
                             >
                                 View Success Stories
                             </Link>
@@ -179,7 +179,7 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, var(--brand-orange) 20%, var(--border-color))",
                             }}
                         >
-                            <h2 className="font-bold text-lg mb-3" style={{ color: "var(--brand-orange)" }}>
+                            <h2 className="font-bold text-lg mb-3" style={{ color: "var(--accent-orange-text)" }}>
                                 Why Performance Marketing?
                             </h2>
                             <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
@@ -191,7 +191,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-medium hover:scale-105 transition-transform"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     Google Ads
@@ -201,7 +201,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-medium hover:scale-105 transition-transform"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     Meta Ads
@@ -211,7 +211,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-medium hover:scale-105 transition-transform"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     LinkedIn
@@ -220,7 +220,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-medium"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
-                                        color: "var(--brand-orange)",
+                                        color: "var(--accent-orange-text)",
                                     }}
                                 >
                                     Programmatic

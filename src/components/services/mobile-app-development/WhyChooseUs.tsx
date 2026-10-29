@@ -20,13 +20,13 @@ export default function WhyChooseUs() {
         },
         {
             icon: Lock,
-            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple)] transition-colors">Enterprise-Grade Security</Link>,
+            title: <Link href="/services/mobile-app-development/enterprise-application-development-services" className="hover:text-[var(--brand-purple-text)] transition-colors">Enterprise-Grade Security</Link>,
             description: "AES-256 encryption, OAuth 2.0, OWASP compliance. GDPR, HIPAA, PCI-DSS, and SOC 2-aligned security practices."
         },
         {
             icon: Palette,
             title: "Higher User Engagement",
-            description: <span>Conversion-optimized UX backed by extensive A/B testing. <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple)] transition-colors">WCAG 2.2 AA compliant designs</Link> that reduce churn.</span>
+            description: <span>Conversion-optimized UX backed by extensive A/B testing. <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">WCAG 2.2 AA compliant designs</Link> that reduce churn.</span>
         },
         {
             icon: Gauge,
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {
             icon: Smartphone,
             title: "Multi-Platform Expertise",
-            description: <span>Masters of Swift 6, Kotlin, Flutter 3.5+, React Native New Architecture. <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple)] transition-colors">Native</Link>, <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--brand-purple)] transition-colors">cross-platform</Link>, and hybrid solutions with single codebase efficiency.</span>
+            description: <span>Masters of Swift 6, Kotlin, Flutter 3.5+, React Native New Architecture. <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">Native</Link>, <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">cross-platform</Link>, and hybrid solutions with single codebase efficiency.</span>
         }
     ];
 
@@ -67,14 +67,14 @@ export default function WhyChooseUs() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple)" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--foreground)" }}>The Cinute Infomedia Advantage:</span> <span style={{ color: "var(--brand-purple)" }}>Where Innovation Meets Execution</span>
+                        <span style={{ color: "var(--foreground)" }}>The Cinute Infomedia Advantage:</span> <span style={{ color: "var(--brand-purple-text)" }}>Where Innovation Meets Execution</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         As a globally recognized custom mobile app development company, we combine cutting-edge technology with deep industry expertise to build apps that users love and businesses profit from.
@@ -212,7 +212,7 @@ export default function WhyChooseUs() {
                                                 >
                                                     <row.icon
                                                         className="w-5 h-5"
-                                                        style={{ color: "var(--brand-purple)" }}
+                                                        style={{ color: "var(--brand-purple-text)" }}
                                                     />
                                                 </div>
                                                 <span className="font-medium" style={{ color: "var(--foreground)" }}>
@@ -227,7 +227,7 @@ export default function WhyChooseUs() {
                                                 style={{
                                                     backgroundColor:
                                                         "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                                    color: "var(--brand-purple)",
+                                                    color: "var(--brand-purple-text)",
                                                 }}
                                             >
                                                 <CheckCircle2 className="w-4 h-4" />

@@ -45,7 +45,9 @@ export default function PrivacyPolicyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
             />
-            <PrivacyPolicyClient />
+            <main>
+                <PrivacyPolicyClient />
+            </main>
         </>
     );
 }

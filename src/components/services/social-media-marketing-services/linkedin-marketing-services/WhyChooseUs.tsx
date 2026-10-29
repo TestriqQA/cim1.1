@@ -75,15 +75,15 @@ export default function WhyChooseUs() {
                             borderColor: `${linkedinBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: linkedinBlue }} />
-                        <span className="text-sm font-medium" style={{ color: linkedinBlue }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Partner with Our</span>{" "}
-                        <span style={{ color: linkedinBlue }}>
+                        <span style={{ color: "var(--brand-blue-text)" }}>
                             B2B LinkedIn Agency?
                         </span>
                     </h2>
@@ -98,7 +98,7 @@ export default function WhyChooseUs() {
                         {
                             icon: Award,
                             title: "LinkedIn Certified Experts",
-                            description: <>Our team holds the highest tier of <Link href="/about" className="hover:underline text-blue-500">LinkedIn Marketing certifications</Link> for B2B advertising.</>,
+                            description: <>Our team holds the highest tier of <Link href="/about" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">LinkedIn Marketing certifications</Link> for B2B advertising.</>,
                             color: "#0A66C2",
                         },
                         {
@@ -122,7 +122,7 @@ export default function WhyChooseUs() {
                         {
                             icon: Shield,
                             title: "Future-Proof SEO",
-                            description: <>All content is optimized for AI Overviews and 2026 search intent signals (<Link href="/services/seo-services" className="hover:underline text-blue-500">SEO</Link>).</>,
+                            description: <>All content is optimized for AI Overviews and 2026 search intent signals (<Link href="/services/seo-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">SEO</Link>).</>,
                             color: "#0077B5",
                         },
                         {
@@ -166,11 +166,11 @@ export default function WhyChooseUs() {
                                             boxShadow: isHovered ? `0 8px 24px ${reason.color}40` : "none",
                                         }}
                                     >
-                                        <Icon className="w-7 h-7" style={{ color: isHovered ? "white" : reason.color }} />
+                                        <Icon className="w-7 h-7" style={{ color: isHovered ? "white" : "var(--brand-blue-text)" }} />
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? reason.color : "var(--foreground)" }}>
+                                    <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}>
                                         {reason.title}
                                     </h3>
                                     <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

@@ -18,7 +18,7 @@ export default function ServiceOverview() {
         {
             icon: Globe,
             title: "Ionic Framework App Development Services",
-            description: <><span className="text-inherit">As an expert Ionic framework app development agency, we build lightning-fast apps using Angular, React, or Vue. Our performance optimization ensures your Ionic apps feel as smooth as </span><Link href="/services/mobile-app-development" className="text-[#00b4d8] hover:underline">native apps</Link>.</>,
+            description: <><span className="text-inherit">As an expert Ionic framework app development agency, we build lightning-fast apps using Angular, React, or Vue. Our performance optimization ensures your Ionic apps feel as smooth as </span><Link href="/services/mobile-app-development" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">native apps</Link>.</>,
             gradient: "from-[#00b4d8] to-[#0077b6]",
             shadowColor: "rgba(0, 180, 216, 0.4)",
         },
@@ -53,7 +53,7 @@ export default function ServiceOverview() {
         {
             icon: Rocket,
             title: "App Store & Play Store Deployment",
-            description: <><span className="text-inherit">Navigating global compliance is our forte. We handle the entire submission process, ensuring your apps meet the latest 2026 security and privacy standards for both </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#00b4d8] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#00b4d8] hover:underline">Android</Link>.</>,
+            description: <><span className="text-inherit">Navigating global compliance is our forte. We handle the entire submission process, ensuring your apps meet the latest 2026 security and privacy standards for both </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">Android</Link>.</>,
             gradient: "from-[#48cae4] to-[#0077b6]",
             shadowColor: "rgba(72, 202, 228, 0.4)",
         },
@@ -93,7 +93,7 @@ export default function ServiceOverview() {
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
                                 background: "linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(0, 119, 182, 0.1))",
-                                color: "#00b4d8",
+                                color: "var(--accent-cyan-text)",
                             }}
                         >
                             Our Services

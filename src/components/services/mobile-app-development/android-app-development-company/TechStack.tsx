@@ -18,7 +18,7 @@ export default function TechStack() {
     const technologies: Record<string, { name: string; description: React.ReactNode; logo: string }[]> = {
         core: [
             { name: "Kotlin", description: "Primary Language", logo: "/images/techstack_logos/kotlin-logo.svg" },
-            { name: "Java", description: <Link href="/services/web-design-development/java-spring-boot" className="hover:text-[#3DDC84] transition-colors">Legacy Support</Link>, logo: "/images/techstack_logos/java-logo.svg" },
+            { name: "Java", description: <Link href="/services/web-design-development/java-spring-boot" className="hover:text-[var(--accent-green-text)] transition-colors">Legacy Support</Link>, logo: "/images/techstack_logos/java-logo.svg" },
             { name: "Android Studio", description: "IDE & Tools", logo: "/images/techstack_logos/Android-Studio-logo.png" },
             { name: "Gradle", description: "Build System", logo: "/images/techstack_logos/Gradle-logo.png" },
             { name: "Android SDK", description: "Platform SDK", logo: "/images/techstack_logos/Android-Studio-logo.png" },
@@ -50,9 +50,9 @@ export default function TechStack() {
         ],
         cloud: [
             { name: "Firebase", description: "Backend Services", logo: "/images/techstack_logos/firebase-logo.svg" },
-            { name: "Google Cloud", description: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#3DDC84] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/googlecloud-logo.svg" },
-            { name: "AWS Amplify", description: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#3DDC84] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/aws-logo.png" },
-            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#3DDC84] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+            { name: "Google Cloud", description: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-green-text)] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/googlecloud-logo.svg" },
+            { name: "AWS Amplify", description: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-green-text)] transition-colors">Cloud Platform</Link>, logo: "/images/techstack_logos/aws-logo.png" },
+            { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-green-text)] transition-colors">API Backend</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
             { name: "GraphQL", description: "API Layer", logo: "/images/techstack_logos/graphql-logo.svg" },
             { name: "REST APIs", description: "Web Services", logo: "/images/techstack_logos/REST-API-logo.png" },
         ],
@@ -97,7 +97,7 @@ export default function TechStack() {
                                 }
                             `}
                             style={{
-                                backgroundColor: activeTab === cat.id ? "#3DDC84" : "var(--background)",
+                                backgroundColor: activeTab === cat.id ? "#166534" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -144,9 +144,9 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.name}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

@@ -13,17 +13,17 @@ export default function ServiceOverview() {
         {
             icon: Users,
             title: "High-Intent Leads",
-            description: <span>We target the "money keywords." Our <Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--brand-seo)]">local SEO strategies</Link> target users at the bottom of the funnel—those ready to buy—ensuring your traffic converts into revenue.</span>,
+            description: <span>We target the "money keywords." Our <Link href="/services/seo-services/local-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)]">local SEO strategies</Link> target users at the bottom of the funnel—those ready to buy—ensuring your traffic converts into revenue.</span>,
         },
         {
             icon: Globe,
             title: "Brand Authority",
-            description: <span>Ranking highly signals trust. We use E-E-A-T principles to position your brand as the industry leader, critical for <Link href="/services/seo-services/on-page-seo-services" className="hover:text-[var(--brand-seo)]">on-page authority</Link> and trust.</span>,
+            description: <span>Ranking highly signals trust. We use E-E-A-T principles to position your brand as the industry leader, critical for <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)]">on-page authority</Link> and trust.</span>,
         },
         {
             icon: Eye,
             title: "ROI-Focused Growth",
-            description: <span>We don't just chase rankings; we chase revenue. Our <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)]">technical SEO audits</Link> are aligned with your business KPIs, ensuring every optimization contributes to your bottom line.</span>,
+            description: <span>We don't just chase rankings; we chase revenue. Our <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)]">technical SEO audits</Link> are aligned with your business KPIs, ensuring every optimization contributes to your bottom line.</span>,
         },
     ];
 
@@ -40,15 +40,15 @@ export default function ServiceOverview() {
                         }}
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             ORGANIC GROWTH
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        The Power of <span style={{ color: "var(--brand-seo)" }}>Organic Growth</span>
+                        The Power of <span style={{ color: "var(--accent-green-text)" }}>Organic Growth</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        In an era of AI Overviews and evolving core updates, long-term organic search visibility is your most valuable asset. We combine <Link href="/services/seo-services/technical-seo-services" style={{ color: "var(--brand-seo)" }}>Technical SEO</Link>, <Link href="/services/seo-services/local-seo-services" style={{ color: "var(--brand-seo)" }}>Local SEO strategies</Link>, and <Link href="/services/seo-services/on-page-seo-services" style={{ color: "var(--brand-seo)" }}>On-Page optimization</Link> with <Link href="/services/seo-services/link-building" style={{ color: "var(--brand-seo)" }}>link building</Link> to create authority. Pair this with <Link href="/services/performance-marketing" style={{ color: "var(--brand-seo)" }}>performance marketing</Link> for maximum reach.
+                        In an era of AI Overviews and evolving core updates, long-term organic search visibility is your most valuable asset. We combine <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2" style={{ color: "var(--accent-green-text)" }}>Technical SEO</Link>, <Link href="/services/seo-services/local-seo-services" className="underline underline-offset-2" style={{ color: "var(--accent-green-text)" }}>Local SEO strategies</Link>, and <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2" style={{ color: "var(--accent-green-text)" }}>On-Page optimization</Link> with <Link href="/services/seo-services/link-building" className="underline underline-offset-2" style={{ color: "var(--accent-green-text)" }}>link building</Link> to create authority. Pair this with <Link href="/services/performance-marketing" className="underline underline-offset-2" style={{ color: "var(--accent-green-text)" }}>performance marketing</Link> for maximum reach.
                     </p>
                 </div>
 
@@ -84,7 +84,7 @@ export default function ServiceOverview() {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--brand-seo)] transition-colors">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--accent-green-text)] transition-colors">
                                     {feature.title}
                                 </h3>
                                 <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -111,7 +111,7 @@ export default function ServiceOverview() {
                         <Link
                             href="/contact"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform"
-                            style={{ backgroundColor: "var(--brand-seo)" }}
+                            style={{ backgroundColor: "#166534" }}
                             aria-label="Get started with organic growth"
                         >
                             Get Started
@@ -127,14 +127,14 @@ export default function ServiceOverview() {
                         <Link href="/blog/mastering-seo-organic-growth" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">🚀</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-seo)] transition-colors">Mastering SEO for Organic Growth</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--accent-green-text)] transition-colors">Mastering SEO for Organic Growth</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Complete guide to sustainable SEO strategies</p>
                             </div>
                         </Link>
                         <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <span className="text-2xl">⚡</span>
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-seo)] transition-colors">SEO + PPC Hybrid Funnels</h4>
+                                <h4 className="font-semibold group-hover:text-[var(--accent-green-text)] transition-colors">SEO + PPC Hybrid Funnels</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>How combining organic and paid converts 2x better</p>
                             </div>
                         </Link>

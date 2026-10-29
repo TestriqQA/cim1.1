@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
         {
             icon: Rocket,
             title: "Full-Stack Strategy & Execution",
-            description: <span>From <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue)] transition-colors">custom website development</Link> to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-blue)] transition-colors">AI-powered marketing automation</Link>, we provide end-to-end services that eliminate the need for multiple vendors. Our integrated approach ensures your web design, <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-blue)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] transition-colors">SEO</Link>, and <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue)] transition-colors">performance marketing</Link> work in perfect harmony to drive business growth.</span>,
+            description: <span>From <Link href="/services/web-design-development" className="hover:text-[var(--brand-blue-text)] transition-colors">custom website development</Link> to <Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--brand-blue-text)] transition-colors">AI-powered marketing automation</Link>, we provide end-to-end services that eliminate the need for multiple vendors. Our integrated approach ensures your web design, <Link href="/services/mobile-app-development" className="hover:text-[var(--brand-blue-text)] transition-colors">mobile apps</Link>, <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] transition-colors">SEO</Link>, and <Link href="/services/performance-marketing" className="hover:text-[var(--brand-blue-text)] transition-colors">performance marketing</Link> work in perfect harmony to drive business growth.</span>,
             colorFrom: "var(--brand-blue)",
             colorTo: "var(--brand-teal)",
         },
@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         {
             icon: Shield,
             title: "Cutting-Edge Technology & Innovation",
-            description: <span>We leverage the latest technologies - from <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-purple)] transition-colors">Next.js</Link> and React to advanced AI models and automation tools - to future-proof your digital infrastructure. Our enterprise-grade security, performance-first architecture, and scalable systems ensure your business stays ahead of the curve.</span>,
+            description: <span>We leverage the latest technologies - from <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-[var(--brand-purple-text)] transition-colors">Next.js</Link> and React to advanced AI models and automation tools - to future-proof your digital infrastructure. Our enterprise-grade security, performance-first architecture, and scalable systems ensure your business stays ahead of the curve.</span>,
             colorFrom: "var(--brand-blue)",
             colorTo: "var(--brand-purple)",
         },
@@ -78,8 +78,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(90deg, color-mix(in srgb,var(--brand-blue) 8%,transparent), color-mix(in srgb,var(--brand-purple) 8%,transparent))",
                         }}
                     >
-                        <Award className="w-4 h-4 text-[var(--brand-blue)]" />
-                        <span className="text-sm font-semibold text-[var(--brand-blue)]">Why Choose Us</span>
+                        <Award className="w-4 h-4 text-[var(--brand-blue-text)]" />
+                        <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Why Choose Us</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--foreground)]">

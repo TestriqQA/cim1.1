@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Award className="w-4 h-4" style={{ color: amazonOrange }} />
-                        <span className="text-sm font-medium" style={{ color: amazonOrange }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-orange-text)" }}>
                             Why Partner With Us
                         </span>
                     </div>
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Why Partner{" "}
                         <span
-                            style={{ color: amazonOrange }}
+                            style={{ color: "var(--accent-orange-text)" }}
                         >
                             With Us?
                         </span>

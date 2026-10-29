@@ -21,7 +21,7 @@ export default function SupportServices() {
         {
             icon: Wrench,
             title: "IT Business Support Services",
-            description: <span>Keep your <Link href="/services/web-design-development" className="hover:text-[var(--foreground)] font-medium">digital assets</Link> secure and optimized.</span>,
+            description: <span>Keep your <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--foreground)] font-medium">digital assets</Link> secure and optimized.</span>,
             features: ["Regular updates & Patch Management", "Uptime Monitoring", "Additional technical support"],
         },
         {
@@ -40,17 +40,24 @@ export default function SupportServices() {
             icon: ShieldCheck,
             title: "Specialized Industry Support",
             description: "Tailored solutions for niche sectors.",
-            features: [<span><Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--foreground)]">Healthcare</Link> admin assistance</span>, <span><Link href="/services/web-design-development/real-estate-platforms" className="hover:text-[var(--foreground)]">Real estate</Link> listing management</span>, <span>Additional <Link href="/services/performance-marketing" className="hover:text-[var(--foreground)]">marketing support</Link></span>],
+            features: [<span><Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:text-[var(--foreground)]">Healthcare</Link> admin assistance</span>, <span><Link href="/services/web-design-development/real-estate-platforms" className="underline underline-offset-2 hover:text-[var(--foreground)]">Real estate</Link> listing management</span>, <span>Additional <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--foreground)]">marketing support</Link></span>],
         },
         {
             icon: Headset,
             title: "Customer Support & Lead Gen",
-            description: <span>Grow your revenue with active <Link href="/services/social-media-marketing-services" className="hover:text-[var(--foreground)] font-medium">engagement</Link>.</span>,
+            description: <span>Grow your revenue with active <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:text-[var(--foreground)] font-medium">engagement</Link>.</span>,
             features: ["Supplementary customer support", "Supplementary lead generation", "24/7 chat resolution"],
         },
     ];
 
     const colors = ["#4b277a", "#fab900", "#97288e"];
+
+    // Theme-aware text equivalents. Only for TEXT sites — backgrounds/gradients/
+    // shadows keep the raw hex so `${color}15`-style interpolation stays valid.
+    const textAccent = (c: string) =>
+        c === "#fab900" ? "var(--accent-amber-text)" :
+            c === "#4b277a" ? "var(--accent-violet-text)" :
+                c === "#97288e" ? "var(--brand-purple-text)" : c;
 
     return (
         <section
@@ -70,17 +77,17 @@ export default function SupportServices() {
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-4 md:px-5 py-2 md:py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
-                            backgroundColor: "color-mix(in srgb, #fab900 10%, transparent)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "#fab900",
                         }}
                     >
-                        <Wrench className="w-4 h-4" style={{ color: "#fab900" }} />
-                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "#fab900" }}>
+                        <Wrench className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             OUR SERVICES
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-                        Comprehensive <span style={{ color: "#fab900" }}>Business Support</span> Services
+                        Comprehensive <span style={{ color: "var(--accent-amber-text)" }}>Business Support</span> Services
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto px-4" style={{ color: "var(--secondary-text)" }}>
                         From Outsourced back-office support solutions to strategic IT maintenance, we offer a full suite of Custom business support packages tailored for agencies, startups, and enterprises.
@@ -121,7 +128,7 @@ export default function SupportServices() {
                                 {/* Title */}
                                 <h3
                                     className="text-base sm:text-lg font-bold mb-2 sm:mb-3 transition-colors duration-300"
-                                    style={{ color: isHovered ? color : "var(--foreground)" }}
+                                    style={{ color: isHovered ? textAccent(color) : "var(--foreground)" }}
                                 >
                                     {service.title}
                                 </h3>
@@ -139,7 +146,7 @@ export default function SupportServices() {
                                             className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all duration-300"
                                             style={{
                                                 backgroundColor: isHovered ? `${color}15` : "var(--hover-bg)",
-                                                color: isHovered ? color : "var(--secondary-text)",
+                                                color: isHovered ? textAccent(color) : "var(--secondary-text)",
                                             }}
                                         >
                                             {feature}

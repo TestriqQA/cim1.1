@@ -19,8 +19,12 @@ export interface ProductSupport {
     slug: string;
     productName: string;
     supportEmail: string;
-    supportPhone: string;
-    responseTime: string;
+    // Optional: a product whose team publishes no phone number, or no
+    // response-time commitment, omits these rather than borrowing CIM's. The
+    // support page guards both, so it drops the call button and the response
+    // badge instead of rendering an empty `tel:` link or an invented SLA.
+    supportPhone?: string;
+    responseTime?: string;
     intro: string;
     channels: SupportChannel[];
     commonIssues: SupportFAQ[];
@@ -47,124 +51,111 @@ export const productSupportData: ProductSupport[] = [
             { question: "I've reached my daily generation limit", answer: "Free tier users have a daily limit on comment generations. Upgrade to Pro or Business plan for unlimited generations. Your limit resets at midnight UTC daily." },
         ],
     },
+    // ==========================================================================
+    // Kruti.io — Cinute InfoMedia is the support desk.
+    //
+    // Kruti.io is built and operated by Cinute Digital Pvt. Ltd., but CIM fields
+    // enquiries for it on the same line and the same SLA as ChimeGenius. The
+    // phone and response time below are CIM's own commitments, not figures
+    // borrowed from kruti.io — kruti.io publishes no phone number and no general
+    // support SLA (only a 24-hour grievance acknowledgement and a 3-business-day
+    // refund reply, neither of which is a support-desk promise).
+    //
+    // The support@kruti.io addresses that remain are the ones tied to actions
+    // inside Kruti.io's own systems — cancelling a subscription, a Razorpay
+    // refund, account deletion, data export. CIM cannot execute those, and
+    // Kruti.io publishes its own timings for them, so routing them here would
+    // publish an instruction that quietly fails.
+    // ==========================================================================
     {
-        slug: "testriq-qa",
-        productName: "TestriqQA",
-        supportEmail: "support@testriq.com",
-        supportPhone: "+91-9004988859",
-        responseTime: "Within 4 business hours",
-        intro: "Our dedicated support team is here to help you get the most out of TestriqQA. Whether you're facing issues with test generation, CI/CD integration, or dashboard analytics, we're just a message away.",
-        channels: [
-            { icon: "Mail", title: "Email Support", description: "Send us a detailed description of your issue and our engineering team will respond within 4 business hours.", action: "Send Email", href: "mailto:support@testriq.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Chat with our support team in real-time during business hours (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Documentation", description: "Browse our comprehensive docs for setup guides, API references, troubleshooting tips, and best practices.", action: "View Docs", href: "/contact" },
-            { icon: "Users", title: "Community Forum", description: "Connect with other TestriqQA users, share test strategies, and get peer support from the community.", action: "Join Community", href: "/contact" },
-        ],
-        commonIssues: [
-            { question: "My tests are failing after a codebase update", answer: "TestriqQA's AI automatically adapts to code changes, but major refactors may require re-running the analysis. Go to Settings → Re-analyze Repository to trigger a fresh scan." },
-            { question: "CI/CD pipeline integration is not triggering tests", answer: "Ensure your webhook is correctly configured in your CI/CD settings. Check that the TestriqQA API key is set as an environment variable and that the correct branch patterns are defined." },
-            { question: "Visual regression tests show false positives", answer: "Adjust the pixel tolerance threshold in your test configuration. Minor rendering differences across environments can sometimes trigger false positives — we recommend a 0.1% threshold." },
-            { question: "Dashboard data is not updating", answer: "Data syncs every 5 minutes. If you're seeing stale data, try a hard refresh (Ctrl+Shift+R). For persistent issues, check your browser's console for API errors and contact support." },
-        ],
-    },
-    {
-        slug: "cim-chatbot",
-        productName: "CIM ChatBot",
+        slug: "kruti-io",
+        productName: "Kruti.io",
+        // Cinute InfoMedia is the front door for Kruti.io enquiries, same as it
+        // is for ChimeGenius. The addresses that stay pointed at support@kruti.io
+        // below are the ones tied to actions inside Kruti.io's own systems —
+        // cancelling a subscription, a Razorpay refund, deleting an account —
+        // which CIM cannot execute and which Kruti.io publishes its own SLA for.
+        // Sending those here would publish an instruction that quietly fails.
         supportEmail: "support@cinuteinfomedia.com",
         supportPhone: "+91-9004988859",
         responseTime: "Within 4 business hours",
-        intro: "Need help with your chatbot setup, knowledge base training, or multi-channel deployment? Our support team specializes in conversational AI and is ready to assist you.",
+        intro: "Need help with your Kruti.io subscription, LinkedIn connection or content generation? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help. Kruti.io is built and operated by Cinute Digital Pvt. Ltd., so actions that run inside the platform itself — cancellations, refunds and account deletion — are handled by that team at support@kruti.io.",
         channels: [
-            { icon: "Mail", title: "Email Support", description: "Reach out with your chatbot configuration questions. Include your bot ID for faster resolution.", action: "Send Email", href: "mailto:support@cinuteinfomedia.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Ironically, you can chat with our human support team to get help with your chatbot (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Knowledge Base", description: "Step-by-step guides for chatbot training, channel integration, lead flow setup, and analytics configuration.", action: "Browse Guides", href: "/contact" },
-            { icon: "Video", title: "Video Tutorials", description: "Watch walkthrough videos covering chatbot setup, RAG configuration, and advanced conversation design.", action: "Watch Videos", href: "/contact" },
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with the email address on your Kruti.io account and a description of the issue. For billing questions, include the date of the payment in question.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
+            { icon: "HelpCircle", title: "Product FAQ", description: "Answers on how the AI learns your voice, editing posts before they publish, what happens after the 7-day trial, and how billing works.", action: "Read the FAQ", href: "https://kruti.io/#faq" },
+            { icon: "BookOpen", title: "The Kruti Journal", description: "Long-form guides on LinkedIn strategy, personal branding, content analytics and lead generation, published by the Kruti.io team.", action: "Read the blog", href: "https://kruti.io/blog" },
+            { icon: "Zap", title: "Manage Your Subscription", description: "Cancel or change your plan from Settings, under Subscription, in your Kruti.io account — or email support@kruti.io. Access continues to the end of the current billing period.", action: "Go to Kruti.io", href: "https://kruti.io/" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Rolling Kruti.io out across a team, or looking for the digital marketing and web work Cinute InfoMedia builds around it? Start a conversation.", action: "Contact us", href: "/contact" },
         ],
         commonIssues: [
-            { question: "My chatbot gives incorrect answers", answer: "Review your knowledge base content for accuracy. The chatbot's responses are grounded in the data you provide. Update or add documents via the Knowledge Base tab and re-index." },
-            { question: "WhatsApp integration is not connecting", answer: "Ensure you have a verified WhatsApp Business account and that the Twilio/Meta webhook URL matches your CIM ChatBot dashboard. Re-authenticate if the token has expired." },
-            { question: "Chatbot responses are too slow", answer: "Response latency typically depends on the complexity of your knowledge base. Consider breaking large documents into smaller, focused sections for faster retrieval." },
-            { question: "Lead data is not syncing to my CRM", answer: "Verify that your CRM integration (HubSpot, Salesforce, etc.) is connected with valid OAuth credentials. Check the Integrations → Sync Logs for error details." },
+            { question: "How do I sign in? I don't see an email or password option.", answer: "LinkedIn OAuth is the only sign-in method. There is no email and password, Google or magic-link login, and no separate sign-up page — authorising Kruti.io on LinkedIn creates your account. One Kruti.io account per LinkedIn profile is permitted." },
+            { question: "How do I cancel my subscription?", answer: "Go to Settings, then Subscription, then Cancel Subscription in the app, or email a cancellation request to support@kruti.io. Your subscription stays active until the end of the current billing period and you keep full access until it expires. No partial-month refunds are provided for mid-cycle cancellations." },
+            { question: "Can I get a refund?", answer: "Refunds are available in three cases: within 48 hours of your first subscription payment if you have not generated any content; a pro-rated refund if the platform is unavailable for more than 72 consecutive hours in a billing period due to issues on Kruti.io's end, excluding maintenance announced in advance; and a full refund for billing errors such as duplicate or incorrect charges. Email support@kruti.io with the subject line \"Refund Request\", your registered email address, the reason and the payment date. Requests are reviewed within 3 business days, approved refunds are processed within 5 to 7 business days via Razorpay, and the bank-side credit typically takes a further 5 to 10 business days. Dissatisfaction with AI content quality is not eligible for a refund." },
+            { question: "How do I delete my account, export my data, or disconnect LinkedIn?", answer: "Account deletion and data export are handled by email — contact support@kruti.io. On deletion, all user data, content plans, posts and newsletters are permanently deleted from the database, and the deletion cascades through all related records. You can revoke Kruti.io's LinkedIn access yourself at any time from LinkedIn's Settings, under Data Privacy and Permitted Services." },
+            { question: "My payment failed, or my account says past due.", answer: "If a payment fails, your account status changes to past due. After repeated failures, access to the dashboard may be restricted until the payment is resolved. Billing runs monthly through Razorpay on the anniversary of your subscription start date. Note that chargebacks filed without contacting support first may result in temporary suspension pending investigation." },
         ],
     },
+    // ==========================================================================
+    // AssetMon — support runs through Cinute InfoMedia.
+    //
+    // AssetMon's own pages list five addresses on assetmon.app (hello@,
+    // support@, security@, enterprise@, status@). That domain returns NXDOMAIN
+    // from both 8.8.8.8 and 1.1.1.1, so mail sent to any of them cannot be
+    // delivered. Publishing them here would hand customers dead addresses, so
+    // every channel routes to CIM on the same line and SLA as the other
+    // products. Restore the product addresses if and when the domain resolves.
+    // ==========================================================================
     {
-        slug: "cim-autoflow",
-        productName: "CIM AutoFlow",
+        slug: "assetmon",
+        productName: "AssetMon",
         supportEmail: "support@cinuteinfomedia.com",
         supportPhone: "+91-9004988859",
         responseTime: "Within 4 business hours",
-        intro: "Running into issues with your workflows, integrations, or triggers? Our automation experts are here to help you build, debug, and optimize your business processes.",
+        intro: "Need help with your AssetMon workspace, a CSV import, the API, SSO or billing? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
         channels: [
-            { icon: "Mail", title: "Email Support", description: "Describe your workflow issue with the workflow ID and our team will diagnose and respond within 4 business hours.", action: "Send Email", href: "mailto:support@cinuteinfomedia.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Get real-time help with workflow configuration, trigger setup, and debugging (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Automation Guides", description: "Explore templates, integration guides, and best practices for building effective automation workflows.", action: "View Guides", href: "/contact" },
-            { icon: "Zap", title: "Workflow Templates", description: "Browse 100+ pre-built workflow templates for common business processes. Clone and customize instantly.", action: "Browse Templates", href: "/contact" },
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with your workspace name and a description of the issue. For an import problem, attach a few sample rows from the CSV.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
+            { icon: "HelpCircle", title: "Product FAQ", description: "Answers on setup time, importing an existing inventory, how tenant isolation works, what the trial includes and how billing runs.", action: "Read the FAQ", href: "https://assetm.cinuteinfomedia.com/#faq" },
+            { icon: "BookOpen", title: "Guides & Glossary", description: "Long-form guides on IT asset management practice, plus a glossary of the terms that come up in audits, licensing and depreciation.", action: "Read the guides", href: "https://assetm.cinuteinfomedia.com/blog" },
+            { icon: "Zap", title: "Security & Compliance", description: "How tenant isolation, encryption, audit logging and access control work, and how to request a DPA or an InfoSec review.", action: "Read the security page", href: "https://assetm.cinuteinfomedia.com/security" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Rolling AssetMon out across several sites or teams, or want it integrated with what you already run? Start a conversation.", action: "Contact us", href: "/contact" },
         ],
         commonIssues: [
-            { question: "My workflow is not triggering", answer: "Check that your trigger conditions are correctly configured. For webhook triggers, verify the endpoint URL is accessible. For scheduled triggers, confirm the timezone and cron expression." },
-            { question: "Integration credentials expired", answer: "OAuth tokens expire periodically. Go to Settings → Integrations, disconnect the affected service, and reconnect with fresh credentials." },
-            { question: "Workflow execution failed with an error", answer: "Open the Execution Logs for the specific workflow run. Each step shows detailed input/output data and error messages. Contact support with the execution ID for complex issues." },
-            { question: "Data is not mapping correctly between apps", answer: "Review your field mappings in the workflow action step. Ensure source and destination field types match. Use the Transform step to convert data formats if needed." },
+            { question: "How do I import my existing asset spreadsheet?", answer: "Use the CSV import. AssetMon auto-maps category, location and department by name, so an existing spreadsheet comes across without being rebuilt. If a column does not map cleanly, email support@cinuteinfomedia.com with a few sample rows and we will help you shape the file." },
+            { question: "What is on the free Starter plan, and what needs Business?", answer: "Starter is free and covers up to 5 users and 50 assets with core asset tracking, CSV import and export, and email support. Service tickets, maintenance schedules, procurement, the depreciation engine, the API and webhooks, and SSO are Business features. A 30-day trial opens up everything in Business with no card required." },
+            { question: "How is my workspace separated from other customers?", answer: "Each workspace runs in its own isolated PostgreSQL database rather than sharing tables behind a tenant column. Data is encrypted in transit with TLS 1.2 or higher and at rest with AES-256, and backups are encrypted with separate keys. Access is role-based, and every asset event is written to an immutable audit log." },
+            { question: "What happens to my data at the end of the trial, or if I cancel?", answer: "At the end of the trial the workspace pauses for 14 days while you decide, and you can export everything during that window. After a cancellation, workspace data is deleted within 30 days, so take your CSV or API export before then if you want to keep it." },
+            { question: "How do I connect SSO or use the API?", answer: "SSO through Google, Microsoft Entra ID or SAML is available on Business and above, and SCIM 2.0 user provisioning on Enterprise. API access uses tenant-scoped keys that are hashed at rest and can be read-only or read-write, with revocation and expiry; webhooks are HMAC-SHA256 signed and retried three times. The OpenAPI documentation covers both." },
         ],
     },
+    // ==========================================================================
+    // TopCareerLive — support runs through Cinute InfoMedia.
+    //
+    // topcareerlive.com publishes NO contact details at all: no email, no phone,
+    // no contact page (/contact and /contact-us both 404). Every channel here is
+    // CIM's, and the answers stay within what the platform verifiably does —
+    // the site's own five FAQ answers are one repeated block of boilerplate that
+    // answers none of the questions asked, so none of it is reproduced.
+    // ==========================================================================
     {
-        slug: "cim-analytics",
-        productName: "CIM Analytics",
+        slug: "topcareerlive",
+        productName: "TopCareerLive",
         supportEmail: "support@cinuteinfomedia.com",
         supportPhone: "+91-9004988859",
         responseTime: "Within 4 business hours",
-        intro: "Having trouble connecting data sources, configuring dashboards, or generating reports? Our analytics support team is ready to help you get insights flowing.",
+        intro: "Questions about posting a role, managing applicants, your candidate profile or a job alert? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
         channels: [
-            { icon: "Mail", title: "Email Support", description: "Send us your dashboard or data source query. Include screenshots if possible for faster diagnosis.", action: "Send Email", href: "mailto:support@cinuteinfomedia.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Chat with our analytics specialists during business hours (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Analytics Docs", description: "Guides for connecting data sources, building custom dashboards, configuring alerts, and generating reports.", action: "View Docs", href: "/contact" },
-            { icon: "Presentation", title: "Webinars", description: "Join live webinars on marketing analytics best practices, dashboard design, and data-driven decision making.", action: "Register", href: "/contact" },
+            { icon: "Mail", title: "Email Support", description: "Email support@cinuteinfomedia.com with the email address on your TopCareerLive account and a description of the issue. For a problem with a specific listing, include its link.", action: "Email support@cinuteinfomedia.com", href: "mailto:support@cinuteinfomedia.com" },
+            { icon: "Users", title: "For Employers", description: "Company profiles, posting a role, and filtering, ranking and tracking applicants through your own hiring stages.", action: "Employer overview", href: "https://topcareerlive.com/employers" },
+            { icon: "HelpCircle", title: "For Candidates", description: "Create a profile, search roles by location, experience and freshness, and set up job alerts by email or WhatsApp.", action: "Browse jobs", href: "https://topcareerlive.com/search" },
+            { icon: "BookOpen", title: "Career Insights", description: "Articles on building a career, written for candidates working out what to apply for next.", action: "Read the blog", href: "https://topcareerlive.com/blog" },
+            { icon: "MessageSquare", title: "Work With Us", description: "Hiring at volume, or want TopCareerLive fitted to how your team already recruits? Start a conversation.", action: "Contact us", href: "/contact" },
         ],
         commonIssues: [
-            { question: "Google Analytics data is not syncing", answer: "Re-authenticate your Google Analytics connection via Settings → Data Sources. Ensure you've granted read-only access to the correct GA4 property." },
-            { question: "Dashboard shows no data for a specific date range", answer: "Some data sources have processing delays (up to 48 hours for certain ad platforms). Check the data source status indicator for sync timestamps." },
-            { question: "Report PDF export is failing", answer: "Large reports with many widgets may timeout. Try reducing the number of widgets or splitting into multiple reports. Contact support if the issue persists." },
-            { question: "Client portal is showing wrong data", answer: "Verify the client portal data source filters. Each portal should be scoped to the correct accounts and properties. Check Portals → Settings → Data Filters." },
-        ],
-    },
-    {
-        slug: "cim-sitebuilder",
-        productName: "CIM SiteBuilder",
-        supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
-        responseTime: "Within 4 business hours",
-        intro: "Need help with your website design, deployment, domain setup, or performance optimization? Our web experts are here to ensure your site looks perfect and loads fast.",
-        channels: [
-            { icon: "Mail", title: "Email Support", description: "Describe your website issue or design question. Include your site URL for faster troubleshooting.", action: "Send Email", href: "mailto:support@cinuteinfomedia.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Get instant help with the visual editor, component customization, and deployment issues (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Builder Docs", description: "Comprehensive guides for using the drag-and-drop builder, custom components, SEO settings, and e-commerce setup.", action: "View Docs", href: "/contact" },
-            { icon: "Palette", title: "Design Gallery", description: "Browse professionally designed templates and section examples for inspiration and quick implementation.", action: "Browse Gallery", href: "/contact" },
-        ],
-        commonIssues: [
-            { question: "My custom domain is not connecting", answer: "Ensure your DNS records (CNAME or A record) are correctly pointing to our servers. DNS propagation can take up to 48 hours. Check Settings → Domains for verification status." },
-            { question: "Site PageSpeed score dropped", answer: "Check if you've added large unoptimized images or external scripts. SiteBuilder auto-optimizes, but third-party embeds can affect scores. Use the Performance tab for recommendations." },
-            { question: "E-commerce checkout is not processing payments", answer: "Verify your Stripe or PayPal API keys are correctly entered in Settings → Payments. Test with the built-in sandbox mode before going live." },
-            { question: "Changes are not reflecting after publish", answer: "Clear your browser cache and CDN cache. Go to Settings → Deployment → Purge Cache. Changes typically propagate within 1-2 minutes." },
-        ],
-    },
-    {
-        slug: "cim-socialhub",
-        productName: "CIM SocialHub",
-        supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
-        responseTime: "Within 4 business hours",
-        intro: "Having trouble with social account connections, post scheduling, or analytics tracking? Our social media experts are here to help you manage your presence effectively.",
-        channels: [
-            { icon: "Mail", title: "Email Support", description: "Reach out with your social media management query. Include your connected account details for faster assistance.", action: "Send Email", href: "mailto:support@cinuteinfomedia.com" },
-            { icon: "MessageSquare", title: "Live Chat", description: "Chat with our social media specialists during business hours (Mon–Fri, 9 AM – 7 PM IST).", action: "Start Chat", href: "/contact" },
-            { icon: "BookOpen", title: "Help Center", description: "Guides for connecting social accounts, scheduling posts, setting up the unified inbox, and generating analytics reports.", action: "Visit Help Center", href: "/contact" },
-            { icon: "Calendar", title: "Book a Call", description: "Schedule a one-on-one consultation with our social media strategist for personalized guidance and best practices.", action: "Book Now", href: "/contact" },
-        ],
-        commonIssues: [
-            { question: "Instagram account disconnected", answer: "Instagram requires periodic re-authentication due to Meta's API policies. Go to Settings → Connected Accounts → Instagram and click 'Reconnect'. Ensure your Instagram account is a Business or Creator account." },
-            { question: "Scheduled posts are not publishing", answer: "Check that the connected account still has valid permissions. For Instagram, ensure your Facebook Page is linked. Review the Publishing Queue for error messages." },
-            { question: "Analytics data is inconsistent with platform native data", answer: "Minor discrepancies are normal due to API data processing delays and timezone differences. Our data syncs every 15 minutes. For significant gaps, re-sync the account." },
-            { question: "Unified inbox is not showing all messages", answer: "Verify that inbox permissions are granted for each connected platform. Some platforms (e.g., Instagram DMs) require additional OAuth scopes. Reconnect with full permissions." },
+            { question: "How do I create an account?", answer: "Register with an email address and password, or continue with a Google account. The candidate flow collects your name, email, mobile number and current location, and lets you upload a CV as a PDF, DOC or DOCX file, then walks you through employment, education and job preferences." },
+            { question: "How do I get told about new roles?", answer: "Job alerts are delivered by email and on WhatsApp, so a matching role reaches you without you having to keep checking. Alert preferences are set during registration and can be changed from your profile." },
+            { question: "How do I narrow a job search?", answer: "Filter by location, experience level from fresher upwards, and how recently a role was posted — any time, the last 24 hours, the last 7 days, or the last 30 days. Results can also be narrowed by category and role type." },
+            { question: "How do I edit, renew or pause a job I have posted?", answer: "From the employer dashboard, any live listing can be edited, renewed or paused in a single click, so a role comes down as soon as it is filled and goes back up if the hire falls through." },
+            { question: "How much does it cost to post a job?", answer: "TopCareerLive does not currently publish pricing for job postings. Email support@cinuteinfomedia.com and we will put you in touch with the right person." },
         ],
     },
 ];

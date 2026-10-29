@@ -83,12 +83,12 @@ export default function Process() {
                         }}
                     >
                         <CheckCircle className="w-4 h-4" style={{ color: metaBlue }} />
-                        <span className="text-sm font-semibold" style={{ color: metaBlue }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        How We <span style={{ color: metaBlue }}>Work</span>
+                        How We <span style={{ color: "var(--brand-blue-text)" }}>Work</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A proven 6-step process for Meta Ads success.
@@ -157,7 +157,7 @@ export default function Process() {
                                                     className="text-xs font-bold px-3 py-1 rounded-full"
                                                     style={{
                                                         backgroundColor: `${metaBlue}20`,
-                                                        color: metaBlue,
+                                                        color: "var(--brand-blue-text)",
                                                     }}
                                                 >
                                                     Step {step.id}
@@ -166,7 +166,7 @@ export default function Process() {
 
                                             <h3
                                                 className="text-xl font-bold mb-2 transition-colors duration-300"
-                                                style={{ color: isHovered ? metaBlue : "var(--foreground)" }}
+                                                style={{ color: isHovered ? "var(--brand-blue-text)" : "var(--foreground)" }}
                                             >
                                                 {step.title}
                                             </h3>
@@ -182,7 +182,7 @@ export default function Process() {
                                                         className="px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300"
                                                         style={{
                                                             borderColor: isHovered ? metaBlue : `${metaBlue}30`,
-                                                            color: isHovered ? metaBlue : "var(--secondary-text)",
+                                                            color: isHovered ? "var(--brand-blue-text)" : "var(--secondary-text)",
                                                             backgroundColor: isHovered ? `${metaBlue}10` : "transparent",
                                                             transitionDelay: `${dIdx * 50}ms`,
                                                         }}

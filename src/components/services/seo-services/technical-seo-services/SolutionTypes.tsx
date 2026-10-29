@@ -22,7 +22,7 @@ export default function SolutionTypes() {
         {
             id: "ecommerce",
             title: <Link href="/services/seo-services/ecommerce-seo-services" className="hover:underline">Technical SEO Audit for Ecommerce Websites</Link>,
-            description: <>Optimize large-scale catalogs. We handle <Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-purple-500 transition-colors">technical SEO audit for ecommerce websites</Link> (<Link href="/services/web-design-development/shopify-development-services" className="hover:text-purple-500 transition-colors">Shopify</Link>, Magento), fixing faceted navigation issues and canonical tag errors to prevent duplicate content.</>,
+            description: <>Optimize large-scale catalogs. We handle <Link href="/services/seo-services/ecommerce-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO audit for ecommerce websites</Link> (<Link href="/services/web-design-development/shopify-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Shopify</Link>, Magento), fixing faceted navigation issues and canonical tag errors to prevent duplicate content.</>,
             icon: Store,
             color: techPurple,
         },
@@ -36,14 +36,14 @@ export default function SolutionTypes() {
         {
             id: "publishers",
             title: "Technical SEO for News & Media Websites",
-            description: <>Timing is everything. We optimize <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-purple-500 transition-colors">Technical SEO for news websites</Link> with accelerated indexation strategies and News-optimized schema markup for top-story placement.</>,
+            description: <>Timing is everything. We optimize <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">Technical SEO for news websites</Link> with accelerated indexation strategies and News-optimized schema markup for top-story placement.</>,
             icon: Newspaper,
             color: "#F59E0B",
         },
         {
             id: "saas",
             title: <Link href="/services/web-design-development/saas-development-services" className="hover:underline">Technical SEO Services for SaaS Companies</Link>,
-            description: <>For software platforms, we specialize in <Link href="/services/web-design-development/nextjs-development-services" className="hover:text-purple-500 transition-colors">JavaScript SEO optimization</Link> and server-side rendering for SEO, ensuring your dynamic app content is fully readable by Googlebot.</>,
+            description: <>For software platforms, we specialize in <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">JavaScript SEO optimization</Link> and server-side rendering for SEO, ensuring your dynamic app content is fully readable by Googlebot.</>,
             icon: Layers,
             color: "#22C55E",
         },
@@ -57,7 +57,7 @@ export default function SolutionTypes() {
         {
             id: "database",
             title: <Link href="/services/web-design-development/real-estate-platforms" className="hover:underline">Technical SEO for Marketplace & Real Estate</Link>,
-            description: <>Handle millions of dynamic listings. Our <Link href="/services/web-design-development/real-estate-platforms" className="hover:text-purple-500 transition-colors">technical SEO for real estate platforms</Link> and marketplaces ensures efficient crawling of fast-changing data sets.</>,
+            description: <>Handle millions of dynamic listings. Our <Link href="/services/web-design-development/real-estate-platforms" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">technical SEO for real estate platforms</Link> and marketplaces ensures efficient crawling of fast-changing data sets.</>,
             icon: Database,
             color: "#06B6D4",
         },
@@ -79,13 +79,13 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: techPurple }} />
-                        <span className="text-sm font-medium" style={{ color: techPurple }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Technical Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Tailored Technical SEO Audit for <span style={{ color: techPurple }}>Global Enterprises</span>
+                        Tailored Technical SEO Audit for <span style={{ color: "var(--accent-violet-text)" }}>Global Enterprises</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Different tech stacks and business models face unique challenges. We provide specialized technical SEO services for SaaS companies, e-commerce giants, and massive marketplace platforms.

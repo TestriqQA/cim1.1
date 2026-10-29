@@ -294,17 +294,17 @@ export default function WebsiteTypes() {
                         }}
                     >
                         <Globe className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue)" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Website Types
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Comprehensive <span style={{ color: "var(--brand-blue)", fontWeight: 700 }}>Custom Website Development</span> Solutions
+                        Comprehensive <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>Custom Website Development</span> Solutions
                     </h2>
 
                     <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As a professional <span className="text-[var(--brand-blue)] font-bold">web design agency</span>, we offer full-spectrum digital engineering. Our <span className="text-[var(--brand-teal)] font-bold">web development agency</span> delivers scalable, secure, and SEO-optimized platforms for global markets.
+                        As a professional <span className="text-[var(--brand-blue-text)] font-bold">web design agency</span>, we offer full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">web development agency</span> delivers scalable, secure, and SEO-optimized platforms for global markets.
                     </p>
 
                     <div
@@ -326,7 +326,7 @@ export default function WebsiteTypes() {
                             className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "core" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
-                                background: activeTab === "core" ? "var(--brand-blue)" : "transparent",
+                                background: activeTab === "core" ? "var(--brand-blue-btn)" : "transparent",
                                 color: activeTab === "core" ? "white" : "var(--secondary-text)"
                             }}
                         >
@@ -337,7 +337,7 @@ export default function WebsiteTypes() {
                             className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "industry" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
-                                background: activeTab === "industry" ? "var(--brand-blue)" : "transparent",
+                                background: activeTab === "industry" ? "var(--brand-blue-btn)" : "transparent",
                                 color: activeTab === "industry" ? "white" : "var(--secondary-text)"
                             }}
                         >
@@ -348,7 +348,7 @@ export default function WebsiteTypes() {
                             className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "tech" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
-                                background: activeTab === "tech" ? "var(--brand-blue)" : "transparent",
+                                background: activeTab === "tech" ? "var(--brand-blue-btn)" : "transparent",
                                 color: activeTab === "tech" ? "white" : "var(--secondary-text)"
                             }}
                         >

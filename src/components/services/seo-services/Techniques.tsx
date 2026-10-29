@@ -80,6 +80,17 @@ export default function Techniques() {
         },
     ];
 
+    // Map per-card brand hue (used for borders/gradients/icons) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textColorMap: Record<string, string> = {
+        "#3b82f6": "var(--brand-blue-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#f59e0b": "var(--accent-amber-text)",
+        "#0EA5E9": "var(--accent-sky-text)",
+        "#06b6d4": "var(--accent-cyan-text)",
+    };
+
     return (
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Animated Grid Background */}
@@ -109,15 +120,15 @@ export default function Techniques() {
                         }}
                     >
                         <Rocket className="w-4 h-4 animate-bounce-subtle" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             SEO TECHNIQUES
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Types of <span style={{ color: "var(--brand-seo)" }}>SEO Techniques</span>
+                        Types of <span style={{ color: "var(--accent-green-text)" }}>SEO Techniques</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        We offer a holistic suite of solutions tailored to your specific needs, from <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--brand-seo)] transition-colors">Organic SEO for SaaS companies</Link> to <Link href="/services/seo-services/local-seo-services" className="hover:text-[var(--brand-seo)] transition-colors">local brick-and-mortar growth</Link>.
+                        We offer a holistic suite of solutions tailored to your specific needs, from <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Organic SEO for SaaS companies</Link> to <Link href="/services/seo-services/local-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">local brick-and-mortar growth</Link>.
                     </p>
                 </div>
 
@@ -183,7 +194,7 @@ export default function Techniques() {
                                             className="relative px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
                                             style={{
                                                 backgroundColor: `${tech.color}25`,
-                                                color: tech.color,
+                                                color: textColorMap[tech.color],
                                                 transform: isHovered ? "scale(1.1)" : "scale(1)",
                                             }}
                                         >
@@ -237,7 +248,7 @@ export default function Techniques() {
                                     <h3
                                         className="text-xl font-bold mb-3 transition-all duration-300 relative z-10"
                                         style={{
-                                            color: isHovered ? tech.color : "var(--foreground)",
+                                            color: isHovered ? textColorMap[tech.color] : "var(--foreground)",
                                         }}
                                     >
                                         {tech.title}

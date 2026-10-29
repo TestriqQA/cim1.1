@@ -13,7 +13,7 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What is hybrid app development?",
-            answer: <><span className="text-inherit">Hybrid app development is a software development approach where a single codebase is written using web technologies (HTML, CSS, JavaScript) and then wrapped in a native container. This allows the app to run on multiple platforms like </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#00b4d8] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#00b4d8] hover:underline">Android</Link> while still accessing native device features like GPS and Camera.</>,
+            answer: <><span className="text-inherit">Hybrid app development is a software development approach where a single codebase is written using web technologies (HTML, CSS, JavaScript) and then wrapped in a native container. This allows the app to run on multiple platforms like </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">Android</Link> while still accessing native device features like GPS and Camera.</>,
         },
         {
             question: "What are the benefits of hybrid apps vs native apps?",
@@ -29,7 +29,7 @@ export default function FAQ() {
         },
         {
             question: "How long does it take to develop a custom hybrid app?",
-            answer: <><span className="text-inherit">A standard hybrid app MVP can be developed in 8 to 12 weeks. Complex </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[#00b4d8] hover:underline">enterprise applications</Link> may take 4 to 6 months. The single codebase approach significantly reduces the timeline compared to native development.</>,
+            answer: <><span className="text-inherit">A standard hybrid app MVP can be developed in 8 to 12 weeks. Complex </span><Link href="/services/mobile-app-development/enterprise-application-development-services" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">enterprise applications</Link> may take 4 to 6 months. The single codebase approach significantly reduces the timeline compared to native development.</>,
         },
     ];
 
@@ -44,8 +44,8 @@ export default function FAQ() {
                             borderColor: "rgba(0, 180, 216, 0.2)",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#00b4d8" }} />
-                        <span className="text-sm font-medium" style={{ color: "#00b4d8" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Common Questions
                         </span>
                     </div>
@@ -79,7 +79,7 @@ export default function FAQ() {
                                     borderColor: "var(--border-color)",
                                 }}
                             >
-                                <AccordionTrigger className="text-left py-6 hover:no-underline hover:text-[#00b4d8] font-bold text-lg" style={{ color: "var(--foreground)" }}>
+                                <AccordionTrigger className="text-left py-6 hover:no-underline hover:text-[var(--accent-cyan-text)] font-bold text-lg" style={{ color: "var(--foreground)" }}>
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-lg leading-relaxed pb-6" style={{ color: "var(--foreground)" }}>

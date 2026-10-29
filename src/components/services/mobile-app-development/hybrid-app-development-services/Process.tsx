@@ -32,7 +32,7 @@ export default function Process() {
         {
             icon: Palette,
             title: "Hybrid Mobile App Design (UI/UX)",
-            description: <><span className="text-inherit">Our designers craft high-fidelity interfaces optimized for cross-platform compatibility and </span><Link href="/services/brand-identity-design" className="text-[#00b4d8] hover:underline">UI/UX</Link> retention.</>,
+            description: <><span className="text-inherit">Our designers craft high-fidelity interfaces optimized for cross-platform compatibility and </span><Link href="/services/brand-identity-design" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">UI/UX</Link> retention.</>,
             details: [
                 "Cross-platform UI patterns",
                 "User retention focus",
@@ -96,8 +96,8 @@ export default function Process() {
                             borderColor: "rgba(0, 180, 216, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#00b4d8" }} />
-                        <span className="text-sm font-medium" style={{ color: "#00b4d8" }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -193,13 +193,13 @@ export default function Process() {
                                                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                                                         style={{ backgroundColor: "rgba(0, 180, 216, 0.1)" }}
                                                     >
-                                                        <Icon className="w-5 h-5 text-[#00b4d8]" />
+                                                        <Icon className="w-5 h-5 text-[var(--accent-cyan-text)]" />
                                                     </div>
                                                     <div
                                                         className="px-3 py-1 rounded-full text-xs font-semibold"
                                                         style={{
                                                             backgroundColor: "rgba(0, 119, 182, 0.1)",
-                                                            color: "#0077b6",
+                                                            color: "var(--brand-blue-text)",
                                                         }}
                                                     >
                                                         {step.duration}
@@ -222,7 +222,7 @@ export default function Process() {
                                                 >
                                                     {step.details.map((detail, dIdx) => (
                                                         <div key={dIdx} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 text-[#00b4d8] flex-shrink-0" />
+                                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-cyan-text)] flex-shrink-0" />
                                                             <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                                 {detail}
                                                             </span>

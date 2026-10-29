@@ -86,7 +86,7 @@ export default function CTA() {
                                     href="/contact"
                                     className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
                                     style={{
-                                        backgroundColor: fbBlue,
+                                        backgroundColor: "#1d4ed8",
                                         boxShadow: `0 4px 20px ${fbBlue}40`
                                     }}
                                 >

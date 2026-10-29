@@ -1,26 +1,11 @@
-import dynamic from 'next/dynamic';
 import Hero from '@/components/services/web-design-development/business-corporate/Hero';
 import ServiceOverview from '@/components/services/web-design-development/business-corporate/ServiceOverview';
-
-// Lazy load below-the-fold components for better performance
-const WhyChooseUs = dynamic(() => import('@/components/services/web-design-development/business-corporate/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
-});
-const SolutionTypes = dynamic(() => import('@/components/services/web-design-development/business-corporate/SolutionTypes'), {
-    loading: () => <div className="py-20" />,
-});
-const Process = dynamic(() => import('@/components/services/web-design-development/business-corporate/Process'), {
-    loading: () => <div className="py-20" />,
-});
-const TechStack = dynamic(() => import('@/components/services/web-design-development/business-corporate/TechStack'), {
-    loading: () => <div className="py-20" />,
-});
-const UseCases = dynamic(() => import('@/components/services/web-design-development/business-corporate/UseCases'), {
-    loading: () => <div className="py-20" />,
-});
-const CTA = dynamic(() => import('@/components/services/web-design-development/business-corporate/CTA'), {
-    loading: () => <div className="py-20" />,
-});
+import WhyChooseUs from '@/components/services/web-design-development/business-corporate/WhyChooseUs';
+import SolutionTypes from '@/components/services/web-design-development/business-corporate/SolutionTypes';
+import Process from '@/components/services/web-design-development/business-corporate/Process';
+import TechStack from '@/components/services/web-design-development/business-corporate/TechStack';
+import UseCases from '@/components/services/web-design-development/business-corporate/UseCases';
+import CTA from '@/components/services/web-design-development/business-corporate/CTA';
 
 import { getPageMetadata } from '@/lib/metadata';
 import {

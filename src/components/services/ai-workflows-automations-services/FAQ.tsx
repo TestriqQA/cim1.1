@@ -10,7 +10,7 @@ export default function FAQ() {
     const faqs = [
         {
             q: "What are the benefits of AI workflow automation for businesses?",
-            a: <span><Link href="/blog/ai-workflows-automating-business-processes" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">AI workflow automation</Link> drastically reduces operational costs, minimizes human error, and accelerates process execution. It allows your team to focus on high-value strategic work rather than repetitive data entry.</span>,
+            a: <span><Link href="/blog/ai-workflows-automating-business-processes" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">AI workflow automation</Link> drastically reduces operational costs, minimizes human error, and accelerates process execution. It allows your team to focus on high-value strategic work rather than repetitive data entry.</span>,
         },
         {
             q: "How do I implement AI into my existing business workflows?",
@@ -22,7 +22,7 @@ export default function FAQ() {
         },
         {
             q: "How much does it cost to hire an AI automation agency?",
-            a: <span>Costs vary based on complexity. A simple Low-code AI automation setup might start lower, while complex Enterprise AI Automation Solutions require custom development from professional <Link href="/services/web-design-development" className="underline decoration-dotted hover:text-[var(--brand-orange)] transition-colors">web development</Link> teams. We offer flexible engagement models focused on ROI.</span>,
+            a: <span>Costs vary based on complexity. A simple Low-code AI automation setup might start lower, while complex Enterprise AI Automation Solutions require custom development from professional <Link href="/services/web-design-development" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">web development</Link> teams. We offer flexible engagement models focused on ROI.</span>,
         },
         {
             q: "What are the best AI workflow automation tools in 2026?",
@@ -65,7 +65,7 @@ export default function FAQ() {
                                             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                                             style={{
                                                 backgroundColor: faqOpen === i ? "var(--brand-orange)" : "color-mix(in srgb, var(--brand-orange) 10%, transparent)",
-                                                color: faqOpen === i ? "white" : "var(--brand-orange)"
+                                                color: faqOpen === i ? "white" : "var(--accent-orange-text)"
                                             }}
                                         >
                                             <span className="font-bold">{i + 1}</span>

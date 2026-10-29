@@ -10,7 +10,7 @@ export default function FAQ() {
     const faqs = [
         {
             question: "What are additional support services in business?",
-            answer: <span>Additional support services encompass external assistance for non-core business activities, including <Link href="/services/web-design-development" className="hover:text-[#97288e]">IT business support</Link>, outsourced administrative tasks, data management, and customer service. These services allow your core team to focus on strategic growth while we handle the operational details.</span>
+            answer: <span>Additional support services encompass external assistance for non-core business activities, including <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">IT business support</Link>, outsourced administrative tasks, data management, and customer service. These services allow your core team to focus on strategic growth while we handle the operational details.</span>
         },
         {
             question: "Why should businesses outsource their support services?",
@@ -18,7 +18,7 @@ export default function FAQ() {
         },
         {
             question: "What are the benefits of supplementary business support?",
-            answer: <span>Benefits include increased Operational Efficiency, access to Core Competencies not available in-house, <Link href="/services/ai-workflows-automations-services" className="hover:text-[#97288e]">Workflow Automation</Link>, and reduced operational risks. Our clients often see a meaningful reduction in overhead costs.</span>
+            answer: <span>Benefits include increased Operational Efficiency, access to Core Competencies not available in-house, <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)]">Workflow Automation</Link>, and reduced operational risks. Our clients often see a meaningful reduction in overhead costs.</span>
         },
         {
             question: "How do I choose the right business support service provider?",
@@ -41,17 +41,17 @@ export default function FAQ() {
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border backdrop-blur-sm"
                         style={{
-                            backgroundColor: "color-mix(in srgb, #97288e 10%, transparent)",
+                            backgroundColor: "var(--card-bg)",
                             borderColor: "#97288e",
                         }}
                     >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#97288e" }} />
-                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "#97288e" }}>
+                        <HelpCircle className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "var(--brand-purple-text)" }}>
                             FAQ
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-                        Frequently Asked <span style={{ color: "#97288e" }}>Questions</span>
+                        Frequently Asked <span style={{ color: "var(--brand-purple-text)" }}>Questions</span>
                     </h2>
                 </div>
 

@@ -65,7 +65,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#339933" }}>Node.js & Backend</span>
+                            <span style={{ color: "var(--accent-green-text)" }}>Node.js & Backend</span>
                         </nav>
 
                         {/* Badge */}
@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <Terminal className="w-4 h-4" style={{ color: "#339933" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#339933" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Backend Development Experts
                             </span>
                         </div>
@@ -100,7 +100,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            High-performance <Link href="/services/web-design-development/headless-traditional-cms" className="text-[#339933] hover:underline">APIs</Link> and microservices that power your applications.
+                            High-performance <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--accent-green-text)] hover:underline underline underline-offset-2">APIs</Link> and microservices that power your applications.
                             Node.js, Express, NestJS, and cloud-native architecture for modern businesses.
                         </p>
 
@@ -256,7 +256,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#339933" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-green-text)" }}>
                                 Technologies We Master
                             </p>
                             <div className="flex flex-wrap gap-2">

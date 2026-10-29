@@ -1,5 +1,3 @@
-"use client";
-
 import { Database, Globe, Search, Shield, Settings, Zap } from "lucide-react";
 import Link from "next/link";
 
@@ -82,7 +80,7 @@ export default function TechStack() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#f97316" }}>Enterprise-Grade</span> Technology Stack
+                        <span style={{ color: "var(--accent-orange-text)" }}>Enterprise-Grade</span> Technology Stack
                     </h2>
 
                     <p className="text-xl max-w-3xl mx-auto mb-8" style={{ color: "var(--secondary-text)" }}>

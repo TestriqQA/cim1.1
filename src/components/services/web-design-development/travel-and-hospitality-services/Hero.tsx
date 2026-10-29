@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Plane, Calendar, MapPin, Users, CreditCard, BarChart3,
     ChevronRight, ArrowRight, CheckCircle2, Sparkles, Globe, Hotel
@@ -56,7 +54,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#0d9488" }}>Travel & Hospitality</span>
+                            <span style={{ color: "var(--accent-teal-text)" }}>Travel & Hospitality</span>
                         </nav>
 
                         {/* Badge */}
@@ -68,7 +66,7 @@ export default function Hero() {
                             }}
                         >
                             <Plane className="w-4 h-4" style={{ color: "#0d9488" }} />
-                            <span className="text-sm font-semibold" style={{ color: "#0d9488" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                                 Travel & Hospitality Solutions
                             </span>
                         </div>
@@ -81,7 +79,7 @@ export default function Hero() {
                             Transform Your Business with{" "}
                             <span
                                 style={{
-                                    color: "#0d9488",
+                                    color: "var(--accent-teal-text)",
                                 }}
                             >
                                 Future-Ready Travel and Hospitality Services
@@ -121,7 +119,7 @@ export default function Hero() {
                                     <div
                                         className="text-3xl font-bold"
                                         style={{
-                                            color: "#0d9488",
+                                            color: "var(--accent-teal-text)",
                                         }}
                                     >
                                         {stat.value}
@@ -138,7 +136,7 @@ export default function Hero() {
                             <Link
                                 href="/contact"
                                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
-                                style={{ backgroundColor: "#0d9488" }}
+                                style={{ backgroundColor: "var(--accent-teal-btn)" }}
                             >
                                 Start Your Transformation
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -238,7 +236,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#0d9488" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-teal-text)" }}>
                                 Certifications
                             </p>
                             <div className="flex flex-wrap gap-2">

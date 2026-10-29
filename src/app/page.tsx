@@ -1,5 +1,15 @@
 import { Metadata } from "next";
-import HomeClient from "./HomeClient";
+import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
+import CoreValues from "@/components/home/CoreValues";
+import Services from "@/components/home/Services";
+import Process from "@/components/home/Process";
+import CaseStudies from "@/components/home/CaseStudies";
+import Industries from "@/components/home/Industries";
+import BlogInsights from "@/components/home/BlogInsights";
+import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
+import CTA from "@/components/home/CTA";
 import { getPageMetadata } from "@/lib/metadata";
 import {
   generateGraphSchema,
@@ -200,7 +210,22 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }}
       />
-      <HomeClient latestPosts={latestPosts} />
+      <main
+        style={{ backgroundColor: "var(--background)", color: "var(--foreground)", scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}
+        className="min-h-screen overflow-hidden"
+      >
+        <Hero />
+        <Stats />
+        <CoreValues />
+        <Services />
+        <Process />
+        <CaseStudies />
+        <Industries />
+        <BlogInsights posts={latestPosts} />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+      </main>
     </>
   );
 }

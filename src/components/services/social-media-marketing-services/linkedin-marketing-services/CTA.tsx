@@ -60,7 +60,7 @@ export default function CTA() {
                                 <span className="text-white/80">B2B Revenue?</span>
                             </h2>
 
-                            <p className="text-base md:text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
+                            <p className="text-base md:text-lg text-white mb-8 max-w-xl mx-auto lg:mx-0">
                                 Stop guessing and start growing. Get a 100% free LinkedIn ads audit and strategy session today.
                             </p>
 
@@ -94,19 +94,19 @@ export default function CTA() {
                         <div className="grid grid-cols-2 gap-3 sm:gap-6">
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">1B+</div>
-                                <div className="text-xs sm:text-sm text-white/70">Professionals</div>
+                                <div className="text-xs sm:text-sm text-white">Professionals</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">More</div>
-                                <div className="text-xs sm:text-sm text-white/70">B2B Leads</div>
+                                <div className="text-xs sm:text-sm text-white">B2B Leads</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Higher</div>
-                                <div className="text-xs sm:text-sm text-white/70">Conversion Rate</div>
+                                <div className="text-xs sm:text-sm text-white">Conversion Rate</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Higher</div>
-                                <div className="text-xs sm:text-sm text-white/70">Lead Quality</div>
+                                <div className="text-xs sm:text-sm text-white">Lead Quality</div>
                             </div>
                         </div>
                     </div>

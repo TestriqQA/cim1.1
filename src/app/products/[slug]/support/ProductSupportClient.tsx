@@ -67,7 +67,7 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                     <Link
                         href={`/products/${slug}`}
                         className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:underline"
-                        style={{ color: "var(--brand-cyan)" }}
+                        style={{ color: "var(--accent-teal-text)" }}
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Back to {support.productName}
@@ -107,7 +107,13 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                         <div>
                             <h2 className="text-xl font-bold text-white mb-1">Need Immediate Help?</h2>
                             <p className="text-sm text-white/80">
-                                Our support team responds {support.responseTime.toLowerCase()}.
+                                {/* The no-SLA fallback deliberately says "us", not
+                                    "the <product> team" — the address beside it is
+                                    whoever the data names, which is not always the
+                                    company that built the product. */}
+                                {support.responseTime
+                                    ? `Our support team responds ${support.responseTime.toLowerCase()}.`
+                                    : `Email us about ${support.productName} and we will get back to you.`}
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -118,26 +124,35 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                                 <Mail className="w-4 h-4" />
                                 {support.supportEmail}
                             </a>
-                            <a
-                                href={`tel:${support.supportPhone.replace(/-/g, "")}`}
-                                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 bg-white/15 text-white border border-white/30"
-                            >
-                                <Phone className="w-4 h-4" />
-                                {support.supportPhone}
-                            </a>
+                            {/* Optional. A product whose team publishes no phone
+                                number must not ship a `tel:` link — an empty
+                                supportPhone used to render one with no number in it. */}
+                            {support.supportPhone && (
+                                <a
+                                    href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 bg-white/15 text-white border border-white/30"
+                                >
+                                    <Phone className="w-4 h-4" />
+                                    {support.supportPhone}
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
 
-                {/* Response Time Badge */}
-                <div
-                    className={`flex items-center justify-center gap-2 mb-12 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"}`}
-                >
-                    <Clock className="w-4 h-4" style={{ color: "var(--brand-teal)" }} />
-                    <span className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
-                        Average Response Time: <strong style={{ color: "var(--foreground)" }}>{support.responseTime}</strong>
-                    </span>
-                </div>
+                {/* Response Time Badge — omitted for products whose team publishes
+                    no response-time commitment, rather than advertising one on
+                    their behalf. */}
+                {support.responseTime && (
+                    <div
+                        className={`flex items-center justify-center gap-2 mb-12 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"}`}
+                    >
+                        <Clock className="w-4 h-4" style={{ color: "var(--accent-teal-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
+                            Average Response Time: <strong style={{ color: "var(--foreground)" }}>{support.responseTime}</strong>
+                        </span>
+                    </div>
+                )}
 
                 {/* Support Channels Grid */}
                 <div className="mb-16">
@@ -185,7 +200,7 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                                         <a
                                             href={channel.href}
                                             className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline"
-                                            style={{ color: "var(--brand-cyan)" }}
+                                            style={{ color: "var(--accent-teal-text)" }}
                                         >
                                             {channel.action}
                                             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -238,7 +253,7 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                                     <span className="text-base font-semibold pr-4">{issue.question}</span>
                                     <ChevronDown
                                         className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? "rotate-180" : ""}`}
-                                        style={{ color: "var(--brand-cyan)" }}
+                                        style={{ color: "var(--accent-teal-text)" }}
                                     />
                                 </button>
                                 <div
@@ -291,29 +306,33 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                             <Mail className="w-4 h-4" />
                             Email Support Team
                         </a>
-                        <a
-                            href={`tel:${support.supportPhone.replace(/-/g, "")}`}
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-md"
-                            style={{
-                                borderColor: "var(--border-color)",
-                                color: "var(--foreground)",
-                                backgroundColor: "var(--card-bg)",
-                            }}
-                        >
-                            <Phone className="w-4 h-4" />
-                            Call Us
-                        </a>
+                        {support.supportPhone && (
+                            <a
+                                href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-md"
+                                style={{
+                                    borderColor: "var(--border-color)",
+                                    color: "var(--foreground)",
+                                    backgroundColor: "var(--card-bg)",
+                                }}
+                            >
+                                <Phone className="w-4 h-4" />
+                                Call Us
+                            </a>
+                        )}
                     </div>
 
                     <div className="mt-6 flex items-center justify-center gap-6 text-xs" style={{ color: "var(--secondary-text)" }}>
                         <span className="flex items-center gap-1.5">
-                            <Mail className="w-3.5 h-3.5" style={{ color: "var(--brand-cyan)" }} />
+                            <Mail className="w-3.5 h-3.5" style={{ color: "var(--accent-teal-text)" }} />
                             {support.supportEmail}
                         </span>
-                        <span className="flex items-center gap-1.5">
-                            <Phone className="w-3.5 h-3.5" style={{ color: "var(--brand-teal)" }} />
-                            {support.supportPhone}
-                        </span>
+                        {support.supportPhone && (
+                            <span className="flex items-center gap-1.5">
+                                <Phone className="w-3.5 h-3.5" style={{ color: "var(--accent-teal-text)" }} />
+                                {support.supportPhone}
+                            </span>
+                        )}
                     </div>
                 </div>
 

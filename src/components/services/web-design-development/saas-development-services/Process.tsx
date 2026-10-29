@@ -1,5 +1,3 @@
-"use client";
-
 import { Lightbulb, Palette, Code, TestTube, Rocket, RefreshCw } from "lucide-react";
 import Link from "next/link";
 
@@ -69,7 +67,7 @@ export default function Process() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "#008ac1" }} />
-                        <span className="text-sm font-medium" style={{ color: "#008ac1" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -153,7 +151,7 @@ export default function Process() {
                                                 className="px-4 py-2 rounded-full text-sm font-medium"
                                                 style={{
                                                     backgroundColor: "color-mix(in srgb, #008ac1 10%, transparent)",
-                                                    color: "#008ac1",
+                                                    color: "var(--brand-blue-text)",
                                                 }}
                                             >
                                                 {deliverable}

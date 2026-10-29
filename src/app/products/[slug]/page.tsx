@@ -38,23 +38,27 @@ export async function generateMetadata({
 
     const url = `https://www.cinuteinfomedia.com/products/${product.slug}`;
 
+    // Products may supply explicit SEO copy; otherwise fall back to the derived defaults.
+    const metaTitle = product.seoTitle ?? `${product.name} — ${product.tagline} | Cinute InfoMedia`;
+    const socialTitle = product.seoTitle ?? `${product.name} — ${product.tagline}`;
+    const metaDescription = product.seoDescription ?? product.description;
+
     return {
-        title: `${product.name} — ${product.tagline} | Cinute InfoMedia`,
-        description: product.description,
+        title: metaTitle,
+        description: metaDescription,
         keywords: [
             product.name,
             product.tagline,
             ...product.techStack.slice(0, 5),
             "Cinute InfoMedia",
-            "AI tools",
-            "digital products",
+                        "digital products",
         ],
         alternates: {
             canonical: url,
         },
         openGraph: {
-            title: `${product.name} — ${product.tagline}`,
-            description: product.description,
+            title: socialTitle,
+            description: metaDescription,
             url,
             type: "website",
             images: [
@@ -68,8 +72,8 @@ export async function generateMetadata({
         },
         twitter: {
             card: "summary_large_image",
-            title: `${product.name} — ${product.tagline}`,
-            description: product.description,
+            title: socialTitle,
+            description: metaDescription,
             images: ["/og-images/Services.webp"],
         },
     };
@@ -100,8 +104,8 @@ export default async function ProductPage({
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: `${product.name} — ${product.tagline}`,
-            description: product.description,
+            name: product.seoTitle ?? `${product.name} — ${product.tagline}`,
+            description: product.seoDescription ?? product.description,
             urlPath: `/products/${product.slug}`,
             datePublished: "2025-01-01",
             dateModified: "2026-05-16",
@@ -109,8 +113,10 @@ export default async function ProductPage({
 
         generateBreadcrumbSchema(
             [
+                // No "Products" crumb: there is no /products hub — products are
+                // reached through the navbar dropdown — so naming it here would
+                // declare a breadcrumb parent that 404s.
                 { name: "Home", url: "/" },
-                { name: "Products", url: "/products" },
                 { name: product.name, url: `/products/${product.slug}` },
             ],
             `${siteUrl}/products/${product.slug}/#breadcrumb`
@@ -123,15 +129,24 @@ export default async function ProductPage({
             name: product.name,
             description: product.longDescription,
             url: `${siteUrl}/products/${product.slug}`,
-            applicationCategory: "BusinessApplication",
-            operatingSystem: "Web",
-            offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-                description: "Free trial available. Contact for pricing.",
-                url: `${siteUrl}/contact`,
-            },
+            // Category and pricing come from the product record. Both used to be
+            // hard-coded to ChimeGenius's shape — "BrowserApplication" plus a free
+            // offer — which published, in machine-readable schema, that EVERY
+            // product is a browser extension available for $0. A product that
+            // publishes no citable price emits no `offers` node at all rather than
+            // inheriting another product's commercial terms.
+            applicationCategory: product.applicationCategory ?? "BrowserApplication",
+            operatingSystem: product.extensionUrl ? "Chrome, Edge" : "Web",
+            ...(product.version && { softwareVersion: product.version }),
+            ...(product.offers?.length && {
+                offers: product.offers.map((offer) => ({
+                    "@type": "Offer",
+                    price: offer.price,
+                    priceCurrency: offer.priceCurrency,
+                    ...(offer.description && { description: offer.description }),
+                    ...(offer.url && { url: offer.url }),
+                })),
+            }),
             provider: {
                 "@id": `${siteUrl}/#organization`,
             },
@@ -149,7 +164,10 @@ export default async function ProductPage({
         generateNavigationSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Products", url: "/products" },
+            // "Products" is intentionally absent: the navbar shows it as a
+            // dropdown with no landing page of its own, and every entry here
+            // must be a URL that actually resolves. Keep this list identical
+            // across every page that emits the #navigation node.
             { name: "Blog", url: "/blog" },
             { name: "About", url: "/about" },
             { name: "Careers", url: "/careers" },

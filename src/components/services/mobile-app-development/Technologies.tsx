@@ -12,9 +12,9 @@ export default function Technologies() {
             technologies: [
                 { name: "React Native", description: "Cross-platform development", logo: "/images/techstack_logos/react-logo.svg" },
                 { name: "Flutter", description: "High-performance apps", logo: "/images/techstack_logos/flutter-logo.svg" },
-                { name: "Swift", description: <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple)] transition-colors">Native iOS development</Link>, logo: "/images/techstack_logos/swift-logo.svg" },
-                { name: "Kotlin", description: <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--brand-purple)] transition-colors">Native Android development</Link>, logo: "/images/techstack_logos/kotlin-logo.svg" },
-                { name: "Ionic", description: <Link href="/services/mobile-app-development/hybrid-app-development-services" className="hover:text-[var(--brand-purple)] transition-colors">Hybrid app development</Link>, logo: "/images/techstack_logos/ionic-logo.svg" },
+                { name: "Swift", description: <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:text-[var(--brand-purple-text)] transition-colors">Native iOS development</Link>, logo: "/images/techstack_logos/swift-logo.svg" },
+                { name: "Kotlin", description: <Link href="/services/mobile-app-development/android-app-development-company" className="hover:text-[var(--brand-purple-text)] transition-colors">Native Android development</Link>, logo: "/images/techstack_logos/kotlin-logo.svg" },
+                { name: "Ionic", description: <Link href="/services/mobile-app-development/hybrid-app-development-services" className="hover:text-[var(--brand-purple-text)] transition-colors">Hybrid app development</Link>, logo: "/images/techstack_logos/ionic-logo.svg" },
                 { name: "Xamarin", description: "Cross-platform .NET", logo: "/images/techstack_logos/xamarin-logo.svg" }
             ]
         },
@@ -22,7 +22,7 @@ export default function Technologies() {
             icon: Server,
             title: "Backend & APIs",
             technologies: [
-                { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-purple)] transition-colors">JavaScript runtime</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
+                { name: "Node.js", description: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--brand-purple-text)] transition-colors">JavaScript runtime</Link>, logo: "/images/techstack_logos/nodejs-logo.svg" },
                 { name: "Python", description: "Fast backend development", logo: "/images/techstack_logos/python-logo.svg" },
                 { name: "Java", description: "Enterprise solutions", logo: "/images/techstack_logos/java-logo.svg" },
                 { name: "Firebase", description: "Real-time database", logo: "/images/techstack_logos/firebase-logo.svg" },
@@ -73,7 +73,7 @@ export default function Technologies() {
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--brand-purple)" }}>Technologies & Tools</span> We Use
+                        <span style={{ color: "var(--brand-purple-text)" }}>Technologies & Tools</span> We Use
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We leverage cutting-edge technologies and industry best practices to build robust, scalable, and future-proof mobile applications.

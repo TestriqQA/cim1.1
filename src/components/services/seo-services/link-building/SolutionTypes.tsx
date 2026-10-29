@@ -16,7 +16,7 @@ export default function SolutionTypes() {
             icon: FileEdit,
             title: "Editorial Links",
             frontDesc: "Natural links earned through quality content",
-            backDesc: <>When other sites link to yours because your <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline" style={{ color: "white" }}>content is valuable</Link>, informative, or newsworthy. These are the most valuable type of backlinks.</>,
+            backDesc: <>When other sites link to yours because your <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline" style={{ color: "white" }}>content is valuable</Link>, informative, or newsworthy. These are the most valuable type of backlinks.</>,
             examples: ["Resource citations", "Expert quotes", "Data references"],
         },
         {
@@ -48,7 +48,7 @@ export default function SolutionTypes() {
             icon: Newspaper,
             title: "HARO & Press",
             frontDesc: "Media coverage and journalist requests",
-            backDesc: <>Responding to journalist queries and getting featured in <Link href="/services/performance-marketing" className="hover:underline" style={{ color: "white" }}>news articles</Link>, earning high-authority editorial links.</>,
+            backDesc: <>Responding to journalist queries and getting featured in <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline" style={{ color: "white" }}>news articles</Link>, earning high-authority editorial links.</>,
             examples: ["News articles", "Expert roundups", "Industry reports"],
         },
     ];
@@ -70,13 +70,13 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: linkCyan }} />
-                        <span className="text-sm font-medium" style={{ color: linkCyan }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Link Strategies
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Types of <span style={{ color: linkCyan }}>Backlinks</span>
+                        Types of <span style={{ color: "var(--accent-cyan-text)" }}>Backlinks</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We acquire diverse, high-quality backlinks tailored to your industry and goals.
@@ -121,7 +121,7 @@ export default function SolutionTypes() {
                                     <p className="text-sm flex-1" style={{ color: "var(--secondary-text)" }}>
                                         {type.frontDesc}
                                     </p>
-                                    <div className="flex items-center gap-2 mt-4 text-sm font-medium" style={{ color: linkCyan }}>
+                                    <div className="flex items-center gap-2 mt-4 text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                                         <span>Hover to learn more</span>
                                         <ArrowRight className="w-4 h-4" />
                                     </div>
@@ -131,7 +131,7 @@ export default function SolutionTypes() {
                                 <div
                                     className="absolute inset-0 p-6 rounded-2xl border flex flex-col"
                                     style={{
-                                        backgroundColor: linkCyan,
+                                        backgroundColor: "#155e75",
                                         borderColor: linkCyan,
                                         backfaceVisibility: "hidden",
                                         transform: "rotateY(180deg)",
@@ -140,11 +140,11 @@ export default function SolutionTypes() {
                                     <h3 className="text-xl font-bold mb-3 text-white">
                                         {type.title}
                                     </h3>
-                                    <p className="text-sm flex-1 text-white/90">
+                                    <p className="text-sm flex-1 text-white">
                                         {type.backDesc}
                                     </p>
                                     <div className="mt-4">
-                                        <p className="text-xs font-semibold text-white/70 mb-2">EXAMPLES:</p>
+                                        <p className="text-xs font-semibold text-white mb-2">EXAMPLES:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {type.examples.map((ex, idx) => (
                                                 <span

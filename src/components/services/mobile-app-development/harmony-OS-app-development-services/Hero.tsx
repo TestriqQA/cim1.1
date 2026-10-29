@@ -78,19 +78,19 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "#C7000B" }}>HarmonyOS</span>
+                            <span style={{ color: "var(--accent-red-text)" }}>HarmonyOS</span>
                         </nav>
 
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
                             style={{
-                                background: "rgba(199, 0, 11, 0.1)",
+                                background: "rgba(199, 0, 11, 0.05)",
                                 borderColor: "rgba(199, 0, 11, 0.3)",
                             }}
                         >
-                            <Smartphone className="w-4 h-4" style={{ color: "#C7000B" }} />
-                            <span className="text-sm font-medium" style={{ color: "#C7000B" }}>
+                            <Smartphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                                 Huawei Ecosystem
                             </span>
                         </div>
@@ -100,10 +100,10 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[#C7000B] transition-colors">Distributed Apps</Link>,{" "}
+                            <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:text-[var(--accent-red-text)] transition-colors">Distributed Apps</Link>,{" "}
                             <span
                                 className="relative inline-block"
-                                style={{ color: "#C7000B" }}
+                                style={{ color: "var(--accent-red-text)" }}
                             >
                                 Seamless Experience
                                 <svg
@@ -118,7 +118,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Build next-generation apps for Huawei&apos;s HarmonyOS ecosystem. Create <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[#C7000B] hover:underline">distributed applications</Link> that run seamlessly across <Link href="/services/mobile-app-development" className="text-[#C7000B] hover:underline">smartphones</Link>, tablets, wearables, and IoT devices.
+                            Build next-generation apps for Huawei&apos;s HarmonyOS ecosystem. Create <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">distributed applications</Link> that run seamlessly across <Link href="/services/mobile-app-development" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">smartphones</Link>, tablets, wearables, and IoT devices.
                         </p>
 
                         {/* Feature Pills */}
@@ -173,17 +173,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#C7000B" }}>700M+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>700M+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>HarmonyOS Users</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#C7000B" }}>2.5M+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>2.5M+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Developers</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h4 className="text-3xl font-bold" style={{ color: "#C7000B" }}>200+</h4>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>200+</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Countries</p>
                             </div>
                         </div>
@@ -284,7 +284,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "#C7000B" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-red-text)" }}>
                                 Supported Devices
                             </p>
                             <div className="flex flex-wrap gap-2">

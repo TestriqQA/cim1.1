@@ -12,7 +12,7 @@ export default function ServiceOverview() {
         },
         {
             icon: Database,
-            title: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[#9333ea] transition-colors">API-First Architecture</Link>,
+            title: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-violet-text)] transition-colors">API-First Architecture</Link>,
             description: "Deliver content anywhere via REST or GraphQL APIs for true omnichannel experiences.",
         },
         {
@@ -64,7 +64,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Settings className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "#9333ea" }}>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
                             Why CMS Matters
                         </span>
                     </div>

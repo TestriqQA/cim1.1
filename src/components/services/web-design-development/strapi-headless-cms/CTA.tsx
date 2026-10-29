@@ -36,8 +36,8 @@ export default function CTA() {
                             border: "1px solid rgba(123, 121, 255, 0.3)",
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: "#7B79FF" }} />
-                        <span className="text-sm font-semibold" style={{ color: "#4945FF" }}>
+                        <Layers className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                             Free Strapi Consultation
                         </span>
                     </div>

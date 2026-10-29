@@ -85,7 +85,7 @@ export default function TechStack() {
                             onClick={() => setActiveTab(cat.id)}
                             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === cat.id ? "text-white shadow-lg transform scale-105" : "hover:bg-accent"}`}
                             style={{
-                                background: activeTab === cat.id ? "linear-gradient(135deg, #E1306C, #C13584)" : "var(--background)",
+                                background: activeTab === cat.id ? "linear-gradient(135deg, #be185d, #C13584)" : "var(--background)",
                                 color: activeTab === cat.id ? "white" : "var(--secondary-text)",
                                 border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
                             }}
@@ -132,15 +132,15 @@ export default function TechStack() {
 
                                 {/* Info */}
                                 <div>
-                                    <h4 className="font-semibold" style={{ color: "var(--foreground)" }}>
+                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
                                         {tech.link ? (
-                                            <Link href={tech.link} className="hover:text-pink-500 transition-colors">
+                                            <Link href={tech.link} className="hover:text-[var(--accent-pink-text)] transition-colors">
                                                 {tech.name}
                                             </Link>
                                         ) : (
                                             tech.name
                                         )}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>

@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
         {
             icon: Trophy,
             title: "Verified Expertise",
-            description: <>500+ successful projects delivered globally, including retail sites seeing <Link href="/services/seo-services" className="text-[#f59e0b] hover:underline">sustained traffic growth</Link>.</>,
+            description: <>500+ successful projects delivered globally, including retail sites seeing <Link href="/services/seo-services" className="text-[var(--accent-amber-text)] underline underline-offset-2 hover:underline">sustained traffic growth</Link>.</>,
             gradient: "from-amber-500 via-yellow-500 to-orange-500",
             bgColor: "rgba(251, 191, 36, 0.15)",
             iconColor: "#f59e0b",
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {
             icon: Globe,
             title: "Global Reach",
-            description: <>Expertise in complex multilingual setups and <Link href="/services/seo-services" className="text-[#6366f1] hover:underline">International WordPress SEO</Link>.</>,
+            description: <>Expertise in complex multilingual setups and <Link href="/services/seo-services" className="text-[var(--accent-indigo-text)] underline underline-offset-2 hover:underline">International WordPress SEO</Link>.</>,
             gradient: "from-indigo-500 via-violet-500 to-purple-500",
             bgColor: "rgba(99, 102, 241, 0.15)",
             iconColor: "#6366f1",
@@ -106,8 +106,8 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(135deg, rgba(0, 115, 170, 0.1), rgba(0, 150, 214, 0.1))",
                             border: "1px solid rgba(0, 115, 170, 0.2)",
                         }}>
-                        <Trophy className="w-4 h-4" style={{ color: "#0073AA" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#0073AA" }}>
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Cinute
                         </span>
                     </div>

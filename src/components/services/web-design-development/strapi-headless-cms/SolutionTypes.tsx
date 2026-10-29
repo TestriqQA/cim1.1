@@ -36,8 +36,8 @@ export default function SolutionTypes() {
     const solutions = [
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#4945FF] transition-colors">E-commerce Platforms</Link>,
-            description: <><span className="text-inherit">Headless commerce with Strapi powering product catalogs, inventory, and content for </span><Link href="/services/web-design-development/shopify-development-services" className="text-[#2F2DC8] hover:underline">Shopify</Link>, Medusa, or custom storefronts.</>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-indigo-text)] transition-colors">E-commerce Platforms</Link>,
+            description: <><span className="text-inherit">Headless commerce with Strapi powering product catalogs, inventory, and content for </span><Link href="/services/web-design-development/shopify-development-services" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Shopify</Link>, Medusa, or custom storefronts.</>,
             features: [
                 "Product management",
                 "Multi-store support",
@@ -60,8 +60,8 @@ export default function SolutionTypes() {
         },
         {
             icon: Smartphone,
-            title: <Link href="/services/mobile-app-development" className="hover:text-[#4945FF] transition-colors">Mobile Applications</Link>,
-            description: <><span className="text-inherit">Power </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[#4945FF] hover:underline">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[#4945FF] hover:underline">Android</Link> apps with Strapi&apos;s REST and GraphQL APIs for real-time content delivery.</>,
+            title: <Link href="/services/mobile-app-development" className="hover:text-[var(--accent-indigo-text)] transition-colors">Mobile Applications</Link>,
+            description: <><span className="text-inherit">Power </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">Android</Link> apps with Strapi&apos;s REST and GraphQL APIs for real-time content delivery.</>,
             features: [
                 "Push notifications",
                 "Offline sync",
@@ -84,7 +84,7 @@ export default function SolutionTypes() {
         },
         {
             icon: Briefcase,
-            title: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#4945FF] transition-colors">SaaS Products</Link>,
+            title: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-indigo-text)] transition-colors">SaaS Products</Link>,
             description: "Build multi-tenant SaaS applications with Strapi managing user content, settings, and configurations.",
             features: [
                 "Multi-tenancy",
@@ -125,7 +125,7 @@ export default function SolutionTypes() {
                         </span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Strapi powers content for any digital experience - from e-commerce to <Link href="/services/web-design-development/business-corporate" className="text-[#4945FF] hover:underline">enterprise applications</Link>.
+                        Strapi powers content for any digital experience - from e-commerce to <Link href="/services/web-design-development/business-corporate" className="text-[var(--accent-indigo-text)] hover:underline underline underline-offset-2">enterprise applications</Link>.
                     </p>
                 </div>
 
@@ -187,7 +187,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#4945FF]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-indigo-text)]"
                                             }`}
                                     />
                                 </div>
@@ -206,7 +206,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#4945FF]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-indigo-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -219,7 +219,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#4945FF]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-indigo-text)]" />
                                 </div>
                             </div>
                         );

@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
         {
             icon: Zap,
             title: "Sustained Traffic Growth",
-            description: <>We've consistently delivered 300% <Link href="/services/seo-services" className="hover:underline text-blue-500">traffic growth</Link> for tech and SaaS clients, helping them dominate through aggressive X business strategies.</>,
+            description: <>We've consistently delivered 300% <Link href="/services/seo-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">traffic growth</Link> for tech and SaaS clients, helping them dominate through aggressive X business strategies.</>,
         },
         {
             icon: ShieldCheck,
@@ -54,8 +54,8 @@ export default function WhyChooseUs() {
                                 borderColor: "rgba(29, 155, 240, 0.2)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "#1D9BF0" }} />
-                            <span className="text-sm font-medium" style={{ color: "#1D9BF0" }}>
+                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

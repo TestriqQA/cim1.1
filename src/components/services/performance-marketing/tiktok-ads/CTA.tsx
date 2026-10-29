@@ -78,7 +78,7 @@ export default function CTA() {
                                 style={{
                                     borderColor: `${tiktokPink}30`,
                                     backgroundColor: `${tiktokPink}10`,
-                                    color: tiktokPink,
+                                    color: "var(--accent-pink-text)",
                                 }}
                             >
                                 {badge}

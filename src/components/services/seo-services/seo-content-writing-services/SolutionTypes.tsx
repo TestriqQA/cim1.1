@@ -22,7 +22,7 @@ export default function SolutionTypes() {
         {
             id: "b2b",
             title: <Link href="/services/web-design-development/saas-development-services" className="hover:underline">B2B Technology & SaaS</Link>,
-            description: <>High-convert SEO content for B2B lead generation and technical whitepapers. high accuracy for <Link href="/services/web-design-development/fintech-solutions" className="hover:text-emerald-500 transition-colors">fintech</Link>.</>,
+            description: <>High-convert SEO content for B2B lead generation and technical whitepapers. high accuracy for <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">fintech</Link>.</>,
             icon: Briefcase,
             color: contentEmerald,
         },
@@ -78,14 +78,14 @@ export default function SolutionTypes() {
                             borderColor: `${contentEmerald}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: contentEmerald }} />
-                        <span className="text-sm font-medium" style={{ color: contentEmerald }}>
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Industries We <span style={{ color: contentEmerald }}>Master</span>
+                        Industries We <span style={{ color: "var(--accent-green-text)" }}>Master</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Specialized Content SEO for High-Growth Niches. Our SMEs combine deep industry knowledge with technical SEO precision.

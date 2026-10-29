@@ -64,7 +64,7 @@ export default function Hero() {
 
                     <span
                         className="font-semibold p-2"
-                        style={{ color: "var(--brand-purple)" }}
+                        style={{ color: "var(--brand-purple-text)" }}
                     >
                         Mobile App Development
                     </span>
@@ -83,10 +83,10 @@ export default function Hero() {
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-purple) 8%, transparent), color-mix(in srgb, var(--brand-yellow) 8%, transparent))",
                                 borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
-                                color: "var(--brand-purple)",
+                                color: "var(--brand-purple-text)",
                             }}
                         >
-                            <Smartphone className="w-4 h-4" style={{ color: "var(--brand-purple)" }} />
+                            <Smartphone className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                             <span className="text-sm font-semibold">Mobile App Development</span>
                         </div>
 
@@ -101,7 +101,7 @@ export default function Hero() {
                                     color: "transparent",
                                 }}
                             >
-                                Transform Your Vision Into <span className="text-[var(--brand-purple)]">High-Performance Mobile Apps</span> That Drive Business Growth
+                                Transform Your Vision Into <span className="text-[var(--brand-purple-text)]">High-Performance Mobile Apps</span> That Drive Business Growth
                             </span>
                         </h1>
 
@@ -116,7 +116,7 @@ export default function Hero() {
 
                         {/* Tagline */}
                         <p className="space-y-4 mb-8 text-lg md:text-xl text-[var(--secondary-text)] leading-relaxed">
-                            As a <span style={{ color: "var(--brand-purple)", fontWeight: 700 }}>expert mobile app development company</span> with <span style={{ color: "var(--foreground)", fontWeight: 700 }}>proven, deep expertise</span>, we craft <span style={{ color: "var(--foreground)" }}>custom mobile app development solutions</span> that transform businesses globally. Our experienced team has delivered <span style={{ color: "var(--brand-purple)", fontWeight: 700 }}>300+ high-performance mobile applications</span> across <Link href="/services/mobile-app-development/ios-app-development-company" className="hover:underline transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="hover:underline transition-colors">Android</Link>, and <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="hover:underline transition-colors">cross-platform</Link> ecosystems.
+                            As a <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>expert mobile app development company</span> with <span style={{ color: "var(--foreground)", fontWeight: 700 }}>proven, deep expertise</span>, we craft <span style={{ color: "var(--foreground)" }}>custom mobile app development solutions</span> that transform businesses globally. Our experienced team has delivered <span style={{ color: "var(--brand-purple-text)", fontWeight: 700 }}>300+ high-performance mobile applications</span> across <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">iOS</Link>, <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">Android</Link>, and <Link href="/services/mobile-app-development/cross-platform-app-development-company" className="underline underline-offset-2 hover:underline transition-colors">cross-platform</Link> ecosystems.
                         </p>
 
                         {/* Feature Highlights */}
@@ -126,7 +126,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <Rocket className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <Rocket className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Fast Launch
                                 </span>
@@ -136,7 +136,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     High Performance
                                 </span>
@@ -146,7 +146,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <Smartphone className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <Smartphone className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     All Platforms
                                 </span>
@@ -156,7 +156,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
@@ -166,7 +166,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <ShieldCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <ShieldCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Enterprise Secure
                                 </span>
@@ -176,7 +176,7 @@ export default function Hero() {
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
-                                <Code className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple)" }} />
+                                <Code className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Clean Code
                                 </span>
@@ -292,7 +292,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                        color: "var(--brand-purple)",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     Java & Kotlin
@@ -301,7 +301,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                        color: "var(--brand-purple)",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     Flutter
@@ -310,7 +310,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                        color: "var(--brand-purple)",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     Native Apps
@@ -319,7 +319,7 @@ export default function Hero() {
                                     className="px-3 py-1 rounded-full text-xs font-semibold"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                        color: "var(--brand-purple)",
+                                        color: "var(--brand-purple-text)",
                                     }}
                                 >
                                     Mobile Responsive

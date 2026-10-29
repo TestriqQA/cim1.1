@@ -64,7 +64,7 @@ export default function Technologies() {
         },
         {
             icon: Database,
-            title: <Link href="/services/web-design-development" className="hover:text-emerald-500 transition-colors">CRM / ERP Integrations</Link>,
+            title: <Link href="/services/web-design-development" className="hover:text-[var(--accent-green-text)] transition-colors">CRM / ERP Integrations</Link>,
             description: "Seamless connectivity with your existing business systems",
             gradient: "from-emerald-600 to-teal-500",
             iconBg: "bg-emerald-500/10",
@@ -162,10 +162,10 @@ export default function Technologies() {
                 }}
             >
                 {/* Decorative background elements */}
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-40 left-20 w-72 h-72 bg-purple-500 rounded-full blur-3xl" />
-                    <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500 rounded-full blur-3xl" />
+                <div className="absolute inset-0">
+                    <div className="absolute top-40 left-20 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/5 rounded-full blur-3xl" />
                 </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -176,7 +176,7 @@ export default function Technologies() {
                             <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>Powered by Industry Leaders</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-                            <span style={{ color: "var(--foreground)" }}>Technology Stack & </span><span style={{ color: "var(--brand-orange)" }}>Integrations</span>
+                            <span style={{ color: "var(--foreground)" }}>Technology Stack & </span><span style={{ color: "var(--accent-orange-text)" }}>Integrations</span>
                         </h2>
                         <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             We leverage the latest AI technologies and enterprise integrations to build robust, scalable automation solutions.
@@ -255,7 +255,7 @@ export default function Technologies() {
 
                                     {/* Features List */}
                                     <div className="pt-6 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                        <p className="text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: "var(--brand-orange)" }}>
+                                        <p className="text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
                                             Capabilities
                                         </p>
                                         <div className="grid grid-cols-2 gap-2">
@@ -300,7 +300,7 @@ export default function Technologies() {
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-bold transition-colors duration-300 " style={{ color: "var(--foreground)" }}>
-                                        <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-green-500 transition-colors">Security & Compliance</Link>
+                                        <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-green-text)] transition-colors">Security & Compliance</Link>
                                     </h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Enterprise-grade protection</p>
                                 </div>
@@ -398,7 +398,7 @@ export default function Technologies() {
                             <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                                 Our team can integrate with virtually any system, API, or platform. Let's discuss your specific requirements.
                             </p>
-                            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#ee6500] hover:to-[#fab900] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button mx-auto">
+                            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button mx-auto">
                                 <span>Discuss Integration Options</span>
                                 <ArrowRight className="w-5 h-5 group-hover/button:translate-x-1 transition-transform duration-300" />
                             </Link>

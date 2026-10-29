@@ -177,8 +177,8 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Terminal className="w-4 h-4" style={{ color: "#61dafb" }} />
-                        <span className="text-sm font-medium" style={{ color: "#61dafb" }}>
+                        <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
                             Development Process
                         </span>
                     </div>
@@ -264,8 +264,9 @@ export default function Process() {
                                 ];
 
                                 return (
-                                    <div
+                                    <button
                                         key={idx}
+                                        type="button"
                                         className="absolute flex flex-col items-center cursor-pointer"
                                         style={{
                                             left: positions[idx].x,
@@ -274,6 +275,7 @@ export default function Process() {
                                         }}
                                         onClick={() => setActiveStep(idx)}
                                         onMouseEnter={() => setActiveStep(idx)}
+                                        aria-current={isActive ? "step" : undefined}
                                     >
                                         <div
                                             className={`
@@ -312,7 +314,7 @@ export default function Process() {
                                         <div className="mt-16 text-center whitespace-nowrap">
                                             <div
                                                 className="text-xs font-bold font-mono mb-1 transition-all duration-300"
-                                                style={{ color: step.bgColor }}
+                                                style={{ color: "var(--accent-cyan-text)" }}
                                             >
                                                 {step.number}
                                             </div>
@@ -322,13 +324,19 @@ export default function Process() {
                                                     ${isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"}
                                                 `}
                                                 style={{
-                                                    color: isActive ? step.bgColor : "var(--foreground)",
+                                                    color: isActive ? "var(--accent-cyan-text)" : "var(--foreground)",
                                                 }}
                                             >
                                                 {step.subtitle}
                                             </div>
+                                            {/* Keeps the visible label ("01 Business
+                                                Goals") at the start of the accessible
+                                                name while naming the actual step. */}
+                                            <span className="sr-only">
+                                                {` — ${step.title}`}
+                                            </span>
                                         </div>
-                                    </div>
+                                    </button>
                                 );
                             })}
                         </div>
@@ -369,7 +377,7 @@ export default function Process() {
                                             </div>
                                             <div
                                                 className="text-5xl font-bold font-mono mb-2"
-                                                style={{ color: step.bgColor }}
+                                                style={{ color: "var(--accent-cyan-text)" }}
                                             >
                                                 {step.number}
                                             </div>
@@ -413,9 +421,13 @@ export default function Process() {
                                                 ))}
                                             </div>
 
-                                            {/* Navigation */}
-                                            <div className="flex items-center justify-between mt-8 pt-6 border-t" style={{ borderColor: "var(--border-color)" }}>
+                                            {/* Navigation — every step panel renders its
+                                                own copy of this row; only the active one
+                                                is visible, so the hidden copies are inert
+                                                (out of the tab order and the a11y tree). */}
+                                            <div className="flex items-center justify-between mt-8 pt-6 border-t" style={{ borderColor: "var(--border-color)" }} inert={!isActive}>
                                                 <button
+                                                    type="button"
                                                     onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                                                     disabled={activeStep === 0}
                                                     className={`
@@ -425,7 +437,7 @@ export default function Process() {
                                                     `}
                                                     style={{
                                                         backgroundColor: activeStep === 0 ? "var(--border-color)" : `${steps[Math.max(0, activeStep - 1)].bgColor}20`,
-                                                        color: activeStep === 0 ? "var(--secondary-text)" : steps[Math.max(0, activeStep - 1)].bgColor,
+                                                        color: activeStep === 0 ? "var(--secondary-text)" : "var(--accent-cyan-text)",
                                                         border: `2px solid ${activeStep === 0 ? "var(--border-color)" : steps[Math.max(0, activeStep - 1)].bgColor}`,
                                                     }}
                                                 >
@@ -434,22 +446,31 @@ export default function Process() {
                                                 </button>
 
                                                 <div className="flex items-center gap-2">
-                                                    {steps.map((_, dotIdx) => (
+                                                    {steps.map((dot, dotIdx) => (
                                                         <button
                                                             key={dotIdx}
+                                                            type="button"
                                                             onClick={() => setActiveStep(dotIdx)}
-                                                            className={`
-                                                                w-2.5 h-2.5 rounded-full transition-all duration-300
-                                                                ${activeStep === dotIdx ? "scale-125" : "hover:scale-110"}
-                                                            `}
-                                                            style={{
-                                                                backgroundColor: activeStep === dotIdx ? steps[dotIdx].bgColor : "var(--border-color)",
-                                                            }}
-                                                        />
+                                                            aria-label={`Show step ${dotIdx + 1}: ${dot.title}`}
+                                                            aria-current={activeStep === dotIdx ? "step" : undefined}
+                                                            /* 24x24 hit area around the 10px dot (WCAG 2.5.8) */
+                                                            className="group w-6 h-6 flex items-center justify-center rounded-full"
+                                                        >
+                                                            <span
+                                                                className={`
+                                                                    block w-2.5 h-2.5 rounded-full transition-all duration-300
+                                                                    ${activeStep === dotIdx ? "scale-125" : "group-hover:scale-110"}
+                                                                `}
+                                                                style={{
+                                                                    backgroundColor: activeStep === dotIdx ? dot.bgColor : "var(--border-color)",
+                                                                }}
+                                                            />
+                                                        </button>
                                                     ))}
                                                 </div>
 
                                                 <button
+                                                    type="button"
                                                     onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
                                                     disabled={activeStep === steps.length - 1}
                                                     className={`
@@ -501,7 +522,7 @@ export default function Process() {
                                     <div className="flex-1">
                                         <div
                                             className="text-sm font-bold font-mono mb-1"
-                                            style={{ color: step.bgColor }}
+                                            style={{ color: "var(--accent-cyan-text)" }}
                                         >
                                             {step.number}
                                         </div>
@@ -511,7 +532,7 @@ export default function Process() {
                                         >
                                             {step.title}
                                         </h3>
-                                        <p className="text-xs" style={{ color: step.bgColor }}>
+                                        <p className="text-xs" style={{ color: "var(--accent-cyan-text)" }}>
                                             {step.subtitle}
                                         </p>
                                     </div>
@@ -565,7 +586,7 @@ export default function Process() {
                         background: `linear-gradient(135deg, var(--card-bg), rgba(97, 218, 251, 0.05))`,
                     }}
                 >
-                    <Terminal className="w-12 h-12 mx-auto mb-4" style={{ color: "#61dafb" }} />
+                    <Terminal className="w-12 h-12 mx-auto mb-4" style={{ color: "var(--accent-cyan-text)" }} />
                     <h3
                         className="text-2xl md:text-3xl font-bold mb-4"
                         style={{ color: "var(--foreground)" }}

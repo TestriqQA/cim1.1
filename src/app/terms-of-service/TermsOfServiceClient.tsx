@@ -303,7 +303,7 @@ const TermsOfServiceClient: React.FC = () => {
                             <div className="space-y-4">
                                 {section.content.map((c, idx) => (
                                     <div key={idx}>
-                                        {c.subtitle && <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--brand-yellow)" }}>{c.subtitle}</h3>}
+                                        {c.subtitle && <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--accent-amber-text)" }}>{c.subtitle}</h3>}
                                         <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)", whiteSpace: "pre-line" }}>{c.text}</p>
                                     </div>
                                 ))}
@@ -320,7 +320,7 @@ const TermsOfServiceClient: React.FC = () => {
                     </div>
 
                     <div className="flex gap-3">
-                        <a href="mailto:contact@cinuteinfomedia.com" className="px-6 py-2.5 rounded-full font-semibold transition shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center" style={{ background: "var(--brand-blue)", color: "white" }}>
+                        <a href="mailto:contact@cinuteinfomedia.com" className="px-6 py-2.5 rounded-full font-semibold transition shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center" style={{ background: "#006d97", color: "white" }}>
                             Email Support
                         </a>
                         <Link href="/contact" className="px-6 py-2.5 rounded-full border font-semibold transition shadow-sm hover:shadow-md hover:scale-105 flex items-center justify-center" style={{ borderColor: "var(--border-color)", color: "var(--foreground)", background: "var(--card-bg)" }}>

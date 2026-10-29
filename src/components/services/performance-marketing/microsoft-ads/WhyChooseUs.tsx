@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: msBlue }} />
-                            <span className="text-sm font-medium" style={{ color: msBlue }}>
+                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                                 Why Choose Microsoft
                             </span>
                         </div>
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
                         <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: "var(--foreground)" }}>
                             Why Choose{" "}
                             <span
-                                style={{ color: msBlue }}
+                                style={{ color: "var(--brand-blue-text)" }}
                             >
                                 Microsoft?
                             </span>
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--foreground)" }}>Market Share (Desktop)</span>
-                                        <span className="font-bold" style={{ color: msBlue }}>24%</span>
+                                        <span className="font-bold" style={{ color: "var(--brand-blue-text)" }}>24%</span>
                                     </div>
                                     <div className="h-3 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                                         <div className="h-full rounded-full w-[24%]" style={{ backgroundColor: msBlue }} />
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--foreground)" }}>Avg. CPC Savings</span>
-                                        <span className="font-bold" style={{ color: "#107C10" }}>Lower</span>
+                                        <span className="font-bold" style={{ color: "var(--accent-green-text)" }}>Lower</span>
                                     </div>
                                     <div className="h-3 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                                         <div className="h-full rounded-full w-[35%]" style={{ backgroundColor: "#107C10" }} />
@@ -123,7 +123,7 @@ export default function WhyChooseUs() {
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <span className="font-semibold" style={{ color: "var(--foreground)" }}>Audience Reach</span>
-                                        <span className="font-bold" style={{ color: "#D83B01" }}>60M+</span>
+                                        <span className="font-bold" style={{ color: "var(--accent-orange-text)" }}>60M+</span>
                                     </div>
                                     <div className="h-3 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                                         <div className="h-full rounded-full w-[85%]" style={{ backgroundColor: "#D83B01" }} />

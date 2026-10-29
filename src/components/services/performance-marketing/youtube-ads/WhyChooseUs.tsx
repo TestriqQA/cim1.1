@@ -57,8 +57,8 @@ export default function WhyChooseUs() {
                             borderColor: `${youtubeRed}40`,
                         }}
                     >
-                        <Trophy className="w-4 h-4" style={{ color: youtubeRed }} />
-                        <span className="text-sm font-medium" style={{ color: youtubeRed }}>
+                        <Trophy className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
                                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300"
                                     style={{
                                         backgroundColor: hoveredCard === idx ? youtubeRed : `${youtubeRed}15`,
-                                        color: hoveredCard === idx ? "white" : youtubeRed,
+                                        color: hoveredCard === idx ? "white" : "var(--accent-red-text)",
                                     }}
                                 >
                                     <reason.icon className="w-6 h-6" />

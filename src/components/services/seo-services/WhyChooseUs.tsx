@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
             icon: ShieldCheck,
             decorIcon: Sparkles,
             title: "White Hat Organic SEO Services",
-            description: <span>Safety first. We strictly adhere to Google's webmaster guidelines. Our ethical, White hat <Link href="/services/seo-services/link-building" className="hover:text-[var(--brand-seo)] transition-colors">organic SEO services</Link> protect your site from penalties while building a "moat" around your rankings that survives core updates.</span>,
+            description: <span>Safety first. We strictly adhere to Google's webmaster guidelines. Our ethical, White hat <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">organic SEO services</Link> protect your site from penalties while building a "moat" around your rankings that survives core updates.</span>,
             highlight: "Google Compliant",
             color: "#10b981",
         },
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
             icon: Zap,
             decorIcon: ArrowUpRight,
             title: "Technical Excellence",
-            description: <span>Our team has delivered rigorously tested web architectures for 50+ clients. We speak the language of developers, ensuring your <Link href="/services/seo-services/technical-seo-services" className="hover:text-[var(--brand-seo)] transition-colors">Technical SEO Audit</Link> translates into perfect code, schema, and Core Web Vitals scores.</span>,
+            description: <span>Our team has delivered rigorously tested web architectures for 50+ clients. We speak the language of developers, ensuring your <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Technical SEO Audit</Link> translates into perfect code, schema, and Core Web Vitals scores.</span>,
             highlight: "Dev-Ready Code",
             color: "#8b5cf6",
         },
@@ -36,12 +36,20 @@ export default function WhyChooseUs() {
             icon: BarChart3,
             decorIcon: CheckCircle2,
             title: "Continuous Optimization",
-            description: <span>SEO is a marathon, not a sprint. We provide Organic search engine optimization for growth that evolves. We monitor daily, adapting to algorithm shifts like the <Link href="/services/seo-services/seo-content-writing-services" className="hover:text-[var(--brand-seo)] transition-colors">2026 Helpful Content Update</Link> to keep you ahead.</span>,
+            description: <span>SEO is a marathon, not a sprint. We provide Organic search engine optimization for growth that evolves. We monitor daily, adapting to algorithm shifts like the <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">2026 Helpful Content Update</Link> to keep you ahead.</span>,
             highlight: "Always Improving",
             color: "#f59e0b",
         },
     ];
 
+    // Map per-card brand hue (used for borders/glows/icons) to an AA-contrast
+    // theme-aware token when the same hue is applied as TEXT.
+    const textColorMap: Record<string, string> = {
+        "#3b82f6": "var(--brand-blue-text)",
+        "#10b981": "var(--accent-green-text)",
+        "#8b5cf6": "var(--accent-violet-text)",
+        "#f59e0b": "var(--accent-amber-text)",
+    };
 
     return (
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
@@ -66,12 +74,12 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--brand-seo)" }}>
+                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             WHY CHOOSE US
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Why Partner with Our <span style={{ color: "var(--brand-seo)" }}>SEO Agency</span>?
+                        Why Partner with Our <span style={{ color: "var(--accent-green-text)" }}>SEO Agency</span>?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         We aren't just another vendor; we are your growth partners. Here is why global brands trust our Organic SEO Consulting:
@@ -128,7 +136,7 @@ export default function WhyChooseUs() {
                                         className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
                                         style={{
                                             backgroundColor: `${benefit.color}20`,
-                                            color: benefit.color,
+                                            color: textColorMap[benefit.color],
                                             transform: isHovered ? "translateX(0) scale(1)" : "translateX(-20px) scale(0.9)",
                                             opacity: isHovered ? 1 : 0,
                                         }}
@@ -175,7 +183,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-lg font-bold mb-3 transition-all duration-300"
                                         style={{
-                                            color: isHovered ? benefit.color : "var(--foreground)",
+                                            color: isHovered ? textColorMap[benefit.color] : "var(--foreground)",
                                         }}
                                     >
                                         {benefit.title}

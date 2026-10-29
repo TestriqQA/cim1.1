@@ -18,7 +18,7 @@ export default function ServiceOverview() {
         {
             icon: Smartphone,
             title: "HarmonyOS Phone Apps",
-            description: <><Link href="/services/mobile-app-development" className="text-[#C7000B] hover:underline">Native applications</Link> for Huawei smartphones using ArkTS and ArkUI. Full access to HMS Core services.</>,
+            description: <><Link href="/services/mobile-app-development" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Native applications</Link> for Huawei smartphones using ArkTS and ArkUI. Full access to HMS Core services.</>,
             shadowColor: "rgba(199, 0, 11, 0.4)",
         },
         {
@@ -48,7 +48,7 @@ export default function ServiceOverview() {
         {
             icon: Share2,
             title: "Distributed Applications",
-            description: <><Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[#C7000B] hover:underline">Cross-device apps</Link> using HarmonyOS distributed capabilities. Seamless data and task sharing.</>,
+            description: <><Link href="/services/mobile-app-development/cross-platform-app-development-company" className="text-[var(--accent-red-text)] hover:underline underline underline-offset-2">Cross-device apps</Link> using HarmonyOS distributed capabilities. Seamless data and task sharing.</>,
             shadowColor: "rgba(199, 0, 11, 0.4)",
         },
     ];
@@ -86,8 +86,8 @@ export default function ServiceOverview() {
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
                             style={{
-                                background: "rgba(199, 0, 11, 0.1)",
-                                color: "#C7000B",
+                                background: "rgba(199, 0, 11, 0.05)",
+                                color: "var(--accent-red-text)",
                             }}
                         >
                             Our Services
@@ -98,7 +98,7 @@ export default function ServiceOverview() {
                         style={{ color: "var(--foreground)" }}
                     >
                         HarmonyOS{" "}
-                        <span style={{ color: "#C7000B" }}>
+                        <span style={{ color: "var(--accent-red-text)" }}>
                             Development
                         </span>{" "}
                         Services

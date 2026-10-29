@@ -16,12 +16,12 @@ export default function Process() {
         {
             icon: Share2,
             title: "Phase 2: Strategy & Topic Clusters",
-            description: <>Creating <Link href="/services/seo-services/on-page-seo-services" className="hover:text-emerald-500 transition-colors">topic clusters SEO</Link> patterns to distribute authority across your domain, making it impossible for Google to ignore you.</>,
+            description: <>Creating <Link href="/services/seo-services/on-page-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">topic clusters SEO</Link> patterns to distribute authority across your domain, making it impossible for Google to ignore you.</>,
         },
         {
             icon: PenTool,
             title: "Phase 3: High-EEAT Content Creation",
-            description: <>Our SEO content experts craft <Link href="/blog/mastering-seo-organic-growth" className="hover:text-emerald-500 transition-colors">long-form SEO content</Link> (1500-2500 words) that solve user pain points deeply.</>,
+            description: <>Our SEO content experts craft <Link href="/blog/mastering-seo-organic-growth" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">long-form SEO content</Link> (1500-2500 words) that solve user pain points deeply.</>,
         },
         {
             icon: CheckCircle2,
@@ -49,7 +49,7 @@ export default function Process() {
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        The Content <span style={{ color: contentEmerald }}>Lifecycle</span>
+                        The Content <span style={{ color: "var(--accent-green-text)" }}>Lifecycle</span>
                     </h2>
                     <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         A systematic approach to creating content that compounds in value over time.
@@ -99,7 +99,7 @@ export default function Process() {
                                 <div
                                     className="absolute top-6 right-6 text-xs font-bold px-2 py-1 rounded border"
                                     style={{
-                                        color: contentEmerald,
+                                        color: "var(--accent-green-text)",
                                         borderColor: `${contentEmerald}30`,
                                         backgroundColor: `${contentEmerald}05`
                                     }}

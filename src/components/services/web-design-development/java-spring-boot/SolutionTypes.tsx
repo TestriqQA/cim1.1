@@ -36,7 +36,7 @@ export default function SolutionTypes() {
     const solutions = [
         {
             icon: Wallet,
-            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[#6DB33F] transition-colors">Banking & FinTech</Link>,
+            title: <Link href="/services/web-design-development/fintech-solutions" className="hover:text-[var(--accent-green-text)] transition-colors">Banking & FinTech</Link>,
             description: "Secure financial applications with transaction processing, compliance, and real-time analytics.",
             features: [
                 "Payment processing",
@@ -48,7 +48,7 @@ export default function SolutionTypes() {
         },
         {
             icon: HeartPulse,
-            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[#F89820] transition-colors">Healthcare Systems</Link>,
+            title: <Link href="/services/web-design-development/healthcare-portals" className="hover:text-[var(--accent-orange-text)] transition-colors">Healthcare Systems</Link>,
             description: "HIPAA-compliant healthcare applications with EHR integration and patient portals.",
             features: [
                 "EHR/EMR integration",
@@ -60,7 +60,7 @@ export default function SolutionTypes() {
         },
         {
             icon: ShoppingCart,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[#6DB33F] transition-colors">E-commerce Platforms</Link>,
+            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:text-[var(--accent-green-text)] transition-colors">E-commerce Platforms</Link>,
             description: "High-traffic e-commerce solutions with inventory management and order processing.",
             features: [
                 "Catalog management",
@@ -120,8 +120,8 @@ export default function SolutionTypes() {
                             borderColor: "rgba(109, 179, 63, 0.2)",
                         }}
                     >
-                        <Building className="w-4 h-4" style={{ color: "#6DB33F" }} />
-                        <span className="text-sm font-medium" style={{ color: "#6DB33F" }}>
+                        <Building className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                             Industry Solutions
                         </span>
                     </div>
@@ -201,7 +201,7 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[#6DB33F]"
+                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-green-text)]"
                                             }`}
                                     />
                                 </div>
@@ -220,7 +220,7 @@ export default function SolutionTypes() {
                                 >
                                     {solution.features.map((feature, fIdx) => (
                                         <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[#6DB33F]" />
+                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green-text)]" />
                                             <span>{feature}</span>
                                         </div>
                                     ))}
@@ -233,7 +233,7 @@ export default function SolutionTypes() {
                                         ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
                                     `}
                                 >
-                                    <ArrowRight className="w-5 h-5 text-[#6DB33F]" />
+                                    <ArrowRight className="w-5 h-5 text-[var(--accent-green-text)]" />
                                 </div>
                             </div>
                         );
