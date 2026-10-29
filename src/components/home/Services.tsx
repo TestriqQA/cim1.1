@@ -15,6 +15,21 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import React, { useState } from "react";
+import Link from "next/link";
+import {
+  Zap,
+  Globe,
+  Palette,
+  Search,
+  Target,
+  Share2,
+  Bot,
+  Workflow,
+  Code,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Services() {
   const [activeService, setActiveService] = useState<number | null>(0);

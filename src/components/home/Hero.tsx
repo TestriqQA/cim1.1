@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, BarChart3, Lightbulb, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  ChevronRight,
+  Play,
+  BarChart3,
+  Lightbulb,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

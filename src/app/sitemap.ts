@@ -1,6 +1,9 @@
 import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
+import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
 import { listedProducts, isProductListed } from "@/data/products";
@@ -144,9 +147,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   // 7. Product Privacy Policy Routes
-  const productPrivacyRoutes: MetadataRoute.Sitemap = productPrivacyPolicies
-    .filter((policy) => isProductListed(policy.slug))
-    .map((policy) => ({
+  const productPrivacyRoutes: MetadataRoute.Sitemap =
+    productPrivacyPolicies.map((policy) => ({
       url: `${baseUrl}/products/${policy.slug}/privacy-policy`,
       lastModified: staticLastModified,
       changeFrequency: "yearly" as const,

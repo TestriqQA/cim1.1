@@ -24,6 +24,27 @@ import {
   CheckCircle2,
   Home,
   ChevronRight,
+  MessageSquare,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Sparkles,
+  Send,
+  Users,
+  CheckCircle,
+  Check,
+  Star,
+  TrendingUp,
+  Paperclip,
+  Calendar,
+  DollarSign,
+  X,
+  Info,
+  Loader2,
+  CheckCircle2,
+  Home,
+  ChevronRight,
 } from "lucide-react";
 
 // Phone input with country codes
@@ -454,13 +475,22 @@ export default function Hero() {
                 />
               </div>
 
-                            <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                Whether you need a high-performance website, AI-powered marketing automation, or a complete digital transformation, our team of experts is ready to help you succeed.
-                                <span className="block mt-2 font-semibold" style={{ color: "var(--foreground)" }}>
-                                    With a proven record of successful projects and strong client retention, we're your trusted partner for scalable digital growth.
-                                </span>
-                            </p>
-                        </div>
+              <p
+                className="text-lg md:text-xl leading-relaxed"
+                style={{ color: "var(--secondary-text)" }}
+              >
+                Whether you need a high-performance website, AI-powered
+                marketing automation, or a complete digital transformation, our
+                team of experts is ready to help you succeed.
+                <span
+                  className="block mt-2 font-semibold"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  With 300+ successful projects and strong client retention,
+                  we're your trusted partner for scalable digital growth.
+                </span>
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {contactMethods.map((method, index) => {
