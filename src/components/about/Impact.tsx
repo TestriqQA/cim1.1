@@ -9,75 +9,54 @@ export default function Impact() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#008ac1] via-[#00b5ca] to-[#008ac1] py-12 lg:py-16">
+    <section className="py-12 lg:py-16 bg-gradient-to-br from-[#008ac1] via-[#00b5ca] to-[#008ac1] relative overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-white/10 blur-3xl animate-pulse" />
-
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-white/10 blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
-        />
+        ></div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="mb-16 text-center md:mb-20">
-          <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Our Impact
           </h2>
-
-          <div className="mx-auto mb-6 h-1.5 w-28 rounded-full bg-white" />
-
-          <p className="mx-auto max-w-3xl text-lg text-white/90 md:text-xl">
-            We focus on delivering real outcomes, not vanity metrics.
+          <div className="w-28 h-1.5 bg-white mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            We focus on delivering real outcomes, not vanity metrics
           </p>
         </div>
 
-        {/* Statistics Grid */}
-        <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mb-16 lg:grid-cols-4">
-          {stats.map((stat) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat, index) => {
             const Icon = stat.icon;
-            const isConsistent = stat.value === "Consistent";
-
             return (
               <div
-                key={stat.label}
-                className="group relative flex min-w-0 flex-col items-center rounded-3xl border border-white/20 bg-white/10 px-5 pb-8 pt-8 text-center backdrop-blur-xl transition-all duration-500 hover:scale-[1.03] hover:bg-white/20 sm:px-6"
+                key={index}
+                className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 group"
               >
-                {/* Icon */}
-                <div className="absolute -top-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-xl transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-6 w-6 text-[#008ac1]" />
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-6 h-6 text-[var(--brand-blue-text)]" />
                 </div>
-
-                <div className="mt-4 flex w-full min-w-0 flex-1 flex-col items-center">
-                  {/* Statistic Value */}
-                  <div className="flex min-h-[72px] w-full min-w-0 items-center justify-center">
-                    <span
-                      className={
-                        isConsistent
-                          ? "block max-w-full break-words text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
-                          : "block max-w-full text-5xl font-bold leading-tight text-white md:text-6xl"
-                      }
-                    >
-                      {stat.value}
-                    </span>
+                <div className="mt-4">
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-3">
+                    {stat.value}
                   </div>
-
-                  {/* Statistic Label */}
-                  <p className="mt-2 max-w-full text-base font-medium leading-relaxed text-white/90 sm:text-lg">
+                  <div className="text-lg text-white/90 font-medium">
                     {stat.label}
-                  </p>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Impact Statement */}
         <div className="text-center">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl sm:p-8 md:p-12">
-            <p className="text-lg leading-relaxed text-white md:text-xl">
+          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 max-w-4xl mx-auto">
+            <p className="text-xl text-white leading-relaxed">
               Our work consistently transforms brand visibility, lead
               generation, and digital presence for businesses across industries.
             </p>

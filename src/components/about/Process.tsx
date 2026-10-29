@@ -35,16 +35,14 @@ export default function Process() {
       details: [
         "Brand strategy",
         "Creative concepts",
-        <>
-          <span>
-            <Link
-              href="/services/brand-identity-design"
-              className="hover:text-[var(--brand-purple-text)] transition-colors"
-            >
-              UI/UX design
-            </Link>
-          </span>
-        </>,
+        <span key="ui-ux-design">
+          <Link
+            href="/services/brand-identity-design"
+            className="hover:text-[var(--brand-purple-text)] transition-colors"
+          >
+            UI/UX design
+          </Link>
+        </span>,
         "Content planning",
       ],
     },
@@ -70,28 +68,23 @@ export default function Process() {
       colorFrom: "var(--brand-yellow)",
       colorTo: "var(--brand-orange)",
       details: [
-        <>
-          <span>
-            <Link
-              href="/services/performance-marketing"
-              className="hover:text-[var(--accent-orange-text)] transition-colors"
-            >
-              Performance tracking
-            </Link>
-          </span>
-        </>,
+        <span key="performance-tracking">
+          <Link
+            href="/services/performance-marketing"
+            className="hover:text-[var(--accent-orange-text)] transition-colors"
+          >
+            Performance tracking
+          </Link>
+        </span>,
         "A/B testing",
-        <>
-          <span>
-            <Link
-              href="/services/ai-workflows-automations-services"
-              className="hover:text-[var(--accent-amber-text)] transition-colors"
-            >
-              Workflow automation
-            </Link>
-          </span>
-        </>,
-
+        <span key="workflow-automation">
+          <Link
+            href="/services/ai-workflows-automations-services"
+            className="hover:text-[var(--accent-amber-text)] transition-colors"
+          >
+            Workflow automation
+          </Link>
+        </span>,
         "Continuous improvement",
       ],
     },
@@ -223,6 +216,9 @@ export default function Process() {
                           <p className="text-[var(--secondary-text)] leading-relaxed mb-4">
                             {step.description}
                           </p>
+                          <p className="text-[var(--secondary-text)] leading-relaxed mb-4">
+                            {step.description}
+                          </p>
 
                           <div className="space-y-2 overflow-hidden">
                             <div className="pt-4 border-t border-[var(--border-color)]">
@@ -242,39 +238,41 @@ export default function Process() {
                           </div>
                         </article>
                       ) : (
-                        <div className="flex flex-col items-center justify-center relative">
-                          {/* Decorative rings */}
+                        <div className="relative w-48 h-48 flex items-center justify-center">
+                          {/* Decorative rings - pinned to exact center */}
                           <div
-                            className="absolute w-48 h-48 rounded-full opacity-5"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full opacity-5"
                             style={{ background: grad }}
                           />
                           <div
-                            className="absolute w-36 h-36 rounded-full border-2 opacity-10"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 rounded-full border-2 opacity-10"
                             style={{ borderColor: step.colorFrom }}
                           />
-                          {/* Large step number */}
-                          <div
-                            className="text-[10rem] font-black leading-none transition-all duration-500 hover:scale-110"
-                            style={{
-                              background: grad,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              opacity: 0.15,
-                            }}
-                          >
-                            {idx + 1}
-                          </div>
-                          {/* Step title below */}
-                          <div
-                            className="text-lg font-bold uppercase tracking-widest -mt-4"
-                            style={{
-                              background: grad,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              opacity: 0.4,
-                            }}
-                          >
-                            {step.title}
+
+                          {/* Number + title, centered inside the circle */}
+                          <div className="relative z-10 flex flex-col items-center justify-center">
+                            <div
+                              className="text-[7rem] font-black leading-[0.8] transition-all duration-500 hover:scale-110"
+                              style={{
+                                background: grad,
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                opacity: 0.15,
+                              }}
+                            >
+                              {idx + 1}
+                            </div>
+                            <div
+                              className="text-sm font-bold uppercase tracking-widest mt-2"
+                              style={{
+                                background: grad,
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                opacity: 0.4,
+                              }}
+                            >
+                              {step.title}
+                            </div>
                           </div>
                         </div>
                       )}
@@ -353,45 +351,57 @@ export default function Process() {
                           </div>
                         </article>
                       ) : (
-                        <div className="flex flex-col items-center justify-center relative">
-                          {/* Decorative rings */}
+                        <div className="relative w-48 h-48 flex items-center justify-center">
+                          {/* Decorative rings - pinned to exact center */}
                           <div
-                            className="absolute w-48 h-48 rounded-full opacity-5"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full opacity-5"
                             style={{ background: grad }}
                           />
                           <div
-                            className="absolute w-36 h-36 rounded-full border-2 opacity-10"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 rounded-full border-2 opacity-10"
                             style={{ borderColor: step.colorFrom }}
                           />
-                          {/* Large step number */}
-                          <div
-                            className="text-[10rem] font-black leading-none transition-all duration-500 hover:scale-110"
-                            style={{
-                              background: grad,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              opacity: 0.15,
-                            }}
-                          >
-                            {idx + 1}
-                          </div>
-                          {/* Step title below */}
-                          <div
-                            className="text-lg font-bold uppercase tracking-widest -mt-4"
-                            style={{
-                              background: grad,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              opacity: 0.4,
-                            }}
-                          >
-                            {step.title}
+
+                          {/* Number + title, centered inside the circle */}
+                          <div className="relative z-10 flex flex-col items-center justify-center">
+                            <div
+                              className="text-[7rem] font-black leading-[0.8] transition-all duration-500 hover:scale-110"
+                              style={{
+                                background: grad,
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                opacity: 0.15,
+                              }}
+                            >
+                              {idx + 1}
+                            </div>
+                            <div
+                              className="text-sm font-bold uppercase tracking-widest mt-2"
+                              style={{
+                                background: grad,
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                opacity: 0.4,
+                              }}
+                            >
+                              {step.title}
+                            </div>
                           </div>
                         </div>
                       )}
                     </div>
                   </div>
 
+                  {/* Mobile stacked card */}
+                  <div className="lg:hidden mt-6 relative bg-[var(--card-bg)] rounded-3xl p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
+                    <div
+                      className="absolute -top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold z-10"
+                      style={{
+                        background: `linear-gradient(135deg, ${step.colorFrom}, ${step.colorTo})`,
+                      }}
+                    >
+                      {idx + 1}
+                    </div>
                   {/* Mobile stacked card */}
                   <div className="lg:hidden mt-6 relative bg-[var(--card-bg)] rounded-3xl p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
                     <div
