@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
         {
             icon: Users,
             title: "Expert Authoritative Team",
-            description: "With 120+ successful projects, our team consists of verified industry experts in HTML5, JavaScript, and Native Bridge integration.",
+            description: "With a proven record of successful projects, our team consists of verified industry experts in HTML5, JavaScript, and Native Bridge integration.",
             gradient: "from-[#00b4d8] to-[#48cae4]",
             shadowColor: "rgba(0, 180, 216, 0.3)",
         },

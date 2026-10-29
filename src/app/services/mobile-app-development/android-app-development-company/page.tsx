@@ -9,10 +9,16 @@ import CTA from "@/components/services/mobile-app-development/android-app-develo
 import FAQ from "@/components/services/mobile-app-development/android-app-development-company/FAQ";
 
 export const metadata: Metadata = {
-    title: "Android App Development Services | Top Company",
+    title: "Android App Development Company | Cinute InfoMedia",
     description:
-        "Expert Android app development company crafting custom, high-performance apps. 300+ successful launches. Get high ROI & free audit today!",
+        "Custom Android app development in Kotlin and Jetpack Compose, tested on real devices and shipped to Play. Book a free consultation.",
+    // This was the only one of the 59 service pages with no canonical tag, while
+    // still being listed in sitemap.xml.
+    alternates: {
+        canonical: "https://www.cinuteinfomedia.com/services/mobile-app-development/android-app-development-company",
+    },
     openGraph: {
+        url: "https://www.cinuteinfomedia.com/services/mobile-app-development/android-app-development-company",
         images: [
             {
                 url: "/og-images/android-app-development-company.webp",
@@ -25,14 +31,6 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         images: ["/og-images/android-app-development-company.webp"],
     },
-    keywords: [
-        "Android App Development Services",
-        "custom Android app development",
-        "Android app development company",
-        "native Android development",
-        "Kotlin app development",
-        "Android app maintenance",
-    ],
 };
 
 export default function AndroidAppDevelopmentPage() {
@@ -56,7 +54,7 @@ export default function AndroidAppDevelopmentPage() {
                             name: "Android App Development Services",
                             provider: {
                                 "@type": "Organization",
-                                name: "Cinute Infomedia",
+                                name: "Cinute InfoMedia",
                                 url: "https://www.cinuteinfomedia.com",
                             },
                             serviceType: "Mobile App Development",

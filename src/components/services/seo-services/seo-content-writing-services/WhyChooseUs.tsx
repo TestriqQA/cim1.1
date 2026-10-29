@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
         {
             icon: Sparkles,
             title: "Proven EEAT Portfolio",
-            description: <>Managed 50+ enterprise-scale projects with rigorously tested delivery on <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">technical content</Link>.</>,
+            description: <>Managed enterprise-scale projects with rigorously tested delivery on <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">technical content</Link>.</>,
         },
         {
             icon: Globe,
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                            Why Partner with <span style={{ color: "var(--accent-green-text)" }}>Cinute Infomedia?</span>
+                            Why Partner with <span style={{ color: "var(--accent-green-text)" }}>Cinute InfoMedia?</span>
                         </h2>
                         <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                             Transform your content into a non-stop lead engine. We don't just track rankings; we track your bottom line.
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>5M+</h3>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-green-text)" }}>High volume</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Words Written</p>
                             </div>
                             <div

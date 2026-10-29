@@ -29,7 +29,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'EdTech & LMS Development | Custom Learning Management Systems',
+    title: 'EdTech & LMS Development | Cinute InfoMedia',
     description: 'Build powerful online course platforms, learning management systems, and educational apps. We create engaging EdTech solutions with video streaming, quizzes, certifications, and analytics.',
     url: '/services/web-design-development/edtech-lms',
     keywords: [
@@ -53,7 +53,7 @@ export default function EdTechLMSPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "EdTech & LMS Development | Custom Learning Management Systems",
+            name: "EdTech & LMS Development | Cinute InfoMedia",
             description: "Build powerful online course platforms, learning management systems, and educational apps. We create engaging EdTech solutions with video streaming, quizzes, certifications, and analytics.",
             urlPath: "/services/web-design-development/edtech-lms",
             datePublished: "2025-01-01",
@@ -100,7 +100,7 @@ export default function EdTechLMSPage() {
 
         generateHowToSchema({
             name: "Our EdTech Development Process",
-            description: "A proven 6-step methodology for building powerful EdTech platforms that have served 100K+ students with a 98% completion rate.",
+            description: "A proven 6-step methodology for building powerful EdTech platforms that have served a high volume of students with strong completion rates.",
             steps: [
                 { name: "Learning Needs Analysis", text: "Identify target audience, define learning objectives, and develop a comprehensive content strategy.", url: "https://www.cinuteinfomedia.com/services/web-design-development/edtech-lms/#step-analysis" },
                 { name: "UX Design & Prototyping", text: "Design for content readability and engagement with interactive mockups and learner-focused interfaces.", url: "https://www.cinuteinfomedia.com/services/web-design-development/edtech-lms/#step-design" },

@@ -23,8 +23,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'E-commerce Website Development Services | Top Custom Store Agency',
-    description: 'Scale your brand with our expert E-commerce Website Development Services. expert teams building high-ROI Magento, Shopify, & custom stores. Get a fast quote!',
+    title: 'E-commerce Website Development | Cinute InfoMedia',
+    description: 'Scale your brand with our expert E-commerce Website Development Services — expert teams building high-ROI Magento, Shopify and custom stores. Get a fast quote!',
     url: '/services/web-design-development/ecommerce-development-company',
     keywords: [
         'E-commerce Development',
@@ -46,8 +46,8 @@ export default function EcommerceStoresPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "E-commerce Website Development Services | Top Custom Store Agency",
-            description: "Scale your brand with our expert E-commerce Website Development Services. expert teams building high-ROI Magento, Shopify, & custom stores. Get a fast quote!",
+            name: "E-commerce Website Development | Cinute InfoMedia",
+            description: "Scale your brand with our expert E-commerce Website Development Services — expert teams building high-ROI Magento, Shopify and custom stores. Get a fast quote!",
             urlPath: "/services/web-design-development/ecommerce-development-company",
             datePublished: "2025-01-01",
             dateModified: "2026-03-17",

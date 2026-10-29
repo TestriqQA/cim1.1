@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
                                 }}
                             >
                                 <div className="text-4xl font-bold mb-2" style={{ color: "var(--accent-sky-text)" }}>300%+</div>
-                                <p style={{ color: "var(--secondary-text)" }}>average increase in organic revenue in first 6 months (based on 50+ client case studies).</p>
+                                <p style={{ color: "var(--secondary-text)" }}>average increase in organic revenue in first 6 months (based on our client case studies).</p>
                             </div>
                         </div>
                     </div>

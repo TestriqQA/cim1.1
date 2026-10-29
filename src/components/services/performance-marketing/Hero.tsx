@@ -14,8 +14,8 @@ export default function Hero() {
 
     const stats = [
         { value: "Large-Scale", label: "Ad Spend Managed" },
-        { value: "500%", label: "Avg. ROAS" },
-        { value: "200+", label: "Campaigns Run" },
+        { value: "Strong", label: "Avg. ROAS" },
+        { value: "Proven", label: "Campaigns Run" },
     ];
 
     return (
@@ -92,7 +92,7 @@ export default function Hero() {
 
 
                         <p className="mt-6 text-lg md:text-xl max-w-xl mx-auto lg:mx-0" style={{ color: "var(--secondary-text)" }}>
-                            Stop guessing where your marketing budget goes. Start scaling with precision. We allow you to lower your <Link href="/blog/data-analytics-insights-action" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)] transition-colors">Customer Acquisition Cost (CAC)</Link> while maximizing your Return on Ad Spend (ROAS). Join 50+ global brands who trust us to manage large-scale annual ad spend.
+                            Stop guessing where your marketing budget goes. Start scaling with precision. We allow you to lower your <Link href="/blog/data-analytics-insights-action" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)] transition-colors">Customer Acquisition Cost (CAC)</Link> while maximizing your Return on Ad Spend (ROAS). Join the global brands who trust us to manage large-scale annual ad spend.
                         </p>
 
                         {/* Feature Pills */}

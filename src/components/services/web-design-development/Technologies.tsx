@@ -16,32 +16,15 @@ export default function Technologies() {
       logo: "/images/techstack_logos/nextjs-logo.svg",
       href: "/services/web-design-development/nextjs-development-services",
     },
-    {
-      name: "Vue.js",
-      logo: "/images/techstack_logos/vuejs-logo.svg",
-      href: "/services/web-design-development/nextjs-development-services",
-    },
-    {
-      name: "Angular",
-      logo: "/images/techstack_logos/angularjs-logo.svg",
-      href: "/services/web-design-development/nextjs-development-services",
-    },
-    {
-      name: "TypeScript",
-      logo: "/images/techstack_logos/typescript-logo.svg",
-      href: "/services/web-design-development/nextjs-development-services",
-    },
-    {
-      name: "JavaScript",
-      logo: "/images/techstack_logos/javascript-logo.svg",
-      href: "/services/web-design-development/nextjs-development-services",
-    },
+    { name: "Vue.js", logo: "/images/techstack_logos/vuejs-logo.svg" },
+    { name: "Angular", logo: "/images/techstack_logos/angularjs-logo.svg" },
+    { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg" },
+    { name: "JavaScript", logo: "/images/techstack_logos/javascript-logo.svg" },
     { name: "HTML5", logo: "/images/techstack_logos/html5-logo.svg" },
     { name: "CSS3", logo: "/images/techstack_logos/css3-logo.svg" },
     {
       name: "Tailwind CSS",
       logo: "/images/techstack_logos/tailwindcss-logo.svg",
-      href: "/blog/future-web-development-nextjs",
     },
     { name: "Bootstrap", logo: "/images/techstack_logos/bootstrap-logo.svg" },
   ];

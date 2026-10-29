@@ -23,7 +23,7 @@ export default function MetaAdsPage() {
                 "serviceType": "Meta Ads Management",
                 "provider": {
                     "@type": "Organization",
-                    "name": "Cinute Infomedia",
+                    "name": "Cinute InfoMedia",
                     "url": "https://www.cinuteinfomedia.com",
                     "logo": "https://www.cinuteinfomedia.com/logo.png",
                     "description": "Global Web Design, Development & Digital Marketing Agency",

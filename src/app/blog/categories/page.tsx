@@ -11,7 +11,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = getPageMetadata({
-  title: "Blog Categories | Cinute Infomedia",
+  title: "Blog Categories | Cinute InfoMedia",
   description: "Explore our blog articles organized by category. From web development to digital marketing, find the insights you need.",
   url: "/blog/categories",
   image: "/og-images/blogcategories.webp"
@@ -47,7 +47,7 @@ export default async function BlogCategoriesPage() {
       "@type": "CollectionPage",
       "@id": "https://www.cinuteinfomedia.com/blog/categories/#collectionpage",
       "url": "https://www.cinuteinfomedia.com/blog/categories",
-      "name": "Blog Categories | Cinute Infomedia",
+      "name": "Blog Categories | Cinute InfoMedia",
       "description": "Explore our blog articles organized by category. From web development to digital marketing, find the insights you need.",
       "isPartOf": { "@id": "https://www.cinuteinfomedia.com/#website" },
       "about": { "@id": "https://www.cinuteinfomedia.com/#organization" },

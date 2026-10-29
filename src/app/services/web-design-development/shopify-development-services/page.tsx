@@ -21,7 +21,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Expert Shopify Development Services | Shopify Marketing Agency 2026',
+    title: 'Shopify Development Services | Cinute InfoMedia',
     description: 'Scale your brand with expert Shopify development services. From custom theme design to Shopify Plus migration & SEO optimization.',
     url: '/services/web-design-development/shopify-development-services',
     keywords: [
@@ -45,7 +45,7 @@ export default function ShopifyEcommercePage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Expert Shopify Development Services | Shopify Marketing Agency 2026",
+            name: "Shopify Development Services | Cinute InfoMedia",
             description: "Scale your brand with expert Shopify development services. From custom theme design to Shopify Plus migration & SEO optimization.",
             urlPath: "/services/web-design-development/shopify-development-services",
             datePublished: "2025-01-01",
@@ -64,7 +64,7 @@ export default function ShopifyEcommercePage() {
 
         generateServiceSchema({
             name: "Shopify Development Services & Shopify Marketing Agency",
-            description: "Professional Shopify development services for high-growth global brands. From high-converting store setup to enterprise-grade Shopify Plus solutions, we deliver precision-engineered experiences that dominate search rankings and drive sustainable ROI. 100+ stores built, high sales volume processed, high availability.",
+            description: "Professional Shopify development services for high-growth global brands. From high-converting store setup to enterprise-grade Shopify Plus solutions, we deliver precision-engineered experiences that dominate search rankings and drive sustainable ROI. Shopify stores built, high sales volume processed, high availability.",
             urlPath: "/services/web-design-development/shopify-development-services",
             serviceType: "Shopify Development & E-commerce",
             areaServed: ["IN", "US", "GB", "AU", "AE"],

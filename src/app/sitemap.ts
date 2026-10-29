@@ -1,9 +1,12 @@
 import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
+import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
-import { products } from "@/data/products";
+import { listedProducts, isProductListed } from "@/data/products";
 import { productPrivacyPolicies } from "@/data/productPrivacy";
 import { productSupportData } from "@/data/productSupport";
 import { clientProjects } from "@/data/portfolio";

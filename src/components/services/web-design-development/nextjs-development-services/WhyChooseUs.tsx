@@ -292,7 +292,7 @@ export default function WhyChooseUs() {
                     <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #61dafb, #00d4ff)" }} />
                     <div className="max-w-4xl mx-auto">
                         <p className="text-2xl md:text-3xl font-medium mb-8 italic" style={{ color: "var(--foreground)" }}>
-                            &quot;Cinute Infomedia developed our website using Next.js, which dramatically enhanced our SEO and page performance. This technical superiority has directly helped us secure major deals for our QA and testing services.&quot;
+                            &quot;Cinute InfoMedia developed our website using Next.js, which dramatically enhanced our SEO and page performance. This technical superiority has directly helped us secure major deals for our QA and testing services.&quot;
                         </p>
                         <div className="flex items-center justify-center gap-4">
                             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#61dafb] to-[#00d4ff] flex items-center justify-center text-black font-bold">

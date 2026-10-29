@@ -178,7 +178,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    10M+
+                                    High
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>
                                     Conversations
@@ -206,7 +206,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    50+
+                                    Broad
                                 </div>
                                 <div className="text-[10px] md:text-xs font-medium uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>
                                     Industries

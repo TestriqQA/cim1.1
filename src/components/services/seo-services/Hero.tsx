@@ -187,7 +187,7 @@ export default function Hero() {
                                 <div className="text-3xl md:text-4xl font-bold mb-1"
                                     style={{ color: "var(--accent-green-text)" }}
                                 >
-                                    50+
+                                    Trusted by
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Fintech & SaaS Leaders

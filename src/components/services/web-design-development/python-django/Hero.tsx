@@ -171,13 +171,13 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>200+</h2>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Proven</h2>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Apps Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>8+</h2>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Experience</p>
+                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Deep</h2>
+                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">

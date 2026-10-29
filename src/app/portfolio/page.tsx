@@ -16,7 +16,7 @@ const siteUrl = "https://www.cinuteinfomedia.com";
 const pagePath = "/portfolio";
 
 export const metadata = getPageMetadata({
-    title: "Portfolio – Web Development, SEO & Digital Marketing Case Studies | Cinute InfoMedia",
+    title: "Portfolio & Case Studies | Cinute InfoMedia",
     // Describes what is ACTUALLY on the page. Keep it in step with the entries
     // in data/portfolio.ts: it named only Testriq while the portfolio held one
     // case study, and it must not drift back into advertising service areas no

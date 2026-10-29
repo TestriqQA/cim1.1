@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ color: "var(--foreground)" }}>The Cinute Infomedia</span>{" "}
+                        <span style={{ color: "var(--foreground)" }}>The Cinute InfoMedia</span>{" "}
                         <span
                             style={{
                                 background: "linear-gradient(135deg, #3DDC84, #78C257)",

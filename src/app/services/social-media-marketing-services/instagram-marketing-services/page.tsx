@@ -12,13 +12,6 @@ export const metadata: Metadata = {
     title: "Instagram Marketing Agency | Instagram Growth & Ads 2026",
     description:
         "Supercharge your brand with the top Instagram Marketing Company. Expert Reels, Influencer Marketing, and Instagram Advertising Services. Get a higher CTR!",
-    keywords: [
-        "Instagram Marketing Services",
-        "Instagram Marketing Agency",
-        "Instagram Advertising Services",
-        "Instagram Marketing Company",
-        "Instagram Management Services",
-    ],
     openGraph: {
         title: "Instagram Marketing Agency | Instagram Growth & Ads 2026",
         description: "Supercharge your brand with the top Instagram Marketing Company. Expert Reels, Influencer Marketing, and Instagram Advertising Services. Get a higher CTR!",
@@ -29,7 +22,7 @@ export const metadata: Metadata = {
                 url: "/og-images/instagram-marketing-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Instagram Marketing Agency | Instagram Growth & Ads 2026 by Cinute Infomedia",
+                alt: "Instagram Marketing Agency | Instagram Growth & Ads 2026 by Cinute InfoMedia",
             },
         ],
     },
@@ -56,7 +49,7 @@ export default function InstagramMarketingPage() {
                         "serviceType": "Instagram Marketing Services",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com"
                         },
                         "areaServed": "Global",

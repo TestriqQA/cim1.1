@@ -22,9 +22,9 @@ export default function CaseStudies() {
       industry: "EdTech",
       title: "Automation & chatbot for student engagement",
       description:
-        "Implemented an AI chatbot paired with CRM automation to reduce manual support and increase student engagement; saved 200+ hours per month and improved retention.",
-      metric: "200h",
-      metricLabel: "Saved",
+        "Implemented an AI chatbot paired with CRM automation to reduce manual support and increase student engagement; saved significant hours per month and improved retention.",
+      metric: "Significant",
+      metricLabel: "Hours Saved",
       gradientStyle: {
         background:
           "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",

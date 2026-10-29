@@ -8,23 +8,11 @@ import WhyChooseUs from "@/components/services/mobile-app-development/ios-app-de
 import CTA from "@/components/services/mobile-app-development/ios-app-development-company/CTA";
 
 export const metadata: Metadata = {
-    title: "iOS App Development Services | Custom iPhone & iPad Apps for Global Brands",
+    title: "iOS App Development Company | Cinute InfoMedia",
     description:
         "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
-    keywords: [
-        "iOS App Development Services",
-        "iOS App Development Company",
-        "iPhone App Development services",
-        "Custom iPhone app development",
-        "iPad application development",
-        "Apple Watch app development",
-        "SwiftUI development",
-        "Enterprise iOS solutions",
-        "iOS app security",
-        "App Store Optimization"
-    ],
     openGraph: {
-        title: "iOS App Development Services | Custom iPhone & iPad Apps for Global Brands",
+        title: "iOS App Development Company | Cinute InfoMedia",
         description: "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/ios-app-development-company",
         type: "website",
@@ -33,13 +21,13 @@ export const metadata: Metadata = {
                 url: "/og-images/ios-app-development-company.webp",
                 width: 1200,
                 height: 630,
-                alt: "iOS App Development Services | Custom iPhone & iPad Apps for Global Brands by Cinute Infomedia",
+                alt: "iOS App Development Company | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "iOS App Development Services | Custom iPhone & iPad Apps for Global Brands",
+        title: "iOS App Development Company | Cinute InfoMedia",
         description: "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
         images: ["/og-images/ios-app-development-company.webp"],
     },

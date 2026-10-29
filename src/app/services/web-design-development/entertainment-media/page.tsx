@@ -20,7 +20,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Entertainment & Media Website Development | Streaming Platforms',
+    title: 'Entertainment & Media Development | Cinute InfoMedia',
     description: 'Build powerful streaming platforms and content management systems. Create immersive digital entertainment experiences that captivate audiences and drive subscriber growth.',
     url: '/services/web-design-development/entertainment-media',
     keywords: [
@@ -46,7 +46,7 @@ export default function EntertainmentMediaPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Entertainment & Media Website Development | Streaming Platforms",
+            name: "Entertainment & Media Development | Cinute InfoMedia",
             description: "Build powerful streaming platforms and content management systems. Create immersive digital entertainment experiences that captivate audiences and drive subscriber growth.",
             urlPath: "/services/web-design-development/entertainment-media",
             datePublished: "2025-01-01",
@@ -93,7 +93,7 @@ export default function EntertainmentMediaPage() {
 
         generateHowToSchema({
             name: "Our Entertainment Platform Development Process",
-            description: "A proven 7-step methodology for building entertainment platforms that have delivered 100M+ content views across 50+ media platforms.",
+            description: "A proven 7-step methodology for building entertainment platforms that have delivered high content-view volumes across media platforms.",
             steps: [
                 { name: "Discovery & Content Strategy", text: "Content audit, audience mapping, and competitor analysis to define your entertainment platform vision.", url: "https://www.cinuteinfomedia.com/services/web-design-development/entertainment-media/#step-discovery" },
                 { name: "Platform Architecture", text: "System architecture design, CDN planning, and database schema for scalable content delivery.", url: "https://www.cinuteinfomedia.com/services/web-design-development/entertainment-media/#step-architecture" },

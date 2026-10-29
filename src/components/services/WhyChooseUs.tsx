@@ -108,8 +108,8 @@ export default function WhyChooseUs() {
                             }}
                         >
                             {[
-                                { value: "50+", label: "Projects" },
-                                { value: "98%", label: "Satisfaction" },
+                                { value: "Proven", label: "Projects" },
+                                { value: "Strong", label: "Satisfaction" },
                                 { value: "Strong", label: "Track Record" },
                             ].map((stat, index) => (
                                 <div key={index} className="text-center">

@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -21,11 +24,10 @@ export default function CTA() {
             Transform Your Digital Presence with a Web Development Company That
             Delivers Results
           </h2>
-
           <p style={{ color: "rgba(255,255,255,0.9)", marginBottom: 20 }}>
-            Join 300+ businesses that trust Cinute InfoMedia for web
-            development, mobile apps, and digital marketing solutions that drive
-            measurable ROI.
+            Join the businesses that trust Cinute InfoMedia for web development,
+            mobile apps, and digital marketing solutions that drive measurable
+            ROI.
           </p>
 
           <div

@@ -96,7 +96,7 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {[
                         {
-                            number: "200+",
+                            number: "Proven",
                             label: "Corporate Sites Delivered",
                         },
                         {

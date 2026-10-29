@@ -40,8 +40,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Social Media Marketing Services | Top-Rated SMM Agency for Measurable ROI',
-    description: "Explode your brand's growth with our expert Social Media Marketing Services. Global SMM Agency specializing in Strategy, Paid Ads & Content. 300+ campaigns, 5M+ reach, strong ROI growth. Get a Free Audit!",
+    title: 'Social Media Marketing Agency | Cinute InfoMedia',
+    description: "Social media strategy, content and community management for Facebook, Instagram and LinkedIn. Grow with Cinute InfoMedia. Get a quote.",
     url: '/services/social-media-marketing-services',
     keywords: [
         'Social Media Marketing Services',
@@ -65,8 +65,8 @@ export default function SocialMediaMarketingPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Social Media Marketing Services | Top-Rated SMM Agency for Measurable ROI",
-            description: "Explode your brand's growth with our expert Social Media Marketing Services. Global SMM Agency specializing in Strategy, Paid Ads & Content. 300+ campaigns, 5M+ reach, strong ROI growth. Get a Free Audit!",
+            name: "Social Media Marketing Agency | Cinute InfoMedia",
+            description: "Social media strategy, content and community management for Facebook, Instagram and LinkedIn. Grow with Cinute InfoMedia. Get a quote.",
             urlPath: "/services/social-media-marketing-services",
             datePublished: "2025-01-01",
             dateModified: "2026-04-10",
@@ -83,7 +83,7 @@ export default function SocialMediaMarketingPage() {
 
         generateServiceSchema({
             name: "Social Media Marketing Services",
-            description: "Social Media Marketing Services that convert. In today's hyper-competitive digital landscape, we don't just post content — we engineer comprehensive social media marketing ecosystems designed to dominate your niche. 300+ campaigns launched, 5M+ audience reach, strong average ROI growth. Trusted by 500+ growing businesses.",
+            description: "Social Media Marketing Services that convert. In today's hyper-competitive digital landscape, we don't just post content — we engineer comprehensive social media marketing ecosystems designed to dominate your niche — campaigns launched with broad audience reach and strong average ROI growth. Trusted by growing businesses.",
             urlPath: "/services/social-media-marketing-services",
             serviceType: "Social Media Marketing",
             areaServed: ["IN", "US", "GB", "AU", "AE"],
@@ -134,7 +134,7 @@ export default function SocialMediaMarketingPage() {
 
         generateHowToSchema({
             name: "Our 6-Step Social Media Marketing Process",
-            description: "A proven 6-step data-driven methodology for building social media marketing ecosystems that have delivered 300+ campaigns with strong average ROI growth.",
+            description: "A proven 6-step data-driven methodology for building social media marketing ecosystems that have delivered campaigns with strong average ROI growth.",
             steps: [
                 { name: "Strategy & Research", text: "Deep dive into brand, audience persona research, competitor analysis, and trend mapping.", url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#step-strategy" },
                 { name: "Content Planning", text: "Developing a comprehensive calendar mapping themes, formats, and messaging for each platform.", url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#step-planning" },

@@ -1,7 +1,35 @@
 import React from "react";
 import { TrendingUp } from "lucide-react";
+import React from "react";
+import { TrendingUp } from "lucide-react";
 
 export default function Process() {
+  const digitalAuditSteps = [
+    {
+      step: 1,
+      title: "Discovery & Goal Setting",
+      description:
+        "Define your current digital footprint, target audience, and key performance indicators.",
+    },
+    {
+      step: 2,
+      title: "Technical Audit",
+      description:
+        "In-depth analysis of your website, SEO, and performance infrastructure.",
+    },
+    {
+      step: 3,
+      title: "Strategy Blueprint",
+      description:
+        "A customized plan outlining immediate wins and long-term growth strategies.",
+    },
+    {
+      step: 4,
+      title: "Execution & Optimization",
+      description:
+        "Implementing the plan with continuous monitoring and data-driven adjustments.",
+    },
+  ];
   const digitalAuditSteps = [
     {
       step: 1,

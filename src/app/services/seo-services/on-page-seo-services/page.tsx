@@ -9,26 +9,14 @@ import FAQ from "@/components/services/seo-services/on-page-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/on-page-seo-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
+    title: "On-Page SEO Services | Cinute InfoMedia",
     description:
         "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
     },
-    keywords: [
-        "on-page SEO",
-        "on-page SEO services",
-        "title tag optimization",
-        "meta description optimization",
-        "content optimization",
-        "internal linking",
-        "header tags SEO",
-        "image optimization SEO",
-        "schema markup",
-        "core web vitals",
-    ],
     openGraph: {
-        title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
+        title: "On-Page SEO Services | Cinute InfoMedia",
         description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
         url: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
         type: "website",
@@ -37,13 +25,13 @@ export const metadata: Metadata = {
                 url: "/og-images/on-page-seo-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026 by Cinute Infomedia",
+                alt: "On-Page SEO Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Hire Expert On-Page SEO Services | Boost Organic Traffic 2026",
+        title: "On-Page SEO Services | Cinute InfoMedia",
         description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
         images: ["/og-images/on-page-seo-services.webp"],
     },
@@ -56,7 +44,7 @@ const jsonLd = {
     "serviceType": "On-Page SEO Services",
     "provider": {
         "@type": "Organization",
-        "name": "Cinute Infomedia",
+        "name": "Cinute InfoMedia",
         "url": "https://www.cinuteinfomedia.com"
     },
     "areaServed": "Global",

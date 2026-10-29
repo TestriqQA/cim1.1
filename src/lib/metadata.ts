@@ -5,14 +5,13 @@ const siteUrl = "https://www.cinuteinfomedia.com";
 const defaultMetadata: Partial<Metadata> = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "CIM - Digital Solutions | Cinute Infomedia",
-    template: "%s | Cinute Infomedia"
+    default: "CIM - Digital Solutions | Cinute InfoMedia",
+    template: "%s | Cinute InfoMedia"
   },
   description: "Web Design, Mobile App Development, UI/UX Branding, and Digital Marketing Services",
-  keywords: ["Web Design", "Mobile App Development", "UI/UX Branding", "Digital Marketing", "SEO", "AI Automation"],
-  authors: [{ name: "Cinute Infomedia" }],
-  creator: "Cinute Infomedia",
-  publisher: "Cinute Infomedia",
+  authors: [{ name: "Cinute InfoMedia" }],
+  creator: "Cinute InfoMedia",
+  publisher: "Cinute InfoMedia",
   formatDetection: {
     email: false,
     address: false,
@@ -22,7 +21,7 @@ const defaultMetadata: Partial<Metadata> = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Cinute Infomedia",
+    siteName: "Cinute InfoMedia",
     images: [
       {
         url: "/og-image.jpg",
@@ -52,10 +51,17 @@ const defaultMetadata: Partial<Metadata> = {
   },
 };
 
+// NOTE on keywords: <meta name="keywords"> is no longer emitted anywhere. Google
+// ignores it, and ours published the keyword targeting to competitors — the blog
+// generator was even building it from the first five words of the excerpt
+// ("blog,article,insights,A,technical,..."). The `keywords` param below is still
+// accepted so the ~49 existing call sites compile unchanged; it is discarded.
+// schema.org `keywords` inside JSON-LD is a different property and is unaffected.
 export function getPageMetadata(params: {
   title: string;
   description: string;
   url: string;
+  /** Accepted for call-site compatibility but deliberately NOT emitted — see note above. */
   keywords?: string[];
   image?: string;
 }): Metadata {
@@ -66,7 +72,6 @@ export function getPageMetadata(params: {
     ...defaultMetadata,
     title: params.title,
     description: params.description,
-    keywords: [...(defaultMetadata.keywords as string[]), ...(params.keywords || [])],
     alternates: {
       canonical: absoluteUrl,
     },
@@ -87,10 +92,9 @@ export function getPageMetadata(params: {
 }
 
 export const blogMetadata: Metadata = getPageMetadata({
-  title: "Blog & Insights | Cinute Infomedia",
+  title: "Blog & Insights | Cinute InfoMedia",
   description: "Discover the latest trends, strategies, and insights in web development, digital marketing, UI/UX design, and business growth.",
   url: "/blog",
-  keywords: ["blog", "web development insights", "digital marketing trends", "AI automation blog"],
 });
 
 export function generateBlogPostMetadata(
@@ -100,6 +104,7 @@ export function generateBlogPostMetadata(
   slug: string,
   publishedAt: string,
   author: string,
+  updatedAt: string | undefined,
   seo?: {
     metaTitle?: string;
     metaDescription?: string;
@@ -109,7 +114,7 @@ export function generateBlogPostMetadata(
   const url = `/blog/${slug}`;
 
   // Prioritize SEO fields
-  const metaTitle = seo?.metaTitle || `${title} | Cinute Infomedia`;
+  const metaTitle = seo?.metaTitle || `${title} | Cinute InfoMedia`;
   const metaDescription = seo?.metaDescription || excerpt;
   const canonicalUrl = seo?.canonicalUrl || `${siteUrl}${url}`;
 
@@ -117,7 +122,6 @@ export function generateBlogPostMetadata(
     ...defaultMetadata,
     title: metaTitle,
     description: metaDescription,
-    keywords: ["blog", "article", "insights", ...excerpt.split(" ").slice(0, 5)],
     authors: [{ name: author }],
     alternates: {
       canonical: canonicalUrl,
@@ -137,6 +141,9 @@ export function generateBlogPostMetadata(
         },
       ],
       publishedTime: publishedAt,
+      // article:modified_time — only emitted when the CMS actually reports a
+      // later edit, so an untouched post does not claim to have been updated.
+      ...(updatedAt && updatedAt > publishedAt ? { modifiedTime: updatedAt } : {}),
       authors: [author],
     },
     twitter: {
@@ -160,14 +167,13 @@ export function generateCategoryMetadata(
 ): Metadata {
   const url = `/blog/category/${slug}`;
 
-  const metaTitle = seo?.metaTitle || `${category} Articles | Cinute Infomedia Blog`;
+  const metaTitle = seo?.metaTitle || `${category} Articles | Cinute InfoMedia Blog`;
   const metaDescription = seo?.metaDescription || `Explore ${postCount} articles about ${category}. Learn from our experts on the latest trends and best practices.`;
 
   return getPageMetadata({
     title: metaTitle,
     description: metaDescription,
     url: seo?.canonicalUrl || url,
-    keywords: [category, "blog", "articles"],
     image: "/og-images/blogcategories.webp"
   });
 }
@@ -185,7 +191,7 @@ export function generateAuthorMetadata(
 ): Metadata {
   const url = `/blog/author/${name.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const metaTitle = seo?.metaTitle || `${name} | Author at Cinute Infomedia`;
+  const metaTitle = seo?.metaTitle || `${name} | Author at Cinute InfoMedia`;
   const metaDescription = seo?.metaDescription || bio;
 
   return {
@@ -194,7 +200,6 @@ export function generateAuthorMetadata(
       description: metaDescription,
       url: seo?.canonicalUrl || url,
       image: image,
-      keywords: [name, "author", "blog"],
     }),
     // I-3: thin author archives -> noindex (keep follow) to save crawl budget.
     // Author E-E-A-T still conveyed via per-article author bios. Also excluded from sitemap.

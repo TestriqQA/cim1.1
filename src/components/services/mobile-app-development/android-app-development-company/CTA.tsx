@@ -93,7 +93,7 @@ export default function CTA() {
                         {/* Right Stats */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-6">
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">300+</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Proven</div>
                                 <div className="text-xs sm:text-sm text-white/70">Android Apps Delivered</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
@@ -105,7 +105,7 @@ export default function CTA() {
                                 <div className="text-xs sm:text-sm text-white/70">Stability Focus</div>
                             </div>
                             <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
-                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">50+</div>
+                                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Certified</div>
                                 <div className="text-xs sm:text-sm text-white/70">Certified Developers</div>
                             </div>
                         </div>

@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
         {
             icon: Accessibility,
             title: "ROI-Driven UX Design",
-            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites have increased <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">online leads</Link> by up to 425% for our clients.</>,
+            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites are built to grow qualified <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">online leads</Link> for our clients.</>,
             color: "from-[#00efd6] to-[#bc3feb]",
         },
     ];
@@ -239,7 +239,12 @@ export default function WhyChooseUs() {
                     }
                 `}</style>
 
-                {/* Success Story / Testimonial */}
+                {/* Real case studies instead of a testimonial. The quote that used to
+                    sit here was attributed to a named individual at a company matching
+                    our placeholder pattern, and carried unverifiable lead-growth and
+                    mobile-conversion percentages. Nothing
+                    substantiated it, so it is replaced with a route to the engagements
+                    we have actually documented. (Audit finding #1 / TEST-1.) */}
                 <div className="mt-20 p-8 md:p-12 rounded-3xl border relative overflow-hidden group shadow-2xl"
                     style={{
                         backgroundColor: "var(--card-bg)",
@@ -253,18 +258,21 @@ export default function WhyChooseUs() {
                     <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
                         <div className="flex-1">
                             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--foreground)]">
-                                Transformation Success Story
+                                See the work, not a slogan
                             </h3>
-                            <blockquote className="text-xl md:text-2xl italic leading-relaxed mb-8 text-[var(--secondary-text)]">
-                                &quot;This <Link href="/services/web-design-development" className="text-[var(--brand-blue-text)] font-bold underline hover:underline transition-colors">web design agency</Link> increased our online leads by <span className="text-[var(--accent-teal-text)] font-bold">425% in 6 months</span> through their <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">custom web development</Link> approach. Their <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">responsive web design services</Link> transformed our mobile conversion rate from 1.2% to 8.7%.&quot;
-                            </blockquote>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-teal)]" />
-                                <div>
-                                    <div className="font-bold text-[var(--foreground)]">Sarah Chen</div>
-                                    <div className="text-sm text-[var(--secondary-text)]">VP Marketing, TechFlow Solutions</div>
-                                </div>
-                            </div>
+                            <p className="text-lg md:text-xl leading-relaxed mb-8 text-[var(--secondary-text)]">
+                                Every engagement we write up names the client, the scope and what
+                                changed — rebuilds, migrations and organic-growth programmes with
+                                the measurements we can stand behind. Read the full case studies
+                                rather than taking a number on trust.
+                            </p>
+                            <Link
+                                href="/portfolio"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                                style={{ backgroundColor: "var(--brand-blue)", color: "#fff" }}
+                            >
+                                Browse our case studies
+                            </Link>
                         </div>
                     </div>
                 </div>

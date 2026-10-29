@@ -10,6 +10,18 @@ import {
   Globe,
   Award,
 } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import {
+  TrendingUp,
+  Users,
+  Star,
+  Clock8,
+  HeartHandshake,
+  CalendarDays,
+  Globe,
+  Award,
+} from "lucide-react";
 
 export default function Stats() {
   const stats = [
@@ -67,7 +79,7 @@ export default function Stats() {
           implementations
         </>
       ),
-      icon: <Clock8 className="w-5 h-5" />,
+      icon: <Star className="w-5 h-5" />,
     },
     {
       value: "3x",
@@ -96,25 +108,25 @@ export default function Stats() {
       value: "95%",
       label: "Client Retention Rate",
       description: "Partner-centric approach, continuous support",
-      icon: <HeartHandshake className="w-5 h-5" />,
+      icon: <Star className="w-5 h-5" />,
     },
     {
       value: "2025",
       label: "Founded",
       description: "Established 2025",
-      icon: <CalendarDays className="w-5 h-5" />,
+      icon: <TrendingUp className="w-5 h-5" />,
     },
     {
       value: "25+",
       label: "Countries Served",
       description: "US, EU, India, APAC, Middle East",
-      icon: <Globe className="w-5 h-5" />,
+      icon: <Users className="w-5 h-5" />,
     },
     {
       value: "50+",
       label: "Certified Professionals",
       description: "Google, Meta, AWS certified experts",
-      icon: <Award className="w-5 h-5" />,
+      icon: <Star className="w-5 h-5" />,
     },
   ];
 

@@ -14,6 +14,64 @@ const avatarUrl = (source: any) =>
     urlFor(source).width(400).fit('max').auto('format').quality(75).url();
 
 /**
+ * Reading time in whole minutes, counted from the post body at 200 wpm.
+ *
+ * T14: `readTime` is a hand-entered number in the CMS, so nearly every post
+ * reported "5 min read" (the old fallback) regardless of length, and at least
+ * one shipped "-1m". Counting words removes both failure modes. Walks Portable
+ * Text first and falls back to the legacy markdown field; the stored value is
+ * only used when a post has no body text at all.
+ */
+type TextNode = {
+    text?: string;
+    children?: TextNode[];
+    rows?: { cells?: string[] }[];
+};
+
+function readingMinutes(blocks: unknown, markdown?: string, stored?: number): number {
+    let words = 0;
+
+    if (Array.isArray(blocks)) {
+        // narrowed by the guard above; Sanity hands us loosely-shaped nodes
+        const walk = (nodes: TextNode[]) => {
+            for (const node of nodes) {
+                if (!node) continue;
+                if (typeof node.text === 'string') {
+                    words += node.text.split(/\s+/).filter(Boolean).length;
+                }
+                if (Array.isArray(node.children)) walk(node.children);
+                // table blocks keep their text in rows[].cells[]
+                if (Array.isArray(node.rows)) {
+                    for (const row of node.rows) {
+                        if (!Array.isArray(row?.cells)) continue;
+                        for (const cell of row.cells) {
+                            if (typeof cell === 'string') {
+                                words += cell.split(/\s+/).filter(Boolean).length;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        walk(blocks as TextNode[]);
+    }
+
+    if (!words && typeof markdown === 'string') {
+        words = markdown
+            .replace(/```[\s\S]*?```/g, ' ')
+            .replace(/[#>*_`~\[\]()!-]/g, ' ')
+            .split(/\s+/)
+            .filter(Boolean).length;
+    }
+
+    if (!words) {
+        // Nothing to count — trust the editor, but never emit a negative or zero.
+        return stored && stored > 0 ? Math.round(stored) : 1;
+    }
+    return Math.max(1, Math.round(words / 200));
+}
+
+/**
  * Serializes Sanity Portable Text block children with marks into HTML
  * Handles links, bold, italic, and other inline formatting
  */
@@ -71,7 +129,8 @@ export function mapSanityPostToBlogPost(sanityPost: any): BlogPost {
         tags: sanityPost.tags || [],
         image: sanityPost.mainImage ? postImageUrl(sanityPost.mainImage) : '',
         publishedAt: sanityPost.publishedAt,
-        readTime: sanityPost.readTime || 5,
+        updatedAt: sanityPost._updatedAt,
+        readTime: readingMinutes(sanityPost.content, sanityPost.markdownContent, sanityPost.readTime),
         featured: sanityPost.featured || false,
         seo: sanityPost.seo,
         schema: sanityPost.schema,

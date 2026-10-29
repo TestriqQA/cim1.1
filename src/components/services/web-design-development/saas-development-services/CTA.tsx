@@ -59,7 +59,7 @@ export default function CTA() {
 
                         {/* Description */}
                         <p className="text-base md:text-xl max-w-3xl mx-auto mb-12" style={{ color: "var(--secondary-text)" }}>
-                            Transform Your Idea Into a Revenue-Generating Platform. Partner with a SaaS development company that's delivered 50+ successful SaaS products across <Link href="/services/web-design-development/fintech-solutions" className="underline text-[var(--brand-blue-text)]">fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline text-[var(--brand-blue-text)]">healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline text-[var(--brand-blue-text)]">e-commerce</Link> sectors.
+                            Transform Your Idea Into a Revenue-Generating Platform. Partner with a SaaS development company that's delivered successful SaaS products across <Link href="/services/web-design-development/fintech-solutions" className="underline text-[var(--brand-blue-text)]">fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline text-[var(--brand-blue-text)]">healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline text-[var(--brand-blue-text)]">e-commerce</Link> sectors.
                         </p>
 
                         {/* CTA Buttons */}
@@ -85,11 +85,11 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {[
                         {
-                            number: "50+",
+                            number: "Proven",
                             label: "SaaS Products Built",
                         },
                         {
-                            number: "1M+",
+                            number: "High volume",
                             label: "End Users Served",
                         },
                         {

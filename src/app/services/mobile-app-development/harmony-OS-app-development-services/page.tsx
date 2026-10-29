@@ -8,23 +8,11 @@ import WhyChooseUs from "@/components/services/mobile-app-development/harmony-OS
 import CTA from "@/components/services/mobile-app-development/harmony-OS-app-development-services/CTA";
 
 export const metadata: Metadata = {
-    title: "HarmonyOS App Development Services | Huawei AppGallery | TestrIQ",
+    title: "HarmonyOS App Development Services | Cinute InfoMedia",
     description:
         "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
-    keywords: [
-        "HarmonyOS app development",
-        "Huawei app development",
-        "AppGallery development",
-        "HMS Core services",
-        "ArkTS development",
-        "ArkUI apps",
-        "distributed applications",
-        "Huawei wearable apps",
-        "HiCar development",
-        "Huawei smart TV apps",
-    ],
     openGraph: {
-        title: "HarmonyOS App Development Services | Huawei AppGallery | TestrIQ",
+        title: "HarmonyOS App Development Services | Cinute InfoMedia",
         description:
             "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/harmony-OS-app-development-services",
@@ -40,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "HarmonyOS App Development Services | Huawei AppGallery | TestrIQ",
+        title: "HarmonyOS App Development Services | Cinute InfoMedia",
         description:
             "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
         images: ["/og-images/harmony-OS-app-development-services.webp"],
@@ -62,7 +50,7 @@ export default function HarmonyOSAppDevelopmentPage() {
                         "serviceType": "HarmonyOS App Development",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency",

@@ -18,7 +18,7 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "100+", label: "Stores Built" },
+        { value: "Proven", label: "Stores Built" },
         { value: "High-Volume", label: "Sales Processed" },
         { value: "High", label: "Uptime" },
     ];

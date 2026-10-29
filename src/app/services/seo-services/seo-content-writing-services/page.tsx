@@ -8,25 +8,13 @@ import WhyChooseUs from "@/components/services/seo-services/seo-content-writing-
 import CTA from "@/components/services/seo-services/seo-content-writing-services/CTA";
 
 export const metadata: Metadata = {
-    title: "SEO Content Services | Content SEO Agency & Writing 2026 | Measurable ROI",
+    title: "SEO Content Writing Services | Cinute InfoMedia",
     description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
     },
-    keywords: [
-        "content SEO",
-        "SEO content services",
-        "blog writing services",
-        "content strategy",
-        "SEO copywriting agency",
-        "topic clusters SEO",
-        "keyword research for content",
-        "content marketing",
-        "EEAT content strategy",
-        "semantic content writing",
-    ],
     openGraph: {
-        title: "SEO Content Services | Content SEO Agency & Writing 2026 | Measurable ROI",
+        title: "SEO Content Writing Services | Cinute InfoMedia",
         description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
         url: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
         type: "website",
@@ -35,13 +23,13 @@ export const metadata: Metadata = {
                 url: "/og-images/seo-content-writing-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "SEO Content Services | Content SEO Agency & Writing 2026 | Measurable ROI by Cinute Infomedia",
+                alt: "SEO Content Writing Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "SEO Content Services | Content SEO Agency & Writing 2026 | Measurable ROI",
+        title: "SEO Content Writing Services | Cinute InfoMedia",
         description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
         images: ["/og-images/seo-content-writing-services.webp"],
     },
@@ -53,7 +41,7 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "Organization",
-            "name": "Cinute Infomedia",
+            "name": "Cinute InfoMedia",
             "url": "https://www.cinuteinfomedia.com",
             "logo": "https://www.cinuteinfomedia.com/logo.png",
             "sameAs": [
@@ -66,7 +54,7 @@ const jsonLd = {
             "name": "SEO Content Services",
             "provider": {
                 "@type": "Organization",
-                "name": "Cinute Infomedia",
+                "name": "Cinute InfoMedia",
             },
             "description":
                 "Professional SEO content writing and optimization services designed for 2026 EEAT guidelines.",

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Blog & Insights | CIM - Digital Marketing & Web Development",
     description: "Explore expert insights on web development, digital marketing, SEO strategies, and business growth.",
     url: "https://www.cinuteinfomedia.com/blog",
-    siteName: "Cinute Infomedia",
+    siteName: "Cinute InfoMedia",
     images: [
       {
         url: "/og-images/cim_blog.webp",

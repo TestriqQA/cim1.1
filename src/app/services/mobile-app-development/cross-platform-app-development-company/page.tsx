@@ -10,22 +10,13 @@ import FAQ from "@/components/services/mobile-app-development/cross-platform-app
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Cross-Platform App Development Services | React Native & Flutter",
+    title: "Cross-Platform App Development | Cinute InfoMedia",
     description:
-        "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
-    keywords: [
-        "cross platform app development",
-        "React Native development",
-        "Flutter development",
-        "hybrid app development",
-        "mobile app development",
-        "iOS Android app",
-        "single codebase",
-    ],
+        "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
     openGraph: {
-        title: "Cross-Platform App Development Services | React Native & Flutter",
+        title: "Cross-Platform App Development | Cinute InfoMedia",
         description:
-            "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
+            "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company",
         type: "website",
         images: [
@@ -33,15 +24,15 @@ export const metadata: Metadata = {
                 url: "/og-images/cross-platform-app-development.webp",
                 width: 1200,
                 height: 630,
-                alt: "Cross-Platform App Development Services by Cinute Infomedia",
+                alt: "Cross-Platform App Development Services by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Cross-Platform App Development Services | React Native & Flutter",
+        title: "Cross-Platform App Development | Cinute InfoMedia",
         description:
-            "🚀 Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase. faster delivery. lower costs. Start your project today! 📱",
+            "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
         images: ["/og-images/cross-platform-app-development.webp"],
     },
     alternates: {
@@ -64,7 +55,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                                 "name": "Cross-Platform App Development Services",
                                 "provider": {
                                     "@type": "Organization",
-                                    "name": "Cinute Infomedia",
+                                    "name": "Cinute InfoMedia",
                                     "url": "https://www.cinuteinfomedia.com"
                                 },
                                 "description": "Professional cross-platform mobile app development services using React Native and Flutter. Build high-performance iOS and Android apps with a single codebase.",

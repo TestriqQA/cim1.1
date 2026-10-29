@@ -25,10 +25,9 @@ import {
 
 export const metadata: Metadata = {
   ...getPageMetadata({
-    title:
-      "Web Development Company | AI-Powered Digital Solutions | Cinute InfoMedia",
+    title: "Web Development & Digital Marketing | Cinute InfoMedia",
     description:
-      "Expert web development company delivering custom websites, mobile apps & AI-driven marketing. proven, measurable ROI. 300+ global projects. Free audit today! ✨",
+      "Cinute InfoMedia builds fast websites and mobile apps and runs SEO, performance marketing and AI automation. Mira Road, Mumbai. Book a free audit.",
     url: "/",
     keywords: [
       "web development company",
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
       "web design and development company",
       "professional website development",
     ],
-    image: "/og-images/home_page.png",
+    image: "/og-images/home_page.webp",
   }),
   other: {
     "geo.region": "IN-MH",

@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Rigorously Tested Implementation",
-            description: "Our team delivered rigorously tested apps for 50+ fintech clients using React/Next.js.",
+            description: "Our team delivered rigorously tested apps for fintech clients using React/Next.js.",
         },
         {
             icon: Target,
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
                                 className="p-6 rounded-2xl border"
                                 style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}
                             >
-                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-violet-text)" }}>1M+</h3>
+                                <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--accent-violet-text)" }}>High volume</h3>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Pages Crawled</p>
                             </div>
                             <div

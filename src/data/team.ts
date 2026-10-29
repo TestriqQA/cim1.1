@@ -163,7 +163,7 @@ export const teamMembers: TeamMember[] = [
     role: "QA Lead & Business Strategy Manager",
     focus: "Quality Engineering • Business Strategy • Partnerships",
     experience: "8+ years",
-    bio: "Aakash brings 8+ years of QA experience to connecting business needs with practical technology solutions. He leads quality initiatives, supports digital growth planning, and develops client and partner relationships across Testriq QA Lab and Cinute Infomedia. His work includes exploring AI and automation, identifying collaboration opportunities, and helping shape solutions that support clients' business goals.",
+    bio: "Aakash brings 8+ years of QA experience to connecting business needs with practical technology solutions. He leads quality initiatives, supports digital growth planning, and develops client and partner relationships across Testriq QA Lab and Cinute InfoMedia. His work includes exploring AI and automation, identifying collaboration opportunities, and helping shape solutions that support clients' business goals.",
     image: "/images/team/aakash-yadav.webp",
     expertise: ["Quality Engineering", "Business Strategy", "Partnerships"],
     linkedin: "https://www.linkedin.com/in/aakashyadav9890/",
@@ -211,7 +211,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Ratnesh works on the front end of client projects, turning designs into the accessible, responsive markup and components that ship. A fuller profile and portrait are on the way.",
     // No photo on file yet — the shared neutral avatar stands in until one is
     // supplied, so the card renders at the same size as every other portrait.
-    image: "/images/team/ratnesh-waghare.png",
+    image: "/images/team/placeholder-avatar.webp",
     expertise: [
       "Front-end Development",
       "UI Engineering",

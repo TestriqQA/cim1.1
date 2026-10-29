@@ -1,3 +1,4 @@
+import { isProductListed } from "./products";
 // ============================================================================
 // PRODUCT PRIVACY POLICY DATA
 // ============================================================================
@@ -368,6 +369,7 @@ export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
 ];
 
 export function getProductPrivacyBySlug(slug: string): ProductPrivacyPolicy | undefined {
-    return productPrivacyPolicies.find((p) => p.slug === slug);
+    // Withdrawn products keep their policy text here but must not serve a page.
+    return productPrivacyPolicies.find((p) => p.slug === slug && isProductListed(p.slug));
 }
 

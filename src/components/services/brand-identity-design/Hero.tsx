@@ -14,9 +14,9 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "500+", label: "Brands Created" },
-        { value: "98%", label: "Client Satisfaction" },
-        { value: "12+", label: "Years Experience" },
+        { value: "Proven", label: "Brands Created" },
+        { value: "Strong", label: "Client Satisfaction" },
+        { value: "2025", label: "Founded" },
     ];
 
     return (

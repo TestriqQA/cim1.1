@@ -30,11 +30,11 @@ export default function UseCases() {
         {
             icon: Rocket,
             title: "Tech Startups & Scale-Ups",
-            description: "Early and growth-stage companies building their core product, needing rapid iteration and scalable architecture from day one. We've helped startups achieve $5M ARR and 10K+ active users.",
+            description: "Early and growth-stage companies building their core product, needing rapid iteration and scalable architecture from day one. We've helped startups reach meaningful recurring revenue and an active user base.",
             example: "Scaled from 500 to 50K users in 18 months",
             gradient: "from-purple-600 via-pink-600 to-red-600",
             bgColor: "#9333ea",
-            stats: "50K Users",
+            stats: "Scaled user base",
             tags: ["Rapid MVP", "Scalable", "Agile"],
         },
         {
@@ -44,7 +44,7 @@ export default function UseCases() {
             example: "Internal workflow platform for 10K employees",
             gradient: "from-blue-600 via-cyan-600 to-teal-600",
             bgColor: "#2563eb",
-            stats: "10K Users",
+            stats: "Growing user base",
             tags: ["Enterprise", "SSO", "Compliance"],
             link: "/services/web-design-development/business-corporate",
         },
@@ -66,7 +66,7 @@ export default function UseCases() {
             example: "B2B marketplace with $2M monthly GMV",
             gradient: "from-green-600 via-emerald-600 to-teal-600",
             bgColor: "#16a34a",
-            stats: "$2M GMV",
+            stats: "Meaningful GMV",
             tags: ["Marketplace", "Payments", "Escrow"],
             link: "/services/web-design-development/ecommerce-development-company",
         },
@@ -77,7 +77,7 @@ export default function UseCases() {
             example: "Platform with 50K members & 200K interactions",
             gradient: "from-indigo-600 via-purple-600 to-pink-600",
             bgColor: "#4f46e5",
-            stats: "200K Apts",
+            stats: "High booking volume",
             tags: ["Real-time", "WebRTC", "Community"],
             link: "/services/web-design-development/edtech-lms",
         },
@@ -88,7 +88,7 @@ export default function UseCases() {
             example: "Consolidated 15 tools into one dashboard",
             gradient: "from-orange-600 via-red-600 to-pink-600",
             bgColor: "#ea580c",
-            stats: "$120K Saved",
+            stats: "Material savings",
             tags: ["Automation", "SaaS", "Dashboard"],
         },
     ];
@@ -366,7 +366,7 @@ export default function UseCases() {
                             </h3>
 
                             <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                We've built products across 20+ industries. Let's discuss how we can bring your vision to life with battle-tested development practices.
+                                We've built products across many industries. Let's discuss how we can bring your vision to life with battle-tested development practices.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -87,7 +87,7 @@ export default function CTA() {
                             label: "Avg. Conversion Lift",
                         },
                         {
-                            number: "150+",
+                            number: "Proven",
                             label: "Stores Launched",
                         },
                     ].map((indicator, idx) => (
