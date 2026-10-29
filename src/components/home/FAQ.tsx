@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { MessageSquare } from 'lucide-react';
+import React, { useState } from "react";
+import Link from "next/link";
+import { MessageSquare, Plus, X } from "lucide-react";
 
 export default function FAQ() {
-    const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
     const faqs = [
         {
@@ -42,17 +42,36 @@ export default function FAQ() {
         },
     ];
 
-    return (
-        <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
-            <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
-                <div style={{ textAlign: "center", marginBottom: 24 }}>
-                    <div style={{ display: "inline-flex", gap: 8, padding: "8px 16px", borderRadius: 999, backgroundColor: "var(--background)", border: "1px solid var(--border-color)", marginBottom: 12 }}>
-                        <MessageSquare className="w-4 h-4" style={{ color: "var(--brand-cyan)" }} />
-                        <span style={{ fontWeight: 700 }}>FAQ</span>
-                    </div>
-                    <h2 style={{ fontSize: "2rem", fontWeight: 900, marginBottom: 8 }}>Frequently Asked Questions</h2>
-                    <p style={{ color: "var(--secondary-text)" }}>Answers to common questions about services, pricing and timelines</p>
-                </div>
+  return (
+    <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
+        <div style={{ textAlign: "center", marginBottom: 24 }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              padding: "7px 14px",
+              borderRadius: 999,
+              backgroundColor: "var(--background)",
+              border: "1px solid var(--border-color)",
+              marginBottom: 12,
+              lineHeight: 1,
+            }}
+          >
+            <MessageSquare
+              className="w-4 h-4"
+              style={{ color: "var(--brand-cyan)", flexShrink: 0 }}
+            />
+            <span style={{ fontWeight: 700 }}>FAQ</span>
+          </div>
+          <h2 style={{ fontSize: "2rem", fontWeight: 900, marginBottom: 8 }}>
+            Frequently Asked Questions
+          </h2>
+          <p style={{ color: "var(--secondary-text)" }}>
+            Answers to common questions about services, pricing and timelines
+          </p>
+        </div>
 
                 <div className="grid grid-cols-1 gap-6">
                     {faqs.map((faq, i) => (

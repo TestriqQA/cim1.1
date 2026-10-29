@@ -5,264 +5,352 @@ import { Code2, Database, Cloud, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function Technologies() {
-    const frontendTech = [
-        { name: "React", logo: "/images/techstack_logos/react-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "Next.js", logo: "/images/techstack_logos/nextjs-logo.svg", href: "/services/web-design-development/nextjs-development-services" },
-        { name: "Vue.js", logo: "/images/techstack_logos/vuejs-logo.svg" },
-        { name: "Angular", logo: "/images/techstack_logos/angularjs-logo.svg" },
-        { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg" },
-        { name: "JavaScript", logo: "/images/techstack_logos/javascript-logo.svg" },
-        { name: "HTML5", logo: "/images/techstack_logos/html5-logo.svg" },
-        { name: "CSS3", logo: "/images/techstack_logos/css3-logo.svg" },
-        { name: "Tailwind CSS", logo: "/images/techstack_logos/tailwindcss-logo.svg" },
-        { name: "Bootstrap", logo: "/images/techstack_logos/bootstrap-logo.svg" },
-    ];
+  const frontendTech = [
+    {
+      name: "React",
+      logo: "/images/techstack_logos/react-logo.svg",
+      href: "/services/web-design-development/nextjs-development-services",
+    },
+    {
+      name: "Next.js",
+      logo: "/images/techstack_logos/nextjs-logo.svg",
+      href: "/services/web-design-development/nextjs-development-services",
+    },
+    { name: "Vue.js", logo: "/images/techstack_logos/vuejs-logo.svg" },
+    { name: "Angular", logo: "/images/techstack_logos/angularjs-logo.svg" },
+    { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg" },
+    { name: "JavaScript", logo: "/images/techstack_logos/javascript-logo.svg" },
+    { name: "HTML5", logo: "/images/techstack_logos/html5-logo.svg" },
+    { name: "CSS3", logo: "/images/techstack_logos/css3-logo.svg" },
+    {
+      name: "Tailwind CSS",
+      logo: "/images/techstack_logos/tailwindcss-logo.svg",
+    },
+    { name: "Bootstrap", logo: "/images/techstack_logos/bootstrap-logo.svg" },
+  ];
 
-    const backendTech = [
-        { name: "Node.js", logo: "/images/techstack_logos/nodejs-logo.svg", href: "/services/web-design-development/nodejs-backend" },
-        { name: "Python", logo: "/images/techstack_logos/python-logo.svg", href: "/services/web-design-development/python-django" },
-        { name: "PHP", logo: "/images/techstack_logos/php-logo.svg", href: "/services/web-design-development/laravel-php" },
-        { name: "Java", logo: "/images/techstack_logos/java-logo.svg", href: "/services/web-design-development/java-spring-boot" },
-        { name: "MongoDB", logo: "/images/techstack_logos/mongodb-logo.svg" },
-        { name: "PostgreSQL", logo: "/images/techstack_logos/postgresql-logo.svg" },
-        { name: "MySQL", logo: "/images/techstack_logos/mysql-logo.svg" },
-        { name: "Redis", logo: "/images/techstack_logos/redis-logo.svg" },
-        { name: "Express", logo: "/images/techstack_logos/express-logo1.webp", href: "/services/web-design-development/nodejs-backend" },
-        { name: "Django", logo: "/images/techstack_logos/django-logo.svg", href: "/services/web-design-development/python-django" },
-    ];
+  const backendTech = [
+    {
+      name: "Node.js",
+      logo: "/images/techstack_logos/nodejs-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    {
+      name: "Python",
+      logo: "/images/techstack_logos/python-logo.svg",
+      href: "/services/web-design-development/python-django",
+    },
+    {
+      name: "PHP",
+      logo: "/images/techstack_logos/php-logo.svg",
+      href: "/services/web-design-development/laravel-php",
+    },
+    {
+      name: "Java",
+      logo: "/images/techstack_logos/java-logo.svg",
+      href: "/services/web-design-development/java-spring-boot",
+    },
+    { name: "MongoDB", logo: "/images/techstack_logos/mongodb-logo.svg" },
+    { name: "PostgreSQL", logo: "/images/techstack_logos/postgresql-logo.svg" },
+    { name: "MySQL", logo: "/images/techstack_logos/mysql-logo.svg" },
+    { name: "Redis", logo: "/images/techstack_logos/redis-logo.svg" },
+    {
+      name: "Express",
+      logo: "/images/techstack_logos/express-logo1.webp",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    {
+      name: "Django",
+      logo: "/images/techstack_logos/django-logo.svg",
+      href: "/services/web-design-development/python-django",
+    },
+  ];
 
-    const cloudTech = [
-        { name: "AWS", logo: "/images/techstack_logos/amazonwebservices-logo.svg" },
-        { name: "Docker", logo: "/images/techstack_logos/docker-logo.svg" },
-        { name: "Kubernetes", logo: "/images/techstack_logos/kubernetes-logo.svg" },
-        { name: "Git", logo: "/images/techstack_logos/git-logo.svg" },
-        { name: "GitHub", logo: "/images/techstack_logos/github-logo1.webp" },
-        { name: "GitLab", logo: "/images/techstack_logos/gitlab-logo.svg" },
-        { name: "Jenkins", logo: "/images/techstack_logos/jenkins-logo.svg" },
-        { name: "Nginx", logo: "/images/techstack_logos/nginx-logo.svg" },
-        { name: "Linux", logo: "/images/techstack_logos/linux-logo.svg" },
-        { name: "Firebase", logo: "/images/techstack_logos/firebase-logo.svg" },
-    ];
+  const cloudTech = [
+    {
+      name: "AWS",
+      logo: "/images/techstack_logos/amazonwebservices-logo.svg",
+      href: "/services/web-design-development/nodejs-backend",
+    },
+    { name: "Docker", logo: "/images/techstack_logos/docker-logo.svg" },
+    { name: "Kubernetes", logo: "/images/techstack_logos/kubernetes-logo.svg" },
+    { name: "Git", logo: "/images/techstack_logos/git-logo.svg" },
+    { name: "GitHub", logo: "/images/techstack_logos/github-logo1.webp" },
+    { name: "GitLab", logo: "/images/techstack_logos/gitlab-logo.svg" },
+    { name: "Jenkins", logo: "/images/techstack_logos/jenkins-logo.svg" },
+    { name: "Nginx", logo: "/images/techstack_logos/nginx-logo.svg" },
+    { name: "Linux", logo: "/images/techstack_logos/linux-logo.svg" },
+    { name: "Firebase", logo: "/images/techstack_logos/firebase-logo.svg" },
+  ];
 
-    const toolsTech = [
-        { name: "VS Code", logo: "/images/techstack_logos/vscode-logo.svg" },
-        { name: "Figma", logo: "/images/techstack_logos/figma-logo.svg" },
-        { name: "Webpack", logo: "/images/techstack_logos/webpack-logo.svg" },
-        { name: "Vite", logo: "/images/techstack_logos/vitejs-logo.svg" },
-        { name: "npm", logo: "/images/techstack_logos/npm-logo.svg" },
-        { name: "Yarn", logo: "/images/techstack_logos/yarn-logo.svg" },
-        { name: "Postman", logo: "/images/techstack_logos/postman-logo.svg" },
-        { name: "Jira", logo: "/images/techstack_logos/jira-logo.svg" },
-        { name: "Slack", logo: "/images/techstack_logos/slack-logo.svg" },
-        { name: "WordPress", logo: "/images/techstack_logos/wordpress-logo-hero1.png", href: "/services/web-design-development/wordpress-development-services" },
-    ];
+  const toolsTech = [
+    { name: "VS Code", logo: "/images/techstack_logos/vscode-logo.svg" },
+    { name: "Figma", logo: "/images/techstack_logos/figma-logo.svg" },
+    { name: "Webpack", logo: "/images/techstack_logos/webpack-logo.svg" },
+    { name: "Vite", logo: "/images/techstack_logos/vitejs-logo.svg" },
+    { name: "npm", logo: "/images/techstack_logos/npm-logo.svg" },
+    { name: "Yarn", logo: "/images/techstack_logos/yarn-logo.svg" },
+    { name: "Postman", logo: "/images/techstack_logos/postman-logo.svg" },
+    { name: "Jira", logo: "/images/techstack_logos/jira-logo.svg" },
+    { name: "Slack", logo: "/images/techstack_logos/slack-logo.svg" },
+    {
+      name: "WordPress",
+      logo: "/images/techstack_logos/wordpress-logo-hero1.png",
+      href: "/services/web-design-development/wordpress-development-services",
+    },
+  ];
 
-    const TechCard = ({ tech, idx }: { tech: { name: string; logo: string; href?: string }; idx: number }) => {
-        const CardContent = (
-            <div
-                className="relative flex flex-col items-center gap-3"
-            >
-                <div
-                    className="w-16 h-16 flex items-center justify-center rounded-xl p-2 transition-transform duration-300 group-hover:scale-110"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--foreground) 5%, transparent)",
-                    }}
-                >
-                    <Image
-                        src={tech.logo}
-                        alt={tech.name}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-contain"
-                    />
-                </div>
-                <span className="text-sm font-semibold text-center group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>
-                    {tech.name}
-                </span>
-            </div>
-        );
-
-        return (
-            <div
-                key={idx}
-                className="group relative rounded-2xl p-6 border backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
-                style={{
-                    backgroundColor: "var(--card-bg)",
-                    borderColor: "var(--border-color)",
-                    animation: `fadeInUp 0.5s ease-out ${idx * 0.05}s both`,
-                }}
-            >
-                {tech.href ? (
-                    <Link href={tech.href} className="block w-full h-full">
-                        {CardContent}
-                    </Link>
-                ) : (
-                    CardContent
-                )}
-            </div>
-        );
-    };
+  const TechCard = ({
+    tech,
+    idx,
+  }: {
+    tech: { name: string; logo: string; href?: string };
+    idx: number;
+  }) => {
+    const CardContent = (
+      <div className="relative flex flex-col items-center gap-3">
+        <div
+          className="w-16 h-16 flex items-center justify-center rounded-xl p-2 transition-transform duration-300 group-hover:scale-110"
+          style={{
+            backgroundColor:
+              "color-mix(in srgb, var(--foreground) 5%, transparent)",
+          }}
+        >
+          <Image
+            src={tech.logo}
+            alt={tech.name}
+            width={48}
+            height={48}
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span
+          className="text-sm font-semibold text-center group-hover:text-[var(--brand-blue)] transition-colors"
+          style={{ color: "var(--foreground)" }}
+        >
+          {tech.name}
+        </span>
+      </div>
+    );
 
     return (
-        <section
-            className="py-10 lg:py-20 transition-colors duration-300"
-            style={{ backgroundColor: "var(--background)" }}
-        >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    {/* Badge */}
-                    <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "rgba(0, 138, 193, 0.05)",
-                            borderColor: "rgba(0, 138, 193, 0.2)",
-                        }}
-                    >
-                        <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
-                            Our Tech Stack
-                        </span>
-                    </div>
-
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Cutting-Edge <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Technology Stack</span> for Global Performance
-                    </h2>
-
-                    <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        As a forward-leaning <span className="font-bold text-[var(--brand-blue-text)]">web development company</span>, we utilize the most advanced tools to build fast, secure, and scalable digital solutions.
-                    </p>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))",
-                        }}
-                    />
-                </div>
-
-                {/* Tech Stack Categories */}
-                <div className="space-y-16">
-                    {/* Frontend Technologies */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8">
-                            <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#008ac1] to-[#00b5ca]"
-                            >
-                                <Code2 className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
-                                Frontend Technologies
-                            </h3>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                            {frontendTech.map((tech, idx) => (
-                                <TechCard key={idx} tech={tech} idx={idx} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Backend Technologies */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8">
-                            <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#bc3feb] to-[#fab900]"
-                            >
-                                <Database className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
-                                Backend & Database
-                            </h3>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                            {backendTech.map((tech, idx) => (
-                                <TechCard key={idx} tech={tech} idx={idx} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Cloud & DevOps */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8">
-                            <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#fab900] to-[#ee6500]"
-                            >
-                                <Cloud className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
-                                Cloud & DevOps
-                            </h3>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                            {cloudTech.map((tech, idx) => (
-                                <TechCard key={idx} tech={tech} idx={idx} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Tools & Others */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8">
-                            <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#00efd6] to-[#00b5ca]"
-                            >
-                                <Zap className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
-                                Tools & Platforms
-                            </h3>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                            {toolsTech.map((tech, idx) => (
-                                <TechCard key={idx} tech={tech} idx={idx} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* CSS Animations */}
-                <style jsx>{`
-                    @keyframes fadeInUp {
-                        from {
-                            opacity: 0;
-                            transform: translateY(20px);
-                        }
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                `}</style>
-
-                {/* Bottom CTA */}
-                <div
-                    className="mt-16 rounded-2xl p-8 md:p-12 border text-center"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                    }}
-                >
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                        Scalable Architecture for Global Growth
-                    </h3>
-
-                    <p className="mb-8 max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)", fontSize: "1.1rem" }}>
-                        Our <span className="text-[var(--brand-blue-text)] font-bold">web development agency</span> leverages this robust tech stack to deliver high availability and <span className="text-[var(--accent-teal-text)] font-bold">sub-2s load times</span> for enterprise clients worldwide.
-                    </p>
-
-                    <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                    >
-                        Get Your Free Website Audit
-                        <span>→</span>
-                    </Link>
-                </div>
-            </div>
-        </section>
+      <div
+        key={idx}
+        className="group relative rounded-2xl p-6 border backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
+        style={{
+          backgroundColor: "var(--card-bg)",
+          borderColor: "var(--border-color)",
+          animation: `fadeInUp 0.5s ease-out ${idx * 0.05}s both`,
+        }}
+      >
+        {tech.href ? (
+          <Link href={tech.href} className="block w-full h-full">
+            {CardContent}
+          </Link>
+        ) : (
+          CardContent
+        )}
+      </div>
     );
+  };
+
+  return (
+    <section
+      className="py-10 lg:py-20 transition-colors duration-300"
+      style={{ backgroundColor: "var(--background)" }}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
+        {/* Header */}
+        <div className="text-center mb-16">
+          {/* Badge */}
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+            style={{
+              backgroundColor: "rgba(0, 138, 193, 0.05)",
+              borderColor: "rgba(0, 138, 193, 0.2)",
+            }}
+          >
+            <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
+            <span
+              className="text-sm font-medium"
+              style={{ color: "var(--brand-blue-text)" }}
+            >
+              Our Tech Stack
+            </span>
+          </div>
+
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-6"
+            style={{ color: "var(--foreground)" }}
+          >
+            Cutting-Edge{" "}
+            <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>
+              Technology Stack
+            </span>{" "}
+            for Global Performance
+          </h2>
+
+          <p
+            className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed"
+            style={{ color: "var(--secondary-text)" }}
+          >
+            As a forward-leaning{" "}
+            <span className="font-bold text-[var(--brand-blue-text)]">
+              web development company
+            </span>
+            , we utilize the most advanced tools to build fast, secure, and
+            scalable digital solutions.
+          </p>
+
+          <div
+            className="w-24 h-1.5 mx-auto rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))",
+            }}
+          />
+        </div>
+
+        {/* Tech Stack Categories */}
+        <div className="space-y-16">
+          {/* Frontend Technologies */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#008ac1] to-[#00b5ca]">
+                <Code2 className="w-6 h-6 text-white" />
+              </div>
+              <h3
+                className="text-2xl font-bold"
+                style={{ color: "var(--foreground)" }}
+              >
+                Frontend Technologies
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {frontendTech.map((tech, idx) => (
+                <TechCard key={idx} tech={tech} idx={idx} />
+              ))}
+            </div>
+          </div>
+
+          {/* Backend Technologies */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#bc3feb] to-[#fab900]">
+                <Database className="w-6 h-6 text-white" />
+              </div>
+              <h3
+                className="text-2xl font-bold"
+                style={{ color: "var(--foreground)" }}
+              >
+                Backend & Database
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {backendTech.map((tech, idx) => (
+                <TechCard key={idx} tech={tech} idx={idx} />
+              ))}
+            </div>
+          </div>
+
+          {/* Cloud & DevOps */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#fab900] to-[#ee6500]">
+                <Cloud className="w-6 h-6 text-white" />
+              </div>
+              <h3
+                className="text-2xl font-bold"
+                style={{ color: "var(--foreground)" }}
+              >
+                Cloud & DevOps
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {cloudTech.map((tech, idx) => (
+                <TechCard key={idx} tech={tech} idx={idx} />
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Others */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#00efd6] to-[#00b5ca]">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h3
+                className="text-2xl font-bold"
+                style={{ color: "var(--foreground)" }}
+              >
+                Tools & Platforms
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {toolsTech.map((tech, idx) => (
+                <TechCard key={idx} tech={tech} idx={idx} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CSS Animations */}
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+
+        {/* Bottom CTA */}
+        <div
+          className="mt-16 rounded-2xl p-8 md:p-12 border text-center"
+          style={{
+            backgroundColor: "var(--card-bg)",
+            borderColor: "var(--border-color)",
+          }}
+        >
+          <h3
+            className="text-2xl font-bold mb-4"
+            style={{ color: "var(--foreground)" }}
+          >
+            Scalable Architecture for Global Growth
+          </h3>
+
+          <p
+            className="mb-8 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: "var(--secondary-text)", fontSize: "1.1rem" }}
+          >
+            Our{" "}
+            <span className="text-[var(--brand-blue-text)] font-bold">
+              web development agency
+            </span>{" "}
+            leverages this robust tech stack to deliver high availability and{" "}
+            <span className="text-[var(--accent-teal-text)] font-bold">
+              sub-2s load times
+            </span>{" "}
+            for enterprise clients worldwide.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
+            Get Your Free Website Audit
+            <span>→</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -4,469 +4,547 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useState, useEffect, useCallback, useRef } from "react";
 import SearchBar from "./SearchBar";
 import {
-    Code,
-    Smartphone,
-    TrendingUp,
-    Bot,
-    Palette,
-    Search,
-    Target,
-    FileText,
-    X,
-    Home,
-    ChevronDown,
-    Grid3X3,
-    Menu
+  Code,
+  Smartphone,
+  TabletSmartphone,
+  TrendingUp,
+  Bot,
+  Palette,
+  Search,
+  SearchCheck,
+  Target,
+  FileText,
+  GraduationCap,
+  Building2,
+  MousePointerClick,
+  ChartNoAxesCombined,
+  Share2,
+  ShieldCheck,
+  X,
+  Home,
+  ChevronDown,
+  Grid3X3,
+  Menu,
 } from "lucide-react";
 import Link from "next/link";
 
-// Category icons mapping - all 8 categories
+// Category icons mapping - all 16 categories
 const categoryIcons: Record<string, React.ReactNode> = {
-    "Web Development": <Code className="w-4 h-4" />,
-    "Mobile Apps": <Smartphone className="w-4 h-4" />,
-    "Digital Marketing": <TrendingUp className="w-4 h-4" />,
-    "AI & Automation": <Bot className="w-4 h-4" />,
-    "UI/UX Design": <Palette className="w-4 h-4" />,
-    "SEO": <Search className="w-4 h-4" />,
-    "Business Strategy": <Target className="w-4 h-4" />,
-    "Case Studies": <FileText className="w-4 h-4" />,
+  "Business Strategy": <Target className="w-4 h-4" />,
+  "Case Studies": <FileText className="w-4 h-4" />,
+  "Digital Marketing": <TrendingUp className="w-4 h-4" />,
+  "Digital Skills and Career": <GraduationCap className="w-4 h-4" />,
+  "Enterprise AI & Automation": <Bot className="w-4 h-4" />,
+  "AI & Automation": <Bot className="w-4 h-4" />,
+  "Industry-Specific Web": <Building2 className="w-4 h-4" />,
+  "Mobile App Development": <TabletSmartphone className="w-4 h-4" />,
+  "Mobile Apps": <Smartphone className="w-4 h-4" />,
+  "PPC & Paid Ads": <MousePointerClick className="w-4 h-4" />,
+  "Performance Marketing": <ChartNoAxesCombined className="w-4 h-4" />,
+  SEO: <Search className="w-4 h-4" />,
+  "SEO Services": <SearchCheck className="w-4 h-4" />,
+  "Social Media Marketing": <Share2 className="w-4 h-4" />,
+  "UI/UX Design": <Palette className="w-4 h-4" />,
+  "Web Development": <Code className="w-4 h-4" />,
+  "Website Security": <ShieldCheck className="w-4 h-4" />,
 };
 
-// Category colors mapping - all 8 categories
+// Category colors mapping - all 16 categories
+// (only hex values listed in textAccent below, so text stays WCAG AA)
 const categoryColors: Record<string, string> = {
-    "Web Development": "#6B00D7",
-    "Mobile Apps": "#00B5CA",
-    "Digital Marketing": "#FF6B35",
-    "AI & Automation": "#9B59B6",
-    "UI/UX Design": "#E91E63",
-    "SEO": "#27AE60",
-    "Business Strategy": "#3498DB",
-    "Case Studies": "#F39C12",
+  "Business Strategy": "#3498DB",
+  "Case Studies": "#F39C12",
+  "Digital Marketing": "#FF6B35",
+  "Digital Skills and Career": "#1A56DB",
+  "Enterprise AI & Automation": "#9B59B6",
+  "AI & Automation": "#9B59B6",
+  "Industry-Specific Web": "#6B00D7",
+  "Mobile App Development": "#00B5CA",
+  "Mobile Apps": "#00B5CA",
+  "PPC & Paid Ads": "#FF6B35",
+  "Performance Marketing": "#F39C12",
+  SEO: "#27AE60",
+  "SEO Services": "#27AE60",
+  "Social Media Marketing": "#E91E63",
+  "UI/UX Design": "#E91E63",
+  "Web Development": "#6B00D7",
+  "Website Security": "#3498DB",
 };
 
 // WCAG AA theme-aware text tokens for the category hues above.
 // The raw hex values stay in categoryColors (they feed color-mix backgrounds);
 // use textAccent(color) wherever a category colour is applied as CSS `color:`.
-const textAccent = (c: string) => (({"#6b00d7":"var(--accent-violet-text)","#00b5ca":"var(--accent-cyan-text)","#ff6b35":"var(--accent-orange-text)","#9b59b6":"var(--brand-purple-text)","#e91e63":"var(--accent-pink-text)","#27ae60":"var(--accent-green-text)","#3498db":"var(--accent-sky-text)","#f39c12":"var(--accent-amber-text)","#1a56db":"var(--accent-indigo-text)"} as Record<string,string>)[c?.toLowerCase?.() ?? ""] ?? "var(--brand-purple-text)");
+const textAccent = (c: string) =>
+  (
+    ({
+      "#6b00d7": "var(--accent-violet-text)",
+      "#00b5ca": "var(--accent-cyan-text)",
+      "#ff6b35": "var(--accent-orange-text)",
+      "#9b59b6": "var(--brand-purple-text)",
+      "#e91e63": "var(--accent-pink-text)",
+      "#27ae60": "var(--accent-green-text)",
+      "#3498db": "var(--accent-sky-text)",
+      "#f39c12": "var(--accent-amber-text)",
+      "#1a56db": "var(--accent-indigo-text)",
+    }) as Record<string, string>
+  )[c?.toLowerCase?.() ?? ""] ?? "var(--brand-purple-text)";
 
 import { BlogPost } from "@/data/blog";
 
 interface BlogNavbarProps {
-    categories?: { name: string; slug: string; count: number }[];
-    posts?: BlogPost[];
+  categories?: { name: string; slug: string; count: number }[];
+  posts?: BlogPost[];
 }
 
-export default function BlogNavbar({ categories = [], posts = [] }: BlogNavbarProps) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const dropdownRef = useRef<HTMLDivElement>(null);
-    const mobileMenuRef = useRef<HTMLDivElement>(null);
-    const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+export default function BlogNavbar({
+  categories = [],
+  posts = [],
+}: BlogNavbarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
 
-    const [searchQuery, setSearchQuery] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
-    const [isHidden, setIsHidden] = useState(false);
-    const lastScrollY = useRef(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
-    const [isOverlayMode, setIsOverlayMode] = useState(false);
+  const [isOverlayMode, setIsOverlayMode] = useState(false);
 
-    // Filter out invalid categories early
-    const validCategories = categories.filter(c => c?.name && c?.slug);
+  // Filter out invalid categories early
+  const validCategories = categories.filter((c) => c?.name && c?.slug);
 
-    // Helper for getSlug
-    const getSlug = (name: string) => validCategories.find(c => c.name === name)?.slug || name.toLowerCase().replace(/\s+/g, '-');
+  // Helper for getSlug
+  const getSlug = (name: string) =>
+    validCategories.find((c) => c.name === name)?.slug ||
+    name.toLowerCase().replace(/\s+/g, "-");
 
-    // Get category counts
-    const categoryCounts = validCategories.reduce((acc, cat) => {
-        acc[cat.name] = cat.count;
-        return acc;
-    }, {} as Record<string, number>);
+  // Get category counts
+  const categoryCounts = validCategories.reduce(
+    (acc, cat) => {
+      acc[cat.name] = cat.count;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
 
-    // Handle scroll effect - hide on scroll down, show on scroll up
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+  // Handle scroll effect - hide on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-            setIsScrolled(currentScrollY > 10);
+      setIsScrolled(currentScrollY > 10);
 
-            if (currentScrollY > 10) {
-                setIsOverlayMode(true);
-            } else {
-                setIsOverlayMode(false);
-            }
+      if (currentScrollY > 10) {
+        setIsOverlayMode(true);
+      } else {
+        setIsOverlayMode(false);
+      }
 
-            if (window.innerWidth < 1280) {
-                if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-                    setIsHidden(false);
-                } else {
-                    setIsHidden(false);
-                }
-            } else {
-                setIsHidden(false);
-            }
-
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-                setShowCategoryDropdown(false);
-            }
-            if (
-                mobileMenuRef.current &&
-                !mobileMenuRef.current.contains(e.target as Node) &&
-                mobileMenuButtonRef.current &&
-                !mobileMenuButtonRef.current.contains(e.target as Node)
-            ) {
-                setShowMobileMenu(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    // Read search parameter from URL
-    useEffect(() => {
-        const searchFromUrl = searchParams.get("search");
-        if (searchFromUrl) {
-            setSearchQuery(searchFromUrl);
+      if (window.innerWidth < 1280) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          setIsHidden(false);
         } else {
-            setSearchQuery("");
+          setIsHidden(false);
         }
-    }, [searchParams]);
+      } else {
+        setIsHidden(false);
+      }
 
-    // Handle search
-    const handleSearch = useCallback(
-        (query: string) => {
-            setSearchQuery(query);
-            if (query) {
-                setSelectedCategory(null);
-                router.push(`/blog?search=${encodeURIComponent(query)}`);
-            }
-        },
-        [router]
-    );
+      lastScrollY.current = currentScrollY;
+    };
 
-    // Handle category selection
-    const handleCategorySelect = useCallback(
-        (category: string | null) => {
-            setSelectedCategory(category);
-            setSearchQuery("");
-            setShowCategoryDropdown(false);
-            setShowMobileMenu(false);
-            if (category) {
-                router.push(`/blog/category/${getSlug(category)}`);
-            } else {
-                router.push("/blog");
-            }
-        },
-        [router] // eslint-disable-next-line react-hooks/exhaustive-deps
-    );
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    // Clear filters
-    const handleClear = useCallback(() => {
-        setSearchQuery("");
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setShowCategoryDropdown(false);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target as Node) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(e.target as Node)
+      ) {
+        setShowMobileMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Read search parameter from URL
+  useEffect(() => {
+    const searchFromUrl = searchParams.get("search");
+    if (searchFromUrl) {
+      setSearchQuery(searchFromUrl);
+    } else {
+      setSearchQuery("");
+    }
+  }, [searchParams]);
+
+  // Handle search
+  const handleSearch = useCallback(
+    (query: string) => {
+      setSearchQuery(query);
+      if (query) {
         setSelectedCategory(null);
+        router.push(`/blog?search=${encodeURIComponent(query)}`);
+      }
+    },
+    [router],
+  );
+
+  // Handle category selection
+  const handleCategorySelect = useCallback(
+    (category: string | null) => {
+      setSelectedCategory(category);
+      setSearchQuery("");
+      setShowCategoryDropdown(false);
+      setShowMobileMenu(false);
+      if (category) {
+        router.push(`/blog/category/${getSlug(category)}`);
+      } else {
         router.push("/blog");
-    }, [router]);
+      }
+    },
+    [router], // eslint-disable-next-line react-hooks/exhaustive-deps
+  );
 
-    const hasActiveFilters = searchQuery || selectedCategory;
+  // Clear filters
+  const handleClear = useCallback(() => {
+    setSearchQuery("");
+    setSelectedCategory(null);
+    router.push("/blog");
+  }, [router]);
 
-    return (
-        <>
-            <nav
-                className={`sticky transition-all duration-300 border-b 
+  const hasActiveFilters = searchQuery || selectedCategory;
+
+  return (
+    <>
+      <nav
+        className={`sticky transition-all duration-300 border-b 
                     ${isOverlayMode ? "top-0 z-[200]" : "top-16 lg:top-20 z-[100]"} 
                     ${isScrolled ? "backdrop-blur-xl shadow-lg" : "backdrop-blur-md"} 
                     ${isHidden ? "xl:translate-y-0 -translate-y-full" : "translate-y-0"}`}
+        style={{
+          backgroundColor: isScrolled
+            ? "color-mix(in srgb, var(--background) 98%, transparent)"
+            : "color-mix(in srgb, var(--background) 95%, transparent)",
+          borderColor: "var(--border-color)",
+        }}
+      >
+        <div className="px-4 sm:px-6 md:px-12 xl:px-16">
+          {/* Main Navigation Row */}
+          <div className="flex items-center justify-between gap-2 sm:gap-3 py-2.5 sm:py-3 xl:py-4">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Link
+                href="/blog"
+                className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 xl:px-4 py-1.5 sm:py-2 xl:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm xl:text-base transition-all duration-200 whitespace-nowrap ${
+                  pathname === "/blog" && !hasActiveFilters
+                    ? "shadow-md"
+                    : "hover:bg-[var(--hover-bg)]"
+                }`}
                 style={{
-                    backgroundColor: isScrolled
-                        ? "color-mix(in srgb, var(--background) 98%, transparent)"
-                        : "color-mix(in srgb, var(--background) 95%, transparent)",
-                    borderColor: "var(--border-color)",
+                  backgroundColor:
+                    pathname === "/blog" && !hasActiveFilters
+                      ? "var(--brand-purple-btn)"
+                      : "transparent",
+                  color:
+                    pathname === "/blog" && !hasActiveFilters
+                      ? "white"
+                      : "var(--foreground)",
                 }}
-            >
-                <div className="px-4 sm:px-6 md:px-12 xl:px-16">
-                    {/* Main Navigation Row */}
-                    <div className="flex items-center justify-between gap-2 sm:gap-3 py-2.5 sm:py-3 xl:py-4">
-                        <div className="flex items-center gap-2 sm:gap-3">
-                            <Link
-                                href="/blog"
-                                className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 xl:px-4 py-1.5 sm:py-2 xl:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm xl:text-base transition-all duration-200 whitespace-nowrap ${pathname === "/blog" && !hasActiveFilters
-                                    ? "shadow-md"
-                                    : "hover:bg-[var(--hover-bg)]"
-                                    }`}
-                                style={{
-                                    backgroundColor:
-                                        pathname === "/blog" && !hasActiveFilters
-                                            ? "var(--brand-purple-btn)"
-                                            : "transparent",
-                                    color:
-                                        pathname === "/blog" && !hasActiveFilters ? "white" : "var(--foreground)",
-                                }}
-                            >
-                                <Home className="w-4 h-4 xl:w-5 xl:h-5" aria-hidden="true" />
-                                <span className="sr-only sm:not-sr-only">Blog Home</span>
-                            </Link>
+              >
+                <Home className="w-4 h-4 xl:w-5 xl:h-5" aria-hidden="true" />
+                <span className="sr-only sm:not-sr-only">Blog Home</span>
+              </Link>
 
-                            {hasActiveFilters && (
-                                <button
-                                    onClick={handleClear}
-                                    className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-semibold border transition-all duration-200 hover:border-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30 whitespace-nowrap"
-                                    style={{
-                                        borderColor: "var(--border-color)",
-                                        color: "var(--secondary-text)",
-                                    }}
-                                    aria-label="Clear filters"
-                                >
-                                    <X className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                    <span className="hidden xs:inline sm:inline">Clear</span>
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Center: Search Bar (Desktop & Tablet) */}
-                        <div className="hidden md:flex flex-1 max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-2 xl:mx-4">
-                            <SearchBar
-                                onSearch={handleSearch}
-                                value={searchQuery}
-                                placeholder="Search articles, tags, authors..."
-                                posts={posts}
-                            />
-                        </div>
-
-                        {/* Right: Categories (Desktop) */}
-                        <div className="hidden xl:flex items-center gap-2">
-                            {validCategories.slice(0, 3).map((catObj) => {
-                                const category = catObj.name;
-                                const categorySlug = catObj.slug;
-                                const isActive =
-                                    pathname === `/blog/category/${categorySlug}` || selectedCategory === category;
-                                const color = categoryColors[category] || "var(--brand-purple)";
-
-                                return (
-                                    <button
-                                        key={category}
-                                        onClick={() => handleCategorySelect(category)}
-                                        className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 border hover:scale-105 whitespace-nowrap"
-                                        style={{
-                                            backgroundColor: isActive
-                                                ? `color-mix(in srgb, ${color} 12%, transparent)`
-                                                : "transparent",
-                                            color: isActive ? textAccent(color) : "var(--foreground)",
-                                            borderColor: isActive ? color : "var(--border-color)",
-                                        }}
-                                    >
-                                        {categoryIcons[category]}
-                                        <span>{category}</span>
-                                        <span
-                                            className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
-                                            style={{
-                                                backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
-                                                color: textAccent(color),
-                                            }}
-                                        >
-                                            {categoryCounts[category] || 0}
-                                        </span>
-                                    </button>
-                                );
-                            })}
-
-                            {/* More Categories Dropdown (Desktop) */}
-                            {validCategories.length > 3 && (
-                                <div ref={dropdownRef} className="relative">
-                                    <button
-                                        onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
-                                        className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 border hover:scale-105 ${showCategoryDropdown
-                                            ? "border-[var(--brand-purple)] bg-[color-mix(in_srgb,var(--brand-purple)_12%,transparent)]"
-                                            : "border-[var(--border-color)]"
-                                            }`}
-                                        style={{
-                                            color: showCategoryDropdown ? "var(--brand-purple-text)" : "var(--foreground)",
-                                        }}
-                                    >
-                                        <Grid3X3 className="w-4 h-4" />
-                                        <span>More</span>
-                                        <ChevronDown
-                                            className={`w-3.5 h-3.5 transition-transform duration-200 ${showCategoryDropdown ? "rotate-180" : ""
-                                                }`}
-                                        />
-                                    </button>
-
-                                    {showCategoryDropdown && (
-                                        <div
-                                            className="absolute right-0 top-full mt-2 w-64 rounded-2xl border shadow-2xl overflow-hidden z-[200] animate-slideDown"
-                                            style={{
-                                                backgroundColor: "var(--background)",
-                                                borderColor: "var(--border-color)",
-                                            }}
-                                        >
-                                            <div className="p-3">
-                                                <p
-                                                    className="px-3 py-2 text-xs font-bold uppercase tracking-wider"
-                                                    style={{ color: "var(--secondary-text)" }}
-                                                >
-                                                    More Categories
-                                                </p>
-                                                {validCategories.slice(3).map((catObj) => {
-                                                    const category = catObj.name;
-                                                    const categorySlug = catObj.slug;
-                                                    const isActive =
-                                                        pathname === `/blog/category/${categorySlug}` ||
-                                                        selectedCategory === category;
-                                                    const color = categoryColors[category] || "var(--brand-purple)";
-
-                                                    return (
-                                                        <button
-                                                            key={category}
-                                                            onClick={() => handleCategorySelect(category)}
-                                                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-[var(--hover-bg)]"
-                                                            style={{
-                                                                color: isActive ? textAccent(color) : "var(--foreground)",
-                                                            }}
-                                                        >
-                                                            <span style={{ color: textAccent(color) }}>{categoryIcons[category]}</span>
-                                                            <span className="flex-1 text-left">{category}</span>
-                                                            <span
-                                                                className="px-2 py-0.5 rounded-md text-xs font-bold"
-                                                                style={{
-                                                                    backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
-                                                                    color: textAccent(color),
-                                                                }}
-                                                            >
-                                                                {categoryCounts[category] || 0}
-                                                            </span>
-                                                        </button>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <button
-                            ref={mobileMenuButtonRef}
-                            onClick={() => setShowMobileMenu(!showMobileMenu)}
-                            className="xl:hidden flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border transition-all duration-200 hover:bg-[var(--hover-bg)]"
-                            style={{
-                                borderColor: showMobileMenu ? "var(--brand-purple)" : "var(--border-color)",
-                                backgroundColor: showMobileMenu ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)" : "transparent",
-                                color: "var(--foreground)"
-                            }}
-                            aria-label="Toggle mobile menu"
-                        >
-                            <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <ChevronDown
-                                className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-200 ${showMobileMenu ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </button>
-                    </div>
-
-                    {/* Mobile Search Bar Row */}
-                    <div className="md:hidden pb-2.5 sm:pb-3">
-                        <SearchBar
-                            onSearch={handleSearch}
-                            value={searchQuery}
-                            placeholder="Search articles..."
-                            posts={posts}
-                        />
-                    </div>
-
-                </div>
-            </nav>
-
-            {/* Mobile Menu Dropdown */}
-            {showMobileMenu && (
-                <div
-                    ref={mobileMenuRef}
-                    className="xl:hidden absolute left-0 right-0 z-[99] border-b shadow-2xl animate-slideDown backdrop-blur-xl"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--background) 98%, transparent)",
-                        borderColor: "var(--border-color)",
-                    }}
+              {hasActiveFilters && (
+                <button
+                  onClick={handleClear}
+                  className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-semibold border transition-all duration-200 hover:border-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30 whitespace-nowrap"
+                  style={{
+                    borderColor: "var(--border-color)",
+                    color: "var(--secondary-text)",
+                  }}
+                  aria-label="Clear filters"
                 >
-                    <div className="px-4 sm:px-6 md:px-12 py-3">
+                  <X className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <span className="hidden xs:inline sm:inline">Clear</span>
+                </button>
+              )}
+            </div>
+
+            {/* Center: Search Bar (Desktop & Tablet) */}
+            <div className="hidden md:flex flex-1 max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-2 xl:mx-4">
+              <SearchBar
+                onSearch={handleSearch}
+                value={searchQuery}
+                placeholder="Search articles, tags, authors..."
+                posts={posts}
+              />
+            </div>
+
+            {/* Right: Categories (Desktop) */}
+            <div className="hidden xl:flex items-center gap-2">
+              {validCategories.slice(0, 3).map((catObj) => {
+                const category = catObj.name;
+                const categorySlug = catObj.slug;
+                const isActive =
+                  pathname === `/blog/category/${categorySlug}` ||
+                  selectedCategory === category;
+                const color = categoryColors[category] || "var(--brand-purple)";
+
+                return (
+                  <button
+                    key={category}
+                    onClick={() => handleCategorySelect(category)}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 border hover:scale-105 whitespace-nowrap"
+                    style={{
+                      backgroundColor: isActive
+                        ? `color-mix(in srgb, ${color} 12%, transparent)`
+                        : "transparent",
+                      color: isActive ? textAccent(color) : "var(--foreground)",
+                      borderColor: isActive ? color : "var(--border-color)",
+                    }}
+                  >
+                    {categoryIcons[category]}
+                    <span>{category}</span>
+                    <span
+                      className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
+                        color: textAccent(color),
+                      }}
+                    >
+                      {categoryCounts[category] || 0}
+                    </span>
+                  </button>
+                );
+              })}
+
+              {/* More Categories Dropdown (Desktop) */}
+              {validCategories.length > 3 && (
+                <div ref={dropdownRef} className="relative">
+                  <button
+                    onClick={() =>
+                      setShowCategoryDropdown(!showCategoryDropdown)
+                    }
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 border hover:scale-105 ${
+                      showCategoryDropdown
+                        ? "border-[var(--brand-purple)] bg-[color-mix(in_srgb,var(--brand-purple)_12%,transparent)]"
+                        : "border-[var(--border-color)]"
+                    }`}
+                    style={{
+                      color: showCategoryDropdown
+                        ? "var(--brand-purple-text)"
+                        : "var(--foreground)",
+                    }}
+                  >
+                    <Grid3X3 className="w-4 h-4" />
+                    <span>More</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        showCategoryDropdown ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {showCategoryDropdown && (
+                    <div
+                      className="absolute right-0 top-full mt-2 w-64 rounded-2xl border shadow-2xl overflow-hidden z-[200] animate-slideDown"
+                      style={{
+                        backgroundColor: "var(--background)",
+                        borderColor: "var(--border-color)",
+                      }}
+                    >
+                      <div className="p-3">
                         <p
-                            className="px-2 py-2 text-xs font-bold uppercase tracking-wider"
-                            style={{ color: "var(--secondary-text)" }}
+                          className="px-3 py-2 text-xs font-bold uppercase tracking-wider"
+                          style={{ color: "var(--secondary-text)" }}
                         >
-                            Categories
+                          More Categories
                         </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                            {validCategories.map((catObj) => {
-                                const category = catObj.name;
-                                const categorySlug = catObj.slug;
-                                const isActive =
-                                    pathname === `/blog/category/${categorySlug}` || selectedCategory === category;
-                                const color = categoryColors[category] || "var(--brand-purple)";
+                        {validCategories.slice(3).map((catObj) => {
+                          const category = catObj.name;
+                          const categorySlug = catObj.slug;
+                          const isActive =
+                            pathname === `/blog/category/${categorySlug}` ||
+                            selectedCategory === category;
+                          const color =
+                            categoryColors[category] || "var(--brand-purple)";
 
-                                return (
-                                    <button
-                                        key={category}
-                                        onClick={() => handleCategorySelect(category)}
-                                        className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border"
-                                        style={{
-                                            backgroundColor: isActive
-                                                ? `color-mix(in srgb, ${color} 12%, transparent)`
-                                                : "transparent",
-                                            color: isActive ? textAccent(color) : "var(--foreground)",
-                                            borderColor: isActive ? color : "var(--border-color)",
-                                        }}
-                                    >
-                                        <span style={{ color: textAccent(color) }}>{categoryIcons[category]}</span>
-                                        <span className="flex-1 text-left truncate">{category}</span>
-                                        <span
-                                            className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
-                                            style={{
-                                                backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
-                                                color: textAccent(color),
-                                            }}
-                                        >
-                                            {categoryCounts[category] || 0}
-                                        </span>
-                                    </button>
-                                );
-                            })}
-                        </div>
+                          return (
+                            <button
+                              key={category}
+                              onClick={() => handleCategorySelect(category)}
+                              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-[var(--hover-bg)]"
+                              style={{
+                                color: isActive
+                                  ? textAccent(color)
+                                  : "var(--foreground)",
+                              }}
+                            >
+                              <span style={{ color: textAccent(color) }}>
+                                {categoryIcons[category]}
+                              </span>
+                              <span className="flex-1 text-left">
+                                {category}
+                              </span>
+                              <span
+                                className="px-2 py-0.5 rounded-md text-xs font-bold"
+                                style={{
+                                  backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
+                                  color: textAccent(color),
+                                }}
+                              >
+                                {categoryCounts[category] || 0}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
+                  )}
                 </div>
-            )}
+              )}
+            </div>
 
-            <style jsx>{`
-                @keyframes slideDown {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
+            {/* Mobile Menu Button */}
+            <button
+              ref={mobileMenuButtonRef}
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="xl:hidden flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border transition-all duration-200 hover:bg-[var(--hover-bg)]"
+              style={{
+                borderColor: showMobileMenu
+                  ? "var(--brand-purple)"
+                  : "var(--border-color)",
+                backgroundColor: showMobileMenu
+                  ? "color-mix(in srgb, var(--brand-purple) 10%, transparent)"
+                  : "transparent",
+                color: "var(--foreground)",
+              }}
+              aria-label="Toggle mobile menu"
+            >
+              <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ChevronDown
+                className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-200 ${
+                  showMobileMenu ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          </div>
 
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
+          {/* Mobile Search Bar Row */}
+          <div className="md:hidden pb-2.5 sm:pb-3">
+            <SearchBar
+              onSearch={handleSearch}
+              value={searchQuery}
+              placeholder="Search articles..."
+              posts={posts}
+            />
+          </div>
+        </div>
+      </nav>
 
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
-        </>
-    );
+      {/* Mobile Menu Dropdown */}
+      {showMobileMenu && (
+        <div
+          ref={mobileMenuRef}
+          className="xl:hidden absolute left-0 right-0 z-[99] border-b shadow-2xl animate-slideDown backdrop-blur-xl"
+          style={{
+            backgroundColor:
+              "color-mix(in srgb, var(--background) 98%, transparent)",
+            borderColor: "var(--border-color)",
+          }}
+        >
+          <div className="px-4 sm:px-6 md:px-12 py-3">
+            <p
+              className="px-2 py-2 text-xs font-bold uppercase tracking-wider"
+              style={{ color: "var(--secondary-text)" }}
+            >
+              Categories
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+              {validCategories.map((catObj) => {
+                const category = catObj.name;
+                const categorySlug = catObj.slug;
+                const isActive =
+                  pathname === `/blog/category/${categorySlug}` ||
+                  selectedCategory === category;
+                const color = categoryColors[category] || "var(--brand-purple)";
+
+                return (
+                  <button
+                    key={category}
+                    onClick={() => handleCategorySelect(category)}
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border"
+                    style={{
+                      backgroundColor: isActive
+                        ? `color-mix(in srgb, ${color} 12%, transparent)`
+                        : "transparent",
+                      color: isActive ? textAccent(color) : "var(--foreground)",
+                      borderColor: isActive ? color : "var(--border-color)",
+                    }}
+                  >
+                    <span style={{ color: textAccent(color) }}>
+                      {categoryIcons[category]}
+                    </span>
+                    <span className="flex-1 text-left truncate">
+                      {category}
+                    </span>
+                    <span
+                      className="px-1.5 py-0.5 rounded-md text-[10px] font-bold"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${color} 20%, transparent)`,
+                        color: textAccent(color),
+                      }}
+                    >
+                      {categoryCounts[category] || 0}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </>
+  );
 }

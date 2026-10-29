@@ -22,9 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-
       {/* Put ThemeProviderClient inside the <body> */}
-      <body className={`${inter.className} antialiased bg-white dark:bg-black text-gray-900 dark:text-white`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} antialiased bg-white dark:bg-black text-gray-900 dark:text-white`}
+        suppressHydrationWarning
+      >
         <ThemeProviderClient>
           <Navbar />
           {children}

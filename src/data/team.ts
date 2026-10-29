@@ -187,7 +187,7 @@ export const teamMembers: TeamMember[] = [
     focus: "Organic Growth & Content",
     bio: "Sushma analyses what search is actually rewarding in a client's category and turns it into a content and optimisation plan. Her work is the bridge between a technical SEO audit and the pages that get written because of it.",
     // No photo on file yet — see the note on Ratnesh above.
-    image: "/images/team/placeholder-avatar.webp",
+    image: "/images/team/sushma-pal.jpeg",
     expertise: ["Technical SEO", "Content Strategy", "Organic Growth"],
     linkedin: "https://www.linkedin.com/in/sushma-pal131/",
   },
@@ -198,7 +198,7 @@ export const teamMembers: TeamMember[] = [
     role: "Lead SEO Executive",
     focus: "On-page & Technical SEO",
     bio: "Ved plans and executes the on-page, technical and content SEO that grows organic traffic and conversions. Their specialism is keyword strategy and SERP analysis — turning search data into rankings rather than into a report nobody acts on.",
-    image: "/images/team/ved-patil.webp",
+    image: "/images/team/ved-patil.jpeg",
     expertise: ["Keyword Strategy", "SERP Analysis", "On-page SEO"],
     linkedin: "https://www.linkedin.com/in/ved-patil-07511b2b4/",
   },
