@@ -211,7 +211,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Ratnesh works on the front end of client projects, turning designs into the accessible, responsive markup and components that ship. A fuller profile and portrait are on the way.",
     // No photo on file yet — the shared neutral avatar stands in until one is
     // supplied, so the card renders at the same size as every other portrait.
-    image: "/images/team/placeholder-avatar.webp",
+    image: "/images/team/ratnesh-waghare.png",
     expertise: [
       "Front-end Development",
       "UI Engineering",
