@@ -3,12 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { MessageSquare, Plus, X } from "lucide-react";
-import React, { useState } from "react";
-import Link from "next/link";
-import { MessageSquare, Plus, X } from "lucide-react";
 
 export default function FAQ() {
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   const faqs = [

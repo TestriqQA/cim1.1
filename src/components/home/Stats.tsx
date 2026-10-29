@@ -10,18 +10,6 @@ import {
   Globe,
   Award,
 } from "lucide-react";
-import React from "react";
-import Link from "next/link";
-import {
-  TrendingUp,
-  Users,
-  Star,
-  Clock8,
-  HeartHandshake,
-  CalendarDays,
-  Globe,
-  Award,
-} from "lucide-react";
 
 export default function Stats() {
   const stats = [
