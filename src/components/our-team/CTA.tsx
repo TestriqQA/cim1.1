@@ -31,7 +31,7 @@ export default function CTA() {
       style={{ backgroundColor: "var(--background)" }}
       aria-labelledby="team-cta-heading"
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div
           className={`${styles.reveal} rounded-[2rem] p-px`}
           style={{
@@ -40,18 +40,19 @@ export default function CTA() {
           }}
         >
           <div
-            className="relative overflow-hidden rounded-[calc(2rem-1px)] p-7 sm:p-10 md:p-14"
+            className="relative min-w-0 overflow-hidden rounded-[calc(2rem-1px)] p-4 sm:p-8 md:p-14"
             style={{ backgroundColor: "var(--card-bg)" }}
           >
             <div
               aria-hidden="true"
               className={`${styles.blob} ${styles.blobDrift} -right-24 -top-28 h-80 w-80`}
               style={{
-                backgroundColor: "color-mix(in srgb, var(--brand-teal) 18%, transparent)",
+                backgroundColor:
+                  "color-mix(in srgb, var(--brand-teal) 18%, transparent)",
               }}
             />
 
-            <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
+            <div className="relative grid min-w-0 grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
               <div>
                 <p
                   className="text-xs font-bold uppercase tracking-[0.22em]"
@@ -72,8 +73,9 @@ export default function CTA() {
                   className="mt-5 max-w-2xl text-lg leading-relaxed"
                   style={{ color: "var(--secondary-text)" }}
                 >
-                  No account-manager relay. Tell us what you are trying to build or fix, and the
-                  person who will actually own the work will be on the first call.
+                  No account-manager relay. Tell us what you are trying to build
+                  or fix, and the person who will actually own the work will be
+                  on the first call.
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-4">
@@ -107,7 +109,7 @@ export default function CTA() {
               </div>
 
               <ul
-                className="space-y-2 rounded-2xl border p-4 sm:p-5"
+                className="min-w-0 w-full space-y-2 rounded-2xl border p-3 sm:p-5"
                 style={{
                   backgroundColor: "var(--background)",
                   borderColor: "var(--border-color)",
@@ -117,7 +119,7 @@ export default function CTA() {
                   <li key={label}>
                     <a
                       href={href}
-                      className={`${styles.indexRow} group flex items-center gap-4 rounded-xl px-3 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
+                      className={`${styles.indexRow} group flex min-w-0 items-start gap-3 rounded-xl px-2 py-3 sm:items-center sm:gap-4 sm:px-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
                     >
                       <span
                         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
@@ -150,11 +152,12 @@ export default function CTA() {
                   </li>
                 ))}
 
-                <li className="flex items-start gap-4 px-3 py-3">
+                <li className="flex min-w-0 items-start gap-3 px-2 py-3 sm:gap-4 sm:px-3">
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
                     style={{
-                      backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
+                      backgroundColor:
+                        "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
                     }}
                   >
                     <MapPin
@@ -171,11 +174,11 @@ export default function CTA() {
                       Studio
                     </span>
                     <address
-                      className="mt-0.5 block text-sm not-italic leading-relaxed"
+                      className="mt-0.5 block break-words [overflow-wrap:anywhere] text-sm not-italic leading-relaxed"
                       style={{ color: "var(--secondary-text)" }}
                     >
-                      Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Beverly Park, Mira Road,
-                      Mumbai, Maharashtra 401107
+                      Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Beverly
+                      Park, Mira Road, Mumbai, Maharashtra 401107
                     </address>
                   </span>
                 </li>
