@@ -16,7 +16,7 @@ import Link from "next/link";
  */
 
 export const metadata: Metadata = {
-    title: "Upgrade to Pro - ChimeGenius AI Pro",
+    title: "Upgrade to Pro - ChimeGenius AI Pro | Cinute InfoMedia",
     description:
         "Unlock 500 daily generations, advanced Gemini models, and multi-variant streaming with ChimeGenius AI Pro by Cinute InfoMedia.",
     // Reached only from inside the Chrome extension, has no internal links and

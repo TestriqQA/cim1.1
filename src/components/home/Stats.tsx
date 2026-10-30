@@ -1,6 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { TrendingUp, Users, Star, type LucideIcon } from "lucide-react";
+import {
+  TrendingUp,
+  Briefcase,
+  Clock,
+  Handshake,
+  Calendar,
+  Globe,
+  Award,
+  type LucideIcon,
+} from "lucide-react";
 
 type Stat = {
   value: string;
@@ -42,7 +51,7 @@ export default function Stats() {
           globally
         </>
       ),
-      icon: Users,
+      icon: Briefcase,
     },
     {
       value: "200+",
@@ -65,7 +74,7 @@ export default function Stats() {
           implementations
         </>
       ),
-      icon: Star,
+      icon: Clock,
     },
     {
       value: "3x",
@@ -94,25 +103,25 @@ export default function Stats() {
       value: "95%",
       label: "Client Retention Rate",
       description: "Partner-centric approach, continuous support",
-      icon: Star,
+      icon: Handshake,
     },
     {
       value: "2025",
       label: "Founded",
       description: "Established 2025",
-      icon: TrendingUp,
+      icon: Calendar,
     },
     {
       value: "25+",
       label: "Countries Served",
       description: "US, EU, India, APAC, Middle East",
-      icon: Users,
+      icon: Globe,
     },
     {
       value: "50+",
       label: "Certified Professionals",
       description: "Google, Meta, AWS certified experts",
-      icon: Star,
+      icon: Award,
     },
   ];
 

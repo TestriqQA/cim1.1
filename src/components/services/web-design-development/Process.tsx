@@ -37,7 +37,7 @@ export default function Process() {
             icon: Rocket,
             number: "05",
             title: "Seamless Deployment",
-            description: <>Zero-downtime launch with <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">AWS</Link>/Vercel integration and final cross-region performance monitoring.</>,
+            description: <>Zero-downtime launch with AWS/Vercel integration and final cross-region performance monitoring.</>,
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {

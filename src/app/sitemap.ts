@@ -1,9 +1,6 @@
 import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
-import { MetadataRoute } from "next";
-import fs from "fs";
-import path from "path";
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
 import { listedProducts, isProductListed } from "@/data/products";
@@ -13,7 +10,7 @@ import { clientProjects } from "@/data/portfolio";
 
 // ISR: regenerate the sitemap periodically so newly-published Sanity blog posts
 // appear without a full redeploy. Uses the public read client (no token).
-export const revalidate = 3600; // hourly
+export const revalidate = 60; // T2: a new post reaches the sitemap within a minute
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.cinuteinfomedia.com";
@@ -134,8 +131,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
-  // 6. Product Routes
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+  // 6. Product Routes — only products still reachable from the site. The three
+  // withdrawn in Oct 2026 were previously still listed here with no internal
+  // link pointing at them, which is the definition of an orphan URL.
+  const productRoutes: MetadataRoute.Sitemap = listedProducts.map((product) => ({
     url: `${baseUrl}/products/${product.slug}`,
     lastModified: staticLastModified,
     changeFrequency: "monthly" as const,
@@ -143,23 +142,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 7. Product Privacy Policy Routes
-  const productPrivacyRoutes: MetadataRoute.Sitemap =
-    productPrivacyPolicies.map((policy) => ({
+  // The withdrawn products keep their copy in src/data but their routes 301 to
+  // the live product (see next.config.mjs), so only listed slugs are canonical.
+  const productPrivacyRoutes: MetadataRoute.Sitemap = productPrivacyPolicies
+    .filter((policy) => isProductListed(policy.slug))
+    .map((policy) => ({
       url: `${baseUrl}/products/${policy.slug}/privacy-policy`,
       lastModified: staticLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     }));
 
-  // 8. Product Support Routes
-  const productSupportRoutes: MetadataRoute.Sitemap = productSupportData.map(
-    (support) => ({
+  // 8. Product Support Routes — same canonical filter as the privacy routes.
+  const productSupportRoutes: MetadataRoute.Sitemap = productSupportData
+    .filter((support) => isProductListed(support.slug))
+    .map((support) => ({
       url: `${baseUrl}/products/${support.slug}/support`,
       lastModified: staticLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.5,
-    }),
-  );
+    }));
 
   // 9. Portfolio Case Study Routes (the /portfolio hub itself is a static route)
   const portfolioRoutes: MetadataRoute.Sitemap = clientProjects.map(

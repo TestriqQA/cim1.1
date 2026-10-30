@@ -7,13 +7,13 @@ import { getSidebarData } from "@/sanity/lib/data";
 import { BlogPost } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog & Insights | CIM - Digital Marketing & Web Development",
+  title: "Blog & Insights on Web Development & SEO | Cinute InfoMedia",
   description: "Explore expert insights on web development, digital marketing, SEO strategies, and business growth.",
   alternates: {
     canonical: "https://www.cinuteinfomedia.com/blog",
   },
   openGraph: {
-    title: "Blog & Insights | CIM - Digital Marketing & Web Development",
+    title: "Blog & Insights on Web Development & SEO | Cinute InfoMedia",
     description: "Explore expert insights on web development, digital marketing, SEO strategies, and business growth.",
     url: "https://www.cinuteinfomedia.com/blog",
     siteName: "Cinute InfoMedia",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog & Insights | CIM - Digital Marketing & Web Development",
+    title: "Blog & Insights on Web Development & SEO | Cinute InfoMedia",
     description: "Explore expert insights on web development, digital marketing, SEO strategies, and business growth.",
     images: ["/og-images/cim_blog.webp"],
   },

@@ -53,22 +53,18 @@ export default function Technologies() {
     {
       name: "MongoDB",
       logo: "/images/techstack_logos/mongodb-logo.svg",
-      href: "/services/web-design-development/nodejs-backend",
     },
     {
       name: "PostgreSQL",
       logo: "/images/techstack_logos/postgresql-logo.svg",
-      href: "/services/web-design-development/nodejs-backend",
     },
     {
       name: "MySQL",
       logo: "/images/techstack_logos/mysql-logo.svg",
-      href: "/services/web-design-development/nodejs-backend",
     },
     {
       name: "Redis",
       logo: "/images/techstack_logos/redis-logo.svg",
-      href: "/services/web-design-development/nodejs-backend",
     },
     {
       name: "Express",
@@ -86,7 +82,6 @@ export default function Technologies() {
     {
       name: "AWS",
       logo: "/images/techstack_logos/amazonwebservices-logo.svg",
-      href: "/services/web-design-development/nodejs-backend",
     },
     { name: "Docker", logo: "/images/techstack_logos/docker-logo.svg" },
     { name: "Kubernetes", logo: "/images/techstack_logos/kubernetes-logo.svg" },

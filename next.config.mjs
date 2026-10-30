@@ -92,8 +92,17 @@ const nextConfig = {
             // NOTE: case-only redirects (lowercase -> mixed-case) were removed — Next/Vercel
             // matches `source` case-insensitively, so the mixed-case canonical URL also matched
             // its own lowercase source and 308-looped infinitely (harmony-OS service page +
-            // organic-growth-seo-Guide blog were dead in prod). Canonical pages now serve 200;
-            // lowercase variants 404 (acceptable — not in sitemap). Ideal long-term: lowercase slugs.
+            // organic-growth-seo-Guide blog were dead in prod). The service page is now fixed
+            // properly: the route is lowercase one-word (harmonyos-...) and the old path 301s to
+            // it above — a rename, not a case rule, so it cannot loop. organic-growth-seo-Guide is
+            // a Sanity slug and still needs renaming in the CMS before a redirect can be added.
+            {
+                // harmony-OS -> harmonyos: not a case-only rule (the hyphen goes too), so the
+                // canonical lowercase path does not match this source and cannot 308-loop.
+                source: '/services/mobile-app-development/harmony-OS-app-development-services',
+                destination: '/services/mobile-app-development/harmonyos-app-development-services',
+                permanent: true,
+            },
             {
                 source: '/services/web-design-development/portfolio-personal',
                 destination: '/services/web-design-development/branding-services',

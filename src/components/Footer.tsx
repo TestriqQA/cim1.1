@@ -84,7 +84,7 @@ export default function Footer() {
                 { name: "Cross-Platform", href: "/services/mobile-app-development/cross-platform-app-development-company" },
                 { name: "Enterprise", href: "/services/mobile-app-development/enterprise-application-development-services" },
                 { name: "Hybrid Apps", href: "/services/mobile-app-development/hybrid-app-development-services" },
-                { name: "HarmonyOS", href: "/services/mobile-app-development/harmony-OS-app-development-services" },
+                { name: "HarmonyOS", href: "/services/mobile-app-development/harmonyos-app-development-services" },
             ],
         },
         {

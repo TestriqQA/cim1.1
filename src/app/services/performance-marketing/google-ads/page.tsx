@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/google-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Google Ads Agency | Google PPC Management Services",
+    title: "Google Ads Agency | PPC Management | Cinute InfoMedia",
     description: "Drive instant traffic and leads with our expert Google Ads management, specialising in Search, Display, Shopping and Video campaigns.",
     url: "/services/performance-marketing/google-ads",
     image: "/og-images/google_ads.webp",
