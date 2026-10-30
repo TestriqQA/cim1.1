@@ -38,8 +38,14 @@ const nextConfig = {
         // The 308 that used to live here is browser-cached, so anyone who hit
         // /products before this change keeps being redirected until their cache
         // clears; that is expected and resolves itself.
+        // Withdrawn 2026-10-26. These three were real products whose pages were
+        // live and in the sitemap, so they redirect rather than 404 — unlike the
+        // fabricated catalog entries above, which never had legitimate links.
+        // Their copy and policies stay in src/data (see UNLISTED_PRODUCT_SLUGS);
+        // only the routes are gone.
+        const withdrawnProductSlugs = ['kruti-io', 'assetmon', 'topcareerlive'];
         const productRedirects = [
-            ...removedProductSlugs.flatMap((slug) => [
+            ...[...removedProductSlugs, ...withdrawnProductSlugs].flatMap((slug) => [
                 { source: `/products/${slug}`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/support`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/privacy-policy`, destination: productTarget, permanent: true },
@@ -86,8 +92,17 @@ const nextConfig = {
             // NOTE: case-only redirects (lowercase -> mixed-case) were removed — Next/Vercel
             // matches `source` case-insensitively, so the mixed-case canonical URL also matched
             // its own lowercase source and 308-looped infinitely (harmony-OS service page +
-            // organic-growth-seo-Guide blog were dead in prod). Canonical pages now serve 200;
-            // lowercase variants 404 (acceptable — not in sitemap). Ideal long-term: lowercase slugs.
+            // organic-growth-seo-Guide blog were dead in prod). The service page is now fixed
+            // properly: the route is lowercase one-word (harmonyos-...) and the old path 301s to
+            // it above — a rename, not a case rule, so it cannot loop. organic-growth-seo-Guide is
+            // a Sanity slug and still needs renaming in the CMS before a redirect can be added.
+            {
+                // harmony-OS -> harmonyos: not a case-only rule (the hyphen goes too), so the
+                // canonical lowercase path does not match this source and cannot 308-loop.
+                source: '/services/mobile-app-development/harmony-OS-app-development-services',
+                destination: '/services/mobile-app-development/harmonyos-app-development-services',
+                permanent: true,
+            },
             {
                 source: '/services/web-design-development/portfolio-personal',
                 destination: '/services/web-design-development/branding-services',
@@ -107,6 +122,28 @@ const nextConfig = {
                 source: '/blogecommerce-seo-for-high-conversion',
                 destination: '/blog/ecommerce-seo-for-high-conversion',
                 permanent: true,
+            },
+        ];
+    },
+    async headers() {
+        return [
+            // The Sanity Studio is an editor surface, not content. Authentication is
+            // the real protection; this only keeps it out of the index if it is hit.
+            {
+                source: '/cms/:path*',
+                headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+            },
+            // Baseline security headers. HSTS is safe here because the site is
+            // already HTTPS-only behind Vercel; `preload` is deliberately omitted
+            // since that submission is irreversible and belongs to the domain owner.
+            {
+                source: '/(.*)',
+                headers: [
+                    { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' },
+                    { key: 'X-Content-Type-Options', value: 'nosniff' },
+                    { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+                    { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+                ],
             },
         ];
     },

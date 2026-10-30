@@ -124,7 +124,7 @@ export default function CTA() {
                                         WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    100+
+                                    Proven
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                     React Projects

@@ -8,23 +8,11 @@ import WhyChooseUs from "@/components/services/social-media-marketing-services/p
 import CTA from "@/components/services/social-media-marketing-services/pinterest-marketing/CTA";
 
 export const metadata: Metadata = {
-    title: "Pinterest Marketing Agency | Visual Discovery & Shopping Ads",
+    title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
     description:
         "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
-    keywords: [
-        "Pinterest marketing",
-        "Pinterest ads agency",
-        "Pinterest advertising",
-        "shoppable pins",
-        "Pinterest SEO",
-        "visual discovery marketing",
-        "Pinterest for business",
-        "Pinterest shopping ads",
-        "idea pins",
-        "Pinterest strategy",
-    ],
     openGraph: {
-        title: "Pinterest Marketing Agency | Visual Discovery & Shopping Ads",
+        title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
         description: "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/pinterest-marketing",
         type: "website",
@@ -33,13 +21,13 @@ export const metadata: Metadata = {
                 url: "/og-images/pinterest-marketing.webp",
                 width: 1200,
                 height: 630,
-                alt: "Pinterest Marketing Agency | Visual Discovery & Shopping Ads by Cinute Infomedia",
+                alt: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Pinterest Marketing Agency | Visual Discovery & Shopping Ads",
+        title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
         description: "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
         images: ["/og-images/pinterest-marketing.webp"],
     },
@@ -60,7 +48,7 @@ export default function PinterestMarketingPage() {
                         "serviceType": "Pinterest Marketing",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency",

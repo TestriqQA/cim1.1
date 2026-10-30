@@ -66,10 +66,10 @@ export default function WhyChooseUs() {
     ];
 
     const stats = [
-        { value: "100K+", label: "Students" },
-        { value: "500+", label: "Courses Built" },
-        { value: "98%", label: "Satisfaction" },
-        { value: "50+", label: "LMS Platforms" },
+        { value: "High", label: "Students" },
+        { value: "Proven", label: "Courses Built" },
+        { value: "Strong", label: "Satisfaction" },
+        { value: "Proven", label: "LMS Platforms" },
     ];
 
     return (

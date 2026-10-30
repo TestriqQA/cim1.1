@@ -26,7 +26,7 @@ export default function FAQ() {
         },
         {
             q: "How do I choose the best YouTube marketing service for my business?",
-            a: <>Look for an agency with verified case studies, <Link href="/services/performance-marketing/google-ads" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">Google Ads</Link> certifications, and a deep understanding of the YouTube algorithm. At Cinute Infomedia, we provide a transparent audit BEFORE you sign, ensuring we are the right fit for your tech stack and goals.</>,
+            a: <>Look for an agency with verified case studies, <Link href="/services/performance-marketing/google-ads" className="text-[var(--accent-red-text)] underline underline-offset-2 hover:underline">Google Ads</Link> certifications, and a deep understanding of the YouTube algorithm. At Cinute InfoMedia, we provide a transparent audit BEFORE you sign, ensuring we are the right fit for your tech stack and goals.</>,
         },
         {
             q: "Can you help with YouTube shorts marketing strategy for brands?",
@@ -82,13 +82,11 @@ export default function FAQ() {
                                     />
                                 </div>
 
-                                {faqOpen === i && (
-                                    <div className="mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300" style={{ borderColor: "rgba(255, 0, 0, 0.2)" }}>
-                                        <p className="text-[var(--foreground)] leading-relaxed">
-                                            {faq.a}
-                                        </p>
-                                    </div>
-                                )}
+                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "rgba(255, 0, 0, 0.2)" }}>
+                                    <p className="text-[var(--foreground)] leading-relaxed">
+                                        {faq.a}
+                                    </p>
+                                </div>
                             </button>
                         </div>
                     ))}

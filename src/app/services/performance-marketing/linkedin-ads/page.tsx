@@ -8,8 +8,8 @@ import CTA from "@/components/services/performance-marketing/linkedin-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "LinkedIn Ads Agency | B2B Advertising Services",
-    description: "Target decision-makers and generate high-quality B2B leads with our LinkedIn Ads management services. precise targeting for professional growth.",
+    title: "LinkedIn Ads Agency | B2B Advertising | Cinute InfoMedia",
+    description: "Target decision-makers and generate high-quality B2B leads with our LinkedIn Ads management services, with precise targeting for professional growth.",
     url: "/services/performance-marketing/linkedin-ads",
     image: "/og-images/linkdin_ads.webp",
 });
@@ -23,7 +23,7 @@ export default function LinkedInAdsPage() {
                 "serviceType": "LinkedIn Ads Management",
                 "provider": {
                     "@type": "Organization",
-                    "name": "Cinute Infomedia",
+                    "name": "Cinute InfoMedia",
                     "url": "https://www.cinuteinfomedia.com",
                     "logo": "https://www.cinuteinfomedia.com/logo.png",
                     "description": "Global Web Design, Development & Digital Marketing Agency",

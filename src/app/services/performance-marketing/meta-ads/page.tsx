@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/meta-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Meta Ads Agency | Facebook & Instagram Advertising",
+    title: "Meta Ads Agency | Facebook & Instagram | Cinute InfoMedia",
     description: "Scale your brand with high-converting Facebook and Instagram ads. Our Meta Ads agency delivers creative strategies for maximum engagement.",
     url: "/services/performance-marketing/meta-ads",
     image: "/og-images/meta_ads.webp",
@@ -23,7 +23,7 @@ export default function MetaAdsPage() {
                 "serviceType": "Meta Ads Management",
                 "provider": {
                     "@type": "Organization",
-                    "name": "Cinute Infomedia",
+                    "name": "Cinute InfoMedia",
                     "url": "https://www.cinuteinfomedia.com",
                     "logo": "https://www.cinuteinfomedia.com/logo.png",
                     "description": "Global Web Design, Development & Digital Marketing Agency",

@@ -30,7 +30,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Healthcare Portal Development | HIPAA-Compliant Patient Portals',
+    title: 'Healthcare Portal Development | Cinute InfoMedia',
     description: 'Build secure, HIPAA-compliant patient portals, telehealth platforms, and healthcare management systems that improve patient outcomes and streamline provider workflows.',
     url: '/services/web-design-development/healthcare-portals',
     keywords: [
@@ -53,7 +53,7 @@ export default function HealthcarePortalsPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Healthcare Portal Development | HIPAA-Compliant Patient Portals",
+            name: "Healthcare Portal Development | Cinute InfoMedia",
             description: "Build secure, HIPAA-compliant patient portals, telehealth platforms, and healthcare management systems that improve patient outcomes and streamline provider workflows.",
             urlPath: "/services/web-design-development/healthcare-portals",
             datePublished: "2025-01-01",

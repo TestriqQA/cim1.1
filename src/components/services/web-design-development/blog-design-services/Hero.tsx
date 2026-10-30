@@ -202,10 +202,10 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    30+
+                                    Deep
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Years Expertise
+                                    Editorial Expertise
                                 </div>
                             </div>
                             <div className="text-center">
@@ -216,7 +216,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    50+
+                                    Trusted by
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Media Giants

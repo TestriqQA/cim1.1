@@ -17,13 +17,13 @@ export default function WhyChooseUs() {
             icon: Award,
             title: "Meta Business Partner",
             description: "Certified partner with direct access to Meta support and beta features.",
-            stat: "Top 5%",
+            stat: "Certified Partner",
         },
         {
             id: 2,
             icon: TrendingUp,
             title: "Proven Results",
-            description: "Average strong ROAS across 300+ e-commerce and lead gen campaigns.",
+            description: "Average strong ROAS across our e-commerce and lead gen campaigns.",
             stat: "Strong ROAS",
         },
         {
@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
             icon: Zap,
             title: "Creative Excellence",
             description: "In-house creative team producing high-converting ads for every format.",
-            stat: "500+ Creatives",
+            stat: "Our Creatives",
         },
         {
             id: 5,

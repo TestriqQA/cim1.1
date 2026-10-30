@@ -78,7 +78,7 @@ export default function Process() {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-                        <span style={{ color: "var(--foreground)" }}>6-Phase Agile Methodology</span> <span style={{ color: "var(--brand-purple-text)" }}>(Proven Across 300+ Projects)</span>
+                        <span style={{ color: "var(--foreground)" }}>6-Phase Agile Methodology</span> <span style={{ color: "var(--brand-purple-text)" }}>(Proven Across Our Project Portfolio)</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Our battle-tested development process ensures reliable on-time delivery. Transparent, structured approach delivering measurable results.

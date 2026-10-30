@@ -316,9 +316,9 @@ export default function WhyChooseUs() {
                 {/* Bottom Stats Section */}
                 <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {[
-                        { number: "500+", label: "Projects Delivered", icon: Award },
-                        { number: "98%", label: "Client Satisfaction", icon: Star },
-                        { number: "50+", label: "Team Members", icon: Users },
+                        { number: "Proven", label: "Projects Delivered", icon: Award },
+                        { number: "Strong", label: "Client Satisfaction", icon: Star },
+                        { number: "Growing", label: "Team Members", icon: Users },
                         { number: "24/7", label: "Support Available", icon: Shield },
                     ].map((stat, idx) => {
                         const StatIcon = stat.icon;

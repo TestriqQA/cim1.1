@@ -15,8 +15,9 @@ const postFields = /* groq */ `
   excerpt,
   mainImage,
   "author": author->{name, image, slug, bio, title, email, social, seo},
-  "category": category->{name, slug, color},
+  "category": category->{_id, name, slug, color},
   "publishedAt": ${postDate},
+  _updatedAt,
   readTime,
   featured,
   tags,
@@ -55,6 +56,27 @@ export const postQuery = defineQuery(`
     ${postFields},
     markdownContent,
     seo
+  }
+`);
+
+/**
+ * Related posts for a post detail page, in order of relatedness:
+ *   1. same category, 2. shares at least one tag, 3. anything recent.
+ * Each tier excludes the current post and the tiers above it, then the results
+ * are concatenated and trimmed by the caller, so a post in a thin category
+ * still fills three slots instead of showing nothing. (T11)
+ */
+export const relatedPostsQuery = defineQuery(`
+  {
+    "sameCategory": *[_type == "post" && _id != $skip && defined(slug.current)
+        && defined($categoryId) && category._ref == $categoryId]
+      | order(${postDate} desc) [0...$limit] { ${postFields} },
+    "sharedTags": *[_type == "post" && _id != $skip && defined(slug.current)
+        && !(defined($categoryId) && category._ref == $categoryId)
+        && count((tags[])[@ in $tags]) > 0]
+      | order(${postDate} desc) [0...$limit] { ${postFields} },
+    "recent": *[_type == "post" && _id != $skip && defined(slug.current)]
+      | order(${postDate} desc) [0...$limit] { ${postFields} }
   }
 `);
 

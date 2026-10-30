@@ -120,7 +120,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Reach 1.2B+ professionals with elite, data-driven LinkedIn marketing strategies. At Cinute Infomedia, we don&apos;t just &quot;run ads&quot; but we build high-conversion B2B engines that generate qualified leads, establish industry authority, and drive measurable revenue in the 2026 AI-search era.
+                            Reach 1.2B+ professionals with elite, data-driven LinkedIn marketing strategies. At Cinute InfoMedia, we don&apos;t just &quot;run ads&quot; but we build high-conversion B2B engines that generate qualified leads, establish industry authority, and drive measurable revenue in the 2026 AI-search era.
                         </p>
 
                         {/* Feature Pills */}
@@ -172,17 +172,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>1.2B+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>1.2B+</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Professional Reach</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Higher</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Higher</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher B2B Lead Quality</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>ROI Growth (Tech/SaaS)</p>
                             </div>
                         </div>

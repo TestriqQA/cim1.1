@@ -170,17 +170,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Strong</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Strong</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. ROI</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Significant</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>Significant</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Revenue Driven</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>10k+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-sky-text)" }}>10k+</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Top Rankings</p>
                             </div>
                         </div>

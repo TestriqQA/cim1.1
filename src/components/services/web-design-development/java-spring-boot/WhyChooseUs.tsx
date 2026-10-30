@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {
             icon: Award,
             title: "Production Proven",
-            description: "500+ enterprise applications deployed, handling billions of transactions daily.",
+            description: "enterprise applications deployed, handling billions of transactions daily.",
             gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
             bgColor: "rgba(244, 63, 94, 0.15)",
             iconColor: "#f43f5e",

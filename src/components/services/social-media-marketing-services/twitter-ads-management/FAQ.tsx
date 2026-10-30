@@ -80,13 +80,11 @@ export default function FAQ() {
                                     />
                                 </div>
 
-                                {faqOpen === i && (
-                                    <div className="mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300" style={{ borderColor: "var(--border-color)" }}>
-                                        <p className="leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                            {faq.a}
-                                        </p>
-                                    </div>
-                                )}
+                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "var(--border-color)" }}>
+                                    <p className="leading-relaxed" style={{ color: "var(--foreground)" }}>
+                                        {faq.a}
+                                    </p>
+                                </div>
                             </button>
                         </div>
                     ))}

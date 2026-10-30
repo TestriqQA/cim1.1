@@ -130,7 +130,7 @@ export default function CTA() {
                                         WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    500+
+                                    Proven
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                     APIs Deployed
@@ -168,7 +168,7 @@ export default function CTA() {
                                         WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    10M+
+                                    High
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Daily Requests

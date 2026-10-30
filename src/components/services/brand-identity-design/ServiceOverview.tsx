@@ -51,7 +51,7 @@ export default function ServiceOverview() {
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            Our team has delivered over <span style={{ color: "var(--foreground)", fontWeight: "bold" }}>500+ successful brand launches</span>, achieving an average of <Link href="/services/seo-services" className="font-bold underline underline-offset-2 hover:text-[var(--accent-amber-text)]">sustained traffic growth</Link> for our partners. We leverage advanced design psychology and sustainable brand identity design strategy to create future-proof identities that resonate with global audiences in the US, EU, India, and APAC.
+                            Our team has delivered over <span style={{ color: "var(--foreground)", fontWeight: "bold" }}>a proven record of brand launches</span>, achieving an average of <Link href="/services/seo-services" className="font-bold underline underline-offset-2 hover:text-[var(--accent-amber-text)]">sustained traffic growth</Link> for our partners. We leverage advanced design psychology and sustainable brand identity design strategy to create future-proof identities that resonate with global audiences in the US, EU, India, and APAC.
                         </p>
 
                         <div className="pt-4">

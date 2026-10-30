@@ -16,9 +16,9 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "100K+", label: "Students Served" },
-        { value: "500+", label: "Courses Built" },
-        { value: "98%", label: "Completion Rate" },
+        { value: "High", label: "Students Served" },
+        { value: "Proven", label: "Courses Built" },
+        { value: "Strong", label: "Completion Rate" },
     ];
 
     return (

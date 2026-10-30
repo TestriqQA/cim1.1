@@ -143,7 +143,7 @@ export default function Services() {
             brandText: "var(--brand-yellow)",
             href: "/services/ai-workflows-automations-services",
             details: [
-                <span><Link href="/services/web-design-development/business-corporate" className="hover:text-[var(--accent-amber-text)] transition-colors">Business Process Automation (BPA)</Link></span>,
+                <span><Link href="/services/ai-workflows-automations-services" className="hover:text-[var(--accent-amber-text)] transition-colors">Business Process Automation (BPA)</Link></span>,
                 "CRM & ERP Integration",
                 "Full-Funnel Lead Nurturing Systems",
                 "Meta DPA & Shopping Feed Automations",

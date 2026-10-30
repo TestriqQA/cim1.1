@@ -22,7 +22,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Next.js Development Agency | Expert React JS Development Company 2026',
+    title: 'Next.js Development Services | Cinute InfoMedia',
     description: 'Expert Next.js development services for high-performance apps. Hire React developers for Enterprise, SaaS & E-commerce.',
     url: '/services/web-design-development/nextjs-development-services',
     keywords: [
@@ -50,7 +50,7 @@ export default function NextjsReactPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Next.js Development Agency | Expert React JS Development Company 2026",
+            name: "Next.js Development Services | Cinute InfoMedia",
             description: "Expert Next.js development services for high-performance apps. Hire React developers for Enterprise, SaaS & E-commerce.",
             urlPath: "/services/web-design-development/nextjs-development-services",
             datePublished: "2025-01-01",

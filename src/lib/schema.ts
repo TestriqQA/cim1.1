@@ -27,7 +27,10 @@ export function generateOrganizationSchema(overrides?: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     "name": "Cinute InfoMedia",
-    "alternateName": "CIM",
+    // Display name is "Cinute InfoMedia" everywhere; the variants people and
+    // directories actually use are declared here so Google can resolve them to
+    // the same entity (strategy doc, "Brand consistency").
+    "alternateName": ["CIM", "Cinute Infomedia", "Cinute Info Media"],
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
@@ -42,7 +45,7 @@ export function generateOrganizationSchema(overrides?: {
     },
     "description":
       overrides?.description ||
-      "Expert web development company delivering custom websites, mobile apps & AI-driven marketing. proven, measurable ROI. 300+ global projects.",
+      "Cinute InfoMedia builds fast websites and mobile apps and runs SEO, performance marketing and AI automation. Mira Road, Mumbai. Book a free audit.",
     "foundingDate": "2025",
     ...(overrides?.slogan && { "slogan": overrides.slogan }),
     ...(overrides?.hasOfferCatalogId && {
@@ -539,7 +542,7 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
       "breadcrumb": { "@id": `${postUrl}/#breadcrumb` },
       "inLanguage": "en-US",
       "datePublished": post.publishedAt,
-      "dateModified": post.schema?.dateModified || post.publishedAt,
+      "dateModified": post.schema?.dateModified || post.updatedAt || post.publishedAt,
     },
 
     generateBreadcrumbSchema([
@@ -556,7 +559,7 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
       "description": post.seo?.metaDescription || post.excerpt,
       "image": post.image,
       "datePublished": post.publishedAt,
-      "dateModified": post.schema?.dateModified || post.publishedAt,
+      "dateModified": post.schema?.dateModified || post.updatedAt || post.publishedAt,
       ...(post.schema?.wordCount && { "wordCount": post.schema.wordCount }),
       "keywords": (post.schema?.keywords && post.schema.keywords.length > 0)
         ? post.schema.keywords.join(", ")

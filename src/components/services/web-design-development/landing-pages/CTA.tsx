@@ -100,12 +100,12 @@ export default function CTA() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {[
                         {
-                            number: "300%",
+                            number: "Strong",
                             label: "Avg. ROI Increase",
                         },
                         {
-                            number: "500+",
-                            label: "Pages Optimization",
+                            number: "Proven",
+                            label: "Pages Optimized",
                         },
                         {
                             number: "<1s",

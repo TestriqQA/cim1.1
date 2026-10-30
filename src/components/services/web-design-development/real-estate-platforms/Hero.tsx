@@ -187,7 +187,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    500K+
+                                    High volume
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Properties Listed
@@ -215,7 +215,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    10M+
+                                    High volume
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Leads Generated

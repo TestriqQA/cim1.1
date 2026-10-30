@@ -116,7 +116,7 @@ export default function CTA() {
                                         WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    50+
+                                    Proven
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Media Platforms
@@ -135,7 +135,7 @@ export default function CTA() {
                                         WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    100M+
+                                    High
                                 </div>
                                 <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Content Views

@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/tiktok-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "TikTok Ads Agency | TikTok Advertising Services",
+    title: "TikTok Ads Agency | TikTok Advertising | Cinute InfoMedia",
     description: "Go viral and reach Gen Z audiences with creative TikTok advertising campaigns. Our agency helps you leverage the power of short-form video.",
     url: "/services/performance-marketing/tiktok-ads",
     image: "/og-images/tiktok_ads.webp",
@@ -26,7 +26,7 @@ export default function TikTokAdsPage() {
                         "serviceType": "TikTok Ads Management",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency",

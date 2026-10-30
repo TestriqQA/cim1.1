@@ -36,8 +36,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Web Development Company | Custom Website Development 2026',
-    description: 'Expert Web Development Agency delivering custom web design services, responsive websites & scalable solutions. strong client satisfaction. Get free audit today!',
+    title: 'Web Design & Development Company | Cinute InfoMedia',
+    description: 'Custom web design and development in Next.js, WordPress and Shopify. SEO-ready builds with clear KPIs. Book a free website audit.',
     url: '/services/web-design-development',
     keywords: [
         'Web Development Company',
@@ -61,8 +61,8 @@ export default function WebDesignDevelopmentPage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Web Development Company | Custom Website Development 2026",
-            description: "Expert Web Development Agency delivering custom web design services, responsive websites & scalable solutions. strong client satisfaction. Get free audit today!",
+            name: "Web Design & Development Company | Cinute InfoMedia",
+            description: "Custom web design and development in Next.js, WordPress and Shopify. SEO-ready builds with clear KPIs. Book a free website audit.",
             urlPath: "/services/web-design-development",
             datePublished: "2025-01-01",
             dateModified: "2026-03-17",
@@ -122,12 +122,20 @@ export default function WebDesignDevelopmentPage() {
             ],
         }),
 
+        // These five mirror the questions WebDesignFAQ.tsx actually renders, word
+        // for word. They used to be a separate, differently-worded set, so the
+        // FAQPage markup described content that appeared nowhere on the page.
+        // Answers here are plain-text equivalents of the rendered ones (those
+        // carry inline links, which JSON-LD cannot hold).
+        // Still open for the content team: audit finding #15 — all five ask how
+        // to choose an agency, while buyers ask about cost, timeline, technology,
+        // ownership, support and SEO. Change the pair in both places together.
         generateFAQSchema([
-            { question: "How do I choose the right web development partner for my business?", answer: "Evaluate their portfolio for projects similar to yours, assess technical expertise in modern frameworks like React and Next.js, look for process transparency through Agile methodology, and ensure they offer comprehensive post-launch support and maintenance." },
-            { question: "What should I look for in a professional web development company?", answer: "Key factors include technical capabilities like cloud deployment and full-stack development, design excellence in UI/UX and accessibility standards, use of Agile methodology for iterative delivery, and proven track records with certifications from Google or AWS." },
-            { question: "How can I evaluate a web design agency's past work and quality?", answer: "Review their case studies and portfolio for measurable results, check client references and testimonials, verify industry certifications from Google or AWS, and test the agency's own website for performance, load speed, and mobile responsiveness." },
-            { question: "What questions should I ask before hiring a web developer?", answer: "Ask about their recommended technology stack for your specific use case, security protocols and data protection measures, mobile responsiveness strategy, approach to SEO including technical SEO and schema markup, and their ongoing support model after launch." },
-            { question: "How do I ensure my website development supports long-term business growth?", answer: "Ensure the agency plans for architecture scalability from day one, uses modular code that can grow with your business, provides proactive performance monitoring, and offers continuous optimization based on real-time data and analytics." },
+            { question: "How do I choose the right web design and development partner?", answer: "Selecting the right web development company requires evaluating several critical factors: Portfolio & Case Studies (review their previous work in your industry), Technical Expertise (ensure they master modern technologies like React, Next.js, Node.js), Process (a professional web design agency should have a clear development process), and Post-Launch Support (maintenance, security updates). We recommend scheduling consultations with 3-5 agencies to compare technical approaches." },
+            { question: "What should I look for in a web design and development agency?", answer: "Key evaluation criteria include Technical Capabilities (modern framework expertise, full-stack skills, cloud deployment), Design Excellence (UI/UX portfolio, accessibility compliance), Business Understanding (industry experience, ROI-focused approach), and Project Management (Agile methodology, budget transparency)." },
+            { question: "How to evaluate a professional web design agency?", answer: "Our 10-point evaluation framework includes: requesting case studies with documented results, technical assessment of their tech stack, checking client references, reviewing code quality, assessing communication clarity, verifying certifications (Google Partner, AWS), testing their own website for speed and SEO, and evaluating cultural fit. Beware of red flags like no portfolio, unwilling to sign NDAs, or unrealistic promises." },
+            { question: "What questions should I ask before hiring a web design agency?", answer: "Essential questions cover Technical aspects (recommended stack, security, mobile responsiveness, Core Web Vitals), Process (timeline, revisions, communication), Business (references, pricing, ownership), and SEO & Marketing (SEO approach, analytics readiness, scalability)." },
+            { question: "How to choose a web design company for long-term growth?", answer: "Think beyond the initial launch. Evaluate scalability factors (architecture, modularity, framework support) and partnership indicators (retention programs, regular updates, proactive performance suggests). Our long-term model includes quarterly performance reviews, monthly analytics reports, and flexible retainer options for continuous improvement." },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/#faq"),
 
         generateHowToSchema({

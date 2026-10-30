@@ -341,7 +341,7 @@ export const clientProjects: ClientProject[] = [
     // its optimised image cache on the path, so replacing a file in place keeps
     // serving the previous bytes.
     logo: "/images/logos/testriq-qa-lab-logo.webp",
-    seoTitle: "Testriq QA Lab Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
+    seoTitle: "Testriq QA Lab Case Study | Cinute InfoMedia",
     seoDescription:
       "How a six-month engagement moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI, and rebuilt site architecture and SEO to grow organic traffic and qualified leads.",
   },
@@ -461,7 +461,7 @@ export const clientProjects: ClientProject[] = [
       { name: "Performance Marketing", href: "/services/performance-marketing" },
     ],
     logo: "/images/logos/cinute-digital-logo.webp",
-    seoTitle: "Cinute Digital Case Study — WordPress to Next.js & SEO | Cinute InfoMedia",
+    seoTitle: "Cinute Digital Case Study | Cinute InfoMedia",
     seoDescription:
       "How Cinute Digital moved off WordPress onto Next.js, lifted performance and accessibility, and grew organic traffic and course enquiries through advanced SEO and paid marketing.",
   },
@@ -574,7 +574,7 @@ export const clientProjects: ClientProject[] = [
       { name: "Performance Marketing", href: "/services/performance-marketing" },
     ],
     logo: "/images/logos/ved-solutions-logo.webp",
-    seoTitle: "Ved Solutions SEO Case Study — Organic & Paid Lead Growth | Cinute InfoMedia",
+    seoTitle: "Ved Solutions SEO Case Study | Cinute InfoMedia",
     seoDescription:
       "How advanced SEO on Ved Solutions' existing site improved their content and organic visibility and grew qualified leads for a UK IT consultancy, with paid campaigns alongside.",
   },
@@ -689,7 +689,7 @@ export const clientProjects: ClientProject[] = [
     // was drawn for instead of being recoloured.
     logoGround: "dark",
     logo: "/images/logos/empiric-business-media-logo.webp",
-    seoTitle: "Empiric Business Media Case Study — Next.js Rebuild & SEO | Cinute InfoMedia",
+    seoTitle: "Empiric Business Media Case Study | Cinute InfoMedia",
     seoDescription:
       "How a static Next.js rebuild took Empiric Business Media's page speed from 60 to 100, modernised the UI, improved accessibility, and grew impressions and leads with advanced SEO.",
   },
@@ -804,7 +804,7 @@ export const clientProjects: ClientProject[] = [
     // THCS's mark is gold on black, drawn for a dark ground.
     logoGround: "dark",
     logo: "/images/logos/hobby-card-shop-logo.webp",
-    seoTitle: "The Hobby Card Shop Case Study — Custom WordPress eCommerce | Cinute InfoMedia",
+    seoTitle: "Hobby Card Shop eCommerce Case Study | Cinute InfoMedia",
     seoDescription:
       "How a trading card store got a custom WordPress theme built from scratch, a responsive WooCommerce storefront, and full control of its own catalogue from the admin.",
   },
@@ -986,7 +986,7 @@ export const clientProjects: ClientProject[] = [
       { name: "Laravel Development", href: "/services/web-design-development/laravel-php" },
     ],
     logo: "/images/logos/you-too-can-run.png",
-    seoTitle: "YouTooCanRun Case Study — Multi-Event Fitness Platform | Cinute InfoMedia",
+    seoTitle: "YouTooCanRun Platform Case Study | Cinute InfoMedia",
     seoDescription:
       "How one Flutter app and Laravel backend carries 21 events across 5 brands for YouTooCanRun — configured rather than forked, with per-event scoring, health integrations from six sources, and 14,989 participants.",
   },
@@ -1117,7 +1117,7 @@ export const clientProjects: ClientProject[] = [
       { name: "Additional Support Services", href: "/services/additional-support-services" },
     ],
     logo: "/images/logos/you-too-can-run.png",
-    seoTitle: "YouTooCanRun Web Case Study — Race Registration & RaceMart | Cinute InfoMedia",
+    seoTitle: "YouTooCanRun Race Platform Case Study | Cinute InfoMedia",
     seoDescription:
       "Two platforms for YouTooCanRun — a React race-registration site and a Laravel race marketplace — built, deployed, security-audited and maintained end to end.",
   },

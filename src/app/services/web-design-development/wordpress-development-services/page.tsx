@@ -9,10 +9,10 @@ import FAQ from "@/components/services/web-design-development/wordpress-developm
 import CTA from "@/components/services/web-design-development/wordpress-development-services/CTA";
 
 export const metadata: Metadata = {
-    title: "WordPress Development Services | Custom & Enterprise WP Agency",
+    title: "WordPress Development Services | Cinute InfoMedia",
     description: "Scale your business with expert WordPress development services. Custom themes, WooCommerce & 2026-ready SEO optimization. Get a reliable, high-ROI site today!",
     openGraph: {
-        title: "WordPress Development Services | Custom & Enterprise WP Agency",
+        title: "WordPress Development Services | Cinute InfoMedia",
         description: "Scale your business with expert WordPress development services. Custom themes, WooCommerce & 2026-ready SEO optimization. Get a reliable, high-ROI site today!",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/wordpress-development-services",
         type: "website",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
                 url: "/og-images/wordpress-development-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "WordPress Development Services | Custom & Enterprise WP Agency by Cinute Infomedia",
+                alt: "WordPress Development Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "WordPress Development Services | Custom & Enterprise WP Agency",
+        title: "WordPress Development Services | Cinute InfoMedia",
         description: "Scale your business with expert WordPress development services. Custom themes, WooCommerce & 2026-ready SEO optimization. Get a reliable, high-ROI site today!",
         images: ["/og-images/wordpress-development-services.webp"],
     },
@@ -42,7 +42,7 @@ const jsonLd = {
     "serviceType": "WordPress Development Services",
     "provider": {
         "@type": "Organization",
-        "name": "Cinute Infomedia",
+        "name": "Cinute InfoMedia",
         "url": "https://www.cinuteinfomedia.com"
     },
     "areaServed": "Global",

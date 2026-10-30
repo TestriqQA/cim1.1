@@ -8,20 +8,12 @@ import WhyChooseUs from "@/components/services/social-media-marketing-services/f
 import CTA from "@/components/services/social-media-marketing-services/facebook-marketing-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
+    title: "Facebook Marketing Services | Cinute InfoMedia",
     description:
-        "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
-    keywords: [
-        "Facebook marketing services",
-        "Facebook marketing agency",
-        "Facebook ads management services",
-        "Facebook marketing company",
-        "Facebook marketing expert",
-        "social media strategy",
-    ],
+        "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
     openGraph: {
-        title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
-        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
+        title: "Facebook Marketing Services | Cinute InfoMedia",
+        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services",
         type: "website",
         images: [
@@ -29,14 +21,14 @@ export const metadata: Metadata = {
                 url: "/og-images/facebook-marketing-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Facebook Marketing Services | Lead Gen & Ads Management Agency by Cinute Infomedia",
+                alt: "Facebook Marketing Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Facebook Marketing Services | Lead Gen & Ads Management Agency",
-        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency. strong ROAS focus. Get a FREE audit today!",
+        title: "Facebook Marketing Services | Cinute InfoMedia",
+        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
         images: ["/og-images/facebook-marketing-services.webp"],
     },
     alternates: {
@@ -50,7 +42,7 @@ const jsonLd = {
     "name": "Facebook Marketing Services",
     "provider": {
         "@type": "Organization",
-        "name": "Cinute Infomedia",
+        "name": "Cinute InfoMedia",
         "url": "https://www.cinuteinfomedia.com"
     },
     "serviceType": "Digital Marketing",

@@ -16,8 +16,8 @@ export default function Hero() {
     ];
 
     const stats = [
-        { value: "10M+", label: "Users Engaged" },
-        { value: "50K+", label: "Content Hours" },
+        { value: "High", label: "Users Engaged" },
+        { value: "High", label: "Content Hours" },
         { value: "High", label: "Uptime SLA" },
     ];
 

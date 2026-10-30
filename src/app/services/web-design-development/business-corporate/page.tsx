@@ -21,7 +21,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Business & Corporate Website Development | Enterprise Web Solutions',
+    title: 'Corporate Website Development | Cinute InfoMedia',
     description: 'Build a professional corporate website that establishes trust and authority. Our enterprise web development services deliver scalable, brand-aligned digital platforms for corporations, institutions, and established businesses.',
     url: '/services/web-design-development/business-corporate',
     keywords: [
@@ -44,7 +44,7 @@ export default function BusinessCorporatePage() {
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Business & Corporate Website Development | Enterprise Web Solutions",
+            name: "Corporate Website Development | Cinute InfoMedia",
             description: "Build a professional corporate website that establishes trust and authority. Our enterprise web development services deliver scalable, brand-aligned digital platforms.",
             urlPath: "/services/web-design-development/business-corporate",
             datePublished: "2025-01-01",

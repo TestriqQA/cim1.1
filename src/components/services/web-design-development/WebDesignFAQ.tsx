@@ -10,7 +10,7 @@ export default function FAQ() {
     const faqs = [
         {
             q: "How do I choose the right web design and development partner?",
-            a: <>Selecting the right <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">web development company</Link> requires evaluating several critical factors: Portfolio & Case Studies (review their previous work in your industry), Technical Expertise (ensure they master modern technologies like <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">Next.js</Link>, <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">Node.js</Link>), Process (a professional web design agency should have a clear development process), and Post-Launch Support (maintenance, security updates). We recommend scheduling consultations with 3-5 agencies to compare technical approaches.</>,
+            a: <>Selecting the right web development company requires evaluating several critical factors: Portfolio & Case Studies (review their previous work in your industry), Technical Expertise (ensure they master modern technologies like <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">React</Link>, <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">Next.js</Link>, <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-purple)] hover:underline transition-colors">Node.js</Link>), Process (a professional web design agency should have a clear development process), and Post-Launch Support (maintenance, security updates). We recommend scheduling consultations with 3-5 agencies to compare technical approaches.</>,
         },
         {
             q: "What should I look for in a web design and development agency?",
@@ -78,13 +78,11 @@ export default function FAQ() {
                                     />
                                 </div>
 
-                                {faqOpen === i && (
-                                    <div className="mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300" style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
-                                        <p className="text-[var(--foreground)] leading-relaxed">
-                                            {faq.a}
-                                        </p>
-                                    </div>
-                                )}
+                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
+                                    <p className="text-[var(--foreground)] leading-relaxed">
+                                        {faq.a}
+                                    </p>
+                                </div>
                             </button>
                         </div>
                     ))}

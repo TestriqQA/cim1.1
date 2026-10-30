@@ -39,7 +39,7 @@ export default function CTA() {
                             className="text-lg mb-8"
                             style={{ color: "var(--secondary-text)" }}
                         >
-                            Transform your operations, delight your guests, and drive unprecedented growth with our expert Travel and Hospitality Services. Whether you're looking for custom development or a complete digital overhaul, Cinute Infomedia is your partner in innovation. Contact us today for a free consultation and let's build something extraordinary together.
+                            Transform your operations, delight your guests, and drive unprecedented growth with our expert Travel and Hospitality Services. Whether you're looking for custom development or a complete digital overhaul, Cinute InfoMedia is your partner in innovation. Contact us today for a free consultation and let's build something extraordinary together.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-8">

@@ -13,8 +13,8 @@ export default function ServiceOverview() {
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
 
-            stat: "80%",
-            statLabel: "Reduction",
+            stat: "Lower",
+            statLabel: "Handling Cost",
         },
         {
             icon: MessageCircle,
@@ -24,7 +24,7 @@ export default function ServiceOverview() {
             iconBg: "bg-purple-500/10",
             iconColor: "text-purple-500",
 
-            stat: "95%",
+            stat: "Strong",
             statLabel: "Satisfaction",
         },
         {
@@ -41,13 +41,13 @@ export default function ServiceOverview() {
         {
             icon: PiggyBank,
             title: "Cost Efficiency",
-            description: "Reduce customer support costs by 60% while improving response times and resolution rates.",
+            description: "Reduce customer support costs while improving response times and resolution rates.",
             gradient: "from-orange-500 via-amber-500 to-yellow-500",
             iconBg: "bg-orange-500/10",
             iconColor: "text-orange-500",
 
-            stat: "60%",
-            statLabel: "Cost Down",
+            stat: "Lower",
+            statLabel: "Cost",
         },
     ];
 

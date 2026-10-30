@@ -51,7 +51,7 @@ export default function CTA() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <Users className="w-5 h-5" style={{ color: "var(--brand-seo)" }} />
-                                <span className="font-semibold">50+ Happy Clients</span>
+                                <span className="font-semibold">A Growing Client Base</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Sparkles className="w-5 h-5" style={{ color: "var(--brand-seo)" }} />

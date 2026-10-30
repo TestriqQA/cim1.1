@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function CTA() {
     const stats = [
         { value: "Large-Scale", label: "Ad Spend Managed" },
-        { value: "500%", label: "Avg. ROAS" },
-        { value: "200+", label: "Successful Campaigns" },
+        { value: "Strong", label: "Avg. ROAS" },
+        { value: "Proven", label: "Successful Campaigns" },
     ];
 
     return (

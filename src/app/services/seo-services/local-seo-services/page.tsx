@@ -9,32 +9,14 @@ import FAQ from "@/components/services/seo-services/local-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/local-seo-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Local SEO Services , Google Maps Marketing Agency 2026",
+    title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
     description:
         "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
     },
-    keywords: [
-        "local SEO services",
-        "Google Maps marketing agency",
-        "local SEO company",
-        "Google Business Profile optimization",
-        "local SEO for small business",
-        "GMB optimization services",
-        "local citation building",
-        "near me SEO",
-        "Google Map Pack optimization",
-        "local search engine optimization",
-        "reputation management SEO",
-        "local SEO pricing 2026",
-        "best local SEO agency",
-        "local SEO audit",
-        "Google Maps ranking",
-        "local business SEO",
-    ],
     openGraph: {
-        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
         description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
         type: "website",
@@ -43,13 +25,13 @@ export const metadata: Metadata = {
                 url: "/og-images/local-seo-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Local SEO Services , Google Maps Marketing Agency 2026 by Cinute Infomedia",
+                alt: "Local SEO Services , Google Maps Marketing Agency 2026 by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
         description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
         images: ["/og-images/local-seo-services.webp"],
     },
@@ -68,7 +50,7 @@ export default function LocalSEOPage() {
                         "serviceType": "Local SEO Services",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency specializing in local SEO services",

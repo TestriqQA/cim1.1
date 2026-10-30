@@ -205,7 +205,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    300+
+                                    Proven
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Portfolios Built
@@ -302,7 +302,7 @@ export default function Hero() {
                                 {[
                                     { label: "Profile Views", value: "12K+" },
                                     { label: "Contact Rate", value: "8.5%" },
-                                    { label: "Project Leads", value: "45+" },
+                                    { label: "Project Leads", value: "Proven" },
                                 ].map((metric, i) => (
                                     <div key={i} className="text-center flex-1">
                                         <div

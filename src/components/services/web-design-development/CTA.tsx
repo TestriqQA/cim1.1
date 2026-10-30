@@ -117,7 +117,7 @@ export default function CTA() {
                             label: "Expertise",
                         },
                         {
-                            number: "300%",
+                            number: "Strong",
                             label: "Traffic Growth",
                         },
                         {

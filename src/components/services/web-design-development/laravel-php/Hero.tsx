@@ -170,17 +170,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex items-center justify-center lg:justify-start gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div>
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>100+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Proven</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>5+</h2>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Years Experience</p>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Deep</p>
+                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
                             </div>
                             <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>24/7</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>24/7</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Support & Maint.</p>
                             </div>
                         </div>

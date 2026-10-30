@@ -85,9 +85,7 @@ export default function WebDevAnimation() {
                         stroke="var(--border-color)"
                         strokeWidth="1"
                     />
-                    <text x="125" y="42" fontSize="9" fill="var(--secondary-text)" fontFamily="monospace">
-                        https://yoursite.com
-                    </text>
+                    <rect x="125" y="36" width="99" height="6" rx="3" fill="var(--secondary-text)" opacity="0.55" />
 
                     {/* Content Area Grid */}
                     <g className={reducedMotion ? "" : "wd-grid"} opacity="0.3">
@@ -131,16 +129,7 @@ export default function WebDevAnimation() {
                         strokeWidth="1.5"
                         strokeOpacity="0.5"
                     />
-                    <text
-                        className={reducedMotion ? "" : "wd-label-header"}
-                        x="60" y="94"
-                        fontSize="10"
-                        fill="var(--brand-blue)"
-                        fontFamily="monospace"
-                        fontWeight="bold"
-                    >
-                        &lt;header&gt; NAV
-                    </text>
+                    <rect className={reducedMotion ? "" : "wd-label-header"} x="60" y="88" width="99" height="6" rx="3" fill="var(--brand-blue)" opacity="0.55" />
 
                     {/* Hero Section */}
                     <rect
@@ -153,27 +142,8 @@ export default function WebDevAnimation() {
                         strokeWidth="1.5"
                         strokeOpacity="0.5"
                     />
-                    <text
-                        className={reducedMotion ? "" : "wd-label-hero"}
-                        x="60" y="148"
-                        fontSize="10"
-                        fill="var(--brand-teal)"
-                        fontFamily="monospace"
-                        fontWeight="bold"
-                    >
-                        &lt;section&gt; HERO
-                    </text>
-                    <text
-                        className={reducedMotion ? "" : "wd-label-h1"}
-                        x="60" y="165"
-                        fontSize="14"
-                        fill="var(--foreground)"
-                        fontFamily="sans-serif"
-                        fontWeight="bold"
-                        opacity="0.7"
-                    >
-                        H1: Main Headline
-                    </text>
+                    <rect className={reducedMotion ? "" : "wd-label-hero"} x="60" y="142" width="110" height="6" rx="3" fill="var(--brand-teal)" opacity="0.55" />
+                    <rect className={reducedMotion ? "" : "wd-label-h1"} x="60" y="156" width="131" height="9" rx="4.5" fill="var(--foreground)" opacity="0.7" />
                     <rect
                         className={reducedMotion ? "" : "wd-hero-cta"}
                         x="60" y="175"
@@ -194,15 +164,7 @@ export default function WebDevAnimation() {
                         strokeWidth="1"
                         strokeOpacity="0.4"
                     />
-                    <text
-                        className={reducedMotion ? "" : "wd-label-content1"}
-                        x="60" y="230"
-                        fontSize="9"
-                        fill="var(--brand-cyan)"
-                        fontFamily="monospace"
-                    >
-                        &lt;section&gt;
-                    </text>
+                    <rect className={reducedMotion ? "" : "wd-label-content1"} x="60" y="224" width="74" height="6" rx="3" fill="var(--brand-cyan)" opacity="0.55" />
 
                     <rect
                         className={reducedMotion ? "" : "wd-block-content2"}
@@ -214,15 +176,7 @@ export default function WebDevAnimation() {
                         strokeWidth="1"
                         strokeOpacity="0.4"
                     />
-                    <text
-                        className={reducedMotion ? "" : "wd-label-content2"}
-                        x="270" y="230"
-                        fontSize="9"
-                        fill="var(--brand-cyan)"
-                        fontFamily="monospace"
-                    >
-                        &lt;section&gt;
-                    </text>
+                    <rect className={reducedMotion ? "" : "wd-label-content2"} x="270" y="224" width="74" height="6" rx="3" fill="var(--brand-cyan)" opacity="0.55" />
 
                     {/* Footer */}
                     <rect
@@ -235,15 +189,7 @@ export default function WebDevAnimation() {
                         strokeWidth="1"
                         strokeOpacity="0.3"
                     />
-                    <text
-                        className={reducedMotion ? "" : "wd-label-footer"}
-                        x="60" y="302"
-                        fontSize="9"
-                        fill="var(--brand-blue)"
-                        fontFamily="monospace"
-                    >
-                        &lt;footer&gt;
-                    </text>
+                    <rect className={reducedMotion ? "" : "wd-label-footer"} x="60" y="296" width="69" height="6" rx="3" fill="var(--brand-blue)" opacity="0.55" />
                 </g>
 
                 {/* Scene 3-4: CSS & JS Styling Indicators */}
@@ -264,7 +210,7 @@ export default function WebDevAnimation() {
                     {/* JS Interactive Indicator */}
                     <g className={reducedMotion ? "" : "wd-js-indicator"}>
                         <circle cx="150" cy="184" r="3" fill="var(--brand-teal)" />
-                        <text x="158" y="187" fontSize="7" fill="var(--brand-teal)" fontFamily="monospace">onClick</text>
+                        <rect x="158" y="183" width="27" height="4" rx="2" fill="var(--brand-teal)" opacity="0.55" />
                     </g>
                 </g>
 
@@ -280,17 +226,7 @@ export default function WebDevAnimation() {
                         strokeDasharray="8,4"
                         opacity="0"
                     />
-                    <text
-                        className="wd-component-label"
-                        x="380" y="135"
-                        fontSize="8"
-                        fill="var(--brand-blue)"
-                        fontFamily="monospace"
-                        fontWeight="bold"
-                        opacity="0"
-                    >
-                        COMPONENT
-                    </text>
+                    <rect className="wd-component-label" x="380" y="130" width="40" height="5" rx="2.5" fill="var(--brand-blue)" opacity="0" />
                 </g>
 
                 {/* Scene 6: Performance Indicators */}
@@ -305,9 +241,7 @@ export default function WebDevAnimation() {
                         <rect x="410" y="154" width="35" height="8" rx="2" fill="var(--border-color)" />
                         <rect className="wd-perf-bar3" x="410" y="154" width="0" height="8" rx="2" fill="#28c840" />
                     </g>
-                    <text className="wd-perf-label" x="410" y="175" fontSize="7" fill="#28c840" fontFamily="monospace" opacity="0">
-                        OPTIMIZED
-                    </text>
+                    <rect className="wd-perf-label" x="410" y="171" width="35" height="4" rx="2" fill="#28c840" opacity="0" />
                 </g>
 
                 {/* Scene 7: Responsive Devices */}
@@ -362,9 +296,7 @@ export default function WebDevAnimation() {
                         <circle cx="412" cy="38" r="4" fill="white">
                             {!reducedMotion && <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite" />}
                         </circle>
-                        <text x="420" y="42" fontSize="9" fill="white" fontWeight="bold" fontFamily="sans-serif">
-                            LIVE
-                        </text>
+                        <rect x="420" y="36" width="20" height="6" rx="3" fill="white" opacity="0.55" />
                     </g>
                 </g>
 
@@ -372,15 +304,11 @@ export default function WebDevAnimation() {
                 <g className={reducedMotion ? "" : "wd-code-snippets"}>
                     <g className="wd-code1" opacity="0">
                         <rect x="60" y="242" width="60" height="22" rx="3" fill="var(--card-bg)" stroke="var(--border-color)" strokeWidth="0.5" />
-                        <text x="65" y="256" fontSize="7" fill="var(--brand-blue)" fontFamily="monospace">
-                            .flex { }
-                        </text>
+                        <rect x="65" y="252" width="35" height="4" rx="2" fill="var(--brand-blue)" opacity="0.55" />
                     </g>
                     <g className="wd-code2" opacity="0">
                         <rect x="270" y="242" width="70" height="22" rx="3" fill="var(--card-bg)" stroke="var(--border-color)" strokeWidth="0.5" />
-                        <text x="275" y="256" fontSize="7" fill="var(--brand-teal)" fontFamily="monospace">
-                            grid-cols-2
-                        </text>
+                        <rect x="275" y="252" width="42" height="4" rx="2" fill="var(--brand-teal)" opacity="0.55" />
                     </g>
                 </g>
 

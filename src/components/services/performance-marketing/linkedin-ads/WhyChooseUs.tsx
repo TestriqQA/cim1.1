@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
             icon: Shield,
             title: "Enterprise Experience",
             description: "Managed campaigns for large enterprises and high-growth startups.",
-            stat: "100+ Clients",
+            stat: "Trusted Clients",
         },
         {
             id: 4,

@@ -187,7 +187,7 @@ export default function Hero() {
                                         color: "transparent",
                                     }}
                                 >
-                                    200+
+                                    Proven
                                 </div>
                                 <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                     Corporate Sites Built

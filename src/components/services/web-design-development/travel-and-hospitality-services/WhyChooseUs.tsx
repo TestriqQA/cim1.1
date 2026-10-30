@@ -42,9 +42,9 @@ export default function WhyChooseUs() {
     ];
 
     const stats = [
-        { value: "300%", label: "Traffic Growth" },
+        { value: "Strong", label: "Traffic Growth" },
         { value: "80%+", label: "Test Coverage" },
-        { value: "50+", label: "Global Partners" },
+        { value: "Global", label: "Global Partners" },
         { value: "24/7", label: "Monitoring" },
     ];
 

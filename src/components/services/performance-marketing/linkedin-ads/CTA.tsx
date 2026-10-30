@@ -68,7 +68,7 @@ export default function CTA() {
 
                     {/* Trust Badges */}
                     <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        {["LinkedIn Partner", "B2B Specialists", "100+ Enterprise Clients"].map((badge, idx) => (
+                        {["LinkedIn Partner", "B2B Specialists", "Enterprise Clients"].map((badge, idx) => (
                             <span
                                 key={idx}
                                 className="px-4 py-2 rounded-full text-sm font-medium border"

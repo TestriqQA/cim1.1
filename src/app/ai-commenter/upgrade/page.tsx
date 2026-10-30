@@ -16,10 +16,16 @@ import Link from "next/link";
  */
 
 export const metadata: Metadata = {
-    title: "Upgrade to Pro - ChimeGenius AI Pro",
+    title: "Upgrade to Pro - ChimeGenius AI Pro | Cinute InfoMedia",
     description:
         "Unlock 500 daily generations, advanced Gemini models, and multi-variant streaming with ChimeGenius AI Pro by Cinute InfoMedia.",
-    robots: { index: true, follow: true },
+    // Reached only from inside the Chrome extension, has no internal links and
+    // is not in the sitemap — an indexable orphan with no canonical. noindex,
+    // follow keeps it out of the index without stranding its outbound links.
+    robots: { index: false, follow: true },
+    alternates: {
+        canonical: "https://www.cinuteinfomedia.com/ai-commenter/upgrade",
+    },
     openGraph: {
         title: "Upgrade to ChimeGenius AI Pro",
         description:

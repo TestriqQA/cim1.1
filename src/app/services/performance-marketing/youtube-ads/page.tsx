@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/youtube-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "YouTube Ads Agency | YouTube Advertising Services",
+    title: "YouTube Ads Agency | YouTube Advertising | Cinute InfoMedia",
     description: "Engage your audience with compelling video ads on YouTube. Our YouTube Ads agency manages TrueView, Bumper, and Discovery ads for impact.",
     url: "/services/performance-marketing/youtube-ads",
     image: "/og-images/youtube_ads.webp",
@@ -26,7 +26,7 @@ export default function YouTubeAdsPage() {
                         "serviceType": "YouTube Ads Management",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Cinute Infomedia",
+                            "name": "Cinute InfoMedia",
                             "url": "https://www.cinuteinfomedia.com",
                             "logo": "https://www.cinuteinfomedia.com/logo.png",
                             "description": "Global Web Design, Development & Digital Marketing Agency",
