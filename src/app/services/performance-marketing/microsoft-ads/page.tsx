@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/microsoft-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Microsoft Ads Agency | Bing Advertising Services",
+    title: "Microsoft Ads Agency | Bing Advertising | Cinute InfoMedia",
     description: "Reach high-value audiences on Bing, Yahoo, and AOL with our expert Microsoft Ads management services. Maximize ROI with targeted campaigns.",
     url: "/services/performance-marketing/microsoft-ads",
     image: "/og-images/microsoft_ads.webp",

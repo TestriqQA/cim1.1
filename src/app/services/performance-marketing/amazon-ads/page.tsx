@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/amazon-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Amazon Ads Agency | Amazon PPC Management Services",
+    title: "Amazon Ads Agency | PPC Management | Cinute InfoMedia",
     description: "Boost your sales on Amazon with data-driven PPC campaigns. Our Amazon Ads agency helps you dominate search results and increase ROAS.",
     url: "/services/performance-marketing/amazon-ads",
     image: "/og-images/amazon_ads.webp",

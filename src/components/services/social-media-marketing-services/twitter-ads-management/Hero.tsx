@@ -177,17 +177,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>Strong</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>Strong</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Average ROI</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>20%+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>20%+</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>CTR Lifts</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>High</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--foreground)" }}>High</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Targeting Precision</p>
                             </div>
                         </div>

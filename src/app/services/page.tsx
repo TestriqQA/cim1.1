@@ -18,7 +18,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Digital Solutions & Services | Cinute InfoMedia',
-    description: 'Explore our comprehensive digital services including web development, mobile apps, SEO, social media marketing, AI automation, and more. Transform your business with CIM.',
+    description: 'Web development, mobile apps, SEO, social media marketing and AI automation from Cinute InfoMedia, a digital agency in Mira Road, Mumbai.',
     url: '/services',
     keywords: ['web development services', 'mobile app solutions', 'SEO agency', 'AI automation consultants'],
     image: '/og-images/Services.webp',

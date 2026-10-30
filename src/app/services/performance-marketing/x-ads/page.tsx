@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/x-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "X Ads Agency | Twitter Advertising Services",
+    title: "X Ads Agency | Twitter Advertising | Cinute InfoMedia",
     description: "Join the conversation and amplify your message with X (Twitter) Ads. We help you reach real-time audiences and drive engagement.",
     url: "/services/performance-marketing/x-ads",
     image: "/og-images/x_ads.webp",

@@ -185,17 +185,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>2B+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>2B+</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Monthly Users</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>High</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>High</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Product Discovery</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>Strong</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-pink-text)" }}>Strong</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Higher Engagement</p>
                             </div>
                         </div>

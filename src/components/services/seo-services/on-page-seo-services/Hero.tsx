@@ -153,17 +153,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>250+</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>250+</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>SEO Elements</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Avg. Core Web Vitals</p>
                             </div>
                             <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Strong</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Strong</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
                             </div>
                         </div>

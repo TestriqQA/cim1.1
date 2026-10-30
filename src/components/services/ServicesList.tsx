@@ -230,7 +230,7 @@ export default function ServicesList() {
             className="text-3xl md:text-4xl font-black mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Our{" "}
+            What We{" "}
             <span
               style={{
                 background:
@@ -239,7 +239,7 @@ export default function ServicesList() {
                 color: "transparent",
               }}
             >
-              Services
+              Do
             </span>
           </h2>
           <p

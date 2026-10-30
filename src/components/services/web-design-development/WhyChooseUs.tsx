@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
         {
             icon: Smartphone,
             title: "Responsive Web Design",
-            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Responsive Web Design</Link>.</>,
+            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using Responsive Web Design.</>,
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {

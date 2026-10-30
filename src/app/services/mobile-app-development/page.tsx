@@ -118,7 +118,7 @@ export default function MobileAppDevelopmentPage() {
                 { name: "Cross-Platform App Development", description: "React Native and Flutter development with 90%+ code reusability across iOS and Android.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company" },
                 { name: "Hybrid App Development", description: "Ionic and Cordova for quick-to-market web-based mobile applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services" },
                 { name: "Enterprise Application Development", description: "Legacy integration, high security, and scalability for enterprise mobile solutions.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/enterprise-application-development-services" },
-                { name: "HarmonyOS App Development", description: "Huawei HarmonyOS SDK, distributed architecture, and IoT-focused mobile applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/harmony-OS-app-development-services" },
+                { name: "HarmonyOS App Development", description: "Huawei HarmonyOS SDK, distributed architecture, and IoT-focused mobile applications.", url: "https://www.cinuteinfomedia.com/services/mobile-app-development/harmonyos-app-development-services" },
             ],
         }),
 

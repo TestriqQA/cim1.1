@@ -175,17 +175,17 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Stable applications</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Trusted</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Trusted</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Global Enterprise Clients</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <h2 className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</h2>
+                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</p>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Daily Active Users</p>
                             </div>
                         </div>

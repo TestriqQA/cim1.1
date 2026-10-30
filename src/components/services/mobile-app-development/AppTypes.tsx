@@ -67,7 +67,7 @@ export default function AppTypes() {
                 "IoT & Multi-Device Support"
             ],
             gradient: "from-[#ff4b4b] to-[#d6001c]",
-            link: "/services/mobile-app-development/harmony-OS-app-development-services"
+            link: "/services/mobile-app-development/harmonyos-app-development-services"
         },
         // {
         //     icon: Rocket,

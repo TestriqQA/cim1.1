@@ -8,7 +8,7 @@ import CTA from "@/components/services/seo-services/link-building/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Link Building Services | High Quality Backlink Agency",
+    title: "Link Building Services | Backlink Agency | Cinute InfoMedia",
     description: "Boost your domain authority and search rankings with our ethical white-hat link building services. High-quality backlinks that drive results.",
     url: "/services/seo-services/link-building",
     image: "/og-images/link_building.webp",

@@ -9,14 +9,14 @@ import FAQ from "@/components/services/seo-services/local-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/local-seo-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Local SEO Services , Google Maps Marketing Agency 2026",
+    title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
     description:
         "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
     },
     openGraph: {
-        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
         description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services",
         type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Local SEO Services , Google Maps Marketing Agency 2026",
+        title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
         description: "Expert Local SEO Services to rank higher on Google Maps & search. Drive local traffic, calls, and store visits with our proven GMB optimization.",
         images: ["/og-images/local-seo-services.webp"],
     },

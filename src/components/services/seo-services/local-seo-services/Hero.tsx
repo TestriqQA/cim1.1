@@ -173,27 +173,27 @@ export default function Hero() {
                         {/* Stats */}
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Top</h2>
+                                <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Top</p>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Map Pack Spot</p>
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Most in top 3</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>More</h2>
+                                <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>More</p>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Local Calls</p>
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Avg increase</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Growing</h2>
+                                <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Growing</p>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Businesses</p>
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Many industries</p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Strong</h2>
+                                <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>Strong</p>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Review Growth</p>
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>5-star increase</p>
                             </div>
                             <div className="text-center lg:text-left col-span-2 sm:col-span-1">
-                                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>High</h2>
+                                <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--accent-amber-text)" }}>High</p>
                                 <p className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>Retention</p>
                                 <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>Community-focused</p>
                             </div>

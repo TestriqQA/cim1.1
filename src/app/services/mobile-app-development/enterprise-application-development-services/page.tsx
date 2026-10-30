@@ -9,11 +9,11 @@ import CTA from "@/components/services/mobile-app-development/enterprise-applica
 import FAQ from "@/components/services/mobile-app-development/enterprise-application-development-services/FAQ";
 
 export const metadata: Metadata = {
-    title: "Enterprise App Development Services | Secure & Scalable",
+    title: "Enterprise App Development Services | Cinute InfoMedia",
     description:
         "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
     openGraph: {
-        title: "Enterprise App Development Services | Secure & Scalable",
+        title: "Enterprise App Development Services | Cinute InfoMedia",
         description:
             "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/enterprise-application-development-services",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise App Development Services | Secure & Scalable",
+        title: "Enterprise App Development Services | Cinute InfoMedia",
         description:
             "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
         images: ["/og-images/enterprise-application-development.webp"],

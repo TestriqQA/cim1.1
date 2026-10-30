@@ -9,13 +9,13 @@ import FAQ from "@/components/services/seo-services/ecommerce-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/ecommerce-seo-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
+    title: "Ecommerce SEO Services | Shopify, Magento | Cinute InfoMedia",
     description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services",
     },
     openGraph: {
-        title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
+        title: "Ecommerce SEO Services | Shopify, Magento | Cinute InfoMedia",
         description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services",
         type: "website",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
                 url: "/og-images/ecommerce-seo-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026 by Cinute InfoMedia",
+                alt: "Ecommerce SEO Services | Shopify, Magento | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Ecommerce SEO Services | Shopify, Magento & WooCommerce 2026",
+        title: "Ecommerce SEO Services | Shopify, Magento | Cinute InfoMedia",
         description: "Expert Ecommerce SEO Services to boost sales and rankings. Optimize your Shopify, Magento, or WooCommerce store for maximum visibility.",
         images: ["/og-images/ecommerce-seo-services.webp"],
     },
