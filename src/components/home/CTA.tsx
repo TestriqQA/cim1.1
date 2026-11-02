@@ -4,11 +4,14 @@ import { ChevronRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--background)" }}>
-      <div className="mx-auto max-w-6xl px-6 md:px-12 xl:px-20">
+    <section
+      className="py-12 sm:py-16 md:py-20"
+      style={{ backgroundColor: "var(--background)" }}
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div
+          className="p-6 sm:p-10 md:p-12"
           style={{
-            padding: 48,
             borderRadius: 16,
             background:
               "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
@@ -17,25 +20,26 @@ export default function CTA() {
             boxShadow: "0 15px 40px rgba(0, 138, 193, 0.3)",
           }}
         >
-          <h2 style={{ fontSize: 28, fontWeight: 900, marginBottom: 12 }}>
+          <h2
+            className="mb-3"
+            style={{
+              fontSize: "clamp(1.375rem, 5vw, 1.75rem)",
+              fontWeight: 900,
+            }}
+          >
             Transform Your Digital Presence with a Web Development Company That
             Delivers Results
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.9)", marginBottom: 20 }}>
+          <p
+            className="mb-5 text-[0.9375rem] sm:text-base"
+            style={{ color: "rgba(255,255,255,0.9)" }}
+          >
             Join the businesses that trust Cinute InfoMedia for web development,
             mobile apps, and digital marketing solutions that drive measurable
             ROI.
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: 12,
-              justifyContent: "center",
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <div className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
               style={{
@@ -43,7 +47,6 @@ export default function CTA() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 8,
-                padding: "14px 28px",
                 borderRadius: 999,
                 background: "#fff",
                 color: "#006d97",
@@ -52,9 +55,11 @@ export default function CTA() {
                 textAlign: "center",
                 lineHeight: 1.2,
               }}
-              className="hover:bg-gray-100"
+              className="w-full px-4 py-3.5 sm:w-auto sm:px-7 hover:bg-gray-100"
             >
-              <span>Start Your Free Digital Audit</span>
+              <span className="text-[15px] sm:text-base">
+                Start Your Free Digital Audit
+              </span>
               <ChevronRight size={18} />
             </Link>
 
@@ -64,7 +69,6 @@ export default function CTA() {
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "14px 28px",
                 borderRadius: 999,
                 background: "transparent",
                 border: "2px solid rgba(255,255,255,0.3)",
@@ -73,7 +77,7 @@ export default function CTA() {
                 transition: "all 0.3s",
                 lineHeight: 1.2,
               }}
-              className="group hover:bg-white hover:text-cyan-600"
+              className="group w-full px-4 py-3.5 sm:w-auto sm:px-7 hover:bg-white hover:text-cyan-600"
             >
               <span className="inline-block transition-transform duration-300 hover:scale-[1.1] active:scale-[1.1]">
                 Request Proposal

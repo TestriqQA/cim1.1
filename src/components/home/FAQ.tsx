@@ -172,9 +172,12 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
-      <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
-        <div style={{ textAlign: "center", marginBottom: 24 }}>
+    <section
+      className="py-12 sm:py-16 md:py-20"
+      style={{ backgroundColor: "var(--card-bg)" }}
+    >
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="mb-6 text-center">
           <div
             style={{
               display: "inline-flex",
@@ -194,26 +197,31 @@ export default function FAQ() {
             />
             <span style={{ fontWeight: 700 }}>FAQ</span>
           </div>
-          <h2 style={{ fontSize: "2rem", fontWeight: 900, marginBottom: 8 }}>
+          <h2
+            className="mb-2"
+            style={{ fontSize: "clamp(1.5rem, 4.5vw, 2rem)", fontWeight: 900 }}
+          >
             Frequently Asked Questions
           </h2>
-          <p style={{ color: "var(--secondary-text)" }}>
+          <p
+            className="text-[0.9375rem] sm:text-base"
+            style={{ color: "var(--secondary-text)" }}
+          >
             Answers to common questions about services, pricing and timelines
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:gap-6">
           {faqs.map((faq, i) => (
             <div
               key={i}
               style={{
                 backgroundColor: "var(--background)",
                 border: "1px solid var(--border-color)",
-                padding: 20,
                 borderRadius: 12,
                 transition: "all 0.3s",
               }}
-              className="hover:shadow-md"
+              className="p-4 sm:p-5 hover:shadow-md"
             >
               <button
                 type="button"
@@ -229,23 +237,11 @@ export default function FAQ() {
                   cursor: "pointer",
                 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 12,
-                    alignItems: "center",
-                  }}
-                >
+                <div className="flex items-start gap-3 sm:items-center">
                   {/* FAQ icon */}
                   <div
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] sm:h-9 sm:w-9"
                     style={{
-                      width: 36,
-                      height: 36,
-                      minWidth: 36,
-                      borderRadius: 10,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
                       background:
                         "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
                       color: "#fff",
@@ -258,6 +254,7 @@ export default function FAQ() {
                   <div
                     style={{
                       flex: 1,
+                      minWidth: 0,
                       fontSize: "16px",
                       fontWeight: 650,
                       lineHeight: 1.5,
@@ -271,17 +268,10 @@ export default function FAQ() {
                   {/* Plus / X icon */}
                   {/* Smooth Plus / X icon */}
                   <div
+                    className="relative flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg"
                     style={{
-                      width: 30,
-                      height: 30,
-                      minWidth: 30,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: 8,
                       color: "var(--brand-cyan)",
                       backgroundColor: "var(--card-bg)",
-                      position: "relative",
                     }}
                   >
                     <Plus
@@ -316,10 +306,9 @@ export default function FAQ() {
               {faqOpen === i && (
                 <div
                   id={`faq-answer-${i}`}
+                  className="mt-3 text-[0.9375rem] sm:ml-[52px] sm:mt-4 sm:text-base"
                   style={{
                     color: "var(--foreground)",
-                    marginTop: 16,
-                    marginLeft: 52,
                     lineHeight: 1.7,
                   }}
                 >

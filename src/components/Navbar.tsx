@@ -245,8 +245,8 @@ export default function Navbar() {
           borderColor: "var(--border-color)",
         }}
       >
-        <div className="mx-auto px-6 md:px-12 xl:px-16">
-          <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-16">
+          <div className="flex justify-between items-center h-16 lg:h-[72px]">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2">
                 <div className="relative overflow-hidden rounded-lg">
@@ -255,7 +255,7 @@ export default function Navbar() {
                     alt="CIM Logo"
                     height={80}
                     width={180}
-                    className="lg:h-[75px] lg:w-[175px]"
+                    className="h-[50px] w-auto object-contain lg:h-[55px] 2xl:h-[60px]"
                     priority
                   />
                 </div>
@@ -373,12 +373,12 @@ export default function Navbar() {
         borderColor: "var(--border-color)",
       }}
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-16">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-16">
+        <div className="flex justify-between items-center h-16 lg:h-[72px]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="h-20 w-[128px] 2xl:w-[180px] flex items-center justify-center overflow-hidden rounded-lg transition-transform group-hover:scale-105">
+              <div className="flex items-center justify-center overflow-hidden rounded-lg transition-transform group-hover:scale-105">
                 <Image
                   src={
                     isDark
@@ -388,7 +388,9 @@ export default function Navbar() {
                   alt="CIM Logo"
                   height={80}
                   width={180}
-                  className={"object-contain"}
+                  className={
+                    "h-[50px] w-auto object-contain lg:h-[55px] 2xl:h-[60px]"
+                  }
                   priority
                 />
               </div>

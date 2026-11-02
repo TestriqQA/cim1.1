@@ -97,30 +97,34 @@ export default function CoreValues() {
   return (
     <section
       id="core-values"
-      className="py-20"
+      className="py-12 sm:py-16 md:py-20"
       style={{ backgroundColor: "var(--background)" }}
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div className="text-center mb-12">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div
+            className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-4"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "8px 16px",
               borderRadius: 999,
               backgroundColor: "var(--card-bg)",
               border: "1px solid var(--border-color)",
-              marginBottom: 16,
             }}
           >
             <Heart
               className="w-4 h-4"
               style={{ color: "var(--brand-purple)" }}
             />
-            <span style={{ fontWeight: 600 }}>Our Philosophy</span>
+            <span className="text-sm sm:text-base" style={{ fontWeight: 600 }}>
+              Our Philosophy
+            </span>
           </div>
-          <h2 style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: 8 }}>
+          <h2
+            className="mb-3 sm:mb-2"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 2.5rem)", fontWeight: 900 }}
+          >
             Why CIM is Your Growth Partner for{" "}
             <span
               style={{
@@ -134,6 +138,7 @@ export default function CoreValues() {
             </span>
           </h2>
           <p
+            className="text-[0.9375rem] sm:text-base"
             style={{
               color: "var(--secondary-text)",
               maxWidth: "700px",
@@ -162,34 +167,41 @@ export default function CoreValues() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {coreValues.map((value, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl"
+              className="p-5 sm:p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl"
               style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
               }}
             >
               <div
+                className="p-3 sm:p-4 mb-3 sm:mb-4"
                 style={{
                   display: "inline-flex",
-                  padding: 16,
                   borderRadius: 12,
                   color: "#fff",
-                  marginBottom: 16,
                   background: value.color,
                 }}
               >
                 {value.icon}
               </div>
               <h3
-                style={{ fontWeight: 800, fontSize: "1.5rem", marginBottom: 8 }}
+                className="mb-2"
+                style={{
+                  fontWeight: 800,
+                  fontSize: "clamp(1.25rem, 4vw, 1.5rem)",
+                  lineHeight: 1.25,
+                }}
               >
                 {value.title}
               </h3>
-              <p style={{ color: "var(--secondary-text)" }}>
+              <p
+                className="text-[0.9375rem] sm:text-base"
+                style={{ color: "var(--secondary-text)" }}
+              >
                 {value.description}
               </p>
             </div>

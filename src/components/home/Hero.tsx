@@ -73,13 +73,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto px-6 md:px-12 xl:px-20 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20 py-8 sm:py-10 md:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Left Content */}
           {/* Left Content */}
           <div className="lg:col-span-7 relative z-10">
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-semibold mb-6 shadow-lg animate-fade-in"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:py-2 sm:px-4 rounded-full text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-lg animate-fade-in"
               style={{
                 background:
                   "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
@@ -89,11 +89,11 @@ export default function Hero() {
               <span>Digital Presence & Digital Growth</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+            <h1 className="w-full min-w-0 break-words [overflow-wrap:anywhere] text-[1.75rem] leading-[1.15] tracking-tight sm:tracking-normal sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
               Expert Web Development Company
-              <br />
+              <br className="hidden sm:inline" />
               <span
-                className="bg-clip-text text-transparent"
+                className="block min-w-0 break-words [overflow-wrap:anywhere] bg-clip-text text-transparent"
                 style={{
                   background:
                     "linear-gradient(90deg, var(--brand-blue), var(--brand-purple), var(--brand-cyan)) ",
@@ -106,7 +106,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-xl max-w-2xl mb-8 leading-relaxed"
+              className="text-[0.9375rem] sm:text-lg md:text-xl max-w-2xl mb-6 sm:mb-8 leading-relaxed"
               style={{ color: "var(--secondary-text)" }}
             >
               We are your full-stack partner for online success, specializing in{" "}
@@ -140,23 +140,23 @@ export default function Hero() {
               to ensure your brand stands out and scales globally.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-12">
               <Link
                 href="/contact"
-                className="group relative px-6 py-3 md:px-8 md:py-4 text-sm md:text-base text-white font-bold rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="group relative w-full sm:w-auto justify-center px-5 py-3 sm:px-6 md:px-8 md:py-4 text-sm md:text-base text-white font-bold rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 sm:hover:scale-105"
                 style={{
                   background:
                     "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
                 }}
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   Start Your Free Digital Audit
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div
                 className="group p-4 rounded-2xl"
                 style={{
@@ -166,7 +166,7 @@ export default function Hero() {
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className="p-2 rounded-lg"
+                    className="p-2 rounded-lg shrink-0"
                     style={{
                       background:
                         "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
@@ -196,7 +196,7 @@ export default function Hero() {
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className="p-2 rounded-lg"
+                    className="p-2 rounded-lg shrink-0"
                     style={{
                       background:
                         "linear-gradient(90deg, var(--brand-yellow), var(--brand-orange))",
@@ -222,10 +222,10 @@ export default function Hero() {
           {/* Right Side - Case Studies */}
           {/* Right Side - Case Studies */}
           <aside className="lg:col-span-5 relative z-10 animate-[fadeIn_0.8s_ease-out]">
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Testriq Case Study Card */}
               <div
-                className="relative p-6 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
+                className="relative p-4 sm:p-6 rounded-2xl sm:rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
                 style={{
                   backgroundColor: "var(--card-bg)",
                   border: "1px solid var(--border-color)",
@@ -246,11 +246,11 @@ export default function Hero() {
                   }}
                 />
 
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between gap-3 mb-4 sm:mb-5">
+                  <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
                     {/* Testriq Logo Placeholder */}
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
                       style={{
                         backgroundColor: "var(--background)",
                         border: "1px solid var(--border-color)",
@@ -261,10 +261,10 @@ export default function Hero() {
                         alt="Testriq QA Lab"
                         width={40}
                         height={40}
-                        className="w-10 h-10 object-contain"
+                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                       />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h3
                         className="font-bold"
                         style={{ color: "var(--foreground)" }}
@@ -272,7 +272,7 @@ export default function Hero() {
                         Testriq QA Lab
                       </h3>
                       <p
-                        className="text-xs"
+                        className="text-[11px] sm:text-xs"
                         style={{ color: "var(--secondary-text)" }}
                       >
                         QA & Testing Solutions
@@ -284,9 +284,8 @@ export default function Hero() {
                   <Link
                     href="/portfolio/testriq-organic-growth"
                     aria-label="Case Study: Testriq QA Lab organic growth"
-                    className="transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                    className="inline-flex w-fit max-w-fit shrink-0 items-center whitespace-nowrap px-3 py-1.5 sm:py-1 transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                     style={{
-                      padding: "4px 12px",
                       borderRadius: 999,
                       background:
                         "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
@@ -299,7 +298,7 @@ export default function Hero() {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-0 sm:mb-4">
                   <div
                     className="p-3 rounded-xl"
                     style={{
@@ -308,7 +307,7 @@ export default function Hero() {
                     }}
                   >
                     <div
-                      className="text-2xl font-black"
+                      className="text-xl sm:text-2xl font-black"
                       style={{
                         background:
                           "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
@@ -319,7 +318,7 @@ export default function Hero() {
                       Strong
                     </div>
                     <div
-                      className="text-xs"
+                      className="text-[11px] sm:text-xs"
                       style={{ color: "var(--secondary-text)" }}
                     >
                       Lead Generation
@@ -333,7 +332,7 @@ export default function Hero() {
                     }}
                   >
                     <div
-                      className="text-2xl font-black"
+                      className="text-xl sm:text-2xl font-black"
                       style={{
                         background:
                           "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
@@ -344,7 +343,7 @@ export default function Hero() {
                       Strong
                     </div>
                     <div
-                      className="text-xs"
+                      className="text-[11px] sm:text-xs"
                       style={{ color: "var(--secondary-text)" }}
                     >
                       Website Traffic
@@ -354,62 +353,62 @@ export default function Hero() {
               </div>
 
               {/* Quick Stats */}
-              <div className="flex items-center justify-center gap-4 text-center">
+              <div className="flex items-stretch justify-center gap-2.5 sm:gap-4 text-center">
                 <div
-                  className="flex-1 p-4 rounded-2xl"
+                  className="min-w-0 flex-1 p-3 sm:p-4 rounded-xl sm:rounded-2xl"
                   style={{
                     backgroundColor: "var(--card-bg)",
                     border: "1px solid var(--border-color)",
                   }}
                 >
                   <div
-                    className="text-2xl font-black"
+                    className="text-xl sm:text-2xl font-black"
                     style={{ color: "var(--foreground)" }}
                   >
                     50+
                   </div>
                   <div
-                    className="text-xs"
+                    className="text-[11px] sm:text-xs"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     Projects
                   </div>
                 </div>
                 <div
-                  className="flex-1 p-4 rounded-2xl"
+                  className="min-w-0 flex-1 p-3 sm:p-4 rounded-xl sm:rounded-2xl"
                   style={{
                     backgroundColor: "var(--card-bg)",
                     border: "1px solid var(--border-color)",
                   }}
                 >
                   <div
-                    className="text-2xl font-black"
+                    className="text-xl sm:text-2xl font-black"
                     style={{ color: "var(--foreground)" }}
                   >
                     High
                   </div>
                   <div
-                    className="text-xs"
+                    className="text-[11px] sm:text-xs"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     Satisfaction
                   </div>
                 </div>
                 <div
-                  className="flex-1 p-4 rounded-2xl"
+                  className="min-w-0 flex-1 p-3 sm:p-4 rounded-xl sm:rounded-2xl"
                   style={{
                     backgroundColor: "var(--card-bg)",
                     border: "1px solid var(--border-color)",
                   }}
                 >
                   <div
-                    className="text-2xl font-black"
+                    className="text-xl sm:text-2xl font-black"
                     style={{ color: "var(--foreground)" }}
                   >
                     24/7
                   </div>
                   <div
-                    className="text-xs"
+                    className="text-[11px] sm:text-xs"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     Support
