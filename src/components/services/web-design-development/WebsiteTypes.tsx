@@ -214,7 +214,7 @@ export default function WebsiteTypes() {
     };
 
     const renderGrid = (data: WebsiteType[]) => (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 animate-fade-in">
             {data.map((type, idx) => {
                 const Icon = type.icon;
                 const cardContent = (
@@ -227,18 +227,18 @@ export default function WebsiteTypes() {
                     >
                         {/* Header with Icon */}
                         <div
-                            className={`flex gap-3 p-6 bg-gradient-to-br ${type.color} relative overflow-hidden`}
+                            className={`flex items-center gap-3 p-4 sm:p-6 bg-gradient-to-br ${type.color} relative overflow-hidden`}
                         >
                             <div className="absolute inset-0 opacity-10" style={{ background: "linear-gradient(135deg, white, transparent)" }} />
                             <Icon className="w-8 h-8 text-white relative z-10" />
-                            <h3 className="text-lg font-bold mb-3 text-white relative z-10 flex items-center h-8">
+                            <h3 className="text-base sm:text-lg font-bold text-white relative z-10">
                                 {type.title}
                             </h3>
                         </div>
 
                         {/* Content */}
-                        <div className="p-6 flex flex-col flex-1">
-                            <p className="text-sm mb-6 flex-1" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                        <div className="p-5 sm:p-6 flex flex-col flex-1">
+                            <p className="text-sm mb-5 sm:mb-6 flex-1" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
                                 {type.description}
                             </p>
 
@@ -247,7 +247,7 @@ export default function WebsiteTypes() {
                                 {type.features.map((feature, fidx) => (
                                     <li key={fidx} className="flex items-start gap-2 text-sm">
                                         <span
-                                            className={`w-4 h-4 rounded-full flex-shrink-0 mt-0.5 bg-gradient-to-br ${type.color}`}
+                                            className={`w-2 h-2 rounded-full flex-shrink-0 mt-1.5 bg-gradient-to-br ${type.color}`}
                                         />
                                         <span style={{ color: "var(--secondary-text)" }}>{feature}</span>
                                     </li>
@@ -282,12 +282,12 @@ export default function WebsiteTypes() {
                     animation: fade-in 0.4s ease-out forwards;
                 }
             `}</style>
-            <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 sm:mb-10 md:mb-12">
                     {/* Badge */}
                     <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 sm:mb-6 border"
                         style={{
                             backgroundColor: "rgba(0, 138, 193, 0.05)",
                             borderColor: "rgba(0, 138, 193, 0.2)",
@@ -299,11 +299,11 @@ export default function WebsiteTypes() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style={{ color: "var(--foreground)" }}>
                         Comprehensive <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>Custom Website Development</span> Solutions
                     </h2>
 
-                    <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                    <p className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         As a professional <span className="text-[var(--brand-blue-text)] font-bold">web design agency</span>, we offer full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">web development agency</span> delivers scalable, secure, and SEO-optimized platforms for global markets.
                     </p>
 
@@ -316,14 +316,14 @@ export default function WebsiteTypes() {
                 </div>
 
                 {/* Tab Controls */}
-                <div className="flex justify-center mb-12">
+                <div className="flex justify-center mb-8 sm:mb-10 md:mb-12">
                     <div
-                        className="inline-flex p-1.5 rounded-2xl border bg-[var(--card-bg)]"
+                        className="inline-flex flex-wrap justify-center gap-1 p-1.5 rounded-2xl border bg-[var(--card-bg)]"
                         style={{ borderColor: "var(--border-color)" }}
                     >
                         <button
                             onClick={() => setActiveTab("core")}
-                            className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "core" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
+                            className={`whitespace-nowrap px-4 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm rounded-xl font-semibold transition-all duration-300 ${activeTab === "core" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
                                 background: activeTab === "core" ? "var(--brand-blue-btn)" : "transparent",
@@ -334,7 +334,7 @@ export default function WebsiteTypes() {
                         </button>
                         <button
                             onClick={() => setActiveTab("industry")}
-                            className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "industry" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
+                            className={`whitespace-nowrap px-4 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm rounded-xl font-semibold transition-all duration-300 ${activeTab === "industry" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
                                 background: activeTab === "industry" ? "var(--brand-blue-btn)" : "transparent",
@@ -345,7 +345,7 @@ export default function WebsiteTypes() {
                         </button>
                         <button
                             onClick={() => setActiveTab("tech")}
-                            className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeTab === "tech" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
+                            className={`whitespace-nowrap px-4 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm rounded-xl font-semibold transition-all duration-300 ${activeTab === "tech" ? "shadow-md scale-105" : "hover:bg-[var(--hover-bg)]"
                                 }`}
                             style={{
                                 background: activeTab === "tech" ? "var(--brand-blue-btn)" : "transparent",
@@ -366,13 +366,13 @@ export default function WebsiteTypes() {
 
                 {/* Info Box */}
                 <div
-                    className="mt-16 rounded-2xl p-8 md:p-12 border"
+                    className="mt-10 sm:mt-12 md:mt-16 rounded-2xl p-5 sm:p-8 md:p-12 border"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
                         Not Sure Which Type You Need?
                     </h3>
 
