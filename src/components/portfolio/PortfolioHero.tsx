@@ -14,7 +14,7 @@ import { getHighlightMetrics } from "@/data/portfolio";
 // data/portfolio.ts), not a hand-picked list here, so a figure can never end up
 // credited to the wrong client.
 
-const container = "mx-auto px-6 md:px-12 xl:px-20";
+const container = "mx-auto px-4 sm:px-6 md:px-12 xl:px-20";
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]";
 
@@ -32,18 +32,19 @@ export default function PortfolioHero() {
   const cells = highlights.slice(0, 4);
 
   const soleProject =
-    cells.length > 0 && cells.every((h) => h.project.slug === cells[0].project.slug)
+    cells.length > 0 &&
+    cells.every((h) => h.project.slug === cells[0].project.slug)
       ? cells[0].project
       : null;
 
   return (
     <section
-      className="pt-12 pb-14 md:pt-16 md:pb-20"
+      className="pt-10 pb-12 md:pt-16 md:pb-20"
       style={{ backgroundColor: "var(--background)" }}
       aria-labelledby="portfolio-heading"
     >
       <div className={container}>
-        <nav aria-label="Breadcrumb" className="mb-10">
+        <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 md:mb-10">
           <ol
             className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"
             style={{ color: "var(--secondary-text)" }}
@@ -89,14 +90,14 @@ export default function PortfolioHero() {
             className="mt-6 text-lg leading-relaxed md:text-xl"
             style={{ color: "var(--secondary-text)" }}
           >
-            Each engagement below is written up in full — the situation, the task, the work
-            itself, and what changed as a result.
+            Each engagement below is written up in full — the situation, the
+            task, the work itself, and what changed as a result.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#case-studies"
-              className={`${focusRing} inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity duration-300 hover:opacity-90`}
+              className={`${focusRing} inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity duration-300 hover:opacity-90 sm:w-auto`}
               style={{ backgroundColor: "var(--brand-blue-btn)" }}
             >
               Browse the work
@@ -104,7 +105,7 @@ export default function PortfolioHero() {
             </a>
             <Link
               href="/get-in-touch"
-              className={`${focusRing} inline-flex items-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition-colors duration-300`}
+              className={`${focusRing} inline-flex w-full items-center justify-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition-colors duration-300 sm:w-auto`}
               style={{
                 borderColor: "var(--border-color)",
                 backgroundColor: "var(--card-bg)",
@@ -121,7 +122,7 @@ export default function PortfolioHero() {
         ------------------------------------------------------------------ */}
         {cells.length > 0 && (
           <div
-            className="mt-14 border-t pt-10"
+            className="mt-10 border-t pt-8 sm:mt-12 sm:pt-10 md:mt-14"
             style={{ borderColor: "var(--border-color)" }}
           >
             <h2 id="outcomes-heading" className="sr-only">
@@ -136,7 +137,7 @@ export default function PortfolioHero() {
                 four: beyond that the figures get too narrow to read. */}
             <ul
               aria-labelledby="outcomes-heading"
-              className={`grid gap-8 lg:gap-12 ${
+              className={`grid gap-7 sm:gap-8 lg:gap-12 ${
                 cells.length === 1
                   ? ""
                   : cells.length === 2
