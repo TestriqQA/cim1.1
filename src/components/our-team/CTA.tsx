@@ -27,20 +27,20 @@ const contacts = [
 export default function CTA() {
   return (
     <section
-      className="py-20 md:py-28"
+      className="py-12 sm:py-16 md:py-28"
       style={{ backgroundColor: "var(--background)" }}
       aria-labelledby="team-cta-heading"
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div
-          className={`${styles.reveal} rounded-[2rem] p-px`}
+          className={`${styles.reveal} rounded-2xl p-px sm:rounded-3xl`}
           style={{
             background:
               "linear-gradient(135deg, var(--brand-blue), var(--brand-teal) 45%, var(--brand-purple))",
           }}
         >
           <div
-            className="relative min-w-0 overflow-hidden rounded-[calc(2rem-1px)] p-4 sm:p-8 md:p-14"
+            className="relative min-w-0 overflow-hidden rounded-[calc(1rem-1px)] p-4 sm:rounded-[calc(1.5rem-1px)] sm:p-8 md:p-12"
             style={{ backgroundColor: "var(--card-bg)" }}
           >
             <div
@@ -70,7 +70,7 @@ export default function CTA() {
                 </h2>
 
                 <p
-                  className="mt-5 max-w-2xl text-lg leading-relaxed"
+                  className="mt-5 max-w-2xl text-base leading-relaxed sm:text-lg"
                   style={{ color: "var(--secondary-text)" }}
                 >
                   No account-manager relay. Tell us what you are trying to build
@@ -78,10 +78,10 @@ export default function CTA() {
                   on the first call.
                 </p>
 
-                <div className="mt-9 flex flex-wrap gap-4">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <Link
                     href="/contact"
-                    className={`${styles.sheen} group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
+                    className={`${styles.sheen} group inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] sm:w-auto`}
                     style={{
                       background:
                         "linear-gradient(90deg, var(--brand-blue-btn), var(--accent-teal-btn))",
@@ -96,7 +96,7 @@ export default function CTA() {
 
                   <Link
                     href="/careers"
-                    className="inline-flex items-center gap-2 rounded-xl border px-6 py-3.5 font-semibold transition-colors duration-300 hover:border-[color-mix(in_srgb,var(--brand-blue)_45%,var(--border-color))] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border px-6 py-3.5 font-semibold transition-colors duration-300 hover:border-[color-mix(in_srgb,var(--brand-blue)_45%,var(--border-color))] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] sm:w-auto"
                     style={{
                       borderColor: "var(--border-color)",
                       backgroundColor: "var(--background)",
@@ -109,7 +109,7 @@ export default function CTA() {
               </div>
 
               <ul
-                className="min-w-0 w-full space-y-2 rounded-2xl border p-3 sm:p-5"
+                className="min-w-0 w-full space-y-1 rounded-xl border p-2 sm:space-y-2 sm:rounded-2xl sm:p-5"
                 style={{
                   backgroundColor: "var(--background)",
                   borderColor: "var(--border-color)",
@@ -119,7 +119,7 @@ export default function CTA() {
                   <li key={label}>
                     <a
                       href={href}
-                      className={`${styles.indexRow} group flex min-w-0 items-start gap-3 rounded-xl px-2 py-3 sm:items-center sm:gap-4 sm:px-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
+                      className={`${styles.indexRow} group flex min-w-0 items-start gap-3 rounded-xl px-1.5 py-2.5 sm:items-center sm:gap-4 sm:px-3 sm:py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]`}
                     >
                       <span
                         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
@@ -152,7 +152,7 @@ export default function CTA() {
                   </li>
                 ))}
 
-                <li className="flex min-w-0 items-start gap-3 px-2 py-3 sm:gap-4 sm:px-3">
+                <li className="flex min-w-0 items-start gap-3 px-1.5 py-2.5 sm:gap-4 sm:px-3 sm:py-3">
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
                     style={{
@@ -174,8 +174,8 @@ export default function CTA() {
                       Studio
                     </span>
                     <address
-                      className="mt-0.5 block break-words [overflow-wrap:anywhere] text-sm not-italic leading-relaxed"
-                      style={{ color: "var(--secondary-text)" }}
+                      className="mt-0.5 block break-words [overflow-wrap:anywhere] text-sm font-semibold not-italic leading-relaxed"
+                      style={{ color: "var(--foreground)" }}
                     >
                       Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Beverly
                       Park, Mira Road, Mumbai, Maharashtra 401107

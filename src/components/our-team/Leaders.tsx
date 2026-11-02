@@ -21,11 +21,11 @@ import styles from "./team.module.css";
 export default function Leaders() {
   return (
     <section
-      className="py-20 md:py-28"
+      className="py-12 sm:py-16 md:py-28"
       style={{ backgroundColor: "var(--card-bg)" }}
       aria-labelledby="leaders-heading"
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
         <div className={`${styles.reveal} max-w-3xl`}>
           <p
             className="text-xs font-bold uppercase tracking-[0.22em]"
@@ -41,16 +41,16 @@ export default function Leaders() {
             Four people own the outcome
           </h2>
           <p
-            className="mt-5 text-lg leading-relaxed"
+            className="mt-5 text-base leading-relaxed sm:text-lg"
             style={{ color: "var(--secondary-text)" }}
           >
-            Strategy, delivery and growth sit with three people. They scope the
+            Strategy, delivery and growth sit with four people. They scope the
             work, stay accountable for it, and are the ones you deal with
             directly rather than through an account layer.
           </p>
         </div>
 
-        <ul className="mt-16 space-y-20 lg:space-y-28">
+        <ul className="mt-10 space-y-12 sm:mt-12 sm:space-y-16 md:mt-16 lg:space-y-28">
           {leaders.map((leader, index) => {
             const flipped = index % 2 === 1;
 
@@ -59,7 +59,7 @@ export default function Leaders() {
                 {/* Section marker */}
                 <div
                   aria-hidden="true"
-                  className="mb-10 flex items-center gap-5"
+                  className="mb-6 flex items-center gap-4 sm:mb-8 sm:gap-5 md:mb-10"
                 >
                   <span
                     className="text-sm font-bold tabular-nums"
@@ -86,7 +86,7 @@ export default function Leaders() {
                     the wide 1fr track. Explicit col-start beats `order` here —
                     it states the intent instead of relying on auto-placement. */}
                 <article
-                  className={`grid gap-10 lg:gap-16 xl:gap-20 ${
+                  className={`grid gap-8 sm:gap-10 lg:gap-16 xl:gap-20 ${
                     flipped
                       ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)]"
                       : "lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]"
@@ -198,7 +198,7 @@ export default function Leaders() {
                     </p>
 
                     {leader.highlights ? (
-                      <div className="mt-10">
+                      <div className="mt-8 sm:mt-10">
                         <h4
                           className="text-xs font-bold uppercase tracking-[0.18em]"
                           style={{ color: "var(--foreground)" }}
@@ -212,7 +212,7 @@ export default function Leaders() {
                           {leader.highlights.map((item, itemIndex) => (
                             <li
                               key={item}
-                              className={`${styles.indexRow} flex items-start gap-4 border-b px-3 py-4`}
+                              className={`${styles.indexRow} flex items-start gap-3 border-b px-2 py-3 sm:gap-4 sm:px-3 sm:py-4`}
                               style={{ borderColor: "var(--border-color)" }}
                             >
                               <span
