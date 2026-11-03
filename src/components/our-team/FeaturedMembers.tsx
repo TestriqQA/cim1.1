@@ -52,7 +52,7 @@ export default function FeaturedMembers() {
           {featuredMembers.map((member) => (
             <li key={member.id} id={member.id} className="h-full scroll-mt-28">
               <article
-                className={`${styles.lift} ${styles.rail} relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 sm:p-7`}
+                className={`${styles.lift} ${styles.rail} relative flex h-full flex-col overflow-hidden border p-6 sm:p-7`}
                 style={{
                   backgroundColor: "var(--card-bg)",
                   borderColor: "var(--border-color)",
@@ -135,10 +135,17 @@ export default function FeaturedMembers() {
                     className="group inline-flex items-center gap-2 rounded-lg py-1.5 text-sm font-semibold transition-colors duration-300 hover:!text-[#0A66C2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                     style={{ color: "var(--foreground)" }}
                   >
-                    <Linkedin className="h-4 w-4" aria-hidden="true" />
+                    {/* Sized by ink, not by box. These two lucide glyphs fill
+                        their 24-unit viewBox very differently — the mark uses
+                        21 units, the arrow only 12 — so equal `h-` values
+                        render visibly unequal marks. At 14px the mark drew
+                        12.25px of ink against the label's 12px, overhanging
+                        the cap line and the baseline; 12px brings it inside
+                        the band, and 16px stops the arrow looking stunted. */}
+                    <Linkedin className="h-3 w-3" aria-hidden="true" />
                     LinkedIn
                     <ArrowUpRight
-                      className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       aria-hidden="true"
                     />
                   </a>
