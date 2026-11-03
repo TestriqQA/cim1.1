@@ -1193,3 +1193,44 @@ export function getNextProject(slug: string): ClientProject | undefined {
 export function getProjectsWithTestimonials(): ClientProject[] {
   return clientProjects.filter((p) => Boolean(p.testimonial));
 }
+
+/** One slide of the home hero carousel. */
+export interface HeroCaseStudy {
+  slug: string;
+  client: string;
+  category: string;
+  logo: string;
+  logoPlate: string;
+  metrics: { value: string; label: string }[];
+}
+
+/**
+ * Featured projects shaped for the home hero carousel. Derived, so the hero
+ * can never name a client the portfolio no longer carries.
+ *
+ * Deliberately narrow: this crosses into a client component, so it carries
+ * only the handful of fields a slide paints. Importing `clientProjects` there
+ * directly would ship every case-study body to the browser above the fold.
+ *
+ * Metrics are ranked the way `getHighlightMetrics` ranks them — flagged first,
+ * then quantified over hedged — because a slide shows two at most and the hero
+ * gives a figure no surrounding narrative to lean on.
+ */
+export function getHeroCaseStudies(): HeroCaseStudy[] {
+  const rank = (m: ProjectMetric) =>
+    Number(Boolean(m.highlight)) * 2 + Number(/\d/.test(m.value));
+
+  return clientProjects
+    .filter((p) => p.featured && p.logo)
+    .map((p) => ({
+      slug: p.slug,
+      client: p.client,
+      category: getCategoryMeta(p.category).label,
+      logo: p.logo as string,
+      logoPlate: logoPlate(p.logoGround),
+      metrics: [...p.metrics]
+        .sort((a, b) => rank(b) - rank(a))
+        .slice(0, 2)
+        .map(({ value, label }) => ({ value, label })),
+    }));
+}

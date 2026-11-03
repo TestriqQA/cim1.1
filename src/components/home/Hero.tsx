@@ -1,19 +1,71 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   Sparkles,
   ChevronRight,
-  Play,
   BarChart3,
   Lightbulb,
   ArrowRight,
 } from "lucide-react";
+import type { HeroCaseStudy } from "@/data/portfolio";
 
-export default function Hero() {
+// A swipe shorter than this is a tap or a scroll, not an intent to change card.
+const SWIPE_THRESHOLD_PX = 40;
+
+export default function Hero({
+  caseStudies,
+}: {
+  caseStudies: HeroCaseStudy[];
+}) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeSlide, setActiveSlide] = useState(0);
+  const pausedRef = useRef(false);
+  const touchStartXRef = useRef<number | null>(null);
+
+  const step = (delta: number) =>
+    setActiveSlide(
+      (current) => (current + delta + caseStudies.length) % caseStudies.length,
+    );
+
+  // Auto-advance every 3s. It stops while the pointer or keyboard focus is on
+  // the carousel, while the tab is in the background, and entirely for anyone
+  // who asked for reduced motion — an animation nobody is watching is wasted
+  // work, and one nobody can stop is a WCAG 2.2.2 failure.
+  //
+  // Nothing moves here: the cards are stacked and only their opacity changes,
+  // so advancing is a single state update and the browser's compositor does
+  // the rest off the main thread.
+  useEffect(() => {
+    if (caseStudies.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const id = window.setInterval(() => {
+      if (pausedRef.current || document.hidden) return;
+      setActiveSlide((current) => (current + 1) % caseStudies.length);
+    }, 3000);
+
+    return () => window.clearInterval(id);
+  }, [caseStudies.length]);
+
+  // Stacking the cards means there is no scroll container to drag, so the
+  // left/right swipe people expect on a phone is restored by hand.
+  const handleTouchStart = (event: React.TouchEvent) => {
+    touchStartXRef.current = event.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent) => {
+    const startX = touchStartXRef.current;
+    touchStartXRef.current = null;
+    if (startX === null || caseStudies.length < 2) return;
+
+    const travelled = event.changedTouches[0].clientX - startX;
+    if (Math.abs(travelled) < SWIPE_THRESHOLD_PX) return;
+
+    step(travelled < 0 ? 1 : -1);
+  };
 
   useEffect(() => {
     // Only enable mouse effect on devices that support hover and have a fine pointer (mouse)
@@ -223,133 +275,214 @@ export default function Hero() {
           {/* Right Side - Case Studies */}
           <aside className="lg:col-span-5 relative z-10 animate-[fadeIn_0.8s_ease-out]">
             <div className="space-y-4 sm:space-y-6">
-              {/* Testriq Case Study Card */}
+              {/* Case Studies carousel. Every card is server-rendered and
+                  stays in the DOM — the cards are stacked and crossfade rather
+                  than mounting — so each client and its link remain crawlable,
+                  and no carousel library lands in the bundle above the fold. */}
               <div
-                className="relative p-4 sm:p-6 rounded-2xl sm:rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                style={{
-                  backgroundColor: "var(--card-bg)",
-                  border: "1px solid var(--border-color)",
+                className="relative"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Client case studies"
+                onMouseEnter={() => {
+                  pausedRef.current = true;
                 }}
+                onMouseLeave={() => {
+                  pausedRef.current = false;
+                }}
+                onFocusCapture={() => {
+                  pausedRef.current = true;
+                }}
+                onBlurCapture={() => {
+                  pausedRef.current = false;
+                }}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
               >
+                {/* The frame is the container, not the slides: it holds the
+                    background, border, padding and glow, so it never takes
+                    part in the fade. That is what lets the two sides be
+                    staggered — the outgoing content can leave completely
+                    before the incoming arrives, with no ghosting in the
+                    middle and no moment where the card itself blinks out. */}
                 <div
+                  className="relative p-4 sm:p-6 rounded-2xl sm:rounded-3xl overflow-hidden group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
                   style={{
-                    position: "absolute",
-                    right: -20,
-                    top: -20,
-                    width: 80,
-                    height: 80,
-                    borderRadius: "50%",
-                    background:
-                      "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
-                    filter: "blur(30px)",
-                    opacity: 0.2,
+                    backgroundColor: "var(--card-bg)",
+                    border: "1px solid var(--border-color)",
                   }}
-                />
-
-                <div className="flex items-center justify-between gap-3 mb-4 sm:mb-5">
-                  <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-                    {/* Testriq Logo Placeholder */}
-                    <div
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
-                      style={{
-                        backgroundColor: "var(--background)",
-                        border: "1px solid var(--border-color)",
-                      }}
-                    >
-                      <Image
-                        src="/images/logos/testriq-logo.png"
-                        alt="Testriq QA Lab"
-                        width={40}
-                        height={40}
-                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-                      />
-                    </div>
-                    <div className="min-w-0">
-                      <h3
-                        className="font-bold"
-                        style={{ color: "var(--foreground)" }}
-                      >
-                        Testriq QA Lab
-                      </h3>
-                      <p
-                        className="text-[11px] sm:text-xs"
-                        style={{ color: "var(--secondary-text)" }}
-                      >
-                        QA & Testing Solutions
-                      </p>
-                    </div>
-                  </div>
-                  {/* The accessible name spells out which case study this
-                                        opens, and keeps the visible label inside it (WCAG 2.5.3). */}
-                  <Link
-                    href="/portfolio/testriq-organic-growth"
-                    aria-label="Case Study: Testriq QA Lab organic growth"
-                    className="inline-flex w-fit max-w-fit shrink-0 items-center whitespace-nowrap px-3 py-1.5 sm:py-1 transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                >
+                  <div
+                    aria-hidden="true"
                     style={{
-                      borderRadius: 999,
+                      position: "absolute",
+                      right: -20,
+                      top: -20,
+                      width: 80,
+                      height: 80,
+                      borderRadius: "50%",
                       background:
                         "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
-                      color: "#fff",
-                      fontWeight: 600,
-                      fontSize: 12,
+                      filter: "blur(30px)",
+                      opacity: 0.2,
                     }}
-                  >
-                    Case Study
-                  </Link>
+                  />
+
+                  {/* Every slide occupies the same grid cell, so the frame is
+                      as tall as the tallest content and nothing reflows. */}
+                  <div className="grid">
+                    {caseStudies.map((study, index) => {
+                      // The cards that are not showing stay in the markup — that
+                      // is what keeps all five clients and their links crawlable
+                      // — but they are taken out of the tab order and hidden from
+                      // assistive tech while invisible. Opacity, never `display:
+                      // none`: hidden-by-opacity content is still read, and the
+                      // links still count.
+                      const isActive = index === activeSlide;
+
+                      return (
+                        <div
+                          key={study.slug}
+                          role={isActive ? "group" : undefined}
+                          aria-roledescription={isActive ? "slide" : undefined}
+                          aria-label={
+                            isActive
+                              ? `${index + 1} of ${caseStudies.length}: ${study.client}`
+                              : undefined
+                          }
+                          aria-hidden={!isActive || undefined}
+                          inert={!isActive || undefined}
+                          className={`col-start-1 row-start-1 motion-reduce:transition-none ${
+                            isActive
+                              ? // Arrives after the old content has gone: a longer,
+                                // decelerating settle into place.
+                                "opacity-100 scale-100 translate-y-0 transition duration-[600ms] delay-200 ease-out"
+                              : // Leaves first and quickly, so the two are never
+                                // on screen together.
+                                "opacity-0 scale-[0.985] -translate-y-1 pointer-events-none transition duration-200 ease-in"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-3 mb-4 sm:mb-5">
+                            <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                              {/* The plate follows the mark it carries: a logo
+                              drawn for dark ground keeps its dark ground. */}
+                              <div
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shrink-0 flex items-center justify-center overflow-hidden"
+                                style={{
+                                  backgroundColor: study.logoPlate,
+                                  border: "1px solid var(--border-color)",
+                                }}
+                              >
+                                <Image
+                                  src={study.logo}
+                                  alt={study.client}
+                                  width={40}
+                                  height={40}
+                                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                                />
+                              </div>
+                              {/* One line each, so every slide's header is the
+                              same height and swiping shifts nothing. */}
+                              <div className="min-w-0">
+                                <h3
+                                  className="font-bold line-clamp-1"
+                                  style={{ color: "var(--foreground)" }}
+                                >
+                                  {study.client}
+                                </h3>
+                                <p
+                                  className="text-[11px] sm:text-xs line-clamp-1"
+                                  style={{ color: "var(--secondary-text)" }}
+                                >
+                                  {study.category}
+                                </p>
+                              </div>
+                            </div>
+                            {/* The accessible name spells out which case study this
+                                      opens, and keeps the visible label inside it (WCAG 2.5.3). */}
+                            <Link
+                              href={`/portfolio/${study.slug}`}
+                              aria-label={`Case Study: ${study.client}`}
+                              className="inline-flex w-fit max-w-fit shrink-0 items-center gap-1 whitespace-nowrap px-3 py-1.5 sm:py-1 text-xs font-semibold shadow-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                              style={{
+                                borderRadius: 999,
+                                background:
+                                  "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
+                                color: "#fff",
+                              }}
+                            >
+                              Case Study
+                              <ChevronRight className="w-3.5 h-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5" />
+                            </Link>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-0 sm:mb-4">
+                            {study.metrics.map((metric, metricIndex) => (
+                              <div
+                                key={metric.label}
+                                className="p-3 rounded-xl"
+                                style={{
+                                  backgroundColor: "var(--background)",
+                                  border: "1px solid var(--border-color)",
+                                }}
+                              >
+                                <div
+                                  className="text-xl sm:text-2xl font-black"
+                                  style={{
+                                    background:
+                                      metricIndex === 0
+                                        ? "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))"
+                                        : "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
+                                    backgroundClip: "text",
+                                    WebkitBackgroundClip: "text",
+                                    color: "transparent",
+                                  }}
+                                >
+                                  {metric.value}
+                                </div>
+                                {/* Two lines reserved: a one-line and a two-line
+                                label must occupy the same box, or the card
+                                resizes mid-swipe. */}
+                                <div
+                                  className="text-[11px] sm:text-xs line-clamp-2 min-h-[2rem] sm:min-h-[2.25rem]"
+                                  style={{ color: "var(--secondary-text)" }}
+                                >
+                                  {metric.label}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-0 sm:mb-4">
-                  <div
-                    className="p-3 rounded-xl"
-                    style={{
-                      backgroundColor: "var(--background)",
-                      border: "1px solid var(--border-color)",
-                    }}
-                  >
-                    <div
-                      className="text-xl sm:text-2xl font-black"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
-                        WebkitBackgroundClip: "text",
-                        color: "transparent",
-                      }}
-                    >
-                      Strong
-                    </div>
-                    <div
-                      className="text-[11px] sm:text-xs"
-                      style={{ color: "var(--secondary-text)" }}
-                    >
-                      Lead Generation
-                    </div>
+                {/* Dots rather than arrows: they show how many case studies
+                    there are and which one is up, and they double as the
+                    manual control that auto-advancing content needs. */}
+                {caseStudies.length > 1 && (
+                  <div className="mt-3 flex items-center justify-center gap-1.5">
+                    {caseStudies.map((study, index) => (
+                      <button
+                        key={study.slug}
+                        type="button"
+                        onClick={() => setActiveSlide(index)}
+                        aria-label={`Show case study ${index + 1}: ${study.client}`}
+                        aria-current={index === activeSlide}
+                        className={`h-1.5 rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] ${
+                          index === activeSlide ? "w-5" : "w-1.5"
+                        }`}
+                        style={{
+                          background:
+                            index === activeSlide
+                              ? "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))"
+                              : "var(--border-color)",
+                        }}
+                      />
+                    ))}
                   </div>
-                  <div
-                    className="p-3 rounded-xl"
-                    style={{
-                      backgroundColor: "var(--background)",
-                      border: "1px solid var(--border-color)",
-                    }}
-                  >
-                    <div
-                      className="text-xl sm:text-2xl font-black"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
-                        WebkitBackgroundClip: "text",
-                        color: "transparent",
-                      }}
-                    >
-                      Strong
-                    </div>
-                    <div
-                      className="text-[11px] sm:text-xs"
-                      style={{ color: "var(--secondary-text)" }}
-                    >
-                      Website Traffic
-                    </div>
-                  </div>
-                </div>
+                )}
               </div>
 
               {/* Quick Stats */}

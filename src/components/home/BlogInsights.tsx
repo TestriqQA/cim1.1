@@ -150,30 +150,40 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
 
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span
-                        className="px-3 py-1.5 rounded-full text-xs font-semibold text-white backdrop-blur-sm"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
-                        }}
-                      >
-                        {post.category}
-                      </span>
-                    </div>
-
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
                   {/* Content */}
                   <div className="p-5 sm:p-6">
-                    {/* Meta Info */}
+                    {/* Meta Info. Wraps rather than squeezing: a long category
+                        beside the date and read time can exceed one line on a
+                        narrow card. */}
                     <div
-                      className="flex items-center gap-4 mb-4 text-xs"
+                      className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 text-xs"
                       style={{ color: "var(--secondary-text)" }}
                     >
+                      {/* Category. The gradient moved off the artwork and onto
+                          this dot: these illustrations carry their own heading
+                          across the top of the image, which is exactly where
+                          the old overlay pill sat. */}
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          aria-hidden="true"
+                          className="w-2 h-2 rounded-full shrink-0"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
+                          }}
+                        />
+                        <span
+                          className="font-semibold"
+                          style={{ color: "var(--foreground)" }}
+                        >
+                          {post.category}
+                        </span>
+                      </div>
+
                       <div className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />
                         <span>{formattedDate}</span>
