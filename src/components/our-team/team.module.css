@@ -224,14 +224,30 @@
   }
 }
 
+/* The corner radius lives here rather than on the card's class list, because
+   the rail below has to inset by exactly this much. Kept in two places they
+   drift apart, and the rail goes back to cutting into the curve. */
+.rail {
+  --card-radius: 1rem;
+  border-radius: var(--card-radius);
+}
+
 /* A gradient hairline that draws itself across the top edge of a card. */
 .rail::before {
   content: "";
   position: absolute;
+  /* Full width, and the card's own `overflow: hidden` cuts the ends. That is
+     what makes the rail stop exactly on the corner turn: the clip follows the
+     radius at every height, so the ink ends where the card's edge actually
+     is. Insetting by the radius instead leaves a wedge of bare card at each
+     end — 1px at the top of the rail widening to 10px at its foot — because a
+     straight bar cannot follow a curve. */
   inset-inline: 0;
   top: 0;
   height: 3px;
-  border-radius: inherit;
+  /* Square: the clip supplies the shape. `inherit` would put the card's full
+     radius on a 3px bar, which the browser scales down and pinches. */
+  border-radius: 0;
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-teal), var(--brand-purple));
   transform: scaleX(0);
   transform-origin: left center;
@@ -241,6 +257,14 @@
 .rail:hover::before,
 .rail:focus-within::before {
   transform: scaleX(1);
+}
+
+/* A touch screen never fires hover, so the rail would never appear on a
+   phone. There it is simply part of the card. */
+@media (hover: none) {
+  .rail::before {
+    transform: scaleX(1);
+  }
 }
 
 /* -------------------------------------------------------------------------
