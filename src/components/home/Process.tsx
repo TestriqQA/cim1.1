@@ -32,30 +32,34 @@ export default function Process() {
   return (
     <section
       id="audit-process"
-      className="py-20"
+      className="py-12 sm:py-16 md:py-20"
       style={{ backgroundColor: "var(--background)" }}
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div className="text-center mb-12">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div
+            className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-4"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "8px 16px",
               borderRadius: 999,
               backgroundColor: "var(--card-bg)",
               border: "1px solid var(--border-color)",
-              marginBottom: 16,
             }}
           >
             <TrendingUp
               className="w-4 h-4"
               style={{ color: "var(--brand-cyan)" }}
             />
-            <span style={{ fontWeight: 600 }}>Our Proven Method</span>
+            <span className="text-sm sm:text-base" style={{ fontWeight: 600 }}>
+              Our Proven Method
+            </span>
           </div>
-          <h2 style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: 8 }}>
+          <h2
+            className="mb-3 sm:mb-2"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 2.5rem)", fontWeight: 900 }}
+          >
             Your 4-Step Digital Audit &{" "}
             <span
               style={{
@@ -69,6 +73,7 @@ export default function Process() {
             </span>
           </h2>
           <p
+            className="text-[0.9375rem] sm:text-base"
             style={{
               color: "var(--secondary-text)",
               maxWidth: "700px",
@@ -85,18 +90,18 @@ export default function Process() {
           {/* Horizontal Line Connector */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 hidden md:block" />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full">
             {digitalAuditSteps.map((item, index) => (
               <div
                 key={index}
-                className="relative z-10 text-center p-6 rounded-xl transition-all duration-300 hover:shadow-lg"
+                className="relative z-10 text-center p-5 sm:p-6 rounded-xl transition-all duration-300 hover:shadow-lg"
                 style={{
                   backgroundColor: "var(--card-bg)",
                   border: "1px solid var(--border-color)",
                 }}
               >
                 <div
-                  className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center font-bold text-white text-xl"
+                  className="w-11 h-11 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center font-bold text-white text-lg sm:text-xl"
                   style={{
                     background:
                       "linear-gradient(90deg, var(--brand-purple), var(--brand-blue))",

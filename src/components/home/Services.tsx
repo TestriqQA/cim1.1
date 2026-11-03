@@ -310,17 +310,18 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div className="text-center mb-12">
+    <section
+      className="py-12 sm:py-16 md:py-20"
+      style={{ backgroundColor: "var(--card-bg)" }}
+    >
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div
-            className="inline-flex items-center gap-2 whitespace-nowrap max-w-full"
+            className="inline-flex items-center gap-2 whitespace-nowrap max-w-full px-3 py-1.5 sm:py-2 mb-4"
             style={{
-              padding: "8px 12px",
               borderRadius: 999,
               backgroundColor: "var(--background)",
               border: "1px solid var(--border-color)",
-              marginBottom: 16,
             }}
           >
             <Zap
@@ -331,7 +332,10 @@ export default function Services() {
               Full-Stack Digital Presence Services
             </span>
           </div>
-          <h2 style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: 8 }}>
+          <h2
+            className="mb-3 sm:mb-2"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 2.5rem)", fontWeight: 900 }}
+          >
             Comprehensive Web Development Services &{" "}
             <span
               style={{
@@ -345,6 +349,7 @@ export default function Services() {
             </span>
           </h2>
           <p
+            className="text-[0.9375rem] sm:text-base"
             style={{
               color: "var(--secondary-text)",
               maxWidth: "700px",
@@ -358,12 +363,16 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
           {services.map((service, idx) => (
             <article
               key={service.title}
+              // Starts on the first card, follows the pointer, and clears when
+              // the pointer leaves — so the highlight is never left stranded on
+              // whichever card happened to be hovered last.
               onMouseEnter={() => setActiveService(idx)}
-              className="relative p-6 rounded-2xl border transition-all duration-500 cursor-pointer overflow-hidden"
+              onMouseLeave={() => setActiveService(null)}
+              className="relative p-5 sm:p-6 rounded-2xl border transition-all duration-500 cursor-pointer overflow-hidden"
               style={{
                 backgroundColor: "var(--background)",
                 borderColor:

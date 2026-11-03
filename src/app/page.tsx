@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { getHeroCaseStudies } from "@/data/portfolio";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
 import CoreValues from "@/components/home/CoreValues";
@@ -256,7 +257,7 @@ export default async function Home() {
         }}
         className="min-h-screen overflow-hidden"
       >
-        <Hero />
+        <Hero caseStudies={getHeroCaseStudies()} />
         <Stats />
         <CoreValues />
         <Services />

@@ -51,7 +51,7 @@ export default function Process() {
 
     return (
         <section
-            className="relative overflow-hidden py-10 lg:py-20 transition-colors duration-300"
+            className="relative overflow-hidden py-10 lg:py-16 transition-colors duration-300"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -81,14 +81,14 @@ export default function Process() {
                 />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                <div className="text-center mb-10 sm:mb-12">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style={{ color: "var(--foreground)" }}>
                         Our Professional <span style={{ color: "var(--brand-blue-text)" }}>Web Development Process</span>
                     </h2>
 
-                    <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                    <p className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         As a results-driven <span className="font-bold text-[var(--brand-blue-text)]">web development company</span>, we follow a rigorous, data-backed methodology to ensure global success.
                     </p>
 
@@ -125,7 +125,7 @@ export default function Process() {
                                     {/* Content Card */}
                                     <div className="flex-1 w-full md:w-auto">
                                         <div
-                                            className="group relative rounded-3xl p-8 border backdrop-blur-sm hover:shadow-2xl transition-all duration-500"
+                                            className="group relative rounded-3xl p-5 sm:p-6 md:p-8 border backdrop-blur-sm hover:shadow-2xl transition-all duration-500"
                                             style={{
                                                 backgroundColor: "var(--card-bg)",
                                                 borderColor: "var(--border-color)",
@@ -138,16 +138,16 @@ export default function Process() {
 
                                             <div className="relative">
                                                 {/* Icon for Mobile */}
-                                                <div className="lg:hidden mb-6">
+                                                <div className="lg:hidden mb-4 sm:mb-6">
                                                     <div
-                                                        className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${step.color} shadow-lg`}
+                                                        className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${step.color} shadow-lg`}
                                                     >
-                                                        <Icon className="w-8 h-8 text-white" />
+                                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                                     </div>
                                                 </div>
 
                                                 <div className="flex-1">
-                                                    <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                                    <h3 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                                                         {step.title}
                                                     </h3>
                                                     <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
@@ -157,14 +157,19 @@ export default function Process() {
                                                     {/* Step Status Badge */}
                                                     <div className="mt-4">
                                                         <span
-                                                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold"
-                                                            style={{
-                                                                backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                                                                color: "var(--brand-blue-text)",
-                                                            }}
+                                                            className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold overflow-hidden"
+                                                            style={{ color: "var(--foreground)" }}
                                                         >
-                                                            <span className="w-2 h-2 rounded-full bg-[var(--brand-blue)]"></span>
-                                                            Step {idx + 1} of {steps.length}
+                                                            {/* Card-coloured wash — same gradient as the card's hover
+                                                                state, its icon circle and its step number. The label
+                                                                stays on --foreground: the raw step colours (amber,
+                                                                orange) are not contrast-safe as 12px text. */}
+                                                            <span
+                                                                aria-hidden="true"
+                                                                className={`absolute inset-0 opacity-15 bg-gradient-to-r ${step.color}`}
+                                                            />
+                                                            <span className={`relative w-2 h-2 rounded-full bg-gradient-to-r ${step.color}`}></span>
+                                                            <span className="relative">Step {idx + 1} of {steps.length}</span>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -196,16 +201,6 @@ export default function Process() {
                                                 <Icon className="w-12 h-12 text-white" />
                                             </div>
 
-                                            {/* Step Number Badge */}
-                                            <div
-                                                className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-lg"
-                                                style={{
-                                                    background: "linear-gradient(135deg, var(--brand-blue), var(--brand-teal))",
-                                                }}
-                                            >
-                                                {idx + 1}
-                                            </div>
-
                                             {/* Connecting Line */}
                                             <div
                                                 className="absolute top-1/2 transform -translate-y-1/2"
@@ -228,12 +223,7 @@ export default function Process() {
                                     {/* Spacer with Step Number for layout balance */}
                                     <div className="hidden lg:flex flex-1 items-center justify-center">
                                         <div
-                                            className="text-8xl font-black opacity-10 transition-all duration-500 group-hover:opacity-20"
-                                            style={{
-                                                background: `linear-gradient(135deg, var(--brand-blue), var(--brand-teal))`,
-                                                WebkitBackgroundClip: "text",
-                                                WebkitTextFillColor: "transparent",
-                                            }}
+                                            className={`text-8xl font-black opacity-10 transition-all duration-500 group-hover:opacity-20 bg-gradient-to-br ${step.color} bg-clip-text text-transparent`}
                                         >
                                             {step.number}
                                         </div>
@@ -245,15 +235,15 @@ export default function Process() {
                 </div>
 
                 {/* Process Timeline Summary */}
-                <div className="mt-24">
+                <div className="mt-12 sm:mt-16 md:mt-24">
                     <div
-                        className="rounded-3xl p-8 md:p-12 border backdrop-blur-sm"
+                        className="rounded-3xl p-5 sm:p-8 md:p-10 border backdrop-blur-sm"
                         style={{
                             backgroundColor: "var(--card-bg)",
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
                             <div className="text-center">
                                 <div
                                     className="text-4xl font-bold mb-2"
@@ -326,8 +316,8 @@ export default function Process() {
                 `}</style>
 
                 {/* Bottom Info */}
-                <div className="mt-16 text-center">
-                    <p className="text-lg mb-8" style={{ color: "var(--secondary-text)" }}>
+                <div className="mt-10 sm:mt-12 md:mt-16 text-center">
+                    <p className="text-base sm:text-lg mb-6 sm:mb-8" style={{ color: "var(--secondary-text)" }}>
                         Throughout every step, we maintain transparent communication and keep you informed of progress.
                     </p>
 

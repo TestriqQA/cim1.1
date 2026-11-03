@@ -1,20 +1,20 @@
 "use client";
 
-import { Zap } from "lucide-react";
+import { Zap, BookOpen, Lightbulb, Settings, Check } from "lucide-react";
 import Link from "next/link";
 
 
 export default function ServiceOverview() {
     return (
         <section
-            className="px-6 md:px-12 xl:px-20 py-16 transition-colors duration-300"
+            className="px-4 sm:px-6 md:px-12 xl:px-20 py-10 lg:py-16 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-6xl mx-auto">
+                <div className="text-center mb-10 sm:mb-12 max-w-6xl mx-auto">
                     <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full mb-5 sm:mb-6 border"
                         style={{
                             background:
                                 "linear-gradient(90deg, color-mix(in srgb, var(--brand-blue) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
@@ -22,16 +22,16 @@ export default function ServiceOverview() {
                             color: "var(--brand-blue-text)",
                         }}
                     >
-                        <Zap className="w-4 h-4" />
-                        <span className="text-sm font-semibold">Technical Excellence</span>
+                        <Zap className="w-4 h-4 shrink-0" />
+                        <span className="text-xs sm:text-sm font-semibold">Technical Excellence</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style={{ color: "var(--foreground)" }}>
                         Expert <span style={{ color: "var(--brand-blue-text)" }}>Web Development Company</span> with a Global Perspective
                     </h2>
 
                     <div
-                        className="w-24 h-1.5 mx-auto mb-8 rounded-full"
+                        className="w-24 h-1.5 mx-auto mb-6 sm:mb-8 rounded-full"
                         style={{
                             background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))",
                         }}
@@ -39,40 +39,40 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
                     {/* Left Content */}
-                    <div className="space-y-6">
-                        <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
+                    <div className="space-y-5 sm:space-y-6">
+                        <p className="text-base sm:text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
                             As an expert <span className="text-[var(--brand-blue-text)] font-bold">web development company</span>, we provide full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">professional web design agency</span> combines <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">creative excellence</Link> with technical precision.
                         </p>
 
-                        <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
+                        <p className="text-base sm:text-[1.1rem] leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
                             From <Link href="/services/web-design-development/nextjs-development-services" style={{ color: "var(--brand-blue-text)", textDecoration: "underline" }}>Next.js applications</Link> and <Link href="/services/web-design-development/wordpress-development-services" style={{ color: "var(--brand-blue-text)", textDecoration: "underline" }}>WordPress sites</Link> to complex enterprise portals, our <span className="font-semibold text-[var(--foreground)]">web development agency</span> delivers scalable, secure, and SEO-optimized platforms for global markets like US, EU, and APAC.
                         </p>
 
-                        <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
+                        <p className="text-base sm:text-[1.1rem] leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
                             We don&apos;t just build websites; we engineer digital growth engines. Whether you need <Link href="/services/web-design-development/ecommerce-development-company" style={{ color: "var(--brand-blue-text)", textDecoration: "underline" }}>ecommerce development</Link> or <Link href="/services/web-design-development/nodejs-backend" style={{ color: "var(--brand-blue-text)", textDecoration: "underline" }}>custom web apps</Link>, our solutions are designed to outperform competition, achieving an average sustained organic traffic growth. Every site is optimized with <Link href="/services/seo-services/technical-seo-services" style={{ color: "var(--brand-blue-text)", textDecoration: "underline" }}>technical SEO best practices</Link>.
                         </p>
 
                         <div className="pt-4">
-                            <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                            <h3 className="text-lg sm:text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
                                 Our Global Standards
                             </h3>
-                            <ul className="grid sm:grid-cols-2 gap-4">
+                            <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 {[
                                     <span key="1">Global reach with <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)]">performance-first architecture</Link></span>,
-                                    <span key="2">rigorously tested delivery on first deployment</span>,
+                                    <span key="2">Rigorously tested delivery on first deployment</span>,
                                     <span key="3">Built-in SEO that delivers <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)]">sustained traffic growth</Link></span>,
                                     <span key="4">24/7 technical support across timezones</span>,
                                 ].map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-3">
+                                    <li key={idx} className="flex items-start gap-2.5">
                                         <span
-                                            className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold mt-0.5 shadow-md"
+                                            className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm"
                                             style={{
                                                 background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))",
                                             }}
                                         >
-                                            ✓
+                                            <Check className="w-2.5 h-2.5" strokeWidth={3.5} aria-hidden="true" />
                                         </span>
                                         <span className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>{item}</span>
                                     </li>
@@ -239,21 +239,24 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Related Resources */}
-                <div className="mt-8 p-6 rounded-2xl border max-w-6xl mx-auto" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>📚 Related Resources</h3>
-                    <div className="flex flex-col gap-3">
-                        <Link href="/blog/mobile-app-development-trends-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">💡</span>
+                <div className="mt-8 p-4 sm:p-6 rounded-2xl border max-w-6xl mx-auto" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                    <h3 className="flex items-center gap-2 text-base sm:text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                        <BookOpen className="w-5 h-5 shrink-0" style={{ color: "var(--brand-blue)" }} aria-hidden="true" />
+                        Related Resources
+                    </h3>
+                    <div className="flex flex-col gap-2 sm:gap-3">
+                        <Link href="/blog/mobile-app-development-trends-2026" className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
+                            <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "var(--brand-blue)" }} aria-hidden="true" />
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Mobile App Trends 2026</h4>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Latest trends in mobile and web development</p>
+                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Mobile App Trends 2026</h4>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Latest trends in mobile and web development</p>
                             </div>
                         </Link>
-                        <Link href="/blog/future-web-development-nextjs" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">⚙️</span>
+                        <Link href="/blog/future-web-development-nextjs" className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
+                            <Settings className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "var(--brand-blue)" }} aria-hidden="true" />
                             <div>
-                                <h4 className="font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Future of Web Development</h4>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Why Next.js is shaping the future of web</p>
+                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Future of Web Development</h4>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Why Next.js is shaping the future of web</p>
                             </div>
                         </Link>
                     </div>
