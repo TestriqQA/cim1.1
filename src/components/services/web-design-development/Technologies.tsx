@@ -119,9 +119,9 @@ export default function Technologies() {
     idx: number;
   }) => {
     const CardContent = (
-      <div className="relative flex flex-col items-center gap-3">
+      <div className="relative flex flex-col items-center gap-2 sm:gap-3">
         <div
-          className="w-16 h-16 flex items-center justify-center rounded-xl p-2 transition-transform duration-300 group-hover:scale-110"
+          className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl p-2 transition-transform duration-300 group-hover:scale-110"
           style={{
             backgroundColor:
               "color-mix(in srgb, var(--foreground) 5%, transparent)",
@@ -136,7 +136,7 @@ export default function Technologies() {
           />
         </div>
         <span
-          className="text-sm font-semibold text-center group-hover:text-[var(--brand-blue)] transition-colors"
+          className="text-xs sm:text-sm font-semibold text-center leading-tight break-words group-hover:text-[var(--brand-blue)] transition-colors"
           style={{ color: "var(--foreground)" }}
         >
           {tech.name}
@@ -147,7 +147,7 @@ export default function Technologies() {
     return (
       <div
         key={idx}
-        className="group relative rounded-2xl p-6 border backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
+        className="group relative rounded-2xl p-4 sm:p-6 border backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
         style={{
           backgroundColor: "var(--card-bg)",
           borderColor: "var(--border-color)",
@@ -167,23 +167,23 @@ export default function Technologies() {
 
   return (
     <section
-      className="py-10 lg:py-20 transition-colors duration-300"
+      className="py-10 lg:py-16 transition-colors duration-300"
       style={{ backgroundColor: "var(--background)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full mb-5 sm:mb-6 border"
             style={{
               backgroundColor: "rgba(0, 138, 193, 0.05)",
               borderColor: "rgba(0, 138, 193, 0.2)",
             }}
           >
-            <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
+            <Code2 className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
             <span
-              className="text-sm font-medium"
+              className="text-xs sm:text-sm font-medium"
               style={{ color: "var(--brand-blue-text)" }}
             >
               Our Tech Stack
@@ -191,7 +191,7 @@ export default function Technologies() {
           </div>
 
           <h2
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
             style={{ color: "var(--foreground)" }}
           >
             Cutting-Edge{" "}
@@ -202,7 +202,7 @@ export default function Technologies() {
           </h2>
 
           <p
-            className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed"
+            className="text-base sm:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed"
             style={{ color: "var(--secondary-text)" }}
           >
             As a forward-leaning{" "}
@@ -223,22 +223,22 @@ export default function Technologies() {
         </div>
 
         {/* Tech Stack Categories */}
-        <div className="space-y-16">
+        <div className="space-y-10 sm:space-y-16">
           {/* Frontend Technologies */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#008ac1] to-[#00b5ca]">
-                <Code2 className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-8">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#008ac1] to-[#00b5ca]">
+                <Code2 className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-white" />
               </div>
               <h3
-                className="text-2xl font-bold"
+                className="text-lg sm:text-2xl font-bold"
                 style={{ color: "var(--foreground)" }}
               >
                 Frontend Technologies
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
               {frontendTech.map((tech, idx) => (
                 <TechCard key={idx} tech={tech} idx={idx} />
               ))}
@@ -247,19 +247,19 @@ export default function Technologies() {
 
           {/* Backend Technologies */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#bc3feb] to-[#fab900]">
-                <Database className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-8">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#bc3feb] to-[#fab900]">
+                <Database className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-white" />
               </div>
               <h3
-                className="text-2xl font-bold"
+                className="text-lg sm:text-2xl font-bold"
                 style={{ color: "var(--foreground)" }}
               >
                 Backend & Database
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
               {backendTech.map((tech, idx) => (
                 <TechCard key={idx} tech={tech} idx={idx} />
               ))}
@@ -268,19 +268,19 @@ export default function Technologies() {
 
           {/* Cloud & DevOps */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#fab900] to-[#ee6500]">
-                <Cloud className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-8">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#fab900] to-[#ee6500]">
+                <Cloud className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-white" />
               </div>
               <h3
-                className="text-2xl font-bold"
+                className="text-lg sm:text-2xl font-bold"
                 style={{ color: "var(--foreground)" }}
               >
                 Cloud & DevOps
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
               {cloudTech.map((tech, idx) => (
                 <TechCard key={idx} tech={tech} idx={idx} />
               ))}
@@ -289,19 +289,19 @@ export default function Technologies() {
 
           {/* Tools & Others */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#00efd6] to-[#00b5ca]">
-                <Zap className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-8">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#00efd6] to-[#00b5ca]">
+                <Zap className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-white" />
               </div>
               <h3
-                className="text-2xl font-bold"
+                className="text-lg sm:text-2xl font-bold"
                 style={{ color: "var(--foreground)" }}
               >
                 Tools & Platforms
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
               {toolsTech.map((tech, idx) => (
                 <TechCard key={idx} tech={tech} idx={idx} />
               ))}
@@ -309,38 +309,24 @@ export default function Technologies() {
           </div>
         </div>
 
-        {/* CSS Animations */}
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}</style>
-
         {/* Bottom CTA */}
         <div
-          className="mt-16 rounded-2xl p-8 md:p-12 border text-center"
+          className="mt-10 sm:mt-12 rounded-2xl p-5 sm:p-8 md:p-10 border text-center"
           style={{
             backgroundColor: "var(--card-bg)",
             borderColor: "var(--border-color)",
           }}
         >
           <h3
-            className="text-2xl font-bold mb-4"
+            className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
             style={{ color: "var(--foreground)" }}
           >
             Scalable Architecture for Global Growth
           </h3>
 
           <p
-            className="mb-8 max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "var(--secondary-text)", fontSize: "1.1rem" }}
+            className="text-base sm:text-[1.1rem] mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: "var(--secondary-text)" }}
           >
             Our{" "}
             <span className="text-[var(--brand-blue-text)] font-bold">
@@ -355,7 +341,7 @@ export default function Technologies() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             Get Your Free Website Audit
             <span>→</span>

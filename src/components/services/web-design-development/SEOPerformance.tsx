@@ -49,7 +49,7 @@ export default function SEOPerformance() {
 
     return (
         <section
-            className="relative overflow-hidden py-10 lg:py-20 transition-colors duration-300"
+            className="relative overflow-hidden py-10 lg:py-16 transition-colors duration-300"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -81,26 +81,26 @@ export default function SEOPerformance() {
 
             <div className="relative max-w-7xl mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12">
                     {/* Badge */}
                     <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full mb-5 sm:mb-6 border"
                         style={{
                             backgroundColor: "rgba(0, 138, 193, 0.05)",
                             borderColor: "rgba(0, 138, 193, 0.2)",
                         }}
                     >
-                        <Gauge className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                        <Gauge className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
+                        <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
                             SEO & Performance
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
                         <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
                     </h2>
 
-                    <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                    <p className="text-base sm:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                         As an expert <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span>, we don&apos;t just build sites-we engineer high-performance business assets that deliver measurable global ROI.
                     </p>
 
@@ -113,13 +113,13 @@ export default function SEOPerformance() {
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-10 sm:mb-12">
                     {features.map((feature, idx) => {
                         const Icon = feature.icon;
                         return (
                             <div
                                 key={idx}
-                                className="group rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:-translate-y-2 h-full"
+                                className="group rounded-2xl p-5 sm:p-6 md:p-8 border transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",
@@ -127,27 +127,27 @@ export default function SEOPerformance() {
                             >
                                 {/* Icon */}
                                 <div
-                                    className={`w-14 h-14 rounded-xl flex items-center justify-center p-3 mb-6 bg-gradient-to-br ${feature.color} shadow-lg group-hover:scale-110 transition-transform`}
+                                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6 bg-gradient-to-br ${feature.color} shadow-lg group-hover:scale-110 transition-transform`}
                                 >
-                                    <Icon className="w-6 h-6 text-white" />
+                                    <Icon className="w-6 h-6 shrink-0 text-white" />
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-lg font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3" style={{ color: "var(--foreground)" }}>
                                     {feature.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-sm mb-6" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                <p className="text-sm mb-4 sm:mb-6" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
                                     {feature.description}
                                 </p>
 
                                 {/* Items */}
-                                <ul className="space-y-2">
+                                <ul className="space-y-1.5 sm:space-y-2">
                                     {feature.items.map((item, iidx) => (
                                         <li key={iidx} className="flex items-start gap-2 text-sm">
                                             <span
-                                                className={`w-4 h-4 rounded-full flex-shrink-0 mt-0.5 bg-gradient-to-br ${feature.color}`}
+                                                className={`w-2 h-2 rounded-full shrink-0 mt-1.5 bg-gradient-to-br ${feature.color}`}
                                             />
                                             <span style={{ color: "var(--secondary-text)" }}>{item}</span>
                                         </li>
@@ -160,17 +160,17 @@ export default function SEOPerformance() {
 
                 {/* Performance Metrics */}
                 <div
-                    className="rounded-2xl p-8 md:p-12 border mb-16"
+                    className="rounded-2xl p-5 sm:p-8 md:p-10 border mb-10 sm:mb-12"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    <h3 className="text-2xl font-bold mb-8" style={{ color: "var(--foreground)" }}>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8" style={{ color: "var(--foreground)" }}>
                         Our Performance Standards
                     </h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
                         {[
                             { label: "Page Speed", value: "< 2s" },
                             { label: "Lighthouse Score", value: "95+" },
@@ -179,16 +179,17 @@ export default function SEOPerformance() {
                         ].map((metric, idx) => (
                             <div key={idx} className="text-center">
                                 <div
-                                    className="text-4xl font-bold mb-2"
+                                    className="text-3xl sm:text-4xl font-bold mb-1.5 sm:mb-2"
                                     style={{
                                         background: "linear-gradient(90deg, var(--brand-blue), var(--brand-teal))",
+                                        backgroundClip: "text",
                                         WebkitBackgroundClip: "text",
                                         color: "transparent",
                                     }}
                                 >
                                     {metric.value}
                                 </div>
-                                <p style={{ color: "var(--secondary-text)" }}>{metric.label}</p>
+                                <p className="text-sm sm:text-base" style={{ color: "var(--secondary-text)" }}>{metric.label}</p>
                             </div>
                         ))}
                     </div>
@@ -196,13 +197,13 @@ export default function SEOPerformance() {
 
                 {/* Bottom CTA */}
                 <div className="text-center">
-                    <p className="text-lg md:text-xl mb-8 text-[var(--secondary-text)] max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-[var(--secondary-text)] max-w-2xl mx-auto">
                         Ready to build a website that performs globally? Partner with a professional <span className="font-bold text-[var(--brand-blue-text)]">web development agency</span> today.
                     </p>
 
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
                         Get Your Free Website Audit
                         <span>→</span>
