@@ -15,11 +15,11 @@ import styles from "./team.module.css";
 export default function Disciplines() {
   return (
     <section
-      className="py-20 md:py-28"
+      className="py-12 sm:py-16 md:py-28"
       style={{ backgroundColor: "var(--card-bg)" }}
       aria-labelledby="disciplines-heading"
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
         <div className={`${styles.reveal} max-w-3xl`}>
           <p
             className="text-xs font-bold uppercase tracking-[0.22em]"
@@ -35,17 +35,18 @@ export default function Disciplines() {
             Nine practice areas, one team
           </h2>
           <p
-            className="mt-5 text-lg leading-relaxed"
+            className="mt-5 text-base leading-relaxed sm:text-lg"
             style={{ color: "var(--secondary-text)" }}
           >
-            We work as one group rather than as separate agencies bolted together. In practice that
-            means the engineer who builds the site and the marketer who has to rank it are in the
-            same conversation from week one.
+            We work as one group rather than as separate agencies bolted
+            together. In practice that means the engineer who builds the site
+            and the marketer who has to rank it are in the same conversation
+            from week one.
           </p>
         </div>
 
         <ul
-          className={`${styles.cascade} mt-14 border-t`}
+          className={`${styles.cascade} mt-10 border-t sm:mt-12 md:mt-14`}
           style={{ borderColor: "var(--border-color)" }}
         >
           {teamDisciplines.map((discipline, index) => (
@@ -57,11 +58,11 @@ export default function Disciplines() {
               <Link
                 href={discipline.href}
                 aria-label={`${discipline.title} — explore this service`}
-                className={`${styles.indexRow} group block px-3 py-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] md:px-5 md:py-7`}
+                className={`${styles.indexRow} group block px-2 py-5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] md:px-5 md:py-7`}
               >
                 {/* Mobile: 3 columns, skills wrap to a second row.
                     md and up: 4 columns, everything on one line. */}
-                <div className="grid grid-cols-[2.25rem_minmax(0,1fr)_1.5rem] items-start gap-x-4 gap-y-4 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,17rem)_1.5rem] md:items-center md:gap-x-8 lg:gap-x-10">
+                <div className="grid grid-cols-[2rem_minmax(0,1fr)_1.25rem] items-start gap-x-3 gap-y-3 md:grid-cols-[3rem_minmax(0,1fr)_minmax(0,17rem)_1.5rem] md:items-center md:gap-x-8 md:gap-y-4 lg:gap-x-10">
                   <span
                     aria-hidden="true"
                     className="col-start-1 row-start-1 pt-1 text-sm font-bold tabular-nums transition-colors duration-300 md:pt-0"
@@ -112,7 +113,7 @@ export default function Disciplines() {
           ))}
         </ul>
 
-        <p className={`${styles.reveal} mt-10`}>
+        <p className={`${styles.reveal} mt-8 sm:mt-10`}>
           <Link
             href="/services"
             className="inline-flex items-center gap-2 rounded-lg py-1 font-semibold underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
