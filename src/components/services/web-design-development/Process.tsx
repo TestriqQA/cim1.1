@@ -51,7 +51,7 @@ export default function Process() {
 
     return (
         <section
-            className="relative overflow-hidden py-10 lg:py-20 transition-colors duration-300"
+            className="relative overflow-hidden py-10 lg:py-16 transition-colors duration-300"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -83,7 +83,7 @@ export default function Process() {
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-10 sm:mb-12 md:mb-16">
+                <div className="text-center mb-10 sm:mb-12">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style={{ color: "var(--foreground)" }}>
                         Our Professional <span style={{ color: "var(--brand-blue-text)" }}>Web Development Process</span>
                     </h2>
@@ -237,7 +237,7 @@ export default function Process() {
                 {/* Process Timeline Summary */}
                 <div className="mt-12 sm:mt-16 md:mt-24">
                     <div
-                        className="rounded-3xl p-5 sm:p-8 md:p-12 border backdrop-blur-sm"
+                        className="rounded-3xl p-5 sm:p-8 md:p-10 border backdrop-blur-sm"
                         style={{
                             backgroundColor: "var(--card-bg)",
                             borderColor: "var(--border-color)",
