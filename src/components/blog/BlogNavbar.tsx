@@ -237,7 +237,7 @@ export default function BlogNavbar({
     <>
       <nav
         className={`sticky transition-all duration-300 border-b 
-                    ${isOverlayMode ? "top-0 z-[200]" : "top-16 lg:top-20 z-[100]"} 
+                    ${isOverlayMode ? "top-0 z-[200]" : "top-16 lg:top-[72px] z-[100]"} 
                     ${isScrolled ? "backdrop-blur-xl shadow-lg" : "backdrop-blur-md"} 
                     ${isHidden ? "xl:translate-y-0 -translate-y-full" : "translate-y-0"}`}
         style={{

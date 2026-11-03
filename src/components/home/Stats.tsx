@@ -134,25 +134,23 @@ export default function Stats() {
       }}
       className="py-12"
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-8">
           {stats.map((stat) => {
             const Icon = stat.icon;
 
             return (
-              <div key={stat.label} className="text-center">
+              <div key={stat.label} className="min-w-0 text-center">
                 <div
+                  className="mb-2.5 h-11 w-11 sm:h-12 sm:w-12"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    width: 48,
-                    height: 48,
                     borderRadius: 999,
                     background:
                       "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
                     color: "#fff",
-                    margin: "0 auto 10px",
                   }}
                 >
                   <Icon className="w-5 h-5" aria-hidden="true" />
@@ -160,7 +158,7 @@ export default function Stats() {
 
                 <div
                   style={{
-                    fontSize: 32,
+                    fontSize: "clamp(1.5rem, 6vw, 2rem)",
                     fontWeight: 800,
                     background:
                       "linear-gradient(90deg, var(--brand-blue), var(--brand-purple))",
@@ -172,6 +170,7 @@ export default function Stats() {
                 </div>
 
                 <div
+                  className="text-[0.9375rem] sm:text-base"
                   style={{
                     color: "var(--foreground)",
                     fontWeight: 600,

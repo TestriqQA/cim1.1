@@ -13,7 +13,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden"
       style={{
         backgroundColor: "var(--card-bg)",
         borderColor: "var(--border-color)",
@@ -36,19 +36,18 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
         }}
       />
 
-      <div className="mx-auto px-6 md:px-12 xl:px-24 relative z-10">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-24 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 md:mb-12">
           <div>
             <div
+              className="items-center px-3.5 py-1.5 sm:px-4 sm:py-2 mb-4"
               style={{
                 display: "inline-flex",
                 gap: 8,
-                padding: "8px 16px",
                 borderRadius: 999,
                 backgroundColor: "var(--card-bg)",
                 border: "1px solid var(--border-color)",
-                marginBottom: 16,
               }}
             >
               <BookOpen
@@ -85,6 +84,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
             </h2>
 
             <p
+              className="text-[0.9375rem] sm:text-base"
               style={{
                 color: "var(--secondary-text)",
                 marginTop: 12,
@@ -115,7 +115,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
         </div>
 
         {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {latestPosts.map((post, index) => {
             const formattedDate = new Date(post.publishedAt).toLocaleDateString(
               "en-US",
@@ -168,7 +168,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-5 sm:p-6">
                     {/* Meta Info */}
                     <div
                       className="flex items-center gap-4 mb-4 text-xs"
@@ -209,7 +209,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                       className="flex items-center justify-between pt-4 border-t"
                       style={{ borderColor: "var(--border-color)" }}
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex min-w-0 items-center gap-3">
                         <div className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-[var(--border-color)] ring-offset-2 ring-offset-[var(--card-bg)] transition-all group-hover:ring-[var(--brand-purple)]">
                           <Image
                             src={post.author.image}
@@ -220,7 +220,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                           />
                         </div>
 
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-sm font-medium">
                             {post.author.name}
                           </p>
@@ -235,7 +235,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
                       </div>
 
                       <div
-                        className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
+                        className="flex shrink-0 items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
                         style={{ color: "var(--brand-purple-text)" }}
                       >
                         Read
@@ -250,7 +250,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
         </div>
 
         {/* Bottom View All Button: mobile and tablet only */}
-        <div className="mt-10 text-center lg:hidden">
+        <div className="mt-8 sm:mt-10 text-center lg:hidden">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all"

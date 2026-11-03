@@ -57,33 +57,38 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--background)" }}>
-      <div className="mx-auto px-6 md:px-12 xl:px-64">
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
+    <section
+      className="py-12 sm:py-16 md:py-20"
+      style={{ backgroundColor: "var(--background)" }}
+    >
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 md:px-12">
+        <div className="mb-8 text-center sm:mb-10">
           <div
+            className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-3"
             style={{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               gap: 8,
-              padding: "8px 16px",
               borderRadius: 999,
               backgroundColor: "var(--card-bg)",
               border: "1px solid var(--border-color)",
-              marginBottom: 12,
             }}
           >
             <Star
               className="w-4 h-4"
               style={{ color: "var(--brand-yellow)" }}
             />
-            <span style={{ fontWeight: 700, color: "var(--foreground)" }}>
+            <span
+              className="text-sm sm:text-base"
+              style={{ fontWeight: 700, color: "var(--foreground)" }}
+            >
               What Our Clients Say
             </span>
           </div>
           <h2
             style={{
-              fontSize: "2.5rem",
+              fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
               fontWeight: 900,
               color: "var(--foreground)",
             }}
@@ -103,7 +108,7 @@ export default function Testimonials() {
         </div>
 
         <div
-          className="p-6 md:p-8"
+          className="p-5 sm:p-6 md:p-8"
           style={{
             borderRadius: 24,
             border: "2px solid var(--border-color)",
@@ -114,9 +119,8 @@ export default function Testimonials() {
           {/* Mobile/tablet: stacked & centered. Desktop: side by side */}
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div
+              className="h-20 w-20 text-2xl sm:h-24 sm:w-24 sm:text-[28px]"
               style={{
-                width: 96,
-                height: 96,
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
@@ -124,7 +128,6 @@ export default function Testimonials() {
                 background:
                   "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
                 color: "#fff",
-                fontSize: 28,
                 fontWeight: 800,
                 flexShrink: 0,
               }}
@@ -132,7 +135,7 @@ export default function Testimonials() {
               {testimonials[testimonialIndex].avatar}
             </div>
 
-            <div className="flex-1 w-full text-center lg:text-left">
+            <div className="flex-1 w-full min-w-0 text-center lg:text-left">
               <p
                 className="text-base md:text-lg"
                 style={{
@@ -185,10 +188,8 @@ export default function Testimonials() {
 
           {/* Navigation Controls - centered on mobile/tablet, left on desktop */}
           <div
-            className="flex justify-center lg:justify-start items-center"
+            className="flex justify-center lg:justify-start items-center mt-5 pt-5 sm:mt-6 sm:pt-6"
             style={{
-              marginTop: 24,
-              paddingTop: 24,
               borderTop: "1px solid var(--border-color)",
             }}
           >

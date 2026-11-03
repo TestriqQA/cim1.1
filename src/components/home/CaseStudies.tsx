@@ -47,31 +47,40 @@ export default function CaseStudies() {
 
   return (
     <section
-      className="py-20"
+      className="py-12 sm:py-16 md:py-20"
       style={{
         backgroundColor: "var(--card-bg)",
         borderTop: "1px solid var(--border-color)",
       }}
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div className="flex items-end justify-between mb-12">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+        <div className="flex items-end justify-between mb-8 sm:mb-10 md:mb-12">
           <div>
             <div
+              className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-3"
               style={{
                 display: "inline-flex",
                 gap: 8,
-                padding: "8px 16px",
                 borderRadius: 999,
                 backgroundColor: "var(--background)",
                 border: "1px solid var(--border-color)",
-                marginBottom: 12,
               }}
             >
               <Award style={{ color: "var(--brand-yellow)" }} />
-              <span style={{ fontWeight: 600 }}>Client Success</span>
+              <span
+                className="text-sm sm:text-base"
+                style={{ fontWeight: 600 }}
+              >
+                Client Success
+              </span>
             </div>
 
-            <h2 style={{ fontSize: "2.5rem", fontWeight: 900 }}>
+            <h2
+              style={{
+                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
+                fontWeight: 900,
+              }}
+            >
               Real projects,{" "}
               <span
                 style={{
@@ -87,20 +96,19 @@ export default function CaseStudies() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {caseStudies.map((cs) => (
             <article
               key={cs.company}
+              className="p-5 sm:p-6 hover:shadow-lg hover:-translate-y-1"
               style={{
                 backgroundColor: "var(--background)",
                 border: "1px solid var(--border-color)",
                 borderRadius: 16,
-                padding: 24,
                 transition: "all 0.3s",
                 transform: "translateY(0)",
                 boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
               }}
-              className="hover:shadow-lg hover:-translate-y-1"
             >
               <div
                 style={{
@@ -142,9 +150,9 @@ export default function CaseStudies() {
                     ...cs.gradientStyle,
                   }}
                 >
-                  <span className="text-[75%] sm:text-base">{cs.metric}</span>
+                  <span className="text-[13px] sm:text-base">{cs.metric}</span>
 
-                  <span className="text-[7.5px] sm:text-[10px] font-semibold opacity-90">
+                  <span className="text-[10px] font-semibold opacity-90">
                     {cs.metricLabel}
                   </span>
                 </div>
@@ -153,6 +161,7 @@ export default function CaseStudies() {
               <h3 style={{ fontWeight: 800, marginBottom: 8 }}>{cs.title}</h3>
 
               <p
+                className="text-[0.9375rem] sm:text-base"
                 style={{
                   color: "var(--secondary-text)",
                   marginBottom: 16,
