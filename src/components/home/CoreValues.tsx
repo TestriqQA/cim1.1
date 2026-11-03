@@ -171,7 +171,13 @@ export default function CoreValues() {
           {coreValues.map((value, index) => (
             <div
               key={index}
-              className="p-5 sm:p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl"
+              // Lifts a few pixels on hover and settles back on leave. CSS
+              // hover rather than React state, so a card cannot get stuck
+              // raised if the pointer leaves without a matching event.
+              // `translate-y-0` is not decoration: without it the resting
+              // value is `none`, and interpolating `none` to a length is
+              // shakier across browsers than going from a plain 0.
+              className="p-5 sm:p-6 md:p-8 rounded-2xl border translate-y-0 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none"
               style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",

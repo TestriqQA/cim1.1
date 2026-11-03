@@ -227,7 +227,10 @@ export default function FAQ() {
                 type="button"
                 onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                 aria-expanded={faqOpen === i}
-                aria-controls={`faq-answer-${i}`}
+                // Only while open: the answer is not in the DOM when closed,
+                // and aria-controls pointing at a missing id is a dangling
+                // reference for screen readers.
+                aria-controls={faqOpen === i ? `faq-answer-${i}` : undefined}
                 style={{
                   width: "100%",
                   textAlign: "left",
@@ -250,12 +253,14 @@ export default function FAQ() {
                     <MessageSquare size={17} />
                   </div>
 
-                  {/* FAQ question */}
+                  {/* FAQ question. Size moved out of the inline style so it
+                      can step down on phones, where the text column is only
+                      ~224px and 16px wraps hard. */}
                   <div
+                    className="text-[0.9375rem] sm:text-base"
                     style={{
                       flex: 1,
                       minWidth: 0,
-                      fontSize: "16px",
                       fontWeight: 650,
                       lineHeight: 1.5,
                       color: "var(--foreground)",
@@ -266,7 +271,6 @@ export default function FAQ() {
                   </div>
 
                   {/* Plus / X icon */}
-                  {/* Smooth Plus / X icon */}
                   <div
                     className="relative flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg"
                     style={{
@@ -306,7 +310,10 @@ export default function FAQ() {
               {faqOpen === i && (
                 <div
                   id={`faq-answer-${i}`}
-                  className="mt-3 text-[0.9375rem] sm:ml-[52px] sm:mt-4 sm:text-base"
+                  // ml-12 = the 36px icon plus the row's 12px gap, so the
+                  // answer starts exactly under the question. The previous
+                  // 52px left it 4px out.
+                  className="mt-3 text-[0.9375rem] sm:ml-12 sm:mt-4 sm:text-base"
                   style={{
                     color: "var(--foreground)",
                     lineHeight: 1.7,

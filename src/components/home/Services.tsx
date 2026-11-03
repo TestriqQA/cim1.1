@@ -367,7 +367,11 @@ export default function Services() {
           {services.map((service, idx) => (
             <article
               key={service.title}
+              // Starts on the first card, follows the pointer, and clears when
+              // the pointer leaves — so the highlight is never left stranded on
+              // whichever card happened to be hovered last.
               onMouseEnter={() => setActiveService(idx)}
+              onMouseLeave={() => setActiveService(null)}
               className="relative p-5 sm:p-6 rounded-2xl border transition-all duration-500 cursor-pointer overflow-hidden"
               style={{
                 backgroundColor: "var(--background)",

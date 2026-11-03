@@ -118,7 +118,9 @@ export default function CaseStudies() {
                   marginBottom: 12,
                 }}
               >
-                <div>
+                {/* Allowed to shrink: the badge beside it never wraps, so
+                    without this the pair can push past the card on a phone. */}
+                <div style={{ minWidth: 0 }}>
                   <div
                     style={{
                       color: "var(--secondary-text)",
@@ -132,27 +134,44 @@ export default function CaseStudies() {
                   <div style={{ fontWeight: 800 }}>{cs.company}</div>
                 </div>
 
-                {/* Metric badge: value above label, both centered */}
+                {/* Metric badge: one line, with the gradient carried by the
+                    dot rather than a filled pill. A fully rounded corner only
+                    reads as a pill on a single line — stacked, it bulges — and
+                    moving the gradient off the background means the label is
+                    no longer white text on a bright cyan or yellow fill. */}
                 <div
-                  className="min-w-[63px] px-[10.5px] py-[6px] sm:min-w-[84px] sm:px-[14px] sm:py-[8px]"
+                  className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 whitespace-nowrap"
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    gap: 4,
                     borderRadius: 999,
-                    color: "#fff",
-                    fontWeight: 700,
-                    lineHeight: 1.2,
                     flexShrink: 0,
-                    ...cs.gradientStyle,
+                    lineHeight: 1.2,
+                    backgroundColor:
+                      "color-mix(in srgb, var(--foreground) 6%, transparent)",
+                    border: "1px solid var(--border-color)",
                   }}
                 >
-                  <span className="text-[13px] sm:text-base">{cs.metric}</span>
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      flexShrink: 0,
+                      ...cs.gradientStyle,
+                    }}
+                  />
 
-                  <span className="text-[10px] font-semibold opacity-90">
+                  <span
+                    className="text-[12px] sm:text-[13px] font-bold"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    {cs.metric}
+                  </span>
+
+                  <span
+                    className="text-[11px] sm:text-[12px] font-medium"
+                    style={{ color: "var(--secondary-text)" }}
+                  >
                     {cs.metricLabel}
                   </span>
                 </div>
