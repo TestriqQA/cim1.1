@@ -270,7 +270,7 @@ export default function Hero() {
                   alt="CIM logo"
                   width={300}
                   height={300}
-                  className="h-auto w-[200px] sm:w-[240px] md:w-[300px] max-w-full"
+                  className="w-[200px] sm:w-[240px] md:w-[300px] max-w-full aspect-square"
                   priority
                 />
               </div>
