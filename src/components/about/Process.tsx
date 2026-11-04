@@ -91,7 +91,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 xl:px-16 bg-[var(--background)] transition-colors duration-300 relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-12 xl:px-16 bg-[var(--background)] transition-colors duration-300 relative overflow-hidden">
       {/* Animated Background (dark/light adaptive via CSS vars) */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -121,9 +121,9 @@ export default function Process() {
 
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-6 border"
             style={{
               borderColor:
                 "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
@@ -132,26 +132,24 @@ export default function Process() {
             }}
           >
             <Rocket className="w-4 h-4 text-[var(--accent-teal-text)]" />
-            <span className="text-sm font-semibold text-[var(--accent-teal-text)]">
+            <span className="text-xs sm:text-sm font-semibold text-[var(--accent-teal-text)]">
               Our Process
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--foreground)]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[var(--foreground)]">
             How We Work
           </h2>
 
           <div
-            className="mx-auto mb-6 rounded-full"
+            className="mx-auto mb-6 rounded-full w-20 sm:w-28 h-1 sm:h-1.5"
             style={{
-              width: 112,
-              height: 6,
               background:
                 "linear-gradient(90deg,var(--brand-cyan),var(--brand-teal))",
             }}
           />
 
-          <p className="text-xl max-w-3xl mx-auto text-[var(--secondary-text)]">
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-[var(--secondary-text)]">
             Every project begins with clarity and strategy. Our structured
             approach ensures measurable, sustainable growth.
           </p>
@@ -169,7 +167,7 @@ export default function Process() {
             aria-hidden
           />
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {process.map((step, idx) => {
               const Icon = step.icon;
               const isLeft = idx % 2 === 0;
@@ -225,8 +223,8 @@ export default function Process() {
                                   className="flex items-center gap-2 mb-2 text-sm text-[var(--secondary-text)]"
                                 >
                                   <CheckCircle2
-                                    className="w-4 h-4 flex-shrink-0 text-transparent bg-clip-text"
-                                    style={{ background: grad }}
+                                    className="w-4 h-4 flex-shrink-0"
+                                    style={{ color: step.colorFrom }}
                                   />
                                   <span>{d}</span>
                                 </div>
@@ -276,7 +274,7 @@ export default function Process() {
                     </div>
 
                     {/* Center column: dot */}
-                    <div className="flex justify-center items-start">
+                    <div className="hidden lg:flex justify-center items-start">
                       <div className="relative mt-1">
                         <div
                           className="w-5 h-5 rounded-full shadow-lg transition-transform duration-300 group-hover:scale-125"
@@ -338,8 +336,8 @@ export default function Process() {
                                   className="flex items-center gap-2 mb-2 text-sm text-[var(--secondary-text)]"
                                 >
                                   <CheckCircle2
-                                    className="w-4 h-4 flex-shrink-0 text-transparent bg-clip-text"
-                                    style={{ background: grad }}
+                                    className="w-4 h-4 flex-shrink-0"
+                                    style={{ color: step.colorFrom }}
                                   />
                                   <span>{d}</span>
                                 </div>
@@ -390,7 +388,7 @@ export default function Process() {
                   </div>
 
                   {/* Mobile stacked card */}
-                  <div className="lg:hidden mt-6 relative bg-[var(--card-bg)] rounded-3xl p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
+                  <div className="lg:hidden relative bg-[var(--card-bg)] rounded-3xl p-5 sm:p-6 border-2 transition-all duration-500 shadow-lg border-[var(--border-color)] active:scale-[1.02]">
                     <div
                       className="absolute -top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold z-10"
                       style={{
@@ -402,7 +400,7 @@ export default function Process() {
 
                     <div className="flex items-start gap-4">
                       <div
-                        className="w-14 h-14 rounded-xl p-3 shadow"
+                        className="w-14 h-14 flex-shrink-0 rounded-xl p-3 shadow"
                         style={{
                           background: `linear-gradient(135deg, ${step.colorFrom}, ${step.colorTo})`,
                         }}
@@ -410,7 +408,7 @@ export default function Process() {
                         <Icon className="w-full h-full text-white" />
                       </div>
 
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="text-lg font-semibold text-[var(--foreground)]">
                           {step.title}
                         </h3>
@@ -425,10 +423,8 @@ export default function Process() {
                               className="text-xs text-[var(--secondary-text)] flex items-center gap-2"
                             >
                               <CheckCircle2
-                                className="w-3 h-3 text-transparent bg-clip-text"
-                                style={{
-                                  background: `linear-gradient(135deg, ${step.colorFrom}, ${step.colorTo})`,
-                                }}
+                                className="w-3.5 h-3.5 flex-shrink-0"
+                                style={{ color: step.colorFrom }}
                               />
                               <span>{d}</span>
                             </div>
@@ -444,7 +440,7 @@ export default function Process() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 sm:mt-16 text-center">
           <p className="text-[var(--secondary-text)] mb-6">
             Ready to transform your business?
           </p>
