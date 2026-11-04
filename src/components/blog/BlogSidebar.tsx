@@ -80,7 +80,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
             <Link
               key={category.slug}
               href={`/blog/category/${category.slug}`}
-              className="px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)]"
+              className="px-3 py-2 sm:py-1.5 rounded-full text-sm font-medium transition-all duration-200 border hover:border-[var(--brand-purple)]"
               style={{
                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
                 color: "var(--brand-purple-text)",
@@ -116,7 +116,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
             <button
               key={tag}
               onClick={() => handleTagClick(tag)}
-              className="px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 border cursor-pointer hover:bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] hover:text-[var(--brand-purple-text)] hover:border-[var(--brand-purple)]"
+              className="px-3 py-2 sm:px-2.5 sm:py-1 rounded-full text-xs font-medium transition-all duration-200 border cursor-pointer hover:bg-[color-mix(in_srgb,var(--brand-purple)_10%,transparent)] hover:text-[var(--brand-purple-text)] hover:border-[var(--brand-purple)]"
               style={{
                 backgroundColor: "transparent",
                 color: "var(--secondary-text)",

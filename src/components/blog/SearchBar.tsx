@@ -247,7 +247,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
           onBlur={() => setIsFocused(false)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full pl-10 lg:pl-12 pr-16 lg:pr-20 py-2.5 lg:py-3 rounded-xl text-sm lg:text-base font-medium focus:outline-none transition-all duration-200"
+          className="w-full pl-10 lg:pl-12 pr-16 lg:pr-20 py-3 rounded-xl text-base font-medium focus:outline-none transition-all duration-200"
           style={{
             backgroundColor: "transparent",
             color: "var(--foreground)",
@@ -263,7 +263,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
           {query && (
             <button
               onClick={handleClear}
-              className="p-1.5 lg:p-2 rounded-lg transition-all duration-200 hover:bg-[var(--hover-bg)] group"
+              className="p-2 rounded-lg transition-all duration-200 hover:bg-[var(--hover-bg)] group"
               aria-label="Clear search"
               type="button"
             >
@@ -277,7 +277,7 @@ export default function SearchBar({ onSearch, placeholder = "Search articles, ta
           {/* Search Button */}
           <button
             onClick={handleSearch}
-            className="px-2.5 lg:px-3 py-1.5 lg:py-2 rounded-lg font-semibold text-white text-xs lg:text-sm transition-all duration-300 hover:shadow-lg active:scale-95 flex items-center gap-1"
+            className="px-3 py-2.5 lg:py-2 rounded-lg font-semibold text-white text-xs lg:text-sm transition-all duration-300 hover:shadow-lg active:scale-95 flex items-center gap-1"
             style={{
               backgroundColor: query.length >= 2 ? "var(--brand-purple-btn)" : "var(--secondary-text)",
               opacity: query.length >= 2 ? 1 : 0.5,

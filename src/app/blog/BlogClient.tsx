@@ -81,8 +81,8 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                             background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                         }}
                     />
-                    <div className="relative px-6 md:px-12 xl:px-16 py-12">
-                        <div>
+                    <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-12">
+                        <div className="max-w-7xl mx-auto">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                                 {/* Hero Content - Left Side */}
                                 <div>
@@ -133,13 +133,13 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                     {/* Stats Row */}
                                     <div className="grid grid-cols-3 gap-4 mb-6">
                                         <div
-                                            className="p-4 rounded-xl text-center border"
+                                            className="p-3 sm:p-4 rounded-xl text-center border"
                                             style={{
                                                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 5%, transparent)",
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl lg:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
+                                            <div className="text-lg sm:text-2xl lg:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                                 {initialPosts.length}+
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
@@ -147,13 +147,13 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                             </div>
                                         </div>
                                         <div
-                                            className="p-4 rounded-xl text-center border"
+                                            className="p-3 sm:p-4 rounded-xl text-center border"
                                             style={{
                                                 backgroundColor: "color-mix(in srgb, var(--brand-cyan) 5%, transparent)",
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl lg:text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>
+                                            <div className="text-lg sm:text-2xl lg:text-3xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>
                                                 8
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
@@ -161,13 +161,13 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                             </div>
                                         </div>
                                         <div
-                                            className="p-4 rounded-xl text-center border"
+                                            className="p-3 sm:p-4 rounded-xl text-center border"
                                             style={{
                                                 backgroundColor: "color-mix(in srgb, var(--brand-purple) 5%, transparent)",
                                                 borderColor: "var(--border-color)",
                                             }}
                                         >
-                                            <div className="text-2xl lg:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
+                                            <div className="text-lg sm:text-2xl lg:text-3xl font-bold" style={{ color: "var(--brand-purple-text)" }}>
                                                 Weekly
                                             </div>
                                             <div className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
@@ -324,7 +324,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                             background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                         }}
                     />
-                    <div className="relative px-6 md:px-12 xl:px-16 py-12 md:py-16">
+                    <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-12">
                         <div className="max-w-7xl mx-auto text-center">
                             <span
                                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
@@ -352,7 +352,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
 
             {/* Search Results Header */}
             {hasActiveSearch && (
-                <section ref={contentRef} className="px-6 md:px-12 xl:px-16 py-8 scroll-mt-24">
+                <section ref={contentRef} className="px-4 sm:px-6 md:px-12 xl:px-16 py-12 scroll-mt-24">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-2xl font-bold mb-2">
                             Results for &quot;{isTagSearch ? '#' : ''}{searchQuery}&quot;
@@ -366,7 +366,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
             )}
 
             {/* Posts Grid */}
-            <section ref={hasActiveSearch ? undefined : contentRef} className="px-6 md:px-12 xl:px-16 py-8">
+            <section ref={hasActiveSearch ? undefined : contentRef} className="px-4 sm:px-6 md:px-12 xl:px-16 py-12">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Posts */}
@@ -419,7 +419,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
             </section>
 
             {/* CTA Section */}
-            <section className="px-6 md:px-12 xl:px-16 py-12 md:py-16">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16 py-12">
                 <div className="max-w-7xl mx-auto">
                     <div
                         className="rounded-3xl border p-8 md:p-12 lg:p-16 overflow-hidden relative"

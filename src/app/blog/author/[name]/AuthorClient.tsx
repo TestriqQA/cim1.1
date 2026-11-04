@@ -32,11 +32,11 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                     }}
                 />
 
-                <div className="relative px-6 md:px-12 xl:px-16 py-8 md:py-12">
+                <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-12">
 
                     {/* Author Profile Card */}
                     <div
-                        className="rounded-3xl border p-8 md:p-10 overflow-hidden relative"
+                        className="rounded-3xl border p-8 md:p-10 overflow-hidden relative max-w-7xl mx-auto"
                         style={{
                             backgroundColor: "var(--card-bg)",
                             borderColor: "var(--border-color)",
@@ -243,8 +243,8 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
             </section>
 
             {/* Author's Posts */}
-            <section className="px-6 md:px-12 xl:px-16">
-                <div className="mb-8">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16">
+                <div className="mb-8 max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold mb-2">Articles by {author.name}</h2>
                     <p style={{ color: "var(--secondary-text)" }}>
                         {authorPosts.length} {authorPosts.length === 1 ? "article" : "articles"}
@@ -252,14 +252,14 @@ export default function AuthorClient({ author, posts }: { author: Author; posts:
                 </div>
 
                 {authorPosts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                         {authorPosts.map((post) => (
                             <BlogCard key={post.id} post={post} />
                         ))}
                     </div>
                 ) : (
                     <div
-                        className="rounded-xl border p-12 text-center"
+                        className="rounded-xl border p-12 text-center max-w-7xl mx-auto"
                         style={{
                             backgroundColor: "var(--card-bg)",
                             borderColor: "var(--border-color)",

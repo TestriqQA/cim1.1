@@ -79,9 +79,9 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                         background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
                     }}
                 />
-                <div className="relative px-6 md:px-12 xl:px-16 py-12">
+                <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-12">
                     {/* Breadcrumb */}
-                    <nav className="flex items-center gap-2 text-sm mb-8" style={{ color: "var(--secondary-text)" }}>
+                    <nav className="flex items-center gap-2 text-sm mb-8 max-w-7xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         <Link href="/blog" className="hover:text-[var(--brand-purple-text)] transition-colors">
                             Blog
                         </Link>
@@ -89,7 +89,7 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
                         <span className="text-[var(--foreground)]">Categories</span>
                     </nav>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                         {/* Left Side - Content */}
                         <div>
                             <div className="flex items-center gap-3 mb-4">
@@ -293,9 +293,9 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
             </section>
 
             {/* Search Section */}
-            <section className="px-6 md:px-12 xl:px-16 mb-12">
-                <div className="max-w-xl">
-                    <div className="relative">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16 pb-12">
+                <div className="max-w-7xl mx-auto">
+                    <div className="relative max-w-xl">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: "var(--secondary-text)" }} />
                         <input
                             type="text"
@@ -314,8 +314,8 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
             </section>
 
             {/* Categories Grid */}
-            <section className="px-6 md:px-12 xl:px-16">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     <div className="lg:col-span-2">
                         {filteredCategories.length > 0 ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
