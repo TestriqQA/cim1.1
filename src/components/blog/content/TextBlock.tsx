@@ -12,9 +12,9 @@ interface TextBlockProps {
  * the document outline matches what the editor wrote.
  */
 const HEADINGS = {
-    h1: { Tag: "h2", className: "text-2xl sm:text-3xl font-bold mb-6 mt-8" },
-    h2: { Tag: "h2", className: "text-xl sm:text-2xl font-bold mb-4 mt-8" },
-    h3: { Tag: "h3", className: "text-lg sm:text-xl font-bold mb-3 mt-6" },
+    h1: { Tag: "h2", className: "text-3xl font-bold mb-6 mt-8" },
+    h2: { Tag: "h2", className: "text-2xl font-bold mb-4 mt-8" },
+    h3: { Tag: "h3", className: "text-xl font-bold mb-3 mt-6" },
     h4: { Tag: "h4", className: "text-lg font-bold mb-2 mt-6" },
     h5: { Tag: "h5", className: "text-base font-bold mb-2 mt-5" },
     h6: { Tag: "h6", className: "text-sm font-bold mb-2 mt-4" },

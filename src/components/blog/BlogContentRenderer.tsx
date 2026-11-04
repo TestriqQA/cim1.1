@@ -71,7 +71,7 @@ function renderMarkdownContent(content: string): JSX.Element[] {
                 .replace(/[^a-z0-9\s-]/g, "")
                 .replace(/\s+/g, "-");
             elements.push(
-                <h2 key={key++} id={id} className="text-2xl sm:text-3xl font-bold mb-6 mt-8 scroll-mt-24">
+                <h2 key={key++} id={id} className="text-3xl font-bold mb-6 mt-8 scroll-mt-24">
                     {text}
                 </h2>
             );
@@ -86,7 +86,7 @@ function renderMarkdownContent(content: string): JSX.Element[] {
                 .replace(/[^a-z0-9\s-]/g, "")
                 .replace(/\s+/g, "-");
             elements.push(
-                <h3 key={key++} id={id} className="text-xl sm:text-2xl font-bold mb-4 mt-8 scroll-mt-24">
+                <h3 key={key++} id={id} className="text-2xl font-bold mb-4 mt-8 scroll-mt-24">
                     {text}
                 </h3>
             );
@@ -101,7 +101,7 @@ function renderMarkdownContent(content: string): JSX.Element[] {
                 .replace(/[^a-z0-9\s-]/g, "")
                 .replace(/\s+/g, "-");
             elements.push(
-                <h4 key={key++} id={id} className="text-lg sm:text-xl font-bold mb-3 mt-6 scroll-mt-24">
+                <h4 key={key++} id={id} className="text-xl font-bold mb-3 mt-6 scroll-mt-24">
                     {text}
                 </h4>
             );

@@ -9,7 +9,7 @@ interface TableBlockProps {
 export default function TableBlock({ block }: TableBlockProps) {
     return (
         <div className="my-6 overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border-color)" }}>
-            <table className="w-full min-w-[560px] text-sm">
+            <table className="w-full text-sm">
                 <thead>
                     <tr style={{ backgroundColor: "var(--hover-bg)" }}>
                         {block.headers.map((header, index) => (
