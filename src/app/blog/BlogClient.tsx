@@ -9,6 +9,10 @@ import { ChevronRight, Sparkles, ArrowRight, Home } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+// "More Articles" starts at five and grows three at a time.
+const INITIAL_VISIBLE = 5;
+const LOAD_STEP = 3;
+
 interface BlogClientProps {
     initialPosts: BlogPost[];
     categories: BlogCategoryLink[];
@@ -19,6 +23,9 @@ interface BlogClientProps {
 export default function BlogClient({ initialPosts, categories, popularPosts, tags }: BlogClientProps) {
     const [searchQuery, setSearchQuery] = useState("");
     const [isTagSearch, setIsTagSearch] = useState(false);
+    // Stored with the query it was counted against, so starting a new search
+    // resets the page size by itself instead of needing an effect to chase it.
+    const [visible, setVisible] = useState({ query: "", count: INITIAL_VISIBLE });
     const contentRef = useRef<HTMLDivElement>(null);
 
     // Reflect the ?search= URL param into local state. The param is read in an
@@ -59,6 +66,12 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
     const latestPost = filteredPosts[0];
     const remainingPosts = filteredPosts.slice(1);
     const hasActiveSearch = !!searchQuery;
+    const listedPosts = hasActiveSearch ? filteredPosts : remainingPosts;
+    const visibleCount =
+        visible.query === searchQuery ? visible.count : INITIAL_VISIBLE;
+    const visiblePosts = listedPosts.slice(0, visibleCount);
+    const remainingCount = listedPosts.length - visiblePosts.length;
+    const nextBatch = Math.min(LOAD_STEP, remainingCount);
 
     return (
         <main
@@ -266,21 +279,22 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                            <div className="absolute top-4 left-4">
-                                                <span
-                                                    className="inline-flex px-3 py-1.5 rounded-full text-xs font-semibold"
-                                                    style={{
-                                                        backgroundColor: "var(--brand-purple-btn)",
-                                                        color: "white",
-                                                    }}
-                                                >
-                                                    {latestPost.category}
-                                                </span>
-                                            </div>
                                         </div>
 
                                         {/* Content Section - Bottom Half */}
                                         <div className="p-6">
+                                            {/* Below the artwork rather than over it: the
+                                                pill had to compete with whatever the
+                                                illustration happened to put behind it. */}
+                                            <span
+                                                className="inline-flex px-3 py-1.5 mb-3 rounded-full text-xs font-semibold"
+                                                style={{
+                                                    backgroundColor: "var(--brand-purple-btn)",
+                                                    color: "white",
+                                                }}
+                                            >
+                                                {latestPost.category}
+                                            </span>
                                             <h3 className="text-xl lg:text-2xl font-bold mb-3 group-hover:text-[var(--brand-purple-text)] transition-colors line-clamp-2">
                                                 {latestPost.title}
                                             </h3>
@@ -375,12 +389,44 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                 <h2 id="more-articles" className="text-2xl font-bold mb-8 scroll-mt-32">More Articles</h2>
                             )}
 
-                            {(hasActiveSearch ? filteredPosts : remainingPosts).length > 0 ? (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {(hasActiveSearch ? filteredPosts : remainingPosts).map((post) => (
-                                        <BlogCard key={post.id} post={post} />
-                                    ))}
-                                </div>
+                            {listedPosts.length > 0 ? (
+                                <>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {visiblePosts.map((post) => (
+                                            <BlogCard key={post.id} post={post} />
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-8 flex flex-col items-center gap-3">
+                                        {remainingCount > 0 && (
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    setVisible({
+                                                        query: searchQuery,
+                                                        count: visibleCount + LOAD_STEP,
+                                                    })
+                                                }
+                                                className="rounded-full border px-6 py-3 text-sm font-semibold transition-colors bg-[var(--card-bg)] hover:bg-[var(--hover-bg)] border-[var(--border-color)] text-[var(--foreground)]"
+                                            >
+                                                Show the next {nextBatch} {nextBatch === 1 ? "blog" : "blogs"}
+                                            </button>
+                                        )}
+                                        {/* Announced politely so the count is not silent
+                                            for anyone using a screen reader. */}
+                                        <p
+                                            aria-live="polite"
+                                            className="text-sm"
+                                            style={{ color: "var(--secondary-text)" }}
+                                        >
+                                            Viewing{" "}
+                                            <span style={{ color: "var(--brand-purple-text)", fontWeight: 600 }}>
+                                                1 - {visiblePosts.length}
+                                            </span>{" "}
+                                            of {listedPosts.length}
+                                        </p>
+                                    </div>
+                                </>
                             ) : (
                                 <div
                                     className="rounded-2xl border p-12 text-center"

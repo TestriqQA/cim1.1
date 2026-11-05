@@ -9,7 +9,9 @@ import {
   TabletSmartphone,
   TrendingUp,
   Bot,
+  BotMessageSquare,
   Palette,
+  PenTool,
   Search,
   SearchCheck,
   Target,
@@ -30,12 +32,17 @@ import Link from "next/link";
 
 // Category icons mapping - all 16 categories
 const categoryIcons: Record<string, React.ReactNode> = {
+  // Pen tool, not <Palette/>: that is UI/UX Design, a different craft.
+  "Brand Identity Design": <PenTool className="w-4 h-4" />,
   "Business Strategy": <Target className="w-4 h-4" />,
   "Case Studies": <FileText className="w-4 h-4" />,
   "Digital Marketing": <TrendingUp className="w-4 h-4" />,
   "Digital Skills and Career": <GraduationCap className="w-4 h-4" />,
   "Enterprise AI & Automation": <Bot className="w-4 h-4" />,
   "AI & Automation": <Bot className="w-4 h-4" />,
+  // Deliberately not plain <Bot/>: that belongs to the two automation
+  // categories above, and chatbots need to read as distinct from them.
+  "AI Chatbots Services": <BotMessageSquare className="w-4 h-4" />,
   "Industry-Specific Web": <Building2 className="w-4 h-4" />,
   "Mobile App Development": <TabletSmartphone className="w-4 h-4" />,
   "Mobile Apps": <Smartphone className="w-4 h-4" />,
@@ -366,7 +373,7 @@ export default function BlogNavbar({
 
                   {showCategoryDropdown && (
                     <div
-                      className="absolute right-0 top-full mt-2 w-64 rounded-2xl border shadow-2xl overflow-hidden z-[200] animate-slideDown"
+                      className="absolute right-0 top-full mt-2 w-[32rem] rounded-2xl border shadow-2xl overflow-hidden z-[200] animate-slideDown"
                       style={{
                         backgroundColor: "var(--background)",
                         borderColor: "var(--border-color)",
@@ -379,44 +386,48 @@ export default function BlogNavbar({
                         >
                           More Categories
                         </p>
-                        {validCategories.slice(3).map((catObj) => {
-                          const category = catObj.name;
-                          const categorySlug = catObj.slug;
-                          const isActive =
-                            pathname === `/blog/category/${categorySlug}` ||
-                            selectedCategory === category;
-                          const color =
-                            categoryColors[category] || "var(--brand-purple)";
+                        {/* Two columns: sixteen categories stacked in one
+                            column ran the menu past the bottom of the screen. */}
+                        <div className="grid grid-cols-2 gap-x-1">
+                          {validCategories.slice(3).map((catObj) => {
+                            const category = catObj.name;
+                            const categorySlug = catObj.slug;
+                            const isActive =
+                              pathname === `/blog/category/${categorySlug}` ||
+                              selectedCategory === category;
+                            const color =
+                              categoryColors[category] || "var(--brand-purple)";
 
-                          return (
-                            <button
-                              key={category}
-                              onClick={() => handleCategorySelect(category)}
-                              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-[var(--hover-bg)]"
-                              style={{
-                                color: isActive
-                                  ? textAccent(color)
-                                  : "var(--foreground)",
-                              }}
-                            >
-                              <span style={{ color: textAccent(color) }}>
-                                {categoryIcons[category]}
-                              </span>
-                              <span className="flex-1 text-left">
-                                {category}
-                              </span>
-                              <span
-                                className="px-2 py-0.5 rounded-md text-xs font-bold"
+                            return (
+                              <button
+                                key={category}
+                                onClick={() => handleCategorySelect(category)}
+                                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-[var(--hover-bg)]"
                                 style={{
-                                  backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
-                                  color: textAccent(color),
+                                  color: isActive
+                                    ? textAccent(color)
+                                    : "var(--foreground)",
                                 }}
                               >
-                                {categoryCounts[category] || 0}
-                              </span>
-                            </button>
-                          );
-                        })}
+                                <span style={{ color: textAccent(color) }}>
+                                  {categoryIcons[category]}
+                                </span>
+                                <span className="flex-1 text-left">
+                                  {category}
+                                </span>
+                                <span
+                                  className="px-2 py-0.5 rounded-md text-xs font-bold"
+                                  style={{
+                                    backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)`,
+                                    color: textAccent(color),
+                                  }}
+                                >
+                                  {categoryCounts[category] || 0}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   )}
