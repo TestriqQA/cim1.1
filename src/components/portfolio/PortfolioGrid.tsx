@@ -27,7 +27,12 @@ import styles from "@/components/portfolio/portfolio.module.css";
 
 type Filter = ServiceCategory | "all";
 
-const container = "mx-auto px-6 md:px-12 xl:px-20";
+// Same scale as PortfolioHero. Without the px-4/sm:px-6 steps this sat at
+// 24px while the hero sat at 16px, so the two sections were 8px out of line
+// on every phone.
+// max-w-7xl matches services/Hero and the shared CTA, so the page caps as
+// one column instead of the sections sprawling while the CTA stays centred.
+const container = "mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 xl:px-20";
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]";
 
@@ -176,14 +181,14 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                       // very next element — naming the logo too would announce
                       // it twice to a screen reader.
                       <div
-                        className="flex items-center justify-center border-b px-6 py-7"
+                        className="flex items-center justify-center border-b px-6 py-5"
                         style={{
                           backgroundColor: logoPlate(project.logoGround),
                           borderColor: "var(--border-color)",
                         }}
                       >
                         {/* Same fixed box as the case-study masthead, smaller. */}
-                        <div className="relative h-16 w-[190px]">
+                        <div className="relative h-14 w-[170px]">
                           <Image
                             src={project.logo}
                             alt=""
@@ -195,7 +200,7 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                       </div>
                     ) : null}
 
-                    <div className="flex flex-1 flex-col p-6">
+                    <div className="flex flex-1 flex-col p-5">
                       <p
                         className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs"
                         style={{ color: "var(--secondary-text)" }}
@@ -223,13 +228,13 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
                       </h3>
 
                       <p
-                        className="mt-3 text-sm leading-relaxed"
+                        className="mt-3 text-sm leading-normal"
                         style={{ color: "var(--secondary-text)" }}
                       >
                         {project.summary}
                       </p>
 
-                      <ul className="mt-5 flex flex-wrap gap-2">
+                      <ul className="mt-4 flex flex-wrap gap-2">
                         <li
                           className="rounded-md border px-2 py-1 text-xs font-medium"
                           style={{
@@ -254,8 +259,8 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
 
                       {/* Headline outcomes: the two strongest, stated plainly. */}
                       <dl
-                        className="mt-auto grid grid-cols-2 gap-4 border-t pt-5"
-                        style={{ borderColor: "var(--border-color)", marginTop: "1.5rem" }}
+                        className="mt-auto grid grid-cols-2 gap-4 border-t pt-4"
+                        style={{ borderColor: "var(--border-color)", marginTop: "1.25rem" }}
                       >
                         {project.metrics.slice(0, 2).map((m) => (
                           <div key={m.label} className="min-w-0">
@@ -277,7 +282,7 @@ export default function PortfolioGrid({ projects }: { projects: ClientProject[] 
 
                       <p
                         aria-hidden="true"
-                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold"
                         style={{ color: "var(--brand-blue-text)" }}
                       >
                         Read case study
