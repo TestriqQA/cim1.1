@@ -84,7 +84,7 @@ export default function CategoryClient({
             className="min-h-screen pb-16"
         >
             {/* Hero Section */}
-            <section className="px-6 md:px-12 xl:px-16 py-12">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                 <div className="max-w-7xl mx-auto">
                     <div
                         className="rounded-3xl border overflow-hidden relative"
@@ -180,7 +180,7 @@ export default function CategoryClient({
 
             {/* Latest Posts */}
             {latestPosts.length > 0 && (
-                <section className="px-6 md:px-12 xl:px-16 py-12">
+                <section className="px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                     <div className="max-w-7xl mx-auto text-center mb-12">
                         <h2 className="text-3xl font-bold mb-4">Latest in {categoryInfo.name}</h2>
                         <div className="h-1 w-20 bg-[var(--brand-purple)] mx-auto rounded-full" />
@@ -194,7 +194,7 @@ export default function CategoryClient({
             )}
 
             {/* All Posts */}
-            <section className="px-6 md:px-12 xl:px-16 py-8">
+            <section className="px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2">

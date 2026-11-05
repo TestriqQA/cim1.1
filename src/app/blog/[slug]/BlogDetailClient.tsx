@@ -199,9 +199,9 @@ export default function BlogDetailClient({
                     }}
                 />
 
-                <div className="relative px-6 md:px-12 xl:px-16 py-8 md:py-12">
+                <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                     {/* Breadcrumb */}
-                    <nav className="hidden md:flex items-center gap-2 text-sm mb-8" style={{ color: "var(--secondary-text)" }}>
+                    <nav className="hidden md:flex items-center gap-2 text-sm mb-8 max-w-7xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         <Link href="/blog" className="hover:text-[var(--brand-purple-text)] transition-colors">
                             Blog
                         </Link>
@@ -216,7 +216,7 @@ export default function BlogDetailClient({
                         <span className="text-[var(--foreground)] line-clamp-1">{post.title}</span>
                     </nav>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
                         {/* Left Side - Content */}
                         <div>
                             {/* Category & Date */}
@@ -311,7 +311,7 @@ export default function BlogDetailClient({
             </section>
 
             {/* Content Section */}
-            <div className="px-6 md:px-12 xl:px-16 py-12">
+            <div className="px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                 <div className="max-w-7xl mx-auto">
                     {/* 👇 THIS defines the sticky boundary */}
                     <div className="relative grid grid-cols-1 xl:grid-cols-3 gap-8">
