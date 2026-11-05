@@ -9,15 +9,19 @@ export default function CTA() {
       style={{ backgroundColor: "var(--background)" }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-12 xl:px-20">
+        {/* Darkened from the navbar's "Let's Talk" ramp (#008ac1 -> #00b5ca),
+            which read too bright at panel size. The end stop is set by
+            contrast, not taste: white body copy needs 4.5:1, so the stop has
+            to sit at or below 0.1833 relative luminance. #00808f gives 4.68:1
+            and #0091a2 only 3.77:1. The glow is dropped to match, or it lifts
+            the panel back up. */}
         <div
-          className="p-6 sm:p-10 md:p-12"
+          className="p-6 sm:p-10 md:p-12 bg-gradient-to-r from-[#006e9a] to-[#00808f]"
           style={{
             borderRadius: 16,
-            background:
-              "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
             color: "#fff",
             textAlign: "center",
-            boxShadow: "0 15px 40px rgba(0, 138, 193, 0.3)",
+            boxShadow: "0 15px 40px rgba(0, 110, 154, 0.3)",
           }}
         >
           <h2
@@ -32,7 +36,10 @@ export default function CTA() {
           </h2>
           <p
             className="mb-5 text-[0.9375rem] sm:text-base"
-            style={{ color: "rgba(255,255,255,0.9)" }}
+            // Full white, not 90%: the 10% transparency let the panel
+            // bleed through and dropped this 16px copy to 4.10:1 at the
+            // gradient end, under the 4.5:1 it needs. Opaque it is 4.68:1.
+            style={{ color: "#fff" }}
           >
             Join the businesses that trust Cinute InfoMedia for web development,
             mobile apps, and digital marketing solutions that drive measurable

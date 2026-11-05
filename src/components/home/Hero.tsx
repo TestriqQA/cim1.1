@@ -24,6 +24,10 @@ export default function Hero({
   const [activeSlide, setActiveSlide] = useState(0);
   const pausedRef = useRef(false);
   const touchStartXRef = useRef<number | null>(null);
+  // Set by a click on the card and cleared by the next one, so it survives
+  // the pointer leaving — unlike the hover pause.
+  const heldRef = useRef(false);
+  const swipedRef = useRef(false);
 
   const step = (delta: number) =>
     setActiveSlide(
@@ -31,9 +35,10 @@ export default function Hero({
     );
 
   // Auto-advance every 3s. It stops while the pointer or keyboard focus is on
-  // the carousel, while the tab is in the background, and entirely for anyone
-  // who asked for reduced motion — an animation nobody is watching is wasted
-  // work, and one nobody can stop is a WCAG 2.2.2 failure.
+  // the carousel, stays stopped after a click until the next one, idles while
+  // the tab is in the background, and is off entirely for anyone who asked for
+  // reduced motion — an animation nobody is watching is wasted work, and one
+  // nobody can stop is a WCAG 2.2.2 failure.
   //
   // Nothing moves here: the cards are stacked and only their opacity changes,
   // so advancing is a single state update and the browser's compositor does
@@ -43,7 +48,7 @@ export default function Hero({
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const id = window.setInterval(() => {
-      if (pausedRef.current || document.hidden) return;
+      if (pausedRef.current || heldRef.current || document.hidden) return;
       setActiveSlide((current) => (current + 1) % caseStudies.length);
     }, 3000);
 
@@ -64,6 +69,7 @@ export default function Hero({
     const travelled = event.changedTouches[0].clientX - startX;
     if (Math.abs(travelled) < SWIPE_THRESHOLD_PX) return;
 
+    swipedRef.current = true;
     step(travelled < 0 ? 1 : -1);
   };
 
@@ -298,13 +304,22 @@ export default function Hero({
                 }}
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
+                onClick={() => {
+                  // A swipe ends in a click too; that one changed the slide
+                  // already and must not also freeze it.
+                  if (swipedRef.current) {
+                    swipedRef.current = false;
+                    return;
+                  }
+                  heldRef.current = !heldRef.current;
+                }}
               >
                 {/* The frame is the container, not the slides: it holds the
                     background, border, padding and glow, so it never takes
-                    part in the fade. That is what lets the two sides be
-                    staggered — the outgoing content can leave completely
-                    before the incoming arrives, with no ghosting in the
-                    middle and no moment where the card itself blinks out. */}
+                    part in the fade. That is what lets the two sides
+                    cross-fade — the incoming content starts before the
+                    outgoing has finished, so there is no blank frame in the
+                    middle and the card itself never blinks out. */}
                 <div
                   className="relative p-4 sm:p-6 rounded-2xl sm:rounded-3xl overflow-hidden group hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
                   style={{
@@ -354,15 +369,15 @@ export default function Hero({
                           inert={!isActive || undefined}
                           className={`col-start-1 row-start-1 motion-reduce:transition-none ${
                             isActive
-                              ? // Arrives after the old content has gone: a longer,
-                                // decelerating settle into place.
-                                "opacity-100 scale-100 translate-y-0 transition duration-[600ms] delay-200 ease-out"
-                              : // Leaves first and quickly, so the two are never
-                                // on screen together.
-                                "opacity-0 scale-[0.985] -translate-y-1 pointer-events-none transition duration-200 ease-in"
+                              ? // Starts while the old slide is still fading, so
+                                // there is never a blank frame between the two.
+                                "opacity-100 scale-100 translate-y-0 transition duration-500 delay-150 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                              : // Leaves first; the overlap is short enough that
+                                // the two never read as doubled text.
+                                "opacity-0 scale-[0.985] -translate-y-1 pointer-events-none transition duration-300 ease-[cubic-bezier(0.4,0,1,1)]"
                           }`}
                         >
-                          <div className="flex items-center justify-between gap-3 mb-4 sm:mb-5">
+                          <div className="flex flex-col items-start min-[390px]:flex-row min-[390px]:items-center justify-between gap-3 mb-4 sm:mb-5">
                             <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
                               {/* The plate follows the mark it carries: a logo
                               drawn for dark ground keeps its dark ground. */}
@@ -399,15 +414,22 @@ export default function Hero({
                               </div>
                             </div>
                             {/* The accessible name spells out which case study this
-                                      opens, and keeps the visible label inside it (WCAG 2.5.3). */}
+                                      opens, and keeps the visible label inside it (WCAG 2.5.3).
+                                      The right padding is 5px short of the left on purpose: the
+                                      chevron only inks 6 of its 24 viewBox units, so it carries
+                                      5.25px of its own blank space. Equal padding would leave the
+                                      label sitting visibly left of centre. */}
                             <Link
                               href={`/portfolio/${study.slug}`}
                               aria-label={`Case Study: ${study.client}`}
-                              className="inline-flex w-fit max-w-fit shrink-0 items-center gap-1 whitespace-nowrap px-3 py-1.5 sm:py-1 text-xs font-semibold shadow-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
+                              className="inline-flex w-fit max-w-fit shrink-0 items-center gap-1 whitespace-nowrap pl-3 pr-[7px] py-1.5 sm:py-1 text-xs font-semibold shadow-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]"
                               style={{
                                 borderRadius: 999,
-                                background:
-                                  "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
+                                // One step darker than var(--brand-blue). The token
+                                // itself gives white only 3.88:1, under the 4.5:1 that
+                                // this 12px label needs for WCAG AA; this is 4.55:1.
+                                // Deliberately not the token, so the CTA keeps its hue.
+                                background: "#007eb0",
                                 color: "#fff",
                               }}
                             >
@@ -416,7 +438,7 @@ export default function Hero({
                             </Link>
                           </div>
 
-                          <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-0 sm:mb-4">
+                          <div className="grid grid-cols-1 min-[390px]:grid-cols-2 gap-3 sm:gap-4 mb-0 sm:mb-4">
                             {study.metrics.map((metric, metricIndex) => (
                               <div
                                 key={metric.label}
@@ -444,7 +466,7 @@ export default function Hero({
                                 label must occupy the same box, or the card
                                 resizes mid-swipe. */}
                                 <div
-                                  className="text-[11px] sm:text-xs line-clamp-2 min-h-[2rem] sm:min-h-[2.25rem]"
+                                  className="text-xs sm:text-sm line-clamp-2 min-h-[2rem] sm:min-h-[2.5rem]"
                                   style={{ color: "var(--secondary-text)" }}
                                 >
                                   {metric.label}
@@ -458,31 +480,6 @@ export default function Hero({
                   </div>
                 </div>
 
-                {/* Dots rather than arrows: they show how many case studies
-                    there are and which one is up, and they double as the
-                    manual control that auto-advancing content needs. */}
-                {caseStudies.length > 1 && (
-                  <div className="mt-3 flex items-center justify-center gap-1.5">
-                    {caseStudies.map((study, index) => (
-                      <button
-                        key={study.slug}
-                        type="button"
-                        onClick={() => setActiveSlide(index)}
-                        aria-label={`Show case study ${index + 1}: ${study.client}`}
-                        aria-current={index === activeSlide}
-                        className={`h-1.5 rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1] ${
-                          index === activeSlide ? "w-5" : "w-1.5"
-                        }`}
-                        style={{
-                          background:
-                            index === activeSlide
-                              ? "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))"
-                              : "var(--border-color)",
-                        }}
-                      />
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Quick Stats */}

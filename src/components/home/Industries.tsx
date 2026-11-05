@@ -76,7 +76,7 @@ export default function Industries() {
       className="py-12 sm:py-16 md:py-20"
       style={{ backgroundColor: "var(--background)" }}
     >
-      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div
             className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-4"

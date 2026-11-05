@@ -36,7 +36,7 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
         }}
       />
 
-      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-24 relative z-10">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 md:mb-12">
           <div>
