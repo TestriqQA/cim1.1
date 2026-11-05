@@ -14,7 +14,9 @@ import { getHighlightMetrics } from "@/data/portfolio";
 // data/portfolio.ts), not a hand-picked list here, so a figure can never end up
 // credited to the wrong client.
 
-const container = "mx-auto px-4 sm:px-6 md:px-12 xl:px-20";
+// max-w-7xl matches services/Hero and the shared CTA, so the page caps as
+// one column instead of the sections sprawling while the CTA stays centred.
+const container = "mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 xl:px-20";
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008ac1]";
 

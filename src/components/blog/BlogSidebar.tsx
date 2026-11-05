@@ -1,10 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BlogCategoryLink, BlogPost } from "@/data/blog";
 import { TrendingUp, Folder, Tag, ArrowRight } from "lucide-react";
+
+// Same pattern as the "More Articles" grid: start at five, grow three at a
+// time, with a count underneath so the list length is never a surprise.
+const INITIAL_CATEGORIES = 5;
+const CATEGORY_STEP = 3;
 
 interface BlogSidebarProps {
   currentPostSlug?: string;
@@ -15,6 +21,10 @@ interface BlogSidebarProps {
 
 export default function BlogSidebar({ currentPostSlug, categories, popularPosts, tags }: BlogSidebarProps) {
   const router = useRouter();
+  const [visibleCategories, setVisibleCategories] = useState(INITIAL_CATEGORIES);
+  const shownCategories = categories.slice(0, visibleCategories);
+  const remainingCategories = categories.length - shownCategories.length;
+  const nextCategoryBatch = Math.min(CATEGORY_STEP, remainingCategories);
 
   const handleTagClick = (tag: string) => {
     // Navigate to blog page with tag as search parameter and scroll to search bar
@@ -33,27 +43,32 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           <TrendingUp className="w-5 h-5 text-[var(--brand-purple-text)]" />
           <h3 className="text-lg font-bold">Popular Posts</h3>
         </div>
-        <div className="space-y-3">
+        {/* space-y-1, not 3: with a hover background on each row, tight
+            spacing reads as one list. Wider gaps leave them floating. */}
+        <div className="space-y-1">
           {popularPosts.slice(0, 3).map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
               className="group flex gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-[var(--hover-bg)]"
             >
-              <div className="relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden">
+              {/* Landscape, not square. These are blog header images; a 1:1
+                  crop cut straight through the artwork and left a slice of
+                  unreadable title text where the picture should be. */}
+              <div className="relative w-20 h-14 shrink-0 rounded-lg overflow-hidden ring-1 ring-[var(--border-color)]">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  sizes="64px"
+                  sizes="80px"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
+                <p className="text-sm font-semibold leading-snug line-clamp-2 group-hover:text-[var(--brand-purple-text)] transition-colors">
                   {post.title}
                 </p>
-                <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
+                <p className="text-xs mt-1.5" style={{ color: "var(--secondary-text)" }}>
                   {new Date(post.publishedAt).toLocaleDateString("en-US", {
                     month: "short",
                     day: "numeric",
@@ -76,7 +91,7 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
           <h3 className="text-lg font-bold">Categories</h3>
         </div>
         <div className="flex flex-wrap gap-2">
-          {categories.map((category) => (
+          {shownCategories.map((category) => (
             <Link
               key={category.slug}
               href={`/blog/category/${category.slug}`}
@@ -91,6 +106,31 @@ export default function BlogSidebar({ currentPostSlug, categories, popularPosts,
             </Link>
           ))}
         </div>
+
+        <div className="mt-4 flex flex-col items-center gap-2">
+          {remainingCategories > 0 && (
+            <button
+              type="button"
+              onClick={() => setVisibleCategories((n) => n + CATEGORY_STEP)}
+              className="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors bg-[var(--card-bg)] hover:bg-[var(--hover-bg)] border-[var(--border-color)] text-[var(--foreground)]"
+            >
+              Show the next {nextCategoryBatch}{" "}
+              {nextCategoryBatch === 1 ? "category" : "categories"}
+            </button>
+          )}
+          <p
+            aria-live="polite"
+            className="text-xs"
+            style={{ color: "var(--secondary-text)" }}
+          >
+            Viewing{" "}
+            <span style={{ color: "var(--brand-purple-text)", fontWeight: 600 }}>
+              1 - {shownCategories.length}
+            </span>{" "}
+            of {categories.length}
+          </p>
+        </div>
+
         <Link
           href="/blog/categories"
           className="flex items-center justify-center gap-2 mt-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 hover:bg-[var(--hover-bg)]"

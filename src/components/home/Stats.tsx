@@ -132,9 +132,9 @@ export default function Stats() {
         borderBottom: "1px solid var(--border-color)",
         backgroundColor: "var(--card-bg)",
       }}
-      className="py-12"
+      className="py-12 sm:py-16 md:py-20"
     >
-      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-8">
           {stats.map((stat) => {
             const Icon = stat.icon;

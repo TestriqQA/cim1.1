@@ -3,11 +3,11 @@ import { ArrowRight, Rocket } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="py-12 lg:py-16 bg-[var(--background)] transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[var(--background)] transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="
-            relative rounded-3xl p-12 md:p-16 shadow-2xl overflow-hidden
+            relative rounded-3xl p-6 sm:p-8 md:p-16 shadow-2xl overflow-hidden
             bg-[linear-gradient(135deg,var(--brand-blue),var(--brand-teal))]
             text-center
           "
@@ -24,19 +24,19 @@ export default function CTA() {
           {/* Content */}
           <div className="relative">
             {/* Icon Badge */}
-            <div className="inline-flex w-24 h-24 rounded-3xl bg-white/20 dark:bg-white/10 backdrop-blur-xl items-center justify-center mx-auto mb-8 shadow-xl">
-              <Rocket className="w-12 h-12 text-white" />
+            <div className="inline-flex w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-white/20 dark:bg-white/10 backdrop-blur-xl items-center justify-center mx-auto mb-6 md:mb-8 shadow-xl">
+              <Rocket className="w-8 h-8 md:w-12 md:h-12 text-white" />
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Ready to Transform Your Business?
             </h2>
 
-            <p className="text-xl text-white/90 dark:text-white/80 mb-4 max-w-2xl mx-auto leading-relaxed">
-              Let's build your growth ecosystem together
+            <p className="text-base sm:text-lg md:text-xl text-white/90 dark:text-white/80 mb-4 max-w-2xl mx-auto leading-relaxed">
+              Let&apos;s build your growth ecosystem together
             </p>
 
-            <p className="text-lg text-white/85 dark:text-white/75 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-white/85 dark:text-white/75 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
               Whether you need a high-performance website, a comprehensive
               digital marketing strategy, intelligent automation systems, or a
               complete brand transformation, Cinute InfoMedia has the expertise,
@@ -49,7 +49,7 @@ export default function CTA() {
               <Link
                 href="/contact"
                 className="
-                  group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 
+                  group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 border-2 border-transparent 
                   bg-white dark:bg-[var(--card-bg)] 
                   text-[var(--brand-blue-text)] dark:text-[var(--accent-teal-text)]
                   rounded-2xl text-sm md:text-lg font-semibold 

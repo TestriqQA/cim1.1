@@ -53,7 +53,7 @@ export default function CaseStudies() {
         borderTop: "1px solid var(--border-color)",
       }}
     >
-      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div className="flex items-end justify-between mb-8 sm:mb-10 md:mb-12">
           <div>
             <div

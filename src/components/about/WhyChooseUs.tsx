@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
     ];
 
     return (
-        <section className="py-16 lg:py-24 bg-[var(--background)] transition-colors duration-300 relative overflow-hidden">
+        <section className="py-12 sm:py-16 lg:py-20 bg-[var(--background)] transition-colors duration-300 relative overflow-hidden">
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-12 sm:mb-16 lg:mb-20">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -82,18 +82,18 @@ export default function WhyChooseUs() {
                         <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Why Choose Us</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--foreground)]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[var(--foreground)]">
                         Why Choose Cinute InfoMedia
                     </h2>
 
                     <div
-                        className="mx-auto mb-6 rounded-full"
-                        style={{ width: 112, height: 6, background: "linear-gradient(90deg,var(--brand-blue),var(--brand-purple))" }}
+                        className="mx-auto mb-6 rounded-full w-20 sm:w-28 h-1 sm:h-1.5"
+                        style={{ background: "linear-gradient(90deg,var(--brand-blue),var(--brand-purple))" }}
                     />
                 </div>
 
                 {/* Reasons Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-10 sm:mb-16">
                     {reasons.map((reason, index) => {
                         const Icon = reason.icon;
                         const grad = `linear-gradient(135deg, ${reason.colorFrom}, ${reason.colorTo})`;
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
                         return (
                             <div
                                 key={index}
-                                className="relative rounded-3xl p-8 border-2 transition-all duration-500 cursor-pointer bg-[var(--card-bg)] shadow-lg border-[var(--border-color)] hover:shadow-2xl hover:border-transparent hover:-translate-y-1 hover:scale-[1.02] group"
+                                className="relative rounded-3xl p-5 sm:p-6 lg:p-8 border-2 transition-all duration-500 cursor-pointer bg-[var(--card-bg)] shadow-lg border-[var(--border-color)] hover:shadow-2xl hover:border-transparent hover:-translate-y-1 hover:scale-[1.02] group"
                             >
                                 {/* Subtle hover backdrop */}
                                 <div
@@ -109,18 +109,19 @@ export default function WhyChooseUs() {
                                     style={{ background: grad }}
                                 />
 
-                                {/* Icon */}
-                                <div
-                                    className="w-16 h-16 rounded-2xl p-4 shadow-lg mb-6 transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
-                                    style={{ background: grad }}
-                                >
-                                    <Icon className="w-full h-full text-white" />
-                                </div>
+                                {/* Icon + heading: one row below lg, stacked from lg up */}
+                                <div className="flex items-center gap-3 mb-3 lg:mb-0 lg:block">
+                                    <div
+                                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex-shrink-0 rounded-2xl p-3 lg:p-4 shadow-lg lg:mb-6 transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+                                        style={{ background: grad }}
+                                    >
+                                        <Icon className="w-full h-full text-white" />
+                                    </div>
 
-                                {/* Content */}
-                                <h3 className="text-xl font-bold mb-4 text-[var(--foreground)] transition-colors duration-300">
-                                    {reason.title}
-                                </h3>
+                                    <h3 className="text-xl font-bold lg:mb-4 text-[var(--foreground)] transition-colors duration-300">
+                                        {reason.title}
+                                    </h3>
+                                </div>
 
                                 <p className="text-[var(--secondary-text)] leading-relaxed">
                                     {reason.description}
@@ -131,19 +132,19 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Proven Track Record Stats */}
-                <div className="mt-16">
-                    <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--foreground)]">
+                <div className="mt-12 sm:mt-16">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-[var(--foreground)]">
                         Proven Track Record
                     </h3>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
                         {stats.map((stat, index) => (
                             <div
                                 key={index}
-                                className="text-center p-6 rounded-2xl bg-[var(--card-bg)] border-2 border-[var(--border-color)] shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+                                className="flex flex-col text-center p-4 sm:p-5 rounded-2xl bg-[var(--card-bg)] border-2 border-[var(--border-color)] shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
                             >
                                 <div
-                                    className="text-3xl md:text-4xl font-bold mb-2"
+                                    className="text-2xl md:text-3xl font-bold mb-2"
                                     style={{
                                         background: "linear-gradient(90deg, var(--brand-blue), var(--brand-purple))",
                                         WebkitBackgroundClip: "text",
@@ -152,7 +153,7 @@ export default function WhyChooseUs() {
                                 >
                                     {stat.value}
                                 </div>
-                                <div className="text-sm text-[var(--secondary-text)] leading-tight">
+                                <div className="flex-1 flex items-center justify-center text-sm text-[var(--secondary-text)] leading-tight">
                                     {stat.label}
                                 </div>
                             </div>

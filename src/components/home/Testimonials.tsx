@@ -1,11 +1,7 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { Star, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import { Star, Award } from "lucide-react";
 
 export default function Testimonials() {
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-
   const testimonials = [
     {
       // NAME CORRECTION ONLY — the quote text is untouched. The client is
@@ -39,29 +35,15 @@ export default function Testimonials() {
     },
   ];
 
-  useEffect(() => {
-    const int = setInterval(() => {
-      setTestimonialIndex((i) => (i + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(int);
-  }, [testimonials.length]);
-
-  const goToPrevious = () => {
-    setTestimonialIndex(
-      (i) => (i - 1 + testimonials.length) % testimonials.length,
-    );
-  };
-
-  const goToNext = () => {
-    setTestimonialIndex((i) => (i + 1) % testimonials.length);
-  };
-
   return (
     <section
       className="py-12 sm:py-16 md:py-20"
       style={{ backgroundColor: "var(--background)" }}
     >
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 md:px-12">
+      {/* Same container as the other card grids on this page, so all three
+          testimonials have room to sit side by side and the section's left
+          edge lines up with Services, Process and Case Studies. */}
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20">
         <div className="mb-8 text-center sm:mb-10">
           <div
             className="px-3.5 py-1.5 sm:px-4 sm:py-2 mb-3"
@@ -107,60 +89,71 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div
-          className="p-5 sm:p-6 md:p-8"
-          style={{
-            borderRadius: 24,
-            border: "2px solid var(--border-color)",
-            backgroundColor: "var(--card-bg)",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-          }}
-        >
-          {/* Mobile/tablet: stacked & centered. Desktop: side by side */}
-          <div className="flex flex-col lg:flex-row items-center gap-6">
-            <div
-              className="h-20 w-20 text-2xl sm:h-24 sm:w-24 sm:text-[28px]"
+        {/* All three are on screen at once, so there is nothing to page
+            through and no arrows to press. Three across from lg up, one per
+            row below that: at 768px three columns are only 198px wide and
+            the longest quote drives them 614px tall, which reads as strips. */}
+        <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+          {testimonials.map((t) => (
+            <figure
+              key={t.company}
+              className="flex h-full flex-col p-5 sm:p-6"
               style={{
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background:
-                  "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
-                color: "#fff",
-                fontWeight: 800,
-                flexShrink: 0,
+                margin: 0,
+                borderRadius: 16,
+                border: "1px solid var(--border-color)",
+                backgroundColor: "var(--card-bg)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
               }}
             >
-              {testimonials[testimonialIndex].avatar}
-            </div>
+              <figcaption className="mb-4 flex items-center gap-3">
+                <div
+                  className="h-12 w-12 text-lg"
+                  style={{
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background:
+                      "linear-gradient(90deg, var(--brand-blue), var(--brand-cyan))",
+                    color: "#fff",
+                    fontWeight: 800,
+                    flexShrink: 0,
+                  }}
+                >
+                  {t.avatar}
+                </div>
+                <div className="min-w-0">
+                  <div style={{ fontWeight: 800, color: "var(--foreground)" }}>
+                    {t.company}
+                  </div>
+                  <div
+                    className="text-sm"
+                    style={{ color: "var(--secondary-text)" }}
+                  >
+                    {t.industry}
+                  </div>
+                </div>
+              </figcaption>
 
-            <div className="flex-1 w-full min-w-0 text-center lg:text-left">
-              <p
-                className="text-base md:text-lg"
+              {/* grow absorbs the difference in quote length, so every card's
+                  result badge lands on the same line across the row. */}
+              <blockquote
+                className="grow text-[0.9375rem] sm:text-base"
                 style={{
-                  fontWeight: 700,
-                  marginBottom: 12,
+                  margin: 0,
+                  marginBottom: 16,
                   fontStyle: "italic",
                   color: "var(--foreground)",
                 }}
               >
-                &quot;{testimonials[testimonialIndex].quote}&quot;
-              </p>
-              <div
-                className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-1 sm:gap-3"
-                style={{ marginBottom: 12 }}
-              >
-                <div style={{ fontWeight: 800, color: "var(--foreground)" }}>
-                  {testimonials[testimonialIndex].company}
-                </div>
-                <div style={{ color: "var(--secondary-text)" }}>
-                  {testimonials[testimonialIndex].industry}
-                </div>
-              </div>
+                &quot;{t.quote}&quot;
+              </blockquote>
+
               <div
                 style={{
                   display: "inline-flex",
+                  alignSelf: "flex-start",
                   gap: 8,
                   alignItems: "center",
                   padding: "8px 12px",
@@ -180,61 +173,11 @@ export default function Testimonials() {
                     color: "var(--foreground)",
                   }}
                 >
-                  {testimonials[testimonialIndex].result}
+                  {t.result}
                 </span>
               </div>
-            </div>
-          </div>
-
-          {/* Navigation Controls - centered on mobile/tablet, left on desktop */}
-          <div
-            className="flex justify-center lg:justify-start items-center mt-5 pt-5 sm:mt-6 sm:pt-6"
-            style={{
-              borderTop: "1px solid var(--border-color)",
-            }}
-          >
-            {/* Left/Right Arrow Buttons */}
-            <div style={{ display: "flex", gap: 12 }}>
-              <button
-                onClick={goToPrevious}
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "var(--background)",
-                  border: "1px solid var(--border-color)",
-                  color: "var(--foreground)",
-                  transition: "all 0.2s",
-                }}
-                className="hover:bg-[var(--hover-bg)]"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={goToNext}
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "var(--background)",
-                  border: "1px solid var(--border-color)",
-                  color: "var(--foreground)",
-                  transition: "all 0.2s",
-                }}
-                className="hover:bg-[var(--hover-bg)]"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
