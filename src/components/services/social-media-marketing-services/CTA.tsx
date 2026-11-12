@@ -9,7 +9,7 @@ export default function CTA() {
             className="py-10 lg:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Animated Background */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
@@ -49,7 +49,7 @@ export default function CTA() {
                     <div className="relative z-10">
                         {/* Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                            className="inline-flex items-center gap-2 px-2.5 sm:px-4 py-2 rounded-full mb-6 border"
                             style={{
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, var(--brand-teal) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
@@ -58,7 +58,7 @@ export default function CTA() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" />
-                            <span className="text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
+                            <span className="text-xs sm:text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
                         </div>
 
                         {/* Heading */}
@@ -77,7 +77,7 @@ export default function CTA() {
                         </h2>
 
                         {/* Description */}
-                        <p className="text-base md:text-xl max-w-3xl mx-auto mb-12" style={{ color: "var(--secondary-text)" }}>
+                        <p className="text-base md:text-xl max-w-3xl mx-auto mb-8 md:mb-12" style={{ color: "var(--secondary-text)" }}>
                             Don't let your competitors capture your audience. Partner with the <span style={{ fontWeight: 700, color: "var(--accent-teal-text)" }}>Social Media Marketing Agency</span> that delivers measurable results. Contact us today to discuss your <span style={{ fontWeight: 700, color: "var(--accent-teal-text)" }}>Social Media Marketing</span> needs and receive a <Link href="/blog/social-media-strategy-building-brand" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors" style={{ fontWeight: 700 }}>personalized strategy</Link>.
                         </p>
 
@@ -85,15 +85,15 @@ export default function CTA() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm md:text-base font-semibold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                                className="w-full sm:w-auto block sm:inline-flex text-center items-center justify-center gap-2 px-3 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-semibold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                             >
                                 Book Your Free Strategy Session
-                                <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                                <ArrowRight className="w-5 h-5 flex-shrink-0 inline align-middle ml-2 sm:ml-0" />
                             </Link>
 
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300"
+                                className="w-full sm:w-auto block sm:inline-flex text-center items-center justify-center gap-2 px-3 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-semibold border transition-all duration-300"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -102,7 +102,7 @@ export default function CTA() {
                                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                             >
                                 Schedule a Consultation
-                                <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                                <ArrowRight className="w-5 h-5 flex-shrink-0 inline align-middle ml-2 sm:ml-0" />
                             </Link>
                         </div>
 
@@ -114,7 +114,7 @@ export default function CTA() {
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
                     {[
                         {
                             number: "Proven",

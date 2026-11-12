@@ -4,25 +4,25 @@ import ServiceOverview from '@/components/services/social-media-marketing-servic
 
 // Lazy load below-the-fold components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/social-media-marketing-services/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const TypesOfServices = dynamic(() => import('@/components/services/social-media-marketing-services/TypesOfServices'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const Platforms = dynamic(() => import('@/components/services/social-media-marketing-services/Platforms'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const Process = dynamic(() => import('@/components/services/social-media-marketing-services/Process'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const Analytics = dynamic(() => import('@/components/services/social-media-marketing-services/Analytics'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const SocialMediaFAQ = dynamic(() => import('@/components/services/social-media-marketing-services/SocialMediaFAQ'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 const CTA = dynamic(() => import('@/components/services/social-media-marketing-services/CTA'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-10 md:py-16" />,
 });
 
 import { getPageMetadata } from '@/lib/metadata';
