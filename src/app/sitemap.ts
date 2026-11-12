@@ -18,6 +18,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Build-time constant — only update when static content actually changes
   const staticLastModified = "2026-09-27T00:00:00.000Z";
 
+  // Service routes used to take lastmod from page.tsx mtime. Git does not store
+  // mtimes and Vercel normalises them to a fixed build constant (epoch 1540000000
+  // = 2018-10-20T01:46:40Z), so all 59 /services/ URLs advertised that false date.
+  // Bump this when service page content actually changes.
+  const servicesLastModified = "2026-11-05T00:00:00.000Z";
+
   // 1. Static Routes (with realistic, stable lastModified dates)
   const staticRoutes: MetadataRoute.Sitemap = [
     { route: "", priority: 1, changeFrequency: "weekly" as const },
@@ -76,14 +82,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const pagePath = path.join(fullPath, "page.tsx");
         // If it's a directory with a page.tsx, add to sitemap
         if (fs.existsSync(pagePath)) {
-          // Use actual file modification time for reliable lastmod
-          const stat = fs.statSync(pagePath);
           // Tiered priority by depth: hub (0.9) > sub-service (0.8) > deeper (0.7)
           const depth = relativeRoute.split("/").length;
           const servicePriority = depth <= 1 ? 0.9 : depth === 2 ? 0.8 : 0.7;
           serviceRoutes.push({
             url: `${baseUrl}/services/${relativeRoute}`,
-            lastModified: stat.mtime.toISOString(),
+            lastModified: servicesLastModified,
             changeFrequency: "weekly" as const,
             priority: servicePriority,
           });

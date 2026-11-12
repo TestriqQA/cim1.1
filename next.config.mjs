@@ -108,6 +108,21 @@ const nextConfig = {
                 destination: '/services/web-design-development/branding-services',
                 permanent: true,
             },
+            // organic-growth-seo was renamed to seo-services; both old paths 404 in prod
+            // while Google still has them indexed. Full path renames (not case-only), so
+            // neither source matches its own destination and they cannot 308-loop.
+            // The child is listed first; `source` matches the whole path, so the parent
+            // rule below does not also catch /organic-growth-seo/local-seo.
+            {
+                source: '/services/organic-growth-seo/local-seo',
+                destination: '/services/seo-services/local-seo-services',
+                permanent: true,
+            },
+            {
+                source: '/services/organic-growth-seo',
+                destination: '/services/seo-services',
+                permanent: true,
+            },
             {
                 source: '/cookie-policy',
                 destination: '/privacy-policy',
