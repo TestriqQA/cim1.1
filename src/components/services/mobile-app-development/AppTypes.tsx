@@ -89,7 +89,7 @@ export default function AppTypes() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Background Elements */}
@@ -100,9 +100,9 @@ export default function AppTypes() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -126,7 +126,7 @@ export default function AppTypes() {
                 </div>
 
                 {/* App Types Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 md:mb-12">
                     {appTypes.map((type, index) => {
                         const Icon = type.icon;
                         return (
@@ -183,7 +183,7 @@ export default function AppTypes() {
 
                 {/* Detailed Comparison */}
                 <div
-                    className="p-10 rounded-3xl border"
+                    className="p-6 sm:p-8 md:p-10 rounded-3xl border"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
@@ -191,16 +191,18 @@ export default function AppTypes() {
                 >
                     {/* Heading */}
                     <h3
-                        className="text-2xl md:text-3xl font-bold mb-10"
+                        className="text-2xl md:text-3xl font-bold mb-8 md:mb-10"
                         style={{ color: "var(--foreground)" }}
                     >
                         Choosing the Right Mobile App Development Approach
                     </h3>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full border-separate border-spacing-y-3 text-sm">
+                    {/* Below md the table switches to block display, so each row
+                        stacks as a card and there is no x-axis scroll. md+ is unchanged. */}
+                    <div className="md:overflow-x-auto">
+                        <table className="w-full block md:table border-separate border-spacing-y-3 text-sm">
                             {/* Table Head */}
-                            <thead>
+                            <thead className="hidden md:table-header-group">
                                 <tr>
                                     <th className="text-left px-6 py-4 font-semibold" style={{ color: "var(--secondary-text)" }}>
                                         Approach
@@ -218,7 +220,7 @@ export default function AppTypes() {
                             </thead>
 
                             {/* Table Body */}
-                            <tbody>
+                            <tbody className="block md:table-row-group">
                                 {[
                                     {
                                         approach: "Native (iOS)",
@@ -263,7 +265,8 @@ export default function AppTypes() {
                                 ].map((row, index) => (
                                     <tr
                                         key={index}
-                                        className="transition-all"
+                                        className="block md:table-row mb-3 last:mb-0 md:mb-0 p-4 md:p-0 rounded-2xl border md:border-0 md:rounded-none transition-all"
+                                        style={{ borderColor: "var(--border-color)" }}
                                         onMouseEnter={(e) =>
                                         (e.currentTarget.style.backgroundColor =
                                             "color-mix(in srgb, var(--brand-purple) 6%, transparent)")
@@ -273,10 +276,10 @@ export default function AppTypes() {
                                         }
                                     >
                                         {/* Approach */}
-                                        <td className="px-6 py-5">
+                                        <td className="block md:table-cell px-0 md:px-6 py-0 md:py-5 pb-3 md:pb-5">
                                             <div className="flex items-center gap-3">
                                                 <div
-                                                    className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${row.gradient}`}
+                                                    className={`w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br ${row.gradient}`}
                                                 >
                                                     <row.icon
                                                         className="w-6 h-6 text-white"
@@ -292,38 +295,54 @@ export default function AppTypes() {
                                         </td>
 
                                         {/* Best For */}
-                                        <td className="px-6 py-5" style={{ color: "var(--secondary-text)" }}>
-                                            {row.best}
+                                        <td className="block md:table-cell px-0 md:px-6 py-1 md:py-5" style={{ color: "var(--secondary-text)" }}>
+                                            <div className="flex items-start justify-between gap-3 md:block">
+                                                {/* Row label, since the header is hidden on phones */}
+                                                <span className="md:hidden shrink-0">Best For</span>
+                                                <span className="text-right md:text-left">{row.best}</span>
+                                            </div>
                                         </td>
 
                                         {/* Time */}
-                                        <td className="px-6 py-5">
-                                            <span
-                                                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold"
-                                                style={{
-                                                    backgroundColor:
-                                                        "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
-                                                    color: "var(--brand-purple-text)",
-                                                }}
-                                            >
-                                                <Clock className="w-3.5 h-3.5" />
-                                                {row.time}
-                                            </span>
+                                        <td className="block md:table-cell px-0 md:px-6 py-1 md:py-5">
+                                            <div className="flex items-center justify-between gap-3 md:block">
+                                                {/* Row label, since the header is hidden on phones */}
+                                                <span className="md:hidden" style={{ color: "var(--secondary-text)" }}>
+                                                    Development Time
+                                                </span>
+                                                <span
+                                                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold"
+                                                    style={{
+                                                        backgroundColor:
+                                                            "color-mix(in srgb, var(--brand-purple) 10%, transparent)",
+                                                        color: "var(--brand-purple-text)",
+                                                    }}
+                                                >
+                                                    <Clock className="w-3.5 h-3.5" />
+                                                    {row.time}
+                                                </span>
+                                            </div>
                                         </td>
 
                                         {/* Cost */}
-                                        <td className="px-6 py-5">
-                                            <span
-                                                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold"
-                                                style={{
-                                                    backgroundColor:
-                                                        "color-mix(in srgb, var(--border-color) 35%, transparent)",
-                                                    color: "var(--foreground)",
-                                                }}
-                                            >
-                                                <IndianRupee className="w-3.5 h-3.5" />
-                                                {row.cost}
-                                            </span>
+                                        <td className="block md:table-cell px-0 md:px-6 py-1 md:py-5">
+                                            <div className="flex items-center justify-between gap-3 md:block">
+                                                {/* Row label, since the header is hidden on phones */}
+                                                <span className="md:hidden" style={{ color: "var(--secondary-text)" }}>
+                                                    Cost
+                                                </span>
+                                                <span
+                                                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold"
+                                                    style={{
+                                                        backgroundColor:
+                                                            "color-mix(in srgb, var(--border-color) 35%, transparent)",
+                                                        color: "var(--foreground)",
+                                                    }}
+                                                >
+                                                    <IndianRupee className="w-3.5 h-3.5" />
+                                                    {row.cost}
+                                                </span>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
