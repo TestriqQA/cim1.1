@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
+            className="py-12 md:py-24 relative overflow-hidden"
             style={{ backgroundColor: "var(--card-bg)" }}
         >
             {/* Background Elements */}
@@ -71,9 +71,9 @@ export default function WhyChooseUs() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us for</span>{" "}
                         <span style={{ color: "var(--brand-blue-text)" }}>
                             Facebook Ads
@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-6 md:gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
                         const isHovered = hoveredCard === idx;
@@ -124,7 +124,7 @@ export default function WhyChooseUs() {
                                 {/* Card */}
                                 <div
                                     className={`
-                                        relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden
+                                        relative p-6 md:p-8 md:h-full rounded-3xl border transition-all duration-500 overflow-hidden
                                         ${isHovered ? "shadow-2xl" : ""}
                                     `}
                                     style={{

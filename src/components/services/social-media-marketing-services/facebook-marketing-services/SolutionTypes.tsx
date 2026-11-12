@@ -111,20 +111,20 @@ export default function SolutionTypes() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-background relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
                         <Sparkles className="w-4 h-4 text-blue-500" />
                         <span className="text-sm font-medium text-[var(--brand-blue-text)]">Industry Solutions</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Facebook Ads by</span>{" "}
                         <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                             Industry
@@ -135,7 +135,7 @@ export default function SolutionTypes() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr gap-6">
                     {solutions.map((solution, idx) => {
                         const Icon = solution.icon;
                         const isHovered = hoveredCard === idx;
@@ -160,7 +160,7 @@ export default function SolutionTypes() {
 
                                 <div
                                     className={`
-                                        relative p-8 rounded-3xl border backdrop-blur-sm
+                                        relative p-6 md:p-8 rounded-3xl border backdrop-blur-sm overflow-hidden
                                         transition-all duration-500 h-full
                                         ${isHovered ? "shadow-2xl -translate-y-2 scale-[1.02]" : "shadow-lg"}
                                     `}
@@ -217,23 +217,6 @@ export default function SolutionTypes() {
                                                     }}
                                                 />
                                             </div>
-
-                                            {/* Floating particles on hover */}
-                                            {isHovered && (
-                                                <>
-                                                    <div
-                                                        className="absolute -top-1 -right-1 w-2 h-2 rounded-full animate-ping"
-                                                        style={{ backgroundColor: solution.color }}
-                                                    />
-                                                    <div
-                                                        className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full animate-ping"
-                                                        style={{
-                                                            backgroundColor: solution.color,
-                                                            animationDelay: "0.3s"
-                                                        }}
-                                                    />
-                                                </>
-                                            )}
                                         </div>
 
                                         {/* Title with hover effect */}
@@ -256,7 +239,7 @@ export default function SolutionTypes() {
                                         </p>
 
                                         {/* Features List - Always visible */}
-                                        <div className="space-y-3 mb-4">
+                                        <div className="space-y-3">
                                             {solution.features.map((feature, fIdx) => (
                                                 <div
                                                     key={fIdx}

@@ -71,8 +71,8 @@ export default function Hero() {
                 .delay-500 { animation-delay: 0.5s; }
             `}</style>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
                     {/* Text Content */}
                     <div className="space-y-8 text-center lg:text-left">
                         {/* Breadcrumbs */}
@@ -102,7 +102,7 @@ export default function Hero() {
 
                         {/* Title */}
                         <h1
-                            className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
                             Scale Your Business with{" "}

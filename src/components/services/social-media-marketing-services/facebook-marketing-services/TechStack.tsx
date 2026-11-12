@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Megaphone, Briefcase, Library, Users, Palette, ShoppingBag, Crosshair, Server, FlaskConical } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export default function TechStack() {
     const [activeTab, setActiveTab] = useState("ads");
@@ -15,18 +17,18 @@ export default function TechStack() {
         { id: "reporting", label: "Reporting" },
     ];
 
-    const technologies: Record<string, { name: string; description: string; logo: string; link?: string }[]> = {
+    const technologies: Record<string, { name: string; description: string; logo: string; link?: string; icon?: LucideIcon }[]> = {
         ads: [
-            { name: "Meta Ads Manager", description: "Campaign Management", logo: "/images/techstack_logos/Meta-Ads-Manager-logo.png" },
-            { name: "Business Suite", description: "Business Hub", logo: "" },
-            { name: "Ads Library", description: "Competitor Research", logo: "" },
-            { name: "Audience Insights", description: "Audience Data", logo: "" },
-            { name: "Creative Hub", description: "Ad Preview", logo: "" },
-            { name: "Commerce Manager", description: "E-commerce", logo: "" },
+            { name: "Meta Ads Manager", description: "Campaign Management", logo: "", icon: Megaphone },
+            { name: "Business Suite", description: "Business Hub", logo: "", icon: Briefcase },
+            { name: "Ads Library", description: "Competitor Research", logo: "", icon: Library },
+            { name: "Audience Insights", description: "Audience Data", logo: "", icon: Users },
+            { name: "Creative Hub", description: "Ad Preview", logo: "", icon: Palette },
+            { name: "Commerce Manager", description: "E-commerce", logo: "", icon: ShoppingBag },
         ],
         tracking: [
-            { name: "Meta Pixel", description: "Website Tracking", logo: "" },
-            { name: "Conversions API", description: "Server-Side", logo: "" },
+            { name: "Meta Pixel", description: "Website Tracking", logo: "", icon: Crosshair },
+            { name: "Conversions API", description: "Server-Side", logo: "", icon: Server },
             { name: "Google Analytics", description: "Web Analytics", logo: "/images/organic_growth_and_seo/google-analytics-logo.webp", link: "/services/seo-services/technical-seo-services" },
             { name: "Google Tag Manager", description: "Tag Management", logo: "/images/techstack_logos/google-tag-manager-logo.svg" },
             { name: "Hotjar", description: "Heatmaps", logo: "/images/techstack_logos/Hotjar-logo.png" },
@@ -44,7 +46,7 @@ export default function TechStack() {
             { name: "Zapier", description: "Workflow Automation", logo: "/images/ai_automation_logos/zapier-logo.svg", link: "/services/ai-workflows-automations-services" },
             { name: "Make", description: "Integrations", logo: "/images/ai_automation_logos/make-logo.png", link: "/services/ai-workflows-automations-services" },
             { name: "Revealbot", description: "Ad Automation", logo: "/images/techstack_logos/Revealbot-logo.avif" },
-            { name: "AdEspresso", description: "A/B Testing", logo: "" },
+            { name: "AdEspresso", description: "A/B Testing", logo: "", icon: FlaskConical },
             { name: "Madgicx", description: "AI Optimization", logo: "/images/techstack_logos/Madgicx-logo.png" },
             { name: "Smartly.io", description: "Creative AI", logo: "/images/techstack_logos/Smartlyio-logo.png" },
         ],
@@ -60,13 +62,13 @@ export default function TechStack() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
+            className="py-12 md:py-24 relative overflow-hidden"
             style={{ backgroundColor: "var(--card-bg)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <div className="text-center mb-8 md:mb-12">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Facebook Ads</span>{" "}
                         <span style={{ color: "var(--brand-blue-text)" }}>
                             Tech Stack
@@ -78,7 +80,7 @@ export default function TechStack() {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
@@ -106,7 +108,7 @@ export default function TechStack() {
                     {technologies[activeTab].map((tech, idx) => (
                         <div
                             key={idx}
-                            className="group p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                            className="group p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                             style={{
                                 backgroundColor: "var(--background)",
                                 borderColor: "var(--border-color)",
@@ -117,11 +119,13 @@ export default function TechStack() {
                                 <div
                                     className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                                     style={{
-                                        backgroundColor: tech.logo ? "var(--card-bg)" : "#1d4ed8",
-                                        border: tech.logo ? "1px solid var(--border-color)" : "none",
+                                        backgroundColor: tech.logo && !tech.icon ? "var(--card-bg)" : "#1d4ed8",
+                                        border: tech.logo && !tech.icon ? "1px solid var(--border-color)" : "none",
                                     }}
                                 >
-                                    {tech.logo ? (
+                                    {tech.icon ? (
+                                        <tech.icon className="w-7 h-7 text-white" aria-hidden="true" />
+                                    ) : tech.logo ? (
                                         <Image
                                             src={tech.logo}
                                             alt={tech.name}

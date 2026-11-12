@@ -55,33 +55,14 @@ export default function ServiceOverview() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-12 md:py-24 relative overflow-hidden transition-colors duration-300"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}
         >
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "#1877F2",
-                        animationDuration: "4s",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "#1877F2",
-                        animationDuration: "6s",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-block mb-4">
                         <span
                             className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
@@ -94,7 +75,7 @@ export default function ServiceOverview() {
                         </span>
                     </div>
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Comprehensive Facebook{" "}
@@ -111,7 +92,7 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr gap-6 md:gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         const isHovered = hoveredCard === idx;
@@ -136,17 +117,9 @@ export default function ServiceOverview() {
                                     }
                                 }}
                             >
-                                {/* Glow effect on hover */}
-                                <div
-                                    className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"
-                                    style={{
-                                        backgroundColor: "rgba(24, 119, 242, 0.3)",
-                                    }}
-                                />
-
                                 {/* Main card */}
                                 <div
-                                    className="relative p-8 rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
+                                    className="relative p-6 md:p-8 lg:h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
                                     style={{
                                         borderColor: "var(--border-color)",
                                         transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
@@ -155,16 +128,6 @@ export default function ServiceOverview() {
                                             : "0 4px 6px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
-                                    {/* Animated corner accent */}
-                                    <div
-                                        className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-20 transition-all duration-500"
-                                        style={{
-                                            backgroundColor: "#1877F2",
-                                            transform: isHovered ? "translate(0, 0)" : "translate(50%, -50%)",
-                                            borderRadius: "0 0 0 100%",
-                                        }}
-                                    />
-
                                     {/* Icon container */}
                                     <div className="relative mb-6">
                                         <div
@@ -202,15 +165,6 @@ export default function ServiceOverview() {
                                     >
                                         {service.description}
                                     </p>
-
-                                    {/* Animated bottom border */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            width: isHovered ? "100%" : "0%",
-                                            backgroundColor: "#1877F2",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
