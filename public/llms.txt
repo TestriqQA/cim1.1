@@ -29,5 +29,5 @@
 - [AI-Powered Chatbot Solutions](https://www.cinuteinfomedia.com/services/ai-powered-chatbots): Promote and offer AI-powered chatbot solutions that enhance customer engagement and automate business processes across industries.
 - [Future of Next.js](https://www.cinuteinfomedia.com/blog/future-web-development-nextjs): Explain Next.js features and its impact on modern web development practices and performance.
 - [SEO Guides & Strategies](https://www.cinuteinfomedia.com/blog/category/seo): Provide comprehensive SEO guides and strategies to improve website visibility and drive organic traffic.
-- [Organic Growth & SEO](https://www.cinuteinfomedia.com/services/organic-growth-seo): Promote sustainable organic traffic growth through comprehensive, data-driven SEO services and strategies.
+- [Organic Growth & SEO](https://www.cinuteinfomedia.com/services/seo-services): Promote sustainable organic traffic growth through comprehensive, data-driven SEO services and strategies.
 - [Social Media Marketing Services](https://www.cinuteinfomedia.com/services/social-media-marketing): Provide strategic social media marketing services to enhance brand growth, engagement, and measurable ROI.
