@@ -46,7 +46,7 @@ export default function Process() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -60,9 +60,9 @@ export default function Process() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -86,7 +86,7 @@ export default function Process() {
                 </div>
 
                 {/* Process Timeline */}
-                <div className="space-y-8 mb-16">
+                <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
                     {steps.map((step, index) => {
                         const Icon = step.icon;
                         return (
@@ -99,7 +99,7 @@ export default function Process() {
                                     animation: `slideInRight 0.6s ease-out ${index * 0.1}s both`
                                 }}
                             >
-                                <div className="grid lg:grid-cols-12 gap-8 items-start">
+                                <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
                                     {/* Left Side - Number and Icon */}
                                     <div className="lg:col-span-2 flex flex-col items-center">
                                         <div
@@ -166,16 +166,16 @@ export default function Process() {
                                                 {step.details.map((detail, idx) => (
                                                     <div
                                                         key={idx}
-                                                        className="flex items-center gap-2 text-sm transition-transform duration-300 hover:translate-x-1"
+                                                        className="flex min-w-0 items-start gap-2 text-sm transition-transform duration-300 hover:translate-x-1"
                                                         style={{
                                                             animation: `fadeIn 0.5s ease-out ${idx * 0.1}s both`
                                                         }}
                                                     >
                                                         <span
-                                                            className="w-1.5 h-1.5 rounded-full transition-all duration-300 group-hover/card:w-2 group-hover/card:h-2"
+                                                            className="w-1.5 h-1.5 mt-[7px] shrink-0 rounded-full transition-all duration-300 group-hover/card:w-2 group-hover/card:h-2"
                                                             style={{ backgroundColor: "var(--brand-purple)" }}
                                                         />
-                                                        <span style={{ color: "var(--secondary-text)" }}>{detail}</span>
+                                                        <span className="min-w-0 break-words" style={{ color: "var(--secondary-text)" }}>{detail}</span>
                                                     </div>
                                                 ))}
                                             </div>

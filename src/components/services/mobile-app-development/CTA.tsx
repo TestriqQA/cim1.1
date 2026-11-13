@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 export default function CTA() {
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28 overflow-hidden"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
@@ -26,10 +26,10 @@ export default function CTA() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Main CTA Card */}
                 <div
-                    className="p-8 md:p-16 rounded-3xl border text-center overflow-hidden relative"
+                    className="p-6 sm:p-8 md:p-12 rounded-3xl border text-center overflow-hidden relative"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
@@ -85,7 +85,7 @@ export default function CTA() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 md:mb-10">
                             <Link
                                 href="/contact"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
@@ -113,7 +113,11 @@ export default function CTA() {
                         </div>
 
                         {/* Contact Info */}
-                        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8 border-t" style={{ borderColor: "var(--border-color)" }}>
+                        <div className="pt-8 border-t" style={{ borderColor: "var(--border-color)" }}>
+                            {/* w-fit + mx-auto centres the pair as one group, so when they
+                                stack on phones both icons share a left edge instead of
+                                each block centring itself to its own width. */}
+                            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-start sm:items-center w-fit mx-auto">
                             <div className="flex items-center gap-3">
                                 <Mail className="w-5 h-5" style={{ color: "var(--brand-purple-text)" }} />
                                 <div className="text-left">
@@ -137,12 +141,13 @@ export default function CTA() {
                                     </Link>
                                 </div>
                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Additional Info */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="text-center">
                         <div className="text-4xl font-bold mb-2" style={{ color: "var(--brand-purple-text)" }}>
                             Proven
@@ -170,7 +175,7 @@ export default function CTA() {
                 </div>
 
                 {/* Process Steps */}
-                <div className="mt-16 p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                <div className="mt-12 md:mt-16 p-6 sm:p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                     <h3 className="text-2xl font-bold mb-8 text-center" style={{ color: "var(--foreground)" }}>How to Get Started</h3>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {[

@@ -1,6 +1,6 @@
 "use client";
 
-import { Smartphone, Rocket, Palette, Server, Shield, Zap, MonitorSmartphone } from "lucide-react";
+import { Smartphone, Rocket, Palette, Server, Shield, Zap, MonitorSmartphone, BookOpen } from "lucide-react";
 import { ReactLogo, Android, Apple } from "../../Icons";
 import Link from "next/link";
 
@@ -47,12 +47,12 @@ export default function ServiceOverview() {
     return (
         <section
             id="overview"
-            className="relative transition-colors duration-300 py-20"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl mx-auto font-extrabold mb-4">
                         Comprehensive <span style={{ color: "var(--brand-purple-text)" }}>Mobile App Development Services</span>
                     </h2>
@@ -101,12 +101,12 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Key Benefits */}
-                <div className="mt-16 p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                <div className="mt-12 md:mt-16 p-6 sm:p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                     <h3 className="text-2xl font-bold mb-6">What Makes Our Mobile App Development Services Stand Out?</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-yellow))" }}>
-                                <span className="text-white text-sm font-bold">✓</span>
+                            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                <span className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>✓</span>
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">Proven Excellence</h4>
@@ -114,8 +114,8 @@ export default function ServiceOverview() {
                             </div>
                         </div>
                         <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-yellow))" }}>
-                                <span className="text-white text-sm font-bold">✓</span>
+                            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                <span className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>✓</span>
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">Agile & Transparent Process</h4>
@@ -123,8 +123,8 @@ export default function ServiceOverview() {
                             </div>
                         </div>
                         <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-yellow))" }}>
-                                <span className="text-white text-sm font-bold">✓</span>
+                            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                <span className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>✓</span>
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">Comprehensive Support Tiers</h4>
@@ -132,8 +132,8 @@ export default function ServiceOverview() {
                             </div>
                         </div>
                         <div className="flex gap-4">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-yellow))" }}>
-                                <span className="text-white text-sm font-bold">✓</span>
+                            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                <span className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>✓</span>
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">Quality-First Engineering</h4>
@@ -145,17 +145,20 @@ export default function ServiceOverview() {
 
                 {/* Related Resources */}
                 <div className="mt-8 p-6 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>📚 Related Resources</h3>
+                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2" style={{ color: "var(--foreground)" }}>
+                        <BookOpen className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
+                        Related Resources
+                    </h3>
                     <div className="flex flex-col gap-3">
                         <Link href="/blog/mobile-app-development-trends-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">📱</span>
+                            <Smartphone className="w-6 h-6 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--brand-purple-text)] transition-colors">Mobile App Development Trends in 2026</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Discover the latest trends shaping mobile development</p>
                             </div>
                         </Link>
                         <Link href="/blog/ui-ux-design-principles-best-practices" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">🎨</span>
+                            <Palette className="w-6 h-6 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--brand-purple-text)] transition-colors">Mobile UX Design Principles</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Latest design patterns and UX best practices</p>
