@@ -8,6 +8,7 @@ import {
     Video,
     MessageCircle,
     Repeat,
+    Megaphone,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -63,16 +64,9 @@ export default function ServiceOverview() {
         >
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-10 md:mb-16">
-                    <div className="inline-block mb-4">
-                        <span
-                            className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
-                            style={{
-                                background: "var(--card-bg)",
-                                color: "var(--brand-blue-text)",
-                            }}
-                        >
-                            Our Services
-                        </span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
+                        <Megaphone className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm font-medium text-[var(--brand-blue-text)]">Our Services</span>
                     </div>
                     <h2
                         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight"
@@ -92,7 +86,7 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr gap-6 md:gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         const isHovered = hoveredCard === idx;
@@ -119,7 +113,7 @@ export default function ServiceOverview() {
                             >
                                 {/* Main card */}
                                 <div
-                                    className="relative p-6 md:p-8 lg:h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
+                                    className="relative p-6 md:p-8 md:h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
                                     style={{
                                         borderColor: "var(--border-color)",
                                         transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",

@@ -67,9 +67,7 @@ export default function Process() {
             details: [
                 "Scroll-stopping video ads",
                 "Carousel ads optimization",
-                "Carousel ads optimization",
                 <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-inherit" key="copywriting">High-conversion copywriting</Link>,
-                "Dynamic creative testing",
                 "Dynamic creative testing",
                 "Mobile-first design focus",
             ],

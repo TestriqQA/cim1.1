@@ -7,8 +7,6 @@ import {
     GraduationCap,
     Briefcase,
     Home,
-    Utensils,
-    ArrowRight,
     CheckCircle2,
     Sparkles,
 } from "lucide-react";

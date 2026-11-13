@@ -7,7 +7,6 @@ import {
     Users,
     Shield,
     Zap,
-    HeadphonesIcon,
     Sparkles,
 } from "lucide-react";
 import Link from "next/link";
