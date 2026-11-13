@@ -31,14 +31,14 @@ export default function SocialMediaFAQ() {
     ];
 
     return (
-        <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
-            <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
-                <div className="text-center mb-16">
+        <section className="py-10 md:py-20" style={{ backgroundColor: "var(--card-bg)" }}>
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-12 xl:px-20">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background)] border border-[var(--border-color)] mb-6">
                         <MessageSquare className="w-4 h-4 text-[var(--accent-teal-text)]" />
                         <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--foreground)" }}>FAQ</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
                     <p className="text-lg text-[var(--foreground)] max-w-2xl mx-auto">
                         Answers to common questions about our social media marketing services, strategy, and results.
                     </p>
@@ -57,7 +57,7 @@ export default function SocialMediaFAQ() {
                         >
                             <button
                                 onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-                                className="w-full text-left px-6 py-6 focus:outline-none"
+                                className="w-full text-left px-4 sm:px-6 py-5 sm:py-6 focus:outline-none"
                             >
                                 <div className="flex gap-4 items-center justify-between">
                                     <div className="flex gap-4 items-center">
@@ -70,7 +70,7 @@ export default function SocialMediaFAQ() {
                                         >
                                             <span className="font-bold">{i + 1}</span>
                                         </div>
-                                        <h3 className="font-bold text-lg md:text-xl pr-8" style={{ color: "var(--foreground)" }}>{faq.q}</h3>
+                                        <h3 className="font-bold text-lg md:text-xl" style={{ color: "var(--foreground)" }}>{faq.q}</h3>
                                     </div>
                                     <ChevronDown
                                         className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${faqOpen === i ? "rotate-180" : ""}`}
@@ -78,7 +78,7 @@ export default function SocialMediaFAQ() {
                                     />
                                 </div>
 
-                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
+                                <div className={`mt-4 pl-0 pr-0 sm:pl-14 sm:pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
                                     <p className="text-[var(--foreground)] leading-relaxed">
                                         {faq.a}
                                     </p>

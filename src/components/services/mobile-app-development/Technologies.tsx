@@ -58,7 +58,7 @@ export default function Technologies() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Background */}
@@ -69,9 +69,9 @@ export default function Technologies() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
                         <span style={{ color: "var(--brand-purple-text)" }}>Technologies & Tools</span> We Use
                     </h2>
@@ -81,13 +81,13 @@ export default function Technologies() {
                 </div>
 
                 {/* Tech Categories Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
                     {techCategories.map((category, index) => {
                         const Icon = category.icon;
                         return (
                             <div
                                 key={index}
-                                className="group p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
+                                className="group relative p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",
@@ -115,7 +115,7 @@ export default function Technologies() {
                                     </div>
 
                                     {/* Technologies List */}
-                                    <div className="space-y-3 grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                         {category.technologies.map((tech, idx) => (
                                             <div
                                                 key={idx}
@@ -166,7 +166,7 @@ export default function Technologies() {
                 </div>
 
                 {/* Tech Stack Highlights */}
-                <div className="p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                <div className="p-6 sm:p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                     <h3 className="text-2xl font-bold mb-6">Why Our Tech Stack Matters</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
@@ -196,8 +196,8 @@ export default function Technologies() {
                             }
                         ].map((highlight, index) => (
                             <div key={index} className="flex gap-4">
-                                <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-1" style={{ background: "linear-gradient(135deg, var(--brand-purple), var(--brand-yellow))" }}>
-                                    <span className="text-white text-sm font-bold">✓</span>
+                                <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-1">
+                                    <span className="text-sm font-bold" style={{ color: "var(--brand-purple-text)" }}>✓</span>
                                 </div>
                                 <div>
                                     <h4 className="font-semibold mb-1">{highlight.title}</h4>

@@ -4,22 +4,22 @@ import ServiceOverview from '@/components/services/mobile-app-development/Servic
 
 // Lazy load below-the-fold components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/mobile-app-development/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 const AppTypes = dynamic(() => import('@/components/services/mobile-app-development/AppTypes'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 const Process = dynamic(() => import('@/components/services/mobile-app-development/Process'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 const Technologies = dynamic(() => import('@/components/services/mobile-app-development/Technologies'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 const SecurityAndSEO = dynamic(() => import('@/components/services/mobile-app-development/SecurityAndSEO'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 const CTA = dynamic(() => import('@/components/services/mobile-app-development/CTA'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-16 lg:py-20" />,
 });
 
 import { getPageMetadata } from '@/lib/metadata';

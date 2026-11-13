@@ -7,7 +7,6 @@ import {
     Users,
     Shield,
     Zap,
-    HeadphonesIcon,
     Sparkles,
 } from "lucide-react";
 import Link from "next/link";
@@ -56,24 +55,12 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
+            className="py-12 md:py-24 relative overflow-hidden"
             style={{ backgroundColor: "var(--card-bg)" }}
         >
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute -top-48 -right-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#1877F2" }}
-                />
-                <div
-                    className="absolute -bottom-48 -left-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#1877F2" }}
-                />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -88,7 +75,7 @@ export default function WhyChooseUs() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why Choose Us for</span>{" "}
                         <span style={{ color: "var(--brand-blue-text)" }}>
                             Facebook Ads
@@ -100,7 +87,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
                         const isHovered = hoveredCard === idx;
@@ -112,20 +99,10 @@ export default function WhyChooseUs() {
                                 onMouseEnter={() => setHoveredCard(idx)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
-                                {/* Glow Effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl blur-xl transition-opacity duration-500
-                                        ${isHovered ? "opacity-100" : "opacity-0"}
-                                    `}
-                                    style={{ backgroundColor: "rgba(24, 119, 242, 0.2)" }}
-                                />
-
                                 {/* Card */}
                                 <div
                                     className={`
-                                        relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden
-                                        ${isHovered ? "shadow-2xl" : ""}
+                                        relative p-6 md:p-8 h-full rounded-3xl border transition-all duration-500 overflow-hidden
                                     `}
                                     style={{
                                         backgroundColor: "var(--background)",
@@ -139,7 +116,6 @@ export default function WhyChooseUs() {
                                         style={{
                                             backgroundColor: "#1877F2",
                                             transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                            boxShadow: isHovered ? `0 8px 24px ${reason.shadowColor}` : "none",
                                         }}
                                     >
                                         <Icon className="w-7 h-7 text-white" />
@@ -161,14 +137,6 @@ export default function WhyChooseUs() {
                                         {reason.description}
                                     </p>
 
-                                    {/* Bottom accent line */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            width: isHovered ? "100%" : "0%",
-                                            backgroundColor: "#1877F2",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );

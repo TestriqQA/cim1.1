@@ -8,13 +8,13 @@ export default function CTA() {
     const pinterestRed = "#E60023";
 
     return (
-        <section className="py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
+        <section className="py-12 md:py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
             {/* Background Gradient */}
             <div
                 className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-50"
             />
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div
                     className="relative rounded-3xl overflow-hidden border p-8 md:p-16 text-center"
                     style={{
@@ -58,7 +58,7 @@ export default function CTA() {
                     </div>
 
                     {/* Stats strip */}
-                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
+                    <div className="mt-10 md:mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         <div className="text-center">
                             <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>High</p>
                             <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>Impressions</p>

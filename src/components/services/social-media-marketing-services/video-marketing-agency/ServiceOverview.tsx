@@ -8,6 +8,7 @@ import {
     BarChart2,
     MonitorPlay,
     Clapperboard,
+    Megaphone,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -65,43 +66,17 @@ export default function ServiceOverview() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-12 md:py-24 relative overflow-hidden transition-colors duration-300"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}
         >
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: youtubeRed,
-                        animationDuration: "4s",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: youtubeRed,
-                        animationDuration: "6s",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <span
-                            className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                color: "var(--accent-red-text)",
-                            }}
-                        >
-                            Full-Funnel Excellence
-                        </span>
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="text-center mb-10 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${youtubeRed}30` }}>
+                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>Full-Funnel Excellence</span>
                     </div>
                     <h2
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
@@ -120,7 +95,7 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         const isHovered = hoveredCard === idx;
@@ -132,21 +107,10 @@ export default function ServiceOverview() {
                                 onMouseEnter={() => setHoveredCard(idx)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
-                                {/* Glow effect on hover */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl opacity-0 transition-all duration-500 blur-xl
-                                        ${isHovered ? "opacity-30" : ""}
-                                    `}
-                                    style={{
-                                        background: `linear-gradient(135deg, ${service.color}40, ${service.color}20)`,
-                                    }}
-                                />
-
                                 {/* Main card */}
                                 <div
                                     className={`
-                                        relative p-8 rounded-3xl border transition-all duration-500 bg-card overflow-hidden
+                                        relative p-6 md:p-8 h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden
                                         ${isHovered ? "shadow-2xl -translate-y-2 scale-[1.02]" : "shadow-lg"}
                                     `}
                                     style={{
@@ -154,17 +118,6 @@ export default function ServiceOverview() {
                                         borderColor: isHovered ? service.color : "var(--border-color)",
                                     }}
                                 >
-                                    {/* Animated corner accent */}
-                                    <div
-                                        className={`
-                                            absolute top-0 right-0 w-32 h-32 transition-all duration-500
-                                            ${isHovered ? "opacity-20 scale-100" : "opacity-0 scale-0"}
-                                        `}
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${service.color}, transparent 70%)`,
-                                        }}
-                                    />
-
                                     {/* Icon container */}
                                     <div className="relative mb-6">
                                         <div
@@ -184,19 +137,6 @@ export default function ServiceOverview() {
                                             />
                                         </div>
 
-                                        {/* Floating particles */}
-                                        {isHovered && (
-                                            <>
-                                                <div
-                                                    className="absolute -top-1 -right-1 w-2 h-2 rounded-full animate-ping"
-                                                    style={{ backgroundColor: service.color }}
-                                                />
-                                                <div
-                                                    className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full animate-ping"
-                                                    style={{ backgroundColor: service.color, animationDelay: "0.3s" }}
-                                                />
-                                            </>
-                                        )}
                                     </div>
 
                                     {/* Content */}

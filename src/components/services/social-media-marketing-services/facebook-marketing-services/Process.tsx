@@ -67,9 +67,7 @@ export default function Process() {
             details: [
                 "Scroll-stopping video ads",
                 "Carousel ads optimization",
-                "Carousel ads optimization",
                 <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline text-inherit" key="copywriting">High-conversion copywriting</Link>,
-                "Dynamic creative testing",
                 "Dynamic creative testing",
                 "Mobile-first design focus",
             ],
@@ -125,21 +123,15 @@ export default function Process() {
     ];
 
     return (
-        <section id="process" className="py-24 relative overflow-hidden bg-background">
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+        <section id="process" className="py-12 md:py-24 relative overflow-hidden bg-background">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
                         <Zap className="w-4 h-4 text-blue-500" />
                         <span className="text-sm font-medium text-[var(--brand-blue-text)]">6-Step Framework</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Facebook Ads</span>{" "}
                         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                             Process
@@ -151,7 +143,7 @@ export default function Process() {
                 </div>
 
                 {/* Process Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {steps.map((step, idx) => {
                         const Icon = step.icon;
                         const isHovered = hoveredStep === idx;
@@ -163,20 +155,9 @@ export default function Process() {
                                 onMouseEnter={() => setHoveredStep(idx)}
                                 onMouseLeave={() => setHoveredStep(null)}
                             >
-                                {/* Outer glow effect */}
                                 <div
                                     className={`
-                                        absolute -inset-1 rounded-3xl opacity-0 blur-2xl transition-all duration-500
-                                        ${isHovered ? "opacity-20" : ""}
-                                    `}
-                                    style={{
-                                        background: `linear-gradient(135deg, ${step.color}, transparent)`,
-                                    }}
-                                />
-
-                                <div
-                                    className={`
-                                        relative p-8 rounded-3xl border backdrop-blur-sm
+                                        relative p-6 md:p-8 rounded-3xl border backdrop-blur-sm
                                         transition-all duration-500 h-full overflow-hidden
                                         ${isHovered ? "shadow-2xl scale-[1.03]" : "shadow-lg"}
                                     `}
@@ -195,40 +176,6 @@ export default function Process() {
                                             background: `linear-gradient(135deg, ${step.color}, transparent)`,
                                         }}
                                     />
-
-                                    {/* Animated corner accent */}
-                                    <div
-                                        className={`
-                                            absolute top-0 right-0 w-20 h-20 rounded-bl-full transition-all duration-500
-                                            ${isHovered ? "opacity-10 scale-100" : "opacity-0 scale-0"}
-                                        `}
-                                        style={{ backgroundColor: step.color }}
-                                    />
-
-                                    {/* Step Number Badge */}
-                                    <div
-                                        className={`
-                                            absolute -top-2 -left-2 w-12 h-12 rounded-2xl flex items-center justify-center 
-                                            text-white font-bold shadow-lg transition-all duration-500
-                                            ${isHovered ? "scale-110 rotate-12" : "scale-100 rotate-0"}
-                                        `}
-                                        style={{
-                                            background: `linear-gradient(135deg, ${step.color}, ${step.color}DD)`,
-                                        }}
-                                    >
-                                        <span className="text-lg">{idx + 1}</span>
-
-                                        {/* Pulse ring on hover */}
-                                        {isHovered && (
-                                            <div
-                                                className="absolute inset-0 rounded-2xl animate-ping"
-                                                style={{
-                                                    backgroundColor: step.color,
-                                                    opacity: 0.3,
-                                                }}
-                                            />
-                                        )}
-                                    </div>
 
                                     <div className="relative z-10">
                                         {/* Icon and Duration Row */}
@@ -336,45 +283,7 @@ export default function Process() {
                                                 </div>
                                             ))}
                                         </div>
-
-                                        {/* Bottom Progress Bar */}
-                                        <div
-                                            className="mt-6 pt-6 border-t"
-                                            style={{
-                                                borderColor: isHovered ? `${step.color}20` : "var(--border-color)",
-                                            }}
-                                        >
-                                            <div className="relative h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-                                                <div
-                                                    className={`
-                                                        absolute inset-y-0 left-0 rounded-full transition-all duration-700
-                                                        ${isHovered ? "w-full" : "w-0"}
-                                                    `}
-                                                    style={{
-                                                        background: `linear-gradient(90deg, ${step.color}, ${step.color}AA)`,
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
                                     </div>
-
-                                    {/* Decorative dots */}
-                                    {isHovered && (
-                                        <>
-                                            <div
-                                                className="absolute top-4 right-4 w-2 h-2 rounded-full animate-pulse"
-                                                style={{ backgroundColor: step.color, opacity: 0.4 }}
-                                            />
-                                            <div
-                                                className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full animate-pulse"
-                                                style={{
-                                                    backgroundColor: step.color,
-                                                    opacity: 0.4,
-                                                    animationDelay: "0.5s",
-                                                }}
-                                            />
-                                        </>
-                                    )}
                                 </div>
                             </div>
                         );
@@ -382,7 +291,7 @@ export default function Process() {
                 </div>
 
                 {/* Bottom CTA Section */}
-                <div className="mt-16 text-center">
+                <div className="mt-10 md:mt-16 text-center">
                     <div
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full border"
                         style={{

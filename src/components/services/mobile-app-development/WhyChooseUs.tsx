@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -56,9 +56,9 @@ export default function WhyChooseUs() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -82,13 +82,13 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Reasons Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {reasons.map((reason, index) => {
                         const Icon = reason.icon;
                         return (
                             <div
                                 key={index}
-                                className="group relative p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border overflow-hidden"
+                                className="group relative p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border overflow-hidden"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",
@@ -127,7 +127,7 @@ export default function WhyChooseUs() {
 
                 {/* Comparison Section */}
                 <div
-                    className="mt-20 p-10 rounded-3xl border"
+                    className="mt-12 md:mt-16 p-6 sm:p-8 md:p-10 rounded-3xl border"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
@@ -135,16 +135,18 @@ export default function WhyChooseUs() {
                 >
                     {/* Heading */}
                     <h3
-                        className="text-2xl md:text-3xl font-bold mb-10 text-center"
+                        className="text-2xl md:text-3xl font-bold mb-8 md:mb-10 text-center"
                         style={{ color: "var(--foreground)" }}
                     >
                         Our Competitive Advantages
                     </h3>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full border-separate border-spacing-y-3">
+                    {/* Below md the table switches to block display, so each row
+                        stacks as a card and there is no x-axis scroll. md+ is unchanged. */}
+                    <div className="md:overflow-x-auto">
+                        <table className="w-full block md:table border-separate border-spacing-y-3">
                             {/* Table Head */}
-                            <thead>
+                            <thead className="hidden md:table-header-group">
                                 <tr>
                                     <th className="text-left px-6 py-4 text-lg font-semibold" style={{ color: "var(--secondary-text)" }}>
                                         Feature
@@ -180,7 +182,7 @@ export default function WhyChooseUs() {
                             </thead>
 
                             {/* Table Body */}
-                            <tbody>
+                            <tbody className="block md:table-row-group">
                                 {[
                                     { label: "Custom Development", icon: Layers, cim: true, others: false },
                                     { label: "Post-Launch Support", icon: Wrench, cim: true, others: false },
@@ -191,7 +193,8 @@ export default function WhyChooseUs() {
                                 ].map((row, index) => (
                                     <tr
                                         key={index}
-                                        className="transition-all"
+                                        className="block md:table-row mb-3 last:mb-0 md:mb-0 p-4 md:p-0 rounded-2xl border md:border-0 md:rounded-none transition-all"
+                                        style={{ borderColor: "var(--border-color)" }}
                                         onMouseEnter={(e) =>
                                         (e.currentTarget.style.backgroundColor =
                                             "color-mix(in srgb, var(--brand-purple) 6%, transparent)")
@@ -201,10 +204,10 @@ export default function WhyChooseUs() {
                                         }
                                     >
                                         {/* Feature */}
-                                        <td className="px-6 py-5">
+                                        <td className="block md:table-cell px-0 md:px-6 py-0 md:py-5 pb-3 md:pb-5">
                                             <div className="flex items-center gap-3">
                                                 <div
-                                                    className="w-9 h-9 rounded-xl flex items-center justify-center"
+                                                    className="w-9 h-9 flex-shrink-0 rounded-xl flex items-center justify-center"
                                                     style={{
                                                         backgroundColor:
                                                             "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
@@ -222,44 +225,56 @@ export default function WhyChooseUs() {
                                         </td>
 
                                         {/* CIM Cell */}
-                                        <td className="text-center px-6 py-5">
-                                            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
-                                                style={{
-                                                    backgroundColor:
-                                                        "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                                                    color: "var(--brand-purple-text)",
-                                                }}
-                                            >
-                                                <CheckCircle2 className="w-4 h-4" />
-                                                Included
-                                            </span>
-                                        </td>
-
-                                        {/* Others Cell */}
-                                        <td className="text-center px-6 py-5">
-                                            {row.others ? (
+                                        <td className="block md:table-cell md:text-center px-0 md:px-6 py-1 md:py-5">
+                                            <div className="flex items-center justify-between gap-3 md:block">
+                                                {/* Row label, since the header is hidden on phones */}
+                                                <span className="md:hidden text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                    CIM
+                                                </span>
                                                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
                                                     style={{
                                                         backgroundColor:
-                                                            "color-mix(in srgb, var(--border-color) 40%, transparent)",
-                                                        color: "var(--secondary-text)",
+                                                            "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
+                                                        color: "var(--brand-purple-text)",
                                                     }}
                                                 >
                                                     <CheckCircle2 className="w-4 h-4" />
-                                                    Limited
+                                                    Included
                                                 </span>
-                                            ) : (
-                                                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
-                                                    style={{
-                                                        backgroundColor:
-                                                            "color-mix(in srgb, var(--border-color) 20%, transparent)",
-                                                        color: "var(--secondary-text)",
-                                                    }}
-                                                >
-                                                    <XCircle className="w-4 h-4" />
-                                                    Not Included
+                                            </div>
+                                        </td>
+
+                                        {/* Others Cell */}
+                                        <td className="block md:table-cell md:text-center px-0 md:px-6 py-1 md:py-5">
+                                            <div className="flex items-center justify-between gap-3 md:block">
+                                                {/* Row label, since the header is hidden on phones */}
+                                                <span className="md:hidden text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                    Others
                                                 </span>
-                                            )}
+                                                {row.others ? (
+                                                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
+                                                        style={{
+                                                            backgroundColor:
+                                                                "color-mix(in srgb, var(--border-color) 40%, transparent)",
+                                                            color: "var(--secondary-text)",
+                                                        }}
+                                                    >
+                                                        <CheckCircle2 className="w-4 h-4" />
+                                                        Limited
+                                                    </span>
+                                                ) : (
+                                                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
+                                                        style={{
+                                                            backgroundColor:
+                                                                "color-mix(in srgb, var(--border-color) 20%, transparent)",
+                                                            color: "var(--secondary-text)",
+                                                        }}
+                                                    >
+                                                        <XCircle className="w-4 h-4" />
+                                                        Not Included
+                                                    </span>
+                                                )}
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}

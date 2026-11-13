@@ -39,12 +39,12 @@ export default function TechStack() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden border-t"
+            className="py-12 md:py-24 relative overflow-hidden border-t"
             style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Our X <span style={{ color: "var(--secondary-text)" }}>Tech Stack</span>
                     </h2>
@@ -54,7 +54,7 @@ export default function TechStack() {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
@@ -78,7 +78,7 @@ export default function TechStack() {
                     {technologies[activeTab].map((tech, idx) => (
                         <div
                             key={idx}
-                            className="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
+                            className="group p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
                             style={{
                                 borderColor: "var(--border-color)",
                                 backgroundColor: "var(--card-bg)"

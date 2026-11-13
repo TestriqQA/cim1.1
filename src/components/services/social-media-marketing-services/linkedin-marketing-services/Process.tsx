@@ -107,16 +107,10 @@ export default function Process() {
     ];
 
     return (
-        <section id="process" className="py-24 relative overflow-hidden bg-background">
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: `${linkedinBlue}08` }} />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: `${linkedinBlue}05`, animationDelay: "1.5s" }} />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+        <section id="process" className="py-12 md:py-24 relative overflow-hidden bg-background">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${linkedinBlue}30` }}>
                         <Zap className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>6-Step Framework</span>
@@ -133,7 +127,7 @@ export default function Process() {
                 </div>
 
                 {/* Process Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {[
                         {
                             icon: Search,
@@ -230,33 +224,13 @@ export default function Process() {
                                 onMouseEnter={() => setHoveredStep(idx)}
                                 onMouseLeave={() => setHoveredStep(null)}
                             >
-                                {/* Glow */}
                                 <div
-                                    className={`absolute -inset-1 rounded-3xl opacity-0 blur-2xl transition-all duration-500 ${isHovered ? "opacity-20" : ""}`}
-                                    style={{ backgroundColor: step.color }}
-                                />
-
-                                <div
-                                    className={`relative p-8 rounded-3xl border backdrop-blur-sm transition-all duration-500 h-full overflow-hidden ${isHovered ? "shadow-2xl scale-[1.03]" : "shadow-lg"}`}
+                                    className={`relative p-6 md:p-8 rounded-3xl border backdrop-blur-sm transition-all duration-500 h-full overflow-hidden ${isHovered ? "shadow-2xl scale-[1.03]" : "shadow-lg"}`}
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: isHovered ? step.color : "var(--border-color)",
                                     }}
                                 >
-                                    {/* Corner accent */}
-                                    <div
-                                        className={`absolute top-0 right-0 w-20 h-20 rounded-bl-full transition-all duration-500 ${isHovered ? "opacity-20 scale-100" : "opacity-0 scale-0"}`}
-                                        style={{ backgroundColor: step.color }}
-                                    />
-
-                                    {/* Step Number */}
-                                    <div
-                                        className={`absolute -top-2 -left-2 w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold shadow-lg transition-all duration-500 ${isHovered ? "scale-110 rotate-12" : "scale-100 rotate-0"}`}
-                                        style={{ backgroundColor: step.color }}
-                                    >
-                                        <span className="text-lg">{idx + 1}</span>
-                                    </div>
-
                                     <div className="relative z-10">
                                         {/* Icon and Duration */}
                                         <div className="flex items-center justify-between gap-3 mb-6">
@@ -309,15 +283,6 @@ export default function Process() {
                                             ))}
                                         </div>
 
-                                        {/* Progress Bar */}
-                                        <div className="mt-6 pt-6 border-t" style={{ borderColor: isHovered ? `${step.color}30` : "var(--border-color)" }}>
-                                            <div className="relative h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-                                                <div
-                                                    className={`absolute inset-y-0 left-0 rounded-full transition-all duration-700 ${isHovered ? "w-full" : "w-0"}`}
-                                                    style={{ backgroundColor: step.color }}
-                                                />
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

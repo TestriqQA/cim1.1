@@ -35,7 +35,7 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 md:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -43,7 +43,7 @@ export default function Hero() {
                 >
                     <Link
                         href="/"
-                        className="flex items-center gap-1 hover:underline transition-colors p-2"
+                        className="flex items-center gap-1 hover:underline transition-colors py-1"
                         style={{ color: "var(--secondary-text)" }}
                     >
                         <Home className="w-4 h-4" />
@@ -54,7 +54,7 @@ export default function Hero() {
 
                     <Link
                         href="/services"
-                        className="hover:underline transition-colors p-2"
+                        className="hover:underline transition-colors py-1"
                         style={{ color: "var(--secondary-text)" }}
                     >
                         Services
@@ -63,14 +63,14 @@ export default function Hero() {
                     <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
 
                     <span
-                        className="font-semibold p-2"
+                        className="font-semibold py-1"
                         style={{ color: "var(--brand-purple-text)" }}
                     >
                         Mobile App Development
                     </span>
                 </nav>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
                     {/* LEFT CONTENT */}
                     <div
@@ -121,63 +121,63 @@ export default function Hero() {
 
                         {/* Feature Highlights */}
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Rocket className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Fast Launch
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     High Performance
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Smartphone className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     All Platforms
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
                             </div>
-                            <Link href="/services/mobile-app-development/enterprise-application-development-services" className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <Link href="/services/mobile-app-development/enterprise-application-development-services" className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <ShieldCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Enterprise Secure
                                 </span>
                             </Link>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Code className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Clean Code
                                 </span>
                             </div>
@@ -250,7 +250,7 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div
-                        className="relative flex flex-col items-center gap-12 justify-center animate-fadeIn -mt-10"
+                        className="relative flex flex-col items-center gap-8 lg:gap-12 justify-center animate-fadeIn lg:-mt-10"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
                         <div
@@ -285,7 +285,7 @@ export default function Hero() {
                                 Why Businesses Trust Us
                             </h2>
                             <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
-                                a rigorous QA process • faster time-to-market • 24/7 global support • Enterprise-grade security (GDPR, HIPAA, SOC 2-aligned practices)
+                                A rigorous QA process • Faster time-to-market • 24/7 global support • Enterprise-grade security (GDPR, HIPAA, SOC 2-aligned practices)
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 <span

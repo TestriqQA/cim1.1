@@ -60,7 +60,7 @@ export default function SecurityAndSEO() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 md:py-16 lg:py-20"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -74,9 +74,9 @@ export default function SecurityAndSEO() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn">
+                <div className="text-center mb-10 md:mb-12 animate-fadeIn">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "var(--foreground)" }}>
                         <span style={{ color: "var(--brand-purple-text)" }}>Security, Performance</span> & App Store Optimization
                     </h2>
@@ -86,10 +86,10 @@ export default function SecurityAndSEO() {
                 </div>
 
                 {/* Two Column Layout */}
-                <div className="grid lg:grid-cols-2 gap-12 mb-12">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-10 md:mb-12">
                     {/* Security Section */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold mb-6 md:mb-8 flex items-center gap-3">
                             <Lock className="w-8 h-8" style={{ color: "var(--brand-purple-text)" }} />
                             <span style={{ color: "var(--foreground)" }}>Security Best Practices</span>
                         </h3>
@@ -132,7 +132,7 @@ export default function SecurityAndSEO() {
 
                     {/* App Store Optimization Section */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold mb-6 md:mb-8 flex items-center gap-3">
                             <Search className="w-8 h-8" style={{ color: "var(--accent-amber-text)" }} />
                             <span style={{ color: "var(--foreground)" }}>App Store Optimization</span>
                         </h3>
@@ -175,7 +175,7 @@ export default function SecurityAndSEO() {
                 </div>
 
                 {/* Security Compliance */}
-                <div className="p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                <div className="p-6 sm:p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                     <h3 className="text-2xl font-bold mb-6">Security & Compliance Standards</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
                         {[

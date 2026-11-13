@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChevronRight, Users, TrendingUp, Target, BarChart3 } from "lucide-react";
+import { ArrowRight, ChevronRight, Target, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook } from "lucide-react";
@@ -8,7 +8,7 @@ import { Facebook } from "lucide-react";
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -71,8 +71,8 @@ export default function Hero() {
                 .delay-500 { animation-delay: 0.5s; }
             `}</style>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
                     {/* Text Content */}
                     <div className="space-y-8 text-center lg:text-left">
                         {/* Breadcrumbs */}
@@ -102,7 +102,7 @@ export default function Hero() {
 
                         {/* Title */}
                         <h1
-                            className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
                             Scale Your Business with{" "}
@@ -123,7 +123,7 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Master your presence on the world's largest social network with a Facebook marketing agency that prioritizes ROI over vanity metrics. In the competitive <Link href="/blog/category/digital-marketing" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">digital landscape</Link> of 2026, simply "posting" isn't enough. You need an expert Facebook marketing company that leverages the latest Meta AI algorithms and <Link href="/services/seo-services/seo-content-writing-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">high-E-E-A-T content</Link> principles to drive measurable growth.
+                            Master your presence on the world&apos;s largest social network with a Facebook marketing agency that prioritizes ROI over vanity metrics. In the competitive <Link href="/blog/category/digital-marketing" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">digital landscape</Link> of 2026, simply &quot;posting&quot; isn&apos;t enough. You need an expert Facebook marketing company that leverages the latest Meta AI algorithms and <Link href="/services/seo-services/seo-content-writing-services" className="text-[var(--brand-blue-text)] hover:underline underline underline-offset-2">high-E-E-A-T content</Link> principles to drive measurable growth.
                         </p>
 
                         {/* Feature Pills */}
@@ -283,7 +283,7 @@ export default function Hero() {
 
                         {/* Platform Pills */}
                         <div
-                            className="p-5 rounded-2xl border mt-4"
+                            className="p-5 rounded-2xl border"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",

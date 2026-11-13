@@ -60,12 +60,12 @@ export default function TechStack() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
+            className="py-12 md:py-24 relative overflow-hidden"
             style={{ backgroundColor: "var(--card-bg)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our Instagram</span>{" "}
                         <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ export default function TechStack() {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
@@ -100,7 +100,7 @@ export default function TechStack() {
                     {technologies[activeTab].map((tech, idx) => (
                         <div
                             key={idx}
-                            className="group p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                            className="group p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                             style={{
                                 backgroundColor: "var(--background)",
                                 borderColor: "var(--border-color)",

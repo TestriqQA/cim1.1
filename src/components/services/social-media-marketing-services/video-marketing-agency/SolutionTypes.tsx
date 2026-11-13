@@ -102,15 +102,9 @@ export default function SolutionTypes() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: `${youtubeRed}08` }} />
-                <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: `${youtubeRed}05`, animationDelay: "1s" }} />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+        <section className="py-12 md:py-24 bg-background relative overflow-hidden">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${youtubeRed}30` }}>
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>Tailored Expertise</span>
@@ -138,14 +132,8 @@ export default function SolutionTypes() {
                                 onMouseEnter={() => setHoveredCard(idx)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
-                                {/* Glow effect */}
                                 <div
-                                    className={`absolute -inset-0.5 rounded-3xl opacity-0 blur-xl transition-all duration-500 ${isHovered ? "opacity-30" : ""}`}
-                                    style={{ backgroundColor: solution.color }}
-                                />
-
-                                <div
-                                    className={`relative p-8 rounded-3xl border backdrop-blur-sm transition-all duration-500 h-full ${isHovered ? "shadow-2xl -translate-y-2 scale-[1.02]" : "shadow-lg"}`}
+                                    className={`relative p-6 md:p-8 rounded-3xl border backdrop-blur-sm overflow-hidden transition-all duration-500 h-full ${isHovered ? "shadow-2xl -translate-y-2 scale-[1.02]" : "shadow-lg"}`}
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: isHovered ? solution.color : "var(--border-color)",
