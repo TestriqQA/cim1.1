@@ -15,7 +15,7 @@ export default function CTA() {
     ];
 
     return (
-        <section className="py-24 relative overflow-hidden bg-background">
+        <section className="py-12 md:py-24 relative overflow-hidden bg-background">
             {/* Background */}
             <div
                 className="absolute inset-0 opacity-50"
@@ -24,7 +24,7 @@ export default function CTA() {
                 }}
             />
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div
                     className="relative rounded-[2rem] p-6 md:p-12 lg:p-16 overflow-hidden"
                     style={{
@@ -33,8 +33,6 @@ export default function CTA() {
                 >
                     {/* Decorative elements */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full opacity-20" style={{ backgroundColor: "white" }} />
-                        <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full opacity-20" style={{ backgroundColor: "white" }} />
                         {/* Grid pattern */}
                         <div
                             className="absolute inset-0 opacity-10"
@@ -45,7 +43,7 @@ export default function CTA() {
                         />
                     </div>
 
-                    <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         {/* Left Content */}
                         <div className="text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6">
@@ -68,7 +66,7 @@ export default function CTA() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                                 {benefits.map((benefit, idx) => (
                                     <div key={idx} className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-5 h-5 text-white/80" />
+                                        <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 text-white/80" />
                                         <span className="text-sm text-white">{benefit}</span>
                                     </div>
                                 ))}
@@ -88,20 +86,20 @@ export default function CTA() {
                         </div>
 
                         {/* Right Stats */}
-                        <div className="grid grid-cols-2 gap-3 sm:gap-6">
-                            <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
+                        <div className="grid grid-cols-2 auto-rows-fr gap-3 sm:gap-6">
+                            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Significant</div>
                                 <div className="text-xs sm:text-sm text-white">Lower CPA</div>
                             </div>
-                            <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
+                            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">Strong</div>
                                 <div className="text-xs sm:text-sm text-white">Traffic Growth</div>
                             </div>
-                            <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
+                            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">High</div>
                                 <div className="text-xs sm:text-sm text-white">Client Retention</div>
                             </div>
-                            <div className="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-sm text-center">
+                            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">24/7</div>
                                 <div className="text-xs sm:text-sm text-white">Expert Support</div>
                             </div>

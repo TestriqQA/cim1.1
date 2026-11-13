@@ -28,7 +28,7 @@ export default function CTA() {
                 <div
                     className="relative rounded-[2rem] p-6 md:p-12 lg:p-16 overflow-hidden"
                     style={{
-                        backgroundColor: "#0f172a",
+                        backgroundColor: fbBlue,
                     }}
                 >
                     {/* Decorative elements */}
@@ -66,7 +66,7 @@ export default function CTA() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                                 {benefits.map((benefit, idx) => (
                                     <div key={idx} className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-white/80" />
+                                        <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 text-white/80" />
                                         <span className="text-sm text-white">{benefit}</span>
                                     </div>
                                 ))}
@@ -76,11 +76,8 @@ export default function CTA() {
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
                                 <Link
                                     href="/contact"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                    style={{
-                                        backgroundColor: "#1d4ed8",
-                                        boxShadow: `0 4px 20px ${fbBlue}40`
-                                    }}
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 bg-white rounded-full font-bold text-sm sm:text-base md:text-lg transition-all transform hover:scale-105 hover:shadow-lg"
+                                    style={{ color: "#1d4ed8" }}
                                 >
                                     Get Free Facebook Audit
                                     <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2 flex-shrink-0" />

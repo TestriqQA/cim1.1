@@ -124,12 +124,6 @@ export default function Process() {
 
     return (
         <section id="process" className="py-12 md:py-24 relative overflow-hidden bg-background">
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
-            </div>
-
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16">
@@ -161,17 +155,6 @@ export default function Process() {
                                 onMouseEnter={() => setHoveredStep(idx)}
                                 onMouseLeave={() => setHoveredStep(null)}
                             >
-                                {/* Outer glow effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl opacity-0 blur-2xl transition-all duration-500
-                                        ${isHovered ? "opacity-20" : ""}
-                                    `}
-                                    style={{
-                                        background: `linear-gradient(135deg, ${step.color}, transparent)`,
-                                    }}
-                                />
-
                                 <div
                                     className={`
                                         relative p-6 md:p-8 rounded-3xl border backdrop-blur-sm

@@ -86,7 +86,7 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         const isHovered = hoveredCard === idx;
@@ -113,7 +113,7 @@ export default function ServiceOverview() {
                             >
                                 {/* Main card */}
                                 <div
-                                    className="relative p-6 md:p-8 md:h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
+                                    className="relative p-6 md:p-8 h-full rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
                                     style={{
                                         borderColor: "var(--border-color)",
                                         transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",

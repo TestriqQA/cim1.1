@@ -65,11 +65,11 @@ export default function SolutionTypes() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden border-t"
+            className="py-12 md:py-24 relative overflow-hidden border-t"
             style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="text-center mb-10 md:mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Industry <span style={{ color: "var(--accent-red-text)" }}>Solutions</span>
                     </h2>
@@ -93,7 +93,7 @@ export default function SolutionTypes() {
                             >
                                 <div
                                     className={`
-                                        relative h-full p-8 rounded-3xl border transition-all duration-500 overflow-hidden
+                                        relative h-full p-6 md:p-8 rounded-3xl border transition-all duration-500 overflow-hidden
                                         ${isActive ? "scale-[1.02] -translate-y-1" : ""}
                                     `}
                                     style={{
