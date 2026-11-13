@@ -135,15 +135,15 @@ export default function IndustriesAndUseCases() {
             `}</style>
 
             <section
-                className="py-20 transition-colors duration-300"
+                className="py-12 md:py-20 transition-colors duration-300"
                 style={{
-                    backgroundColor: "var(--card-bg)",
+                    backgroundColor: "var(--background)",
                     borderColor: "var(--border-color)",
                 }}
             >
-                <div className="mx-auto px-6 md:px-12 xl:px-20">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                    <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ color: "var(--foreground)" }}>
                             Industries & <span style={{ color: "var(--accent-orange-text)" }}>Use Cases</span>
                         </h2>
@@ -153,7 +153,7 @@ export default function IndustriesAndUseCases() {
                     </div>
 
                     {/* Industries Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                         {industries.map((industry, index) => {
                             const Icon = industry.icon;
 
@@ -204,10 +204,10 @@ export default function IndustriesAndUseCases() {
                                                     className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200"
                                                 >
                                                     <CheckCircle2
-                                                        className="w-4 h-4 flex-shrink-0 mt-0.5 transition-all duration-200 group-hover/item:scale-110"
+                                                        className="w-3.5 h-3.5 flex-shrink-0 mt-1.5 transition-all duration-200 group-hover/item:scale-110"
                                                         style={{ color: "var(--brand-orange)" }}
                                                     />
-                                                    <span className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                                    <span className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                                         {useCase}
                                                     </span>
                                                 </li>
@@ -230,7 +230,7 @@ export default function IndustriesAndUseCases() {
                     </div>
 
                     {/* Impact Section */}
-                    <div className="mt-16 grid lg:grid-cols-3 gap-8">
+                    <div className="mt-10 md:mt-16 grid lg:grid-cols-3 gap-6 md:gap-8">
                         {[
                             {
                                 icon: Award,
@@ -258,7 +258,7 @@ export default function IndustriesAndUseCases() {
                             return (
                                 <div
                                     key={i}
-                                    className="group relative p-8 rounded-2xl text-center border animate-fadeIn overflow-hidden animate-pulse-glow"
+                                    className="group relative flex flex-col justify-center p-6 md:p-8 rounded-2xl text-center border animate-fadeIn overflow-hidden"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                                         borderColor: "var(--border-color)",
@@ -281,12 +281,9 @@ export default function IndustriesAndUseCases() {
                                     {/* Metric */}
                                     <div className="relative z-10">
                                         <div
-                                            className="text-5xl md:text-6xl font-extrabold mb-3 animate-metric-count"
+                                            className="text-4xl md:text-5xl font-extrabold mb-3 animate-metric-count"
                                             style={{
-                                                background: `linear-gradient(135deg, var(--brand-orange), var(--brand-orange))`,
-                                                WebkitBackgroundClip: "text",
-                                                backgroundClip: "text",
-                                                color: "transparent",
+                                                color: "var(--brand-orange)",
                                                 animationDelay: item.delay,
                                             }}
                                         >
@@ -309,7 +306,7 @@ export default function IndustriesAndUseCases() {
 
                     {/* Custom Solutions CTA */}
                     <div
-                        className="mt-16 p-8 md:p-10 rounded-2xl border text-center animate-fadeIn relative overflow-hidden group"
+                        className="mt-10 md:mt-16 p-6 md:p-10 rounded-2xl border text-center animate-fadeIn relative overflow-hidden group"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                             borderColor: "var(--border-color)",
@@ -339,7 +336,7 @@ export default function IndustriesAndUseCases() {
                             </p>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm sm:px-8 sm:text-base bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button"
                             >
                                 <span>Discuss Your Custom Solution</span>
                                 <GitBranch className="w-5 h-5 group-hover/button:rotate-12 transition-transform duration-300" />

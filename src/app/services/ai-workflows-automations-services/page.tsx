@@ -4,25 +4,25 @@ import ServiceOverview from '@/components/services/ai-workflows-automations-serv
 
 // Lazy load below-the-fold components for better performance
 const WhyChooseUs = dynamic(() => import('@/components/services/ai-workflows-automations-services/WhyChooseUs'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const TypesOfAutomations = dynamic(() => import('@/components/services/ai-workflows-automations-services/TypesOfAutomations'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const IndustriesAndUseCases = dynamic(() => import('@/components/services/ai-workflows-automations-services/IndustriesAndUseCases'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const Process = dynamic(() => import('@/components/services/ai-workflows-automations-services/Process'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const Technologies = dynamic(() => import('@/components/services/ai-workflows-automations-services/Technologies'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const CTA = dynamic(() => import('@/components/services/ai-workflows-automations-services/CTA'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 const FAQ = dynamic(() => import('@/components/services/ai-workflows-automations-services/FAQ'), {
-    loading: () => <div className="py-20" />,
+    loading: () => <div className="py-12 md:py-20" />,
 });
 
 import { getPageMetadata } from '@/lib/metadata';

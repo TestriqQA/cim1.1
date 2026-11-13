@@ -34,7 +34,7 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -69,7 +69,7 @@ export default function Hero() {
                     </span>
                 </nav>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
 
                     {/* LEFT CONTENT */}
                     <div
@@ -85,7 +85,7 @@ export default function Hero() {
                                 color: "var(--accent-orange-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                            <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
                             <span className="text-sm font-semibold">AI Workflows & Automations</span>
                         </div>
 
@@ -113,64 +113,64 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4 mb-8">
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <Zap className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Targeted ROI
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <Cpu className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <Cpu className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Agentic AI
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <Workflow className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <Workflow className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Enterprise Scale
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <BarChart3 className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Predictive
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <ShieldCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <ShieldCheck className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Secure (SOC2)
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
-                                <Rocket className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <Rocket className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
                             </div>
@@ -232,12 +232,12 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#fab900] hover:to-[#fab900] text-black rounded-full text-sm md:text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                                className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#fab900] hover:to-[#fab900] text-black rounded-full text-sm md:text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                             >
                                 Book Your Free AI Audit
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            <p className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
+                            <p className="inline-flex items-center px-5 py-3 md:px-6 md:py-4 rounded-full border border-white/60 text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
                                 Get a custom roadmap in 24 hours.
                             </p>
                         </div>
@@ -245,7 +245,7 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div
-                        className="relative flex flex-col items-center gap-12 justify-center animate-fadeIn mt-0 lg:-mt-15"
+                        className="relative flex flex-col items-center gap-8 md:gap-12 justify-center animate-fadeIn mt-0 lg:-mt-15"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
                         <div

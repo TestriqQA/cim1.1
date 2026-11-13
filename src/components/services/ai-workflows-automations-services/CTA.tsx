@@ -6,13 +6,13 @@ import Link from "next/link";
 export default function CTA() {
     return (
         <section
-            className="py-20 transition-colors duration-300"
+            className="py-12 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Main CTA Card */}
                 <div
-                    className="rounded-3xl p-12 md:p-16 text-center border animate-fadeIn overflow-hidden relative"
+                    className="rounded-3xl p-6 md:p-10 text-center border animate-fadeIn overflow-hidden relative"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
@@ -20,29 +20,19 @@ export default function CTA() {
                         animationFillMode: "both",
                     }}
                 >
-                    {/* Background Gradient */}
-                    <div className="absolute inset-0 pointer-events-none">
-                        <div
-                            className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-                            style={{
-                                backgroundColor: "var(--brand-orange)",
-                            }}
-                        />
-                    </div>
-
                     <div className="relative z-10">
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
                             Ready to Transform Your <span style={{ color: "var(--accent-orange-text)" }}>Operations?</span>
                         </h2>
-                        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                             Don't let manual work hold you back. Partner with a <Link href="/blog/ai-workflows-automating-business-processes" className="underline decoration-dotted hover:text-[var(--accent-orange-text)] transition-colors">Custom AI Automation Agency</Link> that understands the future of work.
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center mb-8 md:mb-12">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#fab900] hover:to-[#fab900] text-black rounded-full text-sm md:text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#fab900] to-[#ee6500] hover:from-[#fab900] hover:to-[#fab900] text-black rounded-full text-sm md:text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                             >
                                 <Zap className="w-5 h-5" />
                                 Get Your Free Proposal
@@ -66,7 +56,7 @@ export default function CTA() {
                                     description: "Deploy your first workflow in weeks, not months",
                                 },
                             ].map((benefit, i) => (
-                                <div key={i} className="py-4">
+                                <div key={i}>
                                     <h3 className="font-bold mb-2">{benefit.title}</h3>
                                     <p style={{ color: "var(--secondary-text)" }}>{benefit.description}</p>
                                 </div>
@@ -76,7 +66,7 @@ export default function CTA() {
                 </div>
 
                 {/* Secondary CTA Section */}
-                <div className="mt-16 grid md:grid-cols-2 gap-8">
+                <div className="mt-10 md:mt-16 grid md:grid-cols-2 gap-6 md:gap-8">
                     {[
                         {
                             title: "Automate Your Workflows",
@@ -96,7 +86,7 @@ export default function CTA() {
                             <Link
                                 key={i}
                                 href={cta.link}
-                                className="p-8 rounded-2xl border transition-all duration-300 hover:scale-105 group animate-fadeIn"
+                                className="p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:scale-105 group animate-fadeIn"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",

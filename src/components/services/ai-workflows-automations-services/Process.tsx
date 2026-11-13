@@ -137,18 +137,12 @@ export default function Process() {
             `}</style>
 
             <section
-                className="py-20 transition-colors duration-300 relative overflow-hidden"
+                className="py-12 md:py-20 transition-colors duration-300 relative overflow-hidden"
                 style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
-                {/* Decorative background elements */}
-                <div className="absolute inset-0">
-                    <div className="absolute top-20 left-10 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-                </div>
-
-                <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-20 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                    <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
                             Our AI Workflow <span style={{ color: "var(--accent-orange-text)" }}>Development Process</span>
                         </h2>
@@ -171,7 +165,7 @@ export default function Process() {
                             return (
                                 <div
                                     key={index}
-                                    className="relative mb-16 lg:mb-24"
+                                    className="relative mb-10 md:mb-16 lg:mb-24 last:mb-0"
                                 >
                                     {/* Desktop zigzag layout */}
                                     <div className={`hidden lg:grid lg:grid-cols-2 gap-16 items-center ${isEven ? '' : 'direction-rtl'}`}>
@@ -183,7 +177,7 @@ export default function Process() {
                                                 animationFillMode: "both",
                                             }}
                                         >
-                                            <div className="group relative p-8 rounded-2xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                                            <div className="group relative p-6 md:p-8 rounded-2xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden"
                                                 style={{
                                                     backgroundColor: "var(--card-bg)",
                                                     borderColor: "var(--border-color)",
@@ -222,7 +216,7 @@ export default function Process() {
                                         <div className={`${isEven ? '' : 'lg:col-start-1 lg:row-start-1'} relative`}>
                                             <div className="flex justify-center">
                                                 <div
-                                                    className={`relative w-32 h-32 rounded-2xl ${step.iconBg} flex items-center justify-center border-4 transition-all duration-500 hover:scale-110 hover:rotate-6 animate-fadeIn animate-glow-pulse`}
+                                                    className={`relative w-32 h-32 rounded-2xl ${step.iconBg} flex items-center justify-center border-4 transition-all duration-500 hover:scale-110 hover:rotate-6 animate-fadeIn`}
                                                     style={{
                                                         borderColor: "var(--border-color)",
                                                         animationDelay: `${0.3 + index * 0.15}s`,
@@ -230,19 +224,6 @@ export default function Process() {
                                                     }}
                                                 >
                                                     <Icon className={`w-16 h-16 ${step.iconColor}`} strokeWidth={2} />
-
-                                                    {/* Number overlay */}
-                                                    <div
-                                                        className="absolute -top-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg animate-number-pop"
-                                                        style={{
-                                                            background: `linear-gradient(135deg, ${step.color})`,
-                                                            color: "var(--foreground)",
-                                                            animationDelay: `${0.4 + index * 0.15}s`,
-                                                            animationFillMode: "both",
-                                                        }}
-                                                    >
-                                                        {step.number}
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,27 +236,14 @@ export default function Process() {
                                             animationFillMode: "both",
                                         }}
                                     >
-                                        {/* Icon */}
-                                        <div className="flex-shrink-0">
-                                            <div
-                                                className={`relative w-20 h-20 rounded-xl ${step.iconBg} flex items-center justify-center border-2`}
-                                                style={{ borderColor: "var(--border-color)" }}
-                                            >
-                                                <Icon className={`w-10 h-10 ${step.iconColor}`} strokeWidth={2} />
-                                                <div
-                                                    className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg"
-                                                    style={{ background: `linear-gradient(135deg, ${step.color})` }}
-                                                >
-                                                    {step.number}
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         {/* Content */}
                                         <div className="flex-1 p-6 rounded-xl border relative z-10" style={{
                                             backgroundColor: "var(--card-bg)",
                                             borderColor: "var(--border-color)",
                                         }}>
+                                            <div className={`inline-block mb-3 px-3 py-1 rounded-full text-xs font-bold ${step.iconBg} ${step.iconColor}`}>
+                                                Step {step.number}
+                                            </div>
                                             <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                                             <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                                 {step.description}
@@ -295,7 +263,7 @@ export default function Process() {
                     </div>
 
                     {/* Timeline & Deliverables */}
-                    <div className="mt-24 p-10 rounded-3xl border animate-fadeIn relative overflow-hidden"
+                    <div className="mt-10 md:mt-16 p-6 md:p-10 rounded-3xl border animate-fadeIn relative overflow-hidden"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                             borderColor: "var(--border-color)",
@@ -303,23 +271,20 @@ export default function Process() {
                             animationFillMode: "both",
                         }}
                     >
-                        {/* Background decoration */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/10 to-purple-500/10 rounded-full blur-3xl" />
-
                         <div className="relative z-10">
-                            <div className="flex items-center gap-4 mb-8">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8">
                                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg">
                                     <Rocket className="w-7 h-7 text-white" strokeWidth={2.5} />
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl font-bold">Timeline & Deliverables</h3>
+                                    <h3 className="text-2xl md:text-3xl font-bold">Timeline & Deliverables</h3>
                                     <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         Expected timeframes and key outputs for each phase
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6">
                                 {[
                                     {
                                         phase: "Discovery",
@@ -386,14 +351,14 @@ export default function Process() {
 
                                             {/* Content */}
                                             <div className="relative z-10">
-                                                <div className="flex items-center justify-between mb-3">
+                                                <div className="flex items-center gap-2 lg:justify-between mb-3">
                                                     <h4 className="text-lg font-bold">{item.phase}</h4>
-                                                    <CheckCircle className="w-5 h-5 transition-colors duration-300 group-hover:scale-110" style={{ color: "var(--brand-orange)" }} />
+                                                    <CheckCircle className="w-4 h-4 flex-shrink-0 transition-colors duration-300 group-hover:scale-110" style={{ color: "var(--brand-orange)" }} />
                                                 </div>
                                                 <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-orange-text)" }}>
                                                     ⏱ {item.duration}
                                                 </p>
-                                                <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                                <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                                     {item.deliverables}
                                                 </p>
                                             </div>
