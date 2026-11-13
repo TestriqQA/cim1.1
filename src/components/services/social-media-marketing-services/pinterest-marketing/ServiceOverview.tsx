@@ -58,37 +58,18 @@ export default function ServiceOverview() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300 border-t"
+            className="py-12 md:py-24 relative overflow-hidden transition-colors duration-300 border-t"
             style={{
                 backgroundColor: "var(--background)",
                 borderColor: "#555555"
             }}
         >
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: pinterestRed,
-                        animationDuration: "4s",
-                    }}
-                />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <span
-                            className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border"
-                            style={{
-                                backgroundColor: `${pinterestRed}10`,
-                                borderColor: `${pinterestRed}30`,
-                                color: "var(--accent-red-text)",
-                            }}
-                        >
-                            Our Services
-                        </span>
+                <div className="text-center mb-10 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: `${pinterestRed}10`, borderColor: `${pinterestRed}30` }}>
+                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>Our Services</span>
                     </div>
                     <h2
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
@@ -108,7 +89,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         const isHovered = hoveredCard === idx;
@@ -122,7 +103,7 @@ export default function ServiceOverview() {
                             >
                                 <div
                                     className={`
-                                        relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full
+                                        relative p-6 md:p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full
                                         ${isHovered ? "-translate-y-2" : ""}
                                     `}
                                     style={{
@@ -130,14 +111,6 @@ export default function ServiceOverview() {
                                         backgroundColor: "var(--card-bg)"
                                     }}
                                 >
-                                    {/* Hover Gradient BG */}
-                                    <div
-                                        className={`absolute inset-0 opacity-0 transition-opacity duration-500 ${isHovered ? "opacity-10" : ""}`}
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${service.color}, transparent)`,
-                                        }}
-                                    />
-
                                     {/* Icon container */}
                                     <div className="relative mb-6">
                                         <div

@@ -39,36 +39,37 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden border-t"
+            className="py-12 md:py-24 relative overflow-hidden border-t"
             style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    {/* Left Content */}
-                    <div>
-                        {/* Badge */}
-                        <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                            style={{
-                                backgroundColor: "rgba(29, 155, 240, 0.1)",
-                                borderColor: "rgba(29, 155, 240, 0.2)",
-                            }}
-                        >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
-                                Why Choose Us
-                            </span>
-                        </div>
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                {/* Header */}
+                <div className="text-center mb-10 md:mb-16">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            backgroundColor: "var(--card-bg)",
+                            borderColor: "var(--border-color)",
+                        }}
+                    >
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--foreground)" }} />
+                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
+                            Why Choose Us
+                        </span>
+                    </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
-                            Why Choose Us for <br />
-                            <span style={{ color: "var(--secondary-text)" }}>X Marketing?</span>
-                        </h2>
-                        <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            X is the town square of the internet. You need a partner who understands the nuance, speed, and
-                            culture of the platform to truly stand out.
-                        </p>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
+                        Why Choose Us for <span style={{ color: "var(--secondary-text)" }}>X Marketing?</span>
+                    </h2>
+                    <p className="text-lg max-w-7xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                        X is the town square of the internet. You need a partner who understands the nuance, speed, and
+                        culture of the platform to truly stand out.
+                    </p>
+                </div>
 
+                <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+                    {/* Six benefits */}
+                    <div className="lg:col-span-3">
                         <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10">
                             {benefits.map((benefit, idx) => {
                                 const Icon = benefit.icon;
@@ -93,7 +94,7 @@ export default function WhyChooseUs() {
 
                     {/* Right Visual - Abstract Representation */}
                     <div
-                        className="relative h-full min-h-[500px] rounded-3xl overflow-hidden border flex items-center justify-center p-12"
+                        className="lg:col-span-2 relative w-full max-w-md mx-auto lg:max-w-none aspect-square rounded-3xl overflow-hidden border flex items-center justify-center p-6"
                         style={{
                             borderColor: "var(--border-color)",
                             backgroundColor: "var(--card-bg)"
@@ -101,23 +102,22 @@ export default function WhyChooseUs() {
                     >
                         {/* Central Element */}
                         <div className="relative z-10 text-center">
-                            <div className="w-32 h-32 mx-auto rounded-full flex items-center justify-center shadow-lg animate-pulse mb-8" style={{ backgroundColor: "var(--foreground)" }}>
-                                <svg className="w-16 h-16" style={{ color: "var(--background)" }} viewBox="0 0 24 24" fill="currentColor">
+                            <div className="w-16 h-16 min-[1440px]:w-24 min-[1440px]:h-24 mx-auto rounded-full flex items-center justify-center shadow-lg animate-pulse mb-3 min-[1440px]:mb-6" style={{ backgroundColor: "var(--foreground)" }}>
+                                <svg className="w-8 h-8 min-[1440px]:w-12 min-[1440px]:h-12" style={{ color: "var(--background)" }} viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--foreground)" }}>Dominating</h3>
-                            <p className="text-xl" style={{ color: "var(--secondary-text)" }}>The Conversation</p>
+                            <h3 className="text-xl min-[1440px]:text-3xl font-bold mb-1 min-[1440px]:mb-2" style={{ color: "var(--foreground)" }}>Dominating</h3>
+                            <p className="text-sm min-[1440px]:text-xl" style={{ color: "var(--secondary-text)" }}>The Conversation</p>
                         </div>
 
                         {/* Orbiting Elements */}
                         {[...Array(3)].map((_, i) => (
                             <div
                                 key={i}
-                                className="absolute border rounded-full animate-[spin_10s_linear_infinite]"
+                                className="absolute aspect-square border rounded-full animate-[spin_10s_linear_infinite]"
                                 style={{
-                                    width: `${(i + 2) * 150}px`,
-                                    height: `${(i + 2) * 150}px`,
+                                    height: `${[60, 77, 92][i]}%`,
                                     animationDuration: `${(i + 2) * 10}s`,
                                     animationDirection: i % 2 === 0 ? 'normal' : 'reverse',
                                     borderColor: "var(--border-color)"

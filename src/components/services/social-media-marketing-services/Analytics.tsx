@@ -64,7 +64,7 @@ export default function Analytics() {
 
     return (
         <section
-            className="px-6 md:px-12 xl:px-20 py-16 transition-colors duration-300 relative overflow-hidden"
+            className="px-4 sm:px-6 md:px-12 xl:px-20 py-10 md:py-16 transition-colors duration-300 relative overflow-hidden"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -102,7 +102,7 @@ export default function Analytics() {
 
             <div className="relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16 max-w-6xl mx-auto">
+                <div className="text-center mb-10 md:mb-16 max-w-6xl mx-auto">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border backdrop-blur-sm"
                         style={{
@@ -116,7 +116,7 @@ export default function Analytics() {
                         <span className="text-sm font-semibold">Analytics & Performance</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         <span style={{ color: "var(--accent-teal-text)" }}>Measuring What Matters:</span> Transparent Performance and Real ROI
                     </h2>
 
@@ -133,13 +133,13 @@ export default function Analytics() {
                 </div>
 
                 {/* Metrics Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
                     {metrics.map((metric, idx) => {
                         const Icon = metric.icon;
                         return (
                             <div
                                 key={idx}
-                                className="group rounded-2xl p-8 border  transition-all duration-700 hover:shadow-2xl overflow-hidden relative"
+                                className="group rounded-2xl p-6 md:p-8 border  transition-all duration-700 hover:shadow-2xl overflow-hidden relative"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",
@@ -238,14 +238,14 @@ export default function Analytics() {
                                     </h3>
 
                                     <p
-                                        className="mb-6 leading-relaxed transition-colors duration-500"
+                                        className="mb-0 md:mb-6 leading-relaxed transition-colors duration-500"
                                         style={{ color: "var(--secondary-text)", lineHeight: "1.7" }}
                                     >
                                         {metric.description}
                                     </p>
 
                                     {/* Animated metric bar */}
-                                    <div className="relative h-2 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300"
+                                    <div className="relative h-2 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300 hidden md:block"
                                         style={{ background: `${metric.accentColor}20` }}
                                     >
                                         <div

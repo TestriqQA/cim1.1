@@ -12,7 +12,7 @@ export default function Hero() {
             {/* Animated Background */}
             <HeroBackground />
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 md:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -47,7 +47,7 @@ export default function Hero() {
                     </span>
                 </nav>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* LEFT CONTENT */}
                     <div
@@ -68,7 +68,7 @@ export default function Hero() {
                         </div>
 
                         {/* Heading */}
-                        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight">
                             <span
                                 className="bg-clip-text text-transparent"
                                 style={{
@@ -98,7 +98,7 @@ export default function Hero() {
 
                         {/* Feature Highlights */}
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -108,67 +108,67 @@ export default function Hero() {
                                     Growth-Focused
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Users className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Community Built
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Data-Driven
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Share2 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Multi-Platform
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     ROI Proven
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Target className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                     Targeted Reach
                                 </span>
                             </div>
                         </div>
 
                         {/* Stats Section */}
-                        <div className="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl"
+                        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 p-4 sm:p-6 rounded-2xl"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 90%, transparent)",
                                 border: "1px solid var(--border-color)",
                             }}
                         >
                             <div className="text-center">
-                                <div className="text-2xl md:text-3xl font-bold mb-1"
+                                <div className="text-xl md:text-3xl font-bold mb-1"
                                     style={{
                                         background: "linear-gradient(90deg, var(--brand-teal), var(--brand-cyan))",
                                         WebkitBackgroundClip: "text",
@@ -222,7 +222,7 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div
-                        className="relative flex flex-col items-center gap-12 justify-center mt-0 lg:-mt-15"
+                        className="relative flex flex-col items-center gap-8 lg:gap-12 justify-center mt-0 lg:-mt-15"
                     >
                         <div
                             className="absolute inset-0 rounded-3xl blur-2xl"
@@ -254,7 +254,7 @@ export default function Hero() {
                         </div>
                         {/* Additional Info Section */}
                         <div
-                            className="w-full p-6 rounded-2xl border"
+                            className="w-full p-4 sm:p-6 rounded-2xl border"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",

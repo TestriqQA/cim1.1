@@ -45,12 +45,12 @@ export default function Process() {
 
     return (
         <section
-            className="px-6 md:px-12 xl:px-20 py-16 transition-colors duration-300"
+            className="px-4 sm:px-6 md:px-12 xl:px-20 py-10 md:py-16 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-6xl mx-auto">
+                <div className="text-center mb-10 md:mb-16 max-w-6xl mx-auto">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -64,7 +64,7 @@ export default function Process() {
                         <span className="text-sm font-semibold">Our Process</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         <span style={{ color: "var(--accent-teal-text)" }}>A Proven 6-Step Process</span> for Measurable Social Growth
                     </h2>
 
@@ -77,13 +77,13 @@ export default function Process() {
                 </div>
 
                 {/* Process Steps */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {steps.map((step, idx) => {
                         const Icon = step.icon;
                         return (
                             <div
                                 key={idx}
-                                className="rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:scale-105 relative group"
+                                className="rounded-2xl p-6 md:p-8 border transition-all duration-300 hover:shadow-lg hover:scale-105 relative group"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",

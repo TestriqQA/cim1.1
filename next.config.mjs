@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     trailingSlash: false,
+    // next/font fetches Inter from Google at build time. Trust the machine's own
+    // certificate store so the build also works behind a TLS-inspecting proxy.
+    experimental: {
+        turbopackUseSystemTlsCerts: true,
+    },
     compiler: {
         removeConsole: process.env.NODE_ENV === "production",
     },

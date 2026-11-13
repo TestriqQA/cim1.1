@@ -83,8 +83,8 @@ export default function Hero() {
                 .delay-500 { animation-delay: 0.5s; }
             `}</style>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
                     {/* Text Content */}
                     <div className="space-y-8 text-center lg:text-left">
                         {/* Breadcrumbs */}
@@ -147,13 +147,13 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                                    className="flex items-center justify-center lg:justify-start gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm transition-all duration-300 hover:scale-105"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ background: `linear-gradient(135deg, ${instagramPink}, ${instagramOrange})` }} />
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: `linear-gradient(135deg, ${instagramPink}, ${instagramOrange})` }} />
                                     <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{typeof feature === 'string' ? feature : feature}</span>
                                 </div>
                             ))}
@@ -163,7 +163,8 @@ export default function Hero() {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="instagram-gradient inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="instagram-gradient w-full sm:w-auto inline-flex items-center justify-center text-center px-6 sm:px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                style={{ background: `linear-gradient(45deg, ${instagramOrange} 0%, ${instagramPink} 50%, ${instagramPurple} 100%)` }}
                             >
                                 Book Your Free Instagram Audit Today
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -171,7 +172,7 @@ export default function Hero() {
 
                             <Link
                                 href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -202,7 +203,7 @@ export default function Hero() {
                     </div>
 
                     {/* Right Visual */}
-                    <div className="relative hidden lg:flex flex-col gap-6 animate-fadeIn delay-500 mt-15">
+                    <div className="relative hidden lg:flex flex-col gap-6 animate-fadeIn delay-500">
                         {/* Main Visual Container */}
                         <div className="relative flex items-center justify-center">
                             <div
@@ -288,7 +289,7 @@ export default function Hero() {
 
                         {/* Platform Pills */}
                         <div
-                            className="p-5 rounded-2xl border mt-4"
+                            className="p-5 rounded-2xl border"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",

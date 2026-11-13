@@ -1,18 +1,18 @@
 
 
-import { Zap } from "lucide-react";
+import { Zap, BookOpen, Share2, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ServiceOverview() {
     return (
         <section
-            className="px-6 md:px-12 xl:px-20 py-16 transition-colors duration-300"
+            className="px-4 sm:px-6 md:px-12 xl:px-20 py-10 md:py-16 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-6xl mx-auto">
+                <div className="text-center mb-10 md:mb-16 max-w-6xl mx-auto">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -26,7 +26,7 @@ export default function ServiceOverview() {
                         <span className="text-sm font-semibold">Service Overview</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         <span style={{ color: "var(--accent-teal-text)" }}>Transform Your Social Presence:</span> Strategic Social Media Marketing for Business Value
                     </h2>
 
@@ -39,7 +39,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
@@ -67,10 +67,8 @@ export default function ServiceOverview() {
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
                                         <span
-                                            className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold mt-0.5"
-                                            style={{
-                                                background: "linear-gradient(90deg, var(--brand-teal), var(--brand-teal))",
-                                            }}
+                                            className="w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5"
+                                            style={{ color: "var(--accent-teal-text)" }}
                                         >
                                             ✓
                                         </span>
@@ -170,18 +168,21 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Related Resources */}
-                <div className="mt-8 p-6 rounded-2xl border max-w-6xl mx-auto" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>📚 Related Resources</h3>
+                <div className="mt-8 p-4 sm:p-6 rounded-2xl border max-w-6xl mx-auto" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
+                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2" style={{ color: "var(--foreground)" }}>
+                        <BookOpen className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-teal-text)" }} />
+                        Related Resources
+                    </h3>
                     <div className="flex flex-col gap-3">
                         <Link href="/blog/social-media-strategy-building-brand" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">📱</span>
+                            <Share2 className="w-6 h-6 flex-shrink-0" style={{ color: "var(--accent-teal-text)" }} />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-teal-text)] transition-colors">Social Media Marketing Strategy Guide</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Build a winning social media strategy for your business</p>
                             </div>
                         </Link>
                         <Link href="/blog/content-marketing-strategies-work" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">🔥</span>
+                            <TrendingUp className="w-6 h-6 flex-shrink-0" style={{ color: "var(--accent-teal-text)" }} />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-teal-text)] transition-colors">Social Media Trends in 2026</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Latest trends shaping social media marketing</p>

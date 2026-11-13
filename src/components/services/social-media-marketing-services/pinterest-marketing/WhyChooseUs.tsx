@@ -45,10 +45,10 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden border-t"
+            className="py-12 md:py-24 relative overflow-hidden border-t"
             style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Content */}
                     <div>
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Right Grid */}
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-2 auto-rows-fr gap-4">
                         {benefits.map((benefit, idx) => {
                             const Icon = benefit.icon;
                             const isHovered = hoveredIdx === idx;
@@ -107,7 +107,6 @@ export default function WhyChooseUs() {
                                         borderColor: isHovered ? pinterestRed : "var(--border-color)",
                                         backgroundColor: "var(--card-bg)",
                                         transform: isHovered ? "translateY(-4px)" : "none",
-                                        boxShadow: isHovered ? `0 10px 30px ${pinterestRed}15` : "none"
                                     }}
                                     onMouseEnter={() => setHoveredIdx(idx)}
                                     onMouseLeave={() => setHoveredIdx(null)}
