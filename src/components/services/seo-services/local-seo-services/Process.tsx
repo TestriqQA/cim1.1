@@ -144,31 +144,6 @@ export default function Process() {
                     animation-delay: calc(var(--index) * 0.15s);
                 }
 
-                .shine-effect {
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .shine-effect::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(245, 158, 11, 0.1),
-                        transparent
-                    );
-                    transition: left 0.5s ease;
-                }
-
-                .shine-effect:hover::before {
-                    left: 100%;
-                }
-
                 .gradient-border {
                     position: relative;
                     background: var(--card-bg);
@@ -270,7 +245,7 @@ export default function Process() {
                                         {/* Content Card */}
                                         <div className={`w-full md:w-1/2 px-0 md:px-12 ${isEven ? "md:text-left" : "md:text-right"}`}>
                                             <div
-                                                className={`process-card animate-${step.animation} gradient-border shine-effect p-8 rounded-3xl border transition-all duration-500 hover:shadow-2xl group relative`}
+                                                className={`process-card animate-${step.animation} gradient-border overflow-hidden p-8 rounded-3xl border transition-all duration-500 hover:shadow-2xl group relative`}
                                                 style={{
                                                     '--index': idx,
                                                     borderColor: "var(--border-color)",

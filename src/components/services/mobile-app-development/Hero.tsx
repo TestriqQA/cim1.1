@@ -98,64 +98,64 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
+                            <div className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Rocket className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Fast Launch
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     High Performance
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Smartphone className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     All Platforms
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
                             </div>
-                            <Link href="/services/mobile-app-development/enterprise-application-development-services" className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <Link href="/services/mobile-app-development/enterprise-application-development-services" className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <ShieldCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Enterprise Secure
                                 </span>
                             </Link>
-                            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start text-center lg:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center text-center gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-purple) 8%, transparent)",
                                 }}
                             >
                                 <Code className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-purple-text)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Clean Code
                                 </span>
                             </div>

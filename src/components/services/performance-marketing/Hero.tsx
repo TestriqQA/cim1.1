@@ -82,20 +82,20 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="flex flex-wrap gap-3 mt-8 justify-center lg:justify-start">
+                        <div className="grid grid-cols-[max-content] min-[375px]:grid-cols-[repeat(2,max-content)] md:grid-cols-[repeat(4,max-content)] lg:grid-cols-[repeat(2,max-content)] 2xl:grid-cols-[repeat(4,max-content)] gap-3 mt-8 justify-center lg:justify-start">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
                                 return (
                                     <div
                                         key={index}
-                                        className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all hover:scale-105"
+                                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border transition-all hover:scale-105"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--brand-orange) 5%, var(--card-bg))",
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
                                         <Icon className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                                        <span className="text-sm font-medium">{feature.label}</span>
+                                        <span className="text-sm font-medium whitespace-nowrap">{feature.label}</span>
                                     </div>
                                 );
                             })}
