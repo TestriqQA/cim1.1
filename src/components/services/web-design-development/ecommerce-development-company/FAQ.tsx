@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import React from 'react';
 import Link from "next/link";
-import { HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
     const faqs = [
         {
             question: "How much does it cost to build an ecommerce store?",
@@ -39,69 +37,10 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-20 bg-background transition-colors duration-300" style={{ backgroundColor: "var(--background)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-5xl">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "var(--card-bg)",
-                            borderColor: "var(--border-color)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>FAQ</span>
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "var(--accent-cyan-text)" }}>Questions</span>
-                    </h2>
-                    <p className="text-lg mb-8" style={{ color: "var(--secondary-text)" }}>
-                        Answers to Your Common E-commerce Development Questions
-                    </p>
-                    <div className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #00b5ca, #00efd6)",
-                        }}
-                    />
-                </div>
-
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => {
-                        const isOpen = openIndex === index;
-                        return (
-                            <div
-                                key={index}
-                                className="border rounded-lg transition-all duration-300"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: isOpen ? "#00b5ca" : "var(--border-color)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                                    className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none"
-                                >
-                                    <span className="text-lg font-medium" style={{ color: "var(--foreground)" }}>
-                                        {faq.question}
-                                    </span>
-                                    {isOpen ? (
-                                        <ChevronUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-cyan-text)" }} />
-                                    ) : (
-                                        <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: "var(--secondary-text)" }} />
-                                    )}
-                                </button>
-                                <div
-                                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
-                                        }`}
-                                >
-                                    <p className="text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                        {faq.answer}
-                                    </p>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-cyan-text)"
+            subtitle="Answers to Your Common E-commerce Development Questions"
+        />
     );
 }

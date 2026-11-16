@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import React from 'react';
 import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
-
     const faqs = [
         {
             question: "How much does it cost to develop an Android app?",
@@ -39,73 +37,10 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "rgba(61, 220, 132, 0.1)",
-                            borderColor: "rgba(61, 220, 132, 0.2)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
-                            Common Questions
-                        </span>
-                    </div>
-
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ color: "var(--foreground)" }}>Frequently Asked</span>{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #3DDC84, #78C257)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
-                            Questions
-                        </span>
-                    </h2>
-                    <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Get answers to common questions about our Android app development services.
-                    </p>
-                </div>
-
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {faqs.map((faq, idx) => (
-                        <div
-                            key={idx}
-                            className="rounded-2xl border transition-all duration-300"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: openIndex === idx ? "#3DDC84" : "var(--border-color)",
-                            }}
-                        >
-                            <button
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between p-6 text-left"
-                            >
-                                <span className={`font-semibold text-lg ${openIndex === idx ? "text-[var(--accent-green-text)]" : "text-[var(--foreground)]"}`}>
-                                    {faq.question}
-                                </span>
-                                {openIndex === idx ? (
-                                    <Minus className="w-5 h-5 text-[var(--accent-green-text)]" />
-                                ) : (
-                                    <Plus className="w-5 h-5 text-[var(--foreground)]" />
-                                )}
-                            </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ${openIndex === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
-                            >
-                                <div className="p-6 pt-0 text-[var(--foreground)] leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                    {faq.answer}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="#3DDC84"
+            subtitle="Get answers to common questions about our Android app development services."
+        />
     );
 }

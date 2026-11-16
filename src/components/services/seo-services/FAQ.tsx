@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
-import { MessageSquare, ChevronDown } from 'lucide-react';
-import Link from 'next/link';
+import React from 'react';
+import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
-    const [faqOpen, setFaqOpen] = useState<number | null>(null);
-
     const faqs = [
         {
             q: "What is organic growth SEO?",
@@ -31,66 +29,11 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)" }}>
-            <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
-                        borderColor: "var(--brand-seo)"
-                    }}>
-                        <MessageSquare className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--accent-green-text)" }}>FAQ</span>
-                    </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Answers to common questions about our Organic Growth & SEO services.
-                    </p>
-                </div>
-
-                <div className="grid gap-4">
-                    {faqs.map((faq, i) => (
-                        <div
-                            key={i}
-                            className="group rounded-2xl border transition-all duration-300"
-                            style={{
-                                backgroundColor: "var(--background)",
-                                borderColor: faqOpen === i ? "var(--brand-seo)" : "var(--border-color)",
-                                borderRadius: '1.25rem'
-                            }}
-                        >
-                            <button
-                                onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-                                className="w-full text-left px-6 py-6 focus:outline-none"
-                            >
-                                <div className="flex gap-4 items-center justify-between">
-                                    <div className="flex gap-4 items-center">
-                                        <div
-                                            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
-                                            style={{
-                                                backgroundColor: faqOpen === i ? "#166534" : "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
-                                                color: faqOpen === i ? "white" : "var(--accent-green-text)"
-                                            }}
-                                        >
-                                            <span className="font-bold">{i + 1}</span>
-                                        </div>
-                                        <h3 className="font-bold text-lg md:text-xl pr-8" style={{ color: "var(--foreground)" }}>{faq.q}</h3>
-                                    </div>
-                                    <ChevronDown
-                                        className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${faqOpen === i ? "rotate-180" : ""}`}
-                                        style={{ color: "var(--secondary-text)" }}
-                                    />
-                                </div>
-
-                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
-                                    <p className="leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                        {faq.a}
-                                    </p>
-                                </div>
-                            </button>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs}
+            accent="var(--accent-green-text)"
+            subtitle="Answers to common questions about our Organic Growth & SEO services."
+            background="var(--card-bg)"
+        />
     );
 }

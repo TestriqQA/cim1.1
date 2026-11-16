@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import React from 'react';
 import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function Faq() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
-
     const faqs = [
         {
             question: "What is brand identity design and why is it important?",
@@ -39,74 +37,10 @@ export default function Faq() {
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-4xl">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <div
-                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
-                        style={{
-                            backgroundColor: "color-mix(in srgb, var(--brand-yellow) 10%, transparent)",
-                            borderColor: "var(--brand-yellow)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
-                            FAQs
-                        </span>
-                    </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Frequently Asked <span style={{ color: "var(--accent-amber-text)" }}>Questions</span>
-                    </h2>
-                    <p className="text-lg md:text-xl text-center" style={{ color: "var(--secondary-text)" }}>
-                        Expert Answers to Your Branding Questions
-                    </p>
-                </div>
-
-                {/* FAQ List */}
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => {
-                        const isOpen = openIndex === index;
-
-                        return (
-                            <div
-                                key={index}
-                                className="rounded-2xl border transition-all duration-300 overflow-hidden"
-                                style={{
-                                    backgroundColor: isOpen ? "color-mix(in srgb, var(--brand-yellow) 5%, var(--card-bg))" : "var(--card-bg)",
-                                    borderColor: isOpen ? "var(--brand-yellow)" : "var(--border-color)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                                    className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-                                >
-                                    <span className={`text-lg font-bold transition-colors ${isOpen ? '' : ''}`} style={{ color: isOpen ? "var(--accent-amber-text)" : "var(--foreground)" }}>
-                                        {faq.question}
-                                    </span>
-                                    <div
-                                        className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-                                        style={{ backgroundColor: isOpen ? "var(--brand-yellow)" : "rgba(128,128,128,0.1)" }}
-                                    >
-                                        {isOpen ? (
-                                            <Minus className="w-5 h-5 text-black" />
-                                        ) : (
-                                            <Plus className="w-5 h-5" style={{ color: "var(--secondary-text)" }} />
-                                        )}
-                                    </div>
-                                </button>
-                                <div
-                                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                                >
-                                    <div className="p-6 pt-0 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                        {faq.answer}
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-amber-text)"
+            subtitle="Expert Answers to Your Branding Questions"
+        />
     );
 }

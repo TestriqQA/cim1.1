@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import React from 'react';
 import Link from "next/link";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
-
     const faqs = [
         {
             question: "What is included in personal branding services?",
@@ -31,67 +29,10 @@ export default function FAQ() {
     ];
 
     return (
-        <section
-            className="py-20 transition-colors duration-300"
-            style={{ backgroundColor: "var(--background)" }}
-        >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
-                <div className="text-center mb-16">
-                    <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "rgba(6, 182, 212, 0.05)",
-                            borderColor: "rgba(6, 182, 212, 0.2)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#06b6d4" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
-                            FAQ
-                        </span>
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "var(--accent-cyan-text)" }}>Questions</span>
-                    </h2>
-                    <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Common questions about building your personal brand and portfolio.
-                    </p>
-                </div>
-
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {faqs.map((faq, idx) => (
-                        <div
-                            key={idx}
-                            className="rounded-2xl border transition-all duration-300"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: openIndex === idx ? "#06b6d4" : "var(--border-color)",
-                            }}
-                        >
-                            <button
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full text-left p-6 flex items-center justify-between gap-4"
-                            >
-                                <span className="font-semibold text-lg" style={{ color: "var(--foreground)" }}>
-                                    {faq.question}
-                                </span>
-                                {openIndex === idx ? (
-                                    <Minus className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                ) : (
-                                    <Plus className="w-5 h-5 flex-shrink-0" style={{ color: "var(--secondary-text)" }} />
-                                )}
-                            </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ${openIndex === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                    }`}
-                            >
-                                <div className="p-6 pt-0 text-base leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                    {faq.answer}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-cyan-text)"
+            subtitle="Common questions about building your personal brand and portfolio."
+        />
     );
 }

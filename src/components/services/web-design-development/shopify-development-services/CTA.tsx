@@ -1,12 +1,10 @@
 "use client";
 
-import { ArrowRight, ShoppingCart, ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import { ArrowRight, ShoppingCart } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function CTA() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
     const faqs = [
         {
             question: "What are the benefits of using Shopify for ecommerce?",
@@ -39,6 +37,13 @@ export default function CTA() {
     ];
 
     return (
+        <>
+            <FaqSection
+                faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+                accent="#96bf48"
+                title="Your Shopify Questions Answered"
+            />
+
         <section
             className="py-24 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
@@ -61,73 +66,6 @@ export default function CTA() {
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                {/* FAQ Section */}
-                <div className="mb-24 max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                            }}
-                        >
-                            <HelpCircle className="w-4 h-4" style={{ color: "#96bf48" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
-                                FAQ
-                            </span>
-                        </div>
-                        <h2
-                            className="text-4xl md:text-5xl font-bold mb-6"
-                            style={{ color: "var(--foreground)" }}
-                        >
-                            Your Shopify Questions{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #96bf48, #5c8a1e)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                Answered
-                            </span>
-                        </h2>
-                    </div>
-
-                    <div className="space-y-4">
-                        {faqs.map((faq, index) => (
-                            <div
-                                key={index}
-                                className="rounded-2xl border transition-all duration-300"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: openIndex === index ? "#96bf48" : "var(--border-color)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full px-6 py-5 flex items-center justify-between text-left"
-                                >
-                                    <span className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                        {faq.question}
-                                    </span>
-                                    {openIndex === index ? (
-                                        <ChevronUp className="w-5 h-5 flex-shrink-0" style={{ color: "#96bf48" }} />
-                                    ) : (
-                                        <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: "var(--secondary-text)" }} />
-                                    )}
-                                </button>
-                                {/* Kept mounted and collapsed with `hidden` rather than rendered
-                                    conditionally, so the answer text ships in the HTML for this
-                                    page's FAQPage schema. Matches the other FAQ components. */}
-                                <div className={`px-6 pb-5 ${openIndex === index ? "" : "hidden"}`}>
-                                    <p className="text-sm md:text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                        {faq.answer}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
                 {/* Final CTA Card */}
                 <div
@@ -193,5 +131,6 @@ export default function CTA() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
