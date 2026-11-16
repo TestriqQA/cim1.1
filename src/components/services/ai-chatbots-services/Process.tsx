@@ -23,6 +23,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             title: "Discovery & Strategy",
             description: "We audit your current support/sales workflows, identify automation opportunities, and define clear KPIs for success.",
@@ -30,6 +31,7 @@ export default function Process() {
             color: "#6366F1",
         },
         {
+            anchor: "step-design",
             number: "02",
             title: "Conversation Design",
             description: "Our linguists map out user intents, utterances, and dialogue flows to ensure natural, empathetic interactions.",
@@ -37,6 +39,7 @@ export default function Process() {
             color: "#8B5CF6",
         },
         {
+            anchor: "step-development",
             number: "03",
             title: "Development & Training",
             description: "We build the bot using best-in-class LLMs (GPT-4o, Claude 3.5), fine-tuning them on your proprietary data securely.",
@@ -44,6 +47,7 @@ export default function Process() {
             color: "#EC4899",
         },
         {
+            anchor: "step-integration",
             number: "04",
             title: "Integration",
             description: <span>We connect the chatbot to your <Link href="/services/web-design-development" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] transition-colors">Tech Stack</Link>-CRM, ERP, Helpdesk, and eCommerce platforms-for real-time data sync.</span>,
@@ -51,6 +55,7 @@ export default function Process() {
             color: "#F59E0B",
         },
         {
+            anchor: "step-testing",
             number: "05",
             title: "Testing & Optimization",
             description: "Rigorous QA including stress testing, bias detection, and fallback handling before go-live.",
@@ -58,6 +63,7 @@ export default function Process() {
             color: "#10B981",
         },
         {
+            anchor: "step-launch",
             number: "06",
             title: "Launch & Evolve",
             description: "We deploy the bot and monitor performance 24/7, using active learning to improve accuracy over time.",
@@ -125,7 +131,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={index}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => setHoveredStep(index)}
                                     onMouseLeave={() => setHoveredStep(null)}
                                 >

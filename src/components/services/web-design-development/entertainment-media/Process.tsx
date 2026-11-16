@@ -46,6 +46,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Search,
             title: "Discovery & Content Strategy",
@@ -62,6 +63,7 @@ export default function Process() {
             bgColor: "#8b5cf6",
         },
         {
+            anchor: "step-architecture",
             number: "02",
             icon: Lightbulb,
             title: "Platform Architecture",
@@ -78,6 +80,7 @@ export default function Process() {
             bgColor: "#ec4899",
         },
         {
+            anchor: "step-design",
             number: "03",
             icon: Palette,
             title: <Link href="/services/web-design-development/branding-services" className="hover:underline">UI/UX Design</Link>,
@@ -94,6 +97,7 @@ export default function Process() {
             bgColor: "#7c3aed",
         },
         {
+            anchor: "step-development",
             number: "04",
             icon: Code2,
             title: "Development & Integration",
@@ -110,6 +114,7 @@ export default function Process() {
             bgColor: "#d946ef",
         },
         {
+            anchor: "step-cdn",
             number: "05",
             icon: Plug,
             title: "Content Delivery Setup",
@@ -126,6 +131,7 @@ export default function Process() {
             bgColor: "#6366f1",
         },
         {
+            anchor: "step-launch",
             number: "06",
             icon: Rocket,
             title: "Launch & Go-Live",
@@ -142,6 +148,7 @@ export default function Process() {
             bgColor: "#a855f7",
         },
         {
+            anchor: "step-growth",
             number: "07",
             icon: TrendingUp,
             title: "Analytics & Growth",
@@ -306,7 +313,8 @@ export default function Process() {
                                 return (
                                     <div
                                         key={idx}
-                                        className="absolute flex flex-col items-center cursor-pointer"
+                                        id={step.anchor}
+                                        className="scroll-mt-20 absolute flex flex-col items-center cursor-pointer"
                                         style={{
                                             left: positions[idx].x,
                                             top: positions[idx].y,

@@ -109,12 +109,16 @@ export default function AIWorkflowsAutomationsPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/ai-workflows-automations-services/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
-            { question: "What are the benefits of AI workflow automation?", answer: "AI workflow automation reduces costs, minimizes human error, and accelerates execution, allowing teams to focus on strategy and high-value work instead of repetitive tasks." },
-            { question: "How do I implement AI workflow automation in my business?", answer: "Start by identifying repetitive tasks, assess your current tech stack, and design a Human-in-the-Loop (HITL) system that combines AI efficiency with human oversight." },
-            { question: "What is the difference between RPA and AI automation?", answer: "RPA follows strict rules and handles structured, repetitive tasks. AI automation understands context, handles unstructured data, and can make intelligent decisions." },
-            { question: "How much does AI workflow automation cost?", answer: "Costs vary by complexity, ranging from low-code automation setups for simple workflows to complex enterprise custom AI development for large-scale operations." },
-            { question: "What tools do you use for AI workflow automation?", answer: "We work with industry-leading tools including n8n, LangChain, UiPath (GenAI enhanced), Make.com, along with OpenAI, Anthropic, AWS, GCP, and Azure integrations." },
+            { question: "What are the benefits of AI workflow automation for businesses?", answer: "AI workflow automation drastically reduces operational costs, minimizes human error, and accelerates process execution. It allows your team to focus on high-value strategic work rather than repetitive data entry." },
+            { question: "How do I implement AI into my existing business workflows?", answer: "Start by identifying repetitive, rule-based tasks. We then assess your tech stack and design a Human-in-the-Loop (HITL) AI System that integrates smoothly without disrupting daily operations." },
+            { question: "What is the difference between RPA and AI automation?", answer: "RPA (Robotic Process Automation) strictly follows pre-programmed rules (if X, then Y). AI Automation uses Machine Learning to understand context, make decisions, and handle unstructured data (like reading messy emails)." },
+            { question: "How much does it cost to hire an AI automation agency?", answer: "Costs vary based on complexity. A simple Low-code AI automation setup might start lower, while complex Enterprise AI Automation Solutions require custom development from professional web development teams. We offer flexible engagement models focused on ROI." },
+            { question: "What are the best AI workflow automation tools in 2026?", answer: "Top tools include n8n for self-hosted privacy, LangChain for building agents, and enterprise platforms like UiPath enhanced with GenAI capabilities." },
         ]),
 
         generateHowToSchema({
@@ -124,7 +128,7 @@ export default function AIWorkflowsAutomationsPage() {
                 { name: "Process Analysis", text: "Deep-dive audit, process maps, and API-first strategy to identify automation opportunities. Timeline: 1-2 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-analysis" },
                 { name: "Workflow Design", text: "Blueprinting, ML model strategies, and architecture design for the automated workflow. Timeline: 2-3 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-design" },
                 { name: "AI Model Integration", text: "OpenAI, Anthropic, and Llama fine-tuning with custom prompting and LLM integration. Timeline: 3-6 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-integration" },
-                { name: "Construction", text: "Building automation pipes using n8n, Make.com, and custom Python code for production-grade workflows.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-construction" },
+                { name: "Automation Setup", text: "Building automation pipes using n8n, Make.com, and custom Python code for production-grade workflows.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-construction" },
                 { name: "Testing & Optimization", text: "Stress-testing, real-time monitoring, and hallucination prevention to ensure reliability. Timeline: 1-2 weeks.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-testing" },
                 { name: "Deployment & Monitoring", text: "Go-live, production setup, team training, and ongoing support with SOC2-compliant monitoring. Timeline: 1 week.", url: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#step-deployment" },
             ],

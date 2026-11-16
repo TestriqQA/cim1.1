@@ -91,14 +91,23 @@ export default function ShopifyEcommercePage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/web-design-development/shopify-development-services/CTA.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
+        // NOTE: that component renders each answer only while its item is open
+        // ({openIndex === index && ...}), so the answer text is absent from the
+        // served HTML until a user clicks. Every other FAQ on the site keeps the
+        // answer mounted and toggles it with CSS; until this one does the same,
+        // the answers below are not backed by on-page text.
         generateFAQSchema([
-            { question: "What are the benefits of Shopify for e-commerce in 2026?", answer: "Shopify offers unparalleled reliability, security, and a massive app ecosystem in 2026. It provides enterprise-grade infrastructure with high availability, built-in payment processing, and a thriving developer community." },
-            { question: "How much does Shopify development cost?", answer: "Shopify development costs vary by business size: Startups typically range from $5,000 to $15,000, while mid-market and enterprise solutions range from $25,000 to $100,000+ depending on complexity and customization needs." },
-            { question: "How to choose the right Shopify development agency?", answer: "Look for certified Shopify Partners who prioritize performance, speed optimization, and SEO best practices. Verify their portfolio, client testimonials, and expertise with Shopify Plus and headless commerce." },
-            { question: "What does a Shopify marketing package include?", answer: "Our Shopify marketing package includes comprehensive Shopify SEO, PPC advertising, Klaviyo email automation, and Conversion Rate Optimization (CRO) strategies tailored for e-commerce growth." },
-            { question: "How long does it take to launch a Shopify store?", answer: "Standard Shopify store development takes 6-10 weeks. Enterprise and headless commerce implementations typically require 3-5 months depending on customization complexity and integrations." },
-            { question: "Can you integrate Shopify with POS systems?", answer: "Yes, we specialize in syncing Shopify online stores with physical retail locations for real-time inventory management, unified reporting, and seamless omnichannel customer experiences." },
-            { question: "What post-launch support do you provide?", answer: "Our post-launch support includes monthly security audits, theme updates, performance monitoring, bug fixes, and ongoing optimization to ensure your store runs smoothly." },
+            { question: "What are the benefits of using Shopify for ecommerce?", answer: "Shopify remains the world's leading e-commerce platform in 2026 due to its unparalleled reliability, security, and massive app ecosystem. It offers a user-friendly backend for merchants while allowing developers the flexibility to build highly customized stores via Shopify Plus and Headless Commerce architectures." },
+            { question: "How much do professional Shopify development services cost in 2026?", answer: "The Shopify ecommerce cost for startups typically ranges from $5,000 to $15,000 for a custom store setup. Mid-market and enterprise projects involving Shopify Plus development or complex migrations can range from $25,000 to $100,000+. The ROI usually pays for itself within 6-12 months." },
+            { question: "How do I choose the best Shopify agency for my business?", answer: "Look for a certified Shopify Partner with a deep understanding of both technical development and digital marketing. The best agency should prioritize performance (speed) and SEO, as these are the primary drivers of e-commerce revenue in the 2026 search era." },
+            { question: "What is included in a full-service Shopify marketing package?", answer: "A comprehensive package usually includes Shopify SEO services, PPC management (Google/Meta Ads), email marketing automation (Klaviyo), and Conversion Rate Optimization (CRO) to handle every stage of the funnel - from attraction to retention." },
+            { question: "How long does it take to launch a custom Shopify store?", answer: "A standard custom store launch usually takes 6-10 weeks, covering strategy, design, development, and testing. More complex enterprise projects or headless builds may take 3-5 months to ensure every integration is perfectly optimized." },
+            { question: "Can you integrate Shopify POS with my existing retail software?", answer: "Yes, we specialize in Shopify POS integration for retail businesses. We can sync your online Shopify store with physical retail locations, ensuring real-time inventory management, unified customer profiles, and consistent pricing across all channels." },
+            { question: "Do you offer ongoing Shopify maintenance and support?", answer: "Absolutely. Our Shopify maintenance and ongoing support services include monthly security audits, theme updates, app performance monitoring, and fresh SEO implementation to keep your store operational, secure, and ahead of competitors 24/7." },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/shopify-development-services/#faq"),
 
         generateHowToSchema({

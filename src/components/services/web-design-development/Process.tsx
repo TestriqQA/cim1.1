@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-audit",
             icon: Compass,
             number: "01",
             title: "Expert Audit & Discovery",
@@ -13,6 +14,7 @@ export default function Process() {
             color: "from-[#008ac1] to-[#00b5ca]",
         },
         {
+            anchor: "step-architecture",
             icon: Palette,
             number: "02",
             title: "Strategic Architecture",
@@ -20,6 +22,7 @@ export default function Process() {
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
+            anchor: "step-engineering",
             icon: Code,
             number: "03",
             title: "Agile Engineering",
@@ -27,6 +30,7 @@ export default function Process() {
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
+            anchor: "step-seo",
             icon: CheckCircle,
             number: "04",
             title: "Global SEO & Performance",
@@ -34,6 +38,7 @@ export default function Process() {
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
+            anchor: "step-deployment",
             icon: Rocket,
             number: "05",
             title: "Seamless Deployment",
@@ -41,6 +46,7 @@ export default function Process() {
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
+            anchor: "step-optimization",
             icon: Wrench,
             number: "06",
             title: "Continuous Optimization",
@@ -119,7 +125,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className={`relative flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
                                         }`}
                                 >
                                     {/* Content Card */}

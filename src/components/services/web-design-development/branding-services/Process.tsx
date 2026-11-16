@@ -4,36 +4,42 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-discovery",
             icon: MessageSquare,
             title: "Discovery Call",
             description: "We conduct a deep-dive interview to understand your unique value proposition, target audience, and career goals.",
             details: ["Deep-dive interview", "Value proposition", "Target audience", "Roadmap definition"]
         },
         {
+            anchor: "step-design",
             icon: Palette,
             title: "Design Concepts",
             description: "We translate your personality into pixels. Rapid prototyping with mood boards and wireframes capturing your personal brand.",
             details: ["Personality to pixels", "Rapid prototyping", "Mood boards", "Brand storytelling"]
         },
         {
+            anchor: "step-development",
             icon: Code2,
             title: "Development",
             description: "Code meets creativity. bringing designs to life with clean, semantic code ensuring full responsiveness across all devices.",
             details: ["Clean semantic code", "Full responsiveness", "4K to mobile", "Creativity implementation"]
         },
         {
+            anchor: "step-content",
             icon: Rocket,
             title: "Content Setup",
             description: <>Content is king. We assist with <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">LinkedIn profile optimization</Link> ensuring cohesive cross-channel narrative.</>,
             details: ["Content assistance", "LinkedIn optimization", "Cohesive narrative", "Cross-channel sync"]
         },
         {
+            anchor: "step-launch",
             icon: Settings,
             title: "Review & Launch",
             description: "Prioritizing perfection. Rigorous QA testing across browsers/devices and load time checks before flipping the switch.",
             details: ["Rigorous QA", "Browser testing", "Load time checks", "Feature verification"]
         },
         {
+            anchor: "step-support",
             icon: HeartHandshake,
             title: "Ongoing Support",
             description: <>We're in it for the long haul. <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">Personal portfolio hosting</Link> and maintenance solutions to keep your content fresh and secure.</>,
@@ -94,7 +100,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative p-6 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative p-6 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-lg group"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",

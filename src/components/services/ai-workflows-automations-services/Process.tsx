@@ -7,6 +7,7 @@ export default function Process() {
     const steps = [
         {
             number: "01",
+            anchor: "step-analysis",
             title: "Process Analysis",
             description: <span>We start with a deep-dive audit. We map your current "happy path" and identifying edge cases to design the perfect <Link href="/services/ai-chatbots-services" className="hover:text-[var(--brand-blue-text)] underline decoration-dotted transition-colors">API-First Automation Strategy</Link>.</span>,
             icon: Search,
@@ -16,6 +17,7 @@ export default function Process() {
         },
         {
             number: "02",
+            anchor: "step-design",
             title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--accent-violet-text)] transition-colors">Workflow Design</Link>,
             description: "Our architects draft the blueprint, selecting the best-fit Machine Learning Model Deployment strategies and defining human touchpoints.",
             icon: Pencil,
@@ -25,6 +27,7 @@ export default function Process() {
         },
         {
             number: "03",
+            anchor: "step-integration",
             title: "AI Model Integration",
             description: "We plug in the brains. Whether it's OpenAI, Anthropic, or open-source Llama models, we handle the fine-tuning and prompting for maximum accuracy.",
             icon: Brain,
@@ -34,6 +37,7 @@ export default function Process() {
         },
         {
             number: "04",
+            anchor: "step-construction",
             title: "Automation Setup",
             description: "We build the pipes. Using tools like n8n or Make, combined with custom Python code, we construct robust, error-resistant flows.",
             icon: Zap,
@@ -43,6 +47,7 @@ export default function Process() {
         },
         {
             number: "05",
+            anchor: "step-testing",
             title: "Testing & Optimization",
             description: <span>We stress-test with <Link href="/blog/ai-workflows-automating-business-processes" className="hover:text-[var(--accent-green-text)] underline decoration-dotted transition-colors">Real-time AI workflow monitoring</Link>. We run thousands of scenarios using <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-green-text)] underline decoration-dotted transition-colors">Testing & Optimization</Link> to ensure your Agentic AI Frameworks don't hallucinate.</span>,
             icon: TestTube,
@@ -52,6 +57,7 @@ export default function Process() {
         },
         {
             number: "06",
+            anchor: "step-deployment",
             title: "Deployment & Monitoring",
             description: <span>Go live with confidence. We provide <Link href="/services/web-design-development" className="hover:text-[var(--accent-red-text)] underline decoration-dotted transition-colors">ROI-driven AI automation consulting</Link> post-launch to continuously improve efficiency.</span>,
             icon: Activity,
@@ -165,7 +171,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={index}
-                                    className="relative mb-10 md:mb-16 lg:mb-24 last:mb-0"
+                                    id={step.anchor}
+                                    className="relative mb-10 md:mb-16 lg:mb-24 last:mb-0 scroll-mt-20"
                                 >
                                     {/* Desktop zigzag layout */}
                                     <div className={`hidden lg:grid lg:grid-cols-2 gap-16 items-center ${isEven ? '' : 'direction-rtl'}`}>

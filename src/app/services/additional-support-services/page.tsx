@@ -157,11 +157,16 @@ export default function AdditionalSupportServicesPage() {
         generateHowToSchema({
             name: "How to Get Started with Business Support Services",
             description: "A simple 4-step onboarding process to start leveraging outsourced business support services with customized integration into your existing workflows.",
+            // No per-step `url` here: unlike the other service pages, this one has
+            // no process section, so there is no element for #step-consultation,
+            // #step-plan, #step-onboarding or #step-support to point at. Dead
+            // fragments were removed rather than anchored. If a visible process
+            // section is ever added, give each step an `anchor` and restore the urls.
             steps: [
-                { name: "Consultation & Needs Assessment", text: "Free consultation to understand your business operations, pain points, and support requirements.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-consultation" },
-                { name: "Custom Plan Selection", text: "Choose from Essential, Professional, or Enterprise tiers, or request a custom package tailored to your needs.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-plan" },
-                { name: "Seamless Integration & Onboarding", text: "Customized onboarding with integration into your tools including Jira, Slack, and existing workflows.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-onboarding" },
-                { name: "Ongoing Support & Reporting", text: "24/7 continuous support with regular performance reporting and SLA adherence tracking.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-support" },
+                { name: "Consultation & Needs Assessment", text: "Free consultation to understand your business operations, pain points, and support requirements." },
+                { name: "Custom Plan Selection", text: "Choose from Essential, Professional, or Enterprise tiers, or request a custom package tailored to your needs." },
+                { name: "Seamless Integration & Onboarding", text: "Customized onboarding with integration into your tools including Jira, Slack, and existing workflows." },
+                { name: "Ongoing Support & Reporting", text: "24/7 continuous support with regular performance reporting and SLA adherence tracking." },
             ],
         }),
 

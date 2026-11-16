@@ -16,6 +16,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-strategy",
             number: "01",
             icon: Search,
             title: "Commerce Strategy & Discovery",
@@ -30,6 +31,7 @@ export default function Process() {
             gradient: "from-[#00b5ca] to-[#00efd6]",
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: "UX Design & Product Merchandising",
@@ -44,6 +46,7 @@ export default function Process() {
             gradient: "from-[#bc3feb] to-[#fab900]",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Platform Development",
@@ -58,6 +61,7 @@ export default function Process() {
             gradient: "from-[#fab900] to-[#ee6500]",
         },
         {
+            anchor: "step-integration",
             number: "04",
             icon: Zap, // Reuse Zap or import another if needed (Zap is imported)
             title: "Integration & Migration",
@@ -72,6 +76,7 @@ export default function Process() {
             gradient: "from-[#ee6500] to-[#ff4d4d]", // Shift to red?
         },
         {
+            anchor: "step-qa",
             number: "05",
             icon: TestTube,
             title: "Testing & Quality Assurance",
@@ -86,6 +91,7 @@ export default function Process() {
             gradient: "from-[#ff4d4d] to-[#00efd6]",
         },
         {
+            anchor: "step-launch",
             number: "06",
             icon: Rocket,
             title: "Launch & Optimization",
@@ -100,6 +106,7 @@ export default function Process() {
             gradient: "from-[#00efd6] to-[#00b5ca]",
         },
         {
+            anchor: "step-growth",
             number: "07",
             icon: BarChart3,
             title: "Growth & Iteration",
@@ -189,7 +196,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => {
                                         setHoveredStep(idx);
                                         setActiveStep(idx);

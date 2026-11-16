@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 const steps = [
     {
+        anchor: "step-discovery",
         number: "01",
         icon: MessageSquare,
         title: "Discovery & Consultation",
@@ -13,6 +14,7 @@ const steps = [
         gradient: "linear-gradient(135deg, var(--brand-purple), var(--brand-blue))",
     },
     {
+        anchor: "step-strategy",
         number: "02",
         icon: Lightbulb,
         title: "Strategy & Planning",
@@ -20,6 +22,7 @@ const steps = [
         gradient: "linear-gradient(135deg, var(--brand-cyan), var(--brand-teal))",
     },
     {
+        anchor: "step-design",
         number: "03",
         icon: Rocket,
         title: "Design & Development",
@@ -27,6 +30,7 @@ const steps = [
         gradient: "linear-gradient(135deg, var(--brand-orange), var(--brand-purple))",
     },
     {
+        anchor: "step-launch",
         number: "04",
         icon: BarChart3,
         title: "Launch & Optimize",
@@ -81,7 +85,8 @@ export default function Process() {
                         return (
                             <div
                                 key={index}
-                                className="relative"
+                                id={step.anchor}
+                                className="scroll-mt-20 relative"
                                 onMouseEnter={() => setHoveredStep(index)}
                                 onMouseLeave={() => setHoveredStep(null)}
                             >
