@@ -4,30 +4,35 @@ import { MessageSquare, Palette, Code2, Rocket, Settings, HeartHandshake } from 
 export default function Process() {
     const steps = [
         {
+            anchor: "step-discovery",
             icon: MessageSquare,
             title: "Discovery & Topical Authority",
             description: <>We analyze your niche, competitors, and <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Topical Authority</Link> and E-E-A-T gaps to plan a winning structure.</>,
             details: ["Niche analysis", "Competitor audit", "Keyword planning", "Structure mapping"]
         },
         {
+            anchor: "step-design",
             icon: Palette,
             title: "UX/UI & Retention",
             description: "Designing for Reader Retention and Loyalty. We create layouts that encourage scroll depth and click-throughs.",
             details: ["Scroll depth optimization", "Ad placement strategy", "Reader journey mapping", "Engagement UI"]
         },
         {
+            anchor: "step-development",
             icon: Code2,
             title: "Agile Dev & CMS Setup",
             description: <>Building robust <Link href="/services/web-design-development/wordpress-development-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Multi-author blog management</Link> systems with role-based access control.</>,
             details: ["Role-based access", "Workflow automation", "Custom post types", "Security setup"]
         },
         {
+            anchor: "step-migration",
             icon: Rocket,
             title: "Migration & SEO Launchpad",
             description: "Executing safe Blog migration and redesign services with 301 redirect mapping and schema implementation.",
             details: ["Zero-downtime migration", "301 redirect mapping", "Schema implementation", "Core Web Vitals check"]
         },
         {
+            anchor: "step-growth",
             icon: Settings,
             title: "Growth & Monetization",
             description: <>Post-launch <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">News portal SEO</Link> and audience growth services and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">Content Monetization Models</Link> setup.</>,
@@ -52,7 +57,7 @@ export default function Process() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "#a855f7" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -88,7 +93,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative p-6 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative p-6 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-lg group"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",

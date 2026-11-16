@@ -93,16 +93,6 @@ export default function WhyChooseUs() {
             `}</style>
 
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/3 -left-20 w-72 h-72 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: "#96bf48" }}
-                />
-                <div
-                    className="absolute bottom-1/3 -right-20 w-72 h-72 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: "#5c8a1e" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -115,7 +105,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>
                     </div>
@@ -158,16 +148,6 @@ export default function WhyChooseUs() {
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                {/* Glow effect behind card */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl blur-xl transition-all duration-500
-                                        ${isHovered ? "opacity-30" : "opacity-0"}
-                                    `}
-                                    style={{
-                                        background: "linear-gradient(135deg, #96bf48, #5c8a1e)",
-                                    }}
-                                />
 
                                 {/* Card */}
                                 <div
@@ -183,14 +163,6 @@ export default function WhyChooseUs() {
                                     }}
                                 >
                                     {/* Corner accent */}
-                                    <div
-                                        className={`
-                                            absolute -top-10 -right-10 w-20 h-20 rounded-full
-                                            transition-all duration-500 blur-2xl
-                                            ${isHovered ? "opacity-40 scale-150" : "opacity-10"}
-                                        `}
-                                        style={{ backgroundColor: "#96bf48" }}
-                                    />
 
                                     {/* Icon Container */}
                                     <div className="relative mb-4">

@@ -12,19 +12,6 @@ export default function Hero() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #06b6d4 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #0891b2 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
                 {/* Floating elements */}
                 <div className="absolute top-1/4 right-1/3 w-3 h-3 rounded-full bg-cyan-400/30 animate-float" />
                 <div className="absolute top-1/2 left-1/4 w-2 h-2 rounded-full bg-teal-400/20 animate-float" style={{ animationDelay: "2s" }} />
@@ -259,13 +246,6 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div className="relative hidden lg:flex flex-col items-center justify-center">
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, #06b6d4 15%, transparent), color-mix(in srgb, #0891b2 15%, transparent))",
-                            }}
-                        />
                         <Image
                             src="/images/services-images/web-design-development/branding-services.svg"
                             alt="Portfolio and Personal Website Development"

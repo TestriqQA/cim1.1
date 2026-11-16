@@ -47,6 +47,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: MapPin,
             title: "Discovery & Strategy",
@@ -63,6 +64,7 @@ export default function Process() {
             bgColor: "#3b82f6",
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Compass,
             title: "UX/UI Design",
@@ -79,6 +81,7 @@ export default function Process() {
             bgColor: "#a855f7",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: PenTool,
             title: "Agile Development",
@@ -95,6 +98,7 @@ export default function Process() {
             bgColor: "#ec4899",
         },
         {
+            anchor: "step-integration",
             number: "04",
             icon: Hammer,
             title: "Integration Excellence",
@@ -111,6 +115,7 @@ export default function Process() {
             bgColor: "#f97316",
         },
         {
+            anchor: "step-qa",
             number: "05",
             icon: Plug,
             title: "Quality Assurance",
@@ -127,6 +132,7 @@ export default function Process() {
             bgColor: "#14b8a6",
         },
         {
+            anchor: "step-launch",
             number: "06",
             icon: Plane,
             title: "Launch & Training",
@@ -143,6 +149,7 @@ export default function Process() {
             bgColor: "#6366f1",
         },
         {
+            anchor: "step-growth",
             number: "07",
             icon: TrendingUp,
             title: "Growth & Optimization",
@@ -208,16 +215,6 @@ export default function Process() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-64 h-64 rounded-full opacity-20 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#3b82f6" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-80 h-80 rounded-full opacity-20 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#ec4899", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -230,7 +227,7 @@ export default function Process() {
                         }}
                     >
                         <Compass className="w-4 h-4" style={{ color: "#0d9488" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-teal-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                             Your Journey With Us
                         </span>
                     </div>
@@ -316,8 +313,9 @@ export default function Process() {
                                 return (
                                     <button
                                         key={idx}
+                                        id={step.anchor}
                                         type="button"
-                                        className="absolute flex flex-col items-center cursor-pointer"
+                                        className="scroll-mt-20 absolute flex flex-col items-center cursor-pointer"
                                         style={{
                                             left: positions[idx].x,
                                             top: positions[idx].y,

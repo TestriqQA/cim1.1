@@ -10,21 +10,6 @@ export default function CTA() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-yellow) 15%, transparent)",
-                        animationDelay: "1.5s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Main CTA Card */}

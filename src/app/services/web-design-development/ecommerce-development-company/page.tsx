@@ -90,14 +90,18 @@ export default function EcommerceStoresPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/web-design-development/ecommerce-development-company/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
-            { question: "How much does it cost to build an ecommerce store?", answer: "Pricing varies based on complexity. A basic Shopify store development project might start at $3k, while a custom enterprise B2B e-commerce solution can range from $20k to $100k+. We offer transparent pricing tailored to your specific feature needs." },
-            { question: "What is the best ecommerce platform for small businesses?", answer: "For most small businesses, WooCommerce or Shopify offers the best balance of ease-of-use and scalability. We help you choose the right platform to minimize overhead while maximizing growth potential." },
-            { question: "How can I improve my ecommerce store's conversion rate?", answer: "Start with speed and trust. Our e-commerce conversion rate optimization (CRO) audits often reveal that speeding up page loads and adding clear trust signals like security badges and reviews are the quickest wins for improving conversions." },
-            { question: "How long does it take to launch a custom ecommerce store?", answer: "A template-based store can go live in 2-4 weeks. A fully custom e-commerce website design project typically takes 8-12 weeks, depending on the number of custom API integrations and unique design requirements." },
-            { question: "Do you offer post-launch support and maintenance?", answer: "Yes! We provide ongoing e-commerce management services, including security patches, feature updates, and performance monitoring to ensure your store remains competitive and up-to-date." },
+            { question: "How much does it cost to build an ecommerce store?", answer: "Pricing varies based on complexity. A basic Shopify store development project might start at $3k, while a custom proven Ecommerce Agency solution for enterprise B2B can range from $20k to $100k+. We offer transparent pricing tailored to your specific feature needs." },
+            { question: "What is the best ecommerce platform for small businesses?", answer: "For most small businesses, WooCommerce development or Shopify offers the best balance of ease-of-use and scalability. We help you choose the right platform to minimize overhead while maximizing growth potential." },
+            { question: "How can I improve my ecommerce store's conversion rate?", answer: "Start with speed and trust. Our Ecommerce conversion rate optimization (CRO) audits often reveal that speeding up page loads and adding clear trust signals (like security badges and reviews) are the quickest wins." },
+            { question: "How long does it take to launch a custom ecommerce store?", answer: "A template-based store can go live in 2-4 weeks. A fully custom Ecommerce website design company project typically takes 8-12 weeks, depending on the number of Custom API integrations and unique design requirements." },
+            { question: "Do you offer post-launch support and maintenance?", answer: "Yes! We provide ongoing Ecommerce Management Services, including security patches, feature updates, and performance monitoring to ensure your store remains competitive in 2026." },
             { question: "Can you help migrate my store from Magento to Shopify?", answer: "Absolutely. Our Magento to Shopify migration services ensure that your product data, customer history, and SEO rankings are preserved during the transition, with minimal downtime." },
-            { question: "Is my e-commerce store ADA compliant?", answer: "We prioritize e-commerce accessibility during the design and development phase. Every custom e-commerce developer at Cinute InfoMedia follows WCAG 2.1 guidelines to ensure your store is usable by everyone and protected from legal risks." },
+            { question: "Is my e-commerce store ADA compliant?", answer: "We build with inclusivity in mind. Our Ecommerce ADA compliance and accessibility services ensure your site meets WCAG 2.1 standards, protecting you from lawsuits and opening your market to all users." },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/ecommerce-development-company/#faq"),
 
         generateHowToSchema({

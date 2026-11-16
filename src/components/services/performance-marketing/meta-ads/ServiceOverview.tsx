@@ -120,14 +120,6 @@ export default function ServiceOverview() {
                                     }}
                                 />
 
-                                {/* Glow effect */}
-                                <div
-                                    className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl transition-opacity duration-500"
-                                    style={{
-                                        backgroundColor: service.color,
-                                        opacity: activeCard === idx ? 0.15 : 0,
-                                    }}
-                                />
 
                                 {/* Icon with pulse effect */}
                                 <div

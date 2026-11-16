@@ -15,16 +15,6 @@ export default function CTA() {
                     }}
                 >
                     {/* Background decoration */}
-                    <div className="absolute inset-0 pointer-events-none">
-                        <div
-                            className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20"
-                            style={{ backgroundColor: "var(--brand-seo)" }}
-                        />
-                        <div
-                            className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-20"
-                            style={{ backgroundColor: "var(--brand-seo)" }}
-                        />
-                    </div>
 
                     {/* Content */}
                     <div className="relative z-10">

@@ -33,20 +33,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #4b277a 15%, transparent)" }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #fab900 15%, transparent)", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #97288e 10%, transparent)", animationDelay: "2s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
@@ -106,14 +92,14 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 xl:grid-cols-[repeat(2,max-content)] xl:gap-2.5 mt-8">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
                                 const isActive = activeFeature === index;
                                 return (
                                     <div
                                         key={index}
-                                        className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border transition-all cursor-pointer ${isActive ? "scale-[1.02] sm:scale-105" : "hover:scale-[1.01]"}`}
+                                        className={`flex items-center xl:justify-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border transition-all cursor-pointer ${isActive ? "scale-[1.02] sm:scale-105" : "hover:scale-[1.01]"}`}
                                         style={{
                                             backgroundColor: isActive ? `color-mix(in srgb, ${feature.color} 15%, var(--card-bg))` : "var(--card-bg)",
                                             borderColor: isActive ? feature.color : "var(--border-color)",
@@ -121,7 +107,7 @@ export default function Hero() {
                                         onClick={() => setActiveFeature(index)}
                                     >
                                         <Icon className="w-4 h-4 flex-shrink-0" style={{ color: feature.color }} />
-                                        <span className="text-xs sm:text-sm font-medium">{feature.text}</span>
+                                        <span className="text-xs sm:text-sm font-medium xl:whitespace-nowrap">{feature.text}</span>
                                     </div>
                                 );
                             })}

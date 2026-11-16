@@ -124,7 +124,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Building2 className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                             Solution Types
                         </span>
                     </div>

@@ -14,6 +14,7 @@ export default function TypesOfChatbots() {
             gradient: "from-blue-600 to-cyan-500",
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
+            badgeColor: "bg-blue-500",
             animation: "cart-bounce",
             badge: "Ecommerce",
         },
@@ -25,6 +26,7 @@ export default function TypesOfChatbots() {
             gradient: "from-purple-600 to-pink-500",
             iconBg: "bg-purple-500/10",
             iconColor: "text-purple-500",
+            badgeColor: "bg-purple-500",
             animation: "pulse-beat",
             badge: "B2B",
         },
@@ -36,6 +38,7 @@ export default function TypesOfChatbots() {
             gradient: "from-emerald-600 to-teal-500",
             iconBg: "bg-emerald-500/10",
             iconColor: "text-emerald-500",
+            badgeColor: "bg-emerald-500",
             animation: "pulse-beat",
             badge: "Healthcare",
         },
@@ -47,6 +50,7 @@ export default function TypesOfChatbots() {
             gradient: "from-orange-600 to-amber-500",
             iconBg: "bg-orange-500/10",
             iconColor: "text-orange-500",
+            badgeColor: "bg-orange-500",
             animation: "headphone-wave",
             badge: "Support",
         },
@@ -58,6 +62,7 @@ export default function TypesOfChatbots() {
             gradient: "from-indigo-600 to-blue-500",
             iconBg: "bg-indigo-500/10",
             iconColor: "text-indigo-500",
+            badgeColor: "bg-indigo-500",
             animation: "search-scan",
             badge: "Internal",
         },
@@ -70,6 +75,7 @@ export default function TypesOfChatbots() {
             gradient: "from-green-600 to-emerald-500",
             iconBg: "bg-green-500/10",
             iconColor: "text-green-500",
+            badgeColor: "bg-green-500",
             animation: "message-bounce",
             badge: "Social",
         },
@@ -81,6 +87,7 @@ export default function TypesOfChatbots() {
             gradient: "from-sky-600 to-blue-500",
             iconBg: "bg-sky-500/10",
             iconColor: "text-sky-500",
+            badgeColor: "bg-sky-500",
             animation: "shield-pulse",
             badge: "Finance",
         },
@@ -92,6 +99,7 @@ export default function TypesOfChatbots() {
             gradient: "from-violet-600 to-purple-500",
             iconBg: "bg-violet-500/10",
             iconColor: "text-violet-500",
+            badgeColor: "bg-violet-500",
             animation: "sparkle-shine",
             badge: "SMB",
         },
@@ -206,18 +214,16 @@ export default function TypesOfChatbots() {
             `}</style>
 
             <section
-                className="relative transition-colors duration-300 py-20 md:py-28 overflow-hidden"
+                className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24 overflow-hidden"
                 style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
                 {/* Animated background elements */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-pink-500/30 to-orange-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
                 </div>
 
-                <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn">
+                    <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fadeIn">
                         <div className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 10%, transparent)",
@@ -225,8 +231,8 @@ export default function TypesOfChatbots() {
                             }}
                         >
                             <Zap className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
-                                COMPREHENSIVE SOLUTIONS
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                                Comprehensive Solutions
                             </span>
                         </div>
 
@@ -254,10 +260,10 @@ export default function TypesOfChatbots() {
                                 >
                                     {/* Card container */}
                                     <div
-                                        className="relative p-6 h-full border backdrop-blur-sm"
+                                        className="relative p-5 sm:p-6 h-full border rounded-2xl backdrop-blur-sm"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
-                                            borderColor: "var(--border-color)",
+                                            borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)",
                                             boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                         }}
                                     >
@@ -269,26 +275,18 @@ export default function TypesOfChatbots() {
                                         {/* Badge */}
                                         <div className="absolute top-4 right-4 z-20">
                                             <div
-                                                className={`px-3 py-1 rounded-full text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-badge-pulse bg-gradient-to-r ${type.gradient}`}
+                                                className={`px-3 py-1 rounded-full text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-badge-pulse ${type.badgeColor}`}
                                             >
                                                 {type.badge}
                                             </div>
                                         </div>
 
-                                        {/* Corner decoration */}
-                                        <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <div className={`absolute top-0 right-0 w-full h-1 bg-gradient-to-l ${type.gradient}`} />
-                                            <div className={`absolute top-0 right-0 w-1 h-full bg-gradient-to-b ${type.gradient}`} />
-                                        </div>
 
                                         {/* Icon container */}
                                         <div className="relative mb-5 z-10">
                                             <div className="relative inline-block">
                                                 {/* Rotating border */}
                                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                    <div
-                                                        className={`absolute -inset-1 rounded-xl bg-gradient-to-r ${type.gradient} opacity-30 blur-md`}
-                                                    />
                                                 </div>
 
                                                 {/* Icon box */}
@@ -326,10 +324,10 @@ export default function TypesOfChatbots() {
                                                         key={idx}
                                                         className="feature-item flex items-center gap-2 group/item"
                                                     >
-                                                        <div className={`w-5 h-5 rounded-full ${type.iconBg} flex items-center justify-center transition-all duration-300 group-hover/item:scale-110`}>
-                                                            <CheckCircle2 className={`w-3 h-3 ${type.iconColor}`} strokeWidth={3} />
+                                                        <div className={`w-4 h-4 flex-shrink-0 rounded-full ${type.iconBg} flex items-center justify-center transition-all duration-300 group-hover/item:scale-110`}>
+                                                            <CheckCircle2 className={`w-2.5 h-2.5 ${type.iconColor}`} strokeWidth={3} />
                                                         </div>
-                                                        <span className="text-xs font-medium" style={{ color: "var(--foreground)" }}>
+                                                        <span className="text-base font-medium" style={{ color: "var(--foreground)" }}>
                                                             {feature}
                                                         </span>
                                                     </div>
@@ -346,21 +344,12 @@ export default function TypesOfChatbots() {
                                             </div> */}
                                         </div>
 
-                                        {/* Bottom gradient line */}
-                                        <div
-                                            className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${type.gradient} group-hover:w-full transition-all duration-700 ease-out`}
-                                        />
 
                                         {/* Large background icon watermark */}
                                         <div className="absolute -bottom-6 -right-6 opacity-0 group-hover:opacity-5 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12">
                                             {Icon && <Icon className={`w-32 h-32 ${type.iconColor}`} strokeWidth={0.5} />}
                                         </div>
 
-                                        {/* Floating particles */}
-                                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <div className={`absolute top-8 right-8 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${type.gradient} animate-ping`} />
-                                            <div className={`absolute bottom-12 left-8 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${type.gradient} animate-ping`} style={{ animationDelay: "0.5s" }} />
-                                        </div>
                                     </div>
                                 </div>
                             );
@@ -368,9 +357,9 @@ export default function TypesOfChatbots() {
                     </div>
 
                     {/* Bottom CTA Section */}
-                    <div className="mt-16">
+                    <div className="mt-10 sm:mt-14 md:mt-16">
                         <div
-                            className="relative p-8 rounded-3xl border backdrop-blur-sm overflow-hidden group hover:shadow-xl transition-all duration-500"
+                            className="relative p-5 sm:p-7 md:p-8 rounded-3xl border backdrop-blur-sm overflow-hidden group hover:shadow-xl transition-all duration-500"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
                                 borderColor: "var(--border-color)",
@@ -380,15 +369,17 @@ export default function TypesOfChatbots() {
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-shift" />
 
                             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                                <div className="flex items-center gap-4">
+                                <div className="flex flex-col sm:flex-row items-center gap-4">
                                     <div className="relative">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse" />
-                                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                                        <div
+                                            className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg"
+                                            style={{ backgroundColor: "var(--brand-chatbot)" }}
+                                        >
                                             <Users className="w-8 h-8 text-white animate-float-up-down" strokeWidth={2.5} />
                                         </div>
                                     </div>
-                                    <div className="text-left">
-                                        <p className="text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>
+                                    <div className="text-center sm:text-left">
+                                        <p className="text-lg sm:text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>
                                             Need a Custom Chatbot Solution?
                                         </p>
                                         <p className="text-sm" style={{ color: "var(--secondary-text)" }}>

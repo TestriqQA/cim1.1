@@ -77,7 +77,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: tiktokPink }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                             Ad Solutions
                         </span>
                     </div>

@@ -126,11 +126,15 @@ export default function PerformanceMarketingPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/performance-marketing/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
-            { question: "What is the difference between digital marketing and performance marketing?", answer: "Digital marketing is a broad term for all online marketing activities. Performance marketing is a subset where you pay for specific actions like clicks, leads, or sales. It's results-driven and focuses on real-time ROI optimization." },
-            { question: "How much do your performance marketing services cost?", answer: "Our pricing is as flexible as our strategies. We offer performance-based models, percentage of ad spend, or fixed monthly retainers depending on your scale and goals." },
-            { question: "How do you measure success in performance marketing?", answer: "We track everything - ROAS, CPA (Cost Per Acquisition), LTV (Lifetime Value), and conversion rates. Our real-time dashboards give you full transparency into every dollar spent." },
-            { question: "Do you handle creative assets for ads?", answer: "Yes! Our team includes creative strategists and designers who produce high-performing ad copy, video ads, and static designs, including continuous A/B testing." },
+            { question: "What is the difference between digital marketing and performance marketing?", answer: "While digital marketing encompasses all online efforts, performance marketing is specifically focused on paid channels where you pay only for results - clicks, leads, or sales. It is highly measurable and ROI-centric." },
+            { question: "How much do your performance marketing services cost?", answer: "We offer flexible pricing models including percentage of ad spend, fixed retainers, or hybrid performance-based fees aimed at ensuring ROI. We tailor our pricing to match your specific goals and budget." },
+            { question: "How do you measure success in performance marketing?", answer: "We look beyond clicks. Our primary KPIs are Return on Ad Spend (ROAS), Customer Acquisition Cost (CAC), and Conversion Rate. We focus on metrics that directly impact your bottom line." },
+            { question: "Do you handle creative assets for ads?", answer: "Yes! Our in-house creative team designs high-converting banners, writes persuasive ad copy, and edits video ads tailored to each platform. Creative is a crucial driver of performance." },
             { question: "Can you help with B2B lead generation?", answer: "Absolutely. We specialize in B2B performance marketing, leveraging LinkedIn Ads and high-intent Google Search to fill your pipeline with qualified decision-makers." },
         ]),
 

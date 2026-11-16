@@ -25,20 +25,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-yellow) 15%, transparent)" }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, transparent)", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 10%, transparent)", animationDelay: "2s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
@@ -95,20 +81,20 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mt-8">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
                                 return (
                                     <div
                                         key={index}
-                                        className="flex items-center gap-2 px-4 py-3 rounded-xl border transition-all hover:scale-105"
+                                        className="flex items-center lg:justify-center gap-2 px-4 py-3 rounded-xl border transition-all hover:scale-105"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--brand-yellow) 5%, var(--card-bg))",
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
                                         <Icon className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                                        <span className="text-sm font-medium">{feature.label}</span>
+                                        <span className="text-sm font-medium lg:whitespace-nowrap">{feature.label}</span>
                                     </div>
                                 );
                             })}

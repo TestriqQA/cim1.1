@@ -144,31 +144,6 @@ export default function Process() {
                     animation-delay: calc(var(--index) * 0.15s);
                 }
 
-                .shine-effect {
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .shine-effect::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(245, 158, 11, 0.1),
-                        transparent
-                    );
-                    transition: left 0.5s ease;
-                }
-
-                .shine-effect:hover::before {
-                    left: 100%;
-                }
-
                 .gradient-border {
                     position: relative;
                     background: var(--card-bg);
@@ -222,16 +197,6 @@ export default function Process() {
                 style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
             >
                 {/* Animated Background Circles */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                        style={{ backgroundColor: localAmber }}
-                    />
-                    <div
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                        style={{ backgroundColor: localAmber }}
-                    />
-                </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                     <div className="text-center mb-20">
@@ -280,7 +245,7 @@ export default function Process() {
                                         {/* Content Card */}
                                         <div className={`w-full md:w-1/2 px-0 md:px-12 ${isEven ? "md:text-left" : "md:text-right"}`}>
                                             <div
-                                                className={`process-card animate-${step.animation} gradient-border shine-effect p-8 rounded-3xl border transition-all duration-500 hover:shadow-2xl group relative`}
+                                                className={`process-card animate-${step.animation} gradient-border overflow-hidden p-8 rounded-3xl border transition-all duration-500 hover:shadow-2xl group relative`}
                                                 style={{
                                                     '--index': idx,
                                                     borderColor: "var(--border-color)",
@@ -348,12 +313,6 @@ export default function Process() {
                                                 </div>
 
                                                 {/* Bottom Corner Accent */}
-                                                <div
-                                                    className="absolute bottom-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                                    style={{
-                                                        background: `radial-gradient(circle at bottom right, ${localAmber}15, transparent 70%)`
-                                                    }}
-                                                />
                                             </div>
                                         </div>
 
@@ -375,7 +334,7 @@ export default function Process() {
                                     backgroundColor: `${localAmber}10`,
                                 }}
                             >
-                                <span className="font-semibold" style={{ color: "var(--accent-amber-text)" }}>
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                     Ready to Dominate Your Local Market? Get Started
                                 </span>
                                 <ArrowRight className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />

@@ -84,10 +84,6 @@ export default function ToolsReporting() {
             </div>
 
             {/* Gradient Orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-drift"></div>
-                <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-drift-reverse"></div>
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
@@ -100,8 +96,8 @@ export default function ToolsReporting() {
                         }}
                     >
                         <Settings className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            TOOLS & REPORTING
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            Tools & Reporting
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -141,13 +137,6 @@ export default function ToolsReporting() {
                                     }}
                                 >
                                     {/* Animated Gradient Background */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-opacity duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${feature.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Metric Badge */}
                                     <div
@@ -166,7 +155,6 @@ export default function ToolsReporting() {
                                     <div
                                         className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-700"
                                         style={{
-                                            background: `radial-gradient(circle, ${feature.color}20, transparent)`,
                                             transform: isHovered ? "rotate(180deg) scale(1.2)" : "rotate(0deg) scale(0.8)",
                                             opacity: isHovered ? 0.6 : 0.2,
                                         }}

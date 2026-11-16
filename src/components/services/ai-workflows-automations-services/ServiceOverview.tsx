@@ -41,12 +41,12 @@ export default function ServiceOverview() {
 
     return (
         <section
-            className="py-20 transition-colors duration-300"
+            className="py-12 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                     <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
                         What Are <span style={{ color: "var(--accent-orange-text)" }}>AI Workflows & Automations?</span>
                     </h2>
@@ -56,7 +56,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Benefits Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-6">
                     {benefits.map((benefit, index) => {
                         const Icon = benefit.icon;
                         return (
@@ -109,7 +109,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Deep Dive Section */}
-                <div className="mt-16 p-8 rounded-2xl border animate-fadeIn"
+                <div className="mt-10 md:mt-16 p-6 md:p-8 rounded-2xl border animate-fadeIn"
                     style={{
                         backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                         borderColor: "var(--border-color)",
@@ -123,11 +123,11 @@ export default function ServiceOverview() {
                         </div>
                         <h3 className="text-2xl font-bold">Why AI Automation Matters</h3>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
-                                <Shield className="w-5 h-5" style={{ color: "var(--brand-orange)" }} />
-                                <h4 className="font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Enterprises</h4>
+                                <Shield className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                                <h4 className="text-xl font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Enterprises</h4>
                             </div>
                             <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Large organizations face complex processes across multiple departments. AI automation enables seamless integration, real-time monitoring, and predictive insights that drive strategic growth and competitive advantage.
@@ -135,8 +135,8 @@ export default function ServiceOverview() {
                         </div>
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
-                                <Zap className="w-5 h-5" style={{ color: "var(--brand-orange)" }} />
-                                <h4 className="font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Growing Businesses</h4>
+                                <Zap className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                                <h4 className="text-xl font-semibold" style={{ color: "var(--accent-orange-text)" }}>For Growing Businesses</h4>
                             </div>
                             <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                 Scale your operations without proportionally increasing headcount. AI workflows handle increasing volumes of work while maintaining quality and consistency, allowing your team to focus on high-value activities.

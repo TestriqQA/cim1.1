@@ -16,6 +16,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-strategy",
             number: "01",
             icon: Search,
             title: "Commerce Strategy & Discovery",
@@ -30,6 +31,7 @@ export default function Process() {
             gradient: "from-[#00b5ca] to-[#00efd6]",
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: "UX Design & Product Merchandising",
@@ -44,6 +46,7 @@ export default function Process() {
             gradient: "from-[#bc3feb] to-[#fab900]",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Platform Development",
@@ -58,6 +61,7 @@ export default function Process() {
             gradient: "from-[#fab900] to-[#ee6500]",
         },
         {
+            anchor: "step-integration",
             number: "04",
             icon: Zap, // Reuse Zap or import another if needed (Zap is imported)
             title: "Integration & Migration",
@@ -72,6 +76,7 @@ export default function Process() {
             gradient: "from-[#ee6500] to-[#ff4d4d]", // Shift to red?
         },
         {
+            anchor: "step-qa",
             number: "05",
             icon: TestTube,
             title: "Testing & Quality Assurance",
@@ -86,6 +91,7 @@ export default function Process() {
             gradient: "from-[#ff4d4d] to-[#00efd6]",
         },
         {
+            anchor: "step-launch",
             number: "06",
             icon: Rocket,
             title: "Launch & Optimization",
@@ -100,6 +106,7 @@ export default function Process() {
             gradient: "from-[#00efd6] to-[#00b5ca]",
         },
         {
+            anchor: "step-growth",
             number: "07",
             icon: BarChart3,
             title: "Growth & Iteration",
@@ -124,10 +131,6 @@ export default function Process() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-40 right-20 w-96 h-96 bg-[#00b5ca]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-40 left-20 w-96 h-96 bg-[#bc3feb]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -189,7 +192,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => {
                                         setHoveredStep(idx);
                                         setActiveStep(idx);
@@ -233,15 +237,6 @@ export default function Process() {
                                                     transform: isHovered ? "scale(1.15) rotate(10deg)" : "scale(1) rotate(0deg)",
                                                 }}
                                             >
-                                                {/* Outer glow ring */}
-                                                <div
-                                                    className="absolute inset-0 rounded-2xl blur-xl transition-opacity duration-500"
-                                                    style={{
-                                                        background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
-                                                        opacity: isHovered ? 0.6 : 0.3,
-                                                        transform: "scale(1.5)",
-                                                    }}
-                                                />
 
                                                 {/* Icon container */}
                                                 <div

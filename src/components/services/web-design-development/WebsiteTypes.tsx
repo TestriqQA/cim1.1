@@ -474,7 +474,7 @@ export default function WebsiteTypes() {
           >
             <Globe className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
             <span
-              className="text-sm font-medium"
+              className="text-sm font-semibold"
               style={{ color: "var(--brand-blue-text)" }}
             >
               Website Types
@@ -486,7 +486,7 @@ export default function WebsiteTypes() {
             style={{ color: "var(--foreground)" }}
           >
             Comprehensive{" "}
-            <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>
+            <span style={{ color: "var(--brand-blue-text)", fontWeight: 600 }}>
               Custom Website Development
             </span>{" "}
             Solutions

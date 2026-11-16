@@ -77,22 +77,6 @@ export default function Platforms() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-10"
-                    style={{
-                        background: "var(--brand-teal)",
-                        animation: "float 6s ease-in-out infinite"
-                    }}
-                />
-                <div
-                    className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-10"
-                    style={{
-                        background: "var(--brand-cyan)",
-                        animation: "float 8s ease-in-out infinite reverse"
-                    }}
-                />
-            </div>
 
             <div className="relative z-10">
                 {/* Header */}
@@ -239,19 +223,6 @@ export default function Platforms() {
                                     </div> */}
                                 </div>
 
-                                {/* Decorative corner elements */}
-                                <div
-                                    className="absolute top-0 right-0 w-20 h-20 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                                    style={{
-                                        background: `radial-gradient(circle at top right, ${platform.accentColor}, transparent 70%)`
-                                    }}
-                                />
-                                <div
-                                    className="absolute bottom-0 left-0 w-24 h-24 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                                    style={{
-                                        background: `radial-gradient(circle at bottom left, ${platform.accentColor}, transparent 70%)`
-                                    }}
-                                />
 
                                 {/* Bottom accent bar */}
                                 <div

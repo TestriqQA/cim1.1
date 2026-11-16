@@ -47,6 +47,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Lightbulb,
             title: "Strategic Discovery",
@@ -62,6 +63,7 @@ export default function Process() {
             bgColor: "#61dafb",
         },
         {
+            anchor: "step-architecture",
             number: "02",
             icon: Palette,
             title: "Architecture Design",
@@ -77,6 +79,7 @@ export default function Process() {
             bgColor: "#00d4ff",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code2,
             title: "Agile Development",
@@ -92,6 +95,7 @@ export default function Process() {
             bgColor: "#61dafb",
         },
         {
+            anchor: "step-optimization",
             number: "04",
             icon: Zap,
             title: "Performance Optimization",
@@ -107,6 +111,7 @@ export default function Process() {
             bgColor: "#00d4ff",
         },
         {
+            anchor: "step-deployment",
             number: "05",
             icon: Rocket,
             title: "Deployment & Hosting",
@@ -122,6 +127,7 @@ export default function Process() {
             bgColor: "#61dafb",
         },
         {
+            anchor: "step-seo",
             number: "06",
             icon: Search,
             title: "SEO & Integration",
@@ -156,16 +162,6 @@ export default function Process() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-64 h-64 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#61dafb" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-80 h-80 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#00d4ff", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -178,7 +174,7 @@ export default function Process() {
                         }}
                     >
                         <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Development Process
                         </span>
                     </div>
@@ -266,8 +262,9 @@ export default function Process() {
                                 return (
                                     <button
                                         key={idx}
+                                        id={step.anchor}
                                         type="button"
-                                        className="absolute flex flex-col items-center cursor-pointer"
+                                        className="scroll-mt-20 absolute flex flex-col items-center cursor-pointer"
                                         style={{
                                             left: positions[idx].x,
                                             top: positions[idx].y,

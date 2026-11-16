@@ -12,18 +12,6 @@ export default function CTA() {
                     {/* Painted Background */}
                     <div className="absolute inset-0 bg-[var(--brand-black)]">
                         {/* Mesh Gradients */}
-                        <div
-                            className="absolute top-[-50%] left-[-20%] w-[80%] h-[150%] rounded-full blur-[100px] opacity-60 mix-blend-screen animate-blob"
-                            style={{ background: "radial-gradient(circle, var(--brand-purple), transparent)" }}
-                        />
-                        <div
-                            className="absolute top-[20%] right-[-20%] w-[70%] h-[120%] rounded-full blur-[100px] opacity-60 mix-blend-screen animate-blob animation-delay-2000"
-                            style={{ background: "radial-gradient(circle, var(--brand-blue), transparent)" }}
-                        />
-                        <div
-                            className="absolute bottom-[-40%] left-[20%] w-[60%] h-[120%] rounded-full blur-[100px] opacity-50 mix-blend-screen animate-blob animation-delay-4000"
-                            style={{ background: "radial-gradient(circle, var(--brand-cyan), transparent)" }}
-                        />
 
                         {/* Noise Overlay for "Painted" Texture */}
                         <div

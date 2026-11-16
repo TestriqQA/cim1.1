@@ -76,16 +76,16 @@ export default function IndustriesAndUseCases() {
 
     return (
         <section
-            className="relative py-20 md:py-28"
+            className="relative py-12 sm:py-16 md:py-24"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                <div className="text-center mb-10 sm:mb-14 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Industries Transforming with <span style={{ color: "var(--accent-indigo-text)" }}>Our AI Solutions</span>
                     </h2>
                     <p
@@ -115,13 +115,6 @@ export default function IndustriesAndUseCases() {
                                     transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                                 }}
                             >
-                                {/* Animated Background Gradient */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                                    style={{
-                                        background: `radial-gradient(circle at 50% 0%, ${industry.accentColor}15, transparent 70%)`,
-                                    }}
-                                />
 
                                 {/* Animated Border */}
                                 <div
@@ -135,7 +128,7 @@ export default function IndustriesAndUseCases() {
 
                                 {/* Card Content */}
                                 <div
-                                    className="relative rounded-3xl p-8 border backdrop-blur-sm"
+                                    className="relative rounded-3xl p-5 sm:p-7 md:p-8 border backdrop-blur-sm"
                                     style={{
                                         background: "color-mix(in srgb, var(--card-bg) 90%, transparent)",
                                         borderColor: isHovered ? industry.accentColor : "var(--border-color)",
@@ -155,7 +148,7 @@ export default function IndustriesAndUseCases() {
                                         <div
                                             className="relative w-20 h-20 rounded-2xl flex items-center justify-center overflow-hidden"
                                             style={{
-                                                background: `linear-gradient(135deg, ${industry.accentColor}, ${industry.accentColor}80)`,
+                                                backgroundColor: industry.accentColor,
                                                 transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
                                                 transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                                                 boxShadow: isHovered ? `0 20px 40px ${industry.accentColor}40` : "none",
@@ -170,15 +163,6 @@ export default function IndustriesAndUseCases() {
                                                 }}
                                             />
 
-                                            {/* Animated background circle */}
-                                            <div
-                                                className="absolute inset-0 rounded-2xl"
-                                                style={{
-                                                    background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent)`,
-                                                    opacity: isHovered ? 1 : 0,
-                                                    transition: "opacity 0.3s ease",
-                                                }}
-                                            />
                                         </div>
 
                                         {/* Secondary Icon - Animated */}

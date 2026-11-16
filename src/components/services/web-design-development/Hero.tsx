@@ -10,28 +10,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-                <div
-                    className="absolute top-0 left-1/4 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-teal) 12%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-10 sm:py-12 relative">
                 {/* Breadcrumbs */}
@@ -89,7 +67,7 @@ export default function Hero() {
                             }}
                         >
                             <Sparkles className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
-                            <span className="text-xs sm:text-sm font-semibold">Web Design & Development</span>
+                            <span className="text-sm font-semibold">Web Design & Development</span>
                         </div>
 
                         {/* Heading */}
@@ -119,7 +97,7 @@ export default function Hero() {
                         </div>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 mb-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
                             {[
                                 { icon: Rocket, text: "ROI Driven" },
                                 { icon: Zap, text: "Core Web Vitals 90+" },
@@ -128,13 +106,13 @@ export default function Hero() {
                                 { icon: ShieldCheck, text: "Enterprise Security" },
                                 { icon: Code, text: "Clean, Tested Code" },
                             ].map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-center lg:justify-start gap-2 sm:gap-2.5 p-2.5 rounded-xl transition-all duration-300 hover:scale-105 border border-transparent hover:border-[var(--brand-blue)]"
+                                <div key={idx} className="flex items-center justify-center gap-2 sm:gap-2.5 p-2.5 lg:px-3 rounded-xl transition-all duration-300 hover:scale-105"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 8%, transparent)",
                                     }}
                                 >
                                     <item.icon className="w-4 h-4 shrink-0 text-[var(--brand-blue)]" />
-                                    <span className="text-xs font-bold text-[var(--foreground)] text-left">
+                                    <span className="text-xs font-bold text-[var(--foreground)] text-left lg:whitespace-nowrap">
                                         {/* Only "Global SEO" is linked: it is the one badge whose
                                             anchor text matches its destination. "Responsive Design"
                                             pointed at a UI/UX blog post and "Enterprise Security" at
@@ -202,13 +180,6 @@ export default function Hero() {
                         className="relative flex flex-col items-center gap-8 sm:gap-12 justify-center animate-fadeIn"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl pointer-events-none"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent), color-mix(in srgb, var(--brand-teal) 10%, transparent))",
-                            }}
-                        />
 
                         {/* Feature Card */}
                         <div

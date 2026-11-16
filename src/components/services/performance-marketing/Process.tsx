@@ -10,36 +10,42 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             icon: ClipboardList,
             title: "Discovery & Deep-Dive Audit",
             description: <span>We start by understanding your business DNA. We dive deep into your historical data, audit your existing accounts (<Link href="/services/performance-marketing/google-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Google</Link>/<Link href="/services/performance-marketing/meta-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Meta</Link>), and analyze your competitors.</span>,
             details: ["Business DNA", "Data Audit", "Competitor Analysis", "KPI Definition"],
         },
         {
+            anchor: "step-strategy",
             icon: Search,
             title: "Strategy & Media Planning",
             description: <span>We craft a tailored <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">performance marketing strategy</Link>. We identify the 'low-hanging fruit' for quick wins while building a long-term roadmap.</span>,
             details: ["Channel Mix", "Budget Allocation", "Quick Wins", "Long-term Roadmap"],
         },
         {
+            anchor: "step-creative",
             icon: Rocket,
             title: "Creative & Asset Production",
             description: <span>Performance is 50% media buying and 50% <Link href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">creative</Link>. Our design team builds high-converting assets - banners, videos, and carousels.</span>,
             details: ["Ad Banners", "Video Ads", "Copywriting", "High-Converting Assets"],
         },
         {
+            anchor: "step-launch",
             icon: Settings,
             title: "Campaign Launch & Setup",
             description: "We build your campaigns with surgical precision. This includes setting up pixel tracking, conversion API (CAPI), and event tagging.",
             details: ["Pixel Tracking", "CAPI Setup", "Event Tagging", "Testing Structure"],
         },
         {
+            anchor: "step-optimization",
             icon: TrendingUp,
             title: "Continuous Optimization (The Grind)",
             description: "The real work starts after launch. We monitor bids, optimize ad copy, and refine audiences daily. We kill the losing ads and double down on winners.",
             details: ["Bid Monitoring", "Copy Optimization", "Audience Refinement", "ROI Boosting"],
         },
         {
+            anchor: "step-scale",
             icon: FileText,
             title: "Scale, Report & Iterate",
             description: "Once we hit the target KPIs, we aggressively scale the budget. Our comprehensive monthly reports provide insights and a roadmap for the next sprint.",
@@ -60,8 +66,8 @@ export default function Process() {
                         }}
                     >
                         <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            OUR PROCESS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Our Process
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -89,7 +95,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={index}
-                                    className={`relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
                                     onMouseEnter={() => setHoveredStep(index)}
                                     onMouseLeave={() => setHoveredStep(null)}
                                 >

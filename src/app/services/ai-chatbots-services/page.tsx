@@ -112,12 +112,16 @@ export default function AIPoweredChatbotsPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/ai-chatbots-services/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
-            { question: "What are the benefits of AI chatbots for businesses?", answer: "AI chatbots improve operational efficiency by automating routine queries, increase customer satisfaction with instant 24/7 responses, and deliver a strong ROI through reduced support costs." },
-            { question: "How can AI chatbots improve customer service?", answer: "AI chatbots provide instant responses with less than 1 second response time, handle multiple conversations simultaneously, and escalate complex queries to human agents seamlessly." },
-            { question: "What is the difference between rule-based and AI chatbots?", answer: "Rule-based chatbots follow predefined scripts and decision trees. AI chatbots understand context and intent using NLP and LLMs like GPT-4o, enabling natural conversations and handling unstructured queries." },
-            { question: "How much does it cost to build an AI chatbot?", answer: "Custom AI chatbot solutions start from $500 per month. Pricing varies based on complexity, integrations, conversation volume, and whether you need enterprise features like HIPAA compliance or SOC2 security." },
-            { question: "How do I choose the right AI chatbot for my business?", answer: "Consider your industry requirements, integration needs (CRM, eCommerce, helpdesk), compliance requirements (HIPAA, SOC2), conversation volume, and whether you need multi-language or omnichannel support." },
+            { question: "What are the benefits of using AI chatbots for business?", answer: "AI Chatbot Services maximize efficiency by handling high volumes of queries 24/7 without human fatigue. Key benefits include a significant reduction in customer support costs, increased lead conversion through instant engagement, and scalable multilingual support. An ROI-driven AI chatbot implementation typically pays for itself within 6 months." },
+            { question: "How do AI-powered chatbots improve customer service?", answer: "AI chatbots improve customer service by providing instant, zero-latency responses to inquiries, resolving common issues without wait times. Using Sentiment Analysis for Customer Support, they can detect frustrated users and escalate them to human agents immediately (HITL), ensuring a high-quality Omnichannel Customer Experience (CX)." },
+            { question: "What is the difference between a rule-based chatbot and an AI chatbot?", answer: "A rule-based chatbot follows a strict \"if/then\" decision tree and fails when questions deviate from the script. A Custom AI Chatbot uses Natural Language Understanding (NLU) and Machine Learning (ML) to understand intent, context, and nuance, allowing it to handle complex, unstructured conversations just like a human." },
+            { question: "How much does it cost to implement an AI chatbot for a business?", answer: "Costs vary based on complexity. A simple Low-code AI chatbot builder solution might start from $2,000-$5,000, while a fully Custom AI Chatbot Development project for Enterprise with LLM integration and custom security protocols typically ranges from $15,000 to $50,000+. Contact us for a precise quote tailored to your tech stack." },
+            { question: "How do I choose the right AI chatbot for my company?", answer: "Look for an AI Chatbot Agency that prioritizes your business goals. If you need sales, choose a bot specialized in Automated lead qualification. For support, ensure it offers integration for Zendesk and Multilingual capabilities. Always check for E-E-A-T compliance and security certifications." },
         ]),
 
         generateHowToSchema({

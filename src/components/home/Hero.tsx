@@ -20,7 +20,6 @@ export default function Hero({
 }: {
   caseStudies: HeroCaseStudy[];
 }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSlide, setActiveSlide] = useState(0);
   const pausedRef = useRef(false);
   const touchStartXRef = useRef<number | null>(null);
@@ -73,55 +72,11 @@ export default function Hero({
     step(travelled < 0 ? 1 : -1);
   };
 
-  useEffect(() => {
-    // Only enable mouse effect on devices that support hover and have a fine pointer (mouse)
-    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-    if (!mediaQuery.matches) return;
-
-    let animationFrameId: number;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      // Use requestAnimationFrame to debounce updates and prevent layout thrashing
-      if (animationFrameId) return;
-
-      animationFrameId = requestAnimationFrame(() => {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-        animationFrameId = 0;
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background (uses brand colors) */}
+      {/* Background wash. The blurred colour orbs that used to sit here were
+          removed; only the flat top-down gradient remains. */}
       <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="hidden md:block absolute w-[800px] h-[800px] rounded-full mix-blend-multiply filter blur-3xl opacity-16 transition-all duration-500 ease-out"
-          style={{
-            background: `radial-gradient(circle, var(--brand-purple) 0%, transparent 70%)`,
-            transform: `translate(${mousePosition.x - 400}px, ${mousePosition.y - 400}px)`,
-            willChange: "transform",
-          }}
-        />
-        <div
-          className="hidden md:block absolute top-0 left-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-16 animate-blob"
-          style={{ backgroundColor: "var(--brand-cyan)" }}
-        />
-        <div
-          className="hidden md:block absolute top-0 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-16 animate-blob animation-delay-2000"
-          style={{ backgroundColor: "var(--brand-yellow)" }}
-        />
-        <div
-          className="hidden md:block absolute bottom-0 left-1/3 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-16 animate-blob animation-delay-4000"
-          style={{ backgroundColor: "var(--brand-purple)" }}
-        />
-
         <div
           className="absolute inset-0"
           style={{
@@ -144,7 +99,7 @@ export default function Hero({
               }}
             >
               <Sparkles className="w-4 h-4 animate-spin-slow" />
-              <span>Digital Presence & Digital Growth</span>
+              <span className="text-sm font-semibold">Digital Presence & Digital Growth</span>
             </div>
 
             <h1 className="w-full min-w-0 break-words [overflow-wrap:anywhere] text-[1.75rem] leading-[1.15] tracking-tight sm:tracking-normal sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
@@ -327,21 +282,6 @@ export default function Hero({
                     border: "1px solid var(--border-color)",
                   }}
                 >
-                  <div
-                    aria-hidden="true"
-                    style={{
-                      position: "absolute",
-                      right: -20,
-                      top: -20,
-                      width: 80,
-                      height: 80,
-                      borderRadius: "50%",
-                      background:
-                        "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
-                      filter: "blur(30px)",
-                      opacity: 0.2,
-                    }}
-                  />
 
                   {/* Every slide occupies the same grid cell, so the frame is
                       as tall as the tallest content and nothing reflows. */}

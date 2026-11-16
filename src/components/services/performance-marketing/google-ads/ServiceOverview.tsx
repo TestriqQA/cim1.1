@@ -71,16 +71,6 @@ export default function ServiceOverview() {
             style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
         >
             {/* Background Animation */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: googleBlue }}
-                />
-                <div
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: googleGreen }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

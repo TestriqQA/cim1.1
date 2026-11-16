@@ -78,7 +78,7 @@ export default function ServiceOverview() {
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ background: "linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(193, 53, 132, 0.1))", borderColor: "rgba(225, 48, 108, 0.2)" }}>
                         <Megaphone className="w-4 h-4" style={{ color: "#E1306C" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-pink-text)" }}>Our Services</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>Our Services</span>
                     </div>
                     <h2
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"

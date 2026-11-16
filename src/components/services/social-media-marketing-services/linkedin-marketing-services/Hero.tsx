@@ -17,13 +17,6 @@ export default function Hero() {
             {/* Background */}
             <div
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 15% 50%, rgba(10, 102, 194, 0.12), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(10, 102, 194, 0.08), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(10, 102, 194, 0.06), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div
@@ -95,7 +88,7 @@ export default function Hero() {
                             }}
                         >
                             <Linkedin className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 LinkedIn Marketing Partner
                             </span>
                         </div>

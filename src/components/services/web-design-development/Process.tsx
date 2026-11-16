@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-audit",
             icon: Compass,
             number: "01",
             title: "Expert Audit & Discovery",
@@ -13,6 +14,7 @@ export default function Process() {
             color: "from-[#008ac1] to-[#00b5ca]",
         },
         {
+            anchor: "step-architecture",
             icon: Palette,
             number: "02",
             title: "Strategic Architecture",
@@ -20,6 +22,7 @@ export default function Process() {
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
+            anchor: "step-engineering",
             icon: Code,
             number: "03",
             title: "Agile Engineering",
@@ -27,6 +30,7 @@ export default function Process() {
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
+            anchor: "step-seo",
             icon: CheckCircle,
             number: "04",
             title: "Global SEO & Performance",
@@ -34,6 +38,7 @@ export default function Process() {
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
+            anchor: "step-deployment",
             icon: Rocket,
             number: "05",
             title: "Seamless Deployment",
@@ -41,6 +46,7 @@ export default function Process() {
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
+            anchor: "step-optimization",
             icon: Wrench,
             number: "06",
             title: "Continuous Optimization",
@@ -58,28 +64,6 @@ export default function Process() {
             }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-teal) 12%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
@@ -119,7 +103,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className={`relative flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
                                         }`}
                                 >
                                     {/* Content Card */}

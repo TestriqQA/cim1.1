@@ -15,6 +15,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-requirements",
             number: "01",
             icon: Search,
             title: "Requirements & Compliance",
@@ -29,6 +30,7 @@ export default function Process() {
             gradient: "from-[#3b82f6] to-[#6366f1]",
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline">UX Design & Prototyping</Link>,
@@ -43,6 +45,7 @@ export default function Process() {
             gradient: "from-[#6366f1] to-[#8b5cf6]",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Secure Development",
@@ -57,6 +60,7 @@ export default function Process() {
             gradient: "from-[#8b5cf6] to-[#3b82f6]",
         },
         {
+            anchor: "step-testing",
             number: "04",
             icon: TestTube,
             title: "Testing & Validation",
@@ -71,6 +75,7 @@ export default function Process() {
             gradient: "from-[#3b82f6] to-[#8b5cf6]",
         },
         {
+            anchor: "step-deployment",
             number: "05",
             icon: Rocket,
             title: "Deployment & Training",
@@ -85,6 +90,7 @@ export default function Process() {
             gradient: "from-[#6366f1] to-[#3b82f6]",
         },
         {
+            anchor: "step-monitoring",
             number: "06",
             icon: BarChart3,
             title: "Monitoring & Optimization",
@@ -109,10 +115,6 @@ export default function Process() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-40 right-20 w-96 h-96 bg-[#3b82f6]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-40 left-20 w-96 h-96 bg-[#6366f1]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -174,7 +176,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => {
                                         setHoveredStep(idx);
                                         setActiveStep(idx);
@@ -218,15 +221,6 @@ export default function Process() {
                                                     transform: isHovered ? "scale(1.15) rotate(10deg)" : "scale(1) rotate(0deg)",
                                                 }}
                                             >
-                                                {/* Outer glow ring */}
-                                                <div
-                                                    className="absolute inset-0 rounded-2xl blur-xl transition-opacity duration-500"
-                                                    style={{
-                                                        background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
-                                                        opacity: isHovered ? 0.6 : 0.3,
-                                                        transform: "scale(1.5)",
-                                                    }}
-                                                />
 
                                                 {/* Icon container */}
                                                 <div

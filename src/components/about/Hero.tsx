@@ -13,31 +13,6 @@ export default function Hero() {
       }}
     >
       {/* Animated Background (dark/light adaptive via CSS vars) */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute top-0 left-1/4 w-64 h-64 md:w-96 md:h-96 rounded-full blur-3xl animate-pulse"
-          style={{
-            backgroundColor:
-              "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-1/4 w-64 h-64 md:w-96 md:h-96 rounded-full blur-3xl animate-pulse"
-          style={{
-            backgroundColor:
-              "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
-            animationDelay: "1s",
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 w-64 h-64 md:w-96 md:h-96 rounded-full blur-3xl animate-pulse"
-          style={{
-            backgroundColor:
-              "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
-            animationDelay: "2s",
-          }}
-        />
-      </div>
 
       <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 sm:py-10 md:py-12 relative">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
@@ -85,7 +60,7 @@ export default function Hero() {
                 className="w-4 h-4"
                 style={{ color: "var(--brand-blue-text)" }}
               />
-              <span className="text-xs sm:text-sm font-semibold">
+              <span className="text-sm font-semibold">
                 Digital Growth Agency
               </span>
             </div>
@@ -228,13 +203,6 @@ export default function Hero() {
 
           {/* RIGHT LOGO SECTION */}
           <div className="relative flex items-center justify-center">
-            <div
-              className="absolute inset-0 rounded-3xl blur-2xl"
-              style={{
-                background:
-                  "linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 10%, transparent), color-mix(in srgb, var(--brand-purple) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent))",
-              }}
-            />
 
             {/* LOGO CARD */}
             <div
@@ -245,16 +213,6 @@ export default function Hero() {
                 backdropFilter: "blur(6px)",
               }}
             >
-              {/* Glow inside */}
-              <div
-                className="absolute inset-0 rounded-3xl"
-                style={{
-                  opacity: 0.15,
-                  background:
-                    "linear-gradient(90deg, var(--brand-blue), var(--brand-purple), var(--brand-cyan))",
-                  filter: "blur(22px)",
-                }}
-              />
 
               {/* LOGO */}
               <div

@@ -16,13 +16,6 @@ export default function Hero() {
             {/* Background */}
             <div
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.08), transparent 25%),
-                        radial-gradient(circle at 90% 50%, rgba(14, 165, 233, 0.05), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.03), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div
@@ -87,7 +80,7 @@ export default function Hero() {
                             }}
                         >
                             <ShoppingBag className="w-4 h-4" style={{ color: commerceBlue }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                 Maximize Online Sales
                             </span>
                         </div>

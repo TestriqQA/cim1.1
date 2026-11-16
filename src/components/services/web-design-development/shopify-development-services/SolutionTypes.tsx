@@ -122,16 +122,6 @@ export default function SolutionTypes() {
             `}</style>
 
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#96bf48" }}
-                />
-                <div
-                    className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#5c8a1e", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -143,7 +133,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             E-commerce Solutions
                         </span>
                     </div>
@@ -193,16 +183,6 @@ export default function SolutionTypes() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => setActiveIndex(isActive ? null : idx)}
                             >
-                                {/* Glow effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-2 rounded-3xl blur-2xl transition-all duration-700
-                                        ${isHovered || isActive ? "opacity-25" : "opacity-0"}
-                                    `}
-                                    style={{
-                                        background: `radial-gradient(circle at center, ${solution.accentColor}, transparent 70%)`,
-                                    }}
-                                />
 
                                 {/* Card */}
                                 <div

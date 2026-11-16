@@ -60,16 +60,6 @@ export default function WhyChooseUs() {
             style={{ backgroundColor: "var(--card-bg)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute -top-48 -right-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#2563eb" }}
-                />
-                <div
-                    className="absolute -bottom-48 -left-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#2563eb" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -83,7 +73,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -112,14 +102,6 @@ export default function WhyChooseUs() {
                                 onMouseEnter={() => setHoveredCard(idx)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
-                                {/* Glow Effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl blur-xl transition-opacity duration-500
-                                        ${isHovered ? "opacity-100" : "opacity-0"}
-                                    `}
-                                    style={{ backgroundColor: "rgba(37, 99, 235, 0.2)" }}
-                                />
 
                                 {/* Card */}
                                 <div

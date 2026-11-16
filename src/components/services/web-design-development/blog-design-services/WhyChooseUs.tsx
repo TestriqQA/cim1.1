@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: "#a855f7" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

@@ -11,28 +11,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-seo) 15%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-seo) 8%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
@@ -112,44 +90,44 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(2,max-content)] 2xl:grid-cols-[repeat(4,max-content)] lg:gap-2.5 mb-8">
+                            <div className="flex items-center justify-center gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-seo) 8%, transparent)",
                                 }}
                             >
                                 <Search className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-seo)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Keyword Research
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-seo) 8%, transparent)",
                                 }}
                             >
                                 <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-seo)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Rank Tracking
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-seo) 8%, transparent)",
                                 }}
                             >
                                 <Globe className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-seo)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Technical SEO
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-seo) 8%, transparent)",
                                 }}
                             >
                                 <Award className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-seo)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Link Building
                                 </span>
                             </div>
@@ -213,13 +191,6 @@ export default function Hero() {
                         className="relative flex flex-col items-center gap-12 justify-center animate-fadeIn -mt-10"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-seo) 10%, transparent), color-mix(in srgb, var(--brand-seo) 5%, transparent))",
-                            }}
-                        />
 
                         {/* Illustration Card */}
                         <div

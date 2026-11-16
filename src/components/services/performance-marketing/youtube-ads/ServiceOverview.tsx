@@ -91,10 +91,6 @@ export default function ServiceOverview() {
                                 }}
                             >
                                 {/* Background Red Bloom */}
-                                <div
-                                    className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                                    style={{ backgroundColor: youtubeRed }}
-                                />
 
                                 {/* Icon */}
                                 <div

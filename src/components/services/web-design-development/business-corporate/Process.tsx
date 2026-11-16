@@ -4,6 +4,7 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Search,
             title: "Discovery & Stakeholder Alignment",
@@ -11,6 +12,7 @@ export default function Process() {
             deliverables: ["Stakeholder interviews", "Brand audit", "Competitive analysis", "Requirements document"],
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: "Brand-Aligned Design",
@@ -18,6 +20,7 @@ export default function Process() {
             deliverables: ["Mood boards", "Wireframes", "Visual mockups", "Brand guidelines integration"],
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Enterprise Development",
@@ -25,6 +28,7 @@ export default function Process() {
             deliverables: ["CMS integration", "API connections", "Security implementation", "Performance optimization"],
         },
         {
+            anchor: "step-qa",
             number: "04",
             icon: TestTube,
             title: "Quality Assurance & Compliance",
@@ -32,6 +36,7 @@ export default function Process() {
             deliverables: ["Cross-browser testing", "WCAG audit", "Security scan", "Performance benchmarks"],
         },
         {
+            anchor: "step-launch",
             number: "05",
             icon: Rocket,
             title: "Controlled Launch",
@@ -39,6 +44,7 @@ export default function Process() {
             deliverables: ["Deployment plan", "CDN configuration", "SEO handoff", "Editor training"],
         },
         {
+            anchor: "step-partnership",
             number: "06",
             icon: Headphones,
             title: "Ongoing Partnership",
@@ -67,7 +73,7 @@ export default function Process() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-orange-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -96,7 +102,8 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className={`flex flex-col lg:flex-row gap-8 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
+                                id={step.anchor}
+                                className={`scroll-mt-20 flex flex-col lg:flex-row gap-8 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
                             >
                                 {/* Step Number & Icon */}
                                 <div className="lg:w-1/3 flex flex-col items-center text-center">

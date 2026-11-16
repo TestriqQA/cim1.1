@@ -22,13 +22,6 @@ export default function Hero() {
         >
             {/* Animated Background - Connecting Links */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Gradient Glow */}
-                <div
-                    className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-20"
-                    style={{
-                        background: `radial-gradient(circle, ${linkCyan}40, transparent 70%)`,
-                    }}
-                />
 
                 {/* Animated Link Chain Pattern */}
                 <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">

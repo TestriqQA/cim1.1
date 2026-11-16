@@ -15,12 +15,6 @@ export default function CTA() {
     return (
         <section className="py-12 md:py-24 relative overflow-hidden bg-background">
             {/* Background */}
-            <div
-                className="absolute inset-0 opacity-50"
-                style={{
-                    background: "radial-gradient(circle at 50% 50%, rgba(225, 48, 108, 0.1), transparent 70%)",
-                }}
-            />
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div
@@ -46,7 +40,7 @@ export default function CTA() {
                         <div className="text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6">
                                 <Instagram className="w-4 h-4 text-white" />
-                                <span className="text-sm font-medium text-white">
+                                <span className="text-sm font-semibold text-white">
                                     Instagram Experts
                                 </span>
                             </div>

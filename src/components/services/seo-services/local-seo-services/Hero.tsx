@@ -16,13 +16,6 @@ export default function Hero() {
             {/* Background */}
             <div
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 15% 50%, rgba(245, 158, 11, 0.08), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.05), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.03), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div
@@ -92,7 +85,7 @@ export default function Hero() {
                             }}
                         >
                             <MapPin className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-amber-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                 Dominate Local Search
                             </span>
                         </div>

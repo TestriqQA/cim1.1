@@ -37,15 +37,6 @@ export default function Hero() {
                     }}
                 />
 
-                {/* Gradient orbs */}
-                <div
-                    className="absolute top-20 left-[15%] w-80 h-80 rounded-full blur-3xl opacity-15 animate-pulse"
-                    style={{ backgroundColor: linkedInBlue }}
-                />
-                <div
-                    className="absolute bottom-20 right-[20%] w-60 h-60 rounded-full blur-3xl opacity-10 animate-pulse"
-                    style={{ backgroundColor: linkedInDark, animationDelay: "1s" }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">

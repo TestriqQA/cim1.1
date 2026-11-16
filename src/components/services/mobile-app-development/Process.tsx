@@ -7,36 +7,42 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-discovery",
             icon: Lightbulb,
             title: "Discovery & Strategy (Week 1-2)",
             description: "Stakeholder interviews, competitor analysis, user persona development, and feature prioritization using MoSCoW method. Technical feasibility assessment with risk mitigation planning.",
             details: ["Business Analysis", "Market Research", "Risk Assessment", "Technical Roadmap", "Budget & Timeline Estimation"]
         },
         {
+            anchor: "step-design",
             icon: Pencil,
             title: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--brand-purple-text)] transition-colors">UI/UX Design (Week 3-5)</Link>,
             description: "Low to high-fidelity wireframing, interactive prototypes in Figma/Adobe XD, user flow mapping, and accessibility audit. higher engagement through conversion-focused design backed by 10,000+ hours A/B testing.",
             details: ["Wireframing", "Interactive Prototypes", "Design System", "WCAG 2.2 AA Compliance", "Usability Testing (5+ users)"]
         },
         {
+            anchor: "step-development",
             icon: Code,
             title: "Development & Coding (Week 6-16)",
             description: <span>2-week agile sprints with backend API development, frontend implementation, third-party integrations, and DevOps CI/CD pipelines. 80%+ unit test coverage with <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">code review for every PR</Link>.</span>,
             details: ["Sprint Planning", "Backend (Node.js/Python/.NET)", "Frontend (Swift/Kotlin/Flutter)", "API Integration", "Git Workflow (Gitflow)"]
         },
         {
+            anchor: "step-testing",
             icon: TestTube,
             title: "Testing & QA (Week 17-19)",
             description: "Comprehensive testing: 80%+ unit coverage, integration testing for all APIs, UI automation of critical flows, manual testing across 100+ devices. a rigorous QA process.",
             details: ["Unit Testing (Jest/XCTest/JUnit)", "Integration Testing", "UI Automation (Appium/Detox)", "Performance Testing (Load/Stress)", "Security Testing (OWASP Top 10)"]
         },
         {
+            anchor: "step-deployment",
             icon: Rocket,
             title: "Deployment & Launch (Week 20-21)",
             description: <span>App Store and Play Store submission with compliance docs, beta testing via TestFlight/Internal Track, and <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-purple-text)] transition-colors">App Store Optimization</Link>. Average increase in organic downloads with top 10 keyword rankings within 90 days.</span>,
             details: ["App Store Submission", "ASO (Keyword Research)", "Beta Testing", "Screenshot Optimization", "Pre-Launch Marketing"]
         },
         {
+            anchor: "step-maintenance",
             icon: Wrench,
             title: "Maintenance & Support (Ongoing)",
             description: "24/7 support tiers (Bronze/Silver/Gold) with 24-48 hour bug fix SLA, OS compatibility updates, performance monitoring, security patches, and monthly analytics reporting.",
@@ -53,12 +59,6 @@ export default function Process() {
             }}
         >
             {/* Background */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl opacity-30"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)" }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
@@ -72,7 +72,7 @@ export default function Process() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -92,7 +92,8 @@ export default function Process() {
                         return (
                             <div
                                 key={index}
-                                className="animate-fadeIn"
+                                id={step.anchor}
+                                className="scroll-mt-20 animate-fadeIn"
                                 style={{
                                     animationDelay: `${index * 0.1}s`,
                                     animationFillMode: "both",

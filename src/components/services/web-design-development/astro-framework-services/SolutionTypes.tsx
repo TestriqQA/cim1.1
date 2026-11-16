@@ -121,7 +121,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Megaphone className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Solutions We Deliver
                         </span>
                     </div>

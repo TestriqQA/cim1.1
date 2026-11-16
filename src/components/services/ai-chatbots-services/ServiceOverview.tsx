@@ -12,6 +12,7 @@ export default function ServiceOverview() {
             gradient: "from-cyan-500 via-blue-500 to-indigo-600",
             iconBg: "bg-blue-500/10",
             iconColor: "text-blue-500",
+            badgeColor: "bg-blue-500",
 
             stat: "Lower",
             statLabel: "Handling Cost",
@@ -23,6 +24,7 @@ export default function ServiceOverview() {
             gradient: "from-purple-500 via-pink-500 to-rose-500",
             iconBg: "bg-purple-500/10",
             iconColor: "text-purple-500",
+            badgeColor: "bg-purple-500",
 
             stat: "Strong",
             statLabel: "Satisfaction",
@@ -34,6 +36,7 @@ export default function ServiceOverview() {
             gradient: "from-emerald-500 via-teal-500 to-cyan-500",
             iconBg: "bg-emerald-500/10",
             iconColor: "text-emerald-500",
+            badgeColor: "bg-emerald-500",
 
             stat: "24/7",
             statLabel: "Support",
@@ -45,6 +48,7 @@ export default function ServiceOverview() {
             gradient: "from-orange-500 via-amber-500 to-yellow-500",
             iconBg: "bg-orange-500/10",
             iconColor: "text-orange-500",
+            badgeColor: "bg-orange-500",
 
             stat: "Lower",
             statLabel: "Cost",
@@ -130,18 +134,16 @@ export default function ServiceOverview() {
             `}</style>
 
             <section
-                className="relative transition-colors duration-300 py-20 md:py-28 overflow-hidden"
+                className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24 overflow-hidden"
                 style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
                 {/* Animated background */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-pink-500/30 to-orange-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
                 </div>
 
-                <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn">
+                    <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fadeIn">
                         <div className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 10%, transparent)",
@@ -149,7 +151,7 @@ export default function ServiceOverview() {
                             }}
                         >
                             <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 Intelligent Conversations Powered by Next-Gen AI
                             </span>
                         </div>
@@ -182,10 +184,12 @@ export default function ServiceOverview() {
                                 >
                                     {/* Card container */}
                                     <div
-                                        className="relative p-7 h-full border backdrop-blur-sm"
+                                        className="relative p-5 sm:p-7 h-full border rounded-2xl backdrop-blur-sm"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
-                                            borderColor: "var(--border-color)",
+                                            // Half-strength so the edge reads as a soft seam rather
+                                            // than a bright outline against the near-black page.
+                                            borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)",
                                             boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                         }}
                                     >
@@ -199,7 +203,7 @@ export default function ServiceOverview() {
                                             className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                                         >
                                             <div
-                                                className={`absolute inset-0 bg-gradient-to-r ${feature.gradient}`}
+                                                className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${feature.gradient}`}
                                                 style={{
                                                     padding: "2px",
                                                     WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
@@ -209,11 +213,21 @@ export default function ServiceOverview() {
                                             />
                                         </div>
 
+                                        {/* Stat badge — pinned to the card's top-right, aligned with
+                                            the icon's top edge (p-7), so it never sits over the icon. */}
+                                        <div
+                                            className={`absolute top-5 right-5 sm:top-7 sm:right-7 z-20 px-2.5 py-1 rounded-full text-xs font-bold text-white shadow-lg animate-stat-count ${feature.badgeColor}`}
+                                            style={{
+                                                animationDelay: "0.2s",
+                                                animationFillMode: "both",
+                                            }}
+                                        >
+                                            {feature.stat}
+                                        </div>
+
                                         {/* Icon container */}
                                         <div className="relative mb-5 z-10">
                                             <div className="relative inline-block">
-                                                {/* Glow effect */}
-                                                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500`} />
 
                                                 {/* Icon box */}
                                                 <div
@@ -222,16 +236,6 @@ export default function ServiceOverview() {
                                                     <Icon className={`w-8 h-8 ${feature.iconColor}`} strokeWidth={2.5} />
                                                 </div>
 
-                                                {/* Stat badge */}
-                                                <div
-                                                    className={`absolute -top-2 -right-2 px-2.5 py-1 rounded-full text-xs font-bold text-white shadow-lg opacity-0 group-hover:opacity-100 animate-stat-count bg-gradient-to-r ${feature.gradient}`}
-                                                    style={{
-                                                        animationDelay: "0.2s",
-                                                        animationFillMode: "both",
-                                                    }}
-                                                >
-                                                    {feature.stat}
-                                                </div>
                                             </div>
                                         </div>
 
@@ -253,11 +257,6 @@ export default function ServiceOverview() {
                                             </div>
                                         </div>
 
-                                        {/* Bottom gradient bar */}
-                                        <div
-                                            className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${feature.gradient} group-hover:w-full transition-all duration-700 ease-out`}
-                                        />
-
                                         {/* Large background icon watermark */}
                                         <div className="absolute -bottom-4 -right-4 opacity-0 group-hover:opacity-5 transition-all duration-500 transform group-hover:scale-110">
                                             <Icon className={`w-28 h-28 ${feature.iconColor}`} strokeWidth={0.5} />
@@ -269,9 +268,9 @@ export default function ServiceOverview() {
                     </div>
 
                     {/* Bottom Info Card */}
-                    <div className="mt-16 relative">
+                    <div className="mt-10 sm:mt-14 md:mt-16 relative">
                         <div
-                            className="relative p-8 rounded-3xl border backdrop-blur-sm overflow-hidden group hover:shadow-xl transition-all duration-500"
+                            className="relative p-5 sm:p-7 md:p-8 rounded-3xl border backdrop-blur-sm overflow-hidden group hover:shadow-xl transition-all duration-500"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
                                 borderColor: "var(--border-color)",
@@ -281,15 +280,17 @@ export default function ServiceOverview() {
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-rotate" />
 
                             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                                <div className="flex items-center gap-4">
+                                <div className="flex flex-col sm:flex-row items-center gap-4">
                                     <div className="relative">
-                                        <div className={`absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse`} />
-                                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                                        <div
+                                            className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg"
+                                            style={{ backgroundColor: "var(--brand-chatbot)" }}
+                                        >
                                             <Zap className="w-8 h-8 text-white animate-float-subtle" strokeWidth={2.5} />
                                         </div>
                                     </div>
-                                    <div className="text-left">
-                                        <p className="text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>
+                                    <div className="text-center sm:text-left">
+                                        <p className="text-lg sm:text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>
                                             Powered by Advanced NLP & Machine Learning
                                         </p>
                                         <p className="text-sm" style={{ color: "var(--secondary-text)" }}>

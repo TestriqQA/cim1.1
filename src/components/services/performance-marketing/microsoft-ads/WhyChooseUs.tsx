@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Award className="w-4 h-4" style={{ color: msBlue }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Why Choose Microsoft
                             </span>
                         </div>

@@ -13,13 +13,6 @@ export default function CTA() {
           "
         >
           {/* Animated Glow Background */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 dark:bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-            <div
-              className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 dark:bg-white/5 rounded-full blur-3xl animate-pulse"
-              style={{ animationDelay: "1s" }}
-            ></div>
-          </div>
 
           {/* Content */}
           <div className="relative">

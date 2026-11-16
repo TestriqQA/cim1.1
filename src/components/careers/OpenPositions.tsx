@@ -38,13 +38,6 @@ export default function OpenPositions({ jobs }: OpenPositionsProps) {
                         backgroundSize: "60px 60px",
                     }}
                 />
-                {/* Glow orbs */}
-                <div
-                    className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[120px] opacity-20"
-                    style={{
-                        background: "radial-gradient(circle, color-mix(in srgb, var(--brand-blue) 15%, transparent) 0%, transparent 70%)",
-                    }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">

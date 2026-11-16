@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import React from 'react';
 import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
-const faqs = [
+export default function FAQ() {
+    const faqs = [
     {
         question: "What are the benefits of using Next.js for business in 2026?",
         answer: "Next.js offers superior performance, better SEO through Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR), and improved developer experience. In 2026, its ability to deliver near-instant load times and optimize Core Web Vitals is crucial for maintaining top search rankings and high user conversion rates."
@@ -27,86 +28,10 @@ const faqs = [
     }
 ];
 
-export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
     return (
-        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "var(--card-bg)",
-                            borderColor: "var(--border-color)"
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
-                            Common Questions
-                        </span>
-                    </div>
-
-                    <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
-                        style={{ color: "var(--foreground)" }}
-                    >
-                        Frequently Asked{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
-                            Questions
-                        </span>
-                    </h2>
-                </div>
-
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {faqs.map((faq, idx) => {
-                        const isOpen = openIndex === idx;
-                        return (
-                            <div
-                                key={idx}
-                                className="rounded-2xl border transition-all duration-300"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: isOpen ? "#61dafb50" : "var(--border-color)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : idx)}
-                                    className="w-full flex items-center justify-between p-6 text-left"
-                                >
-                                    <span className="font-bold text-lg pr-4" style={{ color: "var(--foreground)" }}>
-                                        {faq.question}
-                                    </span>
-                                    <div
-                                        className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300"
-                                        style={{
-                                            backgroundColor: isOpen ? "#61dafb" : "color-mix(in srgb, var(--foreground) 5%, transparent)",
-                                            color: isOpen ? "#000" : "var(--foreground)"
-                                        }}
-                                    >
-                                        {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                                    </div>
-                                </button>
-                                <div
-                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                        }`}
-                                >
-                                    <div className="p-6 pt-0 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                        <p className="text-lg leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-cyan-text)"
+        />
     );
 }

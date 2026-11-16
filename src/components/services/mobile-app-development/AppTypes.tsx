@@ -93,12 +93,6 @@ export default function AppTypes() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl opacity-30"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-yellow) 20%, transparent)" }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}
@@ -112,7 +106,7 @@ export default function AppTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Development Services
                         </span>
                     </div>

@@ -81,21 +81,6 @@ export default function WhyChooseUs() {
         >
             {/* Animated mesh gradient background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-                <div
-                    className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-3xl"
-                    style={{
-                        background: "radial-gradient(circle, rgba(2, 134, 255, 0.3), transparent)",
-                        animation: "float 8s ease-in-out infinite",
-                    }}
-                />
-                <div
-                    className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full blur-3xl"
-                    style={{
-                        background: "radial-gradient(circle, rgba(77, 163, 255, 0.3), transparent)",
-                        animation: "float 10s ease-in-out infinite",
-                        animationDelay: "2s",
-                    }}
-                />
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -107,7 +92,7 @@ export default function WhyChooseUs() {
                             border: "1px solid rgba(2, 134, 255, 0.2)",
                         }}>
                         <Award className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-sky-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -155,13 +140,6 @@ export default function WhyChooseUs() {
                                     }
                                 }}
                             >
-                                {/* Outer glow effect */}
-                                <div
-                                    className="absolute -inset-0.5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-lg pointer-events-none"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${reason.bgColor}, transparent)`,
-                                    }}
-                                />
 
                                 {/* Main card */}
                                 <div
@@ -178,12 +156,6 @@ export default function WhyChooseUs() {
                                     }}
                                 >
                                     {/* Animated gradient background overlay */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${reason.bgColor}, transparent 70%)`,
-                                        }}
-                                    />
 
                                     {/* Floating particles */}
                                     {isHovered && (

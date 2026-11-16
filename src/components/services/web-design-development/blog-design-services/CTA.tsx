@@ -8,20 +8,6 @@ export default function CTA() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Effects */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #a855f7 8%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #ec4899 8%, transparent)",
-                    }}
-                />
-            </div>
 
             <div className="max-w-4xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div
