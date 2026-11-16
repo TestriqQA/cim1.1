@@ -17,10 +17,6 @@ export default function CTA() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background elements */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0ea5e9]/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0ea5e9]/10 rounded-full blur-3xl" />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div

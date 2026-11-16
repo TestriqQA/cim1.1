@@ -22,31 +22,6 @@ export default async function Image() {
                     overflow: 'hidden',
                 }}
             >
-                {/* Background decorative elements */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: -100,
-                        right: -100,
-                        width: 400,
-                        height: 400,
-                        borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(0,138,193,0.3) 0%, transparent 70%)',
-                        display: 'flex',
-                    }}
-                />
-                <div
-                    style={{
-                        position: 'absolute',
-                        bottom: -80,
-                        left: -80,
-                        width: 350,
-                        height: 350,
-                        borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(0,181,202,0.25) 0%, transparent 70%)',
-                        display: 'flex',
-                    }}
-                />
 
                 {/* Main content */}
                 <div

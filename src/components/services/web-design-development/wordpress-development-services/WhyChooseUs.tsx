@@ -81,21 +81,6 @@ export default function WhyChooseUs() {
         >
             {/* Animated mesh gradient background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-                <div
-                    className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-3xl animate-float"
-                    style={{
-                        background: "radial-gradient(circle, rgba(0, 115, 170, 0.3), transparent)",
-                        animationDuration: "8s",
-                    }}
-                />
-                <div
-                    className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full blur-3xl animate-float"
-                    style={{
-                        background: "radial-gradient(circle, rgba(0, 150, 214, 0.3), transparent)",
-                        animationDuration: "10s",
-                        animationDelay: "2s",
-                    }}
-                />
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -156,13 +141,6 @@ export default function WhyChooseUs() {
                                     }
                                 }}
                             >
-                                {/* Outer glow effect */}
-                                <div
-                                    className="absolute -inset-0.5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-lg"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${reason.bgColor}, transparent)`,
-                                    }}
-                                />
 
                                 {/* Main card */}
                                 <div
@@ -179,12 +157,6 @@ export default function WhyChooseUs() {
                                     }}
                                 >
                                     {/* Animated gradient background overlay */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${reason.bgColor}, transparent 70%)`,
-                                        }}
-                                    />
 
                                     {/* Floating particles */}
                                     {isHovered && (

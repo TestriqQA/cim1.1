@@ -25,13 +25,6 @@ export default function Hero() {
             {/* Animated Background - Subtle Glitch / Noise Effect */}
             <div className="absolute inset-0 pointer-events-none opacity-20">
                 <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: `radial-gradient(circle at 50% 50%, var(--border-color) 1px, transparent 1px)`,
-                        backgroundSize: '30px 30px'
-                    }}
-                />
-                <div
                     className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-[100px]"
                     style={{ backgroundColor: xBlue }}
                 />
@@ -132,7 +125,6 @@ export default function Hero() {
                             >
                                 {/* Background Gradients */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-black opacity-50" />
-                                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(29,155,240,0.1),transparent_70%)]" />
 
                                 {/* Floating Elements Animation - Rings */}
                                 <div className="absolute inset-0 pointer-events-none">

@@ -24,23 +24,6 @@ export default function Hero() {
         >
             {/* Animated Background - TikTok style */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Gradient orbs with TikTok colors */}
-                <div
-                    className="absolute top-20 left-[10%] w-72 h-72 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "rgba(255, 0, 80, 0.05)" }}
-                />
-                <div
-                    className="absolute top-40 left-[15%] w-60 h-60 rounded-full blur-3xl opacity-15 animate-pulse"
-                    style={{ backgroundColor: tiktokCyan, animationDelay: "0.5s" }}
-                />
-                <div
-                    className="absolute bottom-20 right-[15%] w-80 h-80 rounded-full blur-3xl opacity-15 animate-pulse"
-                    style={{ backgroundColor: tiktokPink, animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute bottom-40 right-[20%] w-64 h-64 rounded-full blur-3xl opacity-20 animate-pulse"
-                    style={{ backgroundColor: tiktokCyan, animationDelay: "1.5s" }}
-                />
 
                 {/* Floating music notes / sparkles */}
                 <div className="absolute top-1/4 right-1/4 animate-bounce" style={{ animationDuration: "2s" }}>

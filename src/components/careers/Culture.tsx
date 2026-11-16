@@ -47,15 +47,6 @@ export default function Culture() {
                             </div>
                         </div>
 
-                        {/* Decorative Elements */}
-                        <div
-                            className="absolute -top-12 -left-12 w-64 h-64 rounded-full blur-3xl opacity-30 animate-pulse"
-                            style={{ backgroundColor: "var(--brand-purple)" }}
-                        />
-                        <div
-                            className="absolute -bottom-12 -right-12 w-64 h-64 rounded-full blur-3xl opacity-30 animate-pulse"
-                            style={{ backgroundColor: "var(--brand-cyan)", animationDelay: "2s" }}
-                        />
                     </div>
 
                     <div className="lg:pl-8">

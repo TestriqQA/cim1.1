@@ -52,28 +52,6 @@ export default function WhyChooseUs() {
             }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-                <div
-                    className="absolute top-0 left-1/4 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-teal) 12%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Header */}
                 <div className="text-center mb-10 sm:mb-12">
@@ -119,13 +97,6 @@ export default function WhyChooseUs() {
                                     animation: `slideInLeft 0.6s ease-out ${idx * 0.1}s both`,
                                 }}
                             >
-                                {/* Animated Background Glow */}
-                                <div
-                                    className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
-                                    style={{
-                                        background: `linear-gradient(90deg, var(--brand-blue), var(--brand-teal))`,
-                                    }}
-                                />
 
                                 <div
                                     className="relative rounded-3xl p-5 sm:p-6 md:p-8 border backdrop-blur-sm transition-all duration-500 hover:scale-[1.02]"

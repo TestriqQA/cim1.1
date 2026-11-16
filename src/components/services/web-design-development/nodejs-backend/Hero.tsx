@@ -38,19 +38,6 @@ export default function Hero() {
                         backgroundSize: "60px 60px",
                     }}
                 />
-                {/* Glow orbs */}
-                <div
-                    className="absolute top-20 -left-32 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #339933 15%, transparent)" }}
-                />
-                <div
-                    className="absolute bottom-20 -right-32 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #68a063 15%, transparent)", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #215732 8%, transparent)", animationDelay: "2s" }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">

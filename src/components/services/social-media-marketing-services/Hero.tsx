@@ -1,7 +1,6 @@
 import { Sparkles, ArrowRight, Home, ChevronRight, TrendingUp, Users, Zap, Share2, BarChart3, Target } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import HeroBackground from "./HeroBackground";
 
 export default function Hero() {
     return (
@@ -9,9 +8,6 @@ export default function Hero() {
             className="relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Animated Background */}
-            <HeroBackground />
-
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 md:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
@@ -224,13 +220,6 @@ export default function Hero() {
                     <div
                         className="relative flex flex-col items-center gap-8 lg:gap-12 justify-center mt-0 lg:-mt-15"
                     >
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-teal) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent), color-mix(in srgb, var(--brand-purple) 10%, transparent))",
-                            }}
-                        />
 
                         {/* Feature Card */}
                         <div

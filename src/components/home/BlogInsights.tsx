@@ -19,23 +19,6 @@ export default function BlogInsights({ posts }: BlogInsightsProps) {
         borderColor: "var(--border-color)",
       }}
     >
-      {/* Background decoration */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl"
-        style={{
-          background:
-            "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
-        }}
-      />
-
-      <div
-        className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{
-          background:
-            "linear-gradient(135deg, var(--brand-cyan), var(--brand-blue))",
-        }}
-      />
-
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 md:mb-12">

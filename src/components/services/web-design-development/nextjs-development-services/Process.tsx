@@ -162,16 +162,6 @@ export default function Process() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-64 h-64 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#61dafb" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-80 h-80 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#00d4ff", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

@@ -11,17 +11,6 @@ export default function CTA() {
     return (
         <section className="py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--card-bg)", borderColor: "#555555" }}>
             {/* Background elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                {/* Gradient orbs */}
-                <div
-                    className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl opacity-10"
-                    style={{ backgroundColor: metaBlue }}
-                />
-                <div
-                    className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full blur-3xl opacity-10"
-                    style={{ backgroundColor: metaPurple }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div

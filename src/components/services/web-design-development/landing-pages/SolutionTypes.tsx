@@ -113,8 +113,6 @@ export default function SolutionTypes() {
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Gradient Meshes */}
-                <div className="absolute top-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-[#10b981]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-[#0ea5e9]/10 via-[#22c55e]/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
 
                 {/* Grid Pattern */}
                 <div className="absolute inset-0 opacity-[0.02]" style={{

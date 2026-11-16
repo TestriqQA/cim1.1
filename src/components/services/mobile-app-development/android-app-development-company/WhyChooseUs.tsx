@@ -66,16 +66,6 @@ export default function WhyChooseUs() {
             style={{ backgroundColor: "var(--card-bg)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute -top-48 -right-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ background: "linear-gradient(135deg, #3DDC84, #78C257)" }}
-                />
-                <div
-                    className="absolute -bottom-48 -left-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-                    style={{ background: "linear-gradient(135deg, #78C257, #3DDC84)" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -124,14 +114,6 @@ export default function WhyChooseUs() {
                                 onMouseEnter={() => setHoveredCard(idx)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
-                                {/* Glow Effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-1 rounded-3xl blur-xl transition-opacity duration-500 pointer-events-none
-                                        ${isHovered ? "opacity-100" : "opacity-0"}
-                                    `}
-                                    style={{ background: reason.shadowColor }}
-                                />
 
                                 {/* Card */}
                                 <div

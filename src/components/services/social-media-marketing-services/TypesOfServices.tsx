@@ -83,23 +83,6 @@ export default function TypesOfServices() {
             </div>
 
             {/* Floating orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-40 -left-20 w-96 h-96 rounded-full blur-3xl opacity-10 animate-pulse"
-                    style={{
-                        background: "var(--brand-teal)",
-                        animationDuration: "4s"
-                    }}
-                />
-                <div
-                    className="absolute bottom-40 -right-20 w-80 h-80 rounded-full blur-3xl opacity-10 animate-pulse"
-                    style={{
-                        background: "var(--brand-cyan)",
-                        animationDuration: "5s",
-                        animationDelay: "1s"
-                    }}
-                />
-            </div>
 
             <div className="relative z-10">
                 {/* Header */}
@@ -215,13 +198,6 @@ export default function TypesOfServices() {
                                 </div>
 
                                 {/* Corner accent */}
-                                <div
-                                    className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full opacity-20 group-hover:opacity-40 group-hover:scale-150 transition-all duration-700"
-                                    style={{
-                                        background: service.gradient,
-                                        filter: "blur(20px)"
-                                    }}
-                                />
 
                                 {/* Top border highlight */}
                                 <div

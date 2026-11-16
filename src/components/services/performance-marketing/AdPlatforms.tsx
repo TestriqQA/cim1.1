@@ -100,10 +100,6 @@ export default function AdPlatforms() {
         <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}>
             {/* Background Pattern */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, var(--brand-orange) 1px, transparent 0)`,
-                    backgroundSize: '50px 50px',
-                }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">

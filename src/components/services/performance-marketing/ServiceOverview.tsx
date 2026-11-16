@@ -98,13 +98,6 @@ export default function ServiceOverview() {
                                     }}
                                 >
                                     {/* Background gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top left, ${service.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     <div className="relative z-10 flex flex-col md:flex-row gap-6">
                                         {/* Icon */}

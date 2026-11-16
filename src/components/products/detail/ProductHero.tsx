@@ -42,7 +42,7 @@ export default function ProductHero({ product }: { product: Product }) {
 
     return (
         <section className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
-            <div className="absolute inset-0 z-0" style={{ backgroundImage: `radial-gradient(circle at 15% 50%, ${color}14, transparent 25%), radial-gradient(circle at 85% 30%, ${color}0a, transparent 25%), radial-gradient(circle at 50% 80%, ${color}08, transparent 25%)` }}>
+            <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`, backgroundSize: "40px 40px" }} />
             </div>
             <style jsx>{`

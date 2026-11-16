@@ -88,12 +88,6 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
             {/* Hero + Latest Post Combined Section */}
             {latestPost && !hasActiveSearch && (
                 <section className="relative overflow-hidden">
-                    <div
-                        className="absolute inset-0"
-                        style={{
-                            background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
-                        }}
-                    />
                     <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                         <div className="max-w-7xl mx-auto">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -332,12 +326,6 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
             {/* Hero Only (when searching) */}
             {hasActiveSearch && (
                 <section className="relative overflow-hidden">
-                    <div
-                        className="absolute inset-0"
-                        style={{
-                            background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
-                        }}
-                    />
                     <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                         <div className="max-w-7xl mx-auto text-center">
                             <span
@@ -478,12 +466,6 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                             className="absolute inset-0"
                             style={{
                                 background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent))",
-                            }}
-                        />
-                        <div
-                            className="absolute top-0 right-0 w-96 h-96 blur-3xl"
-                            style={{
-                                background: "radial-gradient(circle, color-mix(in srgb, var(--brand-purple) 20%, transparent), transparent)",
                             }}
                         />
 

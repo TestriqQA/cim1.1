@@ -100,20 +100,6 @@ export default function Process() {
     return (
         <section id="process" className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
             {/* Enhanced background decoration */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 -left-20 w-72 h-72 rounded-full opacity-10 blur-3xl animate-pulse-slow"
-                    style={{ background: "#306998" }}
-                />
-                <div
-                    className="absolute bottom-1/4 -right-20 w-72 h-72 rounded-full opacity-10 blur-3xl animate-pulse-slow"
-                    style={{ background: "#FFD43B", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse-slow"
-                    style={{ background: "#4B8BBE", animationDelay: "2s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -215,14 +201,6 @@ export default function Process() {
                                                     : "0 4px 6px rgba(0, 0, 0, 0.05)",
                                             }}
                                         >
-                                            {/* Animated background gradient */}
-                                            <div
-                                                className="absolute inset-0 opacity-0 transition-opacity duration-700"
-                                                style={{
-                                                    background: "radial-gradient(circle at top right, rgba(48, 105, 152, 0.08), transparent 70%)",
-                                                    opacity: isHovered ? 1 : 0,
-                                                }}
-                                            />
 
                                             {/* Corner accent */}
                                             <div
@@ -395,15 +373,6 @@ export default function Process() {
                                                 boxShadow: isHovered ? "0 0 20px rgba(48, 105, 152, 0.5)" : "none",
                                             }}
                                         >
-                                            {/* Inner glow */}
-                                            {isHovered && (
-                                                <div
-                                                    className="absolute inset-0 rounded-full animate-pulse"
-                                                    style={{
-                                                        background: "radial-gradient(circle, rgba(255, 212, 59, 0.8), transparent)",
-                                                    }}
-                                                />
-                                            )}
                                         </div>
                                     </div>
 

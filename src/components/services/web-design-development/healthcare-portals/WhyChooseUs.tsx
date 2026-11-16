@@ -249,13 +249,6 @@ export default function WhyChooseUs() {
                                     }}
                                 >
                                     {/* Animated gradient background */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at center, ${reason.color}10, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Medical cross corner decoration */}
                                     <div
@@ -276,14 +269,6 @@ export default function WhyChooseUs() {
                                         {/* Icon with heartbeat animation */}
                                         <div className="mb-6 relative">
                                             {/* Pulse ring background */}
-                                            <div
-                                                className="absolute inset-0 blur-2xl transition-all duration-500"
-                                                style={{
-                                                    background: reason.color,
-                                                    opacity: isHovered ? 0.3 : 0.1,
-                                                    transform: isHovered ? "scale(1.8)" : "scale(1.2)",
-                                                }}
-                                            />
 
                                             <div
                                                 className={`relative inline-flex w-20 h-20 rounded-2xl items-center justify-center bg-gradient-to-br ${reason.gradient} transition-all duration-500`}
@@ -440,26 +425,8 @@ export default function WhyChooseUs() {
                                         }}
                                     />
 
-                                    {/* Corner glow effect */}
-                                    {isHovered && (
-                                        <div
-                                            className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full transition-opacity duration-500"
-                                            style={{
-                                                background: `radial-gradient(circle at bottom right, ${reason.color}20, transparent)`,
-                                            }}
-                                        />
-                                    )}
                                 </div>
 
-                                {/* Outer glow halo */}
-                                <div
-                                    className="absolute inset-0 rounded-2xl blur-2xl transition-opacity duration-500 -z-10"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${reason.color}15, ${reason.accentColor}15)`,
-                                        opacity: isHovered ? 1 : 0,
-                                        transform: isHovered ? "scale(1.05)" : "scale(0.95)",
-                                    }}
-                                />
                             </div>
                         );
                     })}

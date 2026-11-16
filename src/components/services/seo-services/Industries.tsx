@@ -161,15 +161,6 @@ export default function Industries() {
                                         perspective: "1000px",
                                     }}
                                 >
-                                    {/* Animated Background Gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at center, ${industry.color}20 0%, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "scale(1)" : "scale(0.8)",
-                                        }}
-                                    />
 
                                     {/* Orbiting Decoration */}
                                     <div

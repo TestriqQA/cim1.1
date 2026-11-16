@@ -412,10 +412,6 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* floating glow behind (for depth) */}
-                <div
-                  className={`absolute -inset-1 rounded-3xl blur-xl -z-10 transition-opacity duration-500 ${isExpanded ? "opacity-30" : "opacity-0"} bg-gradient-to-r ${badgeGrad}`}
-                />
               </article>
             );
           })}

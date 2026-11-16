@@ -101,10 +101,6 @@ export default function UseCases() {
             </div>
 
             {/* Floating orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0d9488]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2dd4bf]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -163,14 +159,6 @@ export default function UseCases() {
                                             : "0 4px 6px rgba(0, 0, 0, 0.05)",
                                     }}
                                 >
-                                    {/* Animated background waves */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-opacity duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at ${isEven ? 'top left' : 'top right'}, ${useCase.color}15, transparent 60%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Animated corner accent */}
                                     <div
@@ -187,15 +175,6 @@ export default function UseCases() {
                                     <div className="relative z-10 flex flex-col h-full">
                                         {/* Icon with complex animation */}
                                         <div className="mb-6 relative">
-                                            {/* Background glow */}
-                                            <div
-                                                className="absolute inset-0 blur-2xl transition-all duration-500"
-                                                style={{
-                                                    background: useCase.color,
-                                                    opacity: isHovered ? 0.3 : 0,
-                                                    transform: isHovered ? "scale(1.5)" : "scale(1)",
-                                                }}
-                                            />
 
                                             <div
                                                 className={`relative inline-flex w-20 h-20 rounded-2xl items-center justify-center bg-gradient-to-br ${useCase.gradient} transition-all duration-500`}
@@ -341,14 +320,6 @@ export default function UseCases() {
                                     )}
                                 </div>
 
-                                {/* Outer glow effect */}
-                                <div
-                                    className="absolute inset-0 rounded-2xl blur-xl transition-opacity duration-500 -z-10"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${useCase.color}20, ${useCase.accentColor}20)`,
-                                        opacity: isHovered ? 1 : 0,
-                                    }}
-                                />
                             </div>
                         );
                     })}

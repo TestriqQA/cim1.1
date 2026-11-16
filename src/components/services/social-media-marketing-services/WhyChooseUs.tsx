@@ -58,16 +58,6 @@ export default function WhyChooseUs() {
             }}
         >
             {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 right-20 w-72 h-72 rounded-full blur-3xl opacity-10"
-                    style={{ background: "var(--brand-teal)" }}
-                />
-                <div
-                    className="absolute bottom-20 left-20 w-96 h-96 rounded-full blur-3xl opacity-10"
-                    style={{ background: "var(--brand-cyan)" }}
-                />
-            </div>
 
             <div className="relative z-10">
                 {/* Header */}
@@ -121,10 +111,6 @@ export default function WhyChooseUs() {
                                 />
 
                                 {/* Animated corner accent */}
-                                <div
-                                    className="absolute top-0 right-0 w-24 h-24 -mr-12 -mt-12 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-2xl"
-                                    style={{ backgroundColor: benefit.color }}
-                                />
 
                                 <div className="relative z-10">
                                     {/* Icon container with gradient background */}
@@ -136,11 +122,6 @@ export default function WhyChooseUs() {
                                     >
                                         <Icon className="w-7 h-7 text-white" />
 
-                                        {/* Glow effect */}
-                                        <div
-                                            className="absolute inset-0 rounded-xl blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-500"
-                                            style={{ backgroundColor: benefit.color }}
-                                        />
                                     </div>
 
                                     <h3

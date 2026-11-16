@@ -51,12 +51,6 @@ export default function CTA() {
             {/* Background elements omitted for brevity - keeping them from original */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10 blur-3xl"
-                    style={{
-                        background: "radial-gradient(circle, #96bf48, #5c8a1e, transparent)",
-                    }}
-                />
-                <div
                     className="absolute inset-0 opacity-[0.02]"
                     style={{
                         backgroundImage: `linear-gradient(#96bf48 1px, transparent 1px), linear-gradient(90deg, #96bf48 1px, transparent 1px)`,

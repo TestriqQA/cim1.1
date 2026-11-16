@@ -109,38 +109,6 @@ export default function SolutionTypes() {
         >
             {/* Medical DNA Helix Background Pattern */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: `
-                            radial-gradient(circle at 20% 30%, #3b82f6 2px, transparent 2px),
-                            radial-gradient(circle at 80% 70%, #6366f1 2px, transparent 2px),
-                            radial-gradient(circle at 40% 80%, #8b5cf6 2px, transparent 2px)
-                        `,
-                        backgroundSize: "100px 100px",
-                        backgroundPosition: "0 0, 50px 50px, 25px 75px",
-                    }}
-                />
-            </div>
-
-            {/* Animated pulse waves */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {[0, 1, 2].map((i) => (
-                    <div
-                        key={i}
-                        className="absolute"
-                        style={{
-                            top: `${20 + i * 30}%`,
-                            left: i % 2 === 0 ? "-10%" : "auto",
-                            right: i % 2 === 1 ? "-10%" : "auto",
-                            width: "500px",
-                            height: "500px",
-                            background: `radial-gradient(circle, ${i % 3 === 0 ? '#3b82f6' : i % 3 === 1 ? '#6366f1' : '#8b5cf6'}10, transparent 70%)`,
-                            animation: `float-pulse ${8 + i * 2}s ease-in-out infinite`,
-                            animationDelay: `${i * 1.5}s`,
-                        }}
-                    />
-                ))}
             </div>
 
             {/* Floating medical icons */}
@@ -278,13 +246,6 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     {/* Animated gradient background */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${solution.color}12, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Medical cross corner decoration */}
                                     <div
@@ -315,15 +276,6 @@ export default function SolutionTypes() {
                                     <div className="relative z-10 flex flex-col h-full">
                                         {/* Icon with complex animation */}
                                         <div className="mb-6 relative">
-                                            {/* Outer glow ring */}
-                                            <div
-                                                className="absolute inset-0 blur-2xl transition-all duration-500"
-                                                style={{
-                                                    background: solution.color,
-                                                    opacity: isHovered ? 0.4 : 0.1,
-                                                    transform: isHovered ? "scale(2)" : "scale(1.3)",
-                                                }}
-                                            />
 
                                             {/* Icon container */}
                                             <div
@@ -471,26 +423,8 @@ export default function SolutionTypes() {
                                         }}
                                     />
 
-                                    {/* Corner shine effect */}
-                                    {isHovered && (
-                                        <div
-                                            className="absolute bottom-0 right-0 w-40 h-40 rounded-tl-full transition-opacity duration-500"
-                                            style={{
-                                                background: `radial-gradient(circle at bottom right, ${solution.accentColor}15, transparent 70%)`,
-                                            }}
-                                        />
-                                    )}
                                 </div>
 
-                                {/* Outer glow halo */}
-                                <div
-                                    className="absolute inset-0 rounded-2xl blur-2xl transition-all duration-500 -z-10"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${solution.color}20, ${solution.accentColor}20)`,
-                                        opacity: isHovered ? 1 : 0,
-                                        transform: isHovered ? "scale(1.08)" : "scale(0.95)",
-                                    }}
-                                />
                             </div>
                         );
                     })}

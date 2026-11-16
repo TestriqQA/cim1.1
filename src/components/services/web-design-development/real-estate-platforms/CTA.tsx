@@ -8,21 +8,6 @@ export default function CTA() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #0d9488 10%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #14b8a6 10%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-            </div>
 
             <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div

@@ -133,13 +133,6 @@ export default function DesignTools() {
                                     }}
                                 >
                                     {/* Background gradient on hover */}
-                                    <div
-                                        className="absolute inset-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at center, ${tool.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Tool Logo */}
                                     <div

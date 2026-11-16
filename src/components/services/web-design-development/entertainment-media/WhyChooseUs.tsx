@@ -54,16 +54,6 @@ export default function WhyChooseUs() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/3 -left-20 w-72 h-72 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#8b5cf6" }}
-                />
-                <div
-                    className="absolute bottom-1/3 -right-20 w-72 h-72 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#ec4899" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

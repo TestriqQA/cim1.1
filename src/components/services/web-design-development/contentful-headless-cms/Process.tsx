@@ -100,16 +100,6 @@ export default function Process() {
     return (
         <section id="process" className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
             {/* Enhanced background decoration */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 -left-20 w-72 h-72 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ background: "#0286FF", animationDuration: "4s" }}
-                />
-                <div
-                    className="absolute bottom-1/4 -right-20 w-72 h-72 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{ background: "#4DA3FF", animationDuration: "6s", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -201,14 +191,6 @@ export default function Process() {
                                                     : "0 4px 6px rgba(0, 0, 0, 0.05)",
                                             }}
                                         >
-                                            {/* Animated background gradient */}
-                                            <div
-                                                className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
-                                                style={{
-                                                    background: "radial-gradient(circle at top right, rgba(2, 134, 255, 0.08), transparent 70%)",
-                                                    opacity: isHovered ? 1 : 0,
-                                                }}
-                                            />
 
                                             {/* Step number - large background */}
                                             <div

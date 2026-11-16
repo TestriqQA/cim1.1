@@ -83,15 +83,6 @@ export default function ServiceOverview() {
 
                     {/* Right Visual – Interactive Browser Mockup */}
                     <div className="relative hidden md:block">
-                        {/* Animated Background Glow */}
-                        <div
-                            className="absolute -inset-4 rounded-3xl blur-3xl animate-pulse"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 15%, transparent), color-mix(in srgb, var(--brand-teal) 15%, transparent))",
-                                animationDuration: "4s",
-                            }}
-                        />
 
                         {/* Floating Tech Badges */}
                         <div className="absolute -top-4 -left-4 z-20">
@@ -220,19 +211,6 @@ export default function ServiceOverview() {
                             <rect x="462" y="341" width="40" height="6" rx="3" fill="var(--secondary-text)" opacity="0.35" />
                         </svg>
 
-                        {/* Decorative Elements */}
-                        <div
-                            className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full opacity-20"
-                            style={{
-                                background: "radial-gradient(circle, var(--brand-teal), transparent)",
-                            }}
-                        ></div>
-                        <div
-                            className="absolute -top-8 right-1/3 w-16 h-16 rounded-full opacity-15"
-                            style={{
-                                background: "radial-gradient(circle, var(--brand-blue), transparent)",
-                            }}
-                        ></div>
                     </div>
 
 

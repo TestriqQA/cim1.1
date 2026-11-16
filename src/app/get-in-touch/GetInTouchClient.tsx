@@ -209,20 +209,6 @@ export default function GetInTouchClient() {
             className="min-h-screen relative overflow-hidden py-8 sm:py-12"
             style={{ background: "var(--background)", color: "var(--foreground)", scrollPaddingTop: "5rem", scrollMarginTop: "5rem" }}
         >
-            <div className="fixed inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-15 animate-blob"
-                    style={{ background: `linear-gradient(135deg, ${BRAND.primary}, ${BRAND.secondary})` }}
-                />
-                <div
-                    className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl opacity-15 animate-blob"
-                    style={{ background: `linear-gradient(135deg, ${BRAND.accent}, ${BRAND.secondary})`, animationDelay: "5s" }}
-                />
-                <div
-                    className="absolute top-1/2 -right-20 w-80 h-80 rounded-full blur-3xl opacity-15 animate-blob"
-                    style={{ background: `linear-gradient(135deg, ${BRAND.primary}, ${BRAND.accent})`, animationDelay: "10s" }}
-                />
-            </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {currentStep === 1 && (

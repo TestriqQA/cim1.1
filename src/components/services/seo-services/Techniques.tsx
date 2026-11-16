@@ -103,11 +103,6 @@ export default function Techniques() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
-                <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float-delayed"></div>
-                <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float-slow"></div>
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
@@ -214,15 +209,6 @@ export default function Techniques() {
                                     {/* Icon Container with 3D Effect */}
                                     <div className="relative mb-5 z-10">
                                         {/* Background Ring */}
-                                        <div
-                                            className="absolute inset-0 rounded-xl transition-all duration-500"
-                                            style={{
-                                                backgroundColor: `${tech.color}20`,
-                                                transform: isHovered ? "scale(1.3) rotate(-10deg)" : "scale(1) rotate(0deg)",
-                                                opacity: isHovered ? 0.4 : 0,
-                                                filter: "blur(8px)",
-                                            }}
-                                        />
 
                                         {/* Icon Box */}
                                         <div

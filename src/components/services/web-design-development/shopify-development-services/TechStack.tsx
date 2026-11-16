@@ -87,16 +87,6 @@ export default function TechStack() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/4 -left-20 w-80 h-80 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: "#96bf48" }}
-                />
-                <div
-                    className="absolute bottom-1/4 -right-20 w-80 h-80 rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: "#5c8a1e" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

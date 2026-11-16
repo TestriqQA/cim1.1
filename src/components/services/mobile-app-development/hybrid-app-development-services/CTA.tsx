@@ -14,12 +14,6 @@ export default function CTA() {
     return (
         <section className="py-24 relative overflow-hidden bg-background">
             {/* Background gradient */}
-            <div
-                className="absolute inset-0 opacity-50"
-                style={{
-                    background: "radial-gradient(circle at 50% 50%, rgba(0, 180, 216, 0.1), transparent 70%)",
-                }}
-            />
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div

@@ -84,12 +84,6 @@ export default function ServiceOverview() {
                                 }}
                             >
                                 {/* Hover Gradient Overlay */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style={{
-                                        background: `radial-gradient(circle at top right, ${xBlue}10, transparent 70%)`
-                                    }}
-                                />
 
                                 <div className="flex justify-between items-start mb-6">
                                     <div

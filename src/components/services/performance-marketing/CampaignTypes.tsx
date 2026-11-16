@@ -92,13 +92,6 @@ export default function CampaignTypes() {
                                     }}
                                 >
                                     {/* Background gradient */}
-                                    <div
-                                        className="absolute inset-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${campaign.color}10, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Icon */}
                                     <div

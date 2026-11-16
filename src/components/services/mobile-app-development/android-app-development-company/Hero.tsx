@@ -14,12 +14,6 @@ export default function Hero() {
             {/* Background with animated gradient */}
             <div
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 15% 50%, rgba(61, 220, 132, 0.12), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(120, 194, 87, 0.08), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div

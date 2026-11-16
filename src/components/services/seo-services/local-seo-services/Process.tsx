@@ -222,16 +222,6 @@ export default function Process() {
                 style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
             >
                 {/* Animated Background Circles */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                        style={{ backgroundColor: localAmber }}
-                    />
-                    <div
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl"
-                        style={{ backgroundColor: localAmber }}
-                    />
-                </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                     <div className="text-center mb-20">
@@ -348,12 +338,6 @@ export default function Process() {
                                                 </div>
 
                                                 {/* Bottom Corner Accent */}
-                                                <div
-                                                    className="absolute bottom-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                                    style={{
-                                                        background: `radial-gradient(circle at bottom right, ${localAmber}15, transparent 70%)`
-                                                    }}
-                                                />
                                             </div>
                                         </div>
 

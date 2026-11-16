@@ -115,18 +115,9 @@ export default function SolutionTypes() {
         >
             {/* Animated Background Grid */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: "linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(90deg, var(--border-color) 1px, transparent 1px)",
-                    backgroundSize: "50px 50px",
-                    maskImage: "radial-gradient(ellipse at center, black 20%, transparent 80%)",
-                }} />
             </div>
 
             {/* Floating Orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#f97316]/10 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#00b5ca]/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -297,12 +288,6 @@ export default function SolutionTypes() {
                                 </div>
 
                                 {/* Corner Accent */}
-                                <div
-                                    className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                                    style={{
-                                        background: `radial-gradient(circle at top right, ${solution.accentColor}, transparent 70%)`,
-                                    }}
-                                />
 
                                 {/* Bottom Glow */}
                                 <div

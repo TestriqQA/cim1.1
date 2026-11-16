@@ -86,10 +86,6 @@ export default function WhyChooseUs() {
             }}
         >
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#f97316]/5 to-[#ea580c]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#00b5ca]/5 to-[#bc3feb]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

@@ -105,14 +105,8 @@ export default function UseCases() {
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Radial Gradients */}
-                <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-[#008ac1]/10 via-[#bc3feb]/5 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-[#bc3feb]/10 via-[#008ac1]/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
 
                 {/* Dot Pattern */}
-                <div className="absolute inset-0 opacity-[0.03]" style={{
-                    backgroundImage: "radial-gradient(circle, var(--foreground) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -296,14 +290,6 @@ export default function UseCases() {
 
                                     </div>
 
-                                    {/* Corner Glow */}
-                                    <div
-                                        className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl transition-opacity duration-500 ${isActive ? "opacity-30" : "opacity-0"
-                                            }`}
-                                        style={{
-                                            background: `radial-gradient(circle, ${industry.bgColor}, transparent 70%)`,
-                                        }}
-                                    />
 
                                     {/* Bottom Border Glow */}
                                     <div

@@ -314,13 +314,6 @@ export default function Process() {
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    {/* Decorative gradient */}
-                    <div
-                        className="absolute top-0 right-0 w-64 h-64 opacity-20 blur-3xl"
-                        style={{
-                            background: "radial-gradient(circle, var(--brand-chatbot), transparent)",
-                        }}
-                    />
 
                     <div className="relative z-10">
                         <div className="flex items-center gap-3 mb-6">

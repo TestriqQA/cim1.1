@@ -49,12 +49,6 @@ export default function WhyChooseUs() {
             }}
         >
             {/* Background Gradient */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl opacity-30"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)" }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 {/* Section Header */}

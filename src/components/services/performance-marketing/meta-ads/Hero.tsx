@@ -24,15 +24,6 @@ export default function Hero() {
             {/* Animated Background - Meta gradient style */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Animated gradient mesh */}
-                <div
-                    className="absolute top-0 left-0 w-full h-full opacity-10"
-                    style={{
-                        background: `
-                            radial-gradient(ellipse at 20% 30%, ${metaBlue} 0%, transparent 50%),
-                            radial-gradient(ellipse at 80% 70%, ${metaPurple} 0%, transparent 50%)
-                        `,
-                    }}
-                />
 
                 {/* Floating circles - Meta infinity-inspired */}
                 <div

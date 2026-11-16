@@ -113,14 +113,6 @@ function Card({ benefit }: { benefit: typeof benefits[0] }) {
                     {benefit.description}
                 </p>
 
-                {/* Decorative Pattern just for this card */}
-                <div
-                    className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
-                    style={{
-                        backgroundImage: `radial-gradient(rgb(${benefit.color}) 1px, transparent 1px)`,
-                        backgroundSize: '24px 24px'
-                    }}
-                />
             </div>
         </div>
     );
