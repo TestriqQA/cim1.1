@@ -91,64 +91,64 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4 mb-8">
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Targeted ROI
                                 </span>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <Cpu className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Agentic AI
                                 </span>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <Workflow className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Enterprise Scale
                                 </span>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <BarChart3 className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Predictive
                                 </span>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <ShieldCheck className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Secure (SOC2)
                                 </span>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1.5 lg:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-orange) 8%, transparent)",
                                 }}
                             >
                                 <Rocket className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
-                                <span className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-base font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
                             </div>

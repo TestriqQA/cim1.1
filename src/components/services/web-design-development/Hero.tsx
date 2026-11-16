@@ -97,7 +97,7 @@ export default function Hero() {
                         </div>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 mb-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
                             {[
                                 { icon: Rocket, text: "ROI Driven" },
                                 { icon: Zap, text: "Core Web Vitals 90+" },
@@ -106,13 +106,13 @@ export default function Hero() {
                                 { icon: ShieldCheck, text: "Enterprise Security" },
                                 { icon: Code, text: "Clean, Tested Code" },
                             ].map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-center lg:justify-start gap-2 sm:gap-2.5 p-2.5 rounded-xl transition-all duration-300 hover:scale-105 border border-transparent hover:border-[var(--brand-blue)]"
+                                <div key={idx} className="flex items-center justify-center gap-2 sm:gap-2.5 p-2.5 lg:px-3 rounded-xl transition-all duration-300 hover:scale-105"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 8%, transparent)",
                                     }}
                                 >
                                     <item.icon className="w-4 h-4 shrink-0 text-[var(--brand-blue)]" />
-                                    <span className="text-xs font-bold text-[var(--foreground)] text-left">
+                                    <span className="text-xs font-bold text-[var(--foreground)] text-left lg:whitespace-nowrap">
                                         {/* Only "Global SEO" is linked: it is the one badge whose
                                             anchor text matches its destination. "Responsive Design"
                                             pointed at a UI/UX blog post and "Enterprise Security" at

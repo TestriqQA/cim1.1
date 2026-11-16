@@ -93,64 +93,64 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Growth-Focused
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Users className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Community Built
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Data-Driven
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Share2 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Multi-Platform
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     ROI Proven
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-center md:text-left gap-2 md:gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
                             >
                                 <Target className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-teal)" }} />
-                                <span className="text-xs min-[360px]:text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs min-[360px]:text-sm font-semibold lg:whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Targeted Reach
                                 </span>
                             </div>

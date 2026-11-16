@@ -97,12 +97,13 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        {/* 2x2 while the hero is one column. From lg it becomes a wrapping
-                            flex row so each tile is only as wide as its icon + label: four
-                            fit on one line with no dead space, instead of four grid columns
-                            stretched to equal width (a fixed xl:grid-cols-4 gave 118px
-                            columns at 1280px, and "Lightning Fast" needs 138px). */}
-                        <div className="grid grid-cols-2 gap-3 lg:flex lg:flex-wrap lg:gap-2.5 mb-8">
+                        {/* 2x2 while the hero is one column. From lg the columns are
+                            max-content, so each tile is only as wide as its icon + label
+                            and the group hugs the left edge with no dead space. Equal
+                            columns (xl:grid-cols-4) gave 118px at 1280px while "Lightning
+                            Fast" needs 138px; a flex-wrap row fit, but broke 3+1 at 1024px.
+                            Explicit counts keep the rows even: 2x2 at lg, one line from xl. */}
+                        <div className="grid grid-cols-2 gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(4,max-content)] lg:gap-2.5 mb-8">
                             <div className="flex items-center justify-center gap-2.5 px-3 lg:px-2.5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
