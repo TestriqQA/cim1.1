@@ -84,7 +84,7 @@ export default function Hero() {
                             }}
                         >
                             <PenTool className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Scale with ROI-First Content
                             </span>
                         </div>

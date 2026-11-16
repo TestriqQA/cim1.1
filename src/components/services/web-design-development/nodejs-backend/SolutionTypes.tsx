@@ -136,7 +136,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Backend Solutions
                         </span>
                     </div>

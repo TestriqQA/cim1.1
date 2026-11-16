@@ -47,7 +47,7 @@ export default function CTA() {
                         <div className="text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6">
                                 <Globe className="w-4 h-4 text-white" />
-                                <span className="text-sm font-medium text-white">
+                                <span className="text-sm font-semibold text-white">
                                     Web Skills, Native Apps
                                 </span>
                             </div>

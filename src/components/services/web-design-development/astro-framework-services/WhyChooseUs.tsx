@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
                             border: "1px solid rgba(124, 58, 237, 0.2)",
                         }}>
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-violet-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

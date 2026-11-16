@@ -70,7 +70,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--foreground)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                             Solutions Directory
                         </span>
                     </div>

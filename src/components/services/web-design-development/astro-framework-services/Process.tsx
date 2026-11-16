@@ -113,7 +113,7 @@ export default function Process() {
                     >
                         <Rocket className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-violet-text)" }}>
-                            OUR PROCESS
+                            Our Process
                         </span>
                     </div>
                     <h2

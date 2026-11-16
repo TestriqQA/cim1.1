@@ -60,7 +60,7 @@ export default function Hero() {
                 className="w-4 h-4"
                 style={{ color: "var(--brand-blue-text)" }}
               />
-              <span className="text-xs sm:text-sm font-semibold">
+              <span className="text-sm font-semibold">
                 Digital Growth Agency
               </span>
             </div>

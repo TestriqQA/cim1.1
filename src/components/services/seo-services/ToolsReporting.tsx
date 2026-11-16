@@ -96,8 +96,8 @@ export default function ToolsReporting() {
                         }}
                     >
                         <Settings className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            TOOLS & REPORTING
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            Tools & Reporting
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

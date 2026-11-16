@@ -342,8 +342,8 @@ export default function UseCases() {
                                 border: "1px solid var(--border-color)",
                             }}>
                                 <DollarSign className="w-5 h-5" style={{ color: "#008ac1" }} />
-                                <span className="text-sm font-bold" style={{ color: "var(--brand-blue-text)" }}>
-                                    ROI-FOCUSED DEVELOPMENT
+                                <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
+                                    ROI-Focused Development
                                 </span>
                             </div>
 

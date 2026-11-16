@@ -31,7 +31,7 @@ export default function CTA() {
               }}
             >
               <Sparkles className="w-4 h-4 shrink-0" />
-              <span className="text-xs sm:text-sm font-semibold">
+              <span className="text-sm font-semibold">
                 Global Excellence
               </span>
             </div>

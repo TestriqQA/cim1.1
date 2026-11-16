@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
                             border: "1px solid rgba(0, 115, 170, 0.2)",
                         }}>
                         <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--brand-blue-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Cinute
                         </span>
                     </div>

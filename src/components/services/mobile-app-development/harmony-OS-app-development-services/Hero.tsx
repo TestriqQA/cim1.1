@@ -84,7 +84,7 @@ export default function Hero() {
                             }}
                         >
                             <Smartphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                                 Huawei Ecosystem
                             </span>
                         </div>

@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <Zap className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Powering Modern Web Applications
                             </span>
                         </div>

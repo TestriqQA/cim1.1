@@ -88,7 +88,7 @@ export default function Hero() {
                         >
                             <Code className="w-4 h-4" style={{ color: techPurple }} />
                             <Link href="/about" className="hover:underline">
-                                <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                                     Technical SEO Experts
                                 </span>
                             </Link>

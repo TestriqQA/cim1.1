@@ -129,7 +129,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Layers className="w-4 h-4" style={{ color: commerceBlue }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-sky-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Platform Expertise
                         </span>
                     </div>

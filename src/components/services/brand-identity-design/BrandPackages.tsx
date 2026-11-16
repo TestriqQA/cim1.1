@@ -102,7 +102,7 @@ export default function BrandPackages() {
                         }}
                     >
                         <Package className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             PACKAGES
                         </span>
                     </div>

@@ -99,7 +99,7 @@ export default function TechStack() {
                         }}
                     >
                         <Layers className="w-4 h-4" style={{ color: "#9333ea" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Technology Stack
                         </span>
                     </div>

@@ -68,7 +68,7 @@ export default function FaqSection({
                         */}
                         {eyebrow && (
                             <div
-                                className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full border mb-4 sm:mb-6 text-xs sm:text-sm leading-none"
+                                className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full border mb-4 sm:mb-6 text-sm leading-none"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--card-bg) 70%, transparent)",
                                     borderColor: "var(--border-color)",
@@ -80,7 +80,7 @@ export default function FaqSection({
                                     style={{ width: "1.15em", height: "1.15em", color: accent }}
                                 />
                                 <span
-                                    className="font-bold tracking-wider uppercase leading-none"
+                                    className="text-sm font-semibold leading-none"
                                     style={{ color: "var(--foreground)" }}
                                 >
                                     {eyebrow}

@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: seoGreen }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Why Choose Us
                             </span>
                         </div>

@@ -101,8 +101,8 @@ export default function SupportPlans() {
                         }}
                     >
                         <Star className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
-                        <span className="text-xs md:text-sm font-bold tracking-wide" style={{ color: "var(--brand-purple-text)" }}>
-                            SUPPORT PLANS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--brand-purple-text)" }}>
+                            Support Plans
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">

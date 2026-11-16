@@ -69,13 +69,13 @@ export default function SEOPerformance() {
                         }}
                     >
                         <Gauge className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             SEO & Performance
                         </span>
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                        <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
+                        <span style={{ fontWeight: 600, color: "var(--brand-blue-text)" }}>Data-Backed ROI</span> <span style={{ fontWeight: 700, color: "var(--foreground)" }}>& Global Performance</span>
                     </h2>
 
                     <p className="text-base sm:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>

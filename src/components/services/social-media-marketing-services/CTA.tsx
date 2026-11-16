@@ -34,7 +34,7 @@ export default function CTA() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" />
-                            <span className="text-xs sm:text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
+                            <span className="text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
                         </div>
 
                         {/* Heading */}

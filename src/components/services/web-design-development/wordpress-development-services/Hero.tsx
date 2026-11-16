@@ -84,7 +84,7 @@ export default function Hero() {
                             }}
                         >
                             <Globe className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 World&apos;s #1 CMS Platform
                             </span>
                         </div>

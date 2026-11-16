@@ -85,7 +85,7 @@ export default function Hero() {
                             }}
                         >
                             <Layers className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                                 React Native & Flutter
                             </span>
                         </div>

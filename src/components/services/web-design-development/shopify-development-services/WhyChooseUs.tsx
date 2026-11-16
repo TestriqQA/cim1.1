@@ -105,7 +105,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Zap className="w-4 h-4" style={{ color: "#96bf48" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-lime-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>
                     </div>

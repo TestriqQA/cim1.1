@@ -289,7 +289,7 @@ export default function Services() {
             "
           >
             <Zap className="w-4 h-4" />
-            <span className="text-xs sm:text-sm font-semibold">Our Services</span>
+            <span className="text-sm font-semibold">Our Services</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[var(--foreground)]">

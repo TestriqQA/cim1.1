@@ -107,7 +107,7 @@ export default function Process() {
             }}
           >
             <Rocket className="w-4 h-4 text-[var(--accent-teal-text)]" />
-            <span className="text-xs sm:text-sm font-semibold text-[var(--accent-teal-text)]">
+            <span className="text-sm font-semibold text-[var(--accent-teal-text)]">
               Our Process
             </span>
           </div>

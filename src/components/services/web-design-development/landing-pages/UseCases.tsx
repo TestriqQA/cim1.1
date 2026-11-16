@@ -331,8 +331,8 @@ export default function UseCases() {
                                 border: "1px solid var(--border-color)",
                             }}>
                                 <Target className="w-5 h-5" style={{ color: "var(--accent-green-text)" }} />
-                                <span className="text-sm font-bold" style={{ color: "var(--accent-green-text)" }}>
-                                    INDUSTRY-AGNOSTIC APPROACH
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
+                                    Industry-Agnostic Approach
                                 </span>
                             </div>
 

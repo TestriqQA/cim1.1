@@ -85,7 +85,7 @@ export default function Hero() {
                             }}
                         >
                             <MapPin className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-amber-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                 Dominate Local Search
                             </span>
                         </div>

@@ -359,7 +359,7 @@ export default function Process() {
                                     backgroundColor: `${localAmber}10`,
                                 }}
                             >
-                                <span className="font-semibold" style={{ color: "var(--accent-amber-text)" }}>
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                     Ready to Dominate Your Local Market? Get Started
                                 </span>
                                 <ArrowRight className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />

@@ -128,8 +128,8 @@ export default function UseCases() {
                         }}
                     >
                         <TrendingUp className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
-                        <span className="text-sm font-bold tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
-                            TRUSTED ACROSS SECTORS
+                        <span className="text-sm font-semibold tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
+                            Trusted Across Sectors
                         </span>
                     </div>
 

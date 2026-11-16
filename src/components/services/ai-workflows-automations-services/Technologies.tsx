@@ -166,7 +166,7 @@ export default function Technologies() {
                     <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                             <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>Powered by Industry Leaders</span>
+                            <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Powered by Industry Leaders</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
                             <span style={{ color: "var(--foreground)" }}>Technology Stack & </span><span style={{ color: "var(--accent-orange-text)" }}>Integrations</span>

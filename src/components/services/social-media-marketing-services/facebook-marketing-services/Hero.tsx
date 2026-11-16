@@ -89,7 +89,7 @@ export default function Hero() {
                             }}
                         >
                             <Facebook className="w-4 h-4" style={{ color: "#1877F2" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Meta Business Partner
                             </span>
                         </div>

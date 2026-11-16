@@ -115,8 +115,8 @@ export default function Techniques() {
                         }}
                     >
                         <Rocket className="w-4 h-4 animate-bounce-subtle" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            SEO TECHNIQUES
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            SEO Techniques
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

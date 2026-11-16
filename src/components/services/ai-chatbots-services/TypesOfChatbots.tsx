@@ -223,8 +223,8 @@ export default function TypesOfChatbots() {
                             }}
                         >
                             <Zap className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
-                                COMPREHENSIVE SOLUTIONS
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                                Comprehensive Solutions
                             </span>
                         </div>
 

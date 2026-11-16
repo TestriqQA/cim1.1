@@ -35,7 +35,7 @@ export default function CTA() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                        <span className="text-sm font-bold" style={{ color: "var(--accent-amber-text)" }}>FREE CONSULTATION</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>Free Consultation</span>
                     </div>
 
                     {/* Icon */}

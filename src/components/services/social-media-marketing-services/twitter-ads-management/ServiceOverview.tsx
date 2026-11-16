@@ -65,7 +65,7 @@ export default function ServiceOverview() {
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
                         <Megaphone className="w-4 h-4" style={{ color: "var(--foreground)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>Our Services</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Our Services</span>
                     </div>
                     <h2
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"

@@ -135,11 +135,8 @@ export default function Benefits() {
             <div className="relative mx-auto px-6 md:px-12 xl:px-16 z-10">
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] mb-6">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--brand-blue)] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--brand-blue)]"></span>
-                        </span>
-                        <span className="text-xs font-medium text-[var(--secondary-text)] uppercase tracking-wide">Perks & Benefits</span>
+                        <Heart className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
+                        <span className="text-sm font-semibold text-[var(--secondary-text)]">Perks & Benefits</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-[var(--foreground)]">

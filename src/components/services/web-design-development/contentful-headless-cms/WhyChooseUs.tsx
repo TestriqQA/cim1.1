@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
                             border: "1px solid rgba(2, 134, 255, 0.2)",
                         }}>
                         <Award className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
-                        <span className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--accent-sky-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

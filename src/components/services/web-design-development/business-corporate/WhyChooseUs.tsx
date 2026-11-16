@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
-                            TRUSTED BY INDUSTRY LEADERS
+                            Trusted by Industry Leaders
                         </span>
                     </div>
 

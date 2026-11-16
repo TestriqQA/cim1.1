@@ -113,8 +113,8 @@ export default function AdPlatforms() {
                         }}
                     >
                         <ExternalLink className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            AD PLATFORMS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Ad Platforms
                         </span>
                     </div>
 

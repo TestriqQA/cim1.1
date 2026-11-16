@@ -99,7 +99,7 @@ export default function Hero({
               }}
             >
               <Sparkles className="w-4 h-4 animate-spin-slow" />
-              <span>Digital Presence & Digital Growth</span>
+              <span className="text-sm font-semibold">Digital Presence & Digital Growth</span>
             </div>
 
             <h1 className="w-full min-w-0 break-words [overflow-wrap:anywhere] text-[1.75rem] leading-[1.15] tracking-tight sm:tracking-normal sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">

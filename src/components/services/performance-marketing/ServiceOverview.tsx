@@ -61,8 +61,8 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            OUR SERVICES
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Our Services
                         </span>
                     </div>
 

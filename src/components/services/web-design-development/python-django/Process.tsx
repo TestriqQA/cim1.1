@@ -113,7 +113,7 @@ export default function Process() {
                     >
                         <Code2 className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--brand-blue-text)" }}>
-                            OUR PROCESS
+                            Our Process
                         </span>
                     </div>
                     <h2

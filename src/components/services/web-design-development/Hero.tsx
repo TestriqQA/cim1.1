@@ -67,7 +67,7 @@ export default function Hero() {
                             }}
                         >
                             <Sparkles className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
-                            <span className="text-xs sm:text-sm font-semibold">Web Design & Development</span>
+                            <span className="text-sm font-semibold">Web Design & Development</span>
                         </div>
 
                         {/* Heading */}

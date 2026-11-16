@@ -162,7 +162,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Award className="w-5 h-5" style={{ color: "var(--brand-teal)" }} />
-                        <span className="font-semibold" style={{ color: "var(--foreground)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                             Trusted by Growing Businesses
                         </span>
                         <Shield className="w-5 h-5" style={{ color: "var(--brand-teal)" }} />

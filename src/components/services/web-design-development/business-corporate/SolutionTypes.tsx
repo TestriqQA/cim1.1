@@ -132,8 +132,8 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            COMPREHENSIVE SOLUTIONS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Comprehensive Solutions
                         </span>
                         <Sparkles className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
                     </div>

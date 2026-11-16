@@ -77,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                                 The Web Framework for Content
                             </span>
                         </div>

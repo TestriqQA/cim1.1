@@ -74,7 +74,7 @@ export default function ProductHero({ product }: { product: Product }) {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 animate-fadeIn">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30` }}>
                                 <Icon className="w-4 h-4" style={{ color }} />
-                                <span className="text-sm font-medium" style={{ color: textColor }}>{product.tagline}</span>
+                                <span className="text-sm font-semibold" style={{ color: textColor }}>{product.tagline}</span>
                             </div>
 
                             {product.version && (
