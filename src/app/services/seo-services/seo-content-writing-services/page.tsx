@@ -80,27 +80,7 @@ const jsonLd = {
                 ],
             },
         },
-        {
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What is content SEO and why is it important?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Content SEO is the practice of creating content that helps your web pages rank high in search engines. In 2026, it is critical because search engines prioritize EEAT signals.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much do professional SEO content services cost in 2026?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "SEO content writing cost 2026 ranges from $0.15 to $0.50 per word depending on industry complexity.",
-                    },
-                },
-            ],
-        },
+
     ],
 };
 

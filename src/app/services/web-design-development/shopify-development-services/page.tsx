@@ -95,11 +95,6 @@ export default function ShopifyEcommercePage() {
         // src/components/services/web-design-development/shopify-development-services/CTA.tsx verbatim.
         // Google requires FAQPage markup to match the on-page text, so these two
         // must be edited together — paraphrasing here costs the rich result.
-        // NOTE: that component renders each answer only while its item is open
-        // ({openIndex === index && ...}), so the answer text is absent from the
-        // served HTML until a user clicks. Every other FAQ on the site keeps the
-        // answer mounted and toggles it with CSS; until this one does the same,
-        // the answers below are not backed by on-page text.
         generateFAQSchema([
             { question: "What are the benefits of using Shopify for ecommerce?", answer: "Shopify remains the world's leading e-commerce platform in 2026 due to its unparalleled reliability, security, and massive app ecosystem. It offers a user-friendly backend for merchants while allowing developers the flexibility to build highly customized stores via Shopify Plus and Headless Commerce architectures." },
             { question: "How much do professional Shopify development services cost in 2026?", answer: "The Shopify ecommerce cost for startups typically ranges from $5,000 to $15,000 for a custom store setup. Mid-market and enterprise projects involving Shopify Plus development or complex migrations can range from $25,000 to $100,000+. The ROI usually pays for itself within 6-12 months." },

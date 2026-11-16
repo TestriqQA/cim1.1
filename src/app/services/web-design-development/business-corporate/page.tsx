@@ -93,10 +93,10 @@ export default function BusinessCorporatePage() {
             name: "Our Corporate Website Development Process",
             description: "A proven 6-step methodology for building enterprise-grade corporate websites that establish digital authority.",
             steps: [
-                { name: "Discovery & Alignment", text: "Executive interviews, brand audit, and requirements gathering to align the website vision with business objectives.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-discovery" },
+                { name: "Discovery & Stakeholder Alignment", text: "Executive interviews, brand audit, and requirements gathering to align the website vision with business objectives.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-discovery" },
                 { name: "Brand-Aligned Design", text: "Creating mood boards, wireframes, and high-fidelity designs that integrate with your brand identity and corporate standards.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-design" },
                 { name: "Enterprise Development", text: "CMS integration, API connections, and security implementation using enterprise-grade technology stacks.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-development" },
-                { name: "QA & Compliance", text: "Cross-browser testing, WCAG accessibility audit, security scans, and compliance verification.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-qa" },
+                { name: "Quality Assurance & Compliance", text: "Cross-browser testing, WCAG accessibility audit, security scans, and compliance verification.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-qa" },
                 { name: "Controlled Launch", text: "Deployment plan execution, CDN configuration, and editor training for seamless handover.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-launch" },
                 { name: "Ongoing Partnership", text: "SLA agreements and quarterly enhancement roadmaps for continuous improvement and support.", url: "https://www.cinuteinfomedia.com/services/web-design-development/business-corporate/#step-partnership" },
             ],

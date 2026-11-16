@@ -142,12 +142,12 @@ export default function OrganicGrowthSEOPage() {
             name: "Our 6-Phase SEO Growth Process",
             description: "A proven 6-phase SEO methodology that has delivered sustained organic traffic growth, page-1 keywords, and strong ROI for clients across a broad range of industries.",
             steps: [
-                { name: "Comprehensive SEO Audit", text: "Deep technical audit covering crawlability, Core Web Vitals, indexation, schema gaps, and competitor analysis. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-audit" },
-                { name: "Keyword & Content Strategy", text: "Data-driven keyword research, topical mapping, content gap analysis, and pillar-cluster architecture design. Timeline: Week 2-3.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-strategy" },
-                { name: "Technical Optimization", text: "Fixing crawl issues, improving site speed, implementing schema markup, and optimizing Core Web Vitals. Timeline: Week 3-4.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-technical" },
-                { name: "Content Creation & On-Page", text: "Publishing E-E-A-T optimized content, meta tag optimization, internal linking, and content siloing. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-content" },
-                { name: "Authority Building & Link Acquisition", text: "Digital PR campaigns, high-authority guest posts, broken link building, and HARO outreach. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-links" },
-                { name: "Reporting & Continuous Optimization", text: "Monthly performance reports, ranking tracking, traffic analysis, and strategy refinement based on data. Monthly.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-reporting" },
+                { name: "Organic SEO Audit and Growth Roadmap", text: "Deep technical audit covering crawlability, Core Web Vitals, indexation, schema gaps, and competitor analysis. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-audit" },
+                { name: "Strategic Keyword Research", text: "Data-driven keyword research, topical mapping, content gap analysis, and pillar-cluster architecture design. Timeline: Week 2-3.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-strategy" },
+                { name: "Technical Fixes & Enhancements", text: "Fixing crawl issues, improving site speed, implementing schema markup, and optimizing Core Web Vitals. Timeline: Week 3-4.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-technical" },
+                { name: "Content Optimization & Creation", text: "Publishing E-E-A-T optimized content, meta tag optimization, internal linking, and content siloing. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-content" },
+                { name: "Authority Building", text: "Digital PR campaigns, high-authority guest posts, broken link building, and HARO outreach. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-links" },
+                { name: "Performance Tracking & Transparency", text: "Monthly performance reports, ranking tracking, traffic analysis, and strategy refinement based on data. Monthly.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-reporting" },
             ],
         }),
 

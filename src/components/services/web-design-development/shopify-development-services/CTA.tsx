@@ -116,13 +116,14 @@ export default function CTA() {
                                         <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: "var(--secondary-text)" }} />
                                     )}
                                 </button>
-                                {openIndex === index && (
-                                    <div className="px-6 pb-5">
-                                        <p className="text-sm md:text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                )}
+                                {/* Kept mounted and collapsed with `hidden` rather than rendered
+                                    conditionally, so the answer text ships in the HTML for this
+                                    page's FAQPage schema. Matches the other FAQ components. */}
+                                <div className={`px-6 pb-5 ${openIndex === index ? "" : "hidden"}`}>
+                                    <p className="text-sm md:text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                        {faq.answer}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
