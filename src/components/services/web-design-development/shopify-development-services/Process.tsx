@@ -17,6 +17,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Search,
             title: "Discovery & Strategic Audit",
@@ -30,6 +31,7 @@ export default function Process() {
             ],
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: "Design & UX Prototyping",
@@ -43,6 +45,7 @@ export default function Process() {
             ],
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code2,
             title: "Custom Development",
@@ -56,6 +59,7 @@ export default function Process() {
             ],
         },
         {
+            anchor: "step-integration",
             number: "04",
             icon: Settings,
             title: "Third-Party Integrations",
@@ -69,6 +73,7 @@ export default function Process() {
             ],
         },
         {
+            anchor: "step-testing",
             number: "05",
             icon: TestTube,
             title: "Rigorous Testing & QA",
@@ -82,6 +87,7 @@ export default function Process() {
             ],
         },
         {
+            anchor: "step-launch",
             number: "06",
             icon: Rocket,
             title: "Launch & SEO Deployment",
@@ -181,7 +187,8 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className="relative group"
+                                id={step.anchor}
+                                className="scroll-mt-20 relative group"
                                 onMouseEnter={() => setHoveredStep(idx)}
                                 onMouseLeave={() => setHoveredStep(null)}
                             >

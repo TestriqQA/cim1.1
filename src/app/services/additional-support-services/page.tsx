@@ -146,10 +146,14 @@ export default function AdditionalSupportServicesPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/additional-support-services/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
             { question: "What are additional support services in business?", answer: "Additional support services encompass external assistance for non-core business activities, including IT business support, outsourced administrative tasks, data management, and customer service. These services allow your core team to focus on strategic growth while we handle the operational details." },
             { question: "Why should businesses outsource their support services?", answer: "Outsourcing offers Cost-Effective Solutions and instant Scalability. By leveraging our Managed Support services, you gain access to expert talent and advanced technology without the overhead of hiring full-time staff, ensuring Resource Optimization and 24/7 coverage." },
-            { question: "What are the benefits of supplementary business support?", answer: "Benefits include increased Operational Efficiency, access to Core Competencies not available in-house, Workflow Automation, and reduced operational risks. Our clients often see a a meaningful reduction in overhead costs." },
+            { question: "What are the benefits of supplementary business support?", answer: "Benefits include increased Operational Efficiency, access to Core Competencies not available in-house, Workflow Automation, and reduced operational risks. Our clients often see a meaningful reduction in overhead costs." },
             { question: "How do I choose the right business support service provider?", answer: "Look for E-E-A-T signals: proven experience (case studies), technical expertise (modern tech stack), and clear communication. We offer transparent Service Level Agreements (SLAs) and have a track record of serving global clients in the US, EU, and APAC." },
             { question: "What is included in a business support services package?", answer: "Our packages are flexible. A standard package might include Professional virtual assistant support, basic IT monitoring, and Outsourced back-office support solutions. Enterprise packages add dedicated project management, advanced security, and Supplementary project management support." },
         ], "https://www.cinuteinfomedia.com/services/additional-support-services/#faq"),
@@ -157,11 +161,16 @@ export default function AdditionalSupportServicesPage() {
         generateHowToSchema({
             name: "How to Get Started with Business Support Services",
             description: "A simple 4-step onboarding process to start leveraging outsourced business support services with customized integration into your existing workflows.",
+            // No per-step `url` here: unlike the other service pages, this one has
+            // no process section, so there is no element for #step-consultation,
+            // #step-plan, #step-onboarding or #step-support to point at. Dead
+            // fragments were removed rather than anchored. If a visible process
+            // section is ever added, give each step an `anchor` and restore the urls.
             steps: [
-                { name: "Consultation & Needs Assessment", text: "Free consultation to understand your business operations, pain points, and support requirements.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-consultation" },
-                { name: "Custom Plan Selection", text: "Choose from Essential, Professional, or Enterprise tiers, or request a custom package tailored to your needs.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-plan" },
-                { name: "Seamless Integration & Onboarding", text: "Customized onboarding with integration into your tools including Jira, Slack, and existing workflows.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-onboarding" },
-                { name: "Ongoing Support & Reporting", text: "24/7 continuous support with regular performance reporting and SLA adherence tracking.", url: "https://www.cinuteinfomedia.com/services/additional-support-services/#step-support" },
+                { name: "Consultation & Needs Assessment", text: "Free consultation to understand your business operations, pain points, and support requirements." },
+                { name: "Custom Plan Selection", text: "Choose from Essential, Professional, or Enterprise tiers, or request a custom package tailored to your needs." },
+                { name: "Seamless Integration & Onboarding", text: "Customized onboarding with integration into your tools including Jira, Slack, and existing workflows." },
+                { name: "Ongoing Support & Reporting", text: "24/7 continuous support with regular performance reporting and SLA adherence tracking." },
             ],
         }),
 

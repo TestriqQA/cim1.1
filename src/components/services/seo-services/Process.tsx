@@ -9,36 +9,42 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-audit",
             icon: ListChecks,
             title: "Organic SEO Audit and Growth Roadmap",
             description: <span>We start with a deep dive. Our 100+ point audit covers technical health, content gaps, and off-page factors to build a custom <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">Organic SEO audit</Link> and growth roadmap.</span>,
             details: ["Site health analysis", "Competitor research", "Keyword gap analysis", "Content audit"],
         },
         {
+            anchor: "step-strategy",
             icon: Search,
             title: "Strategic Keyword Research",
             description: "We go beyond volume. We identify high-value, low-difficulty terms and long-tail keywords that your competitors are missing, mapping them to the buyer's journey.",
             details: ["Search volume analysis", "Intent mapping", "Long-tail opportunities", "SERP analysis"],
         },
         {
+            anchor: "step-technical",
             icon: Code,
             title: "Technical Fixes & Enhancements",
             description: <span>We lay the rails. Our devs fix broken links, improve speed, and implement <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">structured data</Link> to ensure Google can crawl and index your site without friction.</span>,
             details: ["Core Web Vitals", "Mobile optimization", "Schema markup", "Crawl optimization"],
         },
         {
+            anchor: "step-content",
             icon: FileText,
             title: "Content Optimization & Creation",
             description: <span>We craft content that ranks. Whether it's Organic SEO for startups or established brands, we produce <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">"Helpful Content"</Link> that satisfies user intent and earns backlinks.</span>,
             details: ["Content planning", "On-page optimization", "E-A-T signals", "Content refresh"],
         },
         {
+            anchor: "step-links",
             icon: Shield,
             title: "Authority Building",
             description: <span>We build your reputation. Through strategic partnerships and outreach, we earn the <Link href="/services/seo-services/link-building" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">links</Link> that signal authority to Google's algorithms.</span>,
             details: ["Outreach campaigns", "Guest posting", "Digital PR", "Broken link building"],
         },
         {
+            anchor: "step-reporting",
             icon: TrendingUp,
             title: "Performance Tracking & Transparency",
             description: "You are never in the dark. We provide 24/7 access to dashboards showing Organic SEO for revenue growth, traffic trends, and key wins.",
@@ -91,7 +97,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={index}
-                                    className={`relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
                                     onMouseEnter={() => setHoveredStep(index)}
                                     onMouseLeave={() => setHoveredStep(null)}
                                 >

@@ -155,24 +155,17 @@ export default function Technologies() {
             `}</style>
 
             <section
-                className="py-20 transition-colors duration-300 relative overflow-hidden"
+                className="py-12 md:py-20 transition-colors duration-300 relative overflow-hidden"
                 style={{
-                    backgroundColor: "var(--card-bg)",
+                    backgroundColor: "var(--background)",
                     borderColor: "var(--border-color)",
                 }}
             >
-                {/* Decorative background elements */}
-                <div className="absolute inset-0">
-                    <div className="absolute top-40 left-20 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/5 rounded-full blur-3xl" />
-                </div>
-
-                <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-20 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                    <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                            <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
                             <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>Powered by Industry Leaders</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
@@ -184,13 +177,13 @@ export default function Technologies() {
                     </div>
 
                     {/* Technology Categories */}
-                    <div className="grid md:grid-cols-2 gap-8 mb-20">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16">
                         {techCategories.map((category, index) => {
                             const Icon = category.icon;
                             return (
                                 <div
                                     key={index}
-                                    className="group relative p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
+                                    className="group relative p-6 md:p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
@@ -260,12 +253,12 @@ export default function Technologies() {
                                         </p>
                                         <div className="grid grid-cols-2 gap-2">
                                             {category.features.map((feature, i) => (
-                                                <div key={i} className="flex items-center gap-2 group/item hover:translate-x-1 transition-transform duration-200">
+                                                <div key={i} className="flex items-start gap-2 group/item hover:translate-x-1 transition-transform duration-200">
                                                     <CheckCircle2
-                                                        className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover/item:scale-110"
+                                                        className="w-3.5 h-3.5 mt-1 flex-shrink-0 transition-transform duration-200 group-hover/item:scale-110"
                                                         style={{ color: "var(--brand-orange)" }}
                                                     />
-                                                    <span className="text-sm" style={{ color: "var(--secondary-text)" }}>{feature}</span>
+                                                    <span className="text-base" style={{ color: "var(--secondary-text)" }}>{feature}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -279,10 +272,10 @@ export default function Technologies() {
                     </div>
 
                     {/* Security & Data Pipelines */}
-                    <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
                         {/* Security Card */}
                         <div
-                            className="group relative p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
+                            className="group relative p-5 md:p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",
@@ -294,7 +287,7 @@ export default function Technologies() {
                             {/* Gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-emerald-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
 
-                            <div className="flex items-center gap-4 mb-8">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8">
                                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                                     <Shield className="w-7 h-7 text-white" strokeWidth={2.5} />
                                 </div>
@@ -310,11 +303,11 @@ export default function Technologies() {
                                 {securityFeatures.map((feature, i) => {
                                     const FeatureIcon = feature.icon;
                                     return (
-                                        <li key={i} className="flex items-start gap-4 group/item hover:translate-x-1 transition-transform duration-200">
-                                            <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover/item:scale-110">
-                                                <FeatureIcon className="w-4 h-4 text-green-500" strokeWidth={2.5} />
+                                        <li key={i} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
+                                            <div className="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover/item:scale-110">
+                                                <FeatureIcon className="w-3.5 h-3.5 text-green-500" strokeWidth={2.5} />
                                             </div>
-                                            <span className="text-sm leading-relaxed pt-1" style={{ color: "var(--secondary-text)" }}>
+                                            <span className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
                                                 {feature.text}
                                             </span>
                                         </li>
@@ -328,7 +321,7 @@ export default function Technologies() {
 
                         {/* Data Pipelines Card */}
                         <div
-                            className="group relative p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
+                            className="group relative p-5 md:p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fadeIn"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 80%, transparent)",
                                 borderColor: "var(--border-color)",
@@ -340,7 +333,7 @@ export default function Technologies() {
                             {/* Gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
 
-                            <div className="flex items-center gap-4 mb-8">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8">
                                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                                     <Database className="w-7 h-7 text-white" strokeWidth={2.5} />
                                 </div>
@@ -358,14 +351,14 @@ export default function Technologies() {
                                     return (
                                         <div key={i} className="group/item hover:translate-x-1 transition-transform duration-200">
                                             <div className="flex items-center gap-3 mb-2">
-                                                <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center transition-all duration-200 group-hover/item:scale-110">
-                                                    <FeatureIcon className="w-4 h-4 text-blue-500" strokeWidth={2.5} />
+                                                <div className="w-6 h-6 rounded-lg bg-blue-500/10 flex items-center justify-center transition-all duration-200 group-hover/item:scale-110">
+                                                    <FeatureIcon className="w-3.5 h-3.5 text-blue-500" strokeWidth={2.5} />
                                                 </div>
-                                                <h4 className="font-bold transition-colors duration-200" style={{ color: "var(--foreground)" }}>
+                                                <h4 className="text-xl font-bold transition-colors duration-200" style={{ color: "var(--foreground)" }}>
                                                     {feature.title}
                                                 </h4>
                                             </div>
-                                            <p className="text-sm leading-relaxed pl-11" style={{ color: "var(--secondary-text)" }}>
+                                            <p className="text-base leading-relaxed pl-0 sm:pl-9" style={{ color: "var(--secondary-text)" }}>
                                                 {feature.description}
                                             </p>
                                         </div>
@@ -380,7 +373,7 @@ export default function Technologies() {
 
                     {/* CTA Section */}
                     <div
-                        className="mt-16 p-10 rounded-3xl border text-center animate-fadeIn relative overflow-hidden group"
+                        className="mt-10 md:mt-16 p-6 md:p-10 rounded-3xl border text-center animate-fadeIn relative overflow-hidden group"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                             borderColor: "var(--border-color)",
@@ -398,7 +391,7 @@ export default function Technologies() {
                             <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                                 Our team can integrate with virtually any system, API, or platform. Let's discuss your specific requirements.
                             </p>
-                            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button mx-auto">
+                            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm sm:px-8 sm:text-base bg-gradient-to-r from-[#b45309] to-[#c2410c] hover:from-[#c2410c] hover:to-[#b45309] text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group/button mx-auto">
                                 <span>Discuss Integration Options</span>
                                 <ArrowRight className="w-5 h-5 group-hover/button:translate-x-1 transition-transform duration-300" />
                             </Link>

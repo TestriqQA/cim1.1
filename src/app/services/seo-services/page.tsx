@@ -126,25 +126,28 @@ export default function OrganicGrowthSEOPage() {
             ],
         }),
 
+        // Mirrors the visible accordion copy in
+        // src/components/services/seo-services/FAQ.tsx verbatim.
+        // Google requires FAQPage markup to match the on-page text, so these two
+        // must be edited together — paraphrasing here costs the rich result.
         generateFAQSchema([
-            { question: "How much do SEO services cost?", answer: "SEO services typically range from $1,500 to $10,000+ per month depending on the scope, competition level, and number of target keywords. A free comprehensive audit is included." },
-            { question: "How long does it take to see SEO results?", answer: "Initial improvements in technical health and indexation are visible within 4-6 weeks. Significant ranking and traffic gains typically materialize within 3-6 months of consistent optimization." },
-            { question: "What is the difference between on-page and off-page SEO?", answer: "On-page SEO focuses on optimizing content, meta tags, internal linking, and site structure on your website. Off-page SEO involves building external authority through backlinks, digital PR, and brand mentions." },
-            { question: "Why is technical SEO important?", answer: "Technical SEO ensures search engines can crawl, index, and render your pages efficiently. Issues like slow load times, broken links, and poor Core Web Vitals can prevent even the best content from ranking." },
-            { question: "How does AI affect SEO in 2026?", answer: "AI Overviews, SGE, and conversational search are reshaping SEO. We optimize for entity-based search, structured data, and E-E-A-T signals to ensure visibility in both traditional and AI-powered search results." },
-            { question: "Do you guarantee first-page rankings?", answer: "No ethical SEO agency can guarantee specific rankings as Google's algorithm considers 200+ factors. We guarantee transparent reporting, proven methodologies, and measurable ROI improvements." },
+            { question: "What is organic growth SEO?", answer: "Organic growth SEO (Search Engine Optimization) is the strategic process of improving a website's visibility in unpaid search engine results (SERPs). Unlike paid ads, it focuses on long-term, sustainable traffic by optimizing content, technical architecture, and authority signals to match search intent and Google's E-E-A-T guidelines." },
+            { question: "How long does it take to see results from organic SEO?", answer: "Typically, meaningful results from Organic SEO services are seen within 4 to 6 months. However, technical fixes can show impact in weeks, while competitive keywords may take 6-12 months. We focus on \"quick wins\" to show early momentum while building toward long-term organic search visibility." },
+            { question: "Why is organic growth important for SEO?", answer: "Organic growth is crucial because it provides sustainable, cost-effective traffic. It builds brand authority and trust, which paid ads cannot buy. Users trust organic results more, leading to higher click-through rates (CTR) and better conversion rates for organic SEO for lead generation." },
+            { question: "How do you measure organic SEO growth?", answer: "We measure growth using Data-driven organic growth SEO metrics: Organic Traffic (Total non-paid visits), Keyword Rankings (Positions for primary and secondary terms), Conversions (leads, sales, or sign-ups attributed to organic search), and CTR (Percentage of impressions that result in clicks)." },
+            { question: "What are the best strategies for organic SEO growth in 2026?", answer: "The best strategies for How to grow organic traffic in 2026 include: Prioritizing User Experience (UX) for SEO, Creating high-E-E-A-T content that answers direct questions (optimizing for AI Overviews), Building Topical Authority through clusters, and Focusing on Organic SEO for mobile and voice search." },
         ]),
 
         generateHowToSchema({
             name: "Our 6-Phase SEO Growth Process",
             description: "A proven 6-phase SEO methodology that has delivered sustained organic traffic growth, page-1 keywords, and strong ROI for clients across a broad range of industries.",
             steps: [
-                { name: "Comprehensive SEO Audit", text: "Deep technical audit covering crawlability, Core Web Vitals, indexation, schema gaps, and competitor analysis. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-audit" },
-                { name: "Keyword & Content Strategy", text: "Data-driven keyword research, topical mapping, content gap analysis, and pillar-cluster architecture design. Timeline: Week 2-3.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-strategy" },
-                { name: "Technical Optimization", text: "Fixing crawl issues, improving site speed, implementing schema markup, and optimizing Core Web Vitals. Timeline: Week 3-4.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-technical" },
-                { name: "Content Creation & On-Page", text: "Publishing E-E-A-T optimized content, meta tag optimization, internal linking, and content siloing. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-content" },
-                { name: "Authority Building & Link Acquisition", text: "Digital PR campaigns, high-authority guest posts, broken link building, and HARO outreach. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-links" },
-                { name: "Reporting & Continuous Optimization", text: "Monthly performance reports, ranking tracking, traffic analysis, and strategy refinement based on data. Monthly.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-reporting" },
+                { name: "Organic SEO Audit and Growth Roadmap", text: "Deep technical audit covering crawlability, Core Web Vitals, indexation, schema gaps, and competitor analysis. Timeline: Week 1-2.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-audit" },
+                { name: "Strategic Keyword Research", text: "Data-driven keyword research, topical mapping, content gap analysis, and pillar-cluster architecture design. Timeline: Week 2-3.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-strategy" },
+                { name: "Technical Fixes & Enhancements", text: "Fixing crawl issues, improving site speed, implementing schema markup, and optimizing Core Web Vitals. Timeline: Week 3-4.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-technical" },
+                { name: "Content Optimization & Creation", text: "Publishing E-E-A-T optimized content, meta tag optimization, internal linking, and content siloing. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-content" },
+                { name: "Authority Building", text: "Digital PR campaigns, high-authority guest posts, broken link building, and HARO outreach. Ongoing.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-links" },
+                { name: "Performance Tracking & Transparency", text: "Monthly performance reports, ranking tracking, traffic analysis, and strategy refinement based on data. Monthly.", url: "https://www.cinuteinfomedia.com/services/seo-services/#step-reporting" },
             ],
         }),
 

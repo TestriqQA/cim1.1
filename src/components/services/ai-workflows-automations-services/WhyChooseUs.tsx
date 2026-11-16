@@ -121,15 +121,15 @@ export default function WhyChooseUs() {
             `}</style>
 
             <section
-                className="py-20 transition-colors duration-300"
+                className="py-12 md:py-20 transition-colors duration-300"
                 style={{
-                    backgroundColor: "var(--card-bg)",
+                    backgroundColor: "var(--background)",
                     borderColor: "var(--border-color)",
                 }}
             >
-                <div className="mx-auto px-6 md:px-12 xl:px-20">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                    <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ color: "var(--foreground)" }}>
                             Why Choose Our <span style={{ color: "var(--accent-orange-text)" }}>AI Automation Solutions?</span>
                         </h2>
@@ -139,7 +139,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Reasons Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                         {reasons.map((reason, index) => {
                             const Icon = reason.icon;
                             return (
@@ -208,7 +208,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Competitive Advantage */}
-                    <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="mt-10 md:mt-16 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div className="animate-fadeIn" style={{ animationDelay: "0.8s", animationFillMode: "both" }}>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
@@ -227,20 +227,20 @@ export default function WhyChooseUs() {
                                         key={i}
                                         className="flex items-start gap-3 group hover:translate-x-2 transition-transform duration-300"
                                     >
-                                        <div className="mt-1 relative">
+                                        <div className="mt-1.5 relative">
                                             <CheckCircle
-                                                className="w-5 h-5 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                                                className="w-4 h-4 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                                                 style={{ color: "var(--brand-orange)" }}
                                             />
                                             <div className="absolute inset-0 bg-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
                                         </div>
-                                        <span style={{ color: "var(--foreground)" }}>{item}</span>
+                                        <span className="text-lg" style={{ color: "var(--foreground)" }}>{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         <div
-                            className="p-8 rounded-2xl border animate-fadeIn relative overflow-hidden group"
+                            className="p-6 md:p-8 rounded-2xl border animate-fadeIn relative overflow-hidden group"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                                 borderColor: "var(--border-color)",

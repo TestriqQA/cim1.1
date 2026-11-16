@@ -90,51 +90,6 @@ export default function iOSAppDevelopmentPage() {
                                         }
                                     ]
                                 }
-                            },
-                            {
-                                "@type": "FAQPage",
-                                "mainEntity": [
-                                    {
-                                        "@type": "Question",
-                                        "name": "How much does it cost to develop an iOS app?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Costs vary based on complexity, typically ranging from $10k for MVPs to $100k+ for complex enterprise solutions."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What is the best language for iOS app development?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Swift and SwiftUI are the best modern languages for iOS development, offering superior performance and safety."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How long does it take to build a custom iPhone app?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "A standard MVP typically takes 3-4 months, while complex apps can take 6-12 months."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What are the benefits of native iOS development vs hybrid?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Native development offers better performance, hardware access, and user experience compared to hybrid solutions."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How do I submit my app to the Apple App Store?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "We handle the full submission process via App Store Connect, ensuring compliance with Apple's guidelines."
-                                        }
-                                    }
-                                ]
                             }
                         ]
                     })

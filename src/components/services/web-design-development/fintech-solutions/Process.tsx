@@ -14,6 +14,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-compliance",
             number: "01",
             icon: ShieldCheck,
             title: "Security & Compliance Analysis",
@@ -28,6 +29,7 @@ export default function Process() {
             gradient: "from-[#0ea5e9] to-[#38bdf8]",
         },
         {
+            anchor: "step-architecture",
             number: "02",
             icon: Search,
             title: "Architecture & UX Design",
@@ -42,6 +44,7 @@ export default function Process() {
             gradient: "from-[#0ea5e9] to-[#38bdf8]",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Secure Development",
@@ -56,6 +59,7 @@ export default function Process() {
             gradient: "from-[#0ea5e9] to-[#38bdf8]",
         },
         {
+            anchor: "step-testing",
             number: "04",
             icon: Lock,
             title: "Penetration Testing & QA",
@@ -70,6 +74,7 @@ export default function Process() {
             gradient: "from-[#0ea5e9] to-[#38bdf8]",
         },
         {
+            anchor: "step-launch",
             number: "05",
             icon: Rocket,
             title: "Secure Launch",
@@ -84,6 +89,7 @@ export default function Process() {
             gradient: "from-[#0ea5e9] to-[#38bdf8]",
         },
         {
+            anchor: "step-monitoring",
             number: "06",
             icon: BarChart3,
             title: "Monitoring & Scaling",
@@ -172,7 +178,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => {
                                         setHoveredStep(idx);
                                         setActiveStep(idx);

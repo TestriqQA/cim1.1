@@ -4,6 +4,7 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Lightbulb,
             title: "Discovery & Product Strategy",
@@ -11,6 +12,7 @@ export default function Process() {
             deliverables: ["Product requirements document (PRD)", "Technical architecture diagram", "Project roadmap"],
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: "UX/UI Design & Prototyping",
@@ -18,6 +20,7 @@ export default function Process() {
             deliverables: ["Wireframes", "High-fidelity mockups", "Clickable prototypes", "Design system components"],
         },
         {
+            anchor: "step-agile",
             number: "03",
             icon: Code,
             title: "Agile Development Sprints",
@@ -25,6 +28,7 @@ export default function Process() {
             deliverables: ["Jira/Linear tracking", "Regular demos", "Velocity tracking", "Continuous delivery"],
         },
         {
+            anchor: "step-qa",
             number: "04",
             icon: TestTube,
             title: "Quality Assurance & Testing",
@@ -32,6 +36,7 @@ export default function Process() {
             deliverables: ["Unit & integration testing", "E2E browser automation", "Load testing", "Security penetration testing"],
         },
         {
+            anchor: "step-launch",
             number: "05",
             icon: Rocket,
             title: "Deployment & Launch",
@@ -39,6 +44,7 @@ export default function Process() {
             deliverables: ["CI/CD pipelines", "Infrastructure provisioning", "Error tracking", "Alerting setup"],
         },
         {
+            anchor: "step-growth",
             number: "06",
             icon: RefreshCw,
             title: "Iteration & Growth",
@@ -96,7 +102,8 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className={`flex flex-col lg:flex-row gap-8 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
+                                id={step.anchor}
+                                className={`scroll-mt-20 flex flex-col lg:flex-row gap-8 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
                             >
                                 {/* Step Number & Icon */}
                                 <div className="lg:w-1/3 flex flex-col items-center text-center">

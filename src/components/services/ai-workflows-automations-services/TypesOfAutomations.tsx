@@ -214,12 +214,12 @@ export default function TypesOfAutomations() {
             `}</style>
 
             <section
-                className="py-20 transition-colors duration-300"
+                className="py-12 md:py-20 transition-colors duration-300"
                 style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
-                <div className="mx-auto px-6 md:px-12 xl:px-20">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+                    <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
                             Types of <span style={{ color: "var(--accent-orange-text)" }}>AI Workflows & Automations</span>
                         </h2>
@@ -229,7 +229,7 @@ export default function TypesOfAutomations() {
                     </div>
 
                     {/* Automation Types Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
                         {automationTypes.map((type, index) => {
                             const Icon = type.icon;
 
@@ -291,10 +291,10 @@ export default function TypesOfAutomations() {
                                             {type.features.map((feature, i) => (
                                                 <li
                                                     key={i}
-                                                    className="text-sm flex items-start gap-2 group/item hover:translate-x-1 transition-transform duration-200"
+                                                    className="text-base flex items-start gap-2 group/item hover:translate-x-1 transition-transform duration-200"
                                                 >
                                                     <CheckCircle2
-                                                        className="w-4 h-4 flex-shrink-0 mt-0.5 transition-colors duration-200 group-hover/item:scale-110"
+                                                        className="w-3.5 h-3.5 flex-shrink-0 mt-1 transition-colors duration-200 group-hover/item:scale-110"
                                                         style={{ color: "var(--brand-orange)" }}
                                                     />
                                                     <span style={{ color: "var(--secondary-text)" }}>{feature}</span>

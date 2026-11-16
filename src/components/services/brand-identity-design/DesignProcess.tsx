@@ -9,30 +9,35 @@ export default function DesignProcess() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             icon: Search,
             title: "Discovery & Brand Audit",
             description: <span>We begin with a deep dive into your market. We analyze competitors, interview stakeholders, and audit existing assets to define your <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">Brand Strategy</Link>.</span>,
             details: ["Brand audit", "Competitor analysis", "Stakeholder interviews", "Positioning"],
         },
         {
+            anchor: "step-strategy",
             icon: Lightbulb,
             title: "Strategy & Conceptualization",
             description: "We synthesize data into a creative brief. Our team brainstorms Visual Communication Design concepts, exploring multiple territories for your unique brand.",
             details: ["Creative brief", "Concept brainstorming", "Visual territories", "Strategic direction"],
         },
         {
+            anchor: "step-design",
             icon: Palette,
             title: "Design & Iteration",
             description: <span>We move to high-fidelity design using <Link href="#tools" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">industry-standard tools</Link>. You receive interactive presentations and have the opportunity to refine the direction.</span>,
             details: ["High-fidelity design", "Interactive presentations", "Iterative refinement", "Feedback loops"],
         },
         {
+            anchor: "step-systematization",
             icon: PenTool,
             title: "Systematization & Guidelines",
             description: "Once approved, we build the full system-color codes, type scales, and brand guidelines design. We ensure every asset is production-ready.",
             details: ["System building", "Color codes", "Type scales", "Production ready"],
         },
         {
+            anchor: "step-delivery",
             icon: Rocket,
             title: "Delivery & Launch Support",
             description: "We hand over all source files (AI, EPS, SVG, PNG) and support your team during the rollout to ensure a flawless launch.",
@@ -82,7 +87,8 @@ export default function DesignProcess() {
                             return (
                                 <div
                                     key={index}
-                                    className={`relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isEven ? '' : 'lg:flex-row-reverse'}`}
                                     onMouseEnter={() => setHoveredStep(index)}
                                     onMouseLeave={() => setHoveredStep(null)}
                                 >

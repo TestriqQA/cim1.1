@@ -16,6 +16,7 @@ export default function Process() {
 
     const steps = [
         {
+            anchor: "step-discovery",
             number: "01",
             icon: Search,
             title: "Market Research & Discovery",
@@ -30,6 +31,7 @@ export default function Process() {
             gradient: "from-[#0d9488] to-[#14b8a6]",
         },
         {
+            anchor: "step-design",
             number: "02",
             icon: Palette,
             title: <><Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline">UX Design</Link> & Property Presentation</>,
@@ -44,6 +46,7 @@ export default function Process() {
             gradient: "from-[#14b8a6] to-[#2dd4bf]",
         },
         {
+            anchor: "step-development",
             number: "03",
             icon: Code,
             title: "Platform Development",
@@ -58,6 +61,7 @@ export default function Process() {
             gradient: "from-[#0891b2] to-[#0d9488]",
         },
         {
+            anchor: "step-testing",
             number: "04",
             icon: TestTube,
             title: "Testing & Quality Assurance",
@@ -72,6 +76,7 @@ export default function Process() {
             gradient: "from-[#2dd4bf] to-[#0d9488]",
         },
         {
+            anchor: "step-launch",
             number: "05",
             icon: Rocket,
             title: "Launch & Optimization",
@@ -86,6 +91,7 @@ export default function Process() {
             gradient: "from-[#0d9488] to-[#14b8a6]",
         },
         {
+            anchor: "step-growth",
             number: "06",
             icon: BarChart3,
             title: "Growth & Analytics",
@@ -175,7 +181,8 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className="relative"
+                                    id={step.anchor}
+                                    className="scroll-mt-20 relative"
                                     onMouseEnter={() => {
                                         setHoveredStep(idx);
                                         setActiveStep(idx);

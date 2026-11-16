@@ -31,11 +31,11 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-20" style={{ backgroundColor: "var(--card-bg)" }}>
-            <div className="mx-auto max-w-5xl px-6 md:px-12 xl:px-20">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background)] border border-[var(--border-color)] mb-6">
-                        <MessageSquare className="w-4 h-4 text-[var(--brand-orange)]" />
+        <section className="py-12 md:py-20" style={{ backgroundColor: "var(--background)" }}>
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-12 xl:px-20">
+                <div className="text-center mb-10 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] mb-6">
+                        <MessageSquare className="w-3.5 h-3.5 text-[var(--brand-orange)]" />
                         <span className="text-sm font-bold tracking-wider uppercase" style={{ color: "var(--foreground)" }}>FAQ</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "var(--foreground)" }}>Frequently Asked Questions</h2>
@@ -44,20 +44,20 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                <div className="grid gap-4">
+                <div className="grid gap-3 sm:gap-4">
                     {faqs.map((faq, i) => (
                         <div
                             key={i}
                             className="group rounded-2xl border transition-all duration-300"
                             style={{
-                                backgroundColor: "var(--background)",
+                                backgroundColor: "var(--card-bg)",
                                 borderColor: faqOpen === i ? "var(--brand-orange)" : "var(--border-color)",
                                 borderRadius: '1.25rem'
                             }}
                         >
                             <button
                                 onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-                                className="w-full text-left px-6 py-6 focus:outline-none"
+                                className="w-full text-left px-4 sm:px-6 py-5 sm:py-6 focus:outline-none"
                             >
                                 <div className="flex gap-4 items-center justify-between">
                                     <div className="flex gap-4 items-center">
@@ -70,7 +70,7 @@ export default function FAQ() {
                                         >
                                             <span className="font-bold">{i + 1}</span>
                                         </div>
-                                        <h3 className="font-bold text-lg md:text-xl pr-8" style={{ color: "var(--foreground)" }}>{faq.q}</h3>
+                                        <h3 className="font-bold text-lg md:text-xl pr-2 sm:pr-8" style={{ color: "var(--foreground)" }}>{faq.q}</h3>
                                     </div>
                                     <ChevronDown
                                         className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${faqOpen === i ? "rotate-180" : ""}`}
@@ -78,7 +78,7 @@ export default function FAQ() {
                                     />
                                 </div>
 
-                                <div className={`mt-4 pl-14 pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
+                                <div className={`mt-4 pl-0 sm:pl-14 pr-0 sm:pr-4 border-t pt-4 animate-in fade-in slide-in-from-top-2 duration-300 ${faqOpen === i ? "" : "hidden"}`} style={{ borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)" }}>
                                     <p className="text-[var(--foreground)] leading-relaxed">
                                         {faq.a}
                                     </p>

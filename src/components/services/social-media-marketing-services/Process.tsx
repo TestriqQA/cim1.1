@@ -6,36 +6,42 @@ import Link from "next/link";
 export default function Process() {
     const steps = [
         {
+            anchor: "step-strategy",
             number: "01",
             icon: Search,
             title: "Strategy & Research",
             description: <>Deep dive into your brand, audience <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">customer avatar & persona research</Link>, competitors, and industry trends to define clear, measurable goals.</>,
         },
         {
+            anchor: "step-planning",
             number: "02",
             icon: Calendar,
             title: "Content Planning",
             description: "Developing a comprehensive content calendar, mapping out themes, formats, and messaging for the upcoming period.",
         },
         {
+            anchor: "step-design",
             number: "03",
             icon: Palette,
             title: "Creative Design",
             description: <>Producing high-quality, on-brand visual assets and compelling <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">social media content creation services</Link> copy tailored for each platform.</>,
         },
         {
+            anchor: "step-publishing",
             number: "04",
             icon: Send,
             title: "Publishing & Promotion",
             description: <>Executing the content calendar and launching targeted <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">paid social media advertising agency</Link> campaigns.</>,
         },
         {
+            anchor: "step-engagement",
             number: "05",
             icon: MessageSquare,
             title: "Engagement & Monitoring",
             description: "Actively managing comments, messages, and mentions, and tracking real-time performance metrics and reputation.",
         },
         {
+            anchor: "step-optimization",
             number: "06",
             icon: TrendingUp,
             title: "Optimization & Reporting",
@@ -83,7 +89,8 @@ export default function Process() {
                         return (
                             <div
                                 key={idx}
-                                className="rounded-2xl p-6 md:p-8 border transition-all duration-300 hover:shadow-lg hover:scale-105 relative group"
+                                id={step.anchor}
+                                className="scroll-mt-20 rounded-2xl p-6 md:p-8 border transition-all duration-300 hover:shadow-lg hover:scale-105 relative group"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: "var(--border-color)",

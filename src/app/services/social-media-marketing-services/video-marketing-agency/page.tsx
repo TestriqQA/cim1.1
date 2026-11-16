@@ -94,18 +94,10 @@ export default function YouTubeMarketingPage() {
                                 "mainEntity": [
                                     {
                                         "@type": "Question",
-                                        "name": "How much do professional YouTube marketing services cost?",
+                                        "name": "How much do professional YouTube marketing services cost in 2026?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "YouTube marketing cost for small businesses starts at $1,500/month, while full-service enterprise management ranges from $5,000 to $25,000+ depending on ad spend and content scale."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What are the benefits of hiring a YouTube advertising agency?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Hiring an agency ensures expertise in algorithm optimization, creative A/B testing, and ROI tracking, typically resulting in a higher ROAS compared to in-house management."
+                                            "text": "YouTube marketing cost for small business starts at $1,500/month for basic management. Full-service YouTube ads management typically ranges from $5,000 to $25,000+ per month, depending on ad spend and content frequency. We offer tiered pricing to fit scalable growth."
                                         }
                                     },
                                     {
@@ -113,7 +105,39 @@ export default function YouTubeMarketingPage() {
                                         "name": "How long does it take to see ROI from YouTube marketing?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Ads can show results in 2-4 weeks, while organic YouTube SEO typically builds sustainable authority and compounding ROI over 3-6 months."
+                                            "text": "While YouTube ads management can drive local leads in 2-4 weeks, organic YouTube SEO services typically take 3-6 months to build significant authority. However, once the \"algorithm flywheel\" starts, the ROI is compounding and long-term."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What are the benefits of hiring a YouTube advertising agency?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "YouTube advertising agency provides expertise in creative testing, ad creative testing, and YouTube analytics and reporting that internal teams often lack. We ensure your budget isn't wasted on low-retention audiences, driving a higher ROAS on average."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What is included in a full-service YouTube ads management package?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Our packages include YouTube TrueView ads setup, YouTube bumper ads optimization, custom audience building, YouTube remarketing ads, monthly performance reports, and ongoing creative strategy consultations."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How do I choose the best YouTube marketing service for my business?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Look for an agency with verified case studies, Google Ads certifications, and a deep understanding of the YouTube algorithm. At Cinute InfoMedia, we provide a transparent audit BEFORE you sign, ensuring we are the right fit for your tech stack and goals."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can you help with YouTube shorts marketing strategy for brands?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely. YouTube shorts are critical for brand awareness in 2026. We help you create bite-sized, high-impact content that converts mobile viewers into long-term subscribers and customers."
                                         }
                                     }
                                 ]
