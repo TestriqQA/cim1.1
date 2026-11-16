@@ -86,12 +86,12 @@ export default function Process() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-7xl">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 sm:mb-14 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
                         style={{
                             background: "color-mix(in srgb, var(--brand-chatbot) 15%, transparent)",
@@ -115,7 +115,7 @@ export default function Process() {
                 <div className="relative max-w-5xl mx-auto">
                     {/* Vertical Line */}
                     <div
-                        className="absolute left-[23px] md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2"
+                        className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2"
                         style={{
                             background: "linear-gradient(180deg, var(--brand-chatbot), transparent)",
                         }}
@@ -156,7 +156,7 @@ export default function Process() {
                                                         <div
                                                             className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0"
                                                             style={{
-                                                                background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
+                                                                backgroundColor: step.color,
                                                                 transform: isHovered ? "rotate(-5deg) scale(1.1)" : "rotate(0) scale(1)",
                                                                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                                                             }}
@@ -197,17 +197,6 @@ export default function Process() {
                                             >
                                                 {step.number}
                                             </div>
-
-                                            {/* Pulse Animation */}
-                                            {isHovered && (
-                                                <div
-                                                    className="absolute inset-0 rounded-full animate-ping"
-                                                    style={{
-                                                        backgroundColor: step.color,
-                                                        opacity: 0.3,
-                                                    }}
-                                                />
-                                            )}
                                         </div>
 
                                         {/* Right Content */}
@@ -228,7 +217,7 @@ export default function Process() {
                                                         <div
                                                             className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0"
                                                             style={{
-                                                                background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
+                                                                backgroundColor: step.color,
                                                                 transform: isHovered ? "rotate(5deg) scale(1.1)" : "rotate(0) scale(1)",
                                                                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                                                             }}
@@ -257,11 +246,15 @@ export default function Process() {
                                     </div>
 
                                     {/* Mobile Layout */}
-                                    <div className="md:hidden flex items-start gap-4 pl-12">
+                                    {/* pl-14 clears the 40px circle with a 16px gap — at pl-12 the
+                                        card sat flush against it. The circle's top-4 puts its centre
+                                        on the card's icon row, and left-5 on the rail above centres
+                                        the line under it (left-[23px] was a pixel off a 48px circle). */}
+                                    <div className="md:hidden pl-14">
                                         {/* Mobile Circle */}
-                                        <div className="absolute left-0 top-0">
+                                        <div className="absolute left-0 top-4 z-10">
                                             <div
-                                                className="w-12 h-12 rounded-full flex items-center justify-center border-4 font-bold text-sm transition-all duration-500"
+                                                className="w-10 h-10 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-all duration-500"
                                                 style={{
                                                     backgroundColor: "var(--background)",
                                                     borderColor: isHovered ? step.color : "var(--border-color)",
@@ -274,7 +267,7 @@ export default function Process() {
 
                                         {/* Mobile Card */}
                                         <div
-                                            className="flex-1 p-6 rounded-2xl border transition-all duration-500"
+                                            className="p-4 sm:p-5 rounded-2xl border transition-all duration-500"
                                             style={{
                                                 backgroundColor: isHovered
                                                     ? `color-mix(in srgb, ${step.color} 10%, var(--card-bg))`
@@ -283,22 +276,23 @@ export default function Process() {
                                                 boxShadow: isHovered ? `0 10px 40px ${step.color}20` : "none",
                                             }}
                                         >
-                                            <div className="flex items-start gap-4">
+                                            {/* Icon and title share a row so the description runs the
+                                                full card width; beside the icon it had ~140px at 320px
+                                                and broke into five near-empty lines. */}
+                                            <div className="flex items-center gap-3 mb-3">
                                                 <div
-                                                    className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                                                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                                                     style={{
-                                                        background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
+                                                        backgroundColor: step.color,
                                                     }}
                                                 >
-                                                    <Icon className="w-7 h-7 text-white" />
+                                                    <Icon className="w-5 h-5 text-white" />
                                                 </div>
-                                                <div className="flex-1">
-                                                    <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                                                    <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                                        {step.description}
-                                                    </p>
-                                                </div>
+                                                <h3 className="text-base font-bold leading-snug">{step.title}</h3>
                                             </div>
+                                            <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                                {step.description}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +302,7 @@ export default function Process() {
                 </div>
 
                 {/* Process Benefits */}
-                <div className="mt-20 p-8 rounded-3xl border relative overflow-hidden"
+                <div className="mt-12 sm:mt-16 md:mt-20 p-5 sm:p-7 md:p-8 rounded-3xl border relative overflow-hidden"
                     style={{
                         backgroundColor: "var(--card-bg)",
                         borderColor: "var(--border-color)",
@@ -318,19 +312,17 @@ export default function Process() {
                     <div className="relative z-10">
                         <div className="flex items-center gap-3 mb-6">
                             <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                style={{
-                                    background: "linear-gradient(135deg, var(--brand-chatbot), var(--brand-blue))",
-                                }}
+                                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style={{ backgroundColor: "var(--brand-chatbot)" }}
                             >
-                                <Target className="w-6 h-6 text-white" />
+                                <Target className="w-5 h-5 text-white" />
                             </div>
                             <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
                                 Why Our Process Works
                             </h3>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                             {[
                                 { text: "Collaborative approach ensures your vision is realized", icon: Users },
                                 { text: "Data-driven optimization for continuous improvement", icon: TrendingUp },
@@ -341,18 +333,16 @@ export default function Process() {
                                 return (
                                     <div
                                         key={idx}
-                                        className="flex items-start gap-4 p-4 rounded-xl transition-all duration-300 group hover:bg-opacity-50"
+                                        className="flex items-center gap-3 p-4 rounded-xl transition-all duration-300 group hover:bg-opacity-50"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 5%, transparent)",
                                         }}
                                     >
                                         <div
-                                            className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-                                            style={{
-                                                background: "linear-gradient(135deg, var(--brand-chatbot), var(--brand-blue))",
-                                            }}
+                                            className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                                            style={{ backgroundColor: "var(--brand-chatbot)" }}
                                         >
-                                            <BenefitIcon className="w-5 h-5 text-white" />
+                                            <BenefitIcon className="w-4 h-4 text-white" />
                                         </div>
                                         <p className="flex-1" style={{ color: "var(--secondary-text)" }}>
                                             {benefit.text}

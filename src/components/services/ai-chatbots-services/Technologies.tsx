@@ -34,15 +34,15 @@ export default function Technologies() {
 
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28"
+            className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Technology Stack & <span style={{ color: "var(--accent-indigo-text)" }}>Expertise</span>
                     </h2>
@@ -52,13 +52,13 @@ export default function Technologies() {
                 </div>
 
                 {/* Capabilities Grid */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                     {capabilities.map((capability, index) => {
                         const Icon = capability.icon;
                         return (
                             <div
                                 key={index}
-                                className="group p-8 rounded-2xl transition-all duration-300 border"
+                                className="group p-5 sm:p-7 md:p-8 rounded-2xl transition-all duration-300 border"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                                     borderColor: "var(--border-color)",
@@ -76,7 +76,7 @@ export default function Technologies() {
                             >
                                 {/* Icon */}
                                 <div
-                                    className="w-16 h-16 rounded-xl p-3 mb-6 group-hover:scale-110 transition-transform"
+                                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl p-3 mb-5 sm:mb-6 group-hover:scale-110 transition-transform"
                                     style={{
                                         background: "linear-gradient(135deg, var(--brand-chatbot), var(--brand-blue))",
                                     }}
@@ -111,7 +111,10 @@ export default function Technologies() {
                 </div>
 
                 {/* Tech Stack Highlight */}
-                <div className="mt-16 p-8 rounded-2xl border"
+                {/* Sides sit at 1.5x the grid's 16px gutter rather than 2x, and the
+                    top is a notch tighter than the bottom to offset the leading above
+                    the heading's cap height — which made the two look unequal at p-8. */}
+                <div className="mt-10 sm:mt-14 md:mt-16 px-5 pt-6 pb-7 sm:px-6 sm:pt-7 sm:pb-8 rounded-2xl border"
                     style={{
                         backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                         borderColor: "var(--border-color)",
@@ -120,7 +123,7 @@ export default function Technologies() {
                     <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                         Supported Platforms & Channels
                     </h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                         {[
                             { name: "Web Chat", logo: "/images/ai_powered_chatbots_logos/web-chat.png" },
                             { name: "WhatsApp Business", logo: "/images/ai_powered_chatbots_logos/WhatsApp-logo.webp" },

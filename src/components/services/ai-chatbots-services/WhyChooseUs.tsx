@@ -59,11 +59,6 @@ export default function WhyChooseUs() {
                         opacity: 0;
                     }
                 }
-                @keyframes shine {
-                    0% { left: -100%; }
-                    100% { left: 200%; }
-                }
-                
 
 
                 .animate-ripple-expand { animation: ripple-expand 2s ease-out infinite; }
@@ -72,20 +67,10 @@ export default function WhyChooseUs() {
                     opacity: 1;
                 }
                 
-                .shine-effect::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 50%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-                    animation: shine 3s infinite;
-                }
             `}</style>
 
             <section
-                className="relative transition-colors duration-300 py-20 md:py-28 overflow-hidden"
+                className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24 overflow-hidden"
                 style={{
                     backgroundColor: "var(--card-bg)",
                     borderColor: "var(--border-color)",
@@ -95,9 +80,9 @@ export default function WhyChooseUs() {
                 <div className="absolute inset-0 opacity-20">
                 </div>
 
-                <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+                <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fadeIn">
+                    <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fadeIn">
                         <div className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 10%, transparent)",
@@ -119,7 +104,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Benefits Grid */}
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {benefits.map((benefit, index) => {
                             const Icon = benefit.icon;
 
@@ -133,10 +118,10 @@ export default function WhyChooseUs() {
                                 >
                                     {/* Card container */}
                                     <div
-                                        className="relative p-8 h-full border backdrop-blur-sm shine-effect"
+                                        className="relative p-6 sm:p-8 h-full border rounded-2xl backdrop-blur-sm"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
-                                            borderColor: "var(--border-color)",
+                                            borderColor: "color-mix(in srgb, var(--border-color) 50%, transparent)",
                                             boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                         }}
                                     >
@@ -144,12 +129,6 @@ export default function WhyChooseUs() {
                                         <div
                                             className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 animate-gradient-wave`}
                                         />
-
-                                        {/* Corner decorations */}
-                                        <div className="absolute top-0 left-0 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${benefit.gradient}`} />
-                                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${benefit.gradient}`} />
-                                        </div>
 
                                         {/* Icon container with ripple effect */}
                                         <div className="relative mb-6 z-10">
@@ -184,10 +163,10 @@ export default function WhyChooseUs() {
                                                         key={i}
                                                         className="feature-item flex items-center gap-3 group/item"
                                                     >
-                                                        <div className={`w-6 h-6 rounded-full ${benefit.iconBg} flex items-center justify-center transition-all duration-300 group-hover/item:scale-110`}>
-                                                            <Check className={`w-4 h-4 ${benefit.iconColor}`} strokeWidth={3} />
+                                                        <div className={`w-4 h-4 flex-shrink-0 rounded-full ${benefit.iconBg} flex items-center justify-center transition-all duration-300 group-hover/item:scale-110`}>
+                                                            <Check className={`w-2.5 h-2.5 ${benefit.iconColor}`} strokeWidth={3} />
                                                         </div>
-                                                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
+                                                        <span className="text-base font-medium" style={{ color: "var(--foreground)" }}>
                                                             {feature}
                                                         </span>
                                                     </div>
@@ -204,21 +183,12 @@ export default function WhyChooseUs() {
                                             </div> */}
                                         </div>
 
-                                        {/* Bottom gradient bar */}
-                                        <div
-                                            className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${benefit.gradient} group-hover:w-full transition-all duration-700 ease-out`}
-                                        />
 
                                         {/* Large background icon watermark */}
                                         <div className="absolute -bottom-8 -right-8 opacity-0 group-hover:opacity-5 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12">
                                             <Icon className={`w-40 h-40 ${benefit.iconColor}`} strokeWidth={0.5} />
                                         </div>
 
-                                        {/* Floating particles */}
-                                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <div className={`absolute top-10 right-10 w-2 h-2 rounded-full bg-gradient-to-r ${benefit.gradient} animate-ping`} />
-                                            <div className={`absolute bottom-20 left-10 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${benefit.gradient} animate-ping`} style={{ animationDelay: "0.5s" }} />
-                                        </div>
                                     </div>
                                 </div>
                             );
@@ -226,7 +196,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Bottom Stats Section */}
-                    <div className="mt-16 grid md:grid-cols-3 gap-6">
+                    <div className="mt-10 sm:mt-14 md:mt-16 grid sm:grid-cols-3 gap-4 sm:gap-6">
                         {[
                             { label: "Accuracy Rate", value: "98%", gradient: "from-violet-500 to-purple-500" },
                             { label: "Response Time", value: "<1s", gradient: "from-blue-500 to-cyan-500" },
@@ -234,7 +204,7 @@ export default function WhyChooseUs() {
                         ].map((stat, i) => (
                             <div
                                 key={i}
-                                className="group relative p-6 rounded-2xl border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                                className="group relative p-5 sm:p-6 rounded-2xl border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--card-bg) 60%, transparent)",
                                     borderColor: "var(--border-color)",
@@ -251,7 +221,6 @@ export default function WhyChooseUs() {
                                         {stat.label}
                                     </p>
                                 </div>
-                                <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${stat.gradient} group-hover:w-full transition-all duration-500`} />
                             </div>
                         ))}
                     </div>

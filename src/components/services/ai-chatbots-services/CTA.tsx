@@ -6,12 +6,12 @@ import Link from "next/link";
 export default function CTA() {
     return (
         <section
-            className="relative transition-colors duration-300 py-20 md:py-28 overflow-hidden"
+            className="relative transition-colors duration-300 py-12 sm:py-16 md:py-24 overflow-hidden"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Background Glow */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative">
                 <div className="max-w-4xl mx-auto">
                     {/* Main CTA Card */}
                     <div
@@ -67,7 +67,7 @@ export default function CTA() {
                     </div>
 
                     {/* Features Highlight */}
-                    <div className="mt-16 grid md:grid-cols-3 gap-6">
+                    <div className="mt-10 sm:mt-14 md:mt-16 grid sm:grid-cols-3 gap-4 sm:gap-6">
                         {[
                             {
                                 icon: MessageSquare,
@@ -89,7 +89,7 @@ export default function CTA() {
                             return (
                                 <div
                                     key={index}
-                                    className="p-6 rounded-2xl border text-center transition-all duration-300"
+                                    className="p-5 sm:p-6 rounded-2xl border text-center transition-all duration-300"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                                         borderColor: "var(--border-color)",

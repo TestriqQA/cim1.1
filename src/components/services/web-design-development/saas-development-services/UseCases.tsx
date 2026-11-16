@@ -257,15 +257,6 @@ export default function UseCases() {
                                                 border: `1.5px solid ${industry.bgColor}25`,
                                             }}
                                         >
-                                            {/* Animated Shine Effect */}
-                                            <div
-                                                className={`absolute inset-0 transition-all duration-1000 ${isActive ? "translate-x-full" : "-translate-x-full"
-                                                    }`}
-                                                style={{
-                                                    background: `linear-gradient(90deg, transparent, ${industry.bgColor}15, transparent)`,
-                                                }}
-                                            />
-
                                             <div className="relative z-10 flex items-start gap-3">
                                                 {/* Icon */}
                                                 <div

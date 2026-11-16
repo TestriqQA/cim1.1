@@ -12,7 +12,7 @@ export default function Hero() {
         >
             {/* Animated Background with AI-centric visuals */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 sm:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -47,7 +47,7 @@ export default function Hero() {
                     </span>
                 </nav>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* LEFT CONTENT */}
                     <div
@@ -97,51 +97,56 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                        {/* 2x2 while the hero is one column. From lg it becomes a wrapping
+                            flex row so each tile is only as wide as its icon + label: four
+                            fit on one line with no dead space, instead of four grid columns
+                            stretched to equal width (a fixed xl:grid-cols-4 gave 118px
+                            columns at 1280px, and "Lightning Fast" needs 138px). */}
+                        <div className="grid grid-cols-2 gap-3 lg:flex lg:flex-wrap lg:gap-2.5 mb-8">
+                            <div className="flex items-center justify-center gap-2.5 px-3 lg:px-2.5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
                                 <Brain className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs font-bold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     AI-Powered
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-2.5 px-3 lg:px-2.5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
                                 <MessageCircle className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs font-bold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     24/7 Support
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-2.5 px-3 lg:px-2.5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
                                 <Zap className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs font-bold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Lightning Fast
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex items-center justify-center gap-2.5 px-3 lg:px-2.5 py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-chatbot) 8%, transparent)",
                                 }}
                             >
                                 <Gauge className="w-5 h-5 flex-shrink-0" style={{ color: "var(--accent-indigo-text)" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-xs font-bold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                                     Scalable
                                 </span>
                             </div>
                         </div>
 
                         {/* Stats Section */}
-                        <div className="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl"
+                        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 p-4 sm:p-6 rounded-2xl"
                             style={{
                                 backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
                                 backdropFilter: "blur(10px)",
@@ -204,7 +209,7 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div
-                        className="relative flex flex-col items-center gap-12 justify-center animate-fadeIn -mt-10"
+                        className="relative flex flex-col items-center gap-8 sm:gap-12 justify-center animate-fadeIn lg:-mt-10"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
 
@@ -230,7 +235,7 @@ export default function Hero() {
 
                         {/* Additional Info Section */}
                         <div
-                            className="w-full p-6 rounded-2xl border"
+                            className="w-full p-5 sm:p-6 rounded-2xl border"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",
