@@ -9,21 +9,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #f97316 12%, transparent)", // Orange-500
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, #ea580c 12%, transparent)", // Orange-600
-                        animationDelay: "1s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
@@ -251,13 +236,6 @@ export default function Hero() {
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div className="relative hidden lg:flex flex-col items-center justify-center">
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, #f97316 15%, transparent), color-mix(in srgb, #ea580c 15%, transparent))",
-                            }}
-                        />
                         <Image
                             src="/images/services-images/web-design-development/business-corporate.svg"
                             alt="Business and Corporate Website Development"

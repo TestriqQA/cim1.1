@@ -65,15 +65,6 @@ export default function ServiceOverview() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: contentEmerald,
-                        animationDuration: "5s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}

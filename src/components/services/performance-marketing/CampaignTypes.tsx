@@ -56,7 +56,7 @@ export default function CampaignTypes() {
                         }}
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             INDUSTRIES
                         </span>
                     </div>
@@ -92,13 +92,6 @@ export default function CampaignTypes() {
                                     }}
                                 >
                                     {/* Background gradient */}
-                                    <div
-                                        className="absolute inset-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${campaign.color}10, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Icon */}
                                     <div

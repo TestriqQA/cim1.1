@@ -11,28 +11,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background with AI-inspired gradients */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-orange) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-orange) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-12 relative">
                 {/* Breadcrumbs */}
@@ -248,13 +226,6 @@ export default function Hero() {
                         className="relative flex flex-col items-center gap-8 md:gap-12 justify-center animate-fadeIn mt-0 lg:-mt-15"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-orange) 10%, transparent), color-mix(in srgb, var(--brand-yellow) 10%, transparent), color-mix(in srgb, var(--brand-blue) 10%, transparent))",
-                            }}
-                        />
 
                         {/* Feature Card */}
                         <div

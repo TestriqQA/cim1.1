@@ -66,8 +66,8 @@ export default function Process() {
                         }}
                     >
                         <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            OUR PROCESS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Our Process
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

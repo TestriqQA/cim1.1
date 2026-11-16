@@ -9,12 +9,6 @@ export default function CTA() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10 blur-3xl"
-                    style={{
-                        background: "radial-gradient(circle, #61dafb, #00d4ff, transparent)",
-                    }}
-                />
                 {/* Grid pattern */}
                 <div
                     className="absolute inset-0 opacity-[0.02]"

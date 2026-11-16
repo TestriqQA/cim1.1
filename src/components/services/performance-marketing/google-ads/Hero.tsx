@@ -25,23 +25,6 @@ export default function Hero() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Google-colored gradient orbs */}
-                <div
-                    className="absolute top-20 left-[10%] w-72 h-72 rounded-full blur-3xl animate-pulse opacity-20"
-                    style={{ backgroundColor: googleBlue }}
-                />
-                <div
-                    className="absolute top-40 right-[15%] w-64 h-64 rounded-full blur-3xl animate-pulse opacity-15"
-                    style={{ backgroundColor: googleGreen, animationDelay: "0.5s" }}
-                />
-                <div
-                    className="absolute bottom-32 left-[20%] w-80 h-80 rounded-full blur-3xl animate-pulse opacity-10"
-                    style={{ backgroundColor: googleYellow, animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute bottom-20 right-[25%] w-60 h-60 rounded-full blur-3xl animate-pulse opacity-15"
-                    style={{ backgroundColor: googleRed, animationDelay: "1.5s" }}
-                />
 
                 {/* Grid Pattern */}
                 <div

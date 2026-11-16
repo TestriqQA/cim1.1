@@ -93,8 +93,6 @@ export default function WhyChooseUs() {
             >
                 {/* Animated background elements */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-br from-violet-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
                 </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -107,8 +105,8 @@ export default function WhyChooseUs() {
                             }}
                         >
                             <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
-                                CUTTING-EDGE CAPABILITIES
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                                Cutting-Edge Capabilities
                             </span>
                         </div>
 
@@ -161,8 +159,6 @@ export default function WhyChooseUs() {
                                                     <div className={`absolute inset-0 rounded-xl border-2 ${benefit.iconColor} opacity-50 animate-ripple-expand`} />
                                                 </div>
 
-                                                {/* Glow effect */}
-                                                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500`} />
 
                                                 <div
                                                     className={`relative w-20 h-20 rounded-xl ${benefit.iconBg} flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl`}

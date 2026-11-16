@@ -119,8 +119,8 @@ export default function CaseStudies() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            ILLUSTRATIVE SCENARIOS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Illustrative Scenarios
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

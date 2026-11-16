@@ -119,16 +119,6 @@ export default function Process() {
             `}</style>
 
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#339933" }}
-                />
-                <div
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#68a063", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -141,7 +131,7 @@ export default function Process() {
                         }}
                     >
                         <GitBranch className="w-4 h-4" style={{ color: "#339933" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>
                     </div>
@@ -218,16 +208,6 @@ export default function Process() {
                                         {step.number}
                                     </div>
 
-                                    {/* Glow Effect */}
-                                    <div
-                                        className={`
-                                            absolute -inset-1 rounded-3xl blur-xl transition-all duration-500
-                                            ${isHovered ? "opacity-20" : "opacity-0"}
-                                        `}
-                                        style={{
-                                            background: "linear-gradient(135deg, #339933, #68a063)",
-                                        }}
-                                    />
 
                                     {/* Content */}
                                     <div className="relative z-10">

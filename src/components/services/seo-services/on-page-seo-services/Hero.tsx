@@ -16,13 +16,6 @@ export default function Hero() {
             {/* Background */}
             <div
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 15% 50%, rgba(34, 197, 94, 0.08), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(34, 197, 94, 0.05), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.03), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div

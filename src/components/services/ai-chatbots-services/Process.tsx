@@ -99,7 +99,7 @@ export default function Process() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-indigo-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                             Our Methodology
                         </span>
                     </div>
@@ -314,13 +314,6 @@ export default function Process() {
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    {/* Decorative gradient */}
-                    <div
-                        className="absolute top-0 right-0 w-64 h-64 opacity-20 blur-3xl"
-                        style={{
-                            background: "radial-gradient(circle, var(--brand-chatbot), transparent)",
-                        }}
-                    />
 
                     <div className="relative z-10">
                         <div className="flex items-center gap-3 mb-6">

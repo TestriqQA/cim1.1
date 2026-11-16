@@ -12,28 +12,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Animated Background with Mobile App Theme */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-yellow) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 12%, transparent)",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-8 md:py-12 relative">
                 {/* Breadcrumbs */}
@@ -253,13 +231,6 @@ export default function Hero() {
                         className="relative flex flex-col items-center gap-8 lg:gap-12 justify-center animate-fadeIn lg:-mt-10"
                         style={{ animationDelay: "0.3s", animationFillMode: "both" }}
                     >
-                        <div
-                            className="absolute inset-0 rounded-3xl blur-2xl"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 10%, transparent), color-mix(in srgb, var(--brand-cyan) 10%, transparent), color-mix(in srgb, var(--brand-teal) 10%, transparent))",
-                            }}
-                        />
 
                         {/* Feature Card */}
                         <div

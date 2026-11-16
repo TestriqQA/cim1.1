@@ -57,11 +57,6 @@ export default function WhyChooseUs() {
             borderColor: "var(--border-color)",
         }}>
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-                <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
@@ -74,8 +69,8 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            WHY CHOOSE US
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            Why Choose Us
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
@@ -145,12 +140,6 @@ export default function WhyChooseUs() {
                                     </div>
 
                                     {/* Animated gradient background */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at 50% 100%, ${benefit.color}15 0%, transparent 70%)`,
-                                        }}
-                                    />
 
                                     {/* Icon Container with animated ring */}
                                     <div className="relative my-6">

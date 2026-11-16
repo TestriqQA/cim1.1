@@ -16,15 +16,6 @@ export default function CTA() {
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    {/* Glow Effect */}
-                    <div
-                        className="absolute inset-0 rounded-3xl"
-                        style={{
-                            opacity: 0.1,
-                            background: "linear-gradient(135deg, #008ac1, var(--brand-cyan), #bc3feb)",
-                            filter: "blur(30px)",
-                        }}
-                    />
 
                     {/* Content */}
                     <div className="relative z-10">

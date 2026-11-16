@@ -1,15 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
-import Link from 'next/link';
+import React from 'react';
+import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-    // E-commerce SEO Light Blue theme color
-    const commerceBlue = "#0EA5E9";
-
     const faqs = [
         {
             question: "What is ecommerce SEO and why is it important?",
@@ -42,102 +37,10 @@ export default function FAQ() {
     ];
 
     return (
-        <section
-            className="py-24 relative overflow-hidden border-t"
-            style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
-        >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <span
-                            className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border"
-                            style={{
-                                backgroundColor: `${commerceBlue}10`,
-                                borderColor: `${commerceBlue}30`,
-                                color: "var(--accent-sky-text)",
-                            }}
-                        >
-                            FAQ
-                        </span>
-                    </div>
-                    <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
-                        style={{ color: "var(--foreground)" }}
-                    >
-                        Frequently Asked <span style={{ color: "var(--accent-sky-text)" }}>Questions</span>
-                    </h2>
-                    <p
-                        className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--foreground)" }}
-                    >
-                        Everything you need to know about our ecommerce SEO services.
-                    </p>
-                </div>
-
-                {/* FAQ Accordion */}
-                <div className="max-w-4xl mx-auto space-y-4">
-                    {faqs.map((faq, idx) => {
-                        const isOpen = openIndex === idx;
-
-                        return (
-                            <div
-                                key={idx}
-                                className="rounded-2xl border transition-all duration-300"
-                                style={{
-                                    borderColor: isOpen ? commerceBlue : "var(--border-color)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : idx)}
-                                    className="w-full p-6 flex items-start justify-between gap-4 text-left"
-                                >
-                                    <div className="flex items-start gap-4 flex-1">
-                                        <div
-                                            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
-                                            style={{
-                                                backgroundColor: isOpen ? commerceBlue : `${commerceBlue}15`,
-                                                color: isOpen ? "white" : commerceBlue
-                                            }}
-                                        >
-                                            <HelpCircle className="w-5 h-5" />
-                                        </div>
-                                        <h3
-                                            className="text-lg md:text-xl font-bold transition-colors duration-300"
-                                            style={{ color: isOpen ? "var(--accent-sky-text)" : "var(--foreground)" }}
-                                        >
-                                            {faq.question}
-                                        </h3>
-                                    </div>
-                                    <ChevronDown
-                                        className="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                                        style={{
-                                            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                            color: isOpen ? commerceBlue : "var(--secondary-text)"
-                                        }}
-                                    />
-                                </button>
-
-                                <div
-                                    className="overflow-hidden transition-all duration-300"
-                                    style={{
-                                        maxHeight: isOpen ? "1000px" : "0",
-                                        opacity: isOpen ? 1 : 0
-                                    }}
-                                >
-                                    <div className="px-6 pb-6 pl-20">
-                                        <p
-                                            className="leading-relaxed whitespace-pre-line" style={{ color: "var(--foreground)" }}
-                                        >
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-sky-text)"
+            subtitle="Everything you need to know about our ecommerce SEO services."
+        />
     );
 }

@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Trophy className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>

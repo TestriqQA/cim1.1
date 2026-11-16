@@ -63,23 +63,6 @@ export default function ServiceOverview() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "#2563eb",
-                        animationDuration: "4s",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "#2563eb",
-                        animationDuration: "6s",
-                        animationDelay: "2s",
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
@@ -92,7 +75,7 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Services
                         </span>
                     </div>
@@ -138,13 +121,6 @@ export default function ServiceOverview() {
                                     }
                                 }}
                             >
-                                {/* Glow effect on hover */}
-                                <div
-                                    className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"
-                                    style={{
-                                        backgroundColor: "rgba(37, 99, 235, 0.3)",
-                                    }}
-                                />
 
                                 {/* Main card */}
                                 <div

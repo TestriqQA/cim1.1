@@ -11,21 +11,6 @@ export default function CTA() {
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Animated Background */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div
-                        className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                        style={{
-                            backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
-                        }}
-                    />
-                    <div
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                        style={{
-                            backgroundColor: "color-mix(in srgb, var(--brand-cyan) 8%, transparent)",
-                            animationDelay: "1s",
-                        }}
-                    />
-                </div>
 
                 {/* Main CTA Card */}
                 <div
@@ -35,15 +20,6 @@ export default function CTA() {
                         borderColor: "var(--border-color)",
                     }}
                 >
-                    {/* Glow Effect */}
-                    <div
-                        className="absolute inset-0 rounded-3xl"
-                        style={{
-                            opacity: 0.1,
-                            background: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan), var(--brand-teal))",
-                            filter: "blur(30px)",
-                        }}
-                    />
 
                     {/* Content */}
                     <div className="relative z-10">
@@ -58,7 +34,7 @@ export default function CTA() {
                             }}
                         >
                             <Sparkles className="w-4 h-4" />
-                            <span className="text-xs sm:text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
+                            <span className="text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
                         </div>
 
                         {/* Heading */}

@@ -81,15 +81,6 @@ export default function ServiceOverview() {
 
                     {/* Right Visual – Social Media Illustration */}
                     <div className="relative hidden md:block">
-                        {/* Animated Background Glow */}
-                        <div
-                            className="absolute -inset-8 rounded-3xl blur-3xl animate-pulse"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, color-mix(in srgb, var(--brand-teal) 20%, transparent), color-mix(in srgb, var(--brand-cyan) 15%, transparent))",
-                                animationDuration: "4s",
-                            }}
-                        />
 
                         {/* Illustration Card */}
                         <div

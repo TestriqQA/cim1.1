@@ -121,7 +121,7 @@ export default function Process() {
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${youtubeRed}30` }}>
                         <Zap className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>6-Step Growth Framework</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>6-Step Growth Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our YouTube</span>{" "}

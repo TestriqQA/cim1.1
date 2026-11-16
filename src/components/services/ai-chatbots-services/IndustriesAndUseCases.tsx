@@ -115,13 +115,6 @@ export default function IndustriesAndUseCases() {
                                     transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                                 }}
                             >
-                                {/* Animated Background Gradient */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                                    style={{
-                                        background: `radial-gradient(circle at 50% 0%, ${industry.accentColor}15, transparent 70%)`,
-                                    }}
-                                />
 
                                 {/* Animated Border */}
                                 <div
@@ -170,15 +163,6 @@ export default function IndustriesAndUseCases() {
                                                 }}
                                             />
 
-                                            {/* Animated background circle */}
-                                            <div
-                                                className="absolute inset-0 rounded-2xl"
-                                                style={{
-                                                    background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent)`,
-                                                    opacity: isHovered ? 1 : 0,
-                                                    transition: "opacity 0.3s ease",
-                                                }}
-                                            />
                                         </div>
 
                                         {/* Secondary Icon - Animated */}

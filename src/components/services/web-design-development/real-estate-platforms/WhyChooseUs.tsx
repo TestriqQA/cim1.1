@@ -94,11 +94,6 @@ export default function WhyChooseUs() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-96 h-96 bg-[#0d9488]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dd4bf]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#14b8a6]/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "3s" }} />
-            </div>
 
             {/* Floating particles - fixed positions to avoid hydration mismatch */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -165,14 +160,6 @@ export default function WhyChooseUs() {
                                             : "0 4px 6px rgba(0, 0, 0, 0.05)",
                                     }}
                                 >
-                                    {/* Animated background gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${reason.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Diagonal animated stripe */}
                                     <div

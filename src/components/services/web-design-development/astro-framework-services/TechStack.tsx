@@ -80,7 +80,7 @@ export default function TechStack() {
                         }}
                     >
                         <Rocket className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-violet-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Our Tech Stack
                         </span>
                     </div>

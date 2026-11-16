@@ -183,7 +183,7 @@ export default function Technologies() {
           >
             <Code2 className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
             <span
-              className="text-xs sm:text-sm font-medium"
+              className="text-sm font-semibold"
               style={{ color: "var(--brand-blue-text)" }}
             >
               Our Tech Stack
@@ -195,7 +195,7 @@ export default function Technologies() {
             style={{ color: "var(--foreground)" }}
           >
             Cutting-Edge{" "}
-            <span style={{ fontWeight: 700, color: "var(--brand-blue-text)" }}>
+            <span style={{ fontWeight: 600, color: "var(--brand-blue-text)" }}>
               Technology Stack
             </span>{" "}
             for Global Performance

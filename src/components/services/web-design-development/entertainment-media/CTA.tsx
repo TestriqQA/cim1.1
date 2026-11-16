@@ -9,12 +9,6 @@ export default function CTA() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20 blur-3xl"
-                    style={{
-                        background: "radial-gradient(circle, #8b5cf6, #ec4899, transparent)",
-                    }}
-                />
                 {/* Floating particles */}
                 <div
                     className="absolute top-20 left-20 w-4 h-4 rounded-full animate-pulse"

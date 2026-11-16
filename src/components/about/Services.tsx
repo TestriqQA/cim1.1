@@ -289,7 +289,7 @@ export default function Services() {
             "
           >
             <Zap className="w-4 h-4" />
-            <span className="text-xs sm:text-sm font-semibold">Our Services</span>
+            <span className="text-sm font-semibold">Our Services</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[var(--foreground)]">
@@ -412,10 +412,6 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* floating glow behind (for depth) */}
-                <div
-                  className={`absolute -inset-1 rounded-3xl blur-xl -z-10 transition-opacity duration-500 ${isExpanded ? "opacity-30" : "opacity-0"} bg-gradient-to-r ${badgeGrad}`}
-                />
               </article>
             );
           })}

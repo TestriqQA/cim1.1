@@ -211,8 +211,6 @@ export default function TypesOfChatbots() {
             >
                 {/* Animated background elements */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-pink-500/30 to-orange-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
                 </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -225,8 +223,8 @@ export default function TypesOfChatbots() {
                             }}
                         >
                             <Zap className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
-                                COMPREHENSIVE SOLUTIONS
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                                Comprehensive Solutions
                             </span>
                         </div>
 
@@ -286,9 +284,6 @@ export default function TypesOfChatbots() {
                                             <div className="relative inline-block">
                                                 {/* Rotating border */}
                                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                    <div
-                                                        className={`absolute -inset-1 rounded-xl bg-gradient-to-r ${type.gradient} opacity-30 blur-md`}
-                                                    />
                                                 </div>
 
                                                 {/* Icon box */}
@@ -382,7 +377,6 @@ export default function TypesOfChatbots() {
                             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                                 <div className="flex items-center gap-4">
                                     <div className="relative">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse" />
                                         <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
                                             <Users className="w-8 h-8 text-white animate-float-up-down" strokeWidth={2.5} />
                                         </div>

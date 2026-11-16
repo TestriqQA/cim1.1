@@ -131,10 +131,6 @@ export default function Process() {
             }}
         >
             {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-40 right-20 w-96 h-96 bg-[#00b5ca]/5 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-40 left-20 w-96 h-96 bg-[#bc3feb]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -241,15 +237,6 @@ export default function Process() {
                                                     transform: isHovered ? "scale(1.15) rotate(10deg)" : "scale(1) rotate(0deg)",
                                                 }}
                                             >
-                                                {/* Outer glow ring */}
-                                                <div
-                                                    className="absolute inset-0 rounded-2xl blur-xl transition-opacity duration-500"
-                                                    style={{
-                                                        background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
-                                                        opacity: isHovered ? 0.6 : 0.3,
-                                                        transform: "scale(1.5)",
-                                                    }}
-                                                />
 
                                                 {/* Icon container */}
                                                 <div

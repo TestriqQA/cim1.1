@@ -70,7 +70,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--foreground)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                             Solutions Directory
                         </span>
                     </div>
@@ -101,12 +101,6 @@ export default function SolutionTypes() {
                                 onMouseLeave={() => setActiveCard(null)}
                             >
                                 {/* Hover Gradient BG */}
-                                <div
-                                    className={`absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10`}
-                                    style={{
-                                        background: `radial-gradient(circle at top right, ${solution.color}, transparent)`,
-                                    }}
-                                />
 
                                 {/* Header */}
                                 <div className="flex items-start justify-between mb-8 relative z-10">

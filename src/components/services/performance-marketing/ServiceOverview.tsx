@@ -61,8 +61,8 @@ export default function ServiceOverview() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            OUR SERVICES
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
+                            Our Services
                         </span>
                     </div>
 
@@ -98,13 +98,6 @@ export default function ServiceOverview() {
                                     }}
                                 >
                                     {/* Background gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top left, ${service.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     <div className="relative z-10 flex flex-col md:flex-row gap-6">
                                         {/* Icon */}

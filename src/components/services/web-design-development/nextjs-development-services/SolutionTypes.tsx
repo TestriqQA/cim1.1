@@ -130,14 +130,6 @@ export default function SolutionTypes() {
 
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#61dafb" }}
-                />
-                <div
-                    className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#00d4ff", animationDelay: "1s" }}
-                />
                 {/* Floating particles */}
                 <div
                     className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full animate-bounce"
@@ -159,7 +151,7 @@ export default function SolutionTypes() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Core Services
                         </span>
                     </div>
@@ -212,16 +204,6 @@ export default function SolutionTypes() {
                                     perspective: "1000px",
                                 }}
                             >
-                                {/* Glow effect */}
-                                <div
-                                    className={`
-                                        absolute -inset-2 rounded-3xl blur-2xl transition-all duration-700
-                                        ${isHovered || isActive ? "opacity-25" : "opacity-0"}
-                                    `}
-                                    style={{
-                                        background: `radial-gradient(circle at center, ${solution.accentColor}, transparent 70%)`,
-                                    }}
-                                />
 
                                 {/* Card */}
                                 <div

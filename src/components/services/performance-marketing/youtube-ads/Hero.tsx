@@ -31,11 +31,6 @@ export default function Hero() {
                     <Play size={300} fill="currentColor" />
                 </div>
 
-                {/* Gradient orbs */}
-                <div
-                    className="absolute top-40 left-[5%] w-96 h-96 rounded-full blur-3xl opacity-10 animate-pulse"
-                    style={{ backgroundColor: youtubeRed }}
-                />
 
                 {/* Diagonal mesh lines */}
                 <div className="absolute inset-0 opacity-5"

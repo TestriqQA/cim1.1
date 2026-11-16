@@ -1,12 +1,8 @@
 "use client";
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
+import React from 'react';
 import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
     const faqs = [
@@ -41,37 +37,10 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        <span className="text-foreground">Frequently Asked </span>
-                        <span className="text-[var(--accent-indigo-text)]">Questions</span>
-                    </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto" style={{ color: "var(--foreground)" }}>
-                        Common questions about our efficient cross-platform development services.
-                    </p>
-                </div>
-
-                <div className="max-w-3xl mx-auto">
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                        {faqs.map((faq, index) => (
-                            <AccordionItem
-                                key={index}
-                                value={`item-${index}`}
-                                className="border rounded-lg px-4 bg-card"
-                            >
-                                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-[var(--accent-indigo-text)] hover:no-underline py-4 text-base md:text-lg">
-                                    {faq.question}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground text-base pb-4 leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                    {faq.answer}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-indigo-text)"
+            subtitle="Common questions about our efficient cross-platform development services."
+        />
     );
 }

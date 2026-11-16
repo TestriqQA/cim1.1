@@ -27,20 +27,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-20 -left-32 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #0d9488 10%, transparent)" }}
-                />
-                <div
-                    className="absolute bottom-20 -right-32 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #0d9488 10%, transparent)", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: "color-mix(in srgb, #0d9488 5%, transparent)", animationDelay: "2s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">

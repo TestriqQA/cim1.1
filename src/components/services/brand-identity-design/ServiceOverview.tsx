@@ -82,14 +82,6 @@ export default function ServiceOverview() {
 
                     {/* Right Visual – Brand Board Mockup */}
                     <div className="relative hidden md:block">
-                        {/* Animated Background Glow */}
-                        <div
-                            className="absolute -inset-4 rounded-3xl blur-3xl animate-pulse"
-                            style={{
-                                background: "linear-gradient(135deg, color-mix(in srgb, var(--brand-yellow) 15%, transparent), color-mix(in srgb, var(--brand-orange) 15%, transparent))",
-                                animationDuration: "4s",
-                            }}
-                        />
 
                         {/* Brand Board Card */}
                         <div

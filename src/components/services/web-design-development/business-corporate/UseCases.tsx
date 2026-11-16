@@ -99,9 +99,6 @@ export default function UseCases() {
         >
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Gradient Orbs */}
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#f97316]/5 via-[#bc3feb]/5 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-[#00b5ca]/5 via-[#008ac1]/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
 
                 {/* Animated Lines */}
                 <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.1 }}>
@@ -131,8 +128,8 @@ export default function UseCases() {
                         }}
                     >
                         <TrendingUp className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} />
-                        <span className="text-sm font-bold tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
-                            TRUSTED ACROSS SECTORS
+                        <span className="text-sm font-semibold tracking-wider" style={{ color: "var(--accent-orange-text)" }}>
+                            Trusted Across Sectors
                         </span>
                     </div>
 
@@ -307,10 +304,6 @@ export default function UseCases() {
                                 </div>
 
                                 {/* Corner Gradient Accent */}
-                                <div
-                                    className={`absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br ${industry.gradient} blur-3xl transition-opacity duration-500 ${isActive ? "opacity-20" : "opacity-0"
-                                        }`}
-                                />
 
                                 {/* Bottom Shine Effect */}
                                 <div

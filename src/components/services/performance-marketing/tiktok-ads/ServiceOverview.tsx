@@ -104,14 +104,6 @@ export default function ServiceOverview() {
                                         : "none",
                                 }}
                             >
-                                {/* Neon glow background */}
-                                <div
-                                    className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                                    style={{
-                                        background: `radial-gradient(circle at 50% 0%, ${service.color}15, transparent 70%)`,
-                                        opacity: hoveredCard === idx ? 1 : 0,
-                                    }}
-                                />
 
                                 {/* Icon with pulse */}
                                 <div

@@ -22,16 +22,6 @@ export default function Hero() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background - Amazon style subtle mesh */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] rounded-full blur-3xl animate-pulse"
-                    style={{ backgroundColor: `${amazonOrange}0d` }}
-                />
-                <div
-                    className="absolute top-[30%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl"
-                    style={{ backgroundColor: `${amazonBlue}0d` }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">

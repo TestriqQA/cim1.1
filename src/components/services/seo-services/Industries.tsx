@@ -117,8 +117,8 @@ export default function Industries() {
                         }}
                     >
                         <Users className="w-4 h-4 animate-scale-pulse" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            INDUSTRIES WE SERVE
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            Industries We Serve
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
@@ -161,15 +161,6 @@ export default function Industries() {
                                         perspective: "1000px",
                                     }}
                                 >
-                                    {/* Animated Background Gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at center, ${industry.color}20 0%, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "scale(1)" : "scale(0.8)",
-                                        }}
-                                    />
 
                                     {/* Orbiting Decoration */}
                                     <div

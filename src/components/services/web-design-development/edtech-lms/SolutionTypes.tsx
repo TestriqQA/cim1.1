@@ -110,10 +110,6 @@ export default function SolutionTypes() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#a855f7]/5 rounded-full blur-3xl" />
-                <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#ec4899]/5 rounded-full blur-3xl" />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -164,26 +160,11 @@ export default function SolutionTypes() {
                                     }}
                                 >
                                     {/* Gradient overlay */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-700"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${solution.color}12, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Content */}
                                     <div className="relative z-10 flex flex-col h-full">
                                         {/* Icon */}
                                         <div className="mb-6 relative">
-                                            <div
-                                                className="absolute inset-0 blur-2xl transition-all duration-500"
-                                                style={{
-                                                    background: solution.color,
-                                                    opacity: isHovered ? 0.4 : 0.1,
-                                                    transform: isHovered ? "scale(2)" : "scale(1.3)",
-                                                }}
-                                            />
                                             <div
                                                 className={`relative inline-flex w-20 h-20 rounded-2xl items-center justify-center bg-gradient-to-br ${solution.gradient} transition-all duration-500`}
                                                 style={{
@@ -272,15 +253,6 @@ export default function SolutionTypes() {
                                     />
                                 </div>
 
-                                {/* Outer glow */}
-                                <div
-                                    className="absolute inset-0 rounded-2xl blur-2xl transition-all duration-500 -z-10"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${solution.color}20, ${solution.accentColor}20)`,
-                                        opacity: isHovered ? 1 : 0,
-                                        transform: isHovered ? "scale(1.08)" : "scale(0.95)",
-                                    }}
-                                />
                             </div>
                         );
                     })}

@@ -74,10 +74,6 @@ export default function WhyChooseUs() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0ea5e9]/5 rounded-full blur-3xl" />
-                <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0ea5e9]/5 rounded-full blur-3xl" />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -119,13 +115,6 @@ export default function WhyChooseUs() {
                                     }}
                                 >
                                     {/* Background gradient */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-all duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${reason.color}10, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     <div className="relative z-10">
                                         {/* Icon */}

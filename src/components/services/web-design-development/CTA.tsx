@@ -16,16 +16,6 @@ export default function CTA() {
             borderColor: "var(--border-color)",
           }}
         >
-          {/* Glow Effect */}
-          <div
-            className="absolute inset-0 rounded-3xl pointer-events-none"
-            style={{
-              opacity: 0.1,
-              background:
-                "linear-gradient(135deg, var(--brand-blue), var(--brand-cyan), var(--brand-teal))",
-              filter: "blur(30px)",
-            }}
-          />
 
           {/* Content */}
           <div className="relative z-10">
@@ -41,7 +31,7 @@ export default function CTA() {
               }}
             >
               <Sparkles className="w-4 h-4 shrink-0" />
-              <span className="text-xs sm:text-sm font-semibold">
+              <span className="text-sm font-semibold">
                 Global Excellence
               </span>
             </div>

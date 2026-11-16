@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                         }}
                     >
                         <Users className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-red-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
@@ -111,14 +111,6 @@ export default function WhyChooseUs() {
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                {/* Animated Background Blob */}
-                                <div
-                                    className={`
-                                        absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-0 transition-opacity duration-500 blur-3xl pointer-events-none
-                                        ${isHovered ? "opacity-10" : ""}
-                                    `}
-                                    style={{ background: "#FF2D20" }}
-                                />
 
                                 <div
                                     className={`

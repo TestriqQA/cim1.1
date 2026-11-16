@@ -78,10 +78,6 @@ export default function BrandElements() {
             style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-72 h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
@@ -94,8 +90,8 @@ export default function BrandElements() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
-                            BRAND ELEMENTS
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
+                            Brand Elements
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -129,13 +125,6 @@ export default function BrandElements() {
                                     }}
                                 >
                                     {/* Background gradient on hover */}
-                                    <div
-                                        className="absolute inset-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(circle at top right, ${element.color}15, transparent 70%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
 
                                     {/* Icon */}
                                     <div

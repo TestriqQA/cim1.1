@@ -73,12 +73,6 @@ function CategoriesContent({ categories, posts, sidebarCategories, popularPosts,
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 {/* ... existing hero code ... */}
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
-                    }}
-                />
                 <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                     {/* Breadcrumb */}
                     <nav className="flex items-center gap-2 text-sm mb-8 max-w-7xl mx-auto" style={{ color: "var(--secondary-text)" }}>

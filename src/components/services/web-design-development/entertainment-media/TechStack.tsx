@@ -102,16 +102,6 @@ export default function TechStack() {
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/4 -left-20 w-80 h-80 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#8b5cf6" }}
-                />
-                <div
-                    className="absolute bottom-1/4 -right-20 w-80 h-80 rounded-full opacity-10 blur-3xl"
-                    style={{ backgroundColor: "#ec4899" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -124,7 +114,7 @@ export default function TechStack() {
                         }}
                     >
                         <Layers className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Technology Stack
                         </span>
                     </div>

@@ -13,12 +13,6 @@ export default function Hero() {
             {/* Background with animated gradient */}
             <div
                 className="absolute inset-0 z-0 bg-background"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 15% 50%, rgba(48, 105, 152, 0.1), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(255, 212, 59, 0.08), transparent 25%)
-                    `,
-                }}
             >
                 {/* Grid Pattern */}
                 <div
@@ -83,7 +77,7 @@ export default function Hero() {
                             }}
                         >
                             <Zap className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                            <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Powering Modern Web Applications
                             </span>
                         </div>

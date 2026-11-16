@@ -110,14 +110,8 @@ export default function UseCases() {
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Radial Gradients */}
-                <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-[#10b981]/10 via-[#0ea5e9]/5 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-[#0ea5e9]/10 via-[#10b981]/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
 
                 {/* Dot Pattern */}
-                <div className="absolute inset-0 opacity-[0.03]" style={{
-                    backgroundImage: "radial-gradient(circle, var(--foreground) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                }} />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -285,14 +279,6 @@ export default function UseCases() {
 
                                     </div>
 
-                                    {/* Corner Glow */}
-                                    <div
-                                        className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl transition-opacity duration-500 ${isActive ? "opacity-30" : "opacity-0"
-                                            }`}
-                                        style={{
-                                            background: `radial-gradient(circle, ${industry.bgColor}, transparent 70%)`,
-                                        }}
-                                    />
 
                                     {/* Bottom Border Glow */}
                                     <div
@@ -345,8 +331,8 @@ export default function UseCases() {
                                 border: "1px solid var(--border-color)",
                             }}>
                                 <Target className="w-5 h-5" style={{ color: "var(--accent-green-text)" }} />
-                                <span className="text-sm font-bold" style={{ color: "var(--accent-green-text)" }}>
-                                    INDUSTRY-AGNOSTIC APPROACH
+                                <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
+                                    Industry-Agnostic Approach
                                 </span>
                             </div>
 

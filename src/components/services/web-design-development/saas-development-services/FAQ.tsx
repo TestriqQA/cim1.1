@@ -1,8 +1,8 @@
 "use client";
 
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import React from 'react';
 import Link from "next/link";
-import { useState } from "react";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
     const faqs = [
@@ -32,86 +32,10 @@ export default function FAQ() {
         }
     ];
 
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
-
     return (
-        <section
-            className="py-16 transition-colors duration-300"
-            style={{ backgroundColor: "var(--background)" }}
-        >
-            <div className="max-w-4xl mx-auto px-6 md:px-12">
-                {/* Header */}
-                <div className="text-center mb-12">
-                    <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "rgba(0, 138, 193, 0.05)",
-                            borderColor: "rgba(0, 138, 193, 0.2)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "#008ac1" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-blue-text)" }}>
-                            FAQ
-                        </span>
-                    </div>
-
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Frequently Asked <span style={{ color: "#008ac1" }}>Questions</span>
-                    </h2>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #008ac1, #bc3feb)",
-                        }}
-                    />
-                </div>
-
-                {/* FAQ Items */}
-                <div className="space-y-4">
-                    {faqs.map((faq, idx) => (
-                        <div
-                            key={idx}
-                            className="rounded-2xl border overflow-hidden transition-all duration-300"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: openIndex === idx ? "#008ac1" : "var(--border-color)",
-                                boxShadow: openIndex === idx ? "0 4px 20px rgba(0, 138, 193, 0.1)" : "none"
-                            }}
-                        >
-                            <button
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none"
-                            >
-                                <span className={`text-lg font-semibold transition-colors duration-300 ${openIndex === idx ? "text-[var(--brand-blue-text)]" : "text-[var(--foreground)]"}`}>
-                                    {faq.question}
-                                </span>
-                                <div
-                                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === idx ? "bg-[#008ac1] rotate-180" : "bg-[var(--background)]"
-                                        }`}
-                                >
-                                    {openIndex === idx ? (
-                                        <Minus className="w-4 h-4 text-white" />
-                                    ) : (
-                                        <Plus className="w-4 h-4 text-[var(--foreground)]" />
-                                    )}
-                                </div>
-                            </button>
-
-                            <div
-                                className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                    }`}
-                            >
-                                <div className="px-6 pb-6 pt-0">
-                                    <div style={{ color: "var(--foreground)", lineHeight: "1.7" }}>
-                                        {faq.answer}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--brand-blue-text)"
+        />
     );
 }

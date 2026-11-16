@@ -127,16 +127,6 @@ export default function Process() {
                 style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}
             >
                 {/* Animated Background Circles */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl opacity-10"
-                        style={{ backgroundColor: commerceBlue }}
-                    />
-                    <div
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl opacity-10"
-                        style={{ backgroundColor: commerceBlue }}
-                    />
-                </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                     <div className="text-center mb-20">

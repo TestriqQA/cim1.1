@@ -40,8 +40,8 @@ export default function ServiceOverview() {
                         }}
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
-                            ORGANIC GROWTH
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
+                            Organic Growth
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

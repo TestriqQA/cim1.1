@@ -25,15 +25,6 @@ export default function Hero() {
         >
             {/* Animated Background - Metro Tile / Grid motif */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Gradient Blobs */}
-                <div
-                    className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-5 blur-3xl animate-pulse"
-                    style={{ backgroundColor: msBlue }}
-                />
-                <div
-                    className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-5 blur-3xl"
-                    style={{ backgroundColor: msBlue }}
-                />
                 {/* Grid Lines */}
                 <div
                     className="absolute inset-0 opacity-[0.03]"

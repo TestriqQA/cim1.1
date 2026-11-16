@@ -90,10 +90,6 @@ export default function BrandPackages() {
             style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}
         >
             {/* Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
@@ -106,7 +102,7 @@ export default function BrandPackages() {
                         }}
                     >
                         <Package className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                        <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
+                        <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             PACKAGES
                         </span>
                     </div>

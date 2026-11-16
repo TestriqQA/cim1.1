@@ -29,9 +29,6 @@ export default function Features({ product }: { product: Product }) {
 
     return (
         <section className="py-24 relative overflow-hidden transition-colors duration-300 border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-5 blur-3xl animate-pulse" style={{ backgroundColor: color, animationDuration: "4s" }} />
-            </div>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
@@ -54,7 +51,6 @@ export default function Features({ product }: { product: Product }) {
                         return (
                             <div key={idx} className="group" onMouseEnter={() => setHoveredCard(idx)} onMouseLeave={() => setHoveredCard(null)}>
                                 <div className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full ${isHovered ? "-translate-y-2" : ""}`} style={{ borderColor: isHovered ? cardColor : "var(--border-color)", backgroundColor: "var(--card-bg)" }}>
-                                    <div className={`absolute inset-0 opacity-0 transition-opacity duration-500 ${isHovered ? "opacity-10" : ""}`} style={{ background: `radial-gradient(circle at top right, ${cardColor}, transparent)` }} />
                                     <div className="relative mb-6">
                                         <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${isHovered ? "scale-110" : "scale-100"}`} style={{ backgroundColor: isHovered ? cardColor : "var(--background)" }}>
                                             <Icon className="w-8 h-8 transition-all duration-500" style={{ color: isHovered ? "white" : "var(--foreground)" }} />

@@ -232,7 +232,6 @@ export default function WhyChooseUs() {
                                                 className="w-4 h-4 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                                                 style={{ color: "var(--brand-orange)" }}
                                             />
-                                            <div className="absolute inset-0 bg-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
                                         </div>
                                         <span className="text-lg" style={{ color: "var(--foreground)" }}>{item}</span>
                                     </li>

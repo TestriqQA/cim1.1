@@ -192,12 +192,6 @@ export default function BlogDetailClient({
                     backgroundColor: "var(--card-bg)",
                 }}
             >
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background: "radial-gradient(ellipse at top, color-mix(in srgb, var(--brand-purple) 5%, transparent), transparent 70%)",
-                    }}
-                />
 
                 <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
                     {/* Breadcrumb */}
@@ -289,10 +283,6 @@ export default function BlogDetailClient({
 
                         {/* Right Side - Featured Image */}
                         <div className="relative">
-                            <div
-                                className="absolute -inset-4 rounded-3xl blur-2xl"
-                                style={{ backgroundColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)" }}
-                            />
                             <div className="relative aspect-[5/3] rounded-2xl overflow-hidden border shadow-xl"
                                 style={{ borderColor: "var(--border-color)" }}>
                                 <Image

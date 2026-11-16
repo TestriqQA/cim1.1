@@ -24,20 +24,6 @@ export default function Hero() {
                         backgroundSize: "60px 60px",
                     }}
                 />
-                {/* Glow orbs - Adjusted positions */}
-                <div
-                    className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-purple) 15%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-16 relative z-10 w-full">
@@ -117,7 +103,6 @@ export default function Hero() {
 
                     {/* Right Column: Animation */}
                     <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--brand-blue)]/5 to-transparent blur-3xl opacity-30 rounded-full" />
                         <CareersHeroAnimation />
                     </div>
                 </div>

@@ -52,21 +52,6 @@ export default function WhyChooseUs() {
     return (
         <section className="py-12 sm:py-16 lg:py-20 bg-[var(--background)] transition-colors duration-300 relative overflow-hidden">
             {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-purple) 12%, transparent)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-                    style={{
-                        backgroundColor: "color-mix(in srgb, var(--brand-cyan) 12%, transparent)",
-                        animationDelay: "1s",
-                    }}
-                />
-            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* Header */}

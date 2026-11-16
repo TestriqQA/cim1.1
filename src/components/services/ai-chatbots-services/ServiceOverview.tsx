@@ -135,8 +135,6 @@ export default function ServiceOverview() {
             >
                 {/* Animated background */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-pink-500/30 to-orange-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
                 </div>
 
                 <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -149,7 +147,7 @@ export default function ServiceOverview() {
                             }}
                         >
                             <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-bold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
+                            <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 Intelligent Conversations Powered by Next-Gen AI
                             </span>
                         </div>
@@ -212,8 +210,6 @@ export default function ServiceOverview() {
                                         {/* Icon container */}
                                         <div className="relative mb-5 z-10">
                                             <div className="relative inline-block">
-                                                {/* Glow effect */}
-                                                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500`} />
 
                                                 {/* Icon box */}
                                                 <div
@@ -283,7 +279,6 @@ export default function ServiceOverview() {
                             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                                 <div className="flex items-center gap-4">
                                     <div className="relative">
-                                        <div className={`absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse`} />
                                         <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
                                             <Zap className="w-8 h-8 text-white animate-float-subtle" strokeWidth={2.5} />
                                         </div>

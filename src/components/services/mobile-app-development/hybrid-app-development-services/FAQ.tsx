@@ -1,13 +1,8 @@
 "use client";
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import React from 'react';
 import Link from "next/link";
+import FaqSection from "@/components/ui/FaqSection";
 
 export default function FAQ() {
     const faqs = [
@@ -34,62 +29,11 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                        style={{
-                            backgroundColor: "rgba(0, 180, 216, 0.1)",
-                            borderColor: "rgba(0, 180, 216, 0.2)",
-                        }}
-                    >
-                        <HelpCircle className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>
-                            Common Questions
-                        </span>
-                    </div>
-
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ color: "var(--foreground)" }}>Hybrid App</span>{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #00b4d8, #0077b6)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
-                            FAQs
-                        </span>
-                    </h2>
-                    <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Everything you need to know about hybrid app development and our approach in 2026.
-                    </p>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                        {faqs.map((faq, idx) => (
-                            <AccordionItem
-                                key={idx}
-                                value={`item-${idx}`}
-                                className="border rounded-2xl px-6 transition-all duration-300 data-[state=open]:border-[#00b4d8] data-[state=open]:shadow-lg"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
-                            >
-                                <AccordionTrigger className="text-left py-6 hover:no-underline hover:text-[var(--accent-cyan-text)] font-bold text-lg" style={{ color: "var(--foreground)" }}>
-                                    {faq.question}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-lg leading-relaxed pb-6" style={{ color: "var(--foreground)" }}>
-                                    {faq.answer}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
-            </div>
-        </section>
+        <FaqSection
+            faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
+            accent="var(--accent-cyan-text)"
+            title="Hybrid App FAQs"
+            subtitle="Everything you need to know about hybrid app development and our approach in 2026."
+        />
     );
 }

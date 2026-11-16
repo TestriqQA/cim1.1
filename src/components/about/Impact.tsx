@@ -11,13 +11,6 @@ export default function Impact() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#008ac1] via-[#00b5ca] to-[#008ac1] relative overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">

@@ -198,16 +198,6 @@ export default function Process() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-20 left-10 w-64 h-64 rounded-full opacity-20 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#8b5cf6" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-80 h-80 rounded-full opacity-20 blur-3xl animate-pulse"
-                    style={{ backgroundColor: "#ec4899", animationDelay: "1s" }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
@@ -220,7 +210,7 @@ export default function Process() {
                         }}
                     >
                         <Sparkles className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                        <span className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>
                     </div>

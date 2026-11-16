@@ -18,15 +18,6 @@ export default function CTA() {
                         background: "linear-gradient(135deg, #9632bc, #008376)",
                     }}
                 >
-                    {/* Background decorations */}
-                    <div
-                        className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-20"
-                        style={{ background: "rgba(255,255,255,0.1)" }}
-                    />
-                    <div
-                        className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-10"
-                        style={{ background: "rgba(255,255,255,0.1)" }}
-                    />
 
                     <div className="relative z-10 max-w-3xl mx-auto text-center">
                         {/* Badge */}

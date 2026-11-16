@@ -67,14 +67,6 @@ export default function Process() {
             style={{ backgroundColor: "var(--card-bg)", borderColor: "#555555" }}
         >
             {/* Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] opacity-5"
-                    style={{
-                        background: `radial-gradient(circle, ${tiktokPink}, transparent 70%)`,
-                    }}
-                />
-            </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
