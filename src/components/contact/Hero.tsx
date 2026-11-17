@@ -354,7 +354,7 @@ export default function Hero() {
 
           <span
             className="font-semibold p-2"
-            style={{ color: "var(--brand-blue)" }}
+            style={{ color: "var(--brand-blue-text)" }}
           >
             Contact Us
           </span>
@@ -367,7 +367,7 @@ export default function Hero() {
                         background:
                             "linear-gradient(90deg, color-mix(in srgb, var(--brand-blue) 8%, transparent), color-mix(in srgb, var(--brand-teal) 8%, transparent))",
                         borderColor: "color-mix(in srgb, var(--brand-blue) 20%, transparent)",
-                        color: "var(--brand-blue)",
+                        color: "var(--brand-blue-text)",
                     }}
                 >
                     <MessageSquare className="w-5 h-5 text-current relative animate-bounce" style={{ color: "var(--brand-blue)" }} />

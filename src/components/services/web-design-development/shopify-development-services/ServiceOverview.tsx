@@ -63,7 +63,7 @@ export default function ServiceOverview() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "#96bf48" }} />
+                        <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Build a Revenue-Driving Store
                         </span>

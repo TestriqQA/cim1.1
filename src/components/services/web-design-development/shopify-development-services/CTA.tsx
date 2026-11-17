@@ -40,7 +40,7 @@ export default function CTA() {
         <>
             <FaqSection
                 faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
-                accent="#96bf48"
+                accent="var(--accent-shopify-text)"
                 title="Your Shopify Questions Answered"
             />
 
@@ -77,7 +77,7 @@ export default function CTA() {
                                 borderColor: "color-mix(in srgb, #96bf48 40%, transparent)",
                             }}
                         >
-                            <ShoppingCart className="w-4 h-4" style={{ color: "#96bf48" }} />
+                            <ShoppingCart className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                                 Ready to Dominate Shopify?
                             </span>

@@ -31,7 +31,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs}
-            accent="#E1306C"
+            accent="var(--accent-instagram-text)"
             subtitle="Answers to common questions about our Instagram marketing services, strategy, and results."
             background="var(--card-bg)"
         />

@@ -98,7 +98,7 @@ export default function TechStack() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: "#96bf48" }} />
+                        <Layers className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Technology Stack
                         </span>

@@ -31,7 +31,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
-            accent="#0073AA"
+            accent="var(--accent-wordpress-text)"
         />
     );
 }

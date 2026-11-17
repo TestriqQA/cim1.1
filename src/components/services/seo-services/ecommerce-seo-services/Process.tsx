@@ -210,7 +210,7 @@ export default function Process() {
                                                                 boxShadow: `0 0 30px ${commerceBlue}60`
                                                             }}
                                                         />
-                                                        <Icon className="w-8 h-8 relative z-10 icon-float" style={{ color: commerceBlue }} />
+                                                        <Icon className="w-8 h-8 relative z-10 icon-float" style={{ color: "var(--accent-sky-text)" }} />
                                                     </div>
 
                                                     {/* Check Icon */}
@@ -220,7 +220,7 @@ export default function Process() {
                                                             backgroundColor: `${commerceBlue}20`
                                                         }}
                                                     >
-                                                        <CheckCircle className="w-5 h-5" style={{ color: commerceBlue }} />
+                                                        <CheckCircle className="w-5 h-5" style={{ color: "var(--accent-sky-text)" }} />
                                                     </div>
                                                 </div>
 

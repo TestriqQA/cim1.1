@@ -344,7 +344,7 @@ export default function Footer() {
                                 <div className={`overflow-hidden transition-all duration-300 ${expandedSection === idx ? "max-h-96" : "max-h-0"}`}>
                                     <ul className="px-4 pb-3 space-y-2">
                                         <li>
-                                            <Link href={category.href} className="text-sm font-medium hover:underline" style={{ color: "var(--brand-blue)" }}>
+                                            <Link href={category.href} className="text-sm font-medium hover:underline" style={{ color: "var(--brand-blue-text)" }}>
                                                 View All {category.title} →
                                             </Link>
                                         </li>

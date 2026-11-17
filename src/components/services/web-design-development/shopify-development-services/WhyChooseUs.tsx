@@ -104,7 +104,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "#96bf48" }} />
+                        <Zap className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>
@@ -195,7 +195,7 @@ export default function WhyChooseUs() {
                                     <h3
                                         className="text-xl font-bold mb-2 transition-all duration-300"
                                         style={{
-                                            color: isHovered ? "#96bf48" : "var(--foreground)",
+                                            color: isHovered ? "var(--accent-shopify-text)" : "var(--foreground)",
                                         }}
                                     >
                                         {reason.title}

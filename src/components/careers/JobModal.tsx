@@ -71,7 +71,7 @@ export default function JobModal({ job, isOpen, onClose }: JobModalProps) {
                         {showForm && !isSuccess ? (
                             <button
                                 onClick={handleBack}
-                                className="flex items-center gap-1 hover:text-[var(--brand-blue)] transition-colors"
+                                className="flex items-center gap-1 hover:text-[var(--brand-blue-text)] transition-colors"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 Back to Details

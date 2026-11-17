@@ -79,7 +79,7 @@ export default function Hero() {
                                 borderColor: `${commerceBlue}30`,
                             }}
                         >
-                            <ShoppingBag className="w-4 h-4" style={{ color: commerceBlue }} />
+                            <ShoppingBag className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                 Maximize Online Sales
                             </span>
@@ -95,7 +95,7 @@ export default function Hero() {
                                 Ecommerce SEO Services
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
-                                    style={{ color: commerceBlue }}
+                                    style={{ color: "var(--accent-sky-text)" }}
                                     viewBox="0 0 100 10"
                                     preserveAspectRatio="none"
                                 >
@@ -226,7 +226,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${commerceBlue}15` }}
                                     >
-                                        <TrendingUp className="w-6 h-6" style={{ color: commerceBlue }} />
+                                        <TrendingUp className="w-6 h-6" style={{ color: "var(--accent-sky-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -252,7 +252,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ backgroundColor: `${commerceBlue}15` }}
                                     >
-                                        <Search className="w-6 h-6" style={{ color: commerceBlue }} />
+                                        <Search className="w-6 h-6" style={{ color: "var(--accent-sky-text)" }} />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

@@ -72,7 +72,7 @@ export default function Hero() {
 
                         {/* Heading */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-                            <span style={{ color: "var(--brand-blue)" }}>
+                            <span style={{ color: "var(--brand-blue-text)" }}>
                                 Transform Your Business with Expert Web Development Services
                             </span>
                         </h1>
@@ -118,7 +118,7 @@ export default function Hero() {
                                             pointed at a UI/UX blog post and "Enterprise Security" at
                                             the fintech page — both now plain text (T7). */}
                                         {item.text === "Global SEO" ? (
-                                            <Link href="/services/seo-services" className="hover:text-[var(--brand-blue)] hover:underline transition-colors">
+                                            <Link href="/services/seo-services" className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors">
                                                 {item.text}
                                             </Link>
                                         ) : (
@@ -210,7 +210,7 @@ export default function Hero() {
                             <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start">
                                 <Link
                                     href="/services/web-design-development/nextjs-development-services"
-                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue)] hover:underline transition-colors"
+                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
                                     }}
@@ -219,7 +219,7 @@ export default function Hero() {
                                 </Link>
                                 <Link
                                     href="/blog/future-web-development-nextjs"
-                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue)] hover:underline transition-colors"
+                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
                                     }}
@@ -228,7 +228,7 @@ export default function Hero() {
                                 </Link>
                                 <Link
                                     href="/services/seo-services/technical-seo-services"
-                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue)] hover:underline transition-colors"
+                                    className="px-3 py-1.5 sm:py-1 rounded-full text-xs font-semibold text-center text-[var(--brand-blue-text)] hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--brand-blue) 15%, transparent)",
                                     }}

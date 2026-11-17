@@ -75,7 +75,7 @@ export default function JobDrawer({ job, isOpen, onClose }: JobDrawerProps) {
                         {showForm && !isSuccess ? (
                             <button
                                 onClick={handleBack}
-                                className="flex items-center gap-1 hover:text-[var(--brand-blue)] transition-colors"
+                                className="flex items-center gap-1 hover:text-[var(--brand-blue-text)] transition-colors"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 Back to Details

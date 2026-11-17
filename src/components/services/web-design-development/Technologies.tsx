@@ -136,7 +136,7 @@ export default function Technologies() {
           />
         </div>
         <span
-          className="text-xs sm:text-sm font-semibold text-center leading-tight break-words group-hover:text-[var(--brand-blue)] transition-colors"
+          className="text-xs sm:text-sm font-semibold text-center leading-tight break-words group-hover:text-[var(--brand-blue-text)] transition-colors"
           style={{ color: "var(--foreground)" }}
         >
           {tech.name}

@@ -39,7 +39,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
-            accent="#3DDC84"
+            accent="var(--accent-android-text)"
             subtitle="Get answers to common questions about our Android app development services."
         />
     );

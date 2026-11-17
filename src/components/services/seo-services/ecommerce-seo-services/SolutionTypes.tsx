@@ -92,6 +92,21 @@ export default function SolutionTypes() {
     };
     const textAccent = (color: string) => textAccentMap[color.toLowerCase()] ?? color;
 
+    // Glyph colour for the ACTIVE chip, whose background is the brand fill itself.
+    // White clears WCAG 1.4.11's 3:1 on the darker fills but not the paler ones
+    // (#96bf48 2.13, #0ea5e9 2.77, #f46f25 2.94, #f59e0b 2.15), so those take a
+    // dark glyph instead - the brand fill is never altered. The BigCommerce card
+    // fills with var(--secondary-text), which flips between themes, so its glyph
+    // tracks var(--card-bg) and stays legible in both.
+    const onAccentFgMap: Record<string, string> = {
+        "#96bf48": "#1c1c1c",
+        "#f46f25": "#1c1c1c",
+        "#0ea5e9": "#1c1c1c",
+        "#f59e0b": "#1c1c1c",
+        "var(--secondary-text)": "var(--card-bg)",
+    };
+    const onAccentFg = (color: string) => onAccentFgMap[color.toLowerCase()] ?? "white";
+
     function LayersIcon(props: any) {
         return (
             <svg
@@ -128,7 +143,7 @@ export default function SolutionTypes() {
                             borderColor: `${commerceBlue}40`,
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: commerceBlue }} />
+                        <Layers className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Platform Expertise
                         </span>
@@ -170,7 +185,7 @@ export default function SolutionTypes() {
                                             className="w-14 h-14 rounded-full flex items-center justify-center transition-colors duration-300"
                                             style={{
                                                 backgroundColor: isActive ? platform.color : `${platform.color}15`,
-                                                color: isActive ? "white" : platform.color
+                                                color: isActive ? onAccentFg(platform.color) : textAccent(platform.color)
                                             }}
                                         >
                                             <Icon className="w-7 h-7" />

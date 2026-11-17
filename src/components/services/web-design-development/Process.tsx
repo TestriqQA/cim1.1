@@ -18,7 +18,7 @@ export default function Process() {
             icon: Palette,
             number: "02",
             title: "Strategic Architecture",
-            description: <>Planning for Core Web Vitals and global accessibility. We design high-fidelity <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> that reflects brand authority.</>,
+            description: <>Planning for Core Web Vitals and global accessibility. We design high-fidelity <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">UI/UX</Link> that reflects brand authority.</>,
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
@@ -26,7 +26,7 @@ export default function Process() {
             icon: Code,
             number: "03",
             title: "Agile Engineering",
-            description: <>rigorously tested delivery using modern, secure tech stacks (<Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Next.js</Link>, <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">TypeScript</Link>). Clean, modular code for future growth.</>,
+            description: <>rigorously tested delivery using modern, secure tech stacks (<Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">Next.js</Link>, <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">TypeScript</Link>). Clean, modular code for future growth.</>,
             color: "from-[#fab900] to-[#ee6500]",
         },
         {
@@ -34,7 +34,7 @@ export default function Process() {
             icon: CheckCircle,
             number: "04",
             title: "Global SEO & Performance",
-            description: <>Rigorous QA with built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for global clients.</>,
+            description: <>Rigorous QA with built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">organic traffic growth</Link> for global clients.</>,
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
@@ -50,7 +50,7 @@ export default function Process() {
             icon: Wrench,
             number: "06",
             title: "Continuous Optimization",
-            description: <>24/7 <Link href="/contact" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical support</Link> and performance tuning based on real-time data to maintain your competitive edge.</>,
+            description: <>24/7 <Link href="/contact" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">technical support</Link> and performance tuning based on real-time data to maintain your competitive edge.</>,
             color: "from-[#ee6500] to-[#fab900]",
         },
     ];
