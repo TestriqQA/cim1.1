@@ -63,7 +63,7 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, #96bf48 30%, transparent)",
                             }}
                         >
-                            <ShoppingCart className="w-4 h-4" style={{ color: "#96bf48" }} />
+                            <ShoppingCart className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                                 E-commerce Experts
                             </span>
@@ -106,7 +106,7 @@ export default function Hero() {
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "#96bf48" }} />
+                                        <Icon className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                                         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                                             {feature.text}
                                         </span>

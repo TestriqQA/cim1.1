@@ -20,10 +20,10 @@ export default function CTA() {
                     }}
                 >
                     <div className="absolute top-10 left-10 opacity-5 animate-bounce delay-1000 duration-[3000ms]">
-                        <ShoppingBag className="w-16 h-16" style={{ color: commerceBlue }} />
+                        <ShoppingBag className="w-16 h-16" style={{ color: "var(--accent-sky-text)" }} />
                     </div>
                     <div className="absolute bottom-10 right-10 opacity-5 animate-bounce delay-500 duration-[4000ms]">
-                        <ShoppingBag className="w-24 h-24" style={{ color: commerceBlue }} />
+                        <ShoppingBag className="w-24 h-24" style={{ color: "var(--accent-sky-text)" }} />
                     </div>
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>

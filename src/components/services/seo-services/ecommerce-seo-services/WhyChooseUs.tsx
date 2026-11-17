@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                                     borderColor: `${commerceBlue}40`,
                                 }}
                             >
-                                <Sparkles className="w-4 h-4" style={{ color: commerceBlue }} />
+                                <Sparkles className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                     Why Choose Us
                                 </span>
@@ -111,7 +111,10 @@ export default function WhyChooseUs() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300"
                                         style={{
                                             backgroundColor: isHovered ? commerceBlue : `${commerceBlue}15`,
-                                            color: isHovered ? "white" : commerceBlue
+                                            // commerceBlue is #0EA5E9: as a glyph on the pale tint it is
+                                            // 2.77:1, and white on the solid fill is 2.77:1 too - both under
+                                            // the 3:1 WCAG 1.4.11 asks of an icon. The fill is unchanged.
+                                            color: isHovered ? "#1c1c1c" : "var(--accent-sky-text)"
                                         }}
                                     >
                                         <Icon className="w-6 h-6" />

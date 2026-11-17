@@ -50,7 +50,7 @@ export default function OpenPositions({ jobs }: OpenPositionsProps) {
                         }}
                     >
                         <Briefcase className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue)" }}>Join Our Team</span>
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>Join Our Team</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
                         Open <span
@@ -87,7 +87,7 @@ export default function OpenPositions({ jobs }: OpenPositionsProps) {
 
                             <div className="relative p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <div className="space-y-3 flex-1">
-                                    <h3 className="text-2xl font-bold group-hover:text-[var(--brand-blue)] transition-colors">
+                                    <h3 className="text-2xl font-bold group-hover:text-[var(--brand-blue-text)] transition-colors">
                                         {job.title}
                                     </h3>
                                     <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--secondary-text)]">

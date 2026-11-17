@@ -35,7 +35,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs}
-            accent="#FF0000"
+            accent="var(--accent-youtube-text)"
             subtitle="Answers to common questions about our YouTube marketing services, strategy, and results."
             background="var(--card-bg)"
         />

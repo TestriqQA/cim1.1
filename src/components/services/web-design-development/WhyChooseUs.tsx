@@ -14,19 +14,19 @@ export default function WhyChooseUs() {
         {
             icon: TrendingUp,
             title: "Global SEO Foundation",
-            description: <>Built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">organic traffic growth</Link> for enterprise clients across 15+ countries.</>,
+            description: <>Built-in <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">technical SEO</Link> that has delivered 300% <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">organic traffic growth</Link> for enterprise clients across 15+ countries.</>,
             color: "from-[#008ac1] to-[#bc3feb]",
         },
         {
             icon: Smartphone,
             title: "Responsive Web Design",
-            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using Responsive Web Design.</>,
+            description: <>Mobile-first approach ensuring flawless display on all devices. Average <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">conversion rate</Link> improvement post-launch by using Responsive Web Design.</>,
             color: "from-[#00efd6] to-[#00b5ca]",
         },
         {
             icon: Lock,
             title: "Enterprise-Grade Security",
-            description: <>Advanced protocols and AWS-secured architecture. <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">Enterprise-Grade Security</Link> ensuring rigorously tested delivery on first deployment for peace of mind.</>,
+            description: <>Advanced protocols and AWS-secured architecture. <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">Enterprise-Grade Security</Link> ensuring rigorously tested delivery on first deployment for peace of mind.</>,
             color: "from-[#bc3feb] to-[#fab900]",
         },
         {
@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
         {
             icon: Accessibility,
             title: "ROI-Driven UX Design",
-            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites are built to grow qualified <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">online leads</Link> for our clients.</>,
+            description: <>Data-backed <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">UI/UX</Link> focused on business value. Our sites are built to grow qualified <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">online leads</Link> for our clients.</>,
             color: "from-[#00efd6] to-[#bc3feb]",
         },
     ];
@@ -119,7 +119,7 @@ export default function WhyChooseUs() {
 
                                         {/* Right Side - Content */}
                                         <div className="flex-1">
-                                            <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>
+                                            <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-[var(--brand-blue-text)] transition-colors" style={{ color: "var(--foreground)" }}>
                                                 {benefit.title}
                                             </h3>
                                             <p className="text-sm sm:text-lg leading-relaxed" style={{ color: "var(--secondary-text)" }}>

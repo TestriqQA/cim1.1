@@ -131,7 +131,7 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Settings className="w-4 h-4" style={{ color: "#96bf48" }} />
+                        <Settings className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             How We Build Your Store
                         </span>
@@ -244,7 +244,7 @@ export default function Process() {
                                             className="text-xl font-bold mb-3 transition-all duration-300"
                                             style={{
                                                 color: isHovered
-                                                    ? "#96bf48"
+                                                    ? "var(--accent-shopify-text)"
                                                     : "var(--foreground)",
                                             }}
                                         >
@@ -271,7 +271,7 @@ export default function Process() {
                                                         className="flex items-center gap-2 text-sm"
                                                         style={{ color: "var(--foreground)" }}
                                                     >
-                                                        <Check className="w-4 h-4 flex-shrink-0" style={{ color: "#96bf48" }} />
+                                                        <Check className="w-4 h-4 flex-shrink-0" style={{ color: "var(--accent-shopify-text)" }} />
                                                         <span>{detail}</span>
                                                     </li>
                                                 ))}

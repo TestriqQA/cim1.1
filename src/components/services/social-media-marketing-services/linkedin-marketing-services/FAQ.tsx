@@ -31,7 +31,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs}
-            accent="#0A66C2"
+            accent="var(--accent-linkedin-text)"
             subtitle="Answers to common questions about our LinkedIn marketing services, strategy, and results for 2026."
         />
     );

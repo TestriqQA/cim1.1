@@ -12,14 +12,14 @@ export default function CoreValues() {
           From{" "}
           <Link
             href="/services/web-design-development"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             custom website development
           </Link>{" "}
           to{" "}
           <Link
             href="/services/ai-workflows-automations-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             AI-powered marketing automation
           </Link>
@@ -67,6 +67,10 @@ export default function CoreValues() {
         "Rigorous QA process",
       ],
       color: "var(--brand-yellow)",
+      // White on --brand-yellow is 1.98:1, under the 3:1 WCAG 1.4.11
+      // asks of an icon. Darkening the glyph instead of the chip keeps
+      // the brand yellow exactly and reaches 8.61:1.
+      fg: "#1c1c1c",
     },
     {
       icon: <Heart className="w-6 h-6" />,
@@ -188,7 +192,7 @@ export default function CoreValues() {
                 style={{
                   display: "inline-flex",
                   borderRadius: 12,
-                  color: "#fff",
+                  color: value.fg ?? "#fff",
                   background: value.color,
                 }}
               >

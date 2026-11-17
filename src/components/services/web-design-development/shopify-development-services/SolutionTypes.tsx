@@ -132,7 +132,7 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#96bf48" }} />
+                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             E-commerce Solutions
                         </span>
@@ -288,9 +288,12 @@ export default function SolutionTypes() {
                                                             backgroundColor: `${solution.accentColor}20`,
                                                         }}
                                                     >
+                                                        {/* solution.accentColor runs #96bf48 / #5c8a1e / #b4d97c,
+                                                            which give 2.13 / 4.11 / 1.60:1 on the card - two of the
+                                                            three under the 3:1 WCAG 1.4.11 asks of an icon. */}
                                                         <Check
                                                             className="w-3.5 h-3.5"
-                                                            style={{ color: solution.accentColor }}
+                                                            style={{ color: "var(--accent-shopify-text)" }}
                                                         />
                                                     </div>
                                                     <span

@@ -52,6 +52,17 @@
     --accent-orange-text: #9a3412;
     --accent-amber-text: #92400e;
     --accent-red-text: #b91c1c;
+    /* Platform-brand FAQ accents. The raw brand hexes are passed to
+       FaqSection as the question-heading color, where they run 1.78-5.69:1 and
+       fail AA in one theme or the other: #3DDC84 Android, #96bf48 Shopify,
+       #FF0000 YouTube, #E1306C Instagram, #0A66C2 LinkedIn, #0073AA WordPress.
+       These keep each brand's hue and saturation and move only lightness. */
+    --accent-android-text: #188649;
+    --accent-shopify-text: #627f2c;
+    --accent-youtube-text: #ed0000;
+    --accent-instagram-text: #e02766;
+    --accent-linkedin-text: #0a65c0;
+    --accent-wordpress-text: #0071a7;
 
     /* Selection highlight color (overridden per page via data-page-theme) */
     --page-selection-bg: var(--brand-purple);
@@ -89,6 +100,13 @@
     --accent-orange-text: #fdba74;
     --accent-amber-text: #fcd34d;
     --accent-red-text: #f87171;
+    /* Platform-brand accents, lightened for the dark card */
+    --accent-android-text: #3fdc85;
+    --accent-shopify-text: #97c04a;
+    --accent-youtube-text: #ff1c1c;
+    --accent-instagram-text: #e4467c;
+    --accent-linkedin-text: #0f81f3;
+    --accent-wordpress-text: #0089cb;
   }
 
   body {

@@ -48,7 +48,7 @@ export default function Hero() {
 
                             <span
                                 className="font-semibold p-2"
-                                style={{ color: "var(--brand-blue)" }}
+                                style={{ color: "var(--brand-blue-text)" }}
                             >
                                 Careers
                             </span>
@@ -62,7 +62,7 @@ export default function Hero() {
                             }}
                         >
                             <Users className="w-4 h-4" style={{ color: "var(--brand-blue)" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue)" }}>Join Our Team</span>
+                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>Join Our Team</span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight">

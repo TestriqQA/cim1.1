@@ -43,7 +43,7 @@ export default function ServiceOverview() {
                     {/* Left Content */}
                     <div className="space-y-5 sm:space-y-6">
                         <p className="text-base sm:text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            As an expert <span className="text-[var(--brand-blue-text)] font-bold">web development company</span>, we provide full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">professional web design agency</span> combines <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue)] hover:underline transition-colors">creative excellence</Link> with technical precision.
+                            As an expert <span className="text-[var(--brand-blue-text)] font-bold">web development company</span>, we provide full-spectrum digital engineering. Our <span className="text-[var(--accent-teal-text)] font-bold">professional web design agency</span> combines <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)] hover:underline transition-colors">creative excellence</Link> with technical precision.
                         </p>
 
                         <p className="text-base sm:text-[1.1rem] leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
@@ -60,9 +60,9 @@ export default function ServiceOverview() {
                             </h3>
                             <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 {[
-                                    <span key="1">Global reach with <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)]">performance-first architecture</Link></span>,
+                                    <span key="1">Global reach with <Link href="/services/web-design-development/nextjs-development-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)]">performance-first architecture</Link></span>,
                                     <span key="2">Rigorously tested delivery on first deployment</span>,
-                                    <span key="3">Built-in SEO that delivers <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue)]">sustained traffic growth</Link></span>,
+                                    <span key="3">Built-in SEO that delivers <Link href="/services/seo-services" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)]">sustained traffic growth</Link></span>,
                                     <span key="4">24/7 technical support across timezones</span>,
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-2.5">
@@ -226,14 +226,14 @@ export default function ServiceOverview() {
                         <Link href="/blog/mobile-app-development-trends-2026" className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "var(--brand-blue)" }} aria-hidden="true" />
                             <div>
-                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Mobile App Trends 2026</h4>
+                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue-text)] transition-colors" style={{ color: "var(--foreground)" }}>Mobile App Trends 2026</h4>
                                 <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Latest trends in mobile and web development</p>
                             </div>
                         </Link>
                         <Link href="/blog/future-web-development-nextjs" className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
                             <Settings className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "var(--brand-blue)" }} aria-hidden="true" />
                             <div>
-                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue)] transition-colors" style={{ color: "var(--foreground)" }}>Future of Web Development</h4>
+                                <h4 className="text-sm sm:text-base font-semibold group-hover:text-[var(--brand-blue-text)] transition-colors" style={{ color: "var(--foreground)" }}>Future of Web Development</h4>
                                 <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Why Next.js is shaping the future of web</p>
                             </div>
                         </Link>

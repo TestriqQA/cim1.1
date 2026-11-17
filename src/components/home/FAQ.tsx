@@ -17,77 +17,77 @@ export default function FAQ() {
           We offer comprehensive solutions including{" "}
           <Link
             href="/services/web-design-development"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             custom website development
           </Link>{" "}
           (corporate,{" "}
           <Link
             href="/services/web-design-development/ecommerce-development-company"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             e-commerce
           </Link>
           ,{" "}
           <Link
             href="/services/web-design-development/saas-development-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             SaaS
           </Link>
           ),{" "}
           <Link
             href="/services/mobile-app-development"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             mobile app development
           </Link>{" "}
           (
           <Link
             href="/services/mobile-app-development/ios-app-development-company"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             iOS
           </Link>
           ,{" "}
           <Link
             href="/services/mobile-app-development/android-app-development-company"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             Android
           </Link>
           ,{" "}
           <Link
             href="/blog/mobile-app-development-trends-2026"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             cross-platform
           </Link>
           ), web applications with modern frameworks (
           <Link
             href="/blog/future-web-development-nextjs"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             Next.js
           </Link>
           , React, Laravel),{" "}
           <Link
             href="/services/web-design-development/wordpress-development-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             WordPress development
           </Link>
           , e-commerce development (
           <Link
             href="/services/web-design-development/shopify-development-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             Shopify
           </Link>
           ,{" "}
           <Link
             href="/services/web-design-development/wordpress-development-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             WooCommerce
           </Link>
@@ -106,7 +106,7 @@ export default function FAQ() {
           Yes! Every website we build includes foundational{" "}
           <Link
             href="/services/seo-services/technical-seo-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             technical SEO
           </Link>{" "}
@@ -115,7 +115,7 @@ export default function FAQ() {
           comprehensive{" "}
           <Link
             href="/services/seo-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             SEO services
           </Link>{" "}
@@ -143,21 +143,21 @@ export default function FAQ() {
           Yes! We&apos;re pioneers in{" "}
           <Link
             href="/services/ai-workflows-automations-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             AI-driven web solutions
           </Link>{" "}
           including{" "}
           <Link
             href="/services/ai-chatbots-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             AI-powered chatbots
           </Link>{" "}
           for customer support,{" "}
           <Link
             href="/blog/ai-workflows-automating-business-processes"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             workflow automation
           </Link>{" "}
@@ -172,7 +172,7 @@ export default function FAQ() {
     return (
         <FaqSection
             faqs={faqs}
-            accent="var(--brand-blue)"
+            accent="var(--brand-blue-text)"
             subtitle="Answers to common questions about services, pricing and timelines"
             background="var(--card-bg)"
         />

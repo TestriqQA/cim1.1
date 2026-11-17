@@ -28,7 +28,7 @@ export default function Stats() {
           Lead-gen overhaul,{" "}
           <Link
             href="/services/performance-marketing"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             paid media optimization
           </Link>
@@ -44,7 +44,7 @@ export default function Stats() {
           Web, mobile,{" "}
           <Link
             href="/services/ai-workflows-automations-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             AI solutions
           </Link>{" "}
@@ -60,14 +60,14 @@ export default function Stats() {
         <>
           <Link
             href="/services/ai-workflows-automations-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             AI automation
           </Link>{" "}
           &{" "}
           <Link
             href="/services/ai-chatbots-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             chatbot
           </Link>{" "}
@@ -83,14 +83,14 @@ export default function Stats() {
         <>
           <Link
             href="/services/seo-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             SEO
           </Link>{" "}
           &{" "}
           <Link
             href="/services/seo-services/seo-content-writing-services"
-            className="hover:text-[var(--brand-blue)] hover:underline transition-colors"
+            className="hover:text-[var(--brand-blue-text)] hover:underline transition-colors"
           >
             content strategy
           </Link>{" "}
