@@ -25,7 +25,7 @@ import {
 export const metadata = getPageMetadata({
   title: "About Us | Cinute InfoMedia - Digital Growth Agency",
   description:
-    "Learn about Cinute InfoMedia (CIM), a digital growth agency helping businesses build, market, and scale with creativity, data, and technology with a proven delivery record and strong client retention.",
+    "Cinute InfoMedia is a digital growth agency helping businesses build, market and scale with creativity, data and technology. Mira Road, Mumbai.",
   url: "/about",
   image: "/og-images/About.webp",
 });

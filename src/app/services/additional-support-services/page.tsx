@@ -28,7 +28,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Business Support Services | Cinute InfoMedia',
-    description: 'Optimize your operations with premium Business Support Services designed for global scalability. From technical maintenance to administrative efficiency, we provide the backbone your business needs: a growing client base, an experienced team, dedicated support staff, rigorously tested maintenance and measurable gains in operational efficiency.',
+    description: 'Business support services built for scale: technical maintenance, administrative and back-office support, data management and customer support.',
     url: '/services/additional-support-services',
     image: "/og-images/additional-support-services.webp",
     keywords: [

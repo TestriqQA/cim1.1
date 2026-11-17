@@ -24,7 +24,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'E-commerce Website Development | Cinute InfoMedia',
-    description: 'Scale your brand with our expert E-commerce Website Development Services — expert teams building high-ROI Magento, Shopify and custom stores. Get a fast quote!',
+    description: 'E-commerce website development services - high-ROI Magento, Shopify and custom stores built by expert teams. Get a fast quote.',
     url: '/services/web-design-development/ecommerce-development-company',
     keywords: [
         'E-commerce Development',

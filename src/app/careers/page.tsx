@@ -8,6 +8,7 @@ import CareersJSONLD from "@/components/careers/CareersJSONLD";
 import { client } from "@/sanity/lib/client";
 import { jobsQuery } from "@/sanity/lib/queries";
 import { mapSanityJobToJob } from "@/sanity/lib/mapper";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -18,12 +19,30 @@ export const metadata = getPageMetadata({
     image: '/og-images/Career.webp',
 });
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Careers", url: "/careers" },
+        ],
+        "https://www.cinuteinfomedia.com/careers/#breadcrumb"
+    ),
+};
+
 export default async function CareersPage() {
     const sanityJobs = await client.fetch(jobsQuery);
     const jobs = sanityJobs.map(mapSanityJobToJob);
 
     return (
         <main className="transition-colors duration-300" style={{ scrollPaddingTop: "5rem", scrollMarginTop: "5rem", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <CareersJSONLD jobs={jobs} />
             <Hero />
             <Benefits />

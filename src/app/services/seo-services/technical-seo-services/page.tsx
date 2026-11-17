@@ -6,17 +6,18 @@ import TechStack from "@/components/services/seo-services/technical-seo-services
 import Process from "@/components/services/seo-services/technical-seo-services/Process";
 import WhyChooseUs from "@/components/services/seo-services/technical-seo-services/WhyChooseUs";
 import CTA from "@/components/services/seo-services/technical-seo-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Technical SEO Services | Cinute InfoMedia",
     description:
-        "Boost crawlability & speed with our expert Technical SEO company. Optimize Core Web Vitals, Schema, and site architecture for global rankings. Get a free audit today!",
+        "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services",
     },
     openGraph: {
         title: "Technical SEO Services | Cinute InfoMedia",
-        description: "Boost crawlability & speed with our expert Technical SEO company. Optimize Core Web Vitals, Schema, and site architecture for global rankings. Get a free audit today!",
+        description: "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services",
         type: "website",
         images: [
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Technical SEO Services | Cinute InfoMedia",
-        description: "Boost crawlability & speed with our expert Technical SEO company. Optimize Core Web Vitals, Schema, and site architecture for global rankings. Get a free audit today!",
+        description: "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
         images: ["/og-images/technical-seo-services.webp"],
     },
 
@@ -91,9 +92,29 @@ const jsonLd = {
     }
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "Technical SEO", url: "/services/seo-services/technical-seo-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services/#breadcrumb"
+    ),
+};
+
 export default function TechnicalSEOPage() {
     return (
         <main style={{ "--page-selection-bg": "#8B5CF6" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

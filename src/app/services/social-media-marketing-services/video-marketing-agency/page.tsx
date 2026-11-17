@@ -8,16 +8,17 @@ import WhyChooseUs from "@/components/services/social-media-marketing-services/v
 import FAQ from "@/components/services/social-media-marketing-services/video-marketing-agency/FAQ";
 import CTA from "@/components/services/social-media-marketing-services/video-marketing-agency/CTA";
 import { Metadata } from 'next';
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: 'YouTube Marketing Services | Top Agency for ROI & Growth',
-    description: 'Scale with the expert YouTube marketing agency. From YouTube ads management to video SEO services, we drive measurable CTR lifts & high-intent leads. Book free audit!',
+    description: 'YouTube marketing agency services: ads management and video SEO that drive measurable CTR lifts and high-intent leads. Book a free audit.',
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/video-marketing-agency",
     },
     openGraph: {
         title: 'YouTube Marketing Services | Top Agency for ROI & Growth',
-        description: 'Scale with the expert YouTube marketing agency. From YouTube ads management to video SEO services, we drive measurable CTR lifts & high-intent leads. Book free audit!',
+        description: 'YouTube marketing agency services: ads management and video SEO that drive measurable CTR lifts and high-intent leads. Book a free audit.',
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/video-marketing-agency",
         type: "website",
         images: [
@@ -32,15 +33,35 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: 'YouTube Marketing Services | Top Agency for ROI & Growth',
-        description: 'Scale with the expert YouTube marketing agency. From YouTube ads management to video SEO services, we drive measurable CTR lifts & high-intent leads. Book free audit!',
+        description: 'YouTube marketing agency services: ads management and video SEO that drive measurable CTR lifts and high-intent leads. Book a free audit.',
         images: ["/og-images/video-marketing-agency.webp"],
     },
 
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "YouTube Marketing", url: "/services/social-media-marketing-services/video-marketing-agency" },
+        ],
+        "https://www.cinuteinfomedia.com/services/social-media-marketing-services/video-marketing-agency/#breadcrumb"
+    ),
+};
+
 export default function YouTubeMarketingPage() {
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#FF0000" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

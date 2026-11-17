@@ -6,16 +6,17 @@ import TechStack from "@/components/services/seo-services/seo-content-writing-se
 import Process from "@/components/services/seo-services/seo-content-writing-services/Process";
 import WhyChooseUs from "@/components/services/seo-services/seo-content-writing-services/WhyChooseUs";
 import CTA from "@/components/services/seo-services/seo-content-writing-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "SEO Content Writing Services | Cinute InfoMedia",
-    description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
+    description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
     },
     openGraph: {
         title: "SEO Content Writing Services | Cinute InfoMedia",
-        description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
+        description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
         type: "website",
         images: [
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "SEO Content Writing Services | Cinute InfoMedia",
-        description: "Drive traffic and engagement with our SEO content writing services. High-E-E-A-T articles, blogs, and landing pages that rank higher on Google. Get a free quote!",
+        description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
         images: ["/og-images/seo-content-writing-services.webp"],
     },
 
@@ -84,9 +85,29 @@ const jsonLd = {
     ],
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "SEO Content Writing", url: "/services/seo-services/seo-content-writing-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services/#breadcrumb"
+    ),
+};
+
 export default function ContentSEOPage() {
     return (
         <main style={{ "--page-selection-bg": "#10b981" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

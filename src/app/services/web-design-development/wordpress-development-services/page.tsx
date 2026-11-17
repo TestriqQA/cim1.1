@@ -7,6 +7,7 @@ import Process from "@/components/services/web-design-development/wordpress-deve
 import WhyChooseUs from "@/components/services/web-design-development/wordpress-development-services/WhyChooseUs";
 import FAQ from "@/components/services/web-design-development/wordpress-development-services/FAQ";
 import CTA from "@/components/services/web-design-development/wordpress-development-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "WordPress Development Services | Cinute InfoMedia",
@@ -73,9 +74,29 @@ const jsonLd = {
     }
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Web Design & Development", url: "/services/web-design-development" },
+            { name: "WordPress Development", url: "/services/web-design-development/wordpress-development-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/web-design-development/wordpress-development-services/#breadcrumb"
+    ),
+};
+
 export default function WordPressDevelopmentPage() {
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#0073AA" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

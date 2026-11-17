@@ -6,14 +6,15 @@ import TechStack from "@/components/services/mobile-app-development/ios-app-deve
 import Process from "@/components/services/mobile-app-development/ios-app-development-company/Process";
 import WhyChooseUs from "@/components/services/mobile-app-development/ios-app-development-company/WhyChooseUs";
 import CTA from "@/components/services/mobile-app-development/ios-app-development-company/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "iOS App Development Company | Cinute InfoMedia",
     description:
-        "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
+        "Expert iOS app development company. High-performance, secure, scalable iPhone and iPad apps built with Swift and SwiftUI. Get a free quote.",
     openGraph: {
         title: "iOS App Development Company | Cinute InfoMedia",
-        description: "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
+        description: "Expert iOS app development company. High-performance, secure, scalable iPhone and iPad apps built with Swift and SwiftUI. Get a free quote.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/ios-app-development-company",
         type: "website",
         images: [
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "iOS App Development Company | Cinute InfoMedia",
-        description: "Expert iOS App Development Company & Agency. We build high-performance, secure, and scalable Custom iPhone & iPad apps using Swift/SwiftUI. Get a free quote today!",
+        description: "Expert iOS app development company. High-performance, secure, scalable iPhone and iPad apps built with Swift and SwiftUI. Get a free quote.",
         images: ["/og-images/ios-app-development-company.webp"],
     },
     alternates: {
@@ -36,9 +37,29 @@ export const metadata: Metadata = {
     },
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Mobile App Development", url: "/services/mobile-app-development" },
+            { name: "iOS App Development", url: "/services/mobile-app-development/ios-app-development-company" },
+        ],
+        "https://www.cinuteinfomedia.com/services/mobile-app-development/ios-app-development-company/#breadcrumb"
+    ),
+};
+
 export default function iOSAppDevelopmentPage() {
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#007AFF" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

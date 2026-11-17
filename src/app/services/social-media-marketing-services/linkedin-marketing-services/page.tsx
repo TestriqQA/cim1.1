@@ -7,17 +7,18 @@ import Process from "@/components/services/social-media-marketing-services/linke
 import WhyChooseUs from "@/components/services/social-media-marketing-services/linkedin-marketing-services/WhyChooseUs";
 import FAQ from "@/components/services/social-media-marketing-services/linkedin-marketing-services/FAQ";
 import CTA from "@/components/services/social-media-marketing-services/linkedin-marketing-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "LinkedIn Marketing Services | Cinute InfoMedia",
     description:
-        "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
+        "LinkedIn ads management and B2B lead generation, driving ROI through AI-driven ABM and thought leadership. Book a free LinkedIn audit.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
     },
     openGraph: {
         title: "LinkedIn Marketing Services | Cinute InfoMedia",
-        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
+        description: "LinkedIn ads management and B2B lead generation, driving ROI through AI-driven ABM and thought leadership. Book a free LinkedIn audit.",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services",
         type: "website",
         images: [
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "LinkedIn Marketing Services | Cinute InfoMedia",
-        description: "Scale your B2B growth with expert LinkedIn ads management & lead generation services, driving ROI growth through AI-driven ABM and thought leadership. Book your free LinkedIn audit!",
+        description: "LinkedIn ads management and B2B lead generation, driving ROI through AI-driven ABM and thought leadership. Book a free LinkedIn audit.",
         images: ["/og-images/linkedin-marketing-services.webp"],
     },
 
@@ -105,9 +106,29 @@ const jsonLd = {
     ]
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "LinkedIn Marketing", url: "/services/social-media-marketing-services/linkedin-marketing-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services/#breadcrumb"
+    ),
+};
+
 export default function LinkedInMarketingPage() {
     return (
         <main style={{ "--page-selection-bg": "#0A66C2" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

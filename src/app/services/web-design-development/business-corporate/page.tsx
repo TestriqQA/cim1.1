@@ -22,7 +22,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Corporate Website Development | Cinute InfoMedia',
-    description: 'Build a professional corporate website that establishes trust and authority. Our enterprise web development services deliver scalable, brand-aligned digital platforms for corporations, institutions, and established businesses.',
+    description: 'Corporate website development that establishes trust and authority - scalable, brand-aligned platforms for corporations and institutions.',
     url: '/services/web-design-development/business-corporate',
     keywords: [
         'Corporate Website Development',

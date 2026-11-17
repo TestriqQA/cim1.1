@@ -18,10 +18,10 @@ import CTA from "@/components/services/web-design-development/drupal-cms/CTA";
 export const metadata: Metadata = {
     title: "Drupal CMS Development Services | Cinute InfoMedia",
     description:
-        "Expert Drupal CMS development services. We build secure, scalable, and accessible enterprise websites for government, education, healthcare, and large organizations.",
+        "Expert Drupal CMS development. Secure, scalable, accessible enterprise websites for government, education, healthcare and large organisations.",
     openGraph: {
         title: "Drupal CMS Development Services | Cinute InfoMedia",
-        description: "Expert Drupal CMS development services. We build secure, scalable, and accessible enterprise websites for government, education, healthcare, and large organizations.",
+        description: "Expert Drupal CMS development. Secure, scalable, accessible enterprise websites for government, education, healthcare and large organisations.",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/drupal-cms",
         type: "website",
         images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Drupal CMS Development Services | Cinute InfoMedia",
-        description: "Expert Drupal CMS development services. We build secure, scalable, and accessible enterprise websites for government, education, healthcare, and large organizations.",
+        description: "Expert Drupal CMS development. Secure, scalable, accessible enterprise websites for government, education, healthcare and large organisations.",
         images: ["/og-images/drupal-cms.webp"],
     },
     alternates: {
