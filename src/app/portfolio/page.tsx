@@ -22,7 +22,7 @@ export const metadata = getPageMetadata({
     // case study, and it must not drift back into advertising service areas no
     // engagement here covers.
     description:
-        "Client case studies from Cinute InfoMedia, written up as situation, task, action and measured result — Next.js rebuilds, advanced SEO programmes and paid marketing for Testriq QA Lab, Cinute Digital, Ved Solutions and Empiric Business Media.",
+        "Client case studies from Cinute InfoMedia - Next.js rebuilds, advanced SEO and paid marketing, each written up with its measured result.",
     url: pagePath,
     keywords: [
         "portfolio",

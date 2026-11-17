@@ -33,7 +33,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Real Estate Platform Development | Cinute InfoMedia',
-    description: 'Build powerful real estate platforms that showcase properties beautifully, capture leads, and integrate with MLS systems. Custom property listing portals, broker platforms, and virtual tour solutions.',
+    description: 'Real estate platforms that showcase properties, capture leads and integrate with MLS - listing portals, broker platforms and virtual tours.',
     url: '/services/web-design-development/real-estate-platforms',
     keywords: [
         'Real Estate Website Development',

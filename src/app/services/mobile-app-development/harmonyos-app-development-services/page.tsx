@@ -10,11 +10,11 @@ import CTA from "@/components/services/mobile-app-development/harmony-OS-app-dev
 export const metadata: Metadata = {
     title: "HarmonyOS App Development Services | Cinute InfoMedia",
     description:
-        "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
+        "Expert HarmonyOS app development. Distributed apps for Huawei phones, tablets, wearables and IoT, with HMS Core, ArkTS and AppGallery.",
     openGraph: {
         title: "HarmonyOS App Development Services | Cinute InfoMedia",
         description:
-            "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
+            "Expert HarmonyOS app development. Distributed apps for Huawei phones, tablets, wearables and IoT, with HMS Core, ArkTS and AppGallery.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/harmonyos-app-development-services",
         type: "website",
         images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "HarmonyOS App Development Services | Cinute InfoMedia",
         description:
-            "Expert HarmonyOS app development services. Build distributed apps for Huawei smartphones, tablets, wearables, and IoT devices. HMS Core integration, ArkTS & ArkUI development, AppGallery submission.",
+            "Expert HarmonyOS app development. Distributed apps for Huawei phones, tablets, wearables and IoT, with HMS Core, ArkTS and AppGallery.",
         images: ["/og-images/harmony-OS-app-development-services.webp"],
     },
     alternates: {

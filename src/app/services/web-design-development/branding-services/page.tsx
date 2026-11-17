@@ -35,7 +35,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Personal Branding Services & Portfolio Website Design',
-    description: 'Elevate your digital presence with global Personal Branding Services & Portfolio Website Design. Expert development for creatives, execs & founders. Get a Free Strategy Audit!',
+    description: 'Personal branding services and portfolio website design for creatives, executives and founders. Get a free strategy audit.',
     url: '/services/web-design-development/branding-services',
     keywords: [
         'Personal Branding Services',

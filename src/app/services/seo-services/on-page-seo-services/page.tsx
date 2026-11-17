@@ -7,17 +7,18 @@ import Process from "@/components/services/seo-services/on-page-seo-services/Pro
 import WhyChooseUs from "@/components/services/seo-services/on-page-seo-services/WhyChooseUs";
 import FAQ from "@/components/services/seo-services/on-page-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/on-page-seo-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "On-Page SEO Services | Cinute InfoMedia",
     description:
-        "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        "Data-backed on-page SEO optimisation. Rank higher, fix Core Web Vitals and strengthen E-E-A-T with technical audits. Get a free audit today.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
     },
     openGraph: {
         title: "On-Page SEO Services | Cinute InfoMedia",
-        description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        description: "Data-backed on-page SEO optimisation. Rank higher, fix Core Web Vitals and strengthen E-E-A-T with technical audits. Get a free audit today.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services",
         type: "website",
         images: [
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "On-Page SEO Services | Cinute InfoMedia",
-        description: "Scaling ROI with data-backed On-page SEO optimization. Rank higher, fix Core Web Vitals, and dominate SERPs with high-E-E-A-T technical audits. Get a free audit today!",
+        description: "Data-backed on-page SEO optimisation. Rank higher, fix Core Web Vitals and strengthen E-E-A-T with technical audits. Get a free audit today.",
         images: ["/og-images/on-page-seo-services.webp"],
     },
 
@@ -84,9 +85,29 @@ const jsonLd = {
     }
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "On-Page SEO", url: "/services/seo-services/on-page-seo-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services/#breadcrumb"
+    ),
+};
+
 export default function OnPageSEOPage() {
     return (
         <main style={{ "--page-selection-bg": "#22C55E" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

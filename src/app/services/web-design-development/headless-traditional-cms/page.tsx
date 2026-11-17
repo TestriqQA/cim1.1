@@ -21,7 +21,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Headless & Traditional CMS Development | Cinute InfoMedia',
-    description: 'Expert CMS development for headless and traditional platforms. From Contentful, Strapi, and Sanity to WordPress and Drupal - we build CMS solutions that empower your content teams.',
+    description: 'CMS development for headless and traditional platforms - Contentful, Strapi, Sanity, WordPress and Drupal - built around your content team.',
     url: '/services/web-design-development/headless-traditional-cms',
     keywords: [
         'headless cms development',

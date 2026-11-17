@@ -7,6 +7,7 @@ import Process from "@/components/services/seo-services/local-seo-services/Proce
 import WhyChooseUs from "@/components/services/seo-services/local-seo-services/WhyChooseUs";
 import FAQ from "@/components/services/seo-services/local-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/local-seo-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Local SEO Services, Google Maps Marketing | Cinute InfoMedia",
@@ -38,9 +39,29 @@ export const metadata: Metadata = {
 
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "Local SEO", url: "/services/seo-services/local-seo-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/seo-services/local-seo-services/#breadcrumb"
+    ),
+};
+
 export default function LocalSEOPage() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

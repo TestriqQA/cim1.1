@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/services/social-media-marketing-services/t
 import FAQ from "@/components/services/social-media-marketing-services/twitter-ads-management/FAQ";
 import CTA from "@/components/services/social-media-marketing-services/twitter-ads-management/CTA";
 import { Metadata } from 'next';
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
@@ -36,6 +37,22 @@ export const metadata: Metadata = {
         images: ["/og-images/twitter-ads-management.webp"],
     },
 
+};
+
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "X (Twitter) Marketing", url: "/services/social-media-marketing-services/twitter-ads-management" },
+        ],
+        "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management/#breadcrumb"
+    ),
 };
 
 export default function XMarketingPage() {
@@ -132,6 +149,10 @@ export default function XMarketingPage() {
 
     return (
         <main style={{ "--page-selection-bg": "#1D9BF0" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -6,14 +6,15 @@ import TechStack from "@/components/services/social-media-marketing-services/fac
 import Process from "@/components/services/social-media-marketing-services/facebook-marketing-services/Process";
 import WhyChooseUs from "@/components/services/social-media-marketing-services/facebook-marketing-services/WhyChooseUs";
 import CTA from "@/components/services/social-media-marketing-services/facebook-marketing-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Facebook Marketing Services | Cinute InfoMedia",
     description:
-        "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
+        "Facebook marketing services with expert Meta ads management, creative testing and a strong ROAS focus. Get a free audit today.",
     openGraph: {
         title: "Facebook Marketing Services | Cinute InfoMedia",
-        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
+        description: "Facebook marketing services with expert Meta ads management, creative testing and a strong ROAS focus. Get a free audit today.",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services",
         type: "website",
         images: [
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Facebook Marketing Services | Cinute InfoMedia",
-        description: "Scale your brand with expert Facebook marketing services. Expert Meta ads management delivered by a global agency, with a strong ROAS focus. Get a FREE audit today!",
+        description: "Facebook marketing services with expert Meta ads management, creative testing and a strong ROAS focus. Get a free audit today.",
         images: ["/og-images/facebook-marketing-services.webp"],
     },
     alternates: {
@@ -113,9 +114,29 @@ const faqJsonLd = {
     ]
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Facebook Marketing", url: "/services/social-media-marketing-services/facebook-marketing-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services/#breadcrumb"
+    ),
+};
+
 export default function FacebookMarketingPage() {
     return (
         <main style={{ "--page-selection-bg": "#1877F2" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -30,7 +30,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'EdTech & LMS Development | Cinute InfoMedia',
-    description: 'Build powerful online course platforms, learning management systems, and educational apps. We create engaging EdTech solutions with video streaming, quizzes, certifications, and analytics.',
+    description: 'Online course platforms, learning management systems and education apps with video streaming, quizzes, certifications and analytics.',
     url: '/services/web-design-development/edtech-lms',
     keywords: [
         'LMS Development',

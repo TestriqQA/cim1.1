@@ -21,7 +21,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Entertainment & Media Development | Cinute InfoMedia',
-    description: 'Build powerful streaming platforms and content management systems. Create immersive digital entertainment experiences that captivate audiences and drive subscriber growth.',
+    description: 'Streaming platforms and content management systems that build immersive entertainment experiences and drive subscriber growth.',
     url: '/services/web-design-development/entertainment-media',
     keywords: [
         'entertainment website development',

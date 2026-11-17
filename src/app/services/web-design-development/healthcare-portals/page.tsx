@@ -31,7 +31,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'Healthcare Portal Development | Cinute InfoMedia',
-    description: 'Build secure, HIPAA-compliant patient portals, telehealth platforms, and healthcare management systems that improve patient outcomes and streamline provider workflows.',
+    description: 'Secure, HIPAA-compliant patient portals, telehealth platforms and healthcare management systems that improve outcomes and workflows.',
     url: '/services/web-design-development/healthcare-portals',
     keywords: [
         'Healthcare Portal Development',

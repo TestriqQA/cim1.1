@@ -5,6 +5,7 @@ import { allPostsQuery } from "@/sanity/lib/queries";
 import { mapSanityPostToBlogPost, toListPost } from "@/sanity/lib/mapper";
 import { getSidebarData } from "@/sanity/lib/data";
 import { BlogPost } from "@/data/blog";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Blog & Insights on Web Development & SEO | Cinute InfoMedia",
@@ -36,6 +37,20 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 60; // Revalidate every minute
+
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  ...generateBreadcrumbSchema(
+    [
+      { name: "Home", url: "/" },
+      { name: "Blog", url: "/blog" },
+    ],
+    "https://www.cinuteinfomedia.com/blog/#breadcrumb"
+  ),
+};
 
 export default async function BlogPage() {
   // Fetch data from Sanity
@@ -69,6 +84,10 @@ export default async function BlogPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
