@@ -7,6 +7,7 @@ import Process from "@/components/services/social-media-marketing-services/insta
 import WhyChooseUs from "@/components/services/social-media-marketing-services/instagram-marketing-services/WhyChooseUs";
 import FAQ from "@/components/services/social-media-marketing-services/instagram-marketing-services/FAQ";
 import CTA from "@/components/services/social-media-marketing-services/instagram-marketing-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Instagram Marketing Agency | Growth & Ads | Cinute InfoMedia",
@@ -37,9 +38,29 @@ export const metadata: Metadata = {
     },
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Instagram Marketing", url: "/services/social-media-marketing-services/instagram-marketing-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/social-media-marketing-services/instagram-marketing-services/#breadcrumb"
+    ),
+};
+
 export default function InstagramMarketingPage() {
     return (
         <main style={{ "--page-selection-bg": "#E1306C" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

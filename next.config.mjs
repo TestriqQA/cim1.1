@@ -81,7 +81,108 @@ const nextConfig = {
             destination,
             permanent: true,
         }));
+        // The 39 service routes renamed WITHOUT redirects (commit 13cec54 'slug
+        // updates', 30 Jan 2026, plus later passes). Every source below was a live
+        // route and 404s today, so an indexed result or an inbound link to it is a
+        // dead end and its equity is discarded instead of passed on.
+        //
+        // None of these can 308-loop. The warning further down applies to CASE-ONLY
+        // rules, which match their own destination because Next matches `source`
+        // case-insensitively; each rule here changes the path itself, so no
+        // destination equals its own source. Sources are exact-match (no `:path*`),
+        // which is why every child route is listed rather than relying on its parent.
+        //
+        // /products is deliberately absent - see the note above; it stays a 404.
+        const renamedServiceRoutes = {
+            // hub pages
+            '/services/ai-powered-chatbots':
+                '/services/ai-chatbots-services',
+            '/services/ai-workflows-automations':
+                '/services/ai-workflows-automations-services',
+            '/services/social-media-marketing':
+                '/services/social-media-marketing-services',
+            // mobile app development
+            '/services/mobile-app-development/android-app-development':
+                '/services/mobile-app-development/android-app-development-company',
+            '/services/mobile-app-development/cross-platform-app-development':
+                '/services/mobile-app-development/cross-platform-app-development-company',
+            '/services/mobile-app-development/enterprise-app-development':
+                '/services/mobile-app-development/enterprise-application-development-services',
+            '/services/mobile-app-development/harmonyos-app-development':
+                '/services/mobile-app-development/harmonyos-app-development-services',
+            '/services/mobile-app-development/hybrid-app-development':
+                '/services/mobile-app-development/hybrid-app-development-services',
+            '/services/mobile-app-development/ios-app-development':
+                '/services/mobile-app-development/ios-app-development-company',
+            // seo services - two generations of dead slug
+            '/services/organic-growth-seo/content-seo':
+                '/services/seo-services/seo-content-writing-services',
+            '/services/organic-growth-seo/ecommerce-seo':
+                '/services/seo-services/ecommerce-seo-services',
+            '/services/organic-growth-seo/link-building':
+                '/services/seo-services/link-building',
+            '/services/organic-growth-seo/on-page-seo':
+                '/services/seo-services/on-page-seo-services',
+            '/services/organic-growth-seo/technical-seo':
+                '/services/seo-services/technical-seo-services',
+            '/services/seo-services/content-seo':
+                '/services/seo-services/seo-content-writing-services',
+            '/services/seo-services/ecommerce-seo':
+                '/services/seo-services/ecommerce-seo-services',
+            '/services/seo-services/local-seo':
+                '/services/seo-services/local-seo-services',
+            '/services/seo-services/on-page-seo':
+                '/services/seo-services/on-page-seo-services',
+            '/services/seo-services/technical-seo':
+                '/services/seo-services/technical-seo-services',
+            // social media marketing
+            '/services/social-media-marketing/facebook-advertising':
+                '/services/social-media-marketing-services/facebook-marketing-services',
+            '/services/social-media-marketing/facebook-marketing':
+                '/services/social-media-marketing-services/facebook-marketing-services',
+            '/services/social-media-marketing/instagram-marketing':
+                '/services/social-media-marketing-services/instagram-marketing-services',
+            '/services/social-media-marketing/linkedin-marketing':
+                '/services/social-media-marketing-services/linkedin-marketing-services',
+            '/services/social-media-marketing/pinterest-marketing':
+                '/services/social-media-marketing-services/pinterest-marketing',
+            '/services/social-media-marketing/x-twitter-marketing':
+                '/services/social-media-marketing-services/twitter-ads-management',
+            '/services/social-media-marketing/youtube-advertising':
+                '/services/social-media-marketing-services/video-marketing-agency',
+            '/services/social-media-marketing/youtube-marketing':
+                '/services/social-media-marketing-services/video-marketing-agency',
+            '/services/social-media-marketing-services/instagram-marketing':
+                '/services/social-media-marketing-services/instagram-marketing-services',
+            '/services/social-media-marketing-services/linkedin-marketing':
+                '/services/social-media-marketing-services/linkedin-marketing-services',
+            '/services/social-media-marketing-services/x-twitter-marketing':
+                '/services/social-media-marketing-services/twitter-ads-management',
+            '/services/social-media-marketing-services/youtube-marketing':
+                '/services/social-media-marketing-services/video-marketing-agency',
+            // web design & development
+            '/services/web-design-development/astro-framework':
+                '/services/web-design-development/astro-framework-services',
+            '/services/web-design-development/blogs-news-portals':
+                '/services/web-design-development/blog-design-services',
+            '/services/web-design-development/ecommerce-stores':
+                '/services/web-design-development/ecommerce-development-company',
+            '/services/web-design-development/nextjs-react':
+                '/services/web-design-development/nextjs-development-services',
+            '/services/web-design-development/shopify-ecommerce':
+                '/services/web-design-development/shopify-development-services',
+            '/services/web-design-development/travel-hospitality':
+                '/services/web-design-development/travel-and-hospitality-services',
+            '/services/web-design-development/web-applications-saas':
+                '/services/web-design-development/saas-development-services',
+            '/services/web-design-development/wordpress-development':
+                '/services/web-design-development/wordpress-development-services',
+        };
+        const renamedServiceRedirects = Object.entries(renamedServiceRoutes).map(
+            ([source, destination]) => ({ source, destination, permanent: true })
+        );
         return [
+            ...renamedServiceRedirects,
             ...productRedirects,
             ...portfolioRedirects,
             {

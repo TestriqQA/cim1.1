@@ -18,10 +18,10 @@ import CTA from "@/components/services/web-design-development/java-spring-boot/C
 export const metadata: Metadata = {
     title: "Java & Spring Boot Development | Cinute InfoMedia",
     description:
-        "Expert Java and Spring Boot development services. We build scalable, secure enterprise applications, microservices, and high-performance APIs with the Spring ecosystem.",
+        "Expert Java and Spring Boot development. Scalable, secure enterprise applications, microservices and high-performance APIs.",
     openGraph: {
         title: "Java & Spring Boot Development | Cinute InfoMedia",
-        description: "Expert Java and Spring Boot development services. We build scalable, secure enterprise applications, microservices, and high-performance APIs with the Spring ecosystem.",
+        description: "Expert Java and Spring Boot development. Scalable, secure enterprise applications, microservices and high-performance APIs.",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/java-spring-boot",
         type: "website",
         images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Java & Spring Boot Development | Cinute InfoMedia",
-        description: "Expert Java and Spring Boot development services. We build scalable, secure enterprise applications, microservices, and high-performance APIs with the Spring ecosystem.",
+        description: "Expert Java and Spring Boot development. Scalable, secure enterprise applications, microservices and high-performance APIs.",
         images: ["/og-images/java-spring-boot.webp"],
     },
     alternates: {

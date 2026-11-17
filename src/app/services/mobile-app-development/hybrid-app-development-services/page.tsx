@@ -7,6 +7,7 @@ import Process from "@/components/services/mobile-app-development/hybrid-app-dev
 import WhyChooseUs from "@/components/services/mobile-app-development/hybrid-app-development-services/WhyChooseUs";
 import FAQ from "@/components/services/mobile-app-development/hybrid-app-development-services/FAQ";
 import CTA from "@/components/services/mobile-app-development/hybrid-app-development-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Hybrid App Development Services | Cinute InfoMedia",
@@ -35,6 +36,22 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services",
     },
+};
+
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Mobile App Development", url: "/services/mobile-app-development" },
+            { name: "Hybrid App Development", url: "/services/mobile-app-development/hybrid-app-development-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services/#breadcrumb"
+    ),
 };
 
 export default function HybridAppDevelopmentPage() {
@@ -158,6 +175,10 @@ export default function HybridAppDevelopmentPage() {
 
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#00b4d8" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -18,10 +18,10 @@ import CTA from "@/components/services/web-design-development/python-django/CTA"
 export const metadata: Metadata = {
     title: "Python & Django Development | Cinute InfoMedia",
     description:
-        "Expert Python and Django web development services. We build scalable, secure web applications, REST APIs, and enterprise solutions with Python's powerful ecosystem.",
+        "Expert Python and Django web development. Scalable, secure web applications, REST APIs and enterprise solutions. Get a free quote.",
     openGraph: {
         title: "Python & Django Development | Cinute InfoMedia",
-        description: "Expert Python and Django web development services. We build scalable, secure web applications, REST APIs, and enterprise solutions with Python's powerful ecosystem.",
+        description: "Expert Python and Django web development. Scalable, secure web applications, REST APIs and enterprise solutions. Get a free quote.",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/python-django",
         type: "website",
         images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Python & Django Development | Cinute InfoMedia",
-        description: "Expert Python and Django web development services. We build scalable, secure web applications, REST APIs, and enterprise solutions with Python's powerful ecosystem.",
+        description: "Expert Python and Django web development. Scalable, secure web applications, REST APIs and enterprise solutions. Get a free quote.",
         images: ["/og-images/python-django.webp"],
     },
     alternates: {

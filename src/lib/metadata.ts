@@ -97,6 +97,24 @@ export const blogMetadata: Metadata = getPageMetadata({
   url: "/blog",
 });
 
+// Guard for the excerpt fallback below, and nothing else.
+//
+// Excerpts are written for the blog listing, where length does not matter, and run
+// up to 488 characters. If a post is ever published without seo.metaDescription, its
+// excerpt becomes the meta description verbatim; clamping at a word boundary keeps
+// that case inside what Google will display.
+//
+// As of 17 Nov 2026 this never actually runs: all 85 posts in Sanity set
+// seo.metaDescription, so the `||` short-circuits before reaching it. The 44 posts
+// whose descriptions exceeded 160 were fixed in the CMS, not here. Clamping those
+// would have cut off the call to action - which is the thing the length limit
+// threatens in the first place - instead of rewriting them to fit.
+function clampDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const cut = text.lastIndexOf(" ", max);
+  return `${text.slice(0, cut > 0 ? cut : max).trimEnd()}…`;
+}
+
 export function generateBlogPostMetadata(
   title: string,
   excerpt: string,
@@ -115,7 +133,7 @@ export function generateBlogPostMetadata(
 
   // Prioritize SEO fields
   const metaTitle = seo?.metaTitle || `${title} | Cinute InfoMedia`;
-  const metaDescription = seo?.metaDescription || excerpt;
+  const metaDescription = seo?.metaDescription || clampDescription(excerpt);
   const canonicalUrl = seo?.canonicalUrl || `${siteUrl}${url}`;
 
   return {

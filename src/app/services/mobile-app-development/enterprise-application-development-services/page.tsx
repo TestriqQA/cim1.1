@@ -7,15 +7,16 @@ import Process from "@/components/services/mobile-app-development/enterprise-app
 import WhyChooseUs from "@/components/services/mobile-app-development/enterprise-application-development-services/WhyChooseUs";
 import CTA from "@/components/services/mobile-app-development/enterprise-application-development-services/CTA";
 import FAQ from "@/components/services/mobile-app-development/enterprise-application-development-services/FAQ";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Enterprise App Development Services | Cinute InfoMedia",
     description:
-        "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
+        "Enterprise application development services. Custom, secure and scalable enterprise software built for global ROI. Get a quote today.",
     openGraph: {
         title: "Enterprise App Development Services | Cinute InfoMedia",
         description:
-            "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
+            "Enterprise application development services. Custom, secure and scalable enterprise software built for global ROI. Get a quote today.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/enterprise-application-development-services",
         type: "website",
         images: [
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Enterprise App Development Services | Cinute InfoMedia",
         description:
-            "Empower your business with Enterprise Application Development services. Custom, secure, & scalable enterprise software development for global ROI. Get a quote today! 💼",
+            "Enterprise application development services. Custom, secure and scalable enterprise software built for global ROI. Get a quote today.",
         images: ["/og-images/enterprise-application-development.webp"],
     },
     alternates: {
@@ -156,9 +157,29 @@ const jsonLd = {
     ]
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Mobile App Development", url: "/services/mobile-app-development" },
+            { name: "Enterprise App Development", url: "/services/mobile-app-development/enterprise-application-development-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/mobile-app-development/enterprise-application-development-services/#breadcrumb"
+    ),
+};
+
 export default function EnterpriseAppDevelopmentPage() {
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#2563eb" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

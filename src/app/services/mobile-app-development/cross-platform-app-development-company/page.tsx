@@ -8,15 +8,16 @@ import WhyChooseUs from "@/components/services/mobile-app-development/cross-plat
 import CTA from "@/components/services/mobile-app-development/cross-platform-app-development-company/CTA";
 import FAQ from "@/components/services/mobile-app-development/cross-platform-app-development-company/FAQ";
 import Script from "next/script";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Cross-Platform App Development | Cinute InfoMedia",
     description:
-        "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
+        "Cross-platform app development services. High-performance, native-like iOS and Android apps from one codebase - faster delivery, lower cost.",
     openGraph: {
         title: "Cross-Platform App Development | Cinute InfoMedia",
         description:
-            "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
+            "Cross-platform app development services. High-performance, native-like iOS and Android apps from one codebase - faster delivery, lower cost.",
         url: "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company",
         type: "website",
         images: [
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Cross-Platform App Development | Cinute InfoMedia",
         description:
-            "Cross-Platform App Development Services. We build high-performance, native-like iOS & Android apps with a single codebase, for faster delivery at lower cost. Start your project today.",
+            "Cross-platform app development services. High-performance, native-like iOS and Android apps from one codebase - faster delivery, lower cost.",
         images: ["/og-images/cross-platform-app-development.webp"],
     },
     alternates: {
@@ -40,9 +41,29 @@ export const metadata: Metadata = {
     },
 };
 
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Mobile App Development", url: "/services/mobile-app-development" },
+            { name: "Cross-Platform App Development", url: "/services/mobile-app-development/cross-platform-app-development-company" },
+        ],
+        "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company/#breadcrumb"
+    ),
+};
+
 export default function CrossPlatformAppDevelopmentPage() {
     return (
         <main className="min-h-screen" style={{ "--page-selection-bg": "#667eea" } as React.CSSProperties}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <Script
                 id="cross-platform-schema"
                 type="application/ld+json"

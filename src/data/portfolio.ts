@@ -343,7 +343,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/testriq-qa-lab-logo.webp",
     seoTitle: "Testriq QA Lab Case Study | Cinute InfoMedia",
     seoDescription:
-      "How a six-month engagement moved Testriq QA Lab off WordPress onto Next.js, redesigned the UI, and rebuilt site architecture and SEO to grow organic traffic and qualified leads.",
+      "How a six-month engagement moved Testriq QA Lab onto Next.js and rebuilt its architecture and SEO to grow organic traffic and qualified leads.",
   },
 
   // ==========================================================================
@@ -463,7 +463,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/cinute-digital-logo.webp",
     seoTitle: "Cinute Digital Case Study | Cinute InfoMedia",
     seoDescription:
-      "How Cinute Digital moved off WordPress onto Next.js, lifted performance and accessibility, and grew organic traffic and course enquiries through advanced SEO and paid marketing.",
+      "How Cinute Digital moved off WordPress onto Next.js, lifted performance, and grew organic traffic and course enquiries through advanced SEO.",
   },
 
   // ==========================================================================
@@ -576,7 +576,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/ved-solutions-logo.webp",
     seoTitle: "Ved Solutions SEO Case Study | Cinute InfoMedia",
     seoDescription:
-      "How advanced SEO on Ved Solutions' existing site improved their content and organic visibility and grew qualified leads for a UK IT consultancy, with paid campaigns alongside.",
+      "How advanced SEO on Ved Solutions' existing site grew organic visibility and qualified leads for a UK IT consultancy, with paid alongside.",
   },
 
   // ==========================================================================
@@ -691,7 +691,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/empiric-business-media-logo.webp",
     seoTitle: "Empiric Business Media Case Study | Cinute InfoMedia",
     seoDescription:
-      "How a static Next.js rebuild took Empiric Business Media's page speed from 60 to 100, modernised the UI, improved accessibility, and grew impressions and leads with advanced SEO.",
+      "How a static Next.js rebuild took Empiric Business Media from page speed 60 to 100, modernised the UI, and grew impressions and leads.",
   },
 
   // ==========================================================================
@@ -806,7 +806,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/hobby-card-shop-logo.webp",
     seoTitle: "Hobby Card Shop eCommerce Case Study | Cinute InfoMedia",
     seoDescription:
-      "How a trading card store got a custom WordPress theme built from scratch, a responsive WooCommerce storefront, and full control of its own catalogue from the admin.",
+      "How a trading card store got a custom WordPress theme, a responsive WooCommerce storefront, and full control of its own catalogue.",
   },
 
   // ==========================================================================
@@ -988,7 +988,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/you-too-can-run.png",
     seoTitle: "YouTooCanRun Platform Case Study | Cinute InfoMedia",
     seoDescription:
-      "How one Flutter app and Laravel backend carries 21 events across 5 brands for YouTooCanRun — configured rather than forked, with per-event scoring, health integrations from six sources, and 14,989 participants.",
+      "How one Flutter app and Laravel backend carries 21 events across 5 brands for YouTooCanRun - configured, not forked, with 14,989 participants.",
   },
 
   // ==========================================================================
@@ -1119,7 +1119,7 @@ export const clientProjects: ClientProject[] = [
     logo: "/images/logos/you-too-can-run.png",
     seoTitle: "YouTooCanRun Race Platform Case Study | Cinute InfoMedia",
     seoDescription:
-      "Two platforms for YouTooCanRun — a React race-registration site and a Laravel race marketplace — built, deployed, security-audited and maintained end to end.",
+      "Two platforms for YouTooCanRun - a React race-registration site and a Laravel race marketplace - built, deployed, security-audited, maintained.",
   },
 ];
 

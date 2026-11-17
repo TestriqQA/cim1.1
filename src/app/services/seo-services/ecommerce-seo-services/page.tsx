@@ -7,6 +7,7 @@ import Process from "@/components/services/seo-services/ecommerce-seo-services/P
 import WhyChooseUs from "@/components/services/seo-services/ecommerce-seo-services/WhyChooseUs";
 import FAQ from "@/components/services/seo-services/ecommerce-seo-services/FAQ";
 import CTA from "@/components/services/seo-services/ecommerce-seo-services/CTA";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Ecommerce SEO Services | Shopify, Magento | Cinute InfoMedia",
@@ -35,6 +36,22 @@ export const metadata: Metadata = {
         images: ["/og-images/ecommerce-seo-services.webp"],
     },
 
+};
+
+// T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
+// service tree. Added as a standalone block so the schema already on the page
+// is left exactly as it was.
+const breadcrumbLd = {
+    "@context": "https://schema.org",
+    ...generateBreadcrumbSchema(
+        [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "Ecommerce SEO", url: "/services/seo-services/ecommerce-seo-services" },
+        ],
+        "https://www.cinuteinfomedia.com/services/seo-services/ecommerce-seo-services/#breadcrumb"
+    ),
 };
 
 export default function EcommerceSEOPage() {
@@ -165,6 +182,10 @@ export default function EcommerceSEOPage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
