@@ -10,7 +10,6 @@ import { teamMembers } from "@/data/team";
 import { getPageMetadata } from "@/lib/metadata";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -78,12 +77,6 @@ export default function OurTeamPage() {
     };
 
     const ourTeamSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description:
-                "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

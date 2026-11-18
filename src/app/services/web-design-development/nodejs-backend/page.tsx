@@ -9,7 +9,6 @@ import CTA from "@/components/services/web-design-development/nodejs-backend/CTA
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -38,11 +37,6 @@ export const metadata = getPageMetadata({
 
 export default function NodejsBackendPage() {
     const nodejsSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -59,8 +53,8 @@ export default function NodejsBackendPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Node.js & Backend Development", url: "/services/web-design-development/nodejs-backend" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Node.js & Backend", url: "/services/web-design-development/nodejs-backend" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/nodejs-backend/#breadcrumb"),
 
         generateServiceSchema({

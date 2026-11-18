@@ -48,7 +48,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Social Media", url: "/services/social-media-marketing-services" },
             { name: "YouTube Marketing", url: "/services/social-media-marketing-services/video-marketing-agency" },
         ],
         "https://www.cinuteinfomedia.com/services/social-media-marketing-services/video-marketing-agency/#breadcrumb"
@@ -68,13 +68,6 @@ export default function YouTubeMarketingPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@graph": [
-                            {
-                                "@type": "Organization",
-                                "@id": "https://www.cinuteinfomedia.com/#organization",
-                                "name": "Cinute InfoMedia",
-                                "url": "https://www.cinuteinfomedia.com",
-                                "logo": "https://www.cinuteinfomedia.com/images/logo.png"
-                            },
                             {
                                 "@type": "Service",
                                 "name": "YouTube Marketing Services",

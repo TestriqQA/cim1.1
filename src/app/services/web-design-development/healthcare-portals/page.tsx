@@ -19,7 +19,6 @@ const Process = dynamic(() => import('@/components/services/web-design-developme
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -45,11 +44,6 @@ export const metadata = getPageMetadata({
 
 export default function HealthcarePortalsPage() {
     const healthcareSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -66,8 +60,8 @@ export default function HealthcarePortalsPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Healthcare Portal Development", url: "/services/web-design-development/healthcare-portals" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Healthcare Portals", url: "/services/web-design-development/healthcare-portals" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/healthcare-portals/#breadcrumb"),
 
         generateServiceSchema({

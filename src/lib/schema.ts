@@ -2,6 +2,15 @@ import { BlogPost, Author } from "@/data/blog";
 
 const siteUrl = "https://www.cinuteinfomedia.com";
 
+/**
+ * SEO 4-week plan, section 4: do not publish the street address, phone number
+ * or map point in structured data until the team confirms they match the
+ * Google Business Profile exactly. While false, the Organization node (home
+ * page) omits them and /contact emits no ProfessionalService node. The values
+ * are kept below; set this to true once they are confirmed.
+ */
+export const NAP_CONFIRMED = false;
+
 // ============================================================
 // HELPER — Wraps multiple schemas into a single @graph
 // ============================================================
@@ -51,30 +60,32 @@ export function generateOrganizationSchema(overrides?: {
     ...(overrides?.hasOfferCatalogId && {
       "hasOfferCatalog": { "@id": overrides.hasOfferCatalogId },
     }),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress":
-        "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-      "addressLocality": "Mira Road, Mira Bhayandar",
-      "addressRegion": "Maharashtra",
-      "postalCode": "401107",
-      "addressCountry": "IN",
-    },
-    "location": overrides?.locationId
-      ? { "@id": overrides.locationId }
-      : {
-          "@type": "Place",
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "19.2812",
-            "longitude": "72.8685",
+    ...(NAP_CONFIRMED ? {
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress":
+          "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
+        "addressLocality": "Mira Road, Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN",
+      },
+      "location": overrides?.locationId
+        ? { "@id": overrides.locationId }
+        : {
+            "@type": "Place",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "19.2812",
+              "longitude": "72.8685",
+            },
           },
-        },
-    "telephone": "+919004988859",
+      "telephone": "+919004988859",
+    } : {}),
     "email": "contact@cinuteinfomedia.com",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+919004988859",
+      ...(NAP_CONFIRMED ? { "telephone": "+919004988859" } : {}),
       "contactType": "customer service",
       "email": "contact@cinuteinfomedia.com",
       "availableLanguage": ["English", "Hindi"],
@@ -218,9 +229,12 @@ export function generateContactPageSchema(params: {
     "about": {
       "@id": `${siteUrl}/#organization`,
     },
-    "mainEntity": {
-      "@id": `${siteUrl}${params.urlPath}/#professional-service`,
-    },
+    // The ProfessionalService node exists only once the address is confirmed.
+    ...(NAP_CONFIRMED ? {
+      "mainEntity": {
+        "@id": `${siteUrl}${params.urlPath}/#professional-service`,
+      },
+    } : {}),
     "publisher": {
       "@id": `${siteUrl}/#organization`,
     },
@@ -523,11 +537,6 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
   const authorSlug = post.author.name.toLowerCase().replace(/\s+/g, "-");
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {
@@ -613,11 +622,6 @@ export function generateCategoryPageGraphSchema(params: {
   const description = params.seo?.metaDescription || params.description || `Explore articles about ${params.categoryName}.`;
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {
@@ -673,11 +677,6 @@ export function generateAuthorPageGraphSchema(params: {
   const pageUrl = `${siteUrl}/blog/author/${authorSlug}`;
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {

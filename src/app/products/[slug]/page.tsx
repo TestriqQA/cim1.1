@@ -10,7 +10,6 @@ import ProductCTA from "@/components/products/detail/ProductCTA";
 import ProductLinks from "@/components/products/detail/ProductLinks";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -88,12 +87,6 @@ export default async function ProductPage({
 
     // JSON-LD: SoftwareApplication schema
     const productSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description:
-                "Cinute InfoMedia (CIM) is a digital growth agency building AI-powered products and tools for businesses worldwide.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

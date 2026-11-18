@@ -1,5 +1,3 @@
-"use client";
-
 import { Zap, Cpu, TrendingUp, Shield, Workflow, Clock, Target, Sparkles } from "lucide-react";
 import Link from "next/link";
 

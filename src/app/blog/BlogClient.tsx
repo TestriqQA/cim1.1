@@ -18,9 +18,11 @@ interface BlogClientProps {
     categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
+    /** Server-rendered list of every post (BlogArchive), shown under the grid. */
+    archive?: React.ReactNode;
 }
 
-export default function BlogClient({ initialPosts, categories, popularPosts, tags }: BlogClientProps) {
+export default function BlogClient({ initialPosts, categories, popularPosts, tags, archive }: BlogClientProps) {
     const [searchQuery, setSearchQuery] = useState("");
     const [isTagSearch, setIsTagSearch] = useState(false);
     // Stored with the query it was counted against, so starting a new search
@@ -436,6 +438,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                     </Link>
                                 </div>
                             )}
+                            {!hasActiveSearch && archive}
                         </div>
 
                         {/* Sidebar */}

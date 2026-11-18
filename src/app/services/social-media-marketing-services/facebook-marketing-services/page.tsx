@@ -41,11 +41,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Facebook Marketing Services",
-    "provider": {
-        "@type": "Organization",
-        "name": "Cinute InfoMedia",
-        "url": "https://www.cinuteinfomedia.com"
-    },
+    "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
     "serviceType": "Digital Marketing",
     "areaServed": ["US", "EU", "IN", "APAC"],
     "description": "Expert Facebook marketing agency providing Meta ads management, lead generation, and e-commerce scaling services with a focus on high ROAS and technical E-E-A-T optimization.",
@@ -83,36 +79,8 @@ const jsonLd = {
     }
 };
 
-const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "How much do professional Facebook marketing services cost?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Professional services typically involve a retainer starting at $1,500–$5,000 or 10-20% of ad spend. We offer tailored packages based on your specific business goals."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What are the benefits of hiring a Facebook advertising agency?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Hiring an agency provides expert optimization, better tool access, and lower CPAs by avoiding costly trial-and-error mistakes."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How long does it take to see ROI from Facebook ads?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Initial results can appear in 48 hours for retargeting, but full optimization usually takes 2-4 weeks to stabilize and scale profitably."
-            }
-        }
-    ]
-};
+// FAQPage markup removed 2026-11-18: this page shows no FAQ, and Google requires
+// FAQ markup to match visible questions and answers.
 
 // T5 follow-up: this page emitted no BreadcrumbList, unlike the rest of the
 // service tree. Added as a standalone block so the schema already on the page
@@ -123,8 +91,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
-            { name: "Facebook Marketing", url: "/services/social-media-marketing-services/facebook-marketing-services" },
+            { name: "Social Media", url: "/services/social-media-marketing-services" },
+            { name: "Facebook Ads", url: "/services/social-media-marketing-services/facebook-marketing-services" },
         ],
         "https://www.cinuteinfomedia.com/services/social-media-marketing-services/facebook-marketing-services/#breadcrumb"
     ),
@@ -140,10 +108,6 @@ export default function FacebookMarketingPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
             />
             <Hero />
             <ServiceOverview />

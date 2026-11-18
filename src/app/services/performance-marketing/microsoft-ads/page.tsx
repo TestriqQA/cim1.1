@@ -1,15 +1,41 @@
+import dynamic from "next/dynamic";
+import ServiceGuide from "@/components/services/ServiceGuide";
+import Link from "next/link";
+import { microsoftAdsIncludes, microsoftAdsFit } from "@/data/serviceGuides";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { microsoftAdsFaqs } from "@/data/serviceFaqs";
 import Hero from "@/components/services/performance-marketing/microsoft-ads/Hero";
-import ServiceOverview from "@/components/services/performance-marketing/microsoft-ads/ServiceOverview";
-import SolutionTypes from "@/components/services/performance-marketing/microsoft-ads/SolutionTypes";
-import TechStack from "@/components/services/performance-marketing/microsoft-ads/TechStack";
-import Process from "@/components/services/performance-marketing/microsoft-ads/Process";
-import WhyChooseUs from "@/components/services/performance-marketing/microsoft-ads/WhyChooseUs";
-import CTA from "@/components/services/performance-marketing/microsoft-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
+// Below-the-fold sections load as separate chunks so they hydrate in their
+// own tasks instead of one long main-thread block (SEO 4-week plan, P3).
+const ServiceOverview = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/ServiceOverview"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const SolutionTypes = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/SolutionTypes"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const TechStack = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/TechStack"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const Process = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/Process"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const WhyChooseUs = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/WhyChooseUs"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const CTA = dynamic(() => import("@/components/services/performance-marketing/microsoft-ads/CTA"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
 export const metadata = getPageMetadata({
-    title: "Microsoft Ads Agency | Bing Advertising | Cinute InfoMedia",
-    description: "Reach high-value audiences on Bing, Yahoo, and AOL with our expert Microsoft Ads management services. Maximize ROI with targeted campaigns.",
+    title: "Microsoft Advertising (Bing Ads) Agency | Cinute InfoMedia",
+    description: "Microsoft Advertising (Bing Ads) agency: campaign setup, keyword research, optimisation and reporting. Request a proposal.",
     url: "/services/performance-marketing/microsoft-ads",
     image: "/og-images/microsoft_ads.webp",
 });
@@ -24,27 +50,7 @@ export default function MicrosoftAdsPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "Microsoft Ads Management",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com",
-                            "logo": "https://www.cinuteinfomedia.com/logo.png",
-                            "description": "Global Web Design, Development & Digital Marketing Agency",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                                "addressLocality": "Mira Road, Mira Bhayandar",
-                                "addressRegion": "Maharashtra",
-                                "postalCode": "401107",
-                                "addressCountry": "IN"
-                            },
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "telephone": "+919004988859",
-                                "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Hindi"]
-                            }
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                         "hasOfferCatalog": {
                             "@type": "OfferCatalog",
@@ -109,7 +115,26 @@ export default function MicrosoftAdsPage() {
             <div id="process">
                 <Process />
             </div>
+            <ServiceGuide
+                id="whats-included"
+                title="What Our Microsoft Advertising (Bing Ads) Management Includes"
+                intro="Every account gets the same core work, whether you are new to Bing or want us to take over an existing account."
+                items={microsoftAdsIncludes}
+                accent="var(--brand-blue-text)"
+            />
+            <ServiceGuide
+                title="Who Microsoft Advertising Works Best For"
+                items={microsoftAdsFit}
+                accent="var(--brand-blue-text)"
+                footer={<>Not sure Bing is right for you? Read our comparison of <Link href="/blog/microsoft-ads-vs-google-ads-for-smbs" className="underline underline-offset-2 hover:text-[var(--brand-blue-text)]">Microsoft Ads vs Google Ads for small businesses</Link>.</>}
+            />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={microsoftAdsFaqs}
+                accent="var(--brand-blue-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/performance-marketing/microsoft-ads"
+                subtitle="Common questions about Microsoft Advertising (Bing Ads) management."
+            />
             <CTA />
         </main>
     );

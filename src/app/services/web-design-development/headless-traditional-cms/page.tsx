@@ -1,4 +1,6 @@
 import Hero from "@/components/services/web-design-development/headless-traditional-cms/Hero";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { headlessCmsFaqs } from "@/data/serviceFaqs";
 import ServiceOverview from "@/components/services/web-design-development/headless-traditional-cms/ServiceOverview";
 import SolutionTypes from "@/components/services/web-design-development/headless-traditional-cms/SolutionTypes";
 import TechStack from "@/components/services/web-design-development/headless-traditional-cms/TechStack";
@@ -9,7 +11,6 @@ import CTA from "@/components/services/web-design-development/headless-tradition
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -20,8 +21,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Headless & Traditional CMS Development | Cinute InfoMedia',
-    description: 'CMS development for headless and traditional platforms - Contentful, Strapi, Sanity, WordPress and Drupal - built around your content team.',
+    title: 'Headless CMS Development Services | Cinute InfoMedia',
+    description: 'Headless CMS development services with Contentful, Strapi and Sanity, plus WordPress and Drupal, built around your content team. Request a quote.',
     url: '/services/web-design-development/headless-traditional-cms',
     keywords: [
         'headless cms development',
@@ -38,15 +39,10 @@ export const metadata = getPageMetadata({
 
 export default function HeadlessTraditionalCMSPage() {
     const cmsSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Headless & Traditional CMS Development | Cinute InfoMedia",
+            name: "Headless CMS Development Services | Cinute InfoMedia",
             description: "Expert CMS development for headless and traditional platforms. From Contentful, Strapi, and Sanity to WordPress and Drupal - we build CMS solutions that empower your content teams.",
             urlPath: "/services/web-design-development/headless-traditional-cms",
             datePublished: "2025-01-01",
@@ -59,8 +55,8 @@ export default function HeadlessTraditionalCMSPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Headless & Traditional CMS Development", url: "/services/web-design-development/headless-traditional-cms" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Headless & Traditional CMS", url: "/services/web-design-development/headless-traditional-cms" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/headless-traditional-cms/#breadcrumb"),
 
         generateServiceSchema({
@@ -126,6 +122,12 @@ export default function HeadlessTraditionalCMSPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={headlessCmsFaqs}
+                accent="var(--accent-violet-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/web-design-development/headless-traditional-cms"
+                subtitle="Common questions about headless CMS development services."
+            />
             <CTA />
         </main>
     );

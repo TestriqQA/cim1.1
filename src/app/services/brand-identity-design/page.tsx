@@ -28,7 +28,6 @@ const CTA = dynamic(() => import('@/components/services/brand-identity-design/CT
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -60,11 +59,6 @@ export const metadata = getPageMetadata({
 
 export default function BrandIdentityDesignPage() {
     const brandSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -81,7 +75,7 @@ export default function BrandIdentityDesignPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Brand Identity Design", url: "/services/brand-identity-design" },
+            { name: "Brand Identity & Design", url: "/services/brand-identity-design" },
         ], "https://www.cinuteinfomedia.com/services/brand-identity-design/#breadcrumb"),
 
         {

@@ -140,13 +140,16 @@ export default function BlogDetailClient({
     relatedPosts,
     categories,
     popularPosts,
-    tags
+    tags,
+    relatedServices,
 }: {
     post: BlogPost;
     relatedPosts: BlogPost[];
     categories: BlogCategoryLink[];
     popularPosts: BlogPost[];
     tags: string[];
+    /** Server-rendered BlogRelatedServices block, shown above Related Articles. */
+    relatedServices?: React.ReactNode;
 }) {
     // const relatedPosts = useMemo(...) // Removed local calculation
 
@@ -194,8 +197,13 @@ export default function BlogDetailClient({
             >
 
                 <div className="relative px-4 sm:px-6 md:px-12 xl:px-16 py-6 sm:py-8 lg:py-10">
-                    {/* Breadcrumb */}
-                    <nav className="hidden md:flex items-center gap-2 text-sm mb-8 max-w-7xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                    {/* Breadcrumb: same four items as the BreadcrumbList in
+                        generateBlogPostGraphSchema (Home > Blog > category > title) */}
+                    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm mb-6 md:mb-8 max-w-7xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        <Link href="/" className="hover:text-[var(--brand-purple-text)] transition-colors">
+                            Home
+                        </Link>
+                        <span>/</span>
                         <Link href="/blog" className="hover:text-[var(--brand-purple-text)] transition-colors">
                             Blog
                         </Link>
@@ -207,7 +215,7 @@ export default function BlogDetailClient({
                             {post.category}
                         </Link>
                         <span>/</span>
-                        <span className="text-[var(--foreground)] line-clamp-1">{post.title}</span>
+                        <span className="text-[var(--foreground)] line-clamp-1 min-w-0">{post.title}</span>
                     </nav>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
@@ -341,6 +349,8 @@ export default function BlogDetailClient({
                                     ))}
                                 </div>
                             </div>
+
+                            {relatedServices}
 
                             {/* Related Posts */}
                             {relatedPosts && relatedPosts.length > 0 && (

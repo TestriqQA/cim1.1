@@ -47,7 +47,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Social Media", url: "/services/social-media-marketing-services" },
             { name: "Instagram Marketing", url: "/services/social-media-marketing-services/instagram-marketing-services" },
         ],
         "https://www.cinuteinfomedia.com/services/social-media-marketing-services/instagram-marketing-services/#breadcrumb"
@@ -68,11 +68,7 @@ export default function InstagramMarketingPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "Instagram Marketing Services",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com"
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": "Global",
                         "description": "Expert Instagram Marketing Services including Reels production, ad management, and organic growth strategies for global brands.",
                         "mainEntityOfPage": {
@@ -112,43 +108,28 @@ export default function InstagramMarketingPage() {
                             {
                                 "@type": "Question",
                                 "name": "What are Instagram marketing services?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Instagram marketing services encompass a wide range of activities designed to grow a brand's presence on the platform. This includes Instagram management, content creation, Instagram advertising, influencer outreach, and community engagement to drive brand awareness and sales."
-                                }
+                                "acceptedAnswer": { "@type": "Answer", "text": "Instagram marketing services encompass a wide range of activities designed to grow a brand's presence on the platform. This includes Instagram Management Services, content creation, Instagram Advertising Services, influencer outreach, and community engagement to drive brand awareness and sales." },
                             },
                             {
                                 "@type": "Question",
                                 "name": "How much do Instagram marketing services cost?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "The cost varies based on the scope of work, such as the number of Reels, ad spend management, or full-service management. Contact us for a custom quote tailored to your business needs."
-                                }
+                                "acceptedAnswer": { "@type": "Answer", "text": "The cost varies based on the scope of work (e.g., number of Reels, ad spend management, or full-service management). Most agencies offer tiers ranging from $1,500 to $10,000+ per month. Contact us for a custom quote tailored to your business needs." },
                             },
                             {
                                 "@type": "Question",
                                 "name": "What should an Instagram marketing strategy include?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "A robust strategy includes visual brand guidelines, a content calendar covering Reels, Stories, and Posts, a targeted hashtag strategy, Instagram ad campaign management, and a plan for community engagement and influencer partnerships."
-                                }
+                                "acceptedAnswer": { "@type": "Answer", "text": "A robust strategy includes visual brand guidelines, a content calendar (Reels, Stories, Posts), a targeted hashtag strategy, Instagram ad campaign management, and a plan for community engagement and influencer partnerships." },
                             },
                             {
                                 "@type": "Question",
                                 "name": "Why should businesses use Instagram marketing services?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "With the platform's shift toward social commerce and Reels, professional management ensures you stay ahead of algorithm changes, maintain high-quality aesthetics, and achieve stronger click-through performance than in-house management often yields."
-                                }
+                                "acceptedAnswer": { "@type": "Answer", "text": "With the platform's shift toward Social Commerce and Reels, professional management ensures you stay ahead of algorithm changes, maintain high-quality aesthetics, and achieve a higher CTR than in-house management often yields." },
                             },
                             {
                                 "@type": "Question",
                                 "name": "How do I choose the best Instagram marketing agency?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Look for an agency with a proven track record and demonstrated experience, industry-specific expertise, transparency in reporting, and a focus on return on investment rather than just follower counts."
-                                }
-                            }
+                                "acceptedAnswer": { "@type": "Answer", "text": "Look for an agency with a proven track record (EEAT), industry-specific experience, transparency in reporting, and a focus on ROI rather than just follower counts." },
+                            },
                         ]
                     })
                 }}

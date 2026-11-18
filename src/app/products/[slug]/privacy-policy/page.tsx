@@ -5,7 +5,6 @@ import ProductPrivacyClient from "./ProductPrivacyClient";
 import { isProductListed } from "@/data/products";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -84,12 +83,6 @@ export default async function ProductPrivacyPage({
     const siteUrl = "https://www.cinuteinfomedia.com";
 
     const privacySchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description:
-                "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

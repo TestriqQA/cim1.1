@@ -73,7 +73,7 @@ export default function Hero() {
                         {/* Heading */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
                             <span style={{ color: "var(--brand-blue-text)" }}>
-                                Transform Your Business with Expert Web Development Services
+                                Website Development Company Building Fast, Scalable Sites
                             </span>
                         </h1>
 

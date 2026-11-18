@@ -2,7 +2,6 @@ import TermsOfServiceClient from "./TermsOfServiceClient";
 import { getPageMetadata } from "@/lib/metadata";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -17,11 +16,6 @@ export const metadata = getPageMetadata({
 
 export default function TermsOfServicePage() {
     const termsSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

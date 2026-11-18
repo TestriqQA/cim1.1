@@ -95,7 +95,7 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Dominate <Link href="/services/seo-services" className="hover:text-[var(--accent-amber-text)] transition-colors">Local Search</Link> & Attract{" "}
+                            Local Maps SEO Services That Attract{" "}
                             <span className="relative inline-block" style={{ color: "var(--accent-amber-text)" }}>
                                 <Link href="/services/performance-marketing" className="hover:underline text-inherit">High-Intent Customers</Link>
                                 <svg

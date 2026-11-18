@@ -18,7 +18,6 @@ const Process = dynamic(() => import('@/components/services/web-design-developme
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -45,11 +44,6 @@ export const metadata = getPageMetadata({
 
 export default function EdTechLMSPage() {
     const edtechSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -66,8 +60,8 @@ export default function EdTechLMSPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "EdTech & LMS Development", url: "/services/web-design-development/edtech-lms" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "EdTech & LMS", url: "/services/web-design-development/edtech-lms" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/edtech-lms/#breadcrumb"),
 
         generateServiceSchema({

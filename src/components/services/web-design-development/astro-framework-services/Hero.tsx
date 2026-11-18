@@ -87,7 +87,7 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Lightning-Fast Sites with{" "}
+                            Astro Development Agency for{" "}
                             <span
                                 className="relative inline-block"
                                 style={{
@@ -96,7 +96,7 @@ export default function Hero() {
                                     WebkitTextFillColor: "transparent",
                                 }}
                             >
-                                Astro Framework Services
+                                Lightning-Fast Sites
                                 {/* Underline decoration */}
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-30"

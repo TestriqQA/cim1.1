@@ -28,7 +28,6 @@ const FAQ = dynamic(() => import('@/components/services/seo-services/FAQ'), {
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -58,11 +57,6 @@ export const metadata = getPageMetadata({
 
 export default function OrganicGrowthSEOPage() {
     const seoSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -79,7 +73,7 @@ export default function OrganicGrowthSEOPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "Organic Growth & SEO", url: "/services/seo-services" },
         ], "https://www.cinuteinfomedia.com/services/seo-services/#breadcrumb"),
 
         generateServiceSchema({

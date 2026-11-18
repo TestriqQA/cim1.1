@@ -1,4 +1,5 @@
 import BlogDetailClient from "./BlogDetailClient";
+import BlogRelatedServices from "@/components/blog/BlogRelatedServices";
 import { generateBlogPostMetadata } from "@/lib/metadata";
 import { generateBlogPostGraphSchema } from "@/lib/schema";
 import { notFound } from "next/navigation";
@@ -87,6 +88,7 @@ export default async function BlogDetailPage({ params }: Props) {
         categories={categories}
         popularPosts={popularPosts}
         tags={tags}
+        relatedServices={<BlogRelatedServices categorySlug={sanityPost.category?.slug?.current} postSlug={slug} />}
       />
     </>
   );

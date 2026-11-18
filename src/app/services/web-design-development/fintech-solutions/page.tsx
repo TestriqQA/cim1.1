@@ -16,7 +16,6 @@ const Process = dynamic(() => import('@/components/services/web-design-developme
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -43,11 +42,6 @@ export const metadata = getPageMetadata({
 
 export default function FinTechSolutionsPage() {
     const fintechSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -64,7 +58,7 @@ export default function FinTechSolutionsPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
+            { name: "Web Design", url: "/services/web-design-development" },
             { name: "FinTech Solutions", url: "/services/web-design-development/fintech-solutions" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/fintech-solutions/#breadcrumb"),
 

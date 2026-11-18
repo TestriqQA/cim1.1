@@ -47,8 +47,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Mobile App Development", url: "/services/mobile-app-development" },
-            { name: "Hybrid App Development", url: "/services/mobile-app-development/hybrid-app-development-services" },
+            { name: "Mobile Apps", url: "/services/mobile-app-development" },
+            { name: "Hybrid Apps", url: "/services/mobile-app-development/hybrid-app-development-services" },
         ],
         "https://www.cinuteinfomedia.com/services/mobile-app-development/hybrid-app-development-services/#breadcrumb"
     ),
@@ -61,11 +61,7 @@ export default function HybridAppDevelopmentPage() {
             {
                 "@type": "Service",
                 "name": "Hybrid App Development Services",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "Cinute InfoMedia",
-                    "url": "https://www.cinuteinfomedia.com",
-                },
+                "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                 "description":
                     "High-performance hybrid mobile app development services using Ionic and Capacitor. Single codebase solutions for iOS and Android.",
                 "areaServed": "Global",

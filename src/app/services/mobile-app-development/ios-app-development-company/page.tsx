@@ -46,8 +46,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Mobile App Development", url: "/services/mobile-app-development" },
-            { name: "iOS App Development", url: "/services/mobile-app-development/ios-app-development-company" },
+            { name: "Mobile Apps", url: "/services/mobile-app-development" },
+            { name: "iOS Development", url: "/services/mobile-app-development/ios-app-development-company" },
         ],
         "https://www.cinuteinfomedia.com/services/mobile-app-development/ios-app-development-company/#breadcrumb"
     ),
@@ -69,11 +69,7 @@ export default function iOSAppDevelopmentPage() {
                             {
                                 "@type": "Service",
                                 "name": "iOS App Development Services",
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": "Cinute Digital",
-                                    "url": "https://www.cinuteinfomedia.com"
-                                },
+                                "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                                 "serviceType": "Mobile App Development",
                                 "areaServed": "Global",
                                 "description": "Premium iOS App Development Services using Swift & SwiftUI. We build custom iPhone & iPad apps for startups and enterprises with a focus on performance and UX.",

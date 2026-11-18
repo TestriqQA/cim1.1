@@ -71,10 +71,10 @@ export default function Hero() {
 
                         {/* Headline */}
                         <h1
-                            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                            className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Power Your Content With{" "}
+                            Headless CMS Development Services for{" "}
                             <span
                                 style={{
                                     background: "linear-gradient(135deg, #9333ea, #c084fc)",
@@ -82,7 +82,7 @@ export default function Hero() {
                                     WebkitTextFillColor: "transparent",
                                 }}
                             >
-                                Modern CMS
+                                Modern Content
                             </span>
                         </h1>
 

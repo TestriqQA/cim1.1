@@ -10,7 +10,6 @@ import CTA from "@/components/services/web-design-development/nextjs-development
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -42,11 +41,6 @@ export const metadata = getPageMetadata({
 
 export default function NextjsReactPage() {
     const nextjsSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -63,8 +57,8 @@ export default function NextjsReactPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Next.js Development Services", url: "/services/web-design-development/nextjs-development-services" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Next.js & React", url: "/services/web-design-development/nextjs-development-services" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/nextjs-development-services/#breadcrumb"),
 
         generateServiceSchema({

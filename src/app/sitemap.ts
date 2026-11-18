@@ -22,7 +22,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // mtimes and Vercel normalises them to a fixed build constant (epoch 1540000000
   // = 2018-10-20T01:46:40Z), so all 59 /services/ URLs advertised that false date.
   // Bump this when service page content actually changes.
-  const servicesLastModified = "2026-11-05T00:00:00.000Z";
+  // 2026-11-18: every service page gained the Related services block, plus new
+  // titles/H1s on the priority pages (SEO 4-week plan, P1).
+  const servicesLastModified = "2026-11-18T00:00:00.000Z";
 
   // 1. Static Routes (with realistic, stable lastModified dates)
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -111,18 +113,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       client.fetch(categoriesQuery),
     ]);
 
-    // 3. Dynamic Blog Routes (using actual publishedAt dates)
+    // 3. Dynamic Blog Routes. lastmod is the post's last real edit, not its
+    // publish date: the editor's schema.dateModified override, else Sanity's
+    // _updatedAt, and never earlier than publishedAt. Same rule as the
+    // BlogPosting dateModified in lib/schema.ts, so the two always agree.
+    const postLastModified = (post: any): string => {
+      const published = new Date(post.publishedAt).getTime();
+      const edited = new Date(post.schema?.dateModified || post._updatedAt || post.publishedAt).getTime();
+      return new Date(Number.isNaN(edited) ? published : Math.max(published, edited)).toISOString();
+    };
+
     blogPostRoutes = posts.map((post: any) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.publishedAt).toISOString(),
+      lastModified: postLastModified(post),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
 
+    // A category page and the /blog index list posts, so they change whenever
+    // one of their posts does: use the newest post date they show.
+    const latestByCategory = new Map<string, string>();
+    let latestPost = staticLastModified;
+    for (const post of posts) {
+      const lastModified = postLastModified(post);
+      if (lastModified > latestPost) latestPost = lastModified;
+      const categoryId = post.category?._id;
+      if (categoryId && lastModified > (latestByCategory.get(categoryId) || "")) {
+        latestByCategory.set(categoryId, lastModified);
+      }
+    }
+    const blogIndex = staticRoutes.find((r) => r.url === `${baseUrl}/blog`);
+    if (blogIndex) blogIndex.lastModified = latestPost;
+
     // 4. Dynamic Category Routes
     blogCategoryRoutes = categories.map((cat: any) => ({
       url: `${baseUrl}/blog/category/${cat.slug}`,
-      lastModified: staticLastModified,
+      lastModified: latestByCategory.get(cat._id) || staticLastModified,
       changeFrequency: "weekly" as const,
       priority: 0.6,
     }));
