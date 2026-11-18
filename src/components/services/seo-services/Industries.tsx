@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
     Rocket, Cloud, ShoppingCart, Building2, Briefcase, ArrowRight, Users,
     TrendingUp, Zap, Package, MapPin, Globe2, Target, Star, Sparkles,
-    BarChart3, Award, ChevronRight
+    BarChart3, Award
 } from "lucide-react";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ export default function Industries() {
             decorIcon: BarChart3,
             accentIcon: Target,
             title: "Organic SEO for SaaS Companies",
-            description: <span>We understand B2B cycles. We reduce CAC and increase LTV by targeting decision-makers searching for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-white transition-colors">software solutions</Link>.</span>,
+            description: <span>We understand B2B cycles. We reduce CAC and increase LTV by targeting decision-makers searching for <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:text-[var(--accent-green-text)] transition-colors">software solutions</Link>.</span>,
             color: "#14b8a6",
             gradient: "from-emerald-500 to-teal-600",
             stats: "High LTV",
@@ -26,7 +26,7 @@ export default function Industries() {
             icon: ShoppingCart,
             decorIcon: Package,
             accentIcon: Star,
-            title: <span><Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-white transition-colors">Organic Growth SEO for Ecommerce</Link></span>,
+            title: <span><Link href="/services/seo-services/ecommerce-seo-services" className="hover:text-[var(--accent-green-text)] transition-colors">Organic Growth SEO for Ecommerce</Link></span>,
             description: "Scale your store. We optimize thousands of SKUs programmatically to capture traffic from every product search.",
             color: "#06b6d4",
             gradient: "from-teal-500 to-cyan-600",
@@ -64,7 +64,7 @@ export default function Industries() {
     };
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
+        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
             backgroundColor: "var(--card-bg)",
             borderColor: "var(--border-color)",
         }}>
@@ -106,17 +106,17 @@ export default function Industries() {
                 ))}
             </div>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10" >
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10" >
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
-                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm animate-pulse-glow"
+                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <Users className="w-4 h-4 animate-scale-pulse" style={{ color: "var(--brand-seo)" }} />
+                        <Users className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             Industries We Serve
                         </span>
@@ -130,7 +130,8 @@ export default function Industries() {
                 </div>
 
                 {/* Industries Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Four cards, so four columns from lg — three left the last card alone on a second row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {industries.map((industry, index) => {
                         const Icon = industry.icon;
                         const DecorIcon = industry.decorIcon;
@@ -147,175 +148,77 @@ export default function Industries() {
                                     animation: `popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.1}s both`,
                                 }}
                             >
+                                {/* pt-14 clears the stats badge (now always shown, top-left)
+                                    so it can't sit on the centred icon */}
                                 <div
-                                    className="relative p-6 rounded-2xl text-center transition-all duration-700 border overflow-hidden h-full backdrop-blur-sm"
+                                    className="relative px-6 pb-6 pt-14 rounded-2xl text-center transition-all duration-500 border overflow-hidden h-full backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 85%, transparent)",
                                         borderColor: isHovered ? industry.color : "var(--border-color)",
-                                        transform: isHovered
-                                            ? "translateY(-16px) scale(1.05) rotateY(5deg)"
-                                            : "translateY(0) scale(1) rotateY(0deg)",
-                                        boxShadow: isHovered
-                                            ? `0 35px 60px -15px ${industry.color}60, 0 0 0 2px ${industry.color}30, inset 0 0 60px ${industry.color}10`
-                                            : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-                                        perspective: "1000px",
+                                        transform: isHovered ? "translateY(-16px) scale(1.05)" : "translateY(0) scale(1)",
+                                        // the coloured hover glow went with the rest of the page's glows
+                                        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
+                                    {/* Hover lift and border colour are the only card effects left —
+                                        same treatment as the other card sections on this page. The 3D
+                                        tilt, spinning decoration, rotating ring, icon tilt and glow,
+                                        bouncing chevron (these cards aren't links), bottom bar, sparkle
+                                        and corner wedges are removed. */}
 
-                                    {/* Orbiting Decoration */}
+                                    {/* Decoration (static) */}
                                     <div
-                                        className="absolute -top-6 -right-6 w-24 h-24 transition-all duration-1000"
-                                        style={{
-                                            transform: isHovered ? "rotate(360deg) scale(1)" : "rotate(0deg) scale(0.7)",
-                                            opacity: isHovered ? 0.4 : 0.15,
-                                        }}
+                                        className="absolute -top-6 -right-6 w-24 h-24"
+                                        style={{ transform: "scale(0.7)", opacity: 0.15 }}
                                     >
                                         <div
                                             className="w-full h-full rounded-full flex items-center justify-center"
-                                            style={{
-                                                background: `conic-gradient(from 0deg, ${industry.color}40, transparent, ${industry.color}20)`,
-                                            }}
+                                            style={{ backgroundColor: `${industry.color}30` }}
                                         >
-                                            <DecorIcon
-                                                className="w-10 h-10"
-                                                style={{
-                                                    color: industry.color,
-                                                    transform: isHovered ? "rotate(-360deg)" : "rotate(0deg)",
-                                                    transition: "transform 1s ease"
-                                                }}
-                                            />
+                                            <DecorIcon className="w-10 h-10" style={{ color: industry.color }} />
                                         </div>
                                     </div>
 
-                                    {/* Stats Badge */}
+                                    {/* Stats Badge — always visible; it used to appear only on hover */}
                                     <div
-                                        className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 backdrop-blur-md transition-all duration-500"
+                                        className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"
                                         style={{
-                                            background: `linear-gradient(135deg, ${industry.color}30, ${industry.color}15)`,
+                                            backgroundColor: `${industry.color}20`,
                                             color: textColorMap[industry.color],
                                             border: `1px solid ${industry.color}40`,
-                                            transform: isHovered ? "scale(1.05) translateY(0)" : "scale(0.9) translateY(-5px)",
-                                            opacity: isHovered ? 1 : 0,
                                         }}
                                     >
                                         <AccentIcon className="w-3 h-3" />
                                         {industry.stats}
                                     </div>
 
-                                    {/* Main Icon Container */}
+                                    {/* Icon */}
                                     <div className="relative mb-5 z-10">
-
-
-                                        {/* Icon Box */}
                                         <div
-                                            className={`relative w-20 h-20 mx-auto rounded-2xl p-4 transition-all duration-700 bg-gradient-to-br ${industry.gradient}`}
-                                            style={{
-                                                transform: isHovered
-                                                    ? "scale(1.2) rotateZ(10deg) translateY(-5px)"
-                                                    : "scale(1) rotateZ(0deg) translateY(0)",
-                                                boxShadow: isHovered
-                                                    ? `0 20px 40px ${industry.color}60, 0 0 0 4px ${industry.color}20`
-                                                    : "none",
-                                            }}
+                                            className="relative w-20 h-20 mx-auto rounded-2xl p-4"
+                                            style={{ backgroundColor: industry.color }}
                                         >
-                                            <Icon
-                                                className="w-full h-full text-white transition-all duration-500"
-                                                style={{
-                                                    transform: isHovered ? "scale(1.1) rotateZ(-10deg)" : "scale(1) rotateZ(0deg)",
-                                                    filter: isHovered ? "drop-shadow(0 0 10px rgba(255,255,255,0.8))" : "none",
-                                                }}
-                                            />
+                                            <Icon className="w-full h-full text-white" />
                                         </div>
-
-                                        {/* Rotating Ring */}
-                                        <div
-                                            className="absolute inset-0 rounded-2xl transition-all duration-1000"
-                                            style={{
-                                                border: `2px dashed ${industry.color}`,
-                                                opacity: isHovered ? 0.6 : 0,
-                                                transform: isHovered ? "scale(1.4) rotate(180deg)" : "scale(1.2) rotate(0deg)",
-                                            }}
-                                        />
                                     </div>
 
                                     {/* Content */}
                                     <h3
-                                        className="text-lg font-bold mb-3 transition-all duration-300 relative z-10"
+                                        className="text-lg font-bold mb-3 transition-colors duration-300 relative z-10"
                                         style={{
                                             color: isHovered ? textColorMap[industry.color] : "var(--foreground)",
-                                            transform: isHovered ? "scale(1.05)" : "scale(1)",
                                         }}
                                     >
                                         {industry.title}
                                     </h3>
                                     <p
-                                        className="text-sm leading-relaxed transition-all duration-300 relative z-10"
+                                        className="text-sm leading-relaxed transition-colors duration-300 relative z-10"
                                         style={{
                                             color: isHovered ? "var(--foreground)" : "var(--secondary-text)",
-                                            transform: isHovered ? "translateY(-2px)" : "translateY(0)",
                                         }}
                                     >
                                         {industry.description}
                                     </p>
-
-                                    {/* Hover Arrow with Bounce */}
-                                    <div
-                                        className="mt-4 flex items-center justify-center gap-2 transition-all duration-500 relative z-10"
-                                        style={{
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translateY(0)" : "translateY(10px)",
-                                        }}
-                                    >
-                                        {/* <span
-                                            className="text-xs font-bold tracking-wide"
-                                            style={{ color: industry.color }}
-                                        >
-                                            EXPLORE
-                                        </span> */}
-                                        <ChevronRight
-                                            className="w-4 h-4 animate-bounce-horizontal"
-                                            style={{ color: industry.color }}
-                                        />
-                                    </div>
-
-                                    {/* Animated Bottom Border */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${industry.color}, transparent)`,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
-
-                                    <div
-                                        className="absolute bottom-2 left-2 transition-all duration-500"
-                                        style={{
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "scale(1) rotate(0deg)" : "scale(0) rotate(180deg)",
-                                            transitionDelay: "100ms",
-                                        }}
-                                    >
-                                        <Sparkles className="w-4 h-4" style={{ color: industry.color }} />
-                                    </div>
-
-                                    {/* Diagonal Accent Lines */}
-                                    <div
-                                        className="absolute top-0 left-0 w-16 h-16 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${industry.color}20, transparent)`,
-                                            opacity: isHovered ? 1 : 0,
-                                            borderRadius: "0 0 100% 0",
-                                        }}
-                                    />
-                                    <div
-                                        className="absolute bottom-0 right-0 w-16 h-16 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(315deg, ${industry.color}20, transparent)`,
-                                            opacity: isHovered ? 1 : 0,
-                                            borderRadius: "100% 0 0 0",
-                                            transitionDelay: "100ms",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
@@ -354,22 +257,6 @@ export default function Industries() {
                     100% { transform: translate(40px, 40px); }
                 }
 
-                @keyframes pulse-glow {
-                    0%, 100% { 
-                        box-shadow: 0 0 10px var(--brand-seo);
-                        opacity: 1;
-                    }
-                    50% { 
-                        box-shadow: 0 0 20px var(--brand-seo);
-                        opacity: 0.8;
-                    }
-                }
-
-                @keyframes scale-pulse {
-                    0%, 100% { transform: scale(1); }
-                    50% { transform: scale(1.2); }
-                }
-
                 @keyframes ping-slow {
                     75%, 100% {
                         transform: scale(2);
@@ -388,21 +275,8 @@ export default function Industries() {
                     }
                 }
 
-                @keyframes bounce-horizontal {
-                    0%, 100% { transform: translateX(0); }
-                    50% { transform: translateX(5px); }
-                }
-
                 .animate-grid-flow {
                     animation: grid-flow 20s linear infinite;
-                }
-
-                .animate-pulse-glow {
-                    animation: pulse-glow 3s ease-in-out infinite;
-                }
-
-                .animate-scale-pulse {
-                    animation: scale-pulse 2s ease-in-out infinite;
                 }
 
                 .animate-ping-slow {
@@ -411,10 +285,6 @@ export default function Industries() {
 
                 .animate-pulse-slow {
                     animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                }
-
-                .animate-bounce-horizontal {
-                    animation: bounce-horizontal 1s ease-in-out infinite;
                 }
             `}</style>
         </section>
