@@ -4,6 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { TrendingUp, DollarSign, Users, Target, ArrowUpRight, Sparkles } from "lucide-react";
 
+// Display names for the before/after metric keys (keys stay camelCase in the data).
+const METRIC_LABELS: Record<string, string> = {
+    spend: "Spend",
+    roas: "ROAS",
+    leads: "Leads",
+    cpa: "CPA",
+    demos: "Demos",
+    costPerLead: "Cost per Lead",
+};
+const metricLabel = (key: string) =>
+    METRIC_LABELS[key] ?? key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+
 export default function CaseStudies() {
     const [counters, setCounters] = useState({
         roas: 0,
@@ -97,7 +109,7 @@ export default function CaseStudies() {
     return (
         <section
             id="case-studies"
-            className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-12 md:py-16 lg:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}
         >
             {/* Background */}
@@ -110,7 +122,7 @@ export default function CaseStudies() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -123,7 +135,7 @@ export default function CaseStudies() {
                             Illustrative Scenarios
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Performance We <span style={{ color: "var(--accent-orange-text)" }}>Engineer Toward</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -132,7 +144,7 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Animated Stats Dashboard */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-16">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-10">
                     {[
                         { label: "Avg. ROAS", value: `${counters.roas}%`, icon: TrendingUp, color: "#34a853" },
                         { label: "Leads Generated", value: `${counters.leads}K+`, icon: Users, color: "#4285f4" },
@@ -143,7 +155,7 @@ export default function CaseStudies() {
                         return (
                             <div
                                 key={index}
-                                className="p-6 rounded-2xl border text-center transition-all duration-500 hover:scale-105"
+                                className="p-6 rounded-2xl border text-center"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
                                     borderColor: `${stat.color}40`,
@@ -166,7 +178,7 @@ export default function CaseStudies() {
                         return (
                             <div
                                 key={index}
-                                className="p-6 rounded-2xl border transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                                className="p-6 rounded-2xl border transition-shadow duration-300 hover:shadow-lg"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
                                     borderColor: "var(--border-color)",
@@ -198,7 +210,7 @@ export default function CaseStudies() {
                                         <div className="text-xs font-bold mb-2" style={{ color: "var(--secondary-text)" }}>BEFORE</div>
                                         {Object.entries(study.before).map(([key, value]) => (
                                             <div key={key} className="text-sm mb-1">
-                                                <span style={{ color: "var(--secondary-text)" }}>{key}: </span>
+                                                <span style={{ color: "var(--secondary-text)" }}>{metricLabel(key)}: </span>
                                                 <span className="font-medium">{value}</span>
                                             </div>
                                         ))}
@@ -207,7 +219,7 @@ export default function CaseStudies() {
                                         <div className="text-xs font-bold mb-2" style={{ color: textAccent(study.color) }}>AFTER</div>
                                         {Object.entries(study.after).map(([key, value]) => (
                                             <div key={key} className="text-sm mb-1">
-                                                <span style={{ color: "var(--secondary-text)" }}>{key}: </span>
+                                                <span style={{ color: "var(--secondary-text)" }}>{metricLabel(key)}: </span>
                                                 <span className="font-bold" style={{ color: textAccent(study.color) }}>{value}</span>
                                             </div>
                                         ))}

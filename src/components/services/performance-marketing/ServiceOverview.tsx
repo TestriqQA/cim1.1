@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MousePointerClick, RefreshCw, Share2, Layers, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { MousePointerClick, RefreshCw, Share2, Layers, ArrowRight, CheckCircle2, Sparkles, BookOpen, Combine, ChartColumn } from "lucide-react";
 
 export default function ServiceOverview() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -21,7 +21,7 @@ export default function ServiceOverview() {
         {
             icon: MousePointerClick,
             title: "ROI-Focused Google Ads & PPC",
-            description: <span>Dominate search results with high-intent <Link href="/services/performance-marketing/google-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Paid Search (PPC)</Link>. We don't just bid on keywords; we dominate search intent.</span>,
+            description: <span>Dominate search results with high-intent <Link href="/services/performance-marketing/google-ads" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">Paid Search (PPC)</Link>. We don&apos;t just bid on keywords; we dominate search intent.</span>,
             features: ["Search Ads", "Shopping Ads", "Local Services Ads", "Quality Score Optimization"],
             color: "#4285f4",
         },
@@ -42,17 +42,17 @@ export default function ServiceOverview() {
         {
             icon: Layers,
             title: "Programmatic Advertising & Display",
-            description: <span>Scale beyond the 'walled gardens'. Access premium inventory across websites, apps, and CTV channels.</span>,
+            description: <span>Scale beyond the &apos;walled gardens&apos;. Access premium inventory across websites, apps, and CTV channels.</span>,
             features: ["Real-Time Bidding (RTB)", "Contextual Targeting", "Native Advertising", "Premium Inventory"],
             color: "#fbbc04",
         },
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+        <section className="py-12 md:py-16 lg:py-20 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -66,7 +66,7 @@ export default function ServiceOverview() {
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Full-Funnel <span style={{ color: "var(--accent-orange-text)" }}>Performance Marketing Agency Services</span>
                     </h2>
 
@@ -89,12 +89,11 @@ export default function ServiceOverview() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <div
-                                    className="relative p-5 sm:p-8 rounded-2xl transition-all duration-500 border overflow-hidden h-full"
+                                    className="relative p-5 sm:p-8 rounded-2xl transition duration-300 border overflow-hidden h-full"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 80%, transparent)",
                                         borderColor: isHovered ? service.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-8px)" : "translateY(0)",
-                                        boxShadow: isHovered ? `0 25px 50px -12px ${service.color}40` : "none",
+                                        boxShadow: isHovered ? `0 12px 30px -12px ${service.color}40` : "none",
                                     }}
                                 >
                                     {/* Background gradient */}
@@ -102,11 +101,8 @@ export default function ServiceOverview() {
                                     <div className="relative z-10 flex flex-col md:flex-row gap-6">
                                         {/* Icon */}
                                         <div
-                                            className="w-16 h-16 rounded-2xl p-4 flex-shrink-0 transition-all duration-500"
-                                            style={{
-                                                backgroundColor: `${service.color}20`,
-                                                transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                            }}
+                                            className="w-16 h-16 rounded-2xl p-4 flex-shrink-0"
+                                            style={{ backgroundColor: `${service.color}20` }}
                                         >
                                             <Icon className="w-full h-full" style={{ color: service.color }} />
                                         </div>
@@ -123,32 +119,16 @@ export default function ServiceOverview() {
                                             </p>
 
                                             {/* Features */}
-                                            <div className="grid grid-cols-1 xs:grid-cols-2 gap-2">
+                                            <div className="grid grid-cols-1 xs:grid-cols-2 gap-x-3 gap-y-2.5">
                                                 {service.features.map((feature, idx) => (
-                                                    <div
-                                                        key={idx}
-                                                        className="flex items-center gap-2 transition-all duration-300"
-                                                        style={{
-                                                            transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                                            transitionDelay: `${idx * 50}ms`,
-                                                        }}
-                                                    >
+                                                    <div key={idx} className="flex items-center gap-2">
                                                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: service.color }} />
-                                                        <span className="text-xs font-medium">{feature}</span>
+                                                        <span className="text-sm font-medium leading-snug">{feature}</span>
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* Bottom accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            backgroundColor: service.color,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
@@ -169,17 +149,17 @@ export default function ServiceOverview() {
 
                 {/* Related Resources */}
                 <div className="mt-8 p-6 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>📚 Related Resources</h3>
+                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2" style={{ color: "var(--foreground)" }}><BookOpen className="w-5 h-5 shrink-0" style={{ color: "var(--accent-orange-text)" }} aria-hidden="true" />Related Resources</h3>
                     <div className="flex flex-col gap-3">
                         <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">🔥</span>
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 12%, transparent)" }}><Combine className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} aria-hidden="true" /></span>
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-orange-text)] transition-colors">SEO + PPC Hybrid Funnels</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Why combining organic and paid converts 2x better</p>
                             </div>
                         </Link>
                         <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">📊</span>
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 12%, transparent)" }}><ChartColumn className="w-5 h-5" style={{ color: "var(--accent-orange-text)" }} aria-hidden="true" /></span>
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-orange-text)] transition-colors">Maximizing ROI with Performance Marketing</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Complete guide to measuring and improving campaign ROI</p>
