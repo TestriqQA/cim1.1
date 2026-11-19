@@ -41,6 +41,7 @@ export default function Faq() {
             faqs={faqs.map((f) => ({ q: f.question, a: f.answer }))}
             accent="var(--accent-amber-text)"
             subtitle="Expert Answers to Your Branding Questions"
+            compact
         />
     );
 }

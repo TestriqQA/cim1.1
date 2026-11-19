@@ -97,14 +97,14 @@ export default function AdPlatforms() {
     ];
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}>
+        <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}>
             {/* Background Pattern */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -118,7 +118,7 @@ export default function AdPlatforms() {
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         We Manage Ads Across <span style={{ color: "var(--accent-orange-text)" }}>All Major Platforms</span>
                     </h2>
 
@@ -140,28 +140,18 @@ export default function AdPlatforms() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <div
-                                    className="relative p-6 rounded-2xl transition-all duration-500 border overflow-hidden h-full backdrop-blur-sm"
+                                    className="relative p-6 rounded-2xl transition duration-300 border overflow-hidden h-full backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
                                         borderColor: isHovered ? platform.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-12px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered ? `0 25px 50px -12px ${platform.color}50` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                        boxShadow: isHovered ? `0 12px 30px -12px ${platform.color}50` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
-                                    {/* Gradient background */}
-                                    <div
-                                        className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 transition-opacity duration-500`}
-                                        style={{ opacity: isHovered ? 0.1 : 0 }}
-                                    />
-
                                     {/* Logo */}
                                     <div className="flex items-center gap-4 mb-4">
                                         <div
-                                            className="w-16 h-16 rounded-xl p-3 transition-all duration-500 flex items-center justify-center"
-                                            style={{
-                                                backgroundColor: `${platform.color}15`,
-                                                transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                            }}
+                                            className="w-16 h-16 rounded-xl p-3 flex items-center justify-center"
+                                            style={{ backgroundColor: `${platform.color}15` }}
                                         >
                                             <Image
                                                 src={platform.logo}
@@ -189,22 +179,13 @@ export default function AdPlatforms() {
                                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4">
                                         <div className="flex items-center gap-2">
                                             <Users className="w-4 h-4 flex-shrink-0" style={{ color: platform.color }} />
-                                            <span className="text-xs font-medium">{platform.stats.reach}</span>
+                                            <span className="text-sm font-medium">{platform.stats.reach}</span>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <TrendingUp className="w-4 h-4 flex-shrink-0" style={{ color: platform.color }} />
-                                            <span className="text-xs font-medium">{platform.stats.ctr}</span>
+                                            <span className="text-sm font-medium">{platform.stats.ctr}</span>
                                         </div>
                                     </div>
-
-                                    {/* Bottom accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500 rounded-full"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${platform.color}, transparent)`,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );

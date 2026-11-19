@@ -78,7 +78,7 @@ export default function DesignTools() {
     return (
         <section
             id="tools"
-            className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-12 md:py-16 lg:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Background */}
@@ -91,7 +91,7 @@ export default function DesignTools() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -104,7 +104,7 @@ export default function DesignTools() {
                             Our Toolkit
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Professional <span style={{ color: "var(--accent-amber-text)" }}>Design Tools</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -124,23 +124,19 @@ export default function DesignTools() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <div
-                                    className="relative p-6 rounded-2xl transition-all duration-500 border overflow-hidden text-center h-full"
+                                    className="relative p-6 rounded-2xl transition duration-300 border overflow-hidden text-center h-full"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 90%, transparent)",
                                         borderColor: isHovered ? tool.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered ? `0 20px 40px -12px ${tool.color}40` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                        boxShadow: isHovered ? `0 12px 30px -12px ${tool.color}40` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
                                     {/* Background gradient on hover */}
 
                                     {/* Tool Logo */}
                                     <div
-                                        className="w-16 h-16 mx-auto mb-4 rounded-xl p-3 transition-all duration-500 relative z-10"
-                                        style={{
-                                            backgroundColor: `${tool.color}15`,
-                                            transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                        }}
+                                        className="w-16 h-16 mx-auto mb-4 rounded-xl p-3 relative z-10"
+                                        style={{ backgroundColor: `${tool.color}15` }}
                                     >
                                         <Image
                                             src={tool.logo}
@@ -163,15 +159,6 @@ export default function DesignTools() {
                                     <p className="text-xs relative z-10" style={{ color: "var(--secondary-text)" }}>
                                         {tool.description}
                                     </p>
-
-                                    {/* Bottom accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            background: tool.color,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
@@ -179,7 +166,7 @@ export default function DesignTools() {
                 </div>
 
                 {/* Bottom tagline */}
-                <div className="text-center mt-12">
+                <div className="text-center mt-8 md:mt-10 lg:mt-12">
                     <div
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full"
                         style={{
