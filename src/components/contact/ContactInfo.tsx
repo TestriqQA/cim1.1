@@ -27,7 +27,7 @@ export default function ContactInfo() {
         {
             icon: Clock,
             title: 'Working Hours',
-            content: 'Mon - Fri: 9:00 AM - 6:00 PM',
+            content: 'Mon - Sat: 9:00 AM - 8:00 PM',
             link: '/contact',
             color: 'from-[#fab900] to-[#ee6500]'
         }

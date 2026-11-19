@@ -197,6 +197,10 @@ const nextConfig = {
             '/services/ecommerce-design': '/services/web-design-development/ecommerce-development-company',
             '/content-marketing-services': '/services/seo-services/seo-content-writing-services',
             '/case-studies': '/portfolio',
+            // Old blog category slugs still known to Google (Search Console
+            // "Not found (404)", 19 Nov 2026); the categories were renamed.
+            '/blog/category/enterprise-ai-automation': '/blog/category/enterprise-ai-and-automation',
+            '/blog/category/ppc-paid-ads': '/blog/category/ppc-and-paid-ads',
         };
         const deadBlogLinkRedirects = Object.entries(deadBlogLinkTargets).map(
             ([source, destination]) => ({ source, destination, permanent: true })

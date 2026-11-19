@@ -78,7 +78,7 @@ export default function CTA() {
                             Email: contact@cinuteinfomedia.com | Phone: +91 9004988859, +91 7700995410
                         </p>
                         <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
-                            Office Hours: Mon-Fri, 9 AM - 6 PM
+                            Office Hours: Mon-Sat, 9 AM - 8 PM
                         </p>
                     </div>
 

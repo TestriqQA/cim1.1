@@ -8,9 +8,9 @@ const siteUrl = "https://www.cinuteinfomedia.com";
  * Profile exactly. Confirmed by the team on 2026-11-19 (same address and
  * +91 9004988859 as the footer and contact page). While false, the
  * Organization node (home page) omits them and /contact emits no
- * ProfessionalService node. Opening hours are on hold until the team confirms
- * them (the contact page shows Mon-Fri 9:00 AM-6:00 PM). Map coordinates are
- * left out until someone checks them against the Business Profile pin.
+ * ProfessionalService node. Opening hours (Mon-Sat 9:00 AM-8:00 PM) were
+ * confirmed on 2026-11-19 and match the contact page. Map coordinates are left
+ * out until someone checks them against the Business Profile pin.
  */
 export const NAP_CONFIRMED = true;
 
@@ -123,14 +123,9 @@ export function generateWebSiteSchema() {
       "@id": `${siteUrl}/#organization`,
     },
     "inLanguage": "en-US",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}/?s={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    // No SearchAction: the site has no /?s= search, so the template only made
+    // Google crawl "/?s={search_term_string}" (Search Console, 19 Nov 2026),
+    // and Google no longer shows the sitelinks search box.
   };
 }
 
@@ -265,6 +260,14 @@ export function generateProfessionalServiceSchema(params: {
       "addressCountry": "IN",
     },
     ...(params.hasMap && { "hasMap": params.hasMap }),
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "20:00",
+      },
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": params.telephone,
