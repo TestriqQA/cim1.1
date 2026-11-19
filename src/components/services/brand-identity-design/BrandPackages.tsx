@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Package, Check, Star, Sparkles, ArrowRight, Crown, Zap } from "lucide-react";
+import { Package, Check, Star, ArrowRight, Crown, Zap } from "lucide-react";
 import Link from "next/link";
+
+// Gray used for features a package does not include (tick, text and strike line).
+const EXCLUDED_GRAY = "color-mix(in srgb, var(--secondary-text) 65%, transparent)";
 
 export default function BrandPackages() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -86,14 +89,14 @@ export default function BrandPackages() {
 
     return (
         <section
-            className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-12 md:py-16 lg:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}
         >
             {/* Background */}
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -103,10 +106,10 @@ export default function BrandPackages() {
                     >
                         <Package className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
-                            PACKAGES
+                            Packages
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Brand Identity <span style={{ color: "var(--accent-amber-text)" }}>Packages</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -115,7 +118,7 @@ export default function BrandPackages() {
                 </div>
 
                 {/* Packages Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-3 lg:items-center gap-6 max-w-6xl mx-auto">
                     {packages.map((pkg, index) => {
                         const Icon = pkg.icon;
                         const isHovered = hoveredIndex === index;
@@ -124,7 +127,8 @@ export default function BrandPackages() {
                         return (
                             <div
                                 key={index}
-                                className="relative"
+                                className="relative transition-transform duration-500"
+                                style={{ transform: isHovered ? "translateY(-10px) scale(1.02)" : "translateY(0) scale(1)" }}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
@@ -134,22 +138,18 @@ export default function BrandPackages() {
                                         className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-sm font-bold text-black z-10"
                                         style={{ backgroundColor: "var(--brand-yellow)" }}
                                     >
-                                        <Sparkles className="w-3.5 h-3.5 inline mr-1" />
                                         Recommended
                                     </div>
                                 )}
 
                                 <div
-                                    className={`relative p-6 md:p-8 rounded-2xl border transition-all duration-500 h-full ${isPopular ? 'border-2' : ''}`}
+                                    className={`relative px-6 md:px-8 rounded-2xl border transition-all duration-500 h-full ${isPopular ? 'py-6 md:py-8 border-2' : 'py-5 md:py-6'}`}
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
                                         borderColor: isPopular ? "var(--brand-yellow)" : isHovered ? pkg.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-10px) scale(1.02)" : "translateY(0) scale(1)",
                                         boxShadow: isPopular
                                             ? `0 25px 50px -12px var(--brand-yellow)30`
-                                            : isHovered
-                                                ? `0 25px 50px -12px ${pkg.color}30`
-                                                : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                            : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
                                     {/* Header */}
@@ -186,28 +186,36 @@ export default function BrandPackages() {
                                     </p>
 
                                     {/* Features */}
-                                    <div className="space-y-3 mb-8">
+                                    <div className={`${isPopular ? 'space-y-3' : 'space-y-2.5'} mb-8`}>
                                         {pkg.features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-center gap-3">
+                                            <div key={idx} className={`flex items-center gap-3 ${feature.included ? '' : 'relative w-fit'}`}>
                                                 <div
-                                                    className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${feature.included ? '' : 'opacity-40'}`}
+                                                    className="w-3.5 h-3.5 rounded-full flex items-center justify-center flex-shrink-0"
                                                     style={{
-                                                        backgroundColor: feature.included ? `${pkg.color}20` : "color-mix(in srgb, var(--foreground) 10%, transparent)",
+                                                        backgroundColor: feature.included ? `${pkg.color}20` : "color-mix(in srgb, var(--foreground) 8%, transparent)",
                                                     }}
                                                 >
                                                     <Check
-                                                        className="w-3 h-3"
+                                                        className="w-2.5 h-2.5"
                                                         style={{
-                                                            color: feature.included ? pkg.color : "var(--secondary-text)",
+                                                            color: feature.included ? pkg.color : EXCLUDED_GRAY,
                                                         }}
                                                     />
                                                 </div>
                                                 <span
-                                                    className={`text-sm ${feature.included ? '' : 'line-through'}`}
-                                                    style={{ color: "var(--foreground)" }}
+                                                    className="text-base"
+                                                    style={{ color: feature.included ? "var(--foreground)" : EXCLUDED_GRAY }}
                                                 >
                                                     {feature.text}
                                                 </span>
+                                                {/* Not included: one strike line across the tick and the text */}
+                                                {!feature.included && (
+                                                    <span
+                                                        aria-hidden="true"
+                                                        className="pointer-events-none absolute left-0 right-0 top-1/2 h-px -translate-y-1/2"
+                                                        style={{ backgroundColor: EXCLUDED_GRAY }}
+                                                    />
+                                                )}
                                             </div>
                                         ))}
                                     </div>
@@ -231,7 +239,7 @@ export default function BrandPackages() {
                 </div>
 
                 {/* Custom Note */}
-                <p className="text-center mt-10 text-sm" style={{ color: "var(--secondary-text)" }}>
+                <p className="text-center mt-8 text-sm" style={{ color: "var(--secondary-text)" }}>
                     Need a custom solution? <a href="/contact" className="font-semibold underline underline-offset-2" style={{ color: "var(--accent-amber-text)" }}>Contact us</a> for a tailored quote.
                 </p>
             </div>
