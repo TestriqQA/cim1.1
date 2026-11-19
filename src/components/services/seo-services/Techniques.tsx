@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
     FileText, Code, Globe, Store, Link2, MousePointerClick, Settings,
     CheckCircle2, Zap, Search, Rocket, Target, BarChart,
-    TrendingUp, Award, Sparkles, ArrowRight
+    TrendingUp, Award, Sparkles
 } from "lucide-react";
 
 export default function Techniques() {
@@ -92,7 +92,7 @@ export default function Techniques() {
     };
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Animated Grid Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
                 <div className="absolute inset-0" style={{
@@ -104,17 +104,17 @@ export default function Techniques() {
 
             {/* Floating Elements */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
-                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm animate-shimmer"
+                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <Rocket className="w-4 h-4 animate-bounce-subtle" style={{ color: "var(--brand-seo)" }} />
+                        <Rocket className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             SEO Techniques
                         </span>
@@ -137,7 +137,7 @@ export default function Techniques() {
 
                         const cardContent = (
                             <div
-                                className="group relative"
+                                className="group relative h-full"
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 style={{
@@ -149,84 +149,47 @@ export default function Techniques() {
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 90%, transparent)",
                                         borderColor: isHovered ? tech.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-8px) rotateX(2deg)" : "translateY(0) rotateX(0deg)",
-                                        boxShadow: isHovered
-                                            ? `0 25px 50px -12px ${tech.color}50, 0 0 0 1px ${tech.color}30`
-                                            : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                        transform: isHovered ? "translateY(-8px)" : "translateY(0)",
+                                        // the coloured hover glow went with the rest of the page's glows
+                                        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
-                                    {/* Animated Gradient Background */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${tech.color}15 0%, transparent 50%, ${tech.color}10 100%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
+                                    {/* Hover lift and border colour are the only card effects left —
+                                        same treatment as the Why Choose Us cards. The hover tint,
+                                        spinning decoration, badge pulse, icon tilt and glow, corner
+                                        brackets, sliding bottom bar and glass sweep are removed. */}
 
-                                    {/* Orbiting Decoration */}
+                                    {/* Decoration (static) */}
                                     <div
-                                        className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full flex items-center justify-center transition-all duration-700"
+                                        className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full flex items-center justify-center"
                                         style={{
-                                            background: `linear-gradient(135deg, ${tech.color}20, ${tech.color}10)`,
-                                            transform: isHovered ? "rotate(180deg) scale(1.2)" : "rotate(0deg) scale(1)",
-                                            opacity: isHovered ? 0.8 : 0.4,
+                                            backgroundColor: `${tech.color}15`,
+                                            opacity: 0.4,
                                         }}
                                     >
-                                        <DecorIcon
-                                            className="w-10 h-10"
-                                            style={{
-                                                color: tech.color,
-                                                transform: isHovered ? "rotate(-180deg)" : "rotate(0deg)",
-                                                transition: "transform 0.7s ease"
-                                            }}
-                                        />
+                                        <DecorIcon className="w-10 h-10" style={{ color: tech.color }} />
                                     </div>
 
-                                    {/* Badge with Pulse Effect */}
+                                    {/* Badge */}
                                     <div className="absolute top-4 right-4 z-10">
                                         <div
-                                            className="relative px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
+                                            className="px-3 py-1 rounded-full text-xs font-bold"
                                             style={{
                                                 backgroundColor: `${tech.color}25`,
                                                 color: textColorMap[tech.color],
-                                                transform: isHovered ? "scale(1.1)" : "scale(1)",
                                             }}
                                         >
                                             {tech.badge}
-                                            {isHovered && (
-                                                <div
-                                                    className="absolute inset-0 rounded-full animate-ping"
-                                                    style={{
-                                                        backgroundColor: tech.color,
-                                                        opacity: 0.3,
-                                                    }}
-                                                />
-                                            )}
                                         </div>
                                     </div>
 
-                                    {/* Icon Container with 3D Effect */}
+                                    {/* Icon */}
                                     <div className="relative mb-5 z-10">
-                                        {/* Background Ring */}
-
-                                        {/* Icon Box */}
                                         <div
-                                            className="relative w-16 h-16 rounded-xl p-3.5 transition-all duration-500"
-                                            style={{
-                                                background: `linear-gradient(135deg, ${tech.color}30, ${tech.color}15)`,
-                                                transform: isHovered ? "scale(1.15) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                                boxShadow: isHovered ? `0 8px 16px ${tech.color}40` : "none",
-                                            }}
+                                            className="relative w-16 h-16 rounded-xl p-3.5"
+                                            style={{ backgroundColor: `${tech.color}20` }}
                                         >
-                                            <Icon
-                                                className="w-full h-full transition-all duration-500"
-                                                style={{
-                                                    color: tech.color,
-                                                    transform: isHovered ? "scale(1.1) rotate(-5deg)" : "scale(1) rotate(0deg)",
-                                                    filter: isHovered ? "drop-shadow(0 0 8px currentColor)" : "none",
-                                                }}
-                                            />
+                                            <Icon className="w-full h-full" style={{ color: tech.color }} />
                                         </div>
                                     </div>
 
@@ -238,12 +201,6 @@ export default function Techniques() {
                                         }}
                                     >
                                         {tech.title}
-                                        {isHovered && (
-                                            <ArrowRight
-                                                className="inline-block ml-2 w-5 h-5 animate-slide-right"
-                                                style={{ color: tech.color }}
-                                            />
-                                        )}
                                     </h3>
                                     <p
                                         className="text-sm leading-relaxed mb-5 transition-colors duration-300 relative z-10"
@@ -254,32 +211,19 @@ export default function Techniques() {
                                         {tech.description}
                                     </p>
 
-                                    {/* Features with Stagger Animation */}
+                                    {/* Features — tick sized under the text (16px ring, 10px glyph)
+                                        and text raised to the description's size, as on the chatbot cards */}
                                     <div className="space-y-2 relative z-10">
                                         {tech.features.map((feature, idx) => (
-                                            <div
-                                                key={idx}
-                                                className="flex items-center gap-2 transition-all duration-300"
-                                                style={{
-                                                    transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                                    transitionDelay: `${idx * 50}ms`,
-                                                }}
-                                            >
+                                            <div key={idx} className="flex items-center gap-2">
                                                 <div
-                                                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300"
-                                                    style={{
-                                                        backgroundColor: isHovered ? `${tech.color}25` : `${tech.color}15`,
-                                                        transform: isHovered ? "rotate(360deg) scale(1.1)" : "rotate(0deg) scale(1)",
-                                                        transitionDelay: `${idx * 50}ms`,
-                                                    }}
+                                                    className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
+                                                    style={{ backgroundColor: `${tech.color}15` }}
                                                 >
-                                                    <CheckCircle2
-                                                        className="w-3.5 h-3.5"
-                                                        style={{ color: tech.color }}
-                                                    />
+                                                    <CheckCircle2 className="w-2.5 h-2.5" style={{ color: tech.color }} />
                                                 </div>
                                                 <span
-                                                    className="text-xs font-medium transition-colors duration-300"
+                                                    className="text-sm font-medium transition-colors duration-300"
                                                     style={{
                                                         color: isHovered ? "var(--foreground)" : "var(--secondary-text)",
                                                     }}
@@ -289,54 +233,16 @@ export default function Techniques() {
                                             </div>
                                         ))}
                                     </div>
-
-                                    {/* Animated Corner Borders */}
-                                    <div
-                                        className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 rounded-tl-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: tech.color,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(-8px, -8px)",
-                                        }}
-                                    />
-                                    <div
-                                        className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 rounded-br-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: tech.color,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(8px, 8px)",
-                                        }}
-                                    />
-
-                                    {/* Progressive Bottom Bar */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-700 rounded-full"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${tech.color}, transparent)`,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
-
-                                    {/* Shine Effect */}
-                                    <div
-                                        className="absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none"
-                                        style={{
-                                            background: `linear-gradient(135deg, transparent 0%, ${tech.color}10 50%, transparent 100%)`,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translateX(0)" : "translateX(-100%)",
-                                            transition: "all 0.7s ease",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
 
                         return linkProp ? (
-                            <Link href={linkProp} key={index} className="block">
+                            <Link href={linkProp} key={index} className="block h-full">
                                 {cardContent}
                             </Link>
                         ) : (
-                            <div key={index}>{cardContent}</div>
+                            <div key={index} className="h-full">{cardContent}</div>
                         );
                     })}
                 </div>
@@ -365,22 +271,6 @@ export default function Techniques() {
                     100% { transform: translate(40px, 40px); }
                 }
 
-                @keyframes shimmer {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.7; }
-                }
-
-                @keyframes bounce-subtle {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-4px); }
-                }
-
-                @keyframes slide-right {
-                    0% { transform: translateX(0); }
-                    50% { transform: translateX(4px); }
-                    100% { transform: translateX(0); }
-                }
-
                 .animate-float {
                     animation: float 15s ease-in-out infinite;
                 }
@@ -391,18 +281,6 @@ export default function Techniques() {
 
                 .animate-float-slow {
                     animation: float 20s ease-in-out 4s infinite;
-                }
-
-                .animate-shimmer {
-                    animation: shimmer 3s ease-in-out infinite;
-                }
-
-                .animate-bounce-subtle {
-                    animation: bounce-subtle 2s ease-in-out infinite;
-                }
-
-                .animate-slide-right {
-                    animation: slide-right 0.6s ease-in-out;
                 }
             `}</style>
         </section>

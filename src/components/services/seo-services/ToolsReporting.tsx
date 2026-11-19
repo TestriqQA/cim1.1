@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
     Monitor, LineChart, Search, Layers, Settings,
     BarChart3, TrendingUp, Eye, Activity, Zap,
-    ChevronRight, Sparkles
+    Sparkles
 } from "lucide-react";
 import Link from "next/link";
 
@@ -73,7 +73,7 @@ export default function ToolsReporting() {
     };
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full opacity-5">
@@ -85,17 +85,17 @@ export default function ToolsReporting() {
 
             {/* Gradient Orbs */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
-                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm animate-glow"
+                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <Settings className="w-4 h-4 animate-spin-slow" style={{ color: "var(--brand-seo)" }} />
+                        <Settings className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             Tools & Reporting
                         </span>
@@ -109,7 +109,9 @@ export default function ToolsReporting() {
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Four across only from xl: at 1024px each card is ~210px and the metric
+                    badge ran over the icon (24px overlap); two columns hold until 1280px. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                     {reportingFeatures.map((feature, index) => {
                         const Icon = feature.icon;
                         const DecorIcon = feature.decorIcon;
@@ -131,81 +133,55 @@ export default function ToolsReporting() {
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 85%, transparent)",
                                         borderColor: isHovered ? feature.color : "var(--border-color)",
                                         transform: isHovered ? "translateY(-12px) scale(1.03)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered
-                                            ? `0 30px 60px -15px ${feature.color}40, 0 0 0 2px ${feature.color}20`
-                                            : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                        // the coloured hover glow went with the rest of the page's glows
+                                        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
-                                    {/* Animated Gradient Background */}
+                                    {/* Hover lift and border colour are the only card effects left —
+                                        same treatment as the Why Choose Us and Techniques cards. The
+                                        badge slide-in, spinning decoration, icon tilt and glow, title
+                                        chevron (these cards aren't links), logo zoom, bottom bar,
+                                        corner brackets and light sweep are removed. */}
 
-                                    {/* Metric Badge */}
+                                    {/* Metric Badge — at its settled position; it used to rest
+                                        10px off and slide in on hover */}
                                     <div
-                                        className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-500"
+                                        className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5"
                                         style={{
                                             backgroundColor: `${feature.color}20`,
                                             color: textColorMap[feature.color],
-                                            transform: isHovered ? "scale(1.05) translateX(0)" : "scale(0.95) translateX(10px)",
                                         }}
                                     >
                                         <Sparkles className="w-3 h-3" />
                                         {feature.metric}
                                     </div>
 
-                                    {/* Floating Decor Icon */}
+                                    {/* Decor Icon (static) */}
                                     <div
-                                        className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-700"
-                                        style={{
-                                            transform: isHovered ? "rotate(180deg) scale(1.2)" : "rotate(0deg) scale(0.8)",
-                                            opacity: isHovered ? 0.6 : 0.2,
-                                        }}
+                                        className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center"
+                                        style={{ transform: "scale(0.8)", opacity: 0.2 }}
                                     >
-                                        <DecorIcon
-                                            className="w-8 h-8"
-                                            style={{
-                                                color: feature.color,
-                                                transform: isHovered ? "rotate(-180deg)" : "rotate(0deg)",
-                                                transition: "transform 0.7s ease"
-                                            }}
-                                        />
+                                        <DecorIcon className="w-8 h-8" style={{ color: feature.color }} />
                                     </div>
 
-                                    {/* Icon Container with Pulse */}
+                                    {/* Icon */}
                                     <div className="relative mb-5 z-10">
-
-                                        {/* Icon Box */}
                                         <div
-                                            className="relative w-16 h-16 rounded-xl p-3.5 transition-all duration-500"
-                                            style={{
-                                                background: `linear-gradient(135deg, ${feature.color}25, ${feature.color}10)`,
-                                                transform: isHovered ? "scale(1.15) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                                boxShadow: isHovered ? `0 10px 25px ${feature.color}30` : "none",
-                                            }}
+                                            className="relative w-16 h-16 rounded-xl p-3.5"
+                                            style={{ backgroundColor: `${feature.color}20` }}
                                         >
-                                            <Icon
-                                                className="w-full h-full transition-all duration-500"
-                                                style={{
-                                                    color: feature.color,
-                                                    transform: isHovered ? "scale(1.1)" : "scale(1)",
-                                                    filter: isHovered ? `drop-shadow(0 0 8px ${feature.color})` : "none",
-                                                }}
-                                            />
+                                            <Icon className="w-full h-full" style={{ color: feature.color }} />
                                         </div>
                                     </div>
 
                                     {/* Content */}
                                     <h3
-                                        className="text-lg font-bold mb-3 transition-all duration-300 relative z-10 flex items-center gap-2"
+                                        className="text-lg font-bold mb-3 transition-colors duration-300 relative z-10"
                                         style={{
                                             color: isHovered ? textColorMap[feature.color] : "var(--foreground)",
                                         }}
                                     >
                                         {feature.title}
-                                        {isHovered && (
-                                            <ChevronRight
-                                                className="w-4 h-4 animate-bounce-x"
-                                                style={{ color: feature.color }}
-                                            />
-                                        )}
                                     </h3>
                                     <p
                                         className="text-sm leading-relaxed mb-5 transition-colors duration-300 relative z-10"
@@ -221,14 +197,10 @@ export default function ToolsReporting() {
                                         {feature.tools.map((tool, idx) => (
                                             <div
                                                 key={idx}
-                                                className="group/tool flex flex-col items-center gap-2 transition-all duration-300"
-                                                style={{
-                                                    transform: isHovered ? `translateY(0) scale(1.05)` : "translateY(0) scale(1)",
-                                                    transitionDelay: `${idx * 100}ms`,
-                                                }}
+                                                className="flex flex-col items-center gap-2"
                                             >
                                                 <div
-                                                    className="w-14 h-14 rounded-xl p-2.5 transition-all duration-300 backdrop-blur-sm group-hover/tool:scale-110"
+                                                    className="w-14 h-14 rounded-xl p-2.5 backdrop-blur-sm"
                                                     style={{
                                                         backgroundColor: `${feature.color}15`,
                                                         border: `1px solid ${feature.color}30`,
@@ -254,44 +226,6 @@ export default function ToolsReporting() {
                                             </div>
                                         ))}
                                     </div>
-
-                                    {/* Animated Bottom Border */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-700 rounded-full"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${feature.color}, transparent)`,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
-
-                                    {/* Corner Accents */}
-                                    <div
-                                        className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 rounded-tr-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: feature.color,
-                                            opacity: isHovered ? 0.5 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(8px, -8px)",
-                                        }}
-                                    />
-                                    <div
-                                        className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 rounded-bl-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: feature.color,
-                                            opacity: isHovered ? 0.5 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(-8px, 8px)",
-                                        }}
-                                    />
-
-                                    {/* Light Sweep Effect */}
-                                    <div
-                                        className="absolute inset-0 rounded-2xl pointer-events-none"
-                                        style={{
-                                            background: `linear-gradient(120deg, transparent 0%, ${feature.color}15 50%, transparent 100%)`,
-                                            transform: isHovered ? "translateX(100%)" : "translateX(-100%)",
-                                            transition: "transform 1s ease",
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
@@ -326,21 +260,6 @@ export default function ToolsReporting() {
                     50% { opacity: 0.5; transform: scale(1.05); }
                 }
 
-                @keyframes glow {
-                    0%, 100% { box-shadow: 0 0 5px var(--brand-seo); }
-                    50% { box-shadow: 0 0 20px var(--brand-seo); }
-                }
-
-                @keyframes spin-slow {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-
-                @keyframes bounce-x {
-                    0%, 100% { transform: translateX(0); }
-                    50% { transform: translateX(4px); }
-                }
-
                 .animate-drift {
                     animation: drift 20s ease-in-out infinite;
                 }
@@ -359,18 +278,6 @@ export default function ToolsReporting() {
 
                 .animation-delay-4000 {
                     animation-delay: 4s;
-                }
-
-                .animate-glow {
-                    animation: glow 3s ease-in-out infinite;
-                }
-
-                .animate-spin-slow {
-                    animation: spin-slow 8s linear infinite;
-                }
-
-                .animate-bounce-x {
-                    animation: bounce-x 0.6s ease-in-out infinite;
                 }
             `}</style>
         </section>

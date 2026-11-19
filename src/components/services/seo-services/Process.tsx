@@ -53,13 +53,13 @@ export default function Process() {
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{
+        <section className="py-12 sm:py-16 md:py-24 transition-colors duration-300" style={{
             backgroundColor: "var(--card-bg)",
             borderColor: "var(--border-color)",
         }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-7xl">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 max-w-7xl">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -195,7 +195,7 @@ export default function Process() {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-16 text-center">
+                <div className="mt-10 sm:mt-14 md:mt-16 text-center">
                     <a
                         href="/contact"
                         className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform shadow-lg"
