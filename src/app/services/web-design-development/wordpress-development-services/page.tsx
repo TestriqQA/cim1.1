@@ -41,11 +41,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "WordPress Development Services",
-    "provider": {
-        "@type": "Organization",
-        "name": "Cinute InfoMedia",
-        "url": "https://www.cinuteinfomedia.com"
-    },
+    "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
     "areaServed": "Global",
     "description": "Professional WordPress development services including custom themes, WooCommerce, plugin development, and speed optimization for 2026.",
     "hasOfferCatalog": {
@@ -83,8 +79,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "WordPress Development", url: "/services/web-design-development/wordpress-development-services" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "WordPress", url: "/services/web-design-development/wordpress-development-services" },
         ],
         "https://www.cinuteinfomedia.com/services/web-design-development/wordpress-development-services/#breadcrumb"
     ),

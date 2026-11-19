@@ -1,4 +1,6 @@
 import Hero from "@/components/services/seo-services/link-building/Hero";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { linkBuildingFaqs } from "@/data/serviceFaqs";
 import ServiceOverview from "@/components/services/seo-services/link-building/ServiceOverview";
 import SolutionTypes from "@/components/services/seo-services/link-building/SolutionTypes";
 import TechStack from "@/components/services/seo-services/link-building/TechStack";
@@ -8,8 +10,8 @@ import CTA from "@/components/services/seo-services/link-building/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "Link Building Services | Backlink Agency | Cinute InfoMedia",
-    description: "Boost your domain authority and search rankings with our ethical white-hat link building services. High-quality backlinks that drive results.",
+    title: "SEO Backlink Agency & Link Building | Cinute InfoMedia",
+    description: "SEO backlink agency building relevant, editorial links through white-hat outreach. Grow domain authority and rankings without risky link schemes.",
     url: "/services/seo-services/link-building",
     image: "/og-images/link_building.webp",
 });
@@ -24,27 +26,7 @@ export default function LinkBuildingPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "Link Building Services",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com",
-                            "logo": "https://www.cinuteinfomedia.com/logo.png",
-                            "description": "Global Web Design, Development & Digital Marketing Agency",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                                "addressLocality": "Mira Road, Mira Bhayandar",
-                                "addressRegion": "Maharashtra",
-                                "postalCode": "401107",
-                                "addressCountry": "IN"
-                            },
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "telephone": "+919004988859",
-                                "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Hindi"]
-                            }
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                         "hasOfferCatalog": {
                             "@type": "OfferCatalog",
@@ -104,8 +86,8 @@ export default function LinkBuildingPage() {
                         "itemListElement": [
                             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cinuteinfomedia.com" },
                             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.cinuteinfomedia.com/services" },
-                            { "@type": "ListItem", "position": 3, "name": "SEO Services", "item": "https://www.cinuteinfomedia.com/services/seo-services" },
-                            { "@type": "ListItem", "position": 4, "name": "Link Building Services", "item": "https://www.cinuteinfomedia.com/services/seo-services/link-building" }
+                            { "@type": "ListItem", "position": 3, "name": "SEO", "item": "https://www.cinuteinfomedia.com/services/seo-services" },
+                            { "@type": "ListItem", "position": 4, "name": "Link Building", "item": "https://www.cinuteinfomedia.com/services/seo-services/link-building" }
                         ]
                     })
                 }}
@@ -116,6 +98,12 @@ export default function LinkBuildingPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={linkBuildingFaqs}
+                accent="var(--accent-cyan-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/seo-services/link-building"
+                subtitle="Common questions about working with an SEO backlink agency."
+            />
             <CTA />
         </main>
     );

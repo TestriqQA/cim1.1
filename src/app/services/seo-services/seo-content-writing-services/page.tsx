@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { seoContentWritingFaqs } from "@/data/serviceFaqs";
 import Hero from "@/components/services/seo-services/seo-content-writing-services/Hero";
 import ServiceOverview from "@/components/services/seo-services/seo-content-writing-services/ServiceOverview";
 import SolutionTypes from "@/components/services/seo-services/seo-content-writing-services/SolutionTypes";
@@ -9,14 +11,14 @@ import CTA from "@/components/services/seo-services/seo-content-writing-services
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "SEO Content Writing Services | Cinute InfoMedia",
-    description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
+    title: "SEO Content Writing Services That Rank | Cinute InfoMedia",
+    description: "SEO content writing services: researched blog posts, service pages and landing pages written for readers and Google. Get a free quote today.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
     },
     openGraph: {
-        title: "SEO Content Writing Services | Cinute InfoMedia",
-        description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
+        title: "SEO Content Writing Services That Rank | Cinute InfoMedia",
+        description: "SEO content writing services: researched blog posts, service pages and landing pages written for readers and Google. Get a free quote today.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services",
         type: "website",
         images: [
@@ -24,14 +26,14 @@ export const metadata: Metadata = {
                 url: "/og-images/seo-content-writing-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "SEO Content Writing Services | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "SEO Content Writing Services That Rank | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "SEO Content Writing Services | Cinute InfoMedia",
-        description: "SEO content writing services. High-E-E-A-T articles, blogs and landing pages built to rank on Google. Get a free quote today.",
+        title: "SEO Content Writing Services That Rank | Cinute InfoMedia",
+        description: "SEO content writing services: researched blog posts, service pages and landing pages written for readers and Google. Get a free quote today.",
         images: ["/og-images/seo-content-writing-services.webp"],
     },
 
@@ -41,22 +43,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
         {
-            "@type": "Organization",
-            "name": "Cinute InfoMedia",
-            "url": "https://www.cinuteinfomedia.com",
-            "logo": "https://www.cinuteinfomedia.com/logo.png",
-            "sameAs": [
-                "https://twitter.com/cinuteinfomedia",
-                "https://linkedin.com/company/cinuteinfomedia",
-            ],
-        },
-        {
             "@type": "Service",
             "name": "SEO Content Services",
-            "provider": {
-                "@type": "Organization",
-                "name": "Cinute InfoMedia",
-            },
+            "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
             "description":
                 "Professional SEO content writing and optimization services designed for 2026 EEAT guidelines.",
             "areaServed": "Global",
@@ -94,8 +83,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "SEO Services", url: "/services/seo-services" },
-            { name: "SEO Content Writing", url: "/services/seo-services/seo-content-writing-services" },
+            { name: "SEO", url: "/services/seo-services" },
+            { name: "Content SEO", url: "/services/seo-services/seo-content-writing-services" },
         ],
         "https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services/#breadcrumb"
     ),
@@ -118,6 +107,12 @@ export default function ContentSEOPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={seoContentWritingFaqs}
+                accent="var(--accent-green-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/seo-services/seo-content-writing-services"
+                subtitle="Common questions about our SEO content writing services."
+            />
             <CTA />
         </main>
     );

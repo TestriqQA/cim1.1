@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, Zap, MessageSquare } from "lucide-react";
 import Link from "next/link";
 

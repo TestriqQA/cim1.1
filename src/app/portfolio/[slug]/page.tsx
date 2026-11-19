@@ -7,7 +7,6 @@ import NextProject from "@/components/portfolio/detail/NextProject";
 import CTA from "@/components/services/CTA";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -126,12 +125,6 @@ export default async function PortfolioProjectPage({
         : [];
 
     const projectSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description:
-                "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         // No datePublished / dateModified: `data/portfolio.ts` carries no dates,

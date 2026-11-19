@@ -129,7 +129,7 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                                 supportPhone used to render one with no number in it. */}
                             {support.supportPhone && (
                                 <a
-                                    href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                    href={`tel:${support.supportPhone.replace(/[^+\d]/g, "")}`}
                                     className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 bg-white/15 text-white border border-white/30"
                                 >
                                     <Phone className="w-4 h-4" />
@@ -308,7 +308,7 @@ const ProductSupportClient: React.FC<ProductSupportClientProps> = ({ support, sl
                         </a>
                         {support.supportPhone && (
                             <a
-                                href={`tel:${support.supportPhone.replace(/-/g, "")}`}
+                                href={`tel:${support.supportPhone.replace(/[^+\d]/g, "")}`}
                                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-md"
                                 style={{
                                     borderColor: "var(--border-color)",

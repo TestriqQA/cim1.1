@@ -121,7 +121,7 @@ export const productPrivacyPolicies: ProductPrivacyPolicy[] = [
             {
                 title: "10. Contact Information",
                 content: [
-                    { subtitle: "", text: "Privacy Team — Cinute InfoMedia\nEmail: contact@cinuteinfomedia.com\nPhone: +91-9004988859 / +91-7700995410\nAddress: Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107, India." },
+                    { subtitle: "", text: "Privacy Team — Cinute InfoMedia\nEmail: contact@cinuteinfomedia.com\nPhone: +91 9004988859 / +91 7700995410\nAddress: Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107, India." },
                 ],
             },
         ],

@@ -94,9 +94,9 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Drive Exponential ROI with{" "}
+                            SEO Content Writing Services That{" "}
                             <span className="relative inline-block" style={{ color: "var(--accent-green-text)" }}>
-                                Strategic SEO Content
+                                Drive Organic Growth
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
                                     style={{ color: contentEmerald }}

@@ -1,5 +1,3 @@
-"use client";
-
 import { Sparkles, ArrowRight, Home, ChevronRight, Zap, Cpu, Workflow, BarChart3, ShieldCheck, Rocket } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -72,7 +70,7 @@ export default function Hero() {
                             <span
                                 className="bg-clip-text text-transparent"
                             >
-                                <span style={{ color: "var(--accent-orange-text)" }}>AI Workflow</span> <span style={{ color: "var(--foreground)" }}>Automation Services for</span> <Link href="/blog/mastering-seo-organic-growth" className="hover:opacity-80 transition-opacity"><span style={{ color: "var(--accent-orange-text)" }}>Scalable Growth</span></Link>
+                                <span style={{ color: "var(--accent-orange-text)" }}>AI Workflow</span> <span style={{ color: "var(--foreground)" }}>Automation Services</span>
                             </span>
                         </h1>
 

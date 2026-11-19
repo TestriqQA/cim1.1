@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { strapiFaqs } from "@/data/serviceFaqs";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateServiceSchema,
@@ -16,11 +17,11 @@ import WhyChooseUs from "@/components/services/web-design-development/strapi-hea
 import CTA from "@/components/services/web-design-development/strapi-headless-cms/CTA";
 
 export const metadata: Metadata = {
-    title: "Strapi Headless CMS Development | Cinute InfoMedia",
+    title: "Strapi Headless CMS Development Services | Cinute InfoMedia",
     description:
         "Expert Strapi headless CMS development services. Build flexible, API-first content infrastructure with REST, GraphQL, and seamless frontend integrations.",
     openGraph: {
-        title: "Strapi Headless CMS Development | Cinute InfoMedia",
+        title: "Strapi Headless CMS Development Services | Cinute InfoMedia",
         description: "Expert Strapi headless CMS development services. Build flexible, API-first content infrastructure with REST, GraphQL, and seamless frontend integrations.",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/strapi-headless-cms",
         type: "website",
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
                 url: "/og-images/strapi-headless-cms.webp",
                 width: 1200,
                 height: 630,
-                alt: "Strapi Headless CMS Development | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "Strapi Headless CMS Development Services | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Strapi Headless CMS Development | Cinute InfoMedia",
+        title: "Strapi Headless CMS Development Services | Cinute InfoMedia",
         description: "Expert Strapi headless CMS development services. Build flexible, API-first content infrastructure with REST, GraphQL, and seamless frontend integrations.",
         images: ["/og-images/strapi-headless-cms.webp"],
     },
@@ -50,10 +51,9 @@ export const metadata: Metadata = {
 // WebSite anchor the entity, WebPage describes this URL, Service describes what
 // is sold here, BreadcrumbList gives the path back to the hub. (T5)
 const jsonLd = generateGraphSchema(
-    generateOrganizationSchema(),
     generateWebSiteSchema(),
     generateWebPageSchema({
-        name: "Strapi Headless CMS Development | Cinute InfoMedia",
+        name: "Strapi Headless CMS Development Services | Cinute InfoMedia",
         description: "Expert Strapi headless CMS development services. Build flexible, API-first content infrastructure with REST, GraphQL, and seamless frontend integrations.",
         urlPath: "/services/web-design-development/strapi-headless-cms",
         mainEntityId: "https://www.cinuteinfomedia.com/services/web-design-development/strapi-headless-cms/#service",
@@ -70,8 +70,8 @@ const jsonLd = generateGraphSchema(
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Strapi Headless CMS Development", url: "/services/web-design-development/strapi-headless-cms" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Strapi Headless CMS", url: "/services/web-design-development/strapi-headless-cms" },
         ],
         "https://www.cinuteinfomedia.com/services/web-design-development/strapi-headless-cms/#breadcrumb"
     )
@@ -90,6 +90,12 @@ export default function StrapiHeadlessCMSPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={strapiFaqs}
+                accent="var(--accent-indigo-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/web-design-development/strapi-headless-cms"
+                subtitle="Common questions about Strapi headless CMS development."
+            />
             <CTA />
         </main>
     );

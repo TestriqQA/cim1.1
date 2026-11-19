@@ -48,27 +48,7 @@ export default function HarmonyOSAppDevelopmentPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "HarmonyOS App Development",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com",
-                            "logo": "https://www.cinuteinfomedia.com/logo.png",
-                            "description": "Global Web Design, Development & Digital Marketing Agency",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                                "addressLocality": "Mira Road, Mira Bhayandar",
-                                "addressRegion": "Maharashtra",
-                                "postalCode": "401107",
-                                "addressCountry": "IN"
-                            },
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "telephone": "+919004988859",
-                                "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Hindi"]
-                            }
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                         "hasOfferCatalog": {
                             "@type": "OfferCatalog",
@@ -136,8 +116,8 @@ export default function HarmonyOSAppDevelopmentPage() {
                         "itemListElement": [
                             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cinuteinfomedia.com" },
                             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.cinuteinfomedia.com/services" },
-                            { "@type": "ListItem", "position": 3, "name": "Mobile App Development", "item": "https://www.cinuteinfomedia.com/services/mobile-app-development" },
-                            { "@type": "ListItem", "position": 4, "name": "HarmonyOS App Development Services", "item": "https://www.cinuteinfomedia.com/services/mobile-app-development/harmonyos-app-development-services" }
+                            { "@type": "ListItem", "position": 3, "name": "Mobile Apps", "item": "https://www.cinuteinfomedia.com/services/mobile-app-development" },
+                            { "@type": "ListItem", "position": 4, "name": "HarmonyOS", "item": "https://www.cinuteinfomedia.com/services/mobile-app-development/harmonyos-app-development-services" }
                         ]
                     })
                 }}

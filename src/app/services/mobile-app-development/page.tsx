@@ -25,7 +25,6 @@ const CTA = dynamic(() => import('@/components/services/mobile-app-development/C
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -56,11 +55,6 @@ export const metadata = getPageMetadata({
 
 export default function MobileAppDevelopmentPage() {
     const mobileSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

@@ -3,7 +3,6 @@ import BlogCategoriesClient from "./BlogCategoriesClient";
 import { getPageMetadata } from "@/lib/metadata";
 import {
   generateGraphSchema,
-  generateOrganizationSchema,
   generateWebSiteSchema,
   generateBreadcrumbSchema,
   generateItemListSchema,
@@ -36,11 +35,6 @@ export default async function BlogCategoriesPage() {
 
   // Unified @graph schema
   const categoriesSchema = generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {

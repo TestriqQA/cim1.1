@@ -4,12 +4,12 @@ import Location from '@/components/contact/Location';
 import { Metadata } from 'next';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateContactPageSchema,
     generateProfessionalServiceSchema,
     generateBreadcrumbSchema,
     generateNavigationSchema,
+    NAP_CONFIRMED,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -41,18 +41,19 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     const contactSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses scale through technical excellence and data-driven marketing.",
-            slogan: "Build. Market. Scale.",
-            locationId: "https://www.cinuteinfomedia.com/contact/#professional-service",
-        }),
-
-        generateProfessionalServiceSchema({
-            name: "Cinute InfoMedia - Web Development & Digital Marketing Agency",
-            urlPath: "/contact",
-            telephone: "+919004988859",
-            hasMap: "https://www.google.com/maps/search/?api=1&query=Cinute+InfoMedia+Ashley+Tower+Mira+Road",
-        }),
+        // Local-business node (address, phone, map point): held back until the
+        // address is confirmed against the Google Business Profile — see
+        // NAP_CONFIRMED in lib/schema.ts.
+        ...(NAP_CONFIRMED
+            ? [
+                  generateProfessionalServiceSchema({
+                      name: "Cinute InfoMedia - Web Development & Digital Marketing Agency",
+                      urlPath: "/contact",
+                      telephone: "+919004988859",
+                      hasMap: "https://www.google.com/maps/search/?api=1&query=Cinute+InfoMedia+Ashley+Tower+Mira+Road",
+                  }),
+              ]
+            : []),
 
         generateWebSiteSchema(),
 

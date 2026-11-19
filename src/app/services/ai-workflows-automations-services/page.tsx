@@ -28,7 +28,6 @@ const FAQ = dynamic(() => import('@/components/services/ai-workflows-automations
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -41,7 +40,7 @@ import {
 
 export const metadata = getPageMetadata({
     title: 'AI Workflow Automation Services | Cinute InfoMedia',
-    description: 'Automate lead handling, reporting and CRM workflows with AI. Practical business process automation from Cinute InfoMedia. Book a free audit.',
+    description: 'AI workflow automation services: map your process, automate repetitive work and connect your tools. Talk to Cinute InfoMedia.',
     url: '/services/ai-workflows-automations-services',
     keywords: [
         'AI Workflow Automation',
@@ -57,19 +56,14 @@ export const metadata = getPageMetadata({
 
 export default function AIWorkflowsAutomationsPage() {
     const aiSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
             name: "AI Workflow Automation Services | Cinute InfoMedia",
-            description: "Automate lead handling, reporting and CRM workflows with AI. Practical business process automation from Cinute InfoMedia. Book a free audit.",
+            description: "AI workflow automation services: map your process, automate repetitive work and connect your tools. Talk to Cinute InfoMedia.",
             urlPath: "/services/ai-workflows-automations-services",
             datePublished: "2025-01-01",
-            dateModified: "2026-04-10",
+            dateModified: "2026-11-18",
             aboutId: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#service",
             mainEntityId: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#service",
             breadcrumbId: "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#breadcrumb",
@@ -78,7 +72,7 @@ export default function AIWorkflowsAutomationsPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "AI Workflows & Automations Services", url: "/services/ai-workflows-automations-services" },
+            { name: "AI Workflows & Automations", url: "/services/ai-workflows-automations-services" },
         ], "https://www.cinuteinfomedia.com/services/ai-workflows-automations-services/#breadcrumb"),
 
         generateServiceSchema({
@@ -151,14 +145,14 @@ export default function AIWorkflowsAutomationsPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(aiSchema) }}
             />
             <Hero />
-            <ServiceOverview />
-            <WhyChooseUs />
-            <TypesOfAutomations />
-            <IndustriesAndUseCases />
-            <Process />
-            <Technologies />
-            <FAQ />
-            <CTA />
+            <div className="cv-auto"><ServiceOverview /></div>
+            <div className="cv-auto"><WhyChooseUs /></div>
+            <div className="cv-auto"><TypesOfAutomations /></div>
+            <div className="cv-auto"><IndustriesAndUseCases /></div>
+            <div className="cv-auto"><Process /></div>
+            <div className="cv-auto"><Technologies /></div>
+            <div className="cv-auto"><FAQ /></div>
+            <div className="cv-auto"><CTA /></div>
         </main>
     );
 }

@@ -36,7 +36,7 @@ export const productSupportData: ProductSupport[] = [
         slug: "chimegenius-ai-pro",
         productName: "ChimeGenius AI Pro",
         supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
+        supportPhone: "+91 9004988859",
         responseTime: "Within 4 business hours",
         intro: "Need help with the browser extension, comment generation, tone customization, or account settings? Our support team is here to ensure your ChimeGenius experience is smooth and productive.",
         channels: [
@@ -78,7 +78,7 @@ export const productSupportData: ProductSupport[] = [
         // which CIM cannot execute and which Kruti.io publishes its own SLA for.
         // Sending those here would publish an instruction that quietly fails.
         supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
+        supportPhone: "+91 9004988859",
         responseTime: "Within 4 business hours",
         intro: "Need help with your Kruti.io subscription, LinkedIn connection or content generation? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help. Kruti.io is built and operated by Cinute Digital Pvt. Ltd., so actions that run inside the platform itself — cancellations, refunds and account deletion — are handled by that team at support@kruti.io.",
         channels: [
@@ -110,7 +110,7 @@ export const productSupportData: ProductSupport[] = [
         slug: "assetmon",
         productName: "AssetMon",
         supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
+        supportPhone: "+91 9004988859",
         responseTime: "Within 4 business hours",
         intro: "Need help with your AssetMon workspace, a CSV import, the API, SSO or billing? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
         channels: [
@@ -141,7 +141,7 @@ export const productSupportData: ProductSupport[] = [
         slug: "topcareerlive",
         productName: "TopCareerLive",
         supportEmail: "support@cinuteinfomedia.com",
-        supportPhone: "+91-9004988859",
+        supportPhone: "+91 9004988859",
         responseTime: "Within 4 business hours",
         intro: "Questions about posting a role, managing applicants, your candidate profile or a job alert? Email support@cinuteinfomedia.com and the Cinute InfoMedia team will help.",
         channels: [

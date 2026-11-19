@@ -28,7 +28,6 @@ const CTA = dynamic(() => import('@/components/services/ai-chatbots-services/CTA
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -57,11 +56,6 @@ export const metadata = getPageMetadata({
 
 export default function AIPoweredChatbotsPage() {
     const chatbotSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -78,7 +72,7 @@ export default function AIPoweredChatbotsPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "AI Chatbot Services", url: "/services/ai-chatbots-services" },
+            { name: "AI-Powered Chatbots", url: "/services/ai-chatbots-services" },
         ], "https://www.cinuteinfomedia.com/services/ai-chatbots-services/#breadcrumb"),
 
         generateServiceSchema({

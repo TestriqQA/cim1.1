@@ -9,11 +9,11 @@ import FAQ from "@/components/services/web-design-development/astro-framework-se
 import CTA from "@/components/services/web-design-development/astro-framework-services/CTA";
 
 export const metadata: Metadata = {
-    title: "Astro Framework Development Services | Cinute InfoMedia",
+    title: "Astro Development Agency | Cinute InfoMedia",
     description:
         "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
     openGraph: {
-        title: "Astro Framework Development Services | Cinute InfoMedia",
+        title: "Astro Development Agency | Cinute InfoMedia",
         description: "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
         url: "https://www.cinuteinfomedia.com/services/web-design-development/astro-framework-services",
         type: "website",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
                 url: "/og-images/astro-framework-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Astro Framework Development Services | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "Astro Development Agency | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Astro Framework Development Services | Cinute InfoMedia",
+        title: "Astro Development Agency | Cinute InfoMedia",
         description: "Top Astro development agency delivering lightning-fast sites with Islands Architecture. Custom Astro JS services for content-rich sites. Free audit today!",
         images: ["/og-images/astro-framework-services.webp"],
     },
@@ -41,45 +41,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
         {
-            "@type": "Organization",
-            "name": "Cinute InfoMedia",
-            "url": "https://www.cinuteinfomedia.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.cinuteinfomedia.com/logo.png",
-                "width": 250,
-                "height": 60
-            },
-            "description": "Expert Astro development agency delivering lightning-fast websites with near-perfect PageSpeed scores and exceptional SEO performance.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                "addressLocality": "Mira Road, Mira Bhayandar",
-                "addressRegion": "Maharashtra",
-                "postalCode": "401107",
-                "addressCountry": "IN"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+919004988859",
-                "contactType": "Sales",
-                "email": "contact@cinuteinfomedia.com",
-                "availableLanguage": ["English", "Hindi"]
-            },
-            "sameAs": [
-                "https://www.linkedin.com/company/cinute-infomedia/",
-                "https://www.instagram.com/cinuteinfomedia/",
-                "https://x.com/cinuteinfomedia",
-                "https://www.facebook.com/cinuteinfomedia/"
-            ]
-        },
-        {
             "@type": "Service",
             "serviceType": "Astro Framework Development Services",
-            "provider": {
-                "@type": "Organization",
-                "name": "Cinute InfoMedia"
-            },
+            "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
             "areaServed": {
                 "@type": "Place",
                 "name": "Worldwide"
@@ -248,7 +212,7 @@ const jsonLd = {
                 {
                     "@type": "ListItem",
                     "position": 3,
-                    "name": "Web Design & Development",
+                    "name": "Web Design",
                     "item": "https://www.cinuteinfomedia.com/services/web-design-development"
                 },
                 {

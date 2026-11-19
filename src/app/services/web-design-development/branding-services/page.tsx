@@ -22,7 +22,6 @@ const FAQ = dynamic(() => import('@/components/services/web-design-development/b
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -52,11 +51,6 @@ export const metadata = getPageMetadata({
 
 export default function PortfolioPersonalPage() {
     const brandSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -73,8 +67,8 @@ export default function PortfolioPersonalPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Personal Branding & Portfolio Design", url: "/services/web-design-development/branding-services" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Portfolio & Personal", url: "/services/web-design-development/branding-services" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/branding-services/#breadcrumb"),
 
         generateServiceSchema({

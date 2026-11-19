@@ -1,4 +1,5 @@
 import BlogClient from "./BlogClient";
+import BlogArchive from "@/components/blog/BlogArchive";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery } from "@/sanity/lib/queries";
@@ -66,10 +67,7 @@ export default async function BlogPage() {
     name: "CIM Blog",
     description: "Expert insights on web development, digital marketing, and business growth.",
     url: "https://www.cinuteinfomedia.com/blog",
-    publisher: {
-      "@type": "Organization",
-      name: "CIM",
-    },
+    publisher: { "@id": "https://www.cinuteinfomedia.com/#organization" },
     blogPost: blogPosts.slice(0, 10).map((post: BlogPost) => ({
       "@type": "BlogPosting",
       headline: post.title,
@@ -99,6 +97,7 @@ export default async function BlogPage() {
         categories={categories}
         popularPosts={popularPosts}
         tags={tags}
+        archive={<BlogArchive posts={blogPosts} />}
       />
     </>
   );

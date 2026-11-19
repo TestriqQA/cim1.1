@@ -33,7 +33,7 @@ export default function DesignProcess() {
             anchor: "step-systematization",
             icon: PenTool,
             title: "Systematization & Guidelines",
-            description: "Once approved, we build the full system-color codes, type scales, and brand guidelines design. We ensure every asset is production-ready.",
+            description: <span>Once approved, we build the full system-color codes, type scales, and <Link href="/blog/brand-guideline-creation" className="underline underline-offset-2 hover:text-[var(--accent-amber-text)]">brand guidelines</Link> design. We ensure every asset is production-ready.</span>,
             details: ["System building", "Color codes", "Type scales", "Production ready"],
         },
         {

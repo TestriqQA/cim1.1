@@ -99,9 +99,9 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Expert <Link href="/services/seo-services" className="hover:underline decoration-2 underline-offset-4">Technical SEO Services</Link> for{" "}
+                            Technical SEO Agency for{" "}
                             <span className="relative inline-block" style={{ color: "var(--accent-violet-text)" }}>
-                                2026 Peak Performance
+                                Faster, Crawlable Sites
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
                                     style={{ color: techPurple }}

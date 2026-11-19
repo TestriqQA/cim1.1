@@ -177,8 +177,8 @@ export default function CTA() {
                       className="mt-0.5 block break-words [overflow-wrap:anywhere] text-sm font-semibold not-italic leading-relaxed"
                       style={{ color: "var(--foreground)" }}
                     >
-                      Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Beverly
-                      Park, Mira Road, Mumbai, Maharashtra 401107
+                      Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar,
+                      Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107
                     </address>
                   </span>
                 </li>

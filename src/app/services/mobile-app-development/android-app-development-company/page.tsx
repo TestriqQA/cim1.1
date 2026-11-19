@@ -43,8 +43,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Mobile App Development", url: "/services/mobile-app-development" },
-            { name: "Android App Development", url: "/services/mobile-app-development/android-app-development-company" },
+            { name: "Mobile Apps", url: "/services/mobile-app-development" },
+            { name: "Android Development", url: "/services/mobile-app-development/android-app-development-company" },
         ],
         "https://www.cinuteinfomedia.com/services/mobile-app-development/android-app-development-company/#breadcrumb"
     ),
@@ -73,11 +73,7 @@ export default function AndroidAppDevelopmentPage() {
                             "@context": "https://schema.org",
                             "@type": "Service",
                             name: "Android App Development Services",
-                            provider: {
-                                "@type": "Organization",
-                                name: "Cinute InfoMedia",
-                                url: "https://www.cinuteinfomedia.com",
-                            },
+                            provider: { "@id": "https://www.cinuteinfomedia.com/#organization" },
                             serviceType: "Mobile App Development",
                             areaServed: "Global",
                             description:
@@ -122,43 +118,38 @@ export default function AndroidAppDevelopmentPage() {
                             mainEntity: [
                                 {
                                     "@type": "Question",
-                                    name: "How much does it cost to develop an Android app?",
-                                    acceptedAnswer: {
-                                        "@type": "Answer",
-                                        text: "The cost varies based on complexity. A simple MVP starts from $10,000 - $25,000, while complex enterprise apps with AI/IoT features can range from $50,000 - $150,000+. We provide detailed, fixed-price quotes.",
-                                    },
+                                    "name": "How much does it cost to develop an Android app?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "The cost varies based on complexity. A simple MVP starts from $10,000 to $25,000, while complex enterprise apps with AI/IoT features can range from $50,000 to $150,000+. We provide detailed, fixed-price quotes after our initial discovery call." },
                                 },
                                 {
                                     "@type": "Question",
-                                    name: "What is the best language for Android app development?",
-                                    acceptedAnswer: {
-                                        "@type": "Answer",
-                                        text: "Kotlin is the industry standard and Google's preferred language. We also support Java for legacy code and C++ for high-performance NDK modules.",
-                                    },
+                                    "name": "What is the best language for Android app development?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "Kotlin is currently the industry standard and Google's preferred language for Android development due to its conciseness and safety features. However, we also support Java for legacy code modernization and C++ for high-performance NDK modules." },
                                 },
                                 {
                                     "@type": "Question",
-                                    name: "How long does it take to build a custom Android app?",
-                                    acceptedAnswer: {
-                                        "@type": "Answer",
-                                        text: "A standard custom Android app takes 3 to 6 months from concept to launch. We offer expedited Sprint packages for urgent MVP launches in as little as 8 weeks.",
-                                    },
+                                    "name": "How long does it take to build a custom Android app?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "A standard custom Android app takes 3 to 6 months from concept to launch. This includes design, development, testing, and deployment. We offer expedited \"Sprint\" packages for urgent MVP launches in as little as 8 weeks." },
                                 },
                                 {
                                     "@type": "Question",
-                                    name: "What are the benefits of native Android development vs hybrid?",
-                                    acceptedAnswer: {
-                                        "@type": "Answer",
-                                        text: "Native Android apps offer superior performance and better access to device hardware. Hybrid solutions (Flutter/React Native) are faster to build and cost-effective for dual-platform needs.",
-                                    },
+                                    "name": "What are the benefits of native Android development vs hybrid?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "Native Android apps offer superior performance, better access to device hardware (camera, GPS), and a smoother UX compared to hybrid apps. However, hybrid solutions (Flutter/React Native) are faster to build and cost-effective if you need both iOS and Android apps simultaneously." },
                                 },
                                 {
                                     "@type": "Question",
-                                    name: "How do I publish my app on the Google Play Store?",
-                                    acceptedAnswer: {
-                                        "@type": "Answer",
-                                        text: "We handle the entire end-to-end publishing process, including Developer Account creation, screenshot optimization, and Google Play Protect compliance.",
-                                    },
+                                    "name": "How do I publish my app on the Google Play Store?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "We handle the entire end-to-end publishing process. This includes creating your Developer Account, preparing high-res screenshots, writing SEO-optimized descriptions, ensuring Google Play Protect compliance, and managing the review process to maximize approval success." },
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Do you offer Android app migration and legacy code modernization?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "Yes! We specialize in Android app migration services, helping businesses upgrade from Java to Kotlin or move from monolithic architectures to scalable microservices, improving maintainability and performance." },
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Can you integrate on-device AI and machine learning?",
+                                    "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We harness the power of TensorFlow Lite and Google ML Kit to add smart features like image labeling, face detection, and text recognition directly on the device, ensuring privacy and offline capability." },
                                 },
                             ],
                         },

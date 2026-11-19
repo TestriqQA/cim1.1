@@ -1,19 +1,40 @@
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import Hero from "@/components/services/social-media-marketing-services/pinterest-marketing/Hero";
-import ServiceOverview from "@/components/services/social-media-marketing-services/pinterest-marketing/ServiceOverview";
-import SolutionTypes from "@/components/services/social-media-marketing-services/pinterest-marketing/SolutionTypes";
-import TechStack from "@/components/services/social-media-marketing-services/pinterest-marketing/TechStack";
-import Process from "@/components/services/social-media-marketing-services/pinterest-marketing/Process";
-import WhyChooseUs from "@/components/services/social-media-marketing-services/pinterest-marketing/WhyChooseUs";
-import CTA from "@/components/services/social-media-marketing-services/pinterest-marketing/CTA";
+
+// Below-the-fold sections load as separate chunks so they hydrate in their
+// own tasks instead of one long main-thread block (SEO 4-week plan, P3).
+const ServiceOverview = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/ServiceOverview"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const SolutionTypes = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/SolutionTypes"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const TechStack = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/TechStack"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const Process = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/Process"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const WhyChooseUs = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/WhyChooseUs"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const CTA = dynamic(() => import("@/components/services/social-media-marketing-services/pinterest-marketing/CTA"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
 
 export const metadata: Metadata = {
-    title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
+    title: "Pinterest Marketing Services | Cinute InfoMedia",
     description:
-        "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
+        "Pinterest marketing services for brands: profile setup, content, ads and reporting. Get in touch with Cinute InfoMedia.",
     openGraph: {
-        title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
-        description: "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
+        title: "Pinterest Marketing Services | Cinute InfoMedia",
+        description: "Pinterest marketing services for brands: profile setup, content, ads and reporting. Get in touch with Cinute InfoMedia.",
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/pinterest-marketing",
         type: "website",
         images: [
@@ -21,14 +42,14 @@ export const metadata: Metadata = {
                 url: "/og-images/pinterest-marketing.webp",
                 width: 1200,
                 height: 630,
-                alt: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "Pinterest Marketing Services by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Pinterest Marketing Agency | Shopping Ads | Cinute InfoMedia",
-        description: "Drive traffic and sales with Pinterest marketing. Shoppable pins, promoted content, and visual discovery strategies for e-commerce and lifestyle brands.",
+        title: "Pinterest Marketing Services | Cinute InfoMedia",
+        description: "Pinterest marketing services for brands: profile setup, content, ads and reporting. Get in touch with Cinute InfoMedia.",
         images: ["/og-images/pinterest-marketing.webp"],
     },
     alternates: {
@@ -46,27 +67,7 @@ export default function PinterestMarketingPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "Pinterest Marketing",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com",
-                            "logo": "https://www.cinuteinfomedia.com/logo.png",
-                            "description": "Global Web Design, Development & Digital Marketing Agency",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                                "addressLocality": "Mira Road, Mira Bhayandar",
-                                "addressRegion": "Maharashtra",
-                                "postalCode": "401107",
-                                "addressCountry": "IN"
-                            },
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "telephone": "+919004988859",
-                                "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Hindi"]
-                            }
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                         "hasOfferCatalog": {
                             "@type": "OfferCatalog",
@@ -134,7 +135,7 @@ export default function PinterestMarketingPage() {
                         "itemListElement": [
                             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cinuteinfomedia.com" },
                             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.cinuteinfomedia.com/services" },
-                            { "@type": "ListItem", "position": 3, "name": "Social Media Marketing", "item": "https://www.cinuteinfomedia.com/services/social-media-marketing-services" },
+                            { "@type": "ListItem", "position": 3, "name": "Social Media", "item": "https://www.cinuteinfomedia.com/services/social-media-marketing-services" },
                             { "@type": "ListItem", "position": 4, "name": "Pinterest Marketing", "item": "https://www.cinuteinfomedia.com/services/social-media-marketing-services/pinterest-marketing" }
                         ]
                     })

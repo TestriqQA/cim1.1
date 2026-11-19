@@ -2,6 +2,18 @@ import { BlogPost, Author } from "@/data/blog";
 
 const siteUrl = "https://www.cinuteinfomedia.com";
 
+/**
+ * SEO 4-week plan, section 4: the street address and phone number go into
+ * structured data only once the team confirms they match the Google Business
+ * Profile exactly. Confirmed by the team on 2026-11-19 (same address and
+ * +91 9004988859 as the footer and contact page). While false, the
+ * Organization node (home page) omits them and /contact emits no
+ * ProfessionalService node. Opening hours (Mon-Sat 9:00 AM-8:00 PM) were
+ * confirmed on 2026-11-19 and match the contact page. Map coordinates are left
+ * out until someone checks them against the Business Profile pin.
+ */
+export const NAP_CONFIRMED = true;
+
 // ============================================================
 // HELPER — Wraps multiple schemas into a single @graph
 // ============================================================
@@ -51,30 +63,23 @@ export function generateOrganizationSchema(overrides?: {
     ...(overrides?.hasOfferCatalogId && {
       "hasOfferCatalog": { "@id": overrides.hasOfferCatalogId },
     }),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress":
-        "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-      "addressLocality": "Mira Road, Mira Bhayandar",
-      "addressRegion": "Maharashtra",
-      "postalCode": "401107",
-      "addressCountry": "IN",
-    },
-    "location": overrides?.locationId
-      ? { "@id": overrides.locationId }
-      : {
-          "@type": "Place",
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "19.2812",
-            "longitude": "72.8685",
-          },
-        },
-    "telephone": "+919004988859",
+    ...(NAP_CONFIRMED ? {
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress":
+          "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
+        "addressLocality": "Mira Road, Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN",
+      },
+      ...(overrides?.locationId ? { "location": { "@id": overrides.locationId } } : {}),
+      "telephone": "+919004988859",
+    } : {}),
     "email": "contact@cinuteinfomedia.com",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+919004988859",
+      ...(NAP_CONFIRMED ? { "telephone": "+919004988859" } : {}),
       "contactType": "customer service",
       "email": "contact@cinuteinfomedia.com",
       "availableLanguage": ["English", "Hindi"],
@@ -118,14 +123,9 @@ export function generateWebSiteSchema() {
       "@id": `${siteUrl}/#organization`,
     },
     "inLanguage": "en-US",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}/?s={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    // No SearchAction: the site has no /?s= search, so the template only made
+    // Google crawl "/?s={search_term_string}" (Search Console, 19 Nov 2026),
+    // and Google no longer shows the sitelinks search box.
   };
 }
 
@@ -218,9 +218,12 @@ export function generateContactPageSchema(params: {
     "about": {
       "@id": `${siteUrl}/#organization`,
     },
-    "mainEntity": {
-      "@id": `${siteUrl}${params.urlPath}/#professional-service`,
-    },
+    // The ProfessionalService node exists only once the address is confirmed.
+    ...(NAP_CONFIRMED ? {
+      "mainEntity": {
+        "@id": `${siteUrl}${params.urlPath}/#professional-service`,
+      },
+    } : {}),
     "publisher": {
       "@id": `${siteUrl}/#organization`,
     },
@@ -256,24 +259,12 @@ export function generateProfessionalServiceSchema(params: {
       "postalCode": "401107",
       "addressCountry": "IN",
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "19.2812",
-      "longitude": "72.8685",
-    },
     ...(params.hasMap && { "hasMap": params.hasMap }),
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        "opens": "10:00",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
         "closes": "20:00",
       },
     ],
@@ -523,11 +514,6 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
   const authorSlug = post.author.name.toLowerCase().replace(/\s+/g, "-");
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {
@@ -613,11 +599,6 @@ export function generateCategoryPageGraphSchema(params: {
   const description = params.seo?.metaDescription || params.description || `Explore articles about ${params.categoryName}.`;
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {
@@ -673,11 +654,6 @@ export function generateAuthorPageGraphSchema(params: {
   const pageUrl = `${siteUrl}/blog/author/${authorSlug}`;
 
   return generateGraphSchema(
-    generateOrganizationSchema({
-      description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-      slogan: "Build. Market. Scale.",
-    }),
-
     generateWebSiteSchema(),
 
     {

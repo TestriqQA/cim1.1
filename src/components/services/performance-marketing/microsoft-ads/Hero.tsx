@@ -70,8 +70,8 @@ export default function Hero() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: "var(--foreground)" }}>
-                            Expand Beyond{" "}
+                        <h1 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: "var(--foreground)" }}>
+                            Microsoft Advertising{" "}
                             <span
                                 className="relative inline-block"
                             >
@@ -81,9 +81,10 @@ export default function Hero() {
                                         color: "var(--brand-blue-text)"
                                     }}
                                 >
-                                    Google
+                                    (Bing Ads)
                                 </span>
-                            </span>
+                            </span>{" "}
+                            Services
                         </h1>
 
                         {/* Description */}

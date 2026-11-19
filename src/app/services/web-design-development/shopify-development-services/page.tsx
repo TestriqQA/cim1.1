@@ -9,7 +9,6 @@ import CTA from "@/components/services/web-design-development/shopify-developmen
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -37,11 +36,6 @@ export const metadata = getPageMetadata({
 
 export default function ShopifyEcommercePage() {
     const shopifySchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -58,8 +52,8 @@ export default function ShopifyEcommercePage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Shopify Development Services", url: "/services/web-design-development/shopify-development-services" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Shopify & E-commerce", url: "/services/web-design-development/shopify-development-services" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/shopify-development-services/#breadcrumb"),
 
         generateServiceSchema({

@@ -43,11 +43,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "On-Page SEO Services",
-    "provider": {
-        "@type": "Organization",
-        "name": "Cinute InfoMedia",
-        "url": "https://www.cinuteinfomedia.com"
-    },
+    "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
     "areaServed": "Global",
     "description": "Professional on-page SEO optimization services including technical audits, keyword mapping, content optimization, and schema implementation to boost search rankings.",
     "hasOfferCatalog": {
@@ -94,7 +90,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "SEO", url: "/services/seo-services" },
             { name: "On-Page SEO", url: "/services/seo-services/on-page-seo-services" },
         ],
         "https://www.cinuteinfomedia.com/services/seo-services/on-page-seo-services/#breadcrumb"
