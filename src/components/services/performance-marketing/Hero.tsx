@@ -25,7 +25,7 @@ export default function Hero() {
         >
             {/* Animated Background */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-10 md:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -102,7 +102,7 @@ export default function Hero() {
                         </div>
 
                         {/* Stats Row */}
-                        <div className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
+                        <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8 justify-center lg:justify-start">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center lg:text-left">
                                     <div className="text-3xl font-black" style={{ color: "var(--accent-orange-text)" }}>
@@ -116,7 +116,7 @@ export default function Hero() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 justify-center lg:justify-start">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 justify-center lg:justify-start">
 
                             <Link
                                 href="/contact"

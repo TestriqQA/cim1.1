@@ -25,6 +25,8 @@ export type FaqSectionProps = {
     background?: string;
     /** Anchor id for the section, e.g. "faq". */
     id?: string;
+    /** Tighter section padding and heading gap; other pages keep the default. */
+    compact?: boolean;
 };
 
 /**
@@ -46,6 +48,7 @@ export default function FaqSection({
     subtitle,
     background = "var(--background)",
     id,
+    compact = false,
 }: FaqSectionProps) {
     // The first question is open on load.
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -54,12 +57,12 @@ export default function FaqSection({
     return (
         <section
             id={id}
-            className="py-12 sm:py-16 md:py-24 scroll-mt-20"
+            className={`${compact ? "py-12 md:py-16 lg:py-20" : "py-12 sm:py-16 md:py-24"} scroll-mt-20`}
             style={{ backgroundColor: background }}
         >
             <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
                 {(eyebrow || title || subtitle) && (
-                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                    <div className={`text-center ${compact ? "mb-8 md:mb-10 lg:mb-12" : "mb-8 sm:mb-12 md:mb-16"}`}>
                         {/*
                             Badge: both children are sized in em and set to leading-none, so
                             the icon tracks the label's font size and neither carries dead

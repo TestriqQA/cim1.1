@@ -20,7 +20,7 @@ export default function Process() {
             anchor: "step-strategy",
             icon: Search,
             title: "Strategy & Media Planning",
-            description: <span>We craft a tailored <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">performance marketing strategy</Link>. We identify the 'low-hanging fruit' for quick wins while building a long-term roadmap.</span>,
+            description: <span>We craft a tailored <Link href="/blog/digital-marketing-strategy-planning-to-execution" className="underline underline-offset-2 hover:text-[var(--accent-orange-text)]">performance marketing strategy</Link>. We identify the &apos;low-hanging fruit&apos; for quick wins while building a long-term roadmap.</span>,
             details: ["Channel Mix", "Budget Allocation", "Quick Wins", "Long-term Roadmap"],
         },
         {
@@ -54,10 +54,10 @@ export default function Process() {
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+        <section className="py-12 md:py-16 lg:py-20 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-7xl">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -70,7 +70,7 @@ export default function Process() {
                             Our Process
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Our Proven <span style={{ color: "var(--accent-orange-text)" }}>6-Step Process</span>
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
@@ -86,7 +86,7 @@ export default function Process() {
                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 30%, transparent)" }}
                     />
 
-                    <div className="space-y-8 lg:space-y-0">
+                    <div className="space-y-6 lg:space-y-0">
                         {steps.map((step, index) => {
                             const Icon = step.icon;
                             const isEven = index % 2 === 0;
@@ -103,7 +103,7 @@ export default function Process() {
                                     {/* Content Card */}
                                     <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
                                         <div
-                                            className={`p-6 rounded-2xl border transition-all duration-300 ${isHovered ? 'shadow-2xl -translate-y-1' : 'shadow-lg'}`}
+                                            className={`p-6 rounded-2xl border transition duration-300 ${isHovered ? 'shadow-xl' : 'shadow-lg'}`}
                                             style={{
                                                 backgroundColor: isHovered
                                                     ? "color-mix(in srgb, var(--brand-orange) 5%, var(--card-bg))"
@@ -135,11 +135,11 @@ export default function Process() {
                                             </p>
 
                                             {/* Details */}
-                                            <div className={`flex flex-wrap gap-2 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
+                                            <div className={`flex flex-wrap gap-x-4 gap-y-2 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
                                                 {step.details.map((detail, idx) => (
-                                                    <div key={idx} className="flex items-center gap-1">
-                                                        <CheckCircle2 className="w-3 h-3" style={{ color: "var(--brand-orange)" }} />
-                                                        <span className="text-xs font-medium">{detail}</span>
+                                                    <div key={idx} className="flex items-center gap-1.5">
+                                                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                                                        <span className="text-sm font-medium">{detail}</span>
                                                     </div>
                                                 ))}
                                             </div>
@@ -149,7 +149,7 @@ export default function Process() {
                                     {/* Center Circle */}
                                     <div className="hidden lg:flex flex-col items-center z-10">
                                         <div
-                                            className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${isHovered ? 'scale-110' : ''}`}
+                                            className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
                                             style={{
                                                 backgroundColor: "var(--brand-orange)",
                                                 border: "4px solid var(--background)",
@@ -161,12 +161,11 @@ export default function Process() {
 
                                     {/* Step Number */}
                                     <div className={`flex-1 hidden lg:flex items-center ${isEven ? 'justify-start' : 'justify-end'}`}>
-                                        <div className={`relative transition-all duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}>
+                                        <div className="relative">
                                             <span
-                                                className="text-8xl font-black transition-all duration-300"
+                                                className="text-8xl font-black transition-colors duration-300"
                                                 style={{
                                                     color: isHovered ? "var(--accent-orange-text)" : "color-mix(in srgb, var(--brand-orange) 20%, transparent)",
-                                                    textShadow: isHovered ? "0 0 40px color-mix(in srgb, var(--brand-orange) 30%, transparent)" : "none",
                                                 }}
                                             >
                                                 {String(index + 1).padStart(2, '0')}

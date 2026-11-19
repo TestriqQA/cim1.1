@@ -34,6 +34,7 @@ export default function FAQ() {
             accent="var(--accent-orange-text)"
             subtitle="Answers to common questions about our performance marketing services, pricing, and approach."
             background="var(--card-bg)"
+            compact
         />
     );
 }
