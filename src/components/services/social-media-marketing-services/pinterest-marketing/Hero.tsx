@@ -100,9 +100,9 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Inspire & Convert with{" "}
+                            Pinterest Marketing Services for{" "}
                             <span className="relative inline-block" style={{ color: "var(--accent-red-text)" }}>
-                                <Link href="/services/web-design-development/branding-services" className="hover:underline">Visual Discovery</Link>
+                                <Link href="/services/web-design-development/branding-services" className="hover:underline">Brands</Link>
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
                                     style={{ color: pinterestRed }}

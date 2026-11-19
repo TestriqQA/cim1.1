@@ -4,13 +4,16 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { useEffect, useState } from "react";
 
 /**
- * Loads Google Analytics (gtag.js) lazily — only after the first user
- * interaction, or when the browser goes idle (with a ~3s fallback), whichever
- * comes first. This keeps the ~130 KiB gtag.js off the critical load path so it
- * doesn't inflate TBT/TTI/unused-JS at first paint, while still tracking every
- * real (engaged) session. The only sessions not captured are users who leave
- * within a few seconds without any interaction.
+ * Loads Google Analytics (gtag.js) lazily — on the first user interaction, or
+ * after FALLBACK_MS for passive readers, whichever comes first. gtag.js costs
+ * 250–500 ms of main-thread work on a mid-range phone; with the old ~3s idle
+ * fallback that landed inside the page-load window and was the largest single
+ * contributor to Total Blocking Time on every page (Lighthouse, Nov 2026).
+ * Engaged sessions are all still tracked; the only sessions not captured are
+ * visitors who leave within FALLBACK_MS without scrolling, tapping or typing.
  */
+const FALLBACK_MS = 15000;
+
 export default function DeferredGoogleAnalytics({ gaId }: { gaId: string }) {
   const [shouldLoad, setShouldLoad] = useState(false);
 
@@ -19,16 +22,8 @@ export default function DeferredGoogleAnalytics({ gaId }: { gaId: string }) {
 
     const load = () => setShouldLoad(true);
 
-    const w = window as Window & {
-      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
-      cancelIdleCallback?: (id: number) => void;
-    };
-
-    // Idle fallback so analytics still fires for passive readers.
-    const idleId =
-      typeof w.requestIdleCallback === "function"
-        ? w.requestIdleCallback(load, { timeout: 3000 })
-        : (window.setTimeout(load, 3000) as unknown as number);
+    // Fallback so analytics still fires for passive readers.
+    const timerId = window.setTimeout(load, FALLBACK_MS);
 
     // First real interaction loads it immediately.
     const opts: AddEventListenerOptions = { once: true, passive: true };
@@ -42,11 +37,7 @@ export default function DeferredGoogleAnalytics({ gaId }: { gaId: string }) {
 
     return () => {
       events.forEach((e) => window.removeEventListener(e, load));
-      if (typeof w.cancelIdleCallback === "function") {
-        w.cancelIdleCallback(idleId);
-      } else {
-        window.clearTimeout(idleId);
-      }
+      window.clearTimeout(timerId);
     };
   }, [shouldLoad]);
 

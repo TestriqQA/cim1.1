@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function CTA() {
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20 max-w-5xl">
+        <section className="py-12 sm:py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 max-w-5xl">
                 <div
                     className="relative p-6 md:p-12 rounded-3xl text-center shadow-2xl overflow-hidden border"
                     style={{
@@ -34,7 +34,7 @@ export default function CTA() {
                         </p>
 
                         {/* Stats */}
-                        <div className="flex flex-wrap justify-center gap-8 mb-8">
+                        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 mb-8">
                             <div className="flex items-center gap-2">
                                 <TrendingUp className="w-5 h-5" style={{ color: "var(--brand-seo)" }} />
                                 <span className="font-semibold">300% Avg Growth</span>

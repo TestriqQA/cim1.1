@@ -1,24 +1,51 @@
+import dynamic from "next/dynamic";
+import ServiceGuide from "@/components/services/ServiceGuide";
+import Link from "next/link";
+import { xAdsCost, xAdsMeasure } from "@/data/serviceGuides";
 import React from "react";
 import Hero from "@/components/services/social-media-marketing-services/twitter-ads-management/Hero";
-import ServiceOverview from "@/components/services/social-media-marketing-services/twitter-ads-management/ServiceOverview";
-import SolutionTypes from "@/components/services/social-media-marketing-services/twitter-ads-management/SolutionTypes";
-import TechStack from "@/components/services/social-media-marketing-services/twitter-ads-management/TechStack";
-import Process from "@/components/services/social-media-marketing-services/twitter-ads-management/Process";
-import WhyChooseUs from "@/components/services/social-media-marketing-services/twitter-ads-management/WhyChooseUs";
-import FAQ from "@/components/services/social-media-marketing-services/twitter-ads-management/FAQ";
-import CTA from "@/components/services/social-media-marketing-services/twitter-ads-management/CTA";
 import { Metadata } from 'next';
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
+// Below-the-fold sections load as separate chunks so they hydrate in their
+// own tasks instead of one long main-thread block (SEO 4-week plan, P3).
+const ServiceOverview = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/ServiceOverview"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const SolutionTypes = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/SolutionTypes"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const TechStack = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/TechStack"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const Process = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/Process"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const WhyChooseUs = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/WhyChooseUs"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const FAQ = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/FAQ"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
+const CTA = dynamic(() => import("@/components/services/social-media-marketing-services/twitter-ads-management/CTA"), {
+    loading: () => <div className="py-10 md:py-16" />,
+});
+
 export const metadata: Metadata = {
-    title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
-    description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+    title: 'X (Twitter) Ads Agency | Cinute InfoMedia',
+    description: 'X (Twitter) ads agency: campaign strategy, creative, targeting and reporting. Talk to Cinute InfoMedia.',
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
     },
     openGraph: {
-        title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
-        description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+        title: 'X (Twitter) Ads Agency | Cinute InfoMedia',
+        description: 'X (Twitter) ads agency: campaign strategy, creative, targeting and reporting. Talk to Cinute InfoMedia.',
         url: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management",
         type: "website",
         images: [
@@ -26,14 +53,14 @@ export const metadata: Metadata = {
                 url: "/og-images/twitter-ads-management.webp",
                 width: 1200,
                 height: 630,
-                alt: "X (Twitter) Marketing Services | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "X (Twitter) Ads Management Services by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: 'X (Twitter) Marketing Services | Cinute InfoMedia',
-        description: 'Scaling your X business? Our Twitter marketing company delivers strong ROI via expert Twitter ads management & real-time trend hijacking. Get a free quote!',
+        title: 'X (Twitter) Ads Agency | Cinute InfoMedia',
+        description: 'X (Twitter) ads agency: campaign strategy, creative, targeting and reporting. Talk to Cinute InfoMedia.',
         images: ["/og-images/twitter-ads-management.webp"],
     },
 
@@ -48,7 +75,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Social Media", url: "/services/social-media-marketing-services" },
             { name: "X (Twitter) Marketing", url: "/services/social-media-marketing-services/twitter-ads-management" },
         ],
         "https://www.cinuteinfomedia.com/services/social-media-marketing-services/twitter-ads-management/#breadcrumb"
@@ -60,22 +87,9 @@ export default function XMarketingPage() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "Organization",
-                "name": "Cinute InfoMedia",
-                "url": "https://www.cinuteinfomedia.com",
-                "logo": "https://www.cinuteinfomedia.com/logo.png",
-                "sameAs": [
-                    "https://twitter.com/cinuteinfomedia",
-                    "https://www.linkedin.com/company/cinuteinfomedia"
-                ]
-            },
-            {
                 "@type": "Service",
                 "serviceType": "X (Twitter) Marketing Services",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "Cinute InfoMedia"
-                },
+                "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                 "description": "Full-service X (Twitter) marketing including ads management, real-time engagement, and trend hijacking for global brands.",
                 "areaServed": "Global",
                 "hasOfferCatalog": {
@@ -163,6 +177,20 @@ export default function XMarketingPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceGuide
+                id="x-ads-cost"
+                title="What Affects the Cost of X (Twitter) Ads"
+                intro="X ads are sold in an auction, so there is no fixed price per click or view. These are the factors that move the cost most."
+                items={xAdsCost}
+                accent="var(--foreground)"
+            />
+            <ServiceGuide
+                title="How We Measure X (Twitter) Ads Results"
+                items={xAdsMeasure}
+                accent="var(--foreground)"
+                columns={3}
+                footer={<>Planning a wider social campaign? See our <Link href="/services/social-media-marketing-services" className="underline underline-offset-2">social media marketing services</Link>.</>}
+            />
             <FAQ />
             <CTA />
         </main>

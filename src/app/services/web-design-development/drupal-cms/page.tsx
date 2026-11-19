@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import { drupalFaqs } from "@/data/serviceFaqs";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateServiceSchema,
@@ -50,7 +51,6 @@ export const metadata: Metadata = {
 // WebSite anchor the entity, WebPage describes this URL, Service describes what
 // is sold here, BreadcrumbList gives the path back to the hub. (T5)
 const jsonLd = generateGraphSchema(
-    generateOrganizationSchema(),
     generateWebSiteSchema(),
     generateWebPageSchema({
         name: "Drupal CMS Development Services | Cinute InfoMedia",
@@ -70,8 +70,8 @@ const jsonLd = generateGraphSchema(
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Drupal CMS Development", url: "/services/web-design-development/drupal-cms" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Drupal CMS", url: "/services/web-design-development/drupal-cms" },
         ],
         "https://www.cinuteinfomedia.com/services/web-design-development/drupal-cms/#breadcrumb"
     )
@@ -90,6 +90,12 @@ export default function DrupalCMSPage() {
             <TechStack />
             <Process />
             <WhyChooseUs />
+            <ServiceFaq
+                faqs={drupalFaqs}
+                accent="var(--brand-blue-text)"
+                pageUrl="https://www.cinuteinfomedia.com/services/web-design-development/drupal-cms"
+                subtitle="Common questions about Drupal CMS development."
+            />
             <CTA />
         </main>
     );

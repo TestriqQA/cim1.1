@@ -77,15 +77,15 @@ export default function Hero() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
-                            Build Authority with{" "}
+                        <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
+                            SEO Backlink Agency for{" "}
                             <span
                                 className="bg-clip-text text-transparent"
                                 style={{
                                     backgroundImage: `linear-gradient(135deg, ${linkCyan}, #3b82f6)`,
                                 }}
                             >
-                                Quality Backlinks
+                                Authority-Building Links
                             </span>
                         </h1>
 

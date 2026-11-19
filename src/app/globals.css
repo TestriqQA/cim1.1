@@ -357,3 +357,11 @@ body,
 .animate-spin-slow {
   animation: spin 3s linear infinite;
 }
+/* Below-the-fold sections (home, AI Workflows): the browser skips style, layout
+   and paint for them, including their looping decorative animations, until they
+   approach the viewport. Purely a rendering hint: the text stays in the DOM for
+   search engines, find-in-page and screen readers (SEO 4-week plan, P3). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}

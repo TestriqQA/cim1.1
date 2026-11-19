@@ -24,7 +24,6 @@ const FAQ = dynamic(() => import('@/components/services/web-design-development/W
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -36,8 +35,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Web Design & Development Company | Cinute InfoMedia',
-    description: 'Custom web design and development in Next.js, WordPress and Shopify. SEO-ready builds with clear KPIs. Book a free website audit.',
+    title: 'Website Development Company | Web Design | Cinute InfoMedia',
+    description: 'Website development company building fast, SEO-ready sites in Next.js, WordPress and Shopify, with clear KPIs. Book a free website audit.',
     url: '/services/web-design-development',
     keywords: [
         'Web Development Company',
@@ -53,16 +52,11 @@ export const metadata = getPageMetadata({
 
 export default function WebDesignDevelopmentPage() {
     const webDevSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Web Design & Development Company | Cinute InfoMedia",
-            description: "Custom web design and development in Next.js, WordPress and Shopify. SEO-ready builds with clear KPIs. Book a free website audit.",
+            name: "Website Development Company | Web Design | Cinute InfoMedia",
+            description: "Website development company building fast, SEO-ready sites in Next.js, WordPress and Shopify, with clear KPIs. Book a free website audit.",
             urlPath: "/services/web-design-development",
             datePublished: "2025-01-01",
             dateModified: "2026-03-17",

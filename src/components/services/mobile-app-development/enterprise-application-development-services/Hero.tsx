@@ -94,14 +94,14 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Enterprise Application Development Services:{" "}
+                            Enterprise Application{" "}
                             <span
                                 className="relative inline-block"
                                 style={{
                                     color: "var(--brand-blue-text)",
                                 }}
                             >
-                                Driving Global Innovation in 2026
+                                Development Services
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-30"
                                     style={{ color: "#2563eb" }}

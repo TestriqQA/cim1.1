@@ -6,7 +6,6 @@ import CTA from '@/components/services/CTA';
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -26,12 +25,6 @@ export const metadata = getPageMetadata({
 
 export default function ServicesPage() {
     const servicesSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-            hasOfferCatalogId: "https://www.cinuteinfomedia.com/services/#offerCatalog",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({

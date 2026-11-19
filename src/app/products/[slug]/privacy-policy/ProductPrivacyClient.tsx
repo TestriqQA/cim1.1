@@ -22,7 +22,7 @@ const CIM_OPERATOR: PrivacyOperator = {
         "India",
     ],
     email: "contact@cinuteinfomedia.com",
-    phones: ["+91-9004988859", "+91-7700995410"],
+    phones: ["+91 9004988859", "+91 7700995410"],
     websiteLabel: "www.cinuteinfomedia.com",
     websiteUrl: "https://www.cinuteinfomedia.com",
 };

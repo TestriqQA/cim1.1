@@ -8,7 +8,7 @@ import CTA from "@/components/services/performance-marketing/x-ads/CTA";
 import { getPageMetadata } from '@/lib/metadata';
 
 export const metadata = getPageMetadata({
-    title: "X Ads Agency | Twitter Advertising | Cinute InfoMedia",
+    title: "X Ads for Performance Marketing | Cinute InfoMedia",
     description: "Join the conversation and amplify your message with X (Twitter) Ads. We help you reach real-time audiences and drive engagement.",
     url: "/services/performance-marketing/x-ads",
     image: "/og-images/x_ads.webp",
@@ -24,27 +24,7 @@ export default function XAdsPage() {
                         "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "X Ads Management",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Cinute InfoMedia",
-                            "url": "https://www.cinuteinfomedia.com",
-                            "logo": "https://www.cinuteinfomedia.com/logo.png",
-                            "description": "Global Web Design, Development & Digital Marketing Agency",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                                "addressLocality": "Mira Road, Mira Bhayandar",
-                                "addressRegion": "Maharashtra",
-                                "postalCode": "401107",
-                                "addressCountry": "IN"
-                            },
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "telephone": "+919004988859",
-                                "contactType": "Customer Service",
-                                "availableLanguage": ["English", "Hindi"]
-                            }
-                        },
+                        "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                         "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                         "hasOfferCatalog": {
                             "@type": "OfferCatalog",
@@ -97,7 +77,7 @@ export default function XAdsPage() {
                             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cinuteinfomedia.com" },
                             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.cinuteinfomedia.com/services" },
                             { "@type": "ListItem", "position": 3, "name": "Performance Marketing", "item": "https://www.cinuteinfomedia.com/services/performance-marketing" },
-                            { "@type": "ListItem", "position": 4, "name": "X Ads", "item": "https://www.cinuteinfomedia.com/services/performance-marketing/x-ads" }
+                            { "@type": "ListItem", "position": 4, "name": "X (Twitter) Ads", "item": "https://www.cinuteinfomedia.com/services/performance-marketing/x-ads" }
                         ]
                     })
                 }}

@@ -181,8 +181,33 @@ const nextConfig = {
         const renamedServiceRedirects = Object.entries(renamedServiceRoutes).map(
             ([source, destination]) => ({ source, destination, permanent: true })
         );
+        // Paths that blog posts in Sanity link to but that never existed as pages
+        // (SEO 4-week plan, section 5: 404s). Each has a clear equivalent page, so
+        // it redirects there. The links should still be corrected in the CMS so no
+        // internal link goes through a redirect. Exact-match sources and no
+        // destination equals its own source, so none can loop.
+        // /industries/healthcare, /industries/b2b-saas and /products have no
+        // equivalent page and stay 404 until those links are fixed in Sanity.
+        const deadBlogLinkTargets = {
+            '/services/paid-search': '/services/performance-marketing',
+            '/services/ppc-management': '/services/performance-marketing',
+            '/services/google-ads': '/services/performance-marketing/google-ads',
+            '/services/microsoft-ads': '/services/performance-marketing/microsoft-ads',
+            '/services/linkedin-ads': '/services/performance-marketing/linkedin-ads',
+            '/services/ecommerce-design': '/services/web-design-development/ecommerce-development-company',
+            '/content-marketing-services': '/services/seo-services/seo-content-writing-services',
+            '/case-studies': '/portfolio',
+            // Old blog category slugs still known to Google (Search Console
+            // "Not found (404)", 19 Nov 2026); the categories were renamed.
+            '/blog/category/enterprise-ai-automation': '/blog/category/enterprise-ai-and-automation',
+            '/blog/category/ppc-paid-ads': '/blog/category/ppc-and-paid-ads',
+        };
+        const deadBlogLinkRedirects = Object.entries(deadBlogLinkTargets).map(
+            ([source, destination]) => ({ source, destination, permanent: true })
+        );
         return [
             ...renamedServiceRedirects,
+            ...deadBlogLinkRedirects,
             ...productRedirects,
             ...portfolioRedirects,
             {

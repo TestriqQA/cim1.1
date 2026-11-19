@@ -21,27 +21,7 @@ export default function MetaAdsPage() {
                 "@context": "https://schema.org",
                 "@type": "Service",
                 "serviceType": "Meta Ads Management",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "Cinute InfoMedia",
-                    "url": "https://www.cinuteinfomedia.com",
-                    "logo": "https://www.cinuteinfomedia.com/logo.png",
-                    "description": "Global Web Design, Development & Digital Marketing Agency",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Office #3, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park",
-                        "addressLocality": "Mira Road, Mira Bhayandar",
-                        "addressRegion": "Maharashtra",
-                        "postalCode": "401107",
-                        "addressCountry": "IN"
-                    },
-                    "contactPoint": {
-                        "@type": "ContactPoint",
-                        "telephone": "+919004988859",
-                        "contactType": "Customer Service",
-                        "availableLanguage": ["English", "Hindi"]
-                    }
-                },
+                "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                 "areaServed": ["United States", "India", "United Kingdom", "Australia"],
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",

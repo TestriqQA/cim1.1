@@ -52,17 +52,17 @@ export default function WhyChooseUs() {
     };
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
+        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{
             backgroundColor: "var(--card-bg)",
             borderColor: "var(--border-color)",
         }}>
             {/* Animated background elements */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
-                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm animate-pulse-subtle"
+                        className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
                             backgroundColor: "color-mix(in srgb, var(--brand-seo) 10%, transparent)",
                             borderColor: "var(--brand-seo)",
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Benefits Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                     {benefits.map((benefit, index) => {
                         const Icon = benefit.icon;
                         const DecorIcon = benefit.decorIcon;
@@ -104,36 +104,25 @@ export default function WhyChooseUs() {
                                         backgroundColor: "color-mix(in srgb, var(--card-bg) 80%, transparent)",
                                         borderColor: isHovered ? benefit.color : "var(--border-color)",
                                         transform: isHovered ? "translateY(-12px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered ? `0 20px 40px -12px ${benefit.color}40` : "none",
                                     }}
                                 >
                                     {/* Floating decorative icon */}
                                     <div
-                                        className="absolute -top-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500"
+                                        className="absolute -top-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center"
                                         style={{
                                             backgroundColor: `${benefit.color}15`,
-                                            transform: isHovered ? "rotate(360deg) scale(1.1)" : "rotate(0deg) scale(1)",
-                                            opacity: isHovered ? 1 : 0.6,
+                                            opacity: 0.6,
                                         }}
                                     >
-                                        <DecorIcon
-                                            className="w-6 h-6"
-                                            style={{
-                                                color: benefit.color,
-                                                transform: isHovered ? "scale(1.2)" : "scale(1)",
-                                                transition: "transform 0.3s ease"
-                                            }}
-                                        />
+                                        <DecorIcon className="w-6 h-6" style={{ color: benefit.color }} />
                                     </div>
 
                                     {/* Highlight Badge */}
                                     <div
-                                        className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold transition-all duration-300"
+                                        className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold"
                                         style={{
                                             backgroundColor: `${benefit.color}20`,
                                             color: textColorMap[benefit.color],
-                                            transform: isHovered ? "translateX(0) scale(1)" : "translateX(-20px) scale(0.9)",
-                                            opacity: isHovered ? 1 : 0,
                                         }}
                                     >
                                         {benefit.highlight}
@@ -141,30 +130,13 @@ export default function WhyChooseUs() {
 
                                     {/* Animated gradient background */}
 
-                                    {/* Icon Container with animated ring */}
+                                    {/* Icon Container */}
                                     <div className="relative my-6">
                                         <div
-                                            className="absolute inset-0 rounded-xl transition-all duration-500"
-                                            style={{
-                                                backgroundColor: `${benefit.color}15`,
-                                                transform: isHovered ? "scale(1.15) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                                opacity: isHovered ? 0.3 : 0,
-                                            }}
-                                        />
-                                        <div
-                                            className="relative w-14 h-14 rounded-xl p-3 transition-all duration-500"
-                                            style={{
-                                                backgroundColor: `${benefit.color}20`,
-                                                transform: isHovered ? "scale(1.1) rotate(-5deg)" : "scale(1) rotate(0deg)",
-                                            }}
+                                            className="relative w-14 h-14 rounded-xl p-3"
+                                            style={{ backgroundColor: `${benefit.color}20` }}
                                         >
-                                            <Icon
-                                                className="w-full h-full transition-all duration-500"
-                                                style={{
-                                                    color: benefit.color,
-                                                    transform: isHovered ? "scale(1.2) rotate(10deg)" : "scale(1) rotate(0deg)",
-                                                }}
-                                            />
+                                            <Icon className="w-full h-full" style={{ color: benefit.color }} />
                                         </div>
                                     </div>
 
@@ -185,42 +157,6 @@ export default function WhyChooseUs() {
                                     >
                                         {benefit.description}
                                     </p>
-
-                                    {/* Animated corner accents */}
-                                    <div
-                                        className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 rounded-tl-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: benefit.color,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(-10px, -10px)",
-                                        }}
-                                    />
-                                    <div
-                                        className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 rounded-br-2xl transition-all duration-500"
-                                        style={{
-                                            borderColor: benefit.color,
-                                            opacity: isHovered ? 1 : 0,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(10px, 10px)",
-                                        }}
-                                    />
-
-                                    {/* Sliding bottom accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500 rounded-full"
-                                        style={{
-                                            backgroundColor: benefit.color,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
-
-                                    {/* Pulsing glow effect */}
-                                    <div
-                                        className="absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none"
-                                        style={{
-                                            boxShadow: `inset 0 0 20px ${benefit.color}30`,
-                                            opacity: isHovered ? 1 : 0,
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );
@@ -247,11 +183,6 @@ export default function WhyChooseUs() {
                     }
                 }
 
-                @keyframes pulse-subtle {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.8; }
-                }
-
                 .animate-blob {
                     animation: blob 7s infinite;
                 }
@@ -262,10 +193,6 @@ export default function WhyChooseUs() {
 
                 .animation-delay-4000 {
                     animation-delay: 4s;
-                }
-
-                .animate-pulse-subtle {
-                    animation: pulse-subtle 3s ease-in-out infinite;
                 }
             `}</style>
         </section>

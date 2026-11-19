@@ -11,7 +11,6 @@ import CTA from '@/components/services/web-design-development/ecommerce-developm
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -38,11 +37,6 @@ export const metadata = getPageMetadata({
 
 export default function EcommerceStoresPage() {
     const ecomSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -59,8 +53,8 @@ export default function EcommerceStoresPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "E-commerce Development", url: "/services/web-design-development/ecommerce-development-company" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "E-commerce Stores", url: "/services/web-design-development/ecommerce-development-company" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/ecommerce-development-company/#breadcrumb"),
 
         generateServiceSchema({

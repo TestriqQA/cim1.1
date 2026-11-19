@@ -100,9 +100,9 @@ export default function Hero() {
                             className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Dominate the Conversation:{" "}
+                            X (Twitter) Ads{" "}
                             <span className="relative inline-block" style={{ color: "var(--foreground)" }}>
-                                Full-Service <Link href="/services/social-media-marketing-services" className="hover:underline">X Marketing Services</Link> for Global Authority
+                                Management Services
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-50"
                                     style={{ color: "var(--foreground)" }}

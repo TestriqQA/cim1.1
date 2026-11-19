@@ -21,7 +21,6 @@ const UseCases = dynamic(() => import('@/components/services/web-design-developm
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -47,11 +46,6 @@ export const metadata = getPageMetadata({
 
 export default function RealEstatePlatformsPage() {
     const realEstateSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
@@ -68,8 +62,8 @@ export default function RealEstatePlatformsPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Real Estate Platform Development", url: "/services/web-design-development/real-estate-platforms" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Real Estate Platforms", url: "/services/web-design-development/real-estate-platforms" },
         ], "https://www.cinuteinfomedia.com/services/web-design-development/real-estate-platforms/#breadcrumb"),
 
         generateServiceSchema({

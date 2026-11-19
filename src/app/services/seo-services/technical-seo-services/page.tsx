@@ -6,18 +6,21 @@ import TechStack from "@/components/services/seo-services/technical-seo-services
 import Process from "@/components/services/seo-services/technical-seo-services/Process";
 import WhyChooseUs from "@/components/services/seo-services/technical-seo-services/WhyChooseUs";
 import CTA from "@/components/services/seo-services/technical-seo-services/CTA";
+import Link from "next/link";
+import ServiceGuide from "@/components/services/ServiceGuide";
+import { technicalSeoChecklist } from "@/data/serviceGuides";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Technical SEO Services | Cinute InfoMedia",
+    title: "Technical SEO Agency | Audits & Fixes | Cinute InfoMedia",
     description:
-        "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
+        "Technical SEO agency fixing crawlability, speed and indexing: Core Web Vitals, schema and site architecture, tuned for global rankings.",
     alternates: {
         canonical: "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services",
     },
     openGraph: {
-        title: "Technical SEO Services | Cinute InfoMedia",
-        description: "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
+        title: "Technical SEO Agency | Audits & Fixes | Cinute InfoMedia",
+        description: "Technical SEO agency fixing crawlability, speed and indexing: Core Web Vitals, schema and site architecture, tuned for global rankings.",
         url: "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services",
         type: "website",
         images: [
@@ -25,14 +28,14 @@ export const metadata: Metadata = {
                 url: "/og-images/technical-seo-services.webp",
                 width: 1200,
                 height: 630,
-                alt: "Technical SEO Services | Cinute InfoMedia by Cinute InfoMedia",
+                alt: "Technical SEO Agency | Audits & Fixes | Cinute InfoMedia by Cinute InfoMedia",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Technical SEO Services | Cinute InfoMedia",
-        description: "Technical SEO services that boost crawlability and speed. Core Web Vitals, schema and site architecture, tuned for global rankings.",
+        title: "Technical SEO Agency | Audits & Fixes | Cinute InfoMedia",
+        description: "Technical SEO agency fixing crawlability, speed and indexing: Core Web Vitals, schema and site architecture, tuned for global rankings.",
         images: ["/og-images/technical-seo-services.webp"],
     },
 
@@ -42,11 +45,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Technical SEO Services",
-    "provider": {
-        "@type": "Organization",
-        "name": "Cinute InfoMedia",
-        "url": "https://www.cinuteinfomedia.com"
-    },
+    "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
     "areaServed": "Global",
     "description": "Expert technical SEO services including performance analysis, Core Web Vitals optimization, schema markup implementation, and site architecture audits.",
     "hasOfferCatalog": {
@@ -101,7 +100,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "SEO Services", url: "/services/seo-services" },
+            { name: "SEO", url: "/services/seo-services" },
             { name: "Technical SEO", url: "/services/seo-services/technical-seo-services" },
         ],
         "https://www.cinuteinfomedia.com/services/seo-services/technical-seo-services/#breadcrumb"
@@ -124,6 +123,14 @@ export default function TechnicalSEOPage() {
             <SolutionTypes />
             <TechStack />
             <Process />
+            <ServiceGuide
+                id="technical-seo-checklist"
+                title="Our Technical SEO Checklist"
+                intro="As a technical SEO agency, we check these eight areas on every site before we change anything, then fix the problems in order of impact."
+                items={technicalSeoChecklist}
+                accent="var(--accent-violet-text)"
+                footer={<>Want to check your own site first? Use our <Link href="/blog/technical-seo-audit-checklist-2026" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)]">technical SEO audit checklist</Link>.</>}
+            />
             <WhyChooseUs />
             <CTA />
         </main>

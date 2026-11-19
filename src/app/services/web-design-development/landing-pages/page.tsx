@@ -49,7 +49,7 @@ export default function LandingPagesPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', url: '/' },
         { name: 'Services', url: '/services' },
-        { name: 'Web Design & Development', url: '/services/web-design-development' },
+        { name: 'Web Design', url: '/services/web-design-development' },
         { name: 'Landing Pages', url: '/services/web-design-development/landing-pages' },
     ]);
 

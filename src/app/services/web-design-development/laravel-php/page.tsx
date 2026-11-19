@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateServiceSchema,
@@ -49,7 +48,6 @@ export const metadata: Metadata = {
 // WebSite anchor the entity, WebPage describes this URL, Service describes what
 // is sold here, BreadcrumbList gives the path back to the hub. (T5)
 const jsonLd = generateGraphSchema(
-    generateOrganizationSchema(),
     generateWebSiteSchema(),
     generateWebPageSchema({
         name: "Laravel & PHP Development Services | Cinute InfoMedia",
@@ -69,8 +67,8 @@ const jsonLd = generateGraphSchema(
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Web Design & Development", url: "/services/web-design-development" },
-            { name: "Laravel & PHP Development", url: "/services/web-design-development/laravel-php" },
+            { name: "Web Design", url: "/services/web-design-development" },
+            { name: "Laravel & PHP", url: "/services/web-design-development/laravel-php" },
         ],
         "https://www.cinuteinfomedia.com/services/web-design-development/laravel-php/#breadcrumb"
     )

@@ -28,7 +28,6 @@ const CTA = dynamic(() => import('@/components/services/social-media-marketing-s
 import { getPageMetadata } from '@/lib/metadata';
 import {
     generateGraphSchema,
-    generateOrganizationSchema,
     generateWebSiteSchema,
     generateWebPageSchema,
     generateBreadcrumbSchema,
@@ -40,8 +39,8 @@ import {
 } from '@/lib/schema';
 
 export const metadata = getPageMetadata({
-    title: 'Social Media Marketing Agency | Cinute InfoMedia',
-    description: "Social media strategy, content and community management for Facebook, Instagram and LinkedIn. Grow with Cinute InfoMedia. Get a quote.",
+    title: 'Social Media Marketing Agency (SMM) | Cinute InfoMedia',
+    description: "SMM agency services: social media marketing, content and paid campaigns. Contact Cinute InfoMedia for a plan.",
     url: '/services/social-media-marketing-services',
     keywords: [
         'Social Media Marketing Services',
@@ -57,19 +56,14 @@ export const metadata = getPageMetadata({
 
 export default function SocialMediaMarketingPage() {
     const smmSchema = generateGraphSchema(
-        generateOrganizationSchema({
-            description: "Cinute InfoMedia (CIM) is a digital growth agency helping businesses build, market, and scale through creativity, data, and technology.",
-            slogan: "Build. Market. Scale.",
-        }),
-
         generateWebSiteSchema(),
 
         generateWebPageSchema({
-            name: "Social Media Marketing Agency | Cinute InfoMedia",
-            description: "Social media strategy, content and community management for Facebook, Instagram and LinkedIn. Grow with Cinute InfoMedia. Get a quote.",
+            name: "Social Media Marketing Agency (SMM) | Cinute InfoMedia",
+            description: "SMM agency services: social media marketing, content and paid campaigns. Contact Cinute InfoMedia for a plan.",
             urlPath: "/services/social-media-marketing-services",
             datePublished: "2025-01-01",
-            dateModified: "2026-04-10",
+            dateModified: "2026-11-18",
             aboutId: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#service",
             mainEntityId: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#service",
             breadcrumbId: "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#breadcrumb",
@@ -78,7 +72,7 @@ export default function SocialMediaMarketingPage() {
         generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing Services", url: "/services/social-media-marketing-services" },
+            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
         ], "https://www.cinuteinfomedia.com/services/social-media-marketing-services/#breadcrumb"),
 
         generateServiceSchema({

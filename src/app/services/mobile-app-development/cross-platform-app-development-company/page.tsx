@@ -7,7 +7,6 @@ import Process from "@/components/services/mobile-app-development/cross-platform
 import WhyChooseUs from "@/components/services/mobile-app-development/cross-platform-app-development-company/WhyChooseUs";
 import CTA from "@/components/services/mobile-app-development/cross-platform-app-development-company/CTA";
 import FAQ from "@/components/services/mobile-app-development/cross-platform-app-development-company/FAQ";
-import Script from "next/script";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -50,8 +49,8 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Mobile App Development", url: "/services/mobile-app-development" },
-            { name: "Cross-Platform App Development", url: "/services/mobile-app-development/cross-platform-app-development-company" },
+            { name: "Mobile Apps", url: "/services/mobile-app-development" },
+            { name: "Cross-Platform", url: "/services/mobile-app-development/cross-platform-app-development-company" },
         ],
         "https://www.cinuteinfomedia.com/services/mobile-app-development/cross-platform-app-development-company/#breadcrumb"
     ),
@@ -64,8 +63,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
             />
-            <Script
-                id="cross-platform-schema"
+            <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
@@ -74,11 +72,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                             {
                                 "@type": "Service",
                                 "name": "Cross-Platform App Development Services",
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": "Cinute InfoMedia",
-                                    "url": "https://www.cinuteinfomedia.com"
-                                },
+                                "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
                                 "description": "Professional cross-platform mobile app development services using React Native and Flutter. Build high-performance iOS and Android apps with a single codebase.",
                                 "areaServed": "Global",
                                 "hasOfferCatalog": {
@@ -117,7 +111,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                                         "name": "What is cross-platform app development?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Cross-platform app development involves building mobile applications that run on multiple operating systems, such as iOS and Android, using a single codebase. This approach significantly reduces development time and costs versus native development."
+                                            "text": "Cross-platform app development helps in building mobile applications that are compatible with multiple operating systems, such as iOS and Android, using a single codebase. This approach saves time and reduces costs compared to native development."
                                         }
                                     },
                                     {
@@ -125,7 +119,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                                         "name": "Which is better: Flutter or React Native in 2026?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Both frameworks are industry leaders. React Native is preferable for teams with JavaScript expertise and projects needing complex native integration. Flutter is excellent for highly custom, brand-forward UIs. The choice depends on specific project requirements."
+                                            "text": "Both are excellent choices. React Native is ideal if you have an existing web team (JavaScript/React) and complex native dependencies. Flutter is superior for highly branded, custom UI-heavy apps with its Skia rendering engine. We help you choose the best fit during our consulting phase."
                                         }
                                     },
                                     {
@@ -133,15 +127,7 @@ export default function CrossPlatformAppDevelopmentPage() {
                                         "name": "How much does it cost to build a cross-platform app?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Cross-platform development typically costs 30-40% less than native development because a single codebase serves both iOS and Android. Exact costs depend on feature complexity and design requirements."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How long does it take to develop a multi-platform mobile app?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "A standard MVP can be developed in 3-4 months. More complex, enterprise-grade applications may require 6-8 months. Timeline varies based on scope and specific deliverables."
+                                            "text": "The cost varies based on complexity, features, and design. Generally, it is 30-40% cheaper than building two separate native apps. Contact us for a quick quote tailored to your specific project needs."
                                         }
                                     },
                                     {
@@ -149,7 +135,31 @@ export default function CrossPlatformAppDevelopmentPage() {
                                         "name": "What are the benefits of cross-platform vs native development?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Key benefits include faster time-to-market, significant cost deduction (up to 40%), code reusability, and easier long-term maintenance. Modern frameworks also offer near-native performance for most use cases."
+                                            "text": "Cross-platform offers faster time-to-market, lower costs, and easier maintenance (one codebase to update). Native development is reserved for extremely high-performance games or apps requiring deep, non-standard hardware access. Modern cross-platform frameworks offer near-native performance for 95% of business apps."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How long does it take to develop a multi-platform mobile app?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "A typical MVP (Minimum Viable Product) can be delivered in 3-4 months. More complex enterprise solutions may take 6-8 months. Our agile process ensures you see progress every sprint."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can you convert my existing native app to cross-platform?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, we offer Native to cross-platform app conversion services. We can rewrite your iOS or Android app in React Native or Flutter, allowing you to manage a single codebase moving forward."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Do cross-platform apps support native device features?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely. Through Platform-Specific Modules and bridges, we can access the camera, GPS, Bluetooth, biometric sensors, and other native hardware features just like a native app."
                                         }
                                     }
                                 ]

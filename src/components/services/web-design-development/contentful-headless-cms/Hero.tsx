@@ -84,11 +84,10 @@ export default function Hero() {
 
                         {/* Title */}
                         <h1
-                            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slideUp"
+                            className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-slideUp"
                             style={{ color: "var(--foreground)" }}
                         >
-                            Build Composable Experiences with{" "}
-                            <span
+                                                        <span
                                 className="relative inline-block"
                                 style={{
                                     background: "linear-gradient(135deg, #0286FF, #0059C8)",
@@ -96,7 +95,7 @@ export default function Hero() {
                                     WebkitTextFillColor: "transparent",
                                 }}
                             >
-                                Contentful
+                                Contentful Headless CMS
                                 {/* Underline decoration */}
                                 <svg
                                     className="absolute w-full h-3 -bottom-2 left-0 opacity-30"
@@ -106,7 +105,8 @@ export default function Hero() {
                                 >
                                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
                                 </svg>
-                            </span>
+                            </span>{" "}
+                            Development Services
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>

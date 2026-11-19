@@ -121,7 +121,7 @@ export default function CTA() {
                                     <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                         Call Us
                                     </div>
-                                    <Link href="tel:+91 9004988859" className="font-semibold hover:underline" style={{ color: "var(--secondary-text)" }}>
+                                    <Link href="tel:+919004988859" className="font-semibold hover:underline" style={{ color: "var(--secondary-text)" }}>
                                         +91 9004988859
                                     </Link>
                                 </div>

@@ -46,11 +46,7 @@ const jsonLd = {
             "@type": "Service",
             "name": "LinkedIn Marketing Services",
             "description": "Professional LinkedIn ads management, B2B lead generation, and Account Based Marketing (ABM) services optimized for 2026.",
-            "provider": {
-                "@type": "Organization",
-                "name": "Cinute InfoMedia",
-                "url": "https://www.cinuteinfomedia.com"
-            },
+            "provider": { "@id": "https://www.cinuteinfomedia.com/#organization" },
             "areaServed": "Global",
             "serviceType": "Social Media Marketing",
             "offers": {
@@ -64,43 +60,28 @@ const jsonLd = {
                 {
                     "@type": "Question",
                     "name": "How much do LinkedIn marketing services cost in 2026?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "LinkedIn marketing cost for small business typically ranges from $1,500 to $5,000+ per month for management, depending on ad spend and complexity. We offer tiered packages to ensure ROI at every level."
-                    }
+                    "acceptedAnswer": { "@type": "Answer", "text": "LinkedIn marketing cost for small business typically ranges from $1,500 to $5,000+ per month for management, depending on ad spend and complexity. We offer tiered packages to ensure ROI at every level." },
                 },
                 {
                     "@type": "Question",
                     "name": "What are the benefits of hiring a LinkedIn advertising agency?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "An expert B2B LinkedIn marketing agency provides deep targeting expertise, access to beta features, and advanced LinkedIn ads management that reduces CPL by up to 40% compared to in-house efforts."
-                    }
+                    "acceptedAnswer": { "@type": "Answer", "text": "An expert B2B LinkedIn marketing agency provides deep targeting expertise, access to beta features, and advanced LinkedIn ads management that reduces CPL by up to 40% compared to in-house efforts." },
                 },
                 {
                     "@type": "Question",
                     "name": "How do I generate B2B leads on LinkedIn?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We utilize a mix of LinkedIn lead generation services, including Lead Gen Forms, LinkedIn ABM (Account Based Marketing), and high-value lead magnet creation services to capture high-intent data."
-                    }
+                    "acceptedAnswer": { "@type": "Answer", "text": "We utilize a mix of LinkedIn lead generation services, including Lead Gen Forms, LinkedIn ABM (Account Based Marketing), and high-value lead magnet creation services to capture high-intent data." },
                 },
                 {
                     "@type": "Question",
                     "name": "What is included in LinkedIn ads management services?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Our service includes strategy, ad creative, LinkedIn sponsored content management, technical setup (Insight Tag), A/B testing, and comprehensive ROI tracking."
-                    }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Our service includes strategy, ad creative, LinkedIn sponsored content management, technical setup (Insight Tag), A/B testing, and comprehensive ROI tracking." },
                 },
                 {
                     "@type": "Question",
                     "name": "How long does it take to see results from LinkedIn marketing?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "While brand awareness is immediate, high-quality B2B lead generation typically sees optimal scaling after 30-60 days of data-driven optimization."
-                    }
-                }
+                    "acceptedAnswer": { "@type": "Answer", "text": "While brand awareness is immediate, high-quality B2B lead generation typically sees optimal scaling after 30-60 days of data-driven optimization." },
+                },
             ]
         }
     ]
@@ -115,7 +96,7 @@ const breadcrumbLd = {
         [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
-            { name: "Social Media Marketing", url: "/services/social-media-marketing-services" },
+            { name: "Social Media", url: "/services/social-media-marketing-services" },
             { name: "LinkedIn Marketing", url: "/services/social-media-marketing-services/linkedin-marketing-services" },
         ],
         "https://www.cinuteinfomedia.com/services/social-media-marketing-services/linkedin-marketing-services/#breadcrumb"
