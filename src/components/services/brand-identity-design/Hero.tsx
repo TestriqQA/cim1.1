@@ -26,7 +26,7 @@ export default function Hero() {
         >
             {/* Animated Background */}
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-10 md:py-12 relative">
                 {/* Breadcrumbs */}
                 <nav
                     className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm mb-5 justify-center lg:justify-start"
@@ -81,27 +81,27 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mt-8">
+                        <div className="flex flex-wrap justify-center md:justify-start gap-2.5 md:grid md:grid-cols-3 md:gap-3 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mt-8">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
                                 return (
                                     <div
                                         key={index}
-                                        className="flex items-center lg:justify-center gap-2 px-4 py-3 rounded-xl border transition-all hover:scale-105"
+                                        className="flex items-center lg:justify-center gap-2 px-3 sm:px-4 py-3 rounded-xl border transition-all hover:scale-105 max-[359px]:w-full"
                                         style={{
                                             backgroundColor: "color-mix(in srgb, var(--brand-yellow) 5%, var(--card-bg))",
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
-                                        <span className="text-sm font-medium lg:whitespace-nowrap">{feature.label}</span>
+                                        <Icon className="w-4 h-4 flex-shrink-0" style={{ color: "var(--accent-amber-text)" }} />
+                                        <span className="text-sm font-medium whitespace-nowrap">{feature.label}</span>
                                     </div>
                                 );
                             })}
                         </div>
 
                         {/* Stats Row */}
-                        <div className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
+                        <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8 justify-center lg:justify-start">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center lg:text-left">
                                     <div className="text-3xl font-black" style={{ color: "var(--accent-amber-text)" }}>
@@ -115,7 +115,7 @@ export default function Hero() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 justify-center lg:justify-start">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 justify-center lg:justify-start">
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-black"

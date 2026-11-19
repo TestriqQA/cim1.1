@@ -7,12 +7,12 @@ export default function ServiceOverview() {
     return (
         <section
             id="overview"
-            className="px-6 md:px-12 xl:px-20 py-16 md:py-24 transition-colors duration-300"
+            className="px-6 md:px-12 xl:px-20 py-12 md:py-16 lg:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-6xl mx-auto">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12 max-w-6xl mx-auto">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -36,14 +36,14 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Content */}
                     <div className="space-y-6">
                         <p className="text-xl font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                             More Than Just a Logo-We Build Scalable Brand Ecosystems
                         </p>
                         <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            In today's digital-first economy, your brand is your most valuable asset. As an expert <span style={{ color: "var(--accent-amber-text)", fontWeight: 700 }}>Brand Identity Design Agency</span>, we don't just create visuals; we engineer comprehensive brand experiences that drive recognition, trust, and revenue. Our custom brand design frameworks are built on 2026 EEAT principles, ensuring your business signals authority and expertise to both users and search engines.
+                            In today&apos;s digital-first economy, your brand is your most valuable asset. As an expert <span style={{ color: "var(--accent-amber-text)", fontWeight: 700 }}>Brand Identity Design Agency</span>, we don&apos;t just create visuals; we engineer comprehensive brand experiences that drive recognition, trust, and revenue. Our custom brand design frameworks are built on 2026 EEAT principles, ensuring your business signals authority and expertise to both users and search engines.
                         </p>
 
                         <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
@@ -56,7 +56,7 @@ export default function ServiceOverview() {
 
                         <div className="pt-4">
                             <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                                What You'll Receive
+                                What You&apos;ll Receive
                             </h3>
                             <ul className="space-y-3">
                                 {[
@@ -68,12 +68,12 @@ export default function ServiceOverview() {
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
                                         <span
-                                            className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-black text-sm font-bold mt-0.5"
+                                            className="w-3.5 h-3.5 rounded-full flex items-center justify-center flex-shrink-0 text-black text-[9px] leading-none font-bold mt-[7px]"
                                             style={{ background: "linear-gradient(90deg, var(--brand-yellow), var(--brand-orange))" }}
                                         >
                                             ✓
                                         </span>
-                                        <span style={{ color: "var(--secondary-text)" }}>{item}</span>
+                                        <span className="text-lg" style={{ color: "var(--secondary-text)" }}>{item}</span>
                                     </li>
                                 ))}
                             </ul>
