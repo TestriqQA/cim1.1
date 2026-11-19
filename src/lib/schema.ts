@@ -3,13 +3,16 @@ import { BlogPost, Author } from "@/data/blog";
 const siteUrl = "https://www.cinuteinfomedia.com";
 
 /**
- * SEO 4-week plan, section 4: do not publish the street address, phone number
- * or map point in structured data until the team confirms they match the
- * Google Business Profile exactly. While false, the Organization node (home
- * page) omits them and /contact emits no ProfessionalService node. The values
- * are kept below; set this to true once they are confirmed.
+ * SEO 4-week plan, section 4: the street address and phone number go into
+ * structured data only once the team confirms they match the Google Business
+ * Profile exactly. Confirmed by the team on 2026-11-19 (same address and
+ * +91 9004988859 as the footer and contact page). While false, the
+ * Organization node (home page) omits them and /contact emits no
+ * ProfessionalService node. Opening hours are on hold until the team confirms
+ * them (the contact page shows Mon-Fri 9:00 AM-6:00 PM). Map coordinates are
+ * left out until someone checks them against the Business Profile pin.
  */
-export const NAP_CONFIRMED = false;
+export const NAP_CONFIRMED = true;
 
 // ============================================================
 // HELPER — Wraps multiple schemas into a single @graph
@@ -70,16 +73,7 @@ export function generateOrganizationSchema(overrides?: {
         "postalCode": "401107",
         "addressCountry": "IN",
       },
-      "location": overrides?.locationId
-        ? { "@id": overrides.locationId }
-        : {
-            "@type": "Place",
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "19.2812",
-              "longitude": "72.8685",
-            },
-          },
+      ...(overrides?.locationId ? { "location": { "@id": overrides.locationId } } : {}),
       "telephone": "+919004988859",
     } : {}),
     "email": "contact@cinuteinfomedia.com",
@@ -270,27 +264,7 @@ export function generateProfessionalServiceSchema(params: {
       "postalCode": "401107",
       "addressCountry": "IN",
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "19.2812",
-      "longitude": "72.8685",
-    },
     ...(params.hasMap && { "hasMap": params.hasMap }),
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        "opens": "10:00",
-        "closes": "20:00",
-      },
-    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": params.telephone,
