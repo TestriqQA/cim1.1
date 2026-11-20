@@ -42,7 +42,7 @@ export default function Location() {
                     >
                         {/* Interactive Facade / Map */}
                         {!isMapLoaded ? (
-                            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+                            <div className="absolute inset-0 flex flex-col items-center justify-start gap-3 pt-10 lg:justify-center lg:pt-0 bg-gray-100 dark:bg-gray-800">
                                 <button
                                     onClick={() => setIsMapLoaded(true)}
                                     className="group relative flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-white shadow-lg transition-transform hover:scale-105"
@@ -54,7 +54,7 @@ export default function Location() {
                                     <MapPin className="w-5 h-5" />
                                     <span>Load Interactive Map</span>
                                 </button>
-                                <p className="absolute bottom-4 text-xs opacity-60 px-4 text-center">
+                                <p className="text-xs opacity-60 px-4 text-center lg:absolute lg:bottom-4 lg:right-6">
                                     Click to load map. This prevents third-party cookies from loading automatically.
                                 </p>
                             </div>
@@ -81,15 +81,10 @@ export default function Location() {
                             }}
                         >
                             <div className="flex items-start gap-3">
-                                <div
-                                    className="w-16 h-12 rounded-full flex items-center justify-center text-white"
-                                    style={{
-                                        // icon circle gradient (was from-[#008ac1] to-[#00b5ca])
-                                        background: gradient("--brand-blue", "--brand-teal", "135deg"),
-                                    }}
-                                >
-                                    <MapPin className="w-6 h-6" />
-                                </div>
+                                <MapPin
+                                    className="w-6 h-6 shrink-0"
+                                    style={{ color: "var(--brand-blue-text)" }}
+                                />
                                 <div>
                                     <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
                                         Visit Our Office

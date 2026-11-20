@@ -1,4 +1,5 @@
-import { isValidPhoneNumber, isPossiblePhoneNumber, parsePhoneNumber } from 'react-phone-number-input';
+import { isValidPhoneNumber, isPossiblePhoneNumber, parsePhoneNumber, getCountryCallingCode } from 'react-phone-number-input';
+import type { Country } from 'react-phone-number-input';
 
 /**
  * Validates a full name
@@ -84,13 +85,50 @@ function hasRepetitivePattern(phone: string): boolean {
 }
 
 /**
+ * True when the value is nothing but a country's dialling code, e.g. "+299".
+ * react-phone-number-input emits exactly this the moment a country is picked from
+ * the dropdown, before the user has typed a single digit. It is a country
+ * selection, not a wrong-length phone number, so it must not raise a length error.
+ *
+ * parsePhoneNumber() returns undefined for these, so it cannot distinguish them
+ * from junk on its own - hence the explicit comparison against the dialling code.
+ */
+function isDiallingCodeOnly(phone: string, country?: Country): boolean {
+    if (country) {
+        try {
+            return phone === `+${getCountryCallingCode(country)}`;
+        } catch {
+            // Unrecognised country - fall through to the generic check below.
+        }
+    }
+
+    // Without a country to compare against: a '+' followed by at most four digits
+    // that libphonenumber cannot parse is a bare dialling code, not a real number.
+    if (!/^\+\d{1,4}$/.test(phone)) {
+        return false;
+    }
+
+    try {
+        return !parsePhoneNumber(phone);
+    } catch {
+        return true;
+    }
+}
+
+/**
  * Validates an international phone number using libphonenumber
  * - Checks if phone number length is valid for the country
  * - Checks if phone number format is valid
  * - Rejects repetitive/fake patterns
  */
-export function validatePhone(phone: string | undefined): string | null {
+export function validatePhone(phone: string | undefined, country?: Country): string | null {
     if (!phone) {
+        return 'Phone number is required.';
+    }
+
+    // A country was picked but no number typed - that is an empty field, not a
+    // wrong-length one, so say so plainly.
+    if (isDiallingCodeOnly(phone, country)) {
         return 'Phone number is required.';
     }
 
@@ -116,9 +154,15 @@ export function validatePhone(phone: string | undefined): string | null {
  * Validates a phone number (optional field)
  * - Same validations as validatePhone but allows empty values
  */
-export function validatePhoneOptional(phone: string | undefined): string | null {
+export function validatePhoneOptional(phone: string | undefined, country?: Country): string | null {
     if (!phone || phone.trim() === '') {
         return null; // Optional field, empty is valid
+    }
+
+    // A country was picked but no number typed - the field is still empty, and
+    // this field is optional.
+    if (isDiallingCodeOnly(phone, country)) {
+        return null;
     }
 
     // isPossiblePhoneNumber checks if length is valid for the country
