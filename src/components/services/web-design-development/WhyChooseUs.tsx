@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Benefits - Enhanced Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 auto-rows-fr gap-6 sm:gap-8 lg:gap-12">
                     {benefits.map((benefit, idx) => {
                         const Icon = benefit.icon;
                         return (
@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
                             >
 
                                 <div
-                                    className="relative rounded-3xl p-5 sm:p-6 md:p-8 border backdrop-blur-sm transition-all duration-500 hover:scale-[1.02]"
+                                    className="relative h-full flex flex-col justify-center rounded-3xl p-5 sm:p-6 md:p-8 border backdrop-blur-sm transition-all duration-500 hover:scale-[1.02]"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
