@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { withRupeeSign } from "@/components/RupeeSign";
 
 // Phone input with country codes
-import PhoneInput from 'react-phone-number-input';
+import PhoneInput, { type Country } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 // Validation utilities
@@ -61,6 +61,9 @@ export default function GetInTouchClient() {
         timeline: "",
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
+    // Mirrors PhoneInput's country so a bare "+<code>" value is recognised as an
+    // empty field rather than a wrong-length number. Starts at defaultCountry.
+    const [phoneCountry, setPhoneCountry] = useState<Country | undefined>("IN");
     const [showSuccess, setShowSuccess] = useState<boolean>(false);
     const [countdown, setCountdown] = useState<number>(8);
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -112,7 +115,7 @@ export default function GetInTouchClient() {
         if (emailError) newErrors.email = emailError;
 
         // Phone validation
-        const phoneError = validatePhone(formData.phone);
+        const phoneError = validatePhone(formData.phone, phoneCountry);
         if (phoneError) newErrors.phone = phoneError;
 
         // Referral validation
@@ -363,6 +366,7 @@ export default function GetInTouchClient() {
                                                     defaultCountry="IN"
                                                     value={formData.phone}
                                                     onChange={(value) => setFormData({ ...formData, phone: value || "" })}
+                                                    onCountryChange={setPhoneCountry}
                                                     placeholder="Enter phone number"
                                                     className="phone-input-field"
                                                     numberInputProps={{ 'aria-label': 'Phone number' }}
