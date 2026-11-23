@@ -119,11 +119,10 @@ export default function AdditionalSupportServicesPage() {
         generateItemListSchema({
             id: "/services/additional-support-services/#coreServicesList",
             name: "Core Business Support Services",
-            description: "Five core business support categories: IT Support, Administrative & Virtual Assistants, Data Management & Back-Office, Specialized Industry Support, and Customer Support & Lead Generation.",
+            description: "Four core business support categories: IT Support, Outsourced Admin & Back-Office, Specialized Industry Support, and Customer Support & Lead Generation.",
             items: [
                 { name: "IT Business Support Services", description: "Regular updates and patch management, uptime monitoring, and additional technical support for seamless operations." },
-                { name: "Outsourced Administrative & Virtual Assistants", description: "On-demand administrative assistance, outsourced HR support, and additional legal administrative support." },
-                { name: "Data Management & Back-Office", description: "Outsourced data management, order processing, and supplementary financial support for streamlined operations." },
+                { name: "Outsourced Admin & Back-Office", description: "On-demand administrative assistance, outsourced HR and legal admin support, data management and order processing, and supplementary financial support." },
                 { name: "Specialized Industry Support", description: "Healthcare admin assistance, real estate listing management, and additional marketing support for industry-specific needs." },
                 { name: "Customer Support & Lead Generation", description: "Supplementary customer support, lead generation services, and 24/7 chat resolution for continuous engagement." },
             ],

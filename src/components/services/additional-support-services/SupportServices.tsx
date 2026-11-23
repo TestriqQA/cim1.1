@@ -3,12 +3,8 @@
 import { useState } from "react";
 import {
     Wrench,
-    MonitorCheck,
     ShieldCheck,
-    RefreshCw,
-    Cloud,
     Users,
-    BarChart3,
     Headset,
     ArrowRight,
 } from "lucide-react";
@@ -26,21 +22,15 @@ export default function SupportServices() {
         },
         {
             icon: Users,
-            title: "Outsourced Administrative & Virtual Assistants",
-            description: "Unlock Operational Efficiency with our Professional virtual assistant support services.",
-            features: ["On-demand administrative assistance", "Outsourced HR support", "Additional legal administrative support"],
-        },
-        {
-            icon: BarChart3,
-            title: "Data Management & Back-Office",
-            description: "Scale your operations without the overhead.",
-            features: ["Outsourced data management", "Outsourced order processing", "Supplementary financial support"],
+            title: "Outsourced Admin & Back-Office",
+            description: "Unlock operational efficiency and scale without the overhead.",
+            features: ["On-demand administrative assistance", "Outsourced HR & legal admin", "Data management & order processing", "Supplementary financial support"],
         },
         {
             icon: ShieldCheck,
             title: "Specialized Industry Support",
             description: "Tailored solutions for niche sectors.",
-            features: [<span><Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:text-[var(--foreground)]">Healthcare</Link> admin assistance</span>, <span><Link href="/services/web-design-development/real-estate-platforms" className="underline underline-offset-2 hover:text-[var(--foreground)]">Real estate</Link> listing management</span>, <span>Additional <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--foreground)]">marketing support</Link></span>],
+            features: [<span key="healthcare"><Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:text-[var(--foreground)]">Healthcare</Link> admin assistance</span>, <span key="real-estate"><Link href="/services/web-design-development/real-estate-platforms" className="underline underline-offset-2 hover:text-[var(--foreground)]">Real estate</Link> listing management</span>, <span key="marketing">Additional <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--foreground)]">marketing support</Link></span>],
         },
         {
             icon: Headset,
@@ -65,12 +55,6 @@ export default function SupportServices() {
             className="py-12 md:py-16 lg:py-24 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#4b277a] rounded-full blur-[150px] opacity-10" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#97288e] rounded-full blur-[150px] opacity-10" />
-            </div>
-
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
@@ -95,7 +79,7 @@ export default function SupportServices() {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 sm:auto-rows-fr gap-4 md:gap-6">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         const color = colors[index % colors.length];
@@ -109,7 +93,6 @@ export default function SupportServices() {
                                     backgroundColor: "var(--card-bg)",
                                     borderColor: isHovered ? color : "var(--border-color)",
                                     transform: isHovered ? "translateY(-8px)" : "translateY(0)",
-                                    boxShadow: isHovered ? `0 20px 40px -15px ${color}40` : "none",
                                 }}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
@@ -143,7 +126,7 @@ export default function SupportServices() {
                                     {service.features.map((feature, idx) => (
                                         <span
                                             key={idx}
-                                            className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all duration-300"
+                                            className="text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all duration-300"
                                             style={{
                                                 backgroundColor: isHovered ? `${color}15` : "var(--hover-bg)",
                                                 color: isHovered ? textAccent(color) : "var(--secondary-text)",
