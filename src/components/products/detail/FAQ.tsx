@@ -13,6 +13,7 @@ const textAccent = (c: string) => ({
     "#f72585": "var(--accent-pink-text)",
     "#bc3feb": "var(--brand-purple-text)",
     "#ee6500": "var(--accent-orange-text)",
+    "#fc9700": "var(--accent-chime-text)",
 }[c?.toLowerCase()] ?? c);
 
 export default function FAQ({ product }: { product: Product }) {

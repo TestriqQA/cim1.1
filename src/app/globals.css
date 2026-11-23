@@ -51,6 +51,7 @@
     --accent-pink-text: #be185d;
     --accent-orange-text: #9a3412;
     --accent-amber-text: #92400e;
+    --accent-chime-text: #a86500;
     --accent-red-text: #b91c1c;
     /* Platform-brand FAQ accents. The raw brand hexes are passed to
        FaqSection as the question-heading color, where they run 1.78-5.69:1 and
@@ -99,6 +100,7 @@
     --accent-pink-text: #f9a8d4;
     --accent-orange-text: #fdba74;
     --accent-amber-text: #fcd34d;
+    --accent-chime-text: #fc9700;
     --accent-red-text: #f87171;
     /* Platform-brand accents, lightened for the dark card */
     --accent-android-text: #3fdc85;

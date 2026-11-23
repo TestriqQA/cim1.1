@@ -129,8 +129,8 @@ export const products: Product[] = [
     closingCtaLabel: "Get Started Free",
 
     icon: "MessageSquare",
-    color: "bg-gradient-to-br from-[#FF6B35] to-[#F72585]",
-    accentColor: "#F72585",
+    color: "bg-gradient-to-br from-[#fc9700] to-[#fbb53f]",
+    accentColor: "#fc9700",
     features: [
       { icon: "Sparkles", title: "AI-Powered Comment Generation", description: "Analyzes post context — text, images, hashtags, and sentiment — to generate relevant, natural-sounding comments and replies in one click." },
       { icon: "Wand2", title: "Custom Tone AI Comment Styles", description: "Choose Bold, Professional, Funny, Supportive, Witty, Casual, or Thought-Provoking tones, or create your own custom tone preset for consistent brand voice." },

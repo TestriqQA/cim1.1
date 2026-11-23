@@ -24,6 +24,7 @@ export default function ProductCTA({ product }: { product: Product }) {
         "#f72585": "var(--accent-pink-text)",
         "#bc3feb": "var(--brand-purple-text)",
         "#ee6500": "var(--accent-orange-text)",
+        "#fc9700": "var(--accent-chime-text)",
     }[c?.toLowerCase()] ?? c);
     const textColor = textAccent(color);
 
@@ -37,6 +38,7 @@ export default function ProductCTA({ product }: { product: Product }) {
         "#f72585": "#be185d",
         "#bc3feb": "#a21caf",
         "#ee6500": "#c2410c",
+        "#fc9700": "#a86500",
     }[c?.toLowerCase()] ?? c);
     const solidColor = solidAccent(color);
 
@@ -45,18 +47,18 @@ export default function ProductCTA({ product }: { product: Product }) {
     // external cases open in a new tab; the fallback stays an internal <Link>.
     const ctaHref = product.externalUrl ?? product.extensionUrl;
     const ctaClass =
-        "w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-lg";
-    const ctaStyle = { backgroundColor: solidColor, boxShadow: `0 4px 20px ${color}40` };
+        "w-full sm:w-auto inline-flex items-center justify-center px-4 py-4 md:px-10 md:py-5 rounded-full font-bold text-base md:text-lg text-white transition-all transform hover:scale-105 hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:brightness-120";
+    const ctaStyle = { backgroundColor: solidColor };
 
     return (
-        <section className="py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
+        <section className="py-16 md:py-20 relative overflow-hidden border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-50" />
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="relative rounded-3xl overflow-hidden border p-8 md:p-16 text-center" style={{ background: "linear-gradient(135deg, var(--card-bg) 0%, var(--background) 100%)", borderColor: "var(--border-color)" }}>
-                    <div className="absolute top-8 left-8 opacity-5">
+                <div className="relative rounded-3xl overflow-hidden border p-6 sm:p-8 md:p-12 text-center" style={{ background: "linear-gradient(135deg, var(--card-bg) 0%, var(--background) 100%)", borderColor: "var(--border-color)" }}>
+                    <div className="absolute top-8 left-8 opacity-5 hidden xl:block">
                         <Icon className="w-24 h-24" style={{ color }} />
                     </div>
-                    <div className="absolute bottom-8 right-8 opacity-5">
+                    <div className="absolute bottom-8 right-8 opacity-5 hidden xl:block">
                         <Icon className="w-32 h-32" style={{ color }} />
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight" style={{ color: "var(--foreground)" }}>
@@ -97,11 +99,17 @@ export default function ProductCTA({ product }: { product: Product }) {
                             </Link>
                         )}
                     </div>
-                    <div className="mt-16 pt-8 border-t flex flex-wrap justify-center gap-12 md:gap-24" style={{ borderColor: "var(--border-color)" }}>
+                    {/* Phones: one compact row per stat, number left and label
+                        right, divided by thin lines. Stacked centred blocks with
+                        48px gaps made this area 369px tall on a 375px screen.
+                        Tablets use the rows too: at 768px the centred row needs
+                        ~672px and the card has 544px, so it wrapped two and one.
+                        From lg it is the centred row of three as before. */}
+                    <div className="mt-10 pt-2 border-t flex flex-col md:mt-16 lg:pt-8 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         {product.stats.slice(0, 3).map((stat, i) => (
-                            <div key={i} className="text-center">
-                                <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>{stat.value}</p>
-                                <p className="text-sm uppercase tracking-widest" style={{ color: "var(--secondary-text)" }}>{stat.label}</p>
+                            <div key={i} className={`flex items-baseline justify-between gap-4 py-3 lg:block lg:py-0 lg:text-center ${i > 0 ? "border-t lg:border-t-0" : ""}`} style={{ borderColor: "var(--border-color)" }}>
+                                <p className="text-xl md:text-2xl font-bold whitespace-nowrap" style={{ color: "var(--foreground)" }}>{stat.value}</p>
+                                <p className="text-[11px] md:text-sm uppercase tracking-wider md:tracking-widest text-right lg:text-center" style={{ color: "var(--secondary-text)" }}>{stat.label}</p>
                             </div>
                         ))}
                     </div>
