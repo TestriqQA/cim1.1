@@ -17,15 +17,16 @@ export default function ProductLinks({ product }: { product: Product }) {
         "#f72585": "var(--accent-pink-text)",
         "#bc3feb": "var(--brand-purple-text)",
         "#ee6500": "var(--accent-orange-text)",
+        "#fc9700": "var(--accent-chime-text)",
     }[c?.toLowerCase()] ?? c);
     const textColor = textAccent(color);
 
     return (
         <section className="py-12 border-t" style={{ backgroundColor: "var(--card-bg)", borderColor: "#555555" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20">
-                <div className="rounded-3xl border p-8 md:p-10" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)" }}>
+                <div className="rounded-3xl border p-6 md:p-10" style={{ backgroundColor: "var(--background)", borderColor: "var(--border-color)" }}>
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div>
+                        <div className="text-center md:text-left">
                             <h3 className="text-lg font-bold mb-1" style={{ color: "var(--foreground)" }}>
                                 {product.name} Resources
                             </h3>
@@ -33,14 +34,14 @@ export default function ProductLinks({ product }: { product: Product }) {
                                 Need help or want to learn more about our policies?
                             </p>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href={product.supportUrl} className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: color, color: textColor, backgroundColor: `${color}08` }}>
+                        <div className="w-full sm:w-auto md:shrink-0 flex flex-col sm:flex-row gap-4">
+                            <Link href={product.supportUrl} className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: color, color: textColor, backgroundColor: `${color}08` }}>
                                 <Headphones className="w-4 h-4" />
                                 Support
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                             </Link>
                             {product.privacyUrl && (
-                                <Link href={product.privacyUrl} className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: "var(--border-color)", color: "var(--foreground)", backgroundColor: "var(--card-bg)" }}>
+                                <Link href={product.privacyUrl} className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: "var(--border-color)", color: "var(--foreground)", backgroundColor: "var(--card-bg)" }}>
                                     <FileText className="w-4 h-4" />
                                     Privacy Policy
                                     <ArrowUpRight className="w-3.5 h-3.5" />

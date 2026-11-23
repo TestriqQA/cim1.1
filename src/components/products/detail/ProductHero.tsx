@@ -10,6 +10,21 @@ const iconMap: Record<string, React.ComponentType<{ className?: string; style?: 
     ShieldCheck, MessageSquare, Workflow, BarChart3, Monitor, Share2,
 };
 
+// Logos for the hero's tech orbit, keyed by the names products use in
+// `techStack`. Every file already lives in /public. `invert` flips logos drawn
+// in black so they stay visible on the dark page. A name with no entry falls
+// back to the Chrome icon (for the extension API) or to its initials.
+const techLogos: Record<string, { src: string; invert?: boolean }> = {
+    "React": { src: "/images/techstack_logos/react-logo.svg" },
+    "TypeScript": { src: "/images/techstack_logos/typescript-logo.svg" },
+    "Node.js": { src: "/images/techstack_logos/nodejs-logo.svg" },
+    "OpenAI": { src: "/images/ai_automation_logos/openai-logo.svg", invert: true },
+    "Claude AI": { src: "/images/techstack_logos/anthropic-logo.svg" },
+    "Redis": { src: "/images/techstack_logos/redis-logo.svg" },
+    "PostgreSQL": { src: "/images/techstack_logos/postgresql-logo.svg" },
+    "TailwindCSS": { src: "/images/techstack_logos/tailwindcss-logo.svg" },
+};
+
 export default function ProductHero({ product }: { product: Product }) {
     const Icon = iconMap[product.icon] || ShieldCheck;
     const color = product.accentColor;
@@ -24,6 +39,7 @@ export default function ProductHero({ product }: { product: Product }) {
         "#f72585": "var(--accent-pink-text)",
         "#bc3feb": "var(--brand-purple-text)",
         "#ee6500": "var(--accent-orange-text)",
+        "#fc9700": "var(--accent-chime-text)",
     }[c?.toLowerCase()] ?? c);
     const textColor = textAccent(color);
 
@@ -37,11 +53,28 @@ export default function ProductHero({ product }: { product: Product }) {
         "#f72585": "#be185d",
         "#bc3feb": "#a21caf",
         "#ee6500": "#c2410c",
+        "#fc9700": "#a86500",
     }[c?.toLowerCase()] ?? c);
     const solidColor = solidAccent(color);
 
+    // The tech orbit shows the first six technologies: three on the inner ring,
+    // three on the outer. The outer ring starts 60 degrees round so its logos
+    // sit between the inner ones. Each chip counter-rotates at its own ring's
+    // speed, which keeps the logos upright as they travel.
+    const orbitTech = product.techStack.slice(0, 6);
+    const orbitRings = [
+        { size: 90, items: orbitTech.slice(3), startDeg: -30, spin: "orbit-ccw", upright: "orbit-ccw-upright" },
+        { size: 60, items: orbitTech.slice(0, 3), startDeg: -90, spin: "orbit-cw", upright: "orbit-cw-upright" },
+    ].filter((ring) => ring.items.length > 0);
+    const initials = (name: string) => name.split(/\s+/).map((word) => word[0]).join("").slice(0, 2).toUpperCase();
+
+    // "Add to Chrome — Free AI Comment Generator" splits at the dash into an
+    // action and a description, so phones can stack the two parts.
+    const chromeLabel = product.ctaPrimaryLabel ?? "Add to Chrome";
+    const [chromeMain, chromeSub] = chromeLabel.split(" — ");
+
     return (
-        <section className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
+        <section className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`, backgroundSize: "40px 40px" }} />
             </div>
@@ -55,11 +88,19 @@ export default function ProductHero({ product }: { product: Product }) {
                 .animate-float-gentle { animation: float-gentle 4s ease-in-out infinite; }
                 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
                 .delay-100 { animation-delay: 0.1s; } .delay-200 { animation-delay: 0.2s; } .delay-300 { animation-delay: 0.3s; } .delay-400 { animation-delay: 0.4s; } .delay-500 { animation-delay: 0.5s; }
+                @keyframes orbit-spin { to { transform: rotate(360deg); } }
+                .orbit-cw { animation: orbit-spin 25s linear infinite; }
+                .orbit-cw-upright { animation: orbit-spin 25s linear infinite reverse; }
+                .orbit-ccw { animation: orbit-spin 40s linear infinite reverse; }
+                .orbit-ccw-upright { animation: orbit-spin 40s linear infinite; }
+                @media (prefers-reduced-motion: reduce) {
+                    .orbit-cw, .orbit-cw-upright, .orbit-ccw, .orbit-ccw-upright { animation: none; }
+                }
             `}</style>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div className="space-y-8 text-center lg:text-left">
+                <div className="grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-12 lg:gap-20 items-center">
+                    <div className="space-y-6 md:space-y-8 text-center lg:text-left">
                         <nav className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-sm" style={{ color: "var(--secondary-text)" }}>
                             <Link href="/" className="hover:underline">Home</Link>
                             <ChevronRight className="w-4 h-4" />
@@ -129,32 +170,44 @@ export default function ProductHero({ product }: { product: Product }) {
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </a>
                             ) : product.extensionUrl ? (
+                                /* Phones: full width, with a bold action over a smaller
+                                   description beside the icon, instead of the label
+                                   wrapping mid-phrase. From sm it is one line again. It is
+                                   one set of text, so the link text is the full label. */
                                 <a
                                     href={product.extensionUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                     style={{ backgroundColor: solidColor }}
                                 >
-                                    <Chrome className="w-5 h-5 mr-2" />
-                                    {product.ctaPrimaryLabel ?? "Add to Chrome"}
+                                    <Chrome className="w-5 h-5 mr-3 sm:mr-2 flex-shrink-0" />
+                                    {chromeSub ? (
+                                        <span className="flex flex-col items-start text-left leading-tight sm:flex-row sm:items-center sm:gap-1.5 sm:leading-normal">
+                                            <span className="font-bold sm:font-semibold">{chromeMain}</span>{" "}
+                                            <span className="hidden sm:inline" aria-hidden="true">—</span>{" "}
+                                            <span className="text-[13px] font-medium opacity-90 sm:text-base sm:font-semibold sm:opacity-100">{chromeSub}</span>
+                                        </span>
+                                    ) : (
+                                        chromeLabel
+                                    )}
                                 </a>
                             ) : (
                                 <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg" style={{ backgroundColor: solidColor }}>
                                     {product.ctaPrimaryLabel ?? "Get Started"} <ArrowRight className="w-5 h-5 ml-2" />
                                 </Link>
                             )}
-                            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent" style={{ borderColor: "var(--border-color)", color: "var(--foreground)" }}>
+                            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent" style={{ borderColor: "var(--border-color)", color: "var(--foreground)" }}>
                                 {product.ctaSecondaryLabel ?? "Schedule Demo"}
                             </Link>
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        <div className="grid grid-cols-2 items-center justify-items-center gap-x-4 gap-y-6 sm:gap-x-8 lg:justify-items-start 2xl:flex 2xl:flex-nowrap 2xl:justify-start 2xl:gap-4 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             {product.stats.map((stat, i) => (
                                 <React.Fragment key={i}>
-                                    {i > 0 && <div className="w-px h-10 hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />}
+                                    {i > 0 && <div className="w-px h-10 hidden 2xl:block" style={{ backgroundColor: "var(--border-color)" }} />}
                                     <div className="text-center lg:text-left">
-                                        <h2 className="text-3xl font-bold" style={{ color: textColor }}>{stat.value}</h2>
+                                        <p className="text-2xl sm:text-3xl font-bold" style={{ color: textColor }}>{stat.value}</p>
                                         <p className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</p>
                                     </div>
                                 </React.Fragment>
@@ -164,42 +217,57 @@ export default function ProductHero({ product }: { product: Product }) {
 
                     <div className="relative hidden lg:flex flex-col gap-6 animate-fadeIn delay-500">
                         <div className="relative flex items-center justify-center">
-                            <div className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden border flex items-center justify-center animate-float-gentle" style={{ borderColor: `${color}30`, backgroundColor: "var(--card-bg)", boxShadow: `0 0 50px ${color}10` }}>
-                                <div className="flex flex-col items-center justify-center gap-4 p-12">
-                                    <div className={`w-24 h-24 rounded-3xl ${product.color} shadow-xl`}>
-                                        {/* <Icon className="w-full h-full text-white" /> */}
-                                        <Image
-                                            src={product.logo}
-                                            alt={product.name}
-                                            width={96}
-                                            height={96}
-                                            className="rounded-3xl"
-                                        />
+                            {/* Visual only: the same technology names are listed
+                                for screen readers and search engines below. */}
+                            <div className="relative w-full max-w-lg aspect-square flex items-center justify-center animate-float-gentle" aria-hidden="true">
+                                {orbitRings.map((ring) => (
+                                    <div
+                                        key={ring.size}
+                                        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed ${ring.spin}`}
+                                        style={{ width: `${ring.size}%`, height: `${ring.size}%`, borderColor: "var(--border-color)" }}
+                                    >
+                                        {ring.items.map((tech, k) => {
+                                            const angle = ((ring.startDeg + (k * 360) / ring.items.length) * Math.PI) / 180;
+                                            const logo = techLogos[tech];
+                                            return (
+                                                <div
+                                                    key={tech}
+                                                    title={tech}
+                                                    className={`absolute -translate-x-1/2 -translate-y-1/2 w-11 h-11 xl:w-14 xl:h-14 rounded-full border flex items-center justify-center ${ring.upright}`}
+                                                    style={{ left: `${50 + 50 * Math.cos(angle)}%`, top: `${50 + 50 * Math.sin(angle)}%`, backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+                                                >
+                                                    {logo ? (
+                                                        <Image src={logo.src} alt={tech} width={30} height={30} className={`w-6 h-6 xl:w-[30px] xl:h-[30px] object-contain ${logo.invert ? "invert" : ""}`} />
+                                                    ) : tech === "Chrome Extension API" ? (
+                                                        <Chrome className="w-6 h-6 xl:w-7 xl:h-7" style={{ color }} />
+                                                    ) : (
+                                                        <span className="text-xs font-bold" style={{ color: textColor }}>{initials(tech)}</span>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                    <h3 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>{product.name}</h3>
-                                    <p className="text-center text-sm max-w-xs" style={{ color: "var(--secondary-text)" }}>{product.tagline}</p>
-                                    <div className="grid grid-cols-2 gap-3 w-full mt-4">
-                                        {product.stats.slice(0, 4).map((s, i) => (
-                                            <div key={i} className="p-3 rounded-xl border text-center" style={{ borderColor: `${color}20`, backgroundColor: `${color}08` }}>
-                                                <p className="text-lg font-bold" style={{ color: textColor }}>{s.value}</p>
-                                                <p className="text-xs" style={{ color: "var(--secondary-text)" }}>{s.label}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="absolute w-72 h-72 rounded-full border opacity-20" style={{ borderColor: color }} />
-                                <div className="absolute w-96 h-96 rounded-full border opacity-10" style={{ borderColor: color }} />
+                                ))}
+                                <Image
+                                    src={product.logo}
+                                    alt={product.name}
+                                    width={144}
+                                    height={144}
+                                    className="relative w-28 h-28 xl:w-36 xl:h-36 rounded-[28px] xl:rounded-[32px] shadow-xl"
+                                />
                             </div>
                         </div>
 
-                        <div className="p-5 rounded-2xl border mt-4" style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}>
-                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--foreground)" }}>Technologies Used</p>
-                            <div className="flex flex-wrap gap-2">
-                                {product.techStack.slice(0, 6).map((tech, idx) => (
-                                    <span key={idx} className="px-3 py-1.5 rounded-full text-xs font-medium border" style={{ borderColor: `${color}30`, backgroundColor: "var(--background)", color: "var(--secondary-text)" }}>{tech}</span>
-                                ))}
-                            </div>
+                        <div className="text-center">
+                            <p className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>{product.name}</p>
+                            <p className="text-sm" style={{ color: "var(--secondary-text)" }}>{product.tagline}</p>
                         </div>
+
+                        <ul className="sr-only" aria-label="Technologies used">
+                            {orbitTech.map((tech) => (
+                                <li key={tech}>{tech}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

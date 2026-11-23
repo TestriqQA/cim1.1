@@ -24,17 +24,21 @@ export default function Features({ product }: { product: Product }) {
         "#f72585": "var(--accent-pink-text)",
         "#bc3feb": "var(--brand-purple-text)",
         "#ee6500": "var(--accent-orange-text)",
+        "#fc9700": "var(--accent-chime-text)",
     }[c?.toLowerCase()] ?? c);
     const textColor = textAccent(color);
 
     return (
-        <section className="py-24 relative overflow-hidden transition-colors duration-300 border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
+        <section className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300 border-t" style={{ backgroundColor: "var(--background)", borderColor: "#555555" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div className="inline-block mb-4">
-                        <span className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>Features</span>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold leading-none border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>
+                            <Sparkles aria-hidden="true" className="flex-shrink-0" style={{ width: "1.15em", height: "1.15em", color }} />
+                            Features
+                        </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
                         {product.featuresHeading ?? (
                             <>Powerful Features for <span style={{ color: textColor }}>Maximum Impact</span></>
                         )}
@@ -43,14 +47,14 @@ export default function Features({ product }: { product: Product }) {
                         {product.featuresIntro ?? "Everything you need to supercharge your workflow — built with cutting-edge technology and designed for simplicity."}
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6">
                     {product.features.map((feature, idx) => {
                         const Icon = iconMap[feature.icon] || Zap;
                         const isHovered = hoveredCard === idx;
                         const cardColor = featureColors[idx % featureColors.length];
                         return (
                             <div key={idx} className="group" onMouseEnter={() => setHoveredCard(idx)} onMouseLeave={() => setHoveredCard(null)}>
-                                <div className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full ${isHovered ? "-translate-y-2" : ""}`} style={{ borderColor: isHovered ? cardColor : "var(--border-color)", backgroundColor: "var(--card-bg)" }}>
+                                <div className={`relative p-6 md:p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full ${isHovered ? "-translate-y-2" : ""}`} style={{ borderColor: isHovered ? cardColor : "var(--border-color)", backgroundColor: "var(--card-bg)" }}>
                                     <div className="relative mb-6">
                                         <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${isHovered ? "scale-110" : "scale-100"}`} style={{ backgroundColor: isHovered ? cardColor : "var(--background)" }}>
                                             <Icon className="w-8 h-8 transition-all duration-500" style={{ color: isHovered ? "white" : "var(--foreground)" }} />
