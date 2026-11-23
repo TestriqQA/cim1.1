@@ -14,7 +14,7 @@ import { getServiceAccent } from "@/data/serviceAccents";
  * links are still in the prerendered HTML, which is what crawlers need.
  *
  * Colours follow the page it sits on (src/data/serviceAccents.ts). Hover is kept
- * simple: the border and title take the accent colour and a soft shadow appears.
+ * simple: the border and title take the accent colour.
  */
 export default function RelatedServices() {
     const pathname = usePathname();
@@ -24,7 +24,6 @@ export default function RelatedServices() {
     const accent = getServiceAccent(pathname);
     const accentVars = {
         "--rs-accent": accent,
-        "--rs-glow": `color-mix(in srgb, ${accent} 25%, transparent)`,
     } as CSSProperties;
 
     return (
@@ -46,7 +45,7 @@ export default function RelatedServices() {
                         <li key={service.href}>
                             <Link
                                 href={service.href}
-                                className="group flex h-full flex-col gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] p-5 sm:p-6 transition duration-300 hover:border-[var(--rs-accent)] hover:shadow-[0_12px_30px_-12px_var(--rs-glow)]"
+                                className="group flex h-full flex-col gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] p-5 sm:p-6 transition duration-300 hover:border-[var(--rs-accent)]"
                             >
                                 <span
                                     className="text-xs font-semibold uppercase tracking-wide"

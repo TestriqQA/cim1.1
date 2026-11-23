@@ -1,12 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Headphones, Shield, Clock, Rocket, ArrowRight, Sparkles, CheckCircle2, HeartHandshake, Home, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
-    const [activeFeature, setActiveFeature] = useState(0);
-
     const features = [
         { icon: Shield, text: "24/7 Priority Support", color: "#4b277a" },
         { icon: Clock, text: "Quick Response Time", color: "#fab900" },
@@ -19,13 +16,6 @@ export default function Hero() {
         { value: "<2hr", label: "Response Time" },
         { value: "24/7", label: "Monitoring" },
     ];
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveFeature((prev) => (prev + 1) % features.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [features.length]);
 
     return (
         <section
@@ -92,19 +82,17 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 xl:grid-cols-[repeat(2,max-content)] xl:gap-2.5 mt-8">
+                        <div className="grid grid-cols-2 gap-2 sm:gap-3 xl:grid-cols-[repeat(2,max-content)] xl:gap-2.5 mt-8">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
-                                const isActive = activeFeature === index;
                                 return (
                                     <div
                                         key={index}
-                                        className={`flex items-center xl:justify-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border transition-all cursor-pointer ${isActive ? "scale-[1.02] sm:scale-105" : "hover:scale-[1.01]"}`}
+                                        className="flex items-center xl:justify-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border transition-transform hover:scale-[1.01]"
                                         style={{
-                                            backgroundColor: isActive ? `color-mix(in srgb, ${feature.color} 15%, var(--card-bg))` : "var(--card-bg)",
-                                            borderColor: isActive ? feature.color : "var(--border-color)",
+                                            backgroundColor: "var(--card-bg)",
+                                            borderColor: "var(--border-color)",
                                         }}
-                                        onClick={() => setActiveFeature(index)}
                                     >
                                         <Icon className="w-4 h-4 flex-shrink-0" style={{ color: feature.color }} />
                                         <span className="text-xs sm:text-sm font-medium xl:whitespace-nowrap">{feature.text}</span>
@@ -151,23 +139,15 @@ export default function Hero() {
                     <div className="relative">
                         {/* Main Visual Card */}
                         <div
-                            className="relative rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden p-6 md:p-8 max-w-lg mx-auto"
+                            className="relative rounded-2xl md:rounded-3xl shadow-2xl p-5 md:p-6 max-w-lg mx-auto"
                             style={{
                                 background: "linear-gradient(135deg, color-mix(in srgb, #4b277a 10%, var(--card-bg)), var(--card-bg))",
                                 border: "1px solid var(--border-color)",
                             }}
                         >
-                            {/* Floating Icon */}
-                            <div
-                                className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl shadow-2xl flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-500"
-                                style={{ background: "linear-gradient(135deg, #fab900, #97288e)" }}
-                            >
-                                <Headphones className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                            </div>
+                            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-5" style={{ color: "var(--accent-violet-text)" }}>Why Choose Our Support?</h2>
 
-                            <h2 className="text-xl md:text-2xl font-bold mb-5 md:mb-6" style={{ color: "var(--accent-violet-text)" }}>Why Choose Our Support?</h2>
-
-                            <div className="space-y-4">
+                            <div className="space-y-2">
                                 {[
                                     "Global Reach: Serving US, EU, India, and APAC markets.",
                                     "Expert Team: Certified developers and detailed-oriented virtual assistants.",
@@ -175,7 +155,7 @@ export default function Hero() {
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className="flex items-start gap-3 p-4 rounded-xl transition-all duration-300 group cursor-pointer"
+                                        className="flex items-start gap-3 px-4 py-2 rounded-xl transition-all duration-300 group cursor-pointer"
                                         style={{ backgroundColor: "color-mix(in srgb, #4b277a 5%, var(--card-bg))" }}
                                     >
                                         <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" style={{ color: "#fab900" }} />
@@ -185,14 +165,14 @@ export default function Hero() {
                             </div>
 
                             {/* Stats Row */}
-                            <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t" style={{ borderColor: "var(--border-color)" }}>
+                            <div className="grid grid-cols-1 min-[360px]:grid-cols-3 gap-2 sm:gap-4 mt-6 pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
                                 {[
                                     { value: "Growing", label: "Happy Clients" },
                                     { value: "2025", label: "Founded" },
                                     { value: "Dedicated", label: "Support Staff" },
                                 ].map((stat, index) => (
                                     <div key={index} className="text-center">
-                                        <div className="text-2xl font-black" style={{ color: "var(--brand-purple-text)" }}>{stat.value}</div>
+                                        <div className="text-base sm:text-xl xl:text-2xl font-black" style={{ color: "var(--brand-purple-text)" }}>{stat.value}</div>
                                         <div className="text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
                                     </div>
                                 ))}
@@ -214,7 +194,7 @@ export default function Hero() {
                                 </h3>
                             </div>
                             <p className="text-base mb-5" style={{ color: "var(--secondary-text)" }}>
-                                We don't just fix problems; we prevent them. Our comprehensive support solutions are built on a foundation of Experience, Expertise, Authoritativeness, and Trust (E-E-A-T).
+                                We don&apos;t just fix problems; we prevent them. Our comprehensive support solutions are built on a foundation of Experience, Expertise, Authoritativeness, and Trust (E-E-A-T).
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["24/7 Support", "Fast Response", "Expert Team", "Proactive Care"].map((tag) => (

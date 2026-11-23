@@ -6,7 +6,7 @@
 const DEFAULT_ACCENT = "--brand-blue-text";
 
 const ACCENTS: Record<string, string> = {
-    "/services/additional-support-services": "--accent-amber-text",
+    "/services/additional-support-services": "--accent-violet-text",
     "/services/ai-chatbots-services": "--accent-indigo-text",
     "/services/ai-workflows-automations-services": "--accent-orange-text",
     "/services/brand-identity-design": "--accent-amber-text",
