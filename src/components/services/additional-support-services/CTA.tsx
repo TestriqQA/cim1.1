@@ -1,25 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, Mail, Phone, MessageSquare, Calendar, Sparkles, Send, CheckCircle } from "lucide-react";
+import { ArrowRight, Mail, Phone, Calendar, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
-    const [formState, setFormState] = useState({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
-    });
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Simulate form submission
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
-    };
-
     const contactMethods = [
         {
             icon: Phone,
@@ -68,13 +52,6 @@ export default function CTA() {
             className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full blur-[150px] opacity-20" style={{ backgroundColor: "#4b277a" }} />
-                <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full blur-[120px] opacity-15" style={{ backgroundColor: "#97288e" }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full blur-[100px] opacity-10" style={{ backgroundColor: "#fab900" }} />
-            </div>
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-16">
@@ -91,7 +68,7 @@ export default function CTA() {
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Ready to <span style={{ color: "var(--accent-amber-text)" }}>Elevate</span> Your Support?
+                        Ready to <span style={{ color: "var(--accent-violet-text)" }}>Elevate</span> Your Support?
                     </h2>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Stop struggling with overhead. Partner with a leader in Business Assistance services.
@@ -113,18 +90,16 @@ export default function CTA() {
                                     <Wrapper
                                         key={index}
                                         href={method.href}
-                                        className="group p-4 md:p-5 rounded-2xl border transition-all duration-300 cursor-pointer hover:scale-[1.02] md:hover:scale-105 overflow-hidden block"
+                                        className="group p-4 md:p-5 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden block"
                                         style={{
                                             backgroundColor: "var(--card-bg)",
                                             borderColor: "var(--border-color)",
                                         }}
                                         onMouseEnter={(e) => {
                                             e.currentTarget.style.borderColor = method.color;
-                                            e.currentTarget.style.boxShadow = `0 10px 30px -10px ${method.color}40`;
                                         }}
                                         onMouseLeave={(e) => {
                                             e.currentTarget.style.borderColor = "var(--border-color)";
-                                            e.currentTarget.style.boxShadow = "none";
                                         }}
                                     >
                                         <div
@@ -147,8 +122,8 @@ export default function CTA() {
                         <div
                             className="flex flex-wrap gap-6 p-6 rounded-2xl border mt-6"
                             style={{
-                                backgroundColor: "color-mix(in srgb, #fab900 5%, var(--card-bg))",
-                                borderColor: "color-mix(in srgb, #fab900 20%, var(--border-color))",
+                                backgroundColor: "color-mix(in srgb, #4b277a 5%, var(--card-bg))",
+                                borderColor: "color-mix(in srgb, #4b277a 20%, var(--border-color))",
                             }}
                         >
                             {[
@@ -157,7 +132,7 @@ export default function CTA() {
                                 { value: "<2hr", label: "Avg Response" },
                             ].map((stat, index) => (
                                 <div key={index} className="text-center flex-1">
-                                    <div className="text-2xl font-black" style={{ color: "var(--accent-amber-text)" }}>{stat.value}</div>
+                                    <div className="text-2xl font-black" style={{ color: "var(--accent-violet-text)" }}>{stat.value}</div>
                                     <div className="text-xs" style={{ color: "var(--secondary-text)" }}>{stat.label}</div>
                                 </div>
                             ))}
@@ -172,7 +147,7 @@ export default function CTA() {
                         <a
                             href="/services"
                             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold border-2 transition-all duration-300 hover:scale-105"
-                            style={{ backgroundColor: "var(--card-bg)", borderColor: "#fab900", color: "var(--accent-amber-text)" }}
+                            style={{ backgroundColor: "var(--card-bg)", borderColor: "#4b277a", color: "var(--accent-violet-text)" }}
                         >
                             View All Services
                             <ArrowRight className="w-5 h-5" />
