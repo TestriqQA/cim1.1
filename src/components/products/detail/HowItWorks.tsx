@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Workflow } from "lucide-react";
 import type { Product } from "@/data/products";
 
 export default function HowItWorks({ product }: { product: Product }) {
@@ -17,6 +18,7 @@ export default function HowItWorks({ product }: { product: Product }) {
         "#f72585": "var(--accent-pink-text)",
         "#bc3feb": "var(--brand-purple-text)",
         "#ee6500": "var(--accent-orange-text)",
+        "#fc9700": "var(--accent-chime-text)",
     }[c?.toLowerCase()] ?? c);
     const textColor = textAccent(color);
 
@@ -30,17 +32,21 @@ export default function HowItWorks({ product }: { product: Product }) {
         "#f72585": "#be185d",
         "#bc3feb": "#a21caf",
         "#ee6500": "#c2410c",
+        "#fc9700": "#a86500",
     }[c?.toLowerCase()] ?? c);
     const solidColor = solidAccent(color);
 
     return (
-        <section className="py-24 relative overflow-hidden border-t" style={{ backgroundColor: "var(--card-bg)", borderColor: "#555555" }}>
+        <section className="py-16 md:py-20 relative overflow-hidden border-t" style={{ backgroundColor: "var(--card-bg)", borderColor: "#555555" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div className="inline-block mb-4">
-                        <span className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>Process</span>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold leading-none border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>
+                            <Workflow aria-hidden="true" className="flex-shrink-0" style={{ width: "1.15em", height: "1.15em", color }} />
+                            Process
+                        </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: "var(--foreground)" }}>
                         {product.howItWorksHeading ?? (
                             <>How <span style={{ color: textColor }}>{product.name}</span> Works</>
                         )}
@@ -59,7 +65,7 @@ export default function HowItWorks({ product }: { product: Product }) {
                             ? "md:grid-cols-3"
                             : product.process.length === 2
                                 ? "md:grid-cols-2"
-                                : "md:grid-cols-2 lg:grid-cols-4"
+                                : "md:grid-cols-2 xl:grid-cols-4"
                     }`}
                 >
                     {product.process.map((step, idx) => {
@@ -67,10 +73,10 @@ export default function HowItWorks({ product }: { product: Product }) {
                         return (
                             <div key={idx} className="relative" onMouseEnter={() => setHoveredStep(idx)} onMouseLeave={() => setHoveredStep(null)}>
                                 {idx < product.process.length - 1 && (
-                                    <div className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 z-0" style={{ background: `linear-gradient(90deg, ${color}40, ${color}10)` }} />
+                                    <div className="hidden xl:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 z-0" style={{ background: `linear-gradient(90deg, ${color}40, ${color}10)` }} />
                                 )}
-                                <div className={`relative z-10 p-8 rounded-3xl border transition-all duration-300 h-full ${isHovered ? "-translate-y-2" : ""}`} style={{ borderColor: isHovered ? color : "var(--border-color)", backgroundColor: "var(--background)", boxShadow: isHovered ? `0 10px 30px ${color}15` : "none" }}>
-                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-2xl font-black text-white shadow-lg transition-all duration-300" style={{ background: isHovered ? solidColor : `linear-gradient(135deg, ${solidColor}, ${solidColor}dd)` }}>
+                                <div className={`relative z-10 p-6 md:p-8 rounded-3xl border transition-all duration-300 h-full ${isHovered ? "-translate-y-2" : ""}`} style={{ borderColor: isHovered ? color : "var(--border-color)", backgroundColor: "var(--background)" }}>
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-2xl font-black text-white" style={{ background: `linear-gradient(135deg, ${solidColor}, ${solidColor}dd)` }}>
                                         {step.step}
                                     </div>
                                     <h3 className="text-lg font-bold mb-3" style={{ color: "var(--foreground)" }}>{step.title}</h3>
