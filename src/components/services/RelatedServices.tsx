@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -50,7 +51,7 @@ export default function RelatedServices() {
             ref={ref}
             aria-labelledby="related-services-heading"
             className="py-16 md:py-20"
-            style={{ backgroundColor: "var(--background)" }}
+            style={{ backgroundColor: "var(--background)", ...accentVars }}
         >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-12 xl:px-20">
                 <h2
