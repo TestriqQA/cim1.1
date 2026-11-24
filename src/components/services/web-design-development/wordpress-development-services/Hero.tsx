@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -121,7 +121,7 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
+                        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start sm:gap-3 animate-slideUp delay-200">
                             {[
                                 "Custom Themes",
                                 "WooCommerce",
@@ -130,14 +130,14 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
+                                    className="flex items-center justify-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-md border backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#0073AA" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#0073AA" }} />
+                                    <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -146,10 +146,9 @@ export default function Hero() {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                 style={{
                                     background: "linear-gradient(135deg, #0073AA, #0096D6)",
-                                    boxShadow: "0 4px 20px rgba(0, 115, 170, 0.25)",
                                 }}
                             >
                                 Get a Quick Quote
@@ -159,20 +158,20 @@ export default function Hero() {
                         </div>
 
                         {/* Stats */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-row sm:items-center sm:justify-center lg:justify-start sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Proven</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Stable Deployment</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>High</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Stable Deployment</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Strong</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Traffic Growth</p>
                             </div>
                         </div>
                     </div>
