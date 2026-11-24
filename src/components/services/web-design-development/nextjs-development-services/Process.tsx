@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
     Zap,
     Search,
@@ -10,40 +10,14 @@ import {
     Rocket,
     TrendingUp,
     Lightbulb,
-    CheckCircle2,
+    CheckCircle,
     ArrowRight,
     Terminal,
-    ChevronLeft,
-    ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
-    const [activeStep, setActiveStep] = useState<number>(0);
-    const [scrollProgress, setScrollProgress] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const section = document.getElementById("process-section");
-            if (!section) return;
-
-            const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const visibleHeight = Math.min(
-                    windowHeight,
-                    rect.bottom
-                ) - Math.max(0, rect.top);
-                const progress = visibleHeight / windowHeight;
-                setScrollProgress(Math.min(progress * 1.5, 1));
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
     const steps = [
         {
@@ -147,7 +121,7 @@ export default function Process() {
     return (
         <section
             id="process-section"
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Pattern */}
@@ -165,7 +139,7 @@ export default function Process() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -180,16 +154,12 @@ export default function Process() {
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         From{" "}
                         <span
-                            style={{
-                                background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
+                            style={{ color: "var(--accent-cyan-text)" }}
                         >
                             Code
                         </span>{" "}
@@ -201,389 +171,115 @@ export default function Process() {
                     >
                         Our battle-tested development process for building production-ready Next.js applications.
                     </p>
+                </div>
+
+                {/* Timeline (same layout and hover as the WordPress page): on desktop the
+                    cards alternate around a centre line with a node and a large step
+                    number; below lg they stack, joined by short connectors. Each step
+                    keeps its id: the page's HowTo schema links to #step-*. */}
+                <div className="relative">
+                    {/* Central Line (Desktop) */}
                     <div
-                        className="w-24 h-1.5 mx-auto mt-8 rounded-full"
+                        className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2"
                         style={{
-                            background: "linear-gradient(90deg, #61dafb, #00d4ff)",
+                            background: "#61dafb",
+                            opacity: 0.5
                         }}
                     />
-                </div>
 
-                {/* Journey Timeline - Desktop */}
-                <div className="hidden lg:block relative mb-20">
-                    <div className="relative" style={{ height: "200px" }}>
-                        {/* Timeline Path SVG */}
-                        <svg
-                            className="w-full h-full absolute top-0 left-0"
-                            viewBox="0 0 1400 200"
-                            preserveAspectRatio="xMidYMid meet"
-                            style={{ overflow: "visible" }}
-                        >
-                            <path
-                                d="M 100 100 Q 200 40, 300 100 Q 400 160, 500 100 Q 600 40, 700 100 Q 800 160, 900 100 Q 1000 40, 1100 100 Q 1200 160, 1300 100"
-                                fill="none"
-                                stroke="var(--border-color)"
-                                strokeWidth="2"
-                                opacity="0.3"
-                            />
-                            <path
-                                d="M 100 100 Q 200 40, 300 100 Q 400 160, 500 100 Q 600 40, 700 100 Q 800 160, 900 100 Q 1000 40, 1100 100 Q 1200 160, 1300 100"
-                                fill="none"
-                                stroke="url(#gradient-nextjs)"
-                                strokeWidth="2"
-                                strokeDasharray="2000"
-                                strokeDashoffset={2000 - scrollProgress * 2000}
-                                style={{ transition: "stroke-dashoffset 0.3s ease" }}
-                            />
-                            <defs>
-                                <linearGradient id="gradient-nextjs" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="#61dafb" />
-                                    <stop offset="50%" stopColor="#00d4ff" />
-                                    <stop offset="100%" stopColor="#61dafb" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                    <div className="lg:space-y-16">
+                        {steps.map((step, idx) => {
+                            const Icon = step.icon;
+                            const isEven = idx % 2 === 0;
+                            const isHovered = hoveredStep === idx;
 
-                        {/* Step Markers */}
-                        <div className="absolute inset-0 flex justify-between items-center px-8">
-                            {steps.map((step, idx) => {
-                                const Icon = step.icon;
-                                const isActive = activeStep === idx;
-                                const positions = [
-                                    { x: "5%", y: "50%" },
-                                    { x: "20%", y: "30%" },
-                                    { x: "35%", y: "50%" },
-                                    { x: "50%", y: "70%" },
-                                    { x: "65%", y: "50%" },
-                                    { x: "80%", y: "40%" },
-                                    { x: "95%", y: "50%" },
-                                ];
-
-                                return (
-                                    <button
-                                        key={idx}
-                                        id={step.anchor}
-                                        type="button"
-                                        className="scroll-mt-20 absolute flex flex-col items-center cursor-pointer"
-                                        style={{
-                                            left: positions[idx].x,
-                                            top: positions[idx].y,
-                                            transform: "translate(-50%, -50%)",
-                                        }}
-                                        onClick={() => setActiveStep(idx)}
-                                        onMouseEnter={() => setActiveStep(idx)}
-                                        aria-current={isActive ? "step" : undefined}
-                                    >
+                            return (
+                                <div
+                                    key={idx}
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                        }`}
+                                    onMouseEnter={() => setHoveredStep(idx)}
+                                    onMouseLeave={() => setHoveredStep(null)}
+                                >
+                                    {/* Content Card */}
+                                    <div className="w-full lg:w-5/12">
                                         <div
                                             className={`
-                                                relative w-16 h-16 rounded-full flex items-center justify-center
-                                                transition-all duration-500 z-10
-                                                ${isActive ? "scale-125" : "scale-100 hover:scale-110"}
+                                                p-6 md:p-8 rounded-3xl border transition-all duration-300
+                                                ${isHovered ? "shadow-xl border-[#61dafb]/50 -translate-y-2" : ""}
                                             `}
                                             style={{
-                                                background: isActive
-                                                    ? `linear-gradient(135deg, ${step.bgColor}, ${step.bgColor}dd)`
-                                                    : "var(--card-bg)",
-                                                border: `3px solid ${isActive ? step.bgColor : "var(--border-color)"}`,
-                                                boxShadow: isActive
-                                                    ? `0 8px 32px ${step.bgColor}60`
-                                                    : "0 4px 12px rgba(0,0,0,0.1)",
+                                                backgroundColor: "var(--card-bg)",
+                                                borderColor: isHovered ? "" : "var(--border-color)",
                                             }}
                                         >
-                                            <Icon
-                                                className="w-7 h-7 transition-all duration-300"
-                                                style={{
-                                                    color: isActive ? "#000" : step.bgColor,
-                                                }}
-                                            />
-
-                                            {isActive && (
+                                            <div className="flex items-center gap-4 mb-4">
                                                 <div
-                                                    className="absolute inset-0 rounded-full animate-ping"
-                                                    style={{
-                                                        border: `2px solid ${step.bgColor}`,
-                                                        animationDuration: "2s",
-                                                    }}
-                                                />
-                                            )}
-                                        </div>
-
-                                        <div className="mt-16 text-center whitespace-nowrap">
-                                            <div
-                                                className="text-xs font-bold font-mono mb-1 transition-all duration-300"
-                                                style={{ color: "var(--accent-cyan-text)" }}
-                                            >
-                                                {step.number}
-                                            </div>
-                                            <div
-                                                className={`
-                                                    text-sm font-semibold transition-all duration-300
-                                                    ${isActive ? "opacity-100 scale-100" : "opacity-60 scale-95"}
-                                                `}
-                                                style={{
-                                                    color: isActive ? "var(--accent-cyan-text)" : "var(--foreground)",
-                                                }}
-                                            >
-                                                {step.subtitle}
-                                            </div>
-                                            {/* Keeps the visible label ("01 Business
-                                                Goals") at the start of the accessible
-                                                name while naming the actual step. */}
-                                            <span className="sr-only">
-                                                {` — ${step.title}`}
-                                            </span>
-                                        </div>
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Active Step Details - Desktop */}
-                <div className="hidden lg:block mb-16">
-                    {steps.map((step, idx) => {
-                        const isActive = activeStep === idx;
-                        const Icon = step.icon;
-
-                        return (
-                            <div
-                                key={idx}
-                                className={`
-                                    transition-all duration-500 ease-out
-                                    ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 absolute pointer-events-none"}
-                                `}
-                            >
-                                <div
-                                    className="rounded-3xl border-2 p-8 md:p-12"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: step.bgColor,
-                                        boxShadow: `0 20px 60px ${step.bgColor}20`,
-                                    }}
-                                >
-                                    <div className="flex flex-col md:flex-row gap-8 items-start">
-                                        <div className="flex-shrink-0">
-                                            <div
-                                                className="w-24 h-24 rounded-2xl flex items-center justify-center mb-4"
-                                                style={{
-                                                    background: `linear-gradient(135deg, ${step.bgColor}, ${step.bgColor}dd)`,
-                                                }}
-                                            >
-                                                <Icon className="w-12 h-12 text-black" />
-                                            </div>
-                                            <div
-                                                className="text-5xl font-bold font-mono mb-2"
-                                                style={{ color: "var(--accent-cyan-text)" }}
-                                            >
-                                                {step.number}
-                                            </div>
-                                        </div>
-
-                                        <div className="flex-1">
-                                            <h3
-                                                className="text-3xl md:text-4xl font-bold mb-3"
-                                                style={{ color: "var(--foreground)" }}
-                                            >
-                                                {step.title}
-                                            </h3>
-                                            <p
-                                                className="text-lg mb-6 leading-relaxed"
-                                                style={{ color: "var(--secondary-text)" }}
-                                            >
-                                                {step.description}
-                                            </p>
-
-                                            <div className="grid md:grid-cols-2 gap-4">
-                                                {step.deliverables.map((deliverable, didx) => (
-                                                    <div
-                                                        key={didx}
-                                                        className="flex items-center gap-3 p-4 rounded-xl transition-all duration-300 hover:scale-105"
-                                                        style={{
-                                                            backgroundColor: `${step.bgColor}10`,
-                                                            border: `1px solid ${step.bgColor}30`,
-                                                        }}
-                                                    >
-                                                        <CheckCircle2
-                                                            className="w-5 h-5 flex-shrink-0"
-                                                            style={{ color: step.bgColor }}
-                                                        />
-                                                        <span
-                                                            className="text-sm font-medium"
-                                                            style={{ color: "var(--foreground)" }}
-                                                        >
-                                                            {deliverable}
-                                                        </span>
-                                                    </div>
-                                                ))}
-                                            </div>
-
-                                            {/* Navigation — every step panel renders its
-                                                own copy of this row; only the active one
-                                                is visible, so the hidden copies are inert
-                                                (out of the tab order and the a11y tree). */}
-                                            <div className="flex items-center justify-between mt-8 pt-6 border-t" style={{ borderColor: "var(--border-color)" }} inert={!isActive}>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
-                                                    disabled={activeStep === 0}
-                                                    className={`
-                                                        flex items-center gap-2 px-5 py-3 rounded-xl font-semibold
-                                                        transition-all duration-300
-                                                        ${activeStep === 0 ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}
-                                                    `}
-                                                    style={{
-                                                        backgroundColor: activeStep === 0 ? "var(--border-color)" : `${steps[Math.max(0, activeStep - 1)].bgColor}20`,
-                                                        color: activeStep === 0 ? "var(--secondary-text)" : "var(--accent-cyan-text)",
-                                                        border: `2px solid ${activeStep === 0 ? "var(--border-color)" : steps[Math.max(0, activeStep - 1)].bgColor}`,
-                                                    }}
+                                                    className="w-12 h-12 rounded-xl flex items-center justify-center text-black flex-shrink-0"
+                                                    style={{ background: "linear-gradient(135deg, #61dafb, #00d4ff)" }}
                                                 >
-                                                    <ChevronLeft className="w-5 h-5" />
-                                                    <span>Previous</span>
-                                                </button>
-
-                                                <div className="flex items-center gap-2">
-                                                    {steps.map((dot, dotIdx) => (
-                                                        <button
-                                                            key={dotIdx}
-                                                            type="button"
-                                                            onClick={() => setActiveStep(dotIdx)}
-                                                            aria-label={`Show step ${dotIdx + 1}: ${dot.title}`}
-                                                            aria-current={activeStep === dotIdx ? "step" : undefined}
-                                                            /* 24x24 hit area around the 10px dot (WCAG 2.5.8) */
-                                                            className="group w-6 h-6 flex items-center justify-center rounded-full"
-                                                        >
-                                                            <span
-                                                                className={`
-                                                                    block w-2.5 h-2.5 rounded-full transition-all duration-300
-                                                                    ${activeStep === dotIdx ? "scale-125" : "group-hover:scale-110"}
-                                                                `}
-                                                                style={{
-                                                                    backgroundColor: activeStep === dotIdx ? dot.bgColor : "var(--border-color)",
-                                                                }}
-                                                            />
-                                                        </button>
-                                                    ))}
+                                                    <Icon className="w-6 h-6" aria-hidden="true" />
                                                 </div>
-
-                                                <button
-                                                    type="button"
-                                                    onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
-                                                    disabled={activeStep === steps.length - 1}
-                                                    className={`
-                                                        flex items-center gap-2 px-5 py-3 rounded-xl font-semibold
-                                                        transition-all duration-300
-                                                        ${activeStep === steps.length - 1 ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}
-                                                    `}
-                                                    style={{
-                                                        backgroundColor: activeStep === steps.length - 1 ? "var(--border-color)" : steps[Math.min(steps.length - 1, activeStep + 1)].bgColor,
-                                                        color: activeStep === steps.length - 1 ? "var(--secondary-text)" : "#000",
-                                                        boxShadow: activeStep === steps.length - 1 ? "none" : `0 4px 16px ${steps[Math.min(steps.length - 1, activeStep + 1)].bgColor}40`,
-                                                    }}
-                                                >
-                                                    <span>Next</span>
-                                                    <ChevronRight className="w-5 h-5" />
-                                                </button>
+                                                <div>
+                                                    <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>{step.title}</h3>
+                                                    <p className="text-sm font-medium" style={{ color: "var(--accent-cyan-text)" }}>{step.subtitle}</p>
+                                                </div>
                                             </div>
+                                            <p className="mb-6" style={{ color: "var(--secondary-text)" }}>{step.description}</p>
+                                            <ul className="space-y-2">
+                                                {step.deliverables.map((deliverable, dIdx) => (
+                                                    <li key={dIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-[var(--accent-cyan-text)]" aria-hidden="true" />
+                                                        <span>{deliverable}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
 
-                {/* Mobile View */}
-                <div className="lg:hidden space-y-6 mb-12">
-                    {steps.map((step, idx) => {
-                        const Icon = step.icon;
-
-                        return (
-                            <div
-                                key={idx}
-                                className="rounded-2xl border-2 p-6 transition-all duration-300 hover:shadow-xl"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
-                            >
-                                <div className="flex items-start gap-4 mb-4">
-                                    <div
-                                        className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${step.bgColor}, ${step.bgColor}dd)`,
-                                        }}
-                                    >
-                                        <Icon className="w-7 h-7 text-black" />
-                                    </div>
-                                    <div className="flex-1">
+                                    {/* Center Node */}
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex items-center justify-center z-10">
                                         <div
-                                            className="text-sm font-bold font-mono mb-1"
-                                            style={{ color: "var(--accent-cyan-text)" }}
+                                            className={`
+                                                w-12 h-12 rounded-full border-4 transition-all duration-300 flex items-center justify-center
+                                                ${isHovered ? "border-[#61dafb] bg-background scale-125" : "border-muted bg-background"}
+                                            `}
+                                        >
+                                            <div
+                                                className={`w-3 h-3 rounded-full transition-colors duration-300 ${isHovered ? "bg-[#61dafb]" : "bg-muted-foreground"
+                                                    }`}
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className={`w-full lg:w-5/12 hidden lg:flex items-center ${isEven ? "justify-start pl-50" : "justify-end pr-50"}`}>
+                                        <div
+                                            className="text-[120px] font-bold leading-none opacity-50 transition-all duration-300"
+                                            style={{
+                                                color: isHovered ? "var(--accent-cyan-text)" : "var(--foreground)",
+                                                transform: isHovered ? "scale(1.1)" : "scale(1)",
+                                                opacity: 0.5,
+                                            }}
                                         >
                                             {step.number}
                                         </div>
-                                        <h3
-                                            className="text-xl font-bold"
-                                            style={{ color: "var(--foreground)" }}
-                                        >
-                                            {step.title}
-                                        </h3>
-                                        <p className="text-xs" style={{ color: "var(--accent-cyan-text)" }}>
-                                            {step.subtitle}
-                                        </p>
                                     </div>
+
+                                    {/* Mobile Connector: 8 + 32 + 8 = 48px between cards; none after the last step */}
+                                    {idx < steps.length - 1 && (
+                                        <div className="lg:hidden h-8 w-0.5 bg-gradient-to-b from-[#61dafb] to-transparent opacity-30 my-2" />
+                                    )}
                                 </div>
-
-                                <p
-                                    className="text-sm mb-4 leading-relaxed"
-                                    style={{ color: "var(--secondary-text)" }}
-                                >
-                                    {step.description}
-                                </p>
-
-                                <div className="space-y-2">
-                                    {step.deliverables.map((deliverable, didx) => (
-                                        <div
-                                            key={didx}
-                                            className="flex items-center gap-2 p-2 rounded-lg"
-                                            style={{ backgroundColor: `${step.bgColor}10` }}
-                                        >
-                                            <CheckCircle2
-                                                className="w-4 h-4 flex-shrink-0"
-                                                style={{ color: step.bgColor }}
-                                            />
-                                            <span className="text-sm" style={{ color: "var(--foreground)" }}>
-                                                {deliverable}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {idx < steps.length - 1 && (
-                                    <div className="flex justify-center mt-4">
-                                        <div
-                                            className="w-0.5 h-8 rounded-full"
-                                            style={{
-                                                background: `linear-gradient(180deg, ${step.bgColor}, ${steps[idx + 1].bgColor})`,
-                                            }}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
 
-                {/* CTA Section */}
-                <div
-                    className="text-center p-8 md:p-12 rounded-3xl border-2"
-                    style={{
-                        borderColor: "#61dafb",
-                        background: `linear-gradient(135deg, var(--card-bg), rgba(97, 218, 251, 0.05))`,
-                    }}
-                >
-                    <Terminal className="w-12 h-12 mx-auto mb-4" style={{ color: "var(--accent-cyan-text)" }} />
+                {/* CTA: no tint, glow or border, so it sits on the page's own
+                    background; side padding kept, top/bottom padding dropped. */}
+                <div className="mt-12 md:mt-16 text-center px-8 md:px-12">
+                    <Terminal className="w-12 h-12 mx-auto mb-4" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
                     <h3
                         className="text-2xl md:text-3xl font-bold mb-4"
                         style={{ color: "var(--foreground)" }}
@@ -598,15 +294,14 @@ export default function Process() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                         style={{
                             background: "linear-gradient(135deg, #61dafb, #00d4ff)",
                             color: "#000",
-                            boxShadow: "0 4px 20px rgba(97, 218, 251, 0.4)",
                         }}
                     >
                         Start Your Project
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                     </Link>
                 </div>
             </div>
