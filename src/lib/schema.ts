@@ -528,7 +528,7 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
       "breadcrumb": { "@id": `${postUrl}/#breadcrumb` },
       "inLanguage": "en-US",
       "datePublished": post.publishedAt,
-      "dateModified": post.schema?.dateModified || post.updatedAt || post.publishedAt,
+      "dateModified": post.schema?.dateModified || post.publishedAt,
     },
 
     generateBreadcrumbSchema([
@@ -545,7 +545,7 @@ export function generateBlogPostGraphSchema(post: BlogPost) {
       "description": post.seo?.metaDescription || post.excerpt,
       "image": post.image,
       "datePublished": post.publishedAt,
-      "dateModified": post.schema?.dateModified || post.updatedAt || post.publishedAt,
+      "dateModified": post.schema?.dateModified || post.publishedAt,
       ...(post.schema?.wordCount && { "wordCount": post.schema.wordCount }),
       "keywords": (post.schema?.keywords && post.schema.keywords.length > 0)
         ? post.schema.keywords.join(", ")

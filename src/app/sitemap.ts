@@ -7,6 +7,7 @@ import { listedProducts, isProductListed } from "@/data/products";
 import { productPrivacyPolicies } from "@/data/productPrivacy";
 import { productSupportData } from "@/data/productSupport";
 import { clientProjects } from "@/data/portfolio";
+import { NOINDEX_CATEGORIES } from "@/lib/metadata";
 
 // ISR: regenerate the sitemap periodically so newly-published Sanity blog posts
 // appear without a full redeploy. Uses the public read client (no token).
@@ -38,11 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
     },
     { route: "/blog", priority: 0.9, changeFrequency: "daily" as const },
-    {
-      route: "/blog/categories",
-      priority: 0.6,
-      changeFrequency: "weekly" as const,
-    },
+    // /blog/categories is noindex, follow (thin listing page), so not listed.
     { route: "/services", priority: 0.9, changeFrequency: "monthly" as const },
     { route: "/portfolio", priority: 0.8, changeFrequency: "monthly" as const },
     { route: "/careers", priority: 0.7, changeFrequency: "weekly" as const },
@@ -113,13 +110,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       client.fetch(categoriesQuery),
     ]);
 
-    // 3. Dynamic Blog Routes. lastmod is the post's last real edit, not its
-    // publish date: the editor's schema.dateModified override, else Sanity's
-    // _updatedAt, and never earlier than publishedAt. Same rule as the
-    // BlogPosting dateModified in lib/schema.ts, so the two always agree.
+    // 3. Dynamic Blog Routes. lastmod is the post's last real edit: the
+    // editor's schema.dateModified ("Date modified" in Sanity), else the publish
+    // date, and never earlier than publishedAt. Sanity's _updatedAt is not used:
+    // any save bumps it, so the 18-19 Nov 2026 metadata and link edits marked
+    // 56 articles as updated. Same rule as the BlogPosting dateModified in
+    // lib/schema.ts, so the two always agree.
     const postLastModified = (post: any): string => {
       const published = new Date(post.publishedAt).getTime();
-      const edited = new Date(post.schema?.dateModified || post._updatedAt || post.publishedAt).getTime();
+      const edited = new Date(post.schema?.dateModified || post.publishedAt).getTime();
       return new Date(Number.isNaN(edited) ? published : Math.max(published, edited)).toISOString();
     };
 
@@ -146,7 +145,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (blogIndex) blogIndex.lastModified = latestPost;
 
     // 4. Dynamic Category Routes
-    blogCategoryRoutes = categories.map((cat: any) => ({
+    // noindex categories (see NOINDEX_CATEGORIES) stay out of the sitemap.
+    blogCategoryRoutes = categories.filter((cat: { slug: string }) => !NOINDEX_CATEGORIES.includes(cat.slug)).map((cat: any) => ({
       url: `${baseUrl}/blog/category/${cat.slug}`,
       lastModified: latestByCategory.get(cat._id) || staticLastModified,
       changeFrequency: "weekly" as const,

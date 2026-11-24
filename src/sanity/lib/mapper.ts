@@ -79,7 +79,11 @@ function serializePortableTextBlock(block: any): string {
     if (!block.children || !Array.isArray(block.children)) return '';
 
     return block.children.map((child: any) => {
-        let text = child.text || '';
+        // The text is placed into HTML, so a "<" that starts a tag (code such
+        // as <Suspense> or <main> written in a sentence) is escaped and shows
+        // as text instead of vanishing. Editors' own <br> / <br/> line breaks
+        // still work.
+        let text = (child.text || '').replace(/<(?!br\s*\/?>)(?=[A-Za-z/!?])/gi, '&lt;');
 
         // Apply marks (links, bold, italic, etc.)
         if (child.marks && Array.isArray(child.marks) && child.marks.length > 0) {
@@ -189,41 +193,95 @@ export function mapSanityAuthorToAuthor(sanityAuthor: any): Author {
     };
 }
 
+/**
+ * Nested lists. Portable Text stores every list item as a flat block with
+ * `listItem` (bullet | number) and `level` (1 = top). An item deeper than the
+ * one above it is nested inside that item; only top-level items make up the
+ * list block. Grouping by style alone let a level-2 bullet under step 2 close
+ * the numbered list, so step 3 opened a new <ol> and showed "1." again
+ * (mastering-seo-organic-growth).
+ */
+type ListItemNode = {
+    style: 'bullet' | 'numbered';
+    level: number;
+    html: string;
+    children: ListItemNode[];
+};
+
+// Same look as the top-level lists in ListBlock.tsx, with a small gap above.
+const NESTED_LIST_CLASS: Record<ListItemNode['style'], string> = {
+    numbered: 'list-decimal list-outside ms-6 mt-2 space-y-2',
+    bullet: 'list-disc list-outside ms-6 mt-2 space-y-2',
+};
+
+/** An item's HTML plus its nested items; consecutive children of one style share one <ul>/<ol>. */
+function renderListItem(node: ListItemNode): string {
+    let html = node.html;
+    let i = 0;
+    while (i < node.children.length) {
+        const style = node.children[i].style;
+        const tag = style === 'numbered' ? 'ol' : 'ul';
+        let items = '';
+        while (i < node.children.length && node.children[i].style === style) {
+            items += `<li>${renderListItem(node.children[i])}</li>`;
+            i++;
+        }
+        html += `<${tag} class="${NESTED_LIST_CLASS[style]}">${items}</${tag}>`;
+    }
+    return html;
+}
+
 export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBlock[] {
     if (!sanityBlocks || !Array.isArray(sanityBlocks)) return [];
 
     const contentBlocks: ContentBlock[] = [];
-    let currentListBlock: any = null;
+    let currentList: { id: string; style: ListItemNode['style']; nodes: ListItemNode[] } | null = null;
+    // The chain of open items, top level first: where the next deeper item nests.
+    let openItems: ListItemNode[] = [];
+
+    const closeList = () => {
+        if (currentList) {
+            contentBlocks.push({
+                id: currentList.id,
+                type: 'list',
+                style: currentList.style,
+                items: currentList.nodes.map(renderListItem),
+            });
+        }
+        currentList = null;
+        openItems = [];
+    };
 
     for (const block of sanityBlocks) {
         // Handle List Items
         if (block._type === 'block' && block.listItem) {
-            const listStyle = block.listItem === 'number' ? 'numbered' : 'bullet';
-            // Serialize like any other block, so bold/italic/code/links an editor
-            // applied inside a bullet survive instead of being flattened to text.
-            const content = serializePortableTextBlock(block);
+            const node: ListItemNode = {
+                style: block.listItem === 'number' ? 'numbered' : 'bullet',
+                level: block.level || 1,
+                // Serialize like any other block, so bold/italic/code/links an editor
+                // applied inside a bullet survive instead of being flattened to text.
+                html: serializePortableTextBlock(block),
+                children: [],
+            };
 
-            if (currentListBlock && currentListBlock.style === listStyle) {
-                // Continue existing list
-                currentListBlock.items.push(content);
-            } else {
-                // Start new list. Push previous list if it exists.
-                if (currentListBlock) {
-                    contentBlocks.push(currentListBlock);
-                }
-                currentListBlock = {
-                    id: block._key,
-                    type: 'list',
-                    style: listStyle,
-                    items: [content]
-                };
+            while (openItems.length && openItems[openItems.length - 1].level >= node.level) {
+                openItems.pop();
             }
+            if (openItems.length) {
+                // Deeper than the item above: nest inside it
+                openItems[openItems.length - 1].children.push(node);
+            } else {
+                // Top level: continue the list, or start a new one when the style changes
+                if (!currentList || currentList.style !== node.style) {
+                    closeList();
+                    currentList = { id: block._key, style: node.style, nodes: [] };
+                }
+                currentList.nodes.push(node);
+            }
+            openItems.push(node);
         } else {
             // If we encounter a non-list block, close any open list
-            if (currentListBlock) {
-                contentBlocks.push(currentListBlock);
-                currentListBlock = null;
-            }
+            closeList();
 
             // --- Handle other blocks ---
 
@@ -322,9 +380,7 @@ export function mapSanityBlocksToContentBlocks(sanityBlocks: any[]): ContentBloc
     }
 
     // Push any remaining list block at the end
-    if (currentListBlock) {
-        contentBlocks.push(currentListBlock);
-    }
+    closeList();
 
 
     return contentBlocks.filter(Boolean) as ContentBlock[];

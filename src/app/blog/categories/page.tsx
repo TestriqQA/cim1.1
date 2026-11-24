@@ -9,12 +9,17 @@ import {
   generateNavigationSchema,
 } from "@/lib/schema";
 
-export const metadata: Metadata = getPageMetadata({
-  title: "Blog Categories | Cinute InfoMedia",
-  description: "Explore our blog articles organized by category. From web development to digital marketing, find the insights you need.",
-  url: "/blog/categories",
-  image: "/og-images/blogcategories.webp"
-});
+// noindex, follow: a thin listing page (Page Indexing Fixes, 23 Nov 2026).
+// Google still follows its links to the categories; it is not in the sitemap.
+export const metadata: Metadata = {
+  ...getPageMetadata({
+    title: "Blog Categories | Cinute InfoMedia",
+    description: "Explore our blog articles organized by category. From web development to digital marketing, find the insights you need.",
+    url: "/blog/categories",
+    image: "/og-images/blogcategories.webp"
+  }),
+  robots: { index: false, follow: true },
+};
 
 import { client } from "@/sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "@/sanity/lib/queries";
