@@ -173,6 +173,11 @@ export function generateBlogPostMetadata(
   };
 }
 
+/** Category pages kept out of the index (noindex, follow) and out of the
+ *  sitemap: too thin to rank on their own (Page Indexing Fixes, 23 Nov 2026).
+ *  Google still follows their links to the posts. */
+export const NOINDEX_CATEGORIES = ["website-security"];
+
 export function generateCategoryMetadata(
   category: string,
   postCount: number,
@@ -188,12 +193,15 @@ export function generateCategoryMetadata(
   const metaTitle = seo?.metaTitle || `${category} Articles | Cinute InfoMedia Blog`;
   const metaDescription = seo?.metaDescription || `Explore ${postCount} articles about ${category}. Learn from our experts on the latest trends and best practices.`;
 
-  return getPageMetadata({
+  const metadata = getPageMetadata({
     title: metaTitle,
     description: metaDescription,
     url: seo?.canonicalUrl || url,
     image: "/og-images/blogcategories.webp"
   });
+  return NOINDEX_CATEGORIES.includes(slug)
+    ? { ...metadata, robots: { index: false, follow: true } }
+    : metadata;
 }
 
 export function generateAuthorMetadata(

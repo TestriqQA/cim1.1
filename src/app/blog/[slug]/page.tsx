@@ -36,7 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.slug,
     post.publishedAt,
     post.author.name,
-    post.updatedAt,
+    // The editor's "Date modified", not Sanity's _updatedAt (any save bumps it).
+    post.schema?.dateModified,
     post.seo
   );
 }

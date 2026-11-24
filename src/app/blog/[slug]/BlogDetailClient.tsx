@@ -159,6 +159,15 @@ export default function BlogDetailClient({
         day: "numeric",
     });
 
+    // "Updated" appears only when an editor set "Date modified" in Sanity to a
+    // later day than publishing: the same value the BlogPosting schema and the
+    // sitemap use, so the page and its metadata always show the same dates.
+    const modifiedAt = post.schema?.dateModified;
+    const formattedUpdated = modifiedAt && new Date(modifiedAt) > new Date(post.publishedAt)
+        ? new Date(modifiedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
+        : null;
+    const showUpdated = formattedUpdated !== null && formattedUpdated !== formattedDate;
+
     const authorSlug = post.author.name.toLowerCase().replace(/\s+/g, "-");
 
     const handleShare = async () => {
@@ -234,6 +243,11 @@ export default function BlogDetailClient({
                                     <Calendar className="w-4 h-4" />
                                     {formattedDate}
                                 </span>
+                                {showUpdated && (
+                                    <span className="text-sm" style={{ color: "var(--secondary-text)" }}>
+                                        Updated {formattedUpdated}
+                                    </span>
+                                )}
                                 <span className="flex items-center gap-1.5 text-sm" style={{ color: "var(--secondary-text)" }}>
                                     <Clock className="w-4 h-4" />
                                     {post.readTime} min read
@@ -316,10 +330,6 @@ export default function BlogDetailClient({
 
                         {/* Main Content */}
                         <article className="xl:col-span-2">
-                            {/* Mobile Table of Contents - visible on screens < xl */}
-                            <div className="xl:hidden mb-8">
-                                <TableOfContents markdown={post.content} blocks={post.contentBlocks} />
-                            </div>
                             {/* Article Content */}
                             <div
                                 className="prose prose-lg max-w-none rounded-2xl border p-6 md:p-10"
@@ -365,17 +375,23 @@ export default function BlogDetailClient({
                             )}
                         </article>
 
-                        {/* Sidebar - visible only on xl+ screens */}
-                        <aside className="hidden xl:block xl:col-span-1">
-                            {/* 👇 Sticky applies to FULL article height */}
-                            <div className="sticky top-24">
+                        {/* Sidebar. The Table of Contents is rendered once, here. Below xl
+                            the aside moves above the article (order-first) and shows only
+                            the TOC; from xl it is the sticky sidebar as before. A second,
+                            mobile-only copy used to put two TOCs (two "Table of Contents"
+                            H2s) in every post's HTML. */}
+                        <aside className="order-first xl:order-none xl:col-span-1">
+                            {/* Sticky applies to FULL article height (xl only) */}
+                            <div className="xl:sticky xl:top-24">
                                 <TableOfContents markdown={post.content} blocks={post.contentBlocks} />
-                                <BlogSidebar
-                                    currentPostSlug={post.slug}
-                                    categories={categories}
-                                    popularPosts={popularPosts}
-                                    tags={tags}
-                                />
+                                <div className="hidden xl:block">
+                                    <BlogSidebar
+                                        currentPostSlug={post.slug}
+                                        categories={categories}
+                                        popularPosts={popularPosts}
+                                        tags={tags}
+                                    />
+                                </div>
                             </div>
                         </aside>
 
