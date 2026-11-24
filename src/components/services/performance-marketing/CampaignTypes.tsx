@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Search, Monitor, Share2, Play, ShoppingCart, RefreshCw, TrendingUp, DollarSign, Users, ArrowRight, Shield } from "lucide-react";
+import { Monitor, ShoppingCart, TrendingUp, Shield } from "lucide-react";
 
 export default function CampaignTypes() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -44,10 +44,10 @@ export default function CampaignTypes() {
     ];
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}>
+        <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden transition-colors duration-300" style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-10 lg:mb-12">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -57,10 +57,10 @@ export default function CampaignTypes() {
                     >
                         <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
-                            INDUSTRIES
+                            Industries
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         Performance Marketing Solutions <span style={{ color: "var(--accent-orange-text)" }}>by Industry</span>
                     </h2>
 
@@ -83,23 +83,19 @@ export default function CampaignTypes() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <div
-                                    className="relative p-6 rounded-2xl transition-all duration-500 border overflow-hidden h-full"
+                                    className="relative p-6 rounded-2xl transition duration-300 border overflow-hidden h-full"
                                     style={{
                                         backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
                                         borderColor: isHovered ? campaign.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-10px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered ? `0 25px 50px -12px ${campaign.color}40` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                        boxShadow: isHovered ? `0 12px 30px -12px ${campaign.color}40` : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                                     }}
                                 >
                                     {/* Background gradient */}
 
                                     {/* Icon */}
                                     <div
-                                        className="w-14 h-14 rounded-xl p-3 mb-4 transition-all duration-500"
-                                        style={{
-                                            backgroundColor: `${campaign.color}20`,
-                                            transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                        }}
+                                        className="w-14 h-14 rounded-xl p-3 mb-4"
+                                        style={{ backgroundColor: `${campaign.color}20` }}
                                     >
                                         <Icon className="w-full h-full" style={{ color: campaign.color }} />
                                     </div>
@@ -116,11 +112,8 @@ export default function CampaignTypes() {
 
                                     {/* Metrics */}
                                     <div
-                                        className="grid grid-cols-3 gap-2 mb-4 p-3 rounded-xl transition-all duration-300"
-                                        style={{
-                                            backgroundColor: `${campaign.color}10`,
-                                            opacity: isHovered ? 1 : 0.7,
-                                        }}
+                                        className="grid grid-cols-3 gap-2 mb-4 p-3 rounded-xl"
+                                        style={{ backgroundColor: `${campaign.color}10` }}
                                     >
                                         {Object.entries(campaign.metrics).map(([key, value], idx) => (
                                             <div key={idx} className="text-center">
@@ -145,15 +138,6 @@ export default function CampaignTypes() {
                                             </span>
                                         ))}
                                     </div>
-
-                                    {/* Bottom accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${campaign.color}, transparent)`,
-                                            width: isHovered ? "100%" : "0%",
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );

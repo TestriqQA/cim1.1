@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Globe, TrendingUp, Users, CheckCircle2, ArrowRight } from "lucide-react";
+import { Eye, Globe, TrendingUp, Users, CheckCircle2, ArrowRight, BookOpen, Rocket, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
@@ -28,10 +28,10 @@ export default function ServiceOverview() {
     ];
 
     return (
-        <section className="py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
-            <div className="mx-auto px-6 md:px-12 xl:px-20">
+        <section className="py-12 sm:py-16 md:py-24 transition-colors duration-300" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+            <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
                     <div
                         className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 rounded-full border backdrop-blur-sm"
                         style={{
@@ -53,7 +53,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
                         return (
@@ -96,7 +96,7 @@ export default function ServiceOverview() {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-16 text-center">
+                <div className="mt-10 sm:mt-14 md:mt-16 text-center">
                     <div
                         className="inline-flex flex-col md:flex-row items-center gap-6 p-6 md:p-8 rounded-2xl border"
                         style={{
@@ -122,17 +122,20 @@ export default function ServiceOverview() {
 
                 {/* Related Resources */}
                 <div className="mt-8 p-6 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--foreground)" }}>📚 Related Resources</h3>
+                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2" style={{ color: "var(--foreground)" }}>
+                        <BookOpen className="w-5 h-5 shrink-0" style={{ color: "var(--accent-green-text)" }} aria-hidden="true" />
+                        Related Resources
+                    </h3>
                     <div className="flex flex-col gap-3">
                         <Link href="/blog/mastering-seo-organic-growth" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">🚀</span>
+                            <Rocket className="w-6 h-6 shrink-0" style={{ color: "var(--accent-green-text)" }} aria-hidden="true" />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-green-text)] transition-colors">Mastering SEO for Organic Growth</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Complete guide to sustainable SEO strategies</p>
                             </div>
                         </Link>
                         <Link href="/blog/seo-ppc-hybrid-full-stack-funnels-convert-2x-better-2026" className="group flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-[var(--hover-bg)]">
-                            <span className="text-2xl">⚡</span>
+                            <Zap className="w-6 h-6 shrink-0" style={{ color: "var(--accent-green-text)" }} aria-hidden="true" />
                             <div>
                                 <h4 className="font-semibold group-hover:text-[var(--accent-green-text)] transition-colors">SEO + PPC Hybrid Funnels</h4>
                                 <p className="text-sm" style={{ color: "var(--secondary-text)" }}>How combining organic and paid converts 2x better</p>

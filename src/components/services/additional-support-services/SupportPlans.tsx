@@ -84,12 +84,6 @@ export default function SupportPlans() {
             className="py-12 md:py-16 lg:py-24 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--card-bg)", color: "var(--foreground)" }}
         >
-            {/* Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-0 w-80 h-80 bg-[#4b277a] rounded-full blur-[150px] opacity-10" />
-                <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-[#97288e] rounded-full blur-[150px] opacity-10" />
-            </div>
-
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-8 md:mb-12">
@@ -134,7 +128,7 @@ export default function SupportPlans() {
                         >
                             Yearly
                             <span
-                                className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full"
+                                className="text-xs px-1.5 sm:px-2 py-0.5 rounded-full"
                                 style={{ backgroundColor: "#fab900", color: "#000" }}
                             >
                                 Save 17%
@@ -144,7 +138,7 @@ export default function SupportPlans() {
                 </div>
 
                 {/* Plans Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => {
                         const Icon = plan.icon;
                         const isHovered = hoveredIndex === index;
@@ -154,7 +148,7 @@ export default function SupportPlans() {
                         return (
                             <div
                                 key={index}
-                                className="relative"
+                                className={`relative transition-transform duration-500 ${isPopular ? "" : "lg:scale-95"} ${isHovered ? "-translate-y-2.5" : ""}`}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
@@ -174,12 +168,6 @@ export default function SupportPlans() {
                                     style={{
                                         backgroundColor: "var(--background)",
                                         borderColor: isPopular ? plan.color : isHovered ? plan.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-10px)" : "translateY(0)",
-                                        boxShadow: isPopular
-                                            ? `0 25px 50px -12px ${plan.color}30`
-                                            : isHovered
-                                                ? `0 25px 50px -12px ${plan.color}25`
-                                                : "none",
                                     }}
                                 >
                                     {/* Header */}
@@ -195,7 +183,7 @@ export default function SupportPlans() {
                                         </div>
                                         <div>
                                             <h3 className="text-lg sm:text-xl font-bold">{plan.name}</h3>
-                                            <p className="text-[10px] sm:text-xs" style={{ color: "var(--secondary-text)" }}>
+                                            <p className="text-xs" style={{ color: "var(--secondary-text)" }}>
                                                 {billingCycle === "yearly" ? "Billed annually" : "Billed monthly"}
                                             </p>
                                         </div>
@@ -221,10 +209,10 @@ export default function SupportPlans() {
                                         {plan.features.map((feature, idx) => (
                                             <div
                                                 key={idx}
-                                                className={`flex items-center gap-2 sm:gap-3 ${!feature.included ? "opacity-60" : ""}`}
+                                                className={`flex items-center gap-2 sm:gap-3 ${!feature.included ? "opacity-85" : ""}`}
                                             >
                                                 <div
-                                                    className="w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                                                    className={`relative w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0 ${!feature.included ? "after:absolute after:content-[''] after:left-0 after:-right-2 sm:after:-right-3 after:top-1/2 after:h-px after:bg-[var(--secondary-text)]" : ""}`}
                                                     style={{
                                                         backgroundColor: feature.included ? `${plan.color}20` : "var(--hover-bg)",
                                                     }}
@@ -236,7 +224,7 @@ export default function SupportPlans() {
                                                 </div>
                                                 <span
                                                     className={`text-xs sm:text-sm ${!feature.included ? "line-through" : ""}`}
-                                                    style={{ color: "var(--foreground)" }}
+                                                    style={{ color: feature.included ? "var(--foreground)" : "var(--secondary-text)" }}
                                                 >
                                                     {feature.text}
                                                 </span>

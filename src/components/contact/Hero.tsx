@@ -1,7 +1,7 @@
 // components/about/Hero.tsx
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import {
   MessageSquare,
   Mail,
@@ -24,10 +24,11 @@ import {
   CheckCircle2,
   Home,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react";
 
 // Phone input with country codes
-import PhoneInput from "react-phone-number-input";
+import PhoneInput, { type Country } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
 import Link from "next/link";
@@ -45,18 +46,10 @@ import { useFormErrorReset } from "@/hooks/useFormErrorReset";
 export default function Hero() {
   // small helpers & state used by hero animations
   // small helpers & state used by hero animations
-  const [activeCard, setActiveCard] = useState(0);
   // const [messageIndex, setMessageIndex] = useState(0); // Unused
   // const [particles, setParticles] = useState<Array<{ x: number; y: number; delay: number }>>([]); // Unused
 
   /* Optimized: Removed mousemove listener and particle effects to reduce main thread blocking (TBT) */
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCard((prev) => (prev + 1) % 4);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   /* Removed unused message interval */
   /* Removed unused particle effect */
@@ -70,6 +63,7 @@ export default function Hero() {
       description: "Fast response times",
       colorStartVar: "--brand-blue",
       colorEndVar: "--brand-teal",
+      iconColorVar: "--brand-blue-text",
       href: "mailto:contact@cinuteinfomedia.com",
       badge: "Most Popular",
     },
@@ -80,6 +74,7 @@ export default function Hero() {
       description: "Direct expert consultation",
       colorStartVar: "--brand-purple",
       colorEndVar: "--brand-yellow",
+      iconColorVar: "--brand-purple-text",
       href: "tel:+919004988859",
       badge: "Instant",
     },
@@ -90,6 +85,7 @@ export default function Hero() {
       description: "Global standards, local presence",
       colorStartVar: "--brand-cyan",
       colorEndVar: "--brand-teal",
+      iconColorVar: "--accent-cyan-text",
       href: "https://maps.app.goo.gl/ak5SjeUnrDyWLXFNA",
       badge: "By Appointment",
     },
@@ -100,6 +96,7 @@ export default function Hero() {
       description: "Quick project guidance & quotes",
       colorStartVar: "--brand-yellow",
       colorEndVar: "--brand-orange",
+      iconColorVar: "--accent-amber-text",
       href: "#contact-form",
       badge: "24/7 Available",
     },
@@ -148,6 +145,9 @@ export default function Hero() {
   const [nameError, setNameError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  // Mirrors PhoneInput's country so the validator knows which dialling code a
+  // bare "+<code>" value belongs to. Starts at the input's defaultCountry.
+  const [phoneCountry, setPhoneCountry] = useState<Country | undefined>("IN");
   const [subjectError, setSubjectError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
   const [consentError, setConsentError] = useState<string | null>(null);
@@ -185,8 +185,11 @@ export default function Hero() {
     return error === null;
   };
 
-  const validatePhoneField = (value: string | undefined): boolean => {
-    const error = validatePhoneOptional(value);
+  const validatePhoneField = (
+    value: string | undefined,
+    country: Country | undefined = phoneCountry,
+  ): boolean => {
+    const error = validatePhoneOptional(value, country);
     setPhoneError(error);
     return error === null;
   };
@@ -249,7 +252,22 @@ export default function Hero() {
   // Handle phone change separately due to PhoneInput component
   const handlePhoneChange = (value: string | undefined) => {
     setForm((prev) => ({ ...prev, phone: value || "" }));
-    if (value) validatePhoneField(value);
+    // While the user is still typing, only clear an error once the number
+    // becomes valid - never raise one mid-entry. Errors appear on blur/submit.
+    if (phoneError && validatePhoneOptional(value, phoneCountry) === null) {
+      setPhoneError(null);
+    }
+  };
+
+  // Picking a country rewrites the value to that country's dialling code. That is
+  // a country selection, not a failed entry, so any previous error is stale.
+  const handlePhoneCountryChange = (country?: Country) => {
+    setPhoneCountry(country);
+    setPhoneError(null);
+  };
+
+  const handlePhoneBlur = () => {
+    validatePhoneField(form.phone);
   };
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -280,6 +298,7 @@ export default function Hero() {
     setNameError(null);
     setEmailError(null);
     setPhoneError(null);
+    setPhoneCountry("IN");
     setSubjectError(null);
     setMessageError(null);
     setConsentError(null);
@@ -327,7 +346,7 @@ export default function Hero() {
   // Render
   return (
     <section
-      className="relative px-6 md:px-12 xl:px-20 py-12 overflow-hidden"
+      className="relative px-6 md:px-12 xl:px-20 py-8 md:py-12 overflow-hidden"
       style={{ background: "var(--background)", color: "var(--foreground)" }}
     >
       {/* Animated background orbs */}
@@ -374,9 +393,9 @@ export default function Hero() {
                     <span className="text-sm font-semibold">Get in Touch</span>
                 </div> */}
 
-        <div className="grid xl:grid-cols-2 items-start gap-16">
+        <div className="grid xl:grid-cols-2 items-start gap-10 md:gap-16">
           {/* LEFT: Intro + contact cards */}
-          <div className="space-y-8 animate-fadeInUp order-2 md:order-1">
+          <div className="space-y-6 md:space-y-8 order-2 md:order-1">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-3">
                 <span className="inline-block">
@@ -446,7 +465,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-4">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (
@@ -462,67 +481,21 @@ export default function Hero() {
                         : undefined
                     }
                     className="group block"
-                    style={{ animationDelay: `${index * 0.08}s` }}
                   >
                     <div
-                      className="relative rounded-2xl pl-3 pr-7 py-4 transition-all duration-300"
+                      className="relative h-full flex flex-col justify-center rounded-2xl pl-3 pr-7 py-4 transition-transform duration-200 ease-out group-hover:-translate-y-1"
                       style={{
                         background: "var(--card-bg)",
                         backdropFilter: "blur(6px)",
                         border: `2px solid var(--border-color)`,
                       }}
                     >
-                      <div
-                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300"
-                        style={{
-                          background: gradient(
-                            method.colorStartVar,
-                            method.colorEndVar,
-                            "135deg",
-                          ),
-                        }}
-                      />
-
-                      {activeCard === index && (
-                        <div
-                          className="absolute inset-0 rounded-2xl animate-pulse"
-                          style={{
-                            background: gradient(
-                              method.colorStartVar,
-                              method.colorEndVar,
-                              "135deg",
-                            ),
-                            opacity: 0.06,
-                          }}
-                        />
-                      )}
-
                       <div className="relative flex items-center gap-5">
-                        <div
-                          className="relative w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 flex-shrink-0"
-                          style={{
-                            background: gradient(
-                              method.colorStartVar,
-                              method.colorEndVar,
-                              "135deg",
-                            ),
-                            boxShadow: "0 12px 30px rgba(0,0,0,0.06)",
-                          }}
-                        >
-                          <Icon className="w-7 h-7 text-white" />
-                          {activeCard === index && (
-                            <div
-                              className="absolute inset-0 rounded-xl animate-ping"
-                              style={{
-                                opacity: 0.45,
-                                background: gradient(
-                                  method.colorStartVar,
-                                  method.colorEndVar,
-                                  "135deg",
-                                ),
-                              }}
-                            />
-                          )}
+                        <div className="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+                          <Icon
+                            className="w-7 h-7"
+                            style={{ color: `var(${method.iconColorVar})` }}
+                          />
                         </div>
 
                         <div className="flex-1">
@@ -553,7 +526,7 @@ export default function Hero() {
             </div>
             {/* Mini Value Section Below Contact Methods */}
             <div
-              className="mt-10 p-6 rounded-2xl shadow-md border backdrop-blur-sm"
+              className="mt-6 md:mt-10 p-6 rounded-2xl shadow-md border backdrop-blur-sm"
               style={{
                 background: "var(--card-bg)",
                 borderColor: "var(--border-color)",
@@ -575,14 +548,14 @@ export default function Hero() {
                 <li className="flex items-start gap-2 sm:gap-3">
                   {/* shrink-0 + aspect-square keep the badge a true circle when the text wraps on small screens */}
                   <span
-                    className="w-6 h-6 min-w-6 shrink-0 aspect-square rounded-full flex items-center justify-center"
+                    className="w-5 h-5 min-w-5 shrink-0 aspect-square rounded-full flex items-center justify-center mt-0.5"
                     style={{ background: "var(--brand-teal)", color: "white" }}
                     aria-hidden="true"
                   >
-                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                    <Check className="w-3 h-3" strokeWidth={3} />
                   </span>
                   <p
-                    className="text-sm"
+                    className="text-base"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     <strong style={{ color: "var(--foreground)" }}>
@@ -595,14 +568,14 @@ export default function Hero() {
 
                 <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="w-6 h-6 min-w-6 shrink-0 aspect-square rounded-full flex items-center justify-center"
-                    style={{ background: "var(--brand-blue)", color: "white" }}
+                    className="w-5 h-5 min-w-5 shrink-0 aspect-square rounded-full flex items-center justify-center mt-0.5"
+                    style={{ background: "var(--brand-teal)", color: "white" }}
                     aria-hidden="true"
                   >
-                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                    <Check className="w-3 h-3" strokeWidth={3} />
                   </span>
                   <p
-                    className="text-sm"
+                    className="text-base"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     <strong style={{ color: "var(--foreground)" }}>
@@ -615,17 +588,14 @@ export default function Hero() {
 
                 <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="w-6 h-6 min-w-6 shrink-0 aspect-square rounded-full flex items-center justify-center"
-                    style={{
-                      background: "var(--brand-purple)",
-                      color: "white",
-                    }}
+                    className="w-5 h-5 min-w-5 shrink-0 aspect-square rounded-full flex items-center justify-center mt-0.5"
+                    style={{ background: "var(--brand-teal)", color: "white" }}
                     aria-hidden="true"
                   >
-                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                    <Check className="w-3 h-3" strokeWidth={3} />
                   </span>
                   <p
-                    className="text-sm"
+                    className="text-base"
                     style={{ color: "var(--secondary-text)" }}
                   >
                     <strong style={{ color: "var(--foreground)" }}>
@@ -648,7 +618,7 @@ export default function Hero() {
               }}
               className="rounded-3xl shadow-2xl overflow-hidden"
             >
-              <div className="p-8 md:p-10">
+              <div className="p-5 sm:p-8 md:p-10">
                 {/* success UI */}
                 {isSuccess ? (
                   <div className="text-center flex flex-col items-center justify-center min-h-[600px]">
@@ -701,7 +671,7 @@ export default function Hero() {
                   </div>
                 ) : (
                   <>
-                    <div className="text-center mb-8">
+                    <div className="text-center mb-6 md:mb-8">
                       <h2
                         className="text-3xl md:text-4xl font-bold mb-2"
                         style={{ color: "var(--foreground)" }}
@@ -853,6 +823,8 @@ export default function Hero() {
                               defaultCountry="IN"
                               value={form.phone}
                               onChange={handlePhoneChange}
+                              onCountryChange={handlePhoneCountryChange}
+                              onBlur={handlePhoneBlur}
                               placeholder="Enter phone number"
                               className="phone-input-field"
                               numberInputProps={{
@@ -878,55 +850,62 @@ export default function Hero() {
                           >
                             Topic
                           </label>
-                          <select
-                            id="subject"
-                            name="subject"
-                            value={form.subject}
-                            onChange={(e) =>
-                              handleChange("subject", e.target.value)
-                            }
-                            required
-                            aria-invalid={!!subjectError}
-                            className="w-full mt-2 px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
-                            style={{
-                              borderColor: subjectError
-                                ? "var(--brand-orange)"
-                                : "var(--border-color)",
-                              background: "var(--hover-bg)",
-                              color: "var(--foreground)",
-                              fontFamily: selectFont,
-                            }}
-                          >
-                            <option value="">Select topic</option>
-                            <option value="Web Design & Development">
-                              Web Design & Development
-                            </option>
-                            <option value="Mobile App Development">
-                              Mobile App Development
-                            </option>
-                            <option value="Social Media Marketing">
-                              Social Media Marketing
-                            </option>
-                            <option value="AI Workflows & Automations">
-                              AI Workflows & Automations
-                            </option>
-                            <option value="AI-Powered Chatbots">
-                              AI-Powered Chatbots
-                            </option>
-                            <option value="Organic Growth & SEO">
-                              Organic Growth & SEO
-                            </option>
-                            <option value="Performance Marketing">
-                              Performance Marketing
-                            </option>
-                            <option value="Brand Identity & Design">
-                              Brand Identity & Design
-                            </option>
-                            <option value="Additional Support Services">
-                              Additional Support Services
-                            </option>
-                            <option value="Other">Other</option>
-                          </select>
+                          <div className="mt-2 relative">
+                            <select
+                              id="subject"
+                              name="subject"
+                              value={form.subject}
+                              onChange={(e) =>
+                                handleChange("subject", e.target.value)
+                              }
+                              required
+                              aria-invalid={!!subjectError}
+                              className="w-full px-4 py-3 pr-10 rounded-xl border focus:ring-2 outline-none transition appearance-none"
+                              style={{
+                                borderColor: subjectError
+                                  ? "var(--brand-orange)"
+                                  : "var(--border-color)",
+                                background: "var(--hover-bg)",
+                                color: "var(--foreground)",
+                                fontFamily: selectFont,
+                              }}
+                            >
+                              <option value="">Select topic</option>
+                              <option value="Web Design & Development">
+                                Web Design & Development
+                              </option>
+                              <option value="Mobile App Development">
+                                Mobile App Development
+                              </option>
+                              <option value="Social Media Marketing">
+                                Social Media Marketing
+                              </option>
+                              <option value="AI Workflows & Automations">
+                                AI Workflows & Automations
+                              </option>
+                              <option value="AI-Powered Chatbots">
+                                AI-Powered Chatbots
+                              </option>
+                              <option value="Organic Growth & SEO">
+                                Organic Growth & SEO
+                              </option>
+                              <option value="Performance Marketing">
+                                Performance Marketing
+                              </option>
+                              <option value="Brand Identity & Design">
+                                Brand Identity & Design
+                              </option>
+                              <option value="Additional Support Services">
+                                Additional Support Services
+                              </option>
+                              <option value="Other">Other</option>
+                            </select>
+                            <ChevronDown
+                              className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                              style={{ color: "var(--secondary-text)" }}
+                              aria-hidden="true"
+                            />
+                          </div>
                           {subjectError && (
                             <p
                               className="text-sm mt-2"
@@ -955,7 +934,7 @@ export default function Hero() {
                               onChange={(e) =>
                                 handleChange("budget", e.target.value)
                               }
-                              className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
+                              className="w-full px-4 py-3 pr-10 rounded-xl border focus:ring-2 outline-none transition appearance-none"
                               style={{
                                 borderColor: "var(--border-color)",
                                 background: "var(--hover-bg)",
@@ -969,6 +948,11 @@ export default function Hero() {
                               <option value="25k-1L">₹25k - ₹1L</option>
                               <option value="1L plus">₹1L+</option>
                             </select>
+                            <ChevronDown
+                              className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                              style={{ color: "var(--secondary-text)" }}
+                              aria-hidden="true"
+                            />
                           </div>
                         </div>
 
@@ -980,14 +964,14 @@ export default function Hero() {
                           >
                             Timeframe
                           </label>
-                          <div className="mt-2">
+                          <div className="mt-2 relative">
                             <select
                               id="timeframe"
                               value={form.timeframe}
                               onChange={(e) =>
                                 handleChange("timeframe", e.target.value)
                               }
-                              className="w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition"
+                              className="w-full px-4 py-3 pr-10 rounded-xl border focus:ring-2 outline-none transition appearance-none"
                               style={{
                                 borderColor: "var(--border-color)",
                                 background: "var(--hover-bg)",
@@ -1003,6 +987,11 @@ export default function Hero() {
                                 Ongoing / Retainer
                               </option>
                             </select>
+                            <ChevronDown
+                              className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                              style={{ color: "var(--secondary-text)" }}
+                              aria-hidden="true"
+                            />
                           </div>
                         </div>
                       </div>
@@ -1116,6 +1105,13 @@ export default function Hero() {
           width: 100%;
           display: flex;
           align-items: center;
+          /* On the white light-mode field a flag's white band would merge into
+             the background, so give it a hairline edge. Dark surfaces read the
+             flag fine on their own and look cleaner without one. */
+          --flag-outline: 0 0 0 1px var(--border-color);
+        }
+        [data-theme="dark"] .phone-input-field {
+          --flag-outline: none;
         }
         .phone-input-field .PhoneInputInput {
           flex: 1;
@@ -1139,8 +1135,19 @@ export default function Hero() {
           border-radius: 0.125rem;
           overflow: hidden;
         }
+        /* react-phone-number-input paints a grey "loading" box behind the flag and
+           a dark ring around it (plus a different ring on focus). Drop both and use
+           our own themed edge instead. The :focus selector must be listed too, or
+           the library's focus ring comes back when the country select is opened. */
+        .phone-input-field .PhoneInputCountryIcon--border,
+        .phone-input-field
+          .PhoneInputCountrySelect:focus
+          + .PhoneInputCountryIcon--border {
+          background-color: transparent;
+          box-shadow: var(--flag-outline);
+        }
         .phone-input-field .PhoneInputCountrySelectArrow {
-          margin-left: 0.25rem;
+          margin-left: 0.5rem;
           color: var(--secondary-text);
         }
         .phone-input-field .PhoneInputCountrySelect {

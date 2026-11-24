@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getRelatedServices } from "@/data/relatedServices";
+import { getServiceAccent } from "@/data/serviceAccents";
 
 /**
  * "Related services" block (SEO change report, section 2.1): three normal links
@@ -39,6 +40,11 @@ export default function RelatedServices() {
 
     if (related.length === 0) return null;
 
+    const accent = getServiceAccent(pathname);
+    const accentVars = {
+        "--rs-accent": accent,
+    } as CSSProperties;
+
     return (
         <aside
             ref={ref}
@@ -65,7 +71,7 @@ export default function RelatedServices() {
                                 <span className="text-xs font-semibold" style={{ color: "var(--secondary-text)" }}>
                                     {service.category}
                                 </span>
-                                <span className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
+                                <span className="text-lg font-semibold text-[var(--foreground)] transition-colors duration-300 group-hover:text-[var(--rs-accent)]">
                                     {service.name}
                                 </span>
                                 <span
