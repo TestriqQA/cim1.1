@@ -203,14 +203,20 @@ export default function TechStack() {
                         className="-mt-1 pt-1 overflow-hidden transition-[height] duration-[400ms] ease-in-out motion-reduce:transition-none"
                     >
                         <div>
-                            {/* Phones show icon-only tabs, so name the open tab here
-                                (hidden from sm, where the tabs show their names). */}
-                            <p
+                            {/* The open tab's name and short description, centred above
+                                the cards at every size (phones show icon-only tabs). Keyed
+                                on the tab so it fades in with the cards. */}
+                            <div
                                 key={`name-${activeCategory}`}
-                                className={`sm:hidden mb-3 text-base font-semibold text-[var(--brand-blue-text)] ${switched ? "tech-card-in" : ""}`}
+                                className={`mb-4 sm:mb-6 text-center ${switched ? "tech-card-in" : ""}`}
                             >
-                                {categories[activeCategory].title}
-                            </p>
+                                <h3 className="text-base sm:text-lg font-semibold text-[var(--brand-blue-text)]">
+                                    {categories[activeCategory].title}
+                                </h3>
+                                <p className="mt-1 text-sm sm:text-base" style={{ color: "var(--secondary-text)" }}>
+                                    {categories[activeCategory].description}
+                                </p>
+                            </div>
                             <div key={activeCategory} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                                 {categories[activeCategory].technologies.map((tech, idx) => (
                                     <div

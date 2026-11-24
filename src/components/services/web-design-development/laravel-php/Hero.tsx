@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -112,8 +112,10 @@ export default function Hero() {
                             Build scalable, secure, and maintainable <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">web applications</Link> with the world's most popular PHP framework. We deliver enterprise-grade solutions tailored to your business.
                         </p>
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
+                        {/* Feature Pills: on phones, equal tiles (2 per row) with the dot
+                            beside the label (dot pills stay inline; only icon pills get
+                            the icon-above tile); from 640px the usual pill row. */}
+                        <div className="grid grid-cols-2 auto-rows-fr gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start sm:gap-3 animate-slideUp delay-200">
                             {[
                                 "Custom Development",
                                 <Link href="/services/web-design-development/saas-development-services" className="hover:text-[var(--accent-red-text)] transition-colors">SaaS Platforms</Link>,
@@ -122,14 +124,14 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
+                                    className="flex items-center justify-center gap-1.5 sm:gap-2 px-1.5 sm:px-3 py-1.5 rounded-md border backdrop-blur-sm text-center"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FF2D20" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF2D20" }} />
+                                    <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -138,19 +140,18 @@ export default function Hero() {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #FF2D20, #F05340)",
-                                    boxShadow: "0 4px 20px rgba(255, 45, 32, 0.25)",
+                                    background: "linear-gradient(135deg, #E0261A, #C92218)",
                                 }}
                             >
                                 Start Your Project
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                <ArrowRight className="w-5 h-5 ml-2 flex-shrink-0" aria-hidden="true" />
                             </Link>
 
                             <Link
                                 href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border transition-all hover:bg-accent"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -161,21 +162,22 @@ export default function Hero() {
                             </Link>
                         </div>
 
-                        {/* Stats */}
-                        <div className="flex items-center justify-center lg:justify-start gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        {/* Stats: one row of three on phones (grid), so the row can no
+                            longer push the column wider than the screen. */}
+                        <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-row sm:items-center sm:justify-center lg:justify-start sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div>
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Proven</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Projects Delivered</p>
                             </div>
-                            <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
+                            <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Deep</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>Deep</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
                             </div>
-                            <div className="w-px h-10 bg-border" style={{ backgroundColor: "var(--border-color)" }} />
+                            <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div>
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>24/7</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Support & Maint.</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-red-text)" }}>24/7</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Support & Maint.</p>
                             </div>
                         </div>
                     </div>

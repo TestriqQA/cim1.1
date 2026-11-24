@@ -52,11 +52,11 @@ export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
     return (
-        <section id="process" className="py-24 bg-background relative overflow-hidden">
+        <section id="process" className="py-16 md:py-20 bg-background relative overflow-hidden">
             {/* Background Elements */}
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-12">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -71,7 +71,7 @@ export default function Process() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Our </span>{" "}
                         <span
                             style={{
@@ -99,7 +99,7 @@ export default function Process() {
                         }}
                     />
 
-                    <div className="space-y-12 lg:space-y-24">
+                    <div className="lg:space-y-16">
                         {steps.map((step, idx) => {
                             const Icon = step.icon;
                             const isEven = idx % 2 === 0;
@@ -114,10 +114,10 @@ export default function Process() {
                                     onMouseLeave={() => setHoveredStep(null)}
                                 >
                                     {/* Content Card */}
-                                    <div className="w-full lg:w-5/12 mb-8 lg:mb-0">
+                                    <div className="w-full lg:w-5/12">
                                         <div
                                             className={`
-                                                p-8 rounded-3xl border transition-all duration-300
+                                                p-6 md:p-8 rounded-3xl border transition-all duration-300
                                                 ${isHovered ? "shadow-xl border-[#FF2D20]/50 -translate-y-2" : ""}
                                             `}
                                             style={{
@@ -130,7 +130,7 @@ export default function Process() {
                                                     className="w-12 h-12 rounded-xl flex items-center justify-center text-white"
                                                     style={{ background: "linear-gradient(135deg, #FF2D20, #F05340)" }}
                                                 >
-                                                    <Icon className="w-6 h-6" />
+                                                    <Icon className="w-6 h-6" aria-hidden="true" />
                                                 </div>
                                                 <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>{step.title}</h3>
                                             </div>
@@ -138,7 +138,7 @@ export default function Process() {
                                             <ul className="space-y-2">
                                                 {step.details.map((detail, dIdx) => (
                                                     <li key={dIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                                        <CheckCircle className="w-4 h-4 text-[var(--accent-red-text)]" />
+                                                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-[var(--accent-red-text)]" aria-hidden="true" />
                                                         <span>{detail}</span>
                                                     </li>
                                                 ))}
@@ -174,8 +174,10 @@ export default function Process() {
                                         </div>
                                     </div>
 
-                                    {/* Mobile Connector */}
-                                    <div className="lg:hidden h-12 w-0.5 bg-gradient-to-b from-[#FF2D20] to-transparent opacity-30 my-2" />
+                                    {/* Mobile Connector: 8 + 32 + 8 = 48px between cards; none after the last step */}
+                                    {idx < steps.length - 1 && (
+                                        <div className="lg:hidden h-8 w-0.5 bg-gradient-to-b from-[#FF2D20] to-transparent opacity-30 my-2" />
+                                    )}
                                 </div>
                             );
                         })}
