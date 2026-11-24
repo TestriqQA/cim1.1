@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import {
     Award,
     Target,
@@ -12,8 +9,6 @@ import {
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     const reasons = [
         {
             icon: Award,
@@ -61,42 +56,12 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-                @keyframes glow-pulse {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 0.6; }
-                }
-                .card-shimmer::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(150, 191, 72, 0.1),
-                        transparent
-                    );
-                    animation: shimmer 2s infinite;
-                    pointer-events: none;
-                }
-            `}</style>
-
-            {/* Background Elements */}
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -111,7 +76,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Your{" "}
@@ -135,94 +100,34 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Reasons Grid: cards side by side share one size (md:auto-rows-fr; on
+                    phones each card fits its own content; the card is
+                    the grid item). Hover: border in the icon colour + 4px lift, nothing else. */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
-                        const isHovered = hoveredIndex === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className="group relative"
-                                onMouseEnter={() => setHoveredIndex(idx)}
-                                onMouseLeave={() => setHoveredIndex(null)}
+                                className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#96bf48] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
-
-                                {/* Card */}
-                                <div
-                                    className={`
-                                        relative p-6 rounded-2xl border overflow-hidden
-                                        transition-all duration-500 ease-out
-                                        ${isHovered ? "shadow-2xl -translate-y-3 scale-[1.02]" : "shadow-md"}
-                                        ${isHovered ? "card-shimmer" : ""}
-                                    `}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? "#96bf4850" : "var(--border-color)",
-                                    }}
-                                >
-                                    {/* Corner accent */}
-
-                                    {/* Icon Container */}
-                                    <div className="relative mb-4">
-                                        <div
-                                            className={`
-                                                w-14 h-14 rounded-xl flex items-center justify-center
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-110 rotate-6" : ""}
-                                            `}
-                                            style={{
-                                                background: "linear-gradient(135deg, #96bf48, #5c8a1e)",
-                                                boxShadow: isHovered ? "0 8px 24px rgba(150, 191, 72, 0.5)" : "0 4px 16px rgba(150, 191, 72, 0.3)",
-                                            }}
-                                        >
-                                            <Icon className="w-7 h-7 text-white" />
-                                        </div>
-
-                                        {/* Animated ring on hover */}
-                                        <div
-                                            className={`
-                                                absolute inset-0 w-14 h-14 rounded-xl border-2
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-125 opacity-50" : "scale-100 opacity-0"}
-                                            `}
-                                            style={{ borderColor: "#96bf48" }}
-                                        />
-                                    </div>
-
-                                    {/* Title */}
-                                    <h3
-                                        className="text-xl font-bold mb-2 transition-all duration-300"
-                                        style={{
-                                            color: isHovered ? "var(--accent-shopify-text)" : "var(--foreground)",
-                                        }}
-                                    >
-                                        {reason.title}
-                                    </h3>
-
-                                    {/* Description */}
-                                    <p
-                                        className={`
-                                            text-sm leading-relaxed transition-all duration-300
-                                            ${isHovered ? "translate-x-1" : ""}
-                                        `}
-                                        style={{ color: "var(--secondary-text)" }}
-                                    >
-                                        {reason.description}
-                                    </p>
-
-                                    {/* Bottom accent line */}
+                                <div className="mb-4">
                                     <div
-                                        className={`
-                                            absolute bottom-0 left-0 h-1 rounded-b-2xl transition-all duration-500
-                                            ${isHovered ? "w-full" : "w-0"}
-                                        `}
-                                        style={{
-                                            background: "linear-gradient(90deg, #96bf48, #5c8a1e)",
-                                        }}
-                                    />
+                                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                                        style={{ background: "linear-gradient(135deg, #96bf48, #5c8a1e)" }}
+                                    >
+                                        <Icon className="w-7 h-7 text-white" aria-hidden="true" />
+                                    </div>
                                 </div>
+
+                                <h3 className="text-xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                                    {reason.title}
+                                </h3>
+                                <p className="text-sm leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                    {reason.description}
+                                </p>
                             </div>
                         );
                     })}

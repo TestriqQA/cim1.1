@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { CSSProperties } from "react";
 import {
     Building2,
     ShoppingCart,
@@ -10,13 +11,22 @@ import {
     Server,
     Sparkles,
     Check,
-    ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function SolutionTypes() {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    // The hovered (or tapped) card; its whole row opens so the row stays even.
+    const [activeSolution, setActiveSolution] = useState<number | null>(null);
+    const [columns, setColumns] = useState(1);
+
+    useEffect(() => {
+        const updateColumns = () => {
+            setColumns(window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1);
+        };
+        updateColumns();
+        window.addEventListener("resize", updateColumns);
+        return () => window.removeEventListener("resize", updateColumns);
+    }, []);
 
     const solutions = [
         {
@@ -102,48 +112,12 @@ export default function SolutionTypes() {
     return (
         <section
             id="solutions"
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes float-slow {
-                    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-                    25% { transform: translate(5px, -5px) rotate(1deg); }
-                    50% { transform: translate(0, -10px) rotate(0deg); }
-                    75% { transform: translate(-5px, -5px) rotate(-1deg); }
-                }
-                @keyframes border-dance {
-                    0%, 100% { border-color: var(--border-color); }
-                    50% { border-color: currentColor; }
-                }
-                @keyframes icon-bounce {
-                    0%, 100% { transform: scale(1) rotate(0deg); }
-                    25% { transform: scale(1.1) rotate(-3deg); }
-                    50% { transform: scale(1) rotate(0deg); }
-                    75% { transform: scale(1.1) rotate(3deg); }
-                }
-                .card-float:hover {
-                    animation: float-slow 3s ease-in-out infinite;
-                }
-            `}</style>
-
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Floating particles */}
-                <div
-                    className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full animate-bounce"
-                    style={{ backgroundColor: "#61dafb", animationDuration: "3s" }}
-                />
-                <div
-                    className="absolute bottom-1/3 left-1/3 w-3 h-3 rounded-full animate-bounce"
-                    style={{ backgroundColor: "#00d4ff", animationDuration: "4s", animationDelay: "1s" }}
-                />
-            </div>
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-12">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
                             backgroundColor: "var(--card-bg)",
@@ -157,16 +131,12 @@ export default function SolutionTypes() {
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Specialized{" "}
                         <span
-                            style={{
-                                background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
+                            style={{ color: "var(--accent-cyan-text)" }}
                         >
                             Next.js & React
                         </span>{" "}
@@ -178,212 +148,90 @@ export default function SolutionTypes() {
                     >
                         We provide a comprehensive suite of Next.js development services designed to maximize user engagement. Our React development agency specializes in high-performance architectures that scale with multi-national enterprises.
                     </p>
-                    <div
-                        className="w-24 h-1.5 mx-auto mt-8 rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #61dafb, #00d4ff)",
-                        }}
-                    />
                 </div>
 
-                {/* Solutions Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Hovering a card opens the feature lists of its whole row (so the row
+                    stays even) but highlights only that card, with a border in its own
+                    icon colour. The row stays open while the mouse moves between its
+                    cards; it closes when the mouse leaves the grid. Lists open to their
+                    real height (grid rows 0fr to 1fr) with one 400ms ease. On touch,
+                    tap toggles. */}
+                <div
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    onMouseLeave={() => {
+                        if (window.matchMedia("(hover: hover)").matches) {
+                            setActiveSolution(null);
+                        }
+                    }}
+                >
                     {solutions.map((solution, idx) => {
                         const Icon = solution.icon;
-                        const isActive = activeIndex === idx;
-                        const isHovered = hoveredIndex === idx;
+                        const isOpen = activeSolution !== null && Math.floor(activeSolution / columns) === Math.floor(idx / columns);
+                        const isHighlighted = activeSolution === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className="group relative card-float cursor-pointer"
-                                onMouseEnter={() => setHoveredIndex(idx)}
-                                onMouseLeave={() => setHoveredIndex(null)}
-                                onClick={() => setActiveIndex(isActive ? null : idx)}
-                                style={{
-                                    perspective: "1000px",
+                                className={`relative p-6 md:p-8 rounded-3xl border transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "border-[var(--card-accent)]" : "border-[var(--border-color)]"}`}
+                                style={{ backgroundColor: "var(--card-bg)", "--card-accent": solution.accentColor } as CSSProperties}
+                                onMouseEnter={() => {
+                                    if (window.matchMedia("(hover: hover)").matches) {
+                                        setActiveSolution(idx);
+                                    }
+                                }}
+                                onClick={() => {
+                                    if (!window.matchMedia("(hover: hover)").matches) {
+                                        setActiveSolution(activeSolution === idx ? null : idx);
+                                    }
                                 }}
                             >
-
-                                {/* Card */}
-                                <div
-                                    className={`
-                                        relative p-6 sm:p-8 rounded-3xl border-2 cursor-pointer
-                                        transition-all duration-500 ease-out
-                                        ${isActive ? "shadow-2xl" : "shadow-md hover:shadow-xl"}
-                                    `}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isActive || isHovered
-                                            ? solution.accentColor
-                                            : "var(--border-color)",
-                                        transform: isHovered && !isActive
-                                            ? "translateY(-12px) rotateX(2deg)"
-                                            : isActive
-                                                ? "scale(1.02)"
-                                                : "translateY(0)",
-                                    }}
-                                >
-                                    {/* Gradient Overlay on Hover */}
+                                {/* Icon */}
+                                <div className="mb-6">
                                     <div
-                                        className={`
-                                            absolute inset-0 rounded-3xl transition-opacity duration-500
-                                            ${isHovered || isActive ? "opacity-100" : "opacity-0"}
-                                        `}
-                                        style={{
-                                            background: `linear-gradient(135deg, ${solution.accentColor}08, transparent)`,
-                                        }}
-                                    />
-
-                                    {/* Corner decorations */}
-                                    <div
-                                        className={`
-                                            absolute top-4 right-4 w-8 h-8 rounded-full
-                                            flex items-center justify-center
-                                            transition-all duration-500
-                                            ${isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"}
-                                        `}
-                                        style={{
-                                            backgroundColor: `${solution.accentColor}20`,
-                                        }}
+                                        className={`w-16 h-16 rounded-2xl flex items-center justify-center transition duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "scale-110" : "scale-100"}`}
+                                        style={{ background: `linear-gradient(135deg, ${solution.accentColor}, ${solution.accentColor}cc)` }}
                                     >
-                                        <ArrowUpRight
-                                            className="w-4 h-4"
-                                            style={{ color: solution.accentColor }}
-                                        />
+                                        <Icon className="w-8 h-8 text-black" aria-hidden="true" />
                                     </div>
+                                </div>
 
-                                    {/* Content */}
-                                    <div className="relative z-10">
-                                        {/* Icon */}
-                                        <div className="mb-6 relative">
-                                            <div
-                                                className={`
-                                                    w-16 h-16 rounded-2xl flex items-center justify-center
-                                                    transition-all duration-500
-                                                `}
-                                                style={{
-                                                    background: `linear-gradient(135deg, ${solution.accentColor}, ${solution.accentColor}cc)`,
-                                                    boxShadow: isHovered || isActive
-                                                        ? `0 12px 32px ${solution.accentColor}50`
-                                                        : `0 4px 12px ${solution.accentColor}30`,
-                                                    transform: isHovered || isActive
-                                                        ? "scale(1.15) rotate(6deg)"
-                                                        : "scale(1) rotate(0)",
-                                                }}
-                                            >
-                                                <Icon className="w-8 h-8 text-black" />
-                                            </div>
+                                <h3 className="text-xl md:text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                    {solution.title}
+                                </h3>
+                                <p className="text-sm md:text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                    {solution.description}
+                                </p>
 
-                                            {/* Animated Ring */}
-                                            {(isHovered || isActive) && (
-                                                <>
-                                                    <div
-                                                        className="absolute inset-0 w-16 h-16 rounded-2xl border-2 animate-ping"
-                                                        style={{
-                                                            borderColor: solution.accentColor,
-                                                            animationDuration: "1.5s",
-                                                        }}
-                                                    />
-                                                    {/* Secondary ring */}
-                                                    <div
-                                                        className="absolute inset-0 w-16 h-16 rounded-2xl border animate-pulse"
-                                                        style={{
-                                                            borderColor: `${solution.accentColor}50`,
-                                                            transform: "scale(1.3)",
-                                                        }}
-                                                    />
-                                                </>
-                                            )}
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3
-                                            className="text-xl md:text-2xl font-bold mb-3 transition-all duration-300"
-                                            style={{
-                                                color: isActive || isHovered
-                                                    ? solution.accentColor
-                                                    : "var(--foreground)",
-                                                transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                            }}
-                                        >
-                                            {solution.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p
-                                            className="text-sm md:text-base mb-6 leading-relaxed transition-all duration-300"
-                                            style={{
-                                                color: "var(--secondary-text)",
-                                                opacity: isActive ? 0.9 : 1,
-                                            }}
-                                        >
-                                            {solution.description}
-                                        </p>
-
-                                        {/* Features List */}
-                                        <div
-                                            className={`
-                                                space-y-3 overflow-hidden transition-all duration-500
-                                                ${isActive ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-                                            `}
-                                        >
+                                {/* Features list: opens to its real height */}
+                                <div
+                                    className={`grid transition-[grid-template-rows,opacity] duration-[400ms] ease-in-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                                >
+                                    <div className="min-h-0 overflow-hidden">
+                                        {/* The gap above the list lives inside the part that
+                                            collapses, so a closed card has no empty space. */}
+                                        <div className="pt-6 space-y-3">
                                             {solution.features.map((feature, fidx) => (
-                                                <div
-                                                    key={fidx}
-                                                    className="flex items-center gap-3 transition-all duration-300"
-                                                    style={{
-                                                        transform: isActive ? "translateX(0)" : "translateX(-20px)",
-                                                        opacity: isActive ? 1 : 0,
-                                                        transitionDelay: isActive ? `${fidx * 100}ms` : "0ms",
-                                                    }}
-                                                >
+                                                <div key={fidx} className="flex items-start gap-3">
                                                     <div
-                                                        className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110"
-                                                        style={{
-                                                            backgroundColor: `${solution.accentColor}20`,
-                                                            boxShadow: `0 0 12px ${solution.accentColor}30`,
-                                                        }}
+                                                        className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                                                        style={{ backgroundColor: `${solution.accentColor}20` }}
                                                     >
+                                                        {/* #61dafb / #00d4ff are 1.6-1.8:1 on the light
+                                                            card, under the 3:1 an icon needs; the cyan
+                                                            text token passes in both themes. */}
                                                         <Check
+                                                            aria-hidden="true"
                                                             className="w-3.5 h-3.5"
-                                                            style={{ color: solution.accentColor }}
+                                                            style={{ color: "var(--accent-cyan-text)" }}
                                                         />
                                                     </div>
-                                                    <span
-                                                        className="text-sm font-medium"
-                                                        style={{ color: "var(--foreground)" }}
-                                                    >
+                                                    <span className="text-base font-medium" style={{ color: "var(--foreground)" }}>
                                                         {feature}
                                                     </span>
                                                 </div>
                                             ))}
                                         </div>
-
-                                        {/* Bottom indicator */}
-                                        <div
-                                            className={`
-                                                mt-4 flex items-center gap-2 text-sm font-medium
-                                                transition-all duration-500
-                                                ${isActive ? "opacity-0 h-0" : "opacity-100"}
-                                            `}
-                                            style={{ color: "var(--accent-cyan-text)" }}
-                                        >
-                                            <span>Click to explore</span>
-                                            <ArrowUpRight className="w-4 h-4" />
-                                        </div>
                                     </div>
-
-                                    {/* Bottom progress bar */}
-                                    <div
-                                        className={`
-                                            absolute bottom-0 left-0 h-1 rounded-b-3xl transition-all duration-700
-                                            ${isActive ? "w-full" : isHovered ? "w-1/2" : "w-0"}
-                                        `}
-                                        style={{
-                                            background: `linear-gradient(90deg, ${solution.accentColor}, ${solution.accentColor}80)`,
-                                        }}
-                                    />
                                 </div>
                             </div>
                         );

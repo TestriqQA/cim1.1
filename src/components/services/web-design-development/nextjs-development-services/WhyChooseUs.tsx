@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import Image from "next/image";
 import {
     Zap,
     Shield,
@@ -12,8 +10,6 @@ import {
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     const reasons = [
         {
             icon: Zap,
@@ -61,49 +57,14 @@ export default function WhyChooseUs() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-8px); }
-                }
-                @keyframes glow-pulse {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 0.6; }
-                }
-                .card-shimmer::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(97, 218, 251, 0.1),
-                        transparent
-                    );
-                    animation: shimmer 2s infinite;
-                    pointer-events: none;
-                }
-                .icon-glow {
-                    animation: glow-pulse 2s ease-in-out infinite;
-                }
-            `}</style>
-
             {/* Background Elements */}
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -118,16 +79,12 @@ export default function WhyChooseUs() {
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Why Choose Our{" "}
                         <span
-                            style={{
-                                background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
+                            style={{ color: "var(--accent-cyan-text)" }}
                         >
                             React Development
                         </span>{" "}
@@ -141,138 +98,70 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                {/* Reasons Grid: cards side by side share one size (md:auto-rows-fr);
+                    on phones each card fits its own content. Hover: border in the
+                    icon colour + 4px lift, nothing else. */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8 mb-10 md:mb-12">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
-                        const isHovered = hoveredIndex === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className="group relative"
-                                onMouseEnter={() => setHoveredIndex(idx)}
-                                onMouseLeave={() => setHoveredIndex(null)}
-                                style={{
-                                    animationDelay: `${idx * 100}ms`,
-                                }}
+                                className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#61dafb] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
-
-                                {/* Card */}
                                 <div
-                                    className={`
-                                        relative p-6 rounded-2xl border overflow-hidden
-                                        transition-all duration-500 ease-out
-                                        ${isHovered ? "shadow-2xl -translate-y-3 scale-[1.02]" : "shadow-md"}
-                                        ${isHovered ? "card-shimmer" : ""}
-                                    `}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? "#61dafb50" : "var(--border-color)",
-                                    }}
+                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                                    style={{ background: "linear-gradient(135deg, #61dafb, #00d4ff)" }}
                                 >
-                                    {/* Corner accent */}
-
-                                    {/* Icon Container */}
-                                    <div className="relative mb-4">
-                                        <div
-                                            className={`
-                                                w-14 h-14 rounded-xl flex items-center justify-center
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-110 rotate-6" : ""}
-                                            `}
-                                            style={{
-                                                background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                                boxShadow: isHovered ? "0 8px 24px rgba(97, 218, 251, 0.5)" : "0 4px 16px rgba(97, 218, 251, 0.3)",
-                                            }}
-                                        >
-                                            <Icon className="w-7 h-7 text-black" />
-                                        </div>
-
-                                        {/* Animated ring on hover */}
-                                        <div
-                                            className={`
-                                                absolute inset-0 w-14 h-14 rounded-xl border-2
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-125 opacity-50" : "scale-100 opacity-0"}
-                                            `}
-                                            style={{ borderColor: "#61dafb" }}
-                                        />
-
-                                        {/* Orbiting dot */}
-                                        {isHovered && (
-                                            <div
-                                                className="absolute w-2 h-2 rounded-full animate-spin"
-                                                style={{
-                                                    backgroundColor: "#61dafb",
-                                                    top: "-4px",
-                                                    left: "50%",
-                                                    transformOrigin: "0 35px",
-                                                    animationDuration: "2s",
-                                                }}
-                                            />
-                                        )}
-                                    </div>
-
-                                    {/* Title with gradient on hover */}
-                                    <h3
-                                        className={`
-                                            text-xl font-bold mb-2 transition-all duration-300
-                                        `}
-                                        style={{
-                                            color: isHovered ? "#61dafb" : "var(--foreground)",
-                                        }}
-                                    >
-                                        {reason.title}
-                                    </h3>
-
-                                    {/* Description */}
-                                    <p
-                                        className={`
-                                            text-sm leading-relaxed transition-all duration-300
-                                            ${isHovered ? "translate-x-1" : ""}
-                                        `}
-                                        style={{ color: "var(--secondary-text)" }}
-                                    >
-                                        {reason.description}
-                                    </p>
-
-                                    {/* Bottom accent line */}
-                                    <div
-                                        className={`
-                                            absolute bottom-0 left-0 h-1 rounded-b-2xl transition-all duration-500
-                                            ${isHovered ? "w-full" : "w-0"}
-                                        `}
-                                        style={{
-                                            background: "linear-gradient(90deg, #61dafb, #00d4ff)",
-                                        }}
-                                    />
+                                    <Icon className="w-7 h-7 text-black" aria-hidden="true" />
                                 </div>
+                                <h3
+                                    className="text-xl font-bold mb-2"
+                                    style={{ color: "var(--foreground)" }}
+                                >
+                                    {reason.title}
+                                </h3>
+                                <p
+                                    className="text-sm leading-relaxed"
+                                    style={{ color: "var(--secondary-text)" }}
+                                >
+                                    {reason.description}
+                                </p>
                             </div>
                         );
                     })}
                 </div>
 
-                {/* Testimonial Section */}
+                {/* Testimonial: a plain card (1px border, no tint or top bar). */}
                 <div
-                    className="p-8 md:p-12 rounded-3xl border-2 text-center relative overflow-hidden"
-                    style={{
-                        borderColor: "color-mix(in srgb, #61dafb 30%, var(--border-color))",
-                        background: "linear-gradient(135deg, var(--card-bg), color-mix(in srgb, #61dafb 5%, var(--card-bg)))",
-                    }}
+                    className="p-6 sm:p-8 md:p-12 rounded-3xl border border-[var(--border-color)] text-center"
+                    style={{ backgroundColor: "var(--card-bg)" }}
                 >
-                    <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #61dafb, #00d4ff)" }} />
                     <div className="max-w-4xl mx-auto">
-                        <p className="text-2xl md:text-3xl font-medium mb-8 italic" style={{ color: "var(--foreground)" }}>
+                        {/* 18px on phones: at 24px the quote ran 14 lines at 320px. */}
+                        <p className="text-lg sm:text-2xl md:text-3xl font-medium mb-6 md:mb-8 italic" style={{ color: "var(--foreground)" }}>
                             &quot;Cinute InfoMedia developed our website using Next.js, which dramatically enhanced our SEO and page performance. This technical superiority has directly helped us secure major deals for our QA and testing services.&quot;
                         </p>
-                        <div className="flex items-center justify-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#61dafb] to-[#00d4ff] flex items-center justify-center text-black font-bold">
-                                T
+                        {/* Phones: logo on top, name and tagline centred below, so the text
+                            gets the full width. From 640px: side by side. */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                            {/* The real logo instead of a "T" letter circle. The wordmark is
+                                on white, so it sits on a white tile in both themes; the
+                                name is written next to it, so the image is decorative. */}
+                            <div className="h-12 px-3 rounded-xl bg-white flex items-center flex-shrink-0">
+                                <Image
+                                    src="/images/logos/testriq-qa-lab-logo.webp"
+                                    alt=""
+                                    width={88}
+                                    height={24}
+                                    className="h-6 w-auto"
+                                />
                             </div>
-                            <div className="text-left">
+                            <div className="text-center sm:text-left">
                                 <p className="font-bold" style={{ color: "var(--foreground)" }}>Testriq QA Lab</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Trusted Software Testing Provider</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Trusted Software Testing Provider</p>
                             </div>
                         </div>
                     </div>

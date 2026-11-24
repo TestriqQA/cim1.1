@@ -41,6 +41,8 @@ export async function generateMetadata({
     const metaTitle = product.seoTitle ?? `${product.name} — ${product.tagline} | Cinute InfoMedia`;
     const socialTitle = product.seoTitle ?? `${product.name} — ${product.tagline}`;
     const metaDescription = product.seoDescription ?? product.description;
+    // A product's own social image when it has one, else the generic one.
+    const ogImage = product.ogImage ?? "/og-images/Services.webp";
 
     return {
         title: metaTitle,
@@ -55,7 +57,7 @@ export async function generateMetadata({
             type: "website",
             images: [
                 {
-                    url: "/og-images/Services.webp",
+                    url: ogImage,
                     width: 1200,
                     height: 630,
                     alt: `${product.name} by Cinute InfoMedia`,
@@ -66,7 +68,7 @@ export async function generateMetadata({
             card: "summary_large_image",
             title: socialTitle,
             description: metaDescription,
-            images: ["/og-images/Services.webp"],
+            images: [ogImage],
         },
     };
 }

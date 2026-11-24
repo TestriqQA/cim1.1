@@ -23,7 +23,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
@@ -74,11 +74,7 @@ export default function Hero() {
                         >
                             Expert{" "}
                             <span
-                                style={{
-                                    background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
+                                style={{ color: "var(--accent-cyan-text)" }}
                             >
                                 Next.js Development
                             </span>{" "}
@@ -91,21 +87,22 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap gap-3">
+                        {/* Feature Pills: on phones, equal tiles (2 per row) with the
+                            icon above the label; from 640px the usual pill row. */}
+                        <div className="grid grid-cols-2 auto-rows-fr gap-2 sm:flex sm:flex-wrap sm:gap-3">
                             {features.map((feature, idx) => {
                                 const Icon = feature.icon;
                                 return (
                                     <div
                                         key={idx}
-                                        className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105"
+                                        className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-1.5 sm:px-4 py-2.5 sm:py-2 rounded-xl sm:rounded-full border text-center"
                                         style={{
                                             backgroundColor: "var(--card-bg)",
                                             borderColor: "var(--border-color)",
                                         }}
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
-                                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
+                                        <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                        <span className="text-xs sm:text-sm font-medium leading-tight" style={{ color: "var(--foreground)" }}>
                                             {feature.text}
                                         </span>
                                     </div>
@@ -113,21 +110,18 @@ export default function Hero() {
                             })}
                         </div>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap gap-8 pt-4">
+                        {/* Stats: one row of three on phones; the middle column takes
+                            its label's width ("Lighthouse Score"). */}
+                        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 sm:flex sm:flex-wrap sm:gap-8 pt-4">
                             {stats.map((stat, idx) => (
                                 <div key={idx} className="text-center">
                                     <div
-                                        className="text-3xl font-bold font-mono"
-                                        style={{
-                                            background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                            WebkitBackgroundClip: "text",
-                                            WebkitTextFillColor: "transparent",
-                                        }}
+                                        className="text-lg sm:text-3xl font-bold font-mono whitespace-nowrap"
+                                        style={{ color: "var(--accent-cyan-text)" }}
                                     >
                                         {stat.value}
                                     </div>
-                                    <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
+                                    <div className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {stat.label}
                                     </div>
                                 </div>
@@ -138,19 +132,18 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link
                                 href="/contact"
-                                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 sm:min-h-0 px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                                 style={{
                                     background: "linear-gradient(135deg, #61dafb, #00d4ff)",
                                     color: "#000000",
-                                    boxShadow: "0 4px 20px rgba(97, 218, 251, 0.4)",
                                 }}
                             >
                                 Get a Free Audit & Quote Today
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </Link>
                             <Link
                                 href="#solutions"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border transition-all duration-300 hover:scale-105"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 sm:min-h-0 px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-base font-semibold border transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:scale-105"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
