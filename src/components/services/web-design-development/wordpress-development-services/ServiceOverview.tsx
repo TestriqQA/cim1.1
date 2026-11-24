@@ -102,12 +102,12 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                {/* Six cards, all the same size: auto-rows-fr makes every row as tall
+                {/* Cards side by side share one size (phones: each fits its content): md:auto-rows-fr makes every row as tall
                     as the tallest card, and each card stretches to fill it. Hover is
                     kept simple: the border turns the card's own icon colour (as in
                     Why Choose Cinute) and the card lifts 4px (colour change only for
                     reduced-motion users). */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
 

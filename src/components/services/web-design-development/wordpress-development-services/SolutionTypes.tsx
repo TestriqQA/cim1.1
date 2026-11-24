@@ -198,7 +198,7 @@ export default function SolutionTypes() {
                                 </div>
 
                                 <h3 className="relative text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{solution.title}</h3>
-                                <p className="relative text-sm mb-6" style={{ color: "var(--secondary-text)" }}>
+                                <p className="relative text-sm" style={{ color: "var(--secondary-text)" }}>
                                     {solution.description}
                                 </p>
 
@@ -207,7 +207,9 @@ export default function SolutionTypes() {
                                     className={`relative grid transition-[grid-template-rows,opacity] duration-[400ms] ease-in-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                                 >
                                     <div className="min-h-0 overflow-hidden">
-                                        <div className="space-y-3">
+                                        {/* The gap above the list lives inside the part that
+                                            collapses, so a closed card has no empty space. */}
+                                        <div className="pt-6 space-y-3">
                                             {solution.features.map((feature, fIdx) => (
                                                 <div key={fIdx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--secondary-text)" }}>
                                                     <CheckCircle2 aria-hidden="true" className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--brand-blue-text)]" />

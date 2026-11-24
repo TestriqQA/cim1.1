@@ -95,11 +95,11 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                {/* Cards Grid: six cards, all the same size (auto-rows-fr; the card
+                {/* Cards Grid: cards side by side share one size (md:auto-rows-fr; on phones each fits its content; the card
                     itself is the grid item). Hover matches Our Service: the border
                     turns the card's own colour and the card lifts 4px (colour change
                     only for reduced-motion users). */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
 
