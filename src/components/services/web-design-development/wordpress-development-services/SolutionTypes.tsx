@@ -8,7 +8,6 @@ import {
     Building2,
     Zap,
     Network,
-    ArrowRight,
     CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
@@ -109,9 +108,9 @@ export default function SolutionTypes() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-16 md:py-20 bg-background relative overflow-hidden">
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -126,7 +125,7 @@ export default function SolutionTypes() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Solutions We</span>{" "}
                         <span
                             style={{
@@ -143,32 +142,32 @@ export default function SolutionTypes() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Hovering a card opens the tick lists of its whole row (so the row
+                    stays even) but highlights only that card. The row stays open while
+                    the mouse moves between its cards; it closes when the mouse leaves
+                    the grid. The lists open to their real height (grid rows 0fr to
+                    1fr), and everything shares one 400ms ease. On touch, tap toggles. */}
+                <div
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    onMouseLeave={() => {
+                        if (window.matchMedia("(hover: hover)").matches) {
+                            setActiveSolution(null);
+                        }
+                    }}
+                >
                     {solutions.map((solution, idx) => {
                         const Icon = solution.icon;
-                        const currentRow = activeSolution !== null ? Math.floor(activeSolution / columns) : -1;
-                        const cardRow = Math.floor(idx / columns);
-                        const isActive = currentRow === cardRow;
+                        const isOpen = activeSolution !== null && Math.floor(activeSolution / columns) === Math.floor(idx / columns);
+                        const isHighlighted = activeSolution === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className={`
-                                    relative p-8 rounded-3xl border transition-all duration-300 cursor-pointer overflow-hidden group
-                                    ${isActive ? "ring-2 ring-[#0073AA] ring-offset-2" : "hover:border-[#0073AA]/50"}
-                                `}
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
+                                className={`relative p-6 md:p-8 rounded-3xl border overflow-hidden transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "border-[#0073AA]/50" : "border-[var(--border-color)]"}`}
+                                style={{ backgroundColor: "var(--card-bg)" }}
                                 onMouseEnter={() => {
                                     if (window.matchMedia("(hover: hover)").matches) {
                                         setActiveSolution(idx);
-                                    }
-                                }}
-                                onMouseLeave={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setActiveSolution(null);
                                     }
                                 }}
                                 onClick={() => {
@@ -177,63 +176,48 @@ export default function SolutionTypes() {
                                     }
                                 }}
                             >
-                                {/* Gradient Background on Hover */}
+                                {/* Light tint on the highlighted card */}
                                 <div
-                                    className={`
-                                        absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none
-                                        ${isActive ? "opacity-5" : ""}
-                                    `}
-                                    style={{
-                                        background: `linear-gradient(135deg, #0073AA, #0096D6)`,
-                                    }}
+                                    className={`absolute inset-0 pointer-events-none transition-opacity duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "opacity-5" : "opacity-0"}`}
+                                    style={{ background: "linear-gradient(135deg, #0073AA, #0096D6)" }}
                                 />
 
-                                {/* Icon */}
+                                {/* Icon: the blue fill fades in rather than switching */}
                                 <div
-                                    className={`
-                                        w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300
-                                        ${isActive ? "scale-110 rotate-3" : ""}
-                                    `}
-                                    style={{
-                                        background: isActive
-                                            ? `linear-gradient(135deg, #0073AA, #0096D6)`
-                                            : "rgba(0, 115, 170, 0.1)",
-                                    }}
+                                    className={`relative w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "scale-110" : "scale-100"}`}
+                                    style={{ background: "rgba(0, 115, 170, 0.1)" }}
                                 >
+                                    <div
+                                        className={`absolute inset-0 rounded-xl transition-opacity duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "opacity-100" : "opacity-0"}`}
+                                        style={{ background: "linear-gradient(135deg, #0073AA, #0096D6)" }}
+                                    />
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--brand-blue-text)]"
-                                            }`}
+                                        aria-hidden="true"
+                                        className={`relative w-6 h-6 transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "text-white" : "text-[var(--brand-blue-text)]"}`}
                                     />
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{solution.title}</h3>
-                                <p className="text-sm mb-6 line-clamp-3" style={{ color: "var(--secondary-text)" }}>
+                                <h3 className="relative text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{solution.title}</h3>
+                                <p className="relative text-sm" style={{ color: "var(--secondary-text)" }}>
                                     {solution.description}
                                 </p>
 
-                                {/* Features List */}
+                                {/* Features list: opens to its real height */}
                                 <div
-                                    className={`
-                                        space-y-3 transition-all duration-300 overflow-hidden
-                                        ${isActive ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-                                    `}
+                                    className={`relative grid transition-[grid-template-rows,opacity] duration-[400ms] ease-in-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                                 >
-                                    {solution.features.map((feature, fIdx) => (
-                                        <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[var(--brand-blue-text)]" />
-                                            <span>{feature}</span>
+                                    <div className="min-h-0 overflow-hidden">
+                                        {/* The gap above the list lives inside the part that
+                                            collapses, so a closed card has no empty space. */}
+                                        <div className="pt-6 space-y-3">
+                                            {solution.features.map((feature, fIdx) => (
+                                                <div key={fIdx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                    <CheckCircle2 aria-hidden="true" className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--brand-blue-text)]" />
+                                                    <span>{feature}</span>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-
-                                {/* Arrow */}
-                                <div
-                                    className={`
-                                        absolute bottom-8 right-8 transition-all duration-300 transform
-                                        ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
-                                    `}
-                                >
-                                    <ArrowRight className="w-5 h-5 text-[var(--brand-blue-text)]" />
+                                    </div>
                                 </div>
                             </div>
                         );

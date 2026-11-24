@@ -38,7 +38,7 @@ export default function ServiceOverview() {
         {
             icon: FileText,
             title: "B2B Content Marketing & Thought Leadership",
-            description: <>Establish dominance with a LinkedIn <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">content marketing strategy</Link> for businesses. From newsletters to LinkedIn Live, we turn your executives into industry thought leaders.</>,
+            description: <>Establish dominance with a LinkedIn <Link href="/services/seo-services/seo-content-writing-services" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">content marketing strategy</Link> for businesses. From newsletters to LinkedIn Live, we turn your executives into industry thought leaders. Between posts, our free <Link href="/products/chimegenius-ai-pro" className="hover:underline underline underline-offset-2 text-[var(--brand-blue-text)]">LinkedIn comment generator</Link>, ChimeGenius AI Pro, drafts comments you edit before posting.</>,
             color: "#0A66C2",
         },
         {

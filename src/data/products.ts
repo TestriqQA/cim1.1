@@ -52,7 +52,14 @@ export interface Product {
   // policy is a binding statement about data handling — it is not ours to write
   // on a product's behalf. ProductLinks hides the button when this is absent.
   privacyUrl?: string;
-  demoVideoUrl?: string; // Optional URL for product video demo
+  demoVideoUrl?: string; // Optional URL for product video demo; the demo section is hidden without one
+  // Optional 1200x630 Open Graph / Twitter image for this product. Without one
+  // the page falls back to the generic services image.
+  ogImage?: string;
+  // Optional contextual link from the product page to the related Cinute
+  // InfoMedia service, shown in the Resources box as "{lead} {label}." with
+  // `label` as the anchor text.
+  relatedService?: { lead: string; label: string; href: string };
   extensionUrl?: string; // Optional Chrome Web Store / Edge Add-ons URL for browser-extension products
   // Canonical home of a product that lives on its own domain. When set, the
   // hero and closing CTAs point here instead of /contact, so the primary
@@ -107,8 +114,9 @@ export const products: Product[] = [
 
     // --- SEO / page copy (from the ChimeGenius AI Pro SEO rewrite) ----------
     seoTitle: "ChimeGenius AI Pro – AI Comment Generator Chrome Extension",
+    // Lists Reddit too, matching the features and FAQ (SEO check, 24 Nov 2026).
     seoDescription:
-      "Generate smart, context-aware comments & replies on LinkedIn, Instagram, Facebook, X and YouTube instantly. Free AI Chrome extension — try it now.",
+      "Generate smart, context-aware comments & replies on LinkedIn, Instagram, Facebook, X, YouTube and Reddit instantly. Free AI Chrome extension — try it now.",
     heroHeadline: "AI Comment & Reply Generator for LinkedIn, Instagram & More",
     heroSubheadline:
       "ChimeGenius AI Pro — the AI-powered Chrome extension for smarter social media engagement",
@@ -125,7 +133,7 @@ export const products: Product[] = [
     faqHeading: "ChimeGenius AI Pro FAQs",
     closingCtaHeading: "Try the Free AI Comment Generator Today",
     closingCtaBody:
-      "Join thousands of creators, brands, and professionals using ChimeGenius AI Pro to save time and grow their social media presence with AI-powered comments and replies.",
+      "Join creators, brands, and professionals using ChimeGenius AI Pro to save time and grow their social media presence with AI-powered comments and replies.",
     closingCtaLabel: "Get Started Free",
 
     icon: "MessageSquare",
@@ -154,12 +162,17 @@ export const products: Product[] = [
       { question: "Is my data safe with ChimeGenius AI Pro?", answer: "Yes. ChimeGenius processes post context only for generation and does not permanently store post content. See our Privacy Policy for details." },
       { question: "Is there a free AI comment generator plan?", answer: "Yes — a free tier is available with a daily generation limit. Pro and Business plans unlock unlimited AI comment generation, custom tones, and team features." },
     ],
-    stats: [
-      { label: "Comments Generated", value: "At Scale" },
-      { label: "Active Users", value: "Growing" },
-      { label: "Social Platforms Supported", value: "7+" },
-      { label: "Avg. Time Saved", value: "Significant" },
-    ],
+    // No stats until there are real numbers (SEO check, 24 Nov 2026): the
+    // placeholders "At Scale", "Growing", "7+" and "Significant" read as
+    // unfinished, and "7+" did not match the 6 platforms the page names. The
+    // hero and closing-CTA stat rows are hidden while this is empty.
+    stats: [],
+    ogImage: "/og-images/chimegenius-ai-pro.webp",
+    relatedService: {
+      lead: "Want experts to grow your social media for you? See our",
+      label: "social media marketing services",
+      href: "/services/social-media-marketing-services",
+    },
     supportUrl: "/products/chimegenius-ai-pro/support",
     privacyUrl: "/products/chimegenius-ai-pro/privacy-policy",
     extensionUrl: "https://chromewebstore.google.com/detail/pnolpjljedjpmbjimpkhhimapgffidbk?utm_source=item-share-cb",

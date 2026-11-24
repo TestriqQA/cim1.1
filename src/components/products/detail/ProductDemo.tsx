@@ -1,9 +1,13 @@
 "use client";
 
-import { MonitorPlay, Play } from "lucide-react";
+import { MonitorPlay } from "lucide-react";
 import type { Product } from "@/data/products";
 
 export default function ProductDemo({ product }: { product: Product }) {
+    // No video, no section: a "Product walkthrough coming soon" placeholder read
+    // as unfinished (SEO check, 24 Nov 2026). Adding demoVideoUrl brings it back.
+    if (!product.demoVideoUrl) return null;
+
     const color = product.accentColor;
 
     // Vivid accents stay for backgrounds/borders/gradients; TEXT uses the
@@ -39,27 +43,15 @@ export default function ProductDemo({ product }: { product: Product }) {
                 </div>
                 
                 <div className="relative mx-auto max-w-5xl rounded-2xl overflow-hidden border shadow-2xl group" style={{ borderColor: "var(--border-color)", backgroundColor: "var(--card-bg)" }}>
-                    {/* With a video: a 16:9 player. Without one: a 16:9
-                        frame that never grows past 240px, rather than a 16:9 frame that is
-                        mostly empty on wide screens. */}
-                    <div className={`relative w-full bg-zinc-900 ${product.demoVideoUrl ? "" : "aspect-video max-h-60"}`} style={product.demoVideoUrl ? { paddingBottom: "56.25%" } : undefined}>
-                        {product.demoVideoUrl ? (
-                            <iframe
-                                src={product.demoVideoUrl}
-                                title={`${product.name} product demo video`}
-                                className="absolute inset-0 w-full h-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        ) : (
-                            <div className="absolute inset-0 flex items-center justify-center flex-col">
-                                <div className="absolute inset-0 bg-gradient-to-br" style={{ backgroundImage: `linear-gradient(to bottom right, ${color}1a, transparent)` }}></div>
-                                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300 group-hover:scale-110 cursor-pointer border relative z-10" style={{ backgroundColor: `${color}30`, borderColor: `${color}50` }}>
-                                    <Play className="w-6 h-6 sm:w-8 sm:h-8 ml-1" style={{ color: "#fff" }} />
-                                </div>
-                                <p className="mt-3 sm:mt-6 px-4 text-center text-sm sm:text-lg font-medium text-white/80 relative z-10">Product walkthrough coming soon</p>
-                            </div>
-                        )}
+                    {/* A 16:9 player */}
+                    <div className="relative w-full bg-zinc-900" style={{ paddingBottom: "56.25%" }}>
+                        <iframe
+                            src={product.demoVideoUrl}
+                            title={`${product.name} product demo video`}
+                            className="absolute inset-0 w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import {
     Clock,
     DollarSign,
@@ -12,8 +9,6 @@ import {
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     const reasons = [
         {
             icon: Users,
@@ -54,13 +49,13 @@ export default function WhyChooseUs() {
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden"
+        <section className="py-16 md:py-20 bg-background relative overflow-hidden"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -75,7 +70,7 @@ export default function WhyChooseUs() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Why We're the </span>{" "}
                         <span
                             style={{
@@ -92,39 +87,28 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Cards side by side share one size (md:auto-rows-fr); on phones each
+                    fits its content. Hover: border in the icon colour + 4px lift. */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
-                        const isHovered = hoveredIndex === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className={`
-                                    relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden group
-                                    ${isHovered ? "shadow-2xl -translate-y-2 border-[#FF2D20]/30" : "shadow-sm"}
-                                `}
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: isHovered ? "" : "var(--border-color)",
-                                }}
-                                onMouseEnter={() => setHoveredIndex(idx)}
-                                onMouseLeave={() => setHoveredIndex(null)}
+                                className="p-6 md:p-8 rounded-3xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#FF2D20] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
-
                                 <div
-                                    className={`
-                                        w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500
-                                        ${isHovered ? "scale-110 rotate-6" : ""}
-                                    `}
+                                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
                                     style={{
                                         background: "linear-gradient(135deg, rgba(255, 45, 32, 0.1), rgba(240, 83, 64, 0.1))",
                                     }}
                                 >
-                                    <Icon className="w-7 h-7 text-[var(--accent-red-text)]" />
+                                    <Icon className="w-7 h-7 text-[var(--accent-red-text)]" aria-hidden="true" />
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 transition-colors duration-300" style={{ color: isHovered ? "var(--accent-red-text)" : "var(--foreground)" }}>
+                                <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                                     {reason.title}
                                 </h3>
                                 <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>

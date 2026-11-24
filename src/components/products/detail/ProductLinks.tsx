@@ -33,6 +33,15 @@ export default function ProductLinks({ product }: { product: Product }) {
                             <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
                                 Need help or want to learn more about our policies?
                             </p>
+                            {product.relatedService && (
+                                <p className="text-sm mt-1" style={{ color: "var(--secondary-text)" }}>
+                                    {product.relatedService.lead}{" "}
+                                    <Link href={product.relatedService.href} className="font-semibold underline underline-offset-2" style={{ color: textColor }}>
+                                        {product.relatedService.label}
+                                    </Link>
+                                    .
+                                </p>
+                            )}
                         </div>
                         <div className="w-full sm:w-auto md:shrink-0 flex flex-col sm:flex-row gap-4">
                             <Link href={product.supportUrl} className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full border text-sm font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5" style={{ borderColor: color, color: textColor, backgroundColor: `${color}08` }}>

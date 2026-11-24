@@ -108,6 +108,14 @@ export default function Platforms() {
                     <p className="text-lg max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
                         Our team has deep expertise in developing winning strategies for the world's most popular platforms.
                     </p>
+                    {/* Contextual link to our own product (SEO check, 24 Nov 2026) */}
+                    <p className="text-base max-w-3xl mx-auto mt-4" style={{ color: "var(--secondary-text)" }}>
+                        We also build our own tools:{" "}
+                        <Link href="/products/chimegenius-ai-pro" className="underline underline-offset-2" style={{ color: "var(--accent-teal-text)" }}>
+                            ChimeGenius AI Pro AI comment generator
+                        </Link>
+                        , a free Chrome extension for writing comments and replies on LinkedIn, Instagram, Facebook, X, YouTube and Reddit.
+                    </p>
                 </div>
 
                 {/* Platforms Grid */}

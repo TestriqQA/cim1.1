@@ -1,10 +1,17 @@
+import { Fragment } from "react";
 import { ArrowRight, Terminal } from "lucide-react";
 import Link from "next/link";
+
+const trust = [
+    { value: "Proven", label: "React Projects" },
+    { value: "Expert", label: "Next.js Experience" },
+    { value: "100", label: "Avg. Lighthouse Score" },
+];
 
 export default function CTA() {
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Animated Background */}
@@ -17,41 +24,12 @@ export default function CTA() {
                         backgroundSize: "80px 80px",
                     }}
                 />
-                {/* Floating elements */}
-                <div
-                    className="absolute top-20 left-20 w-4 h-4 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#61dafb", animationDelay: "0s" }}
-                />
-                <div
-                    className="absolute top-40 right-32 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#00d4ff", animationDelay: "0.5s" }}
-                />
-                <div
-                    className="absolute bottom-32 left-1/4 w-2 h-2 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#61dafb", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#00d4ff", animationDelay: "1.5s" }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div
-                    className="relative p-6 sm:p-10 md:p-16 rounded-3xl border-2 overflow-hidden"
-                    style={{
-                        background: "linear-gradient(135deg, var(--card-bg), color-mix(in srgb, #61dafb 5%, var(--card-bg)))",
-                        borderColor: "color-mix(in srgb, #61dafb 40%, var(--border-color))",
-                    }}
-                >
-                    {/* Gradient Overlay */}
-                    <div
-                        className="absolute inset-0 opacity-5"
-                        style={{
-                            background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                        }}
-                    />
-
+                {/* No tint, overlay or border: the content sits on the page's own
+                    background. Side padding kept, top/bottom padding dropped. */}
+                <div className="relative px-6 sm:px-10 md:px-16">
                     <div className="relative z-10 text-center max-w-3xl mx-auto">
                         {/* Badge */}
                         <div
@@ -69,16 +47,12 @@ export default function CTA() {
 
                         {/* Heading */}
                         <h2
-                            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                             style={{ color: "var(--foreground)" }}
                         >
                             Global Reach &{" "}
                             <span
-                                style={{
-                                    background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
+                                style={{ color: "var(--accent-cyan-text)" }}
                             >
                                 Niche Expertise
                             </span>
@@ -95,73 +69,45 @@ export default function CTA() {
                         <div className="flex items-center justify-center">
                             <Link
                                 href="/contact"
-                                className="group inline-flex items-center justify-center text-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="group w-full sm:w-auto inline-flex items-center justify-center text-center gap-2 px-4 py-3.5 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-2xl focus-visible:brightness-120"
                                 style={{
                                     background: "linear-gradient(135deg, #61dafb, #00d4ff)",
                                     color: "#000000",
-                                    boxShadow: "0 8px 32px rgba(97, 218, 251, 0.4)",
                                 }}
                             >
-                                <span className="max-w-[200px] sm:max-w-none">Book Your Free Next.js Strategy Session Today</span>
-                                <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                                <span>Book Your Free Next.js Strategy Session Today</span>
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </Link>
                         </div>
 
-                        {/* Trust indicators */}
-                        <div className="mt-12 flex flex-wrap items-center justify-center gap-8">
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    Proven
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    React Projects
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    Expert
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Next.js Experience
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #61dafb, #00d4ff)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    100
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Avg. Lighthouse Score
-                                </div>
-                            </div>
+                        {/* Trust indicators. Below lg: one compact row per item, value
+                            left and label right, divided by thin lines (as on the
+                            ChimeGenius CTA). From lg: the centred row with dividers. */}
+                        <div className="mt-12 pt-2 lg:pt-0 border-t lg:border-t-0 flex flex-col lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-8" style={{ borderColor: "var(--border-color)" }}>
+                            {trust.map((item, i) => (
+                                <Fragment key={item.label}>
+                                    {i > 0 && (
+                                        <div
+                                            className="hidden lg:block w-px h-8"
+                                            style={{ backgroundColor: "var(--border-color)" }}
+                                        />
+                                    )}
+                                    <div
+                                        className={`flex items-baseline justify-between gap-4 py-3 lg:block lg:py-0 lg:text-center ${i > 0 ? "border-t lg:border-t-0" : ""}`}
+                                        style={{ borderColor: "var(--border-color)" }}
+                                    >
+                                        <div
+                                            className="text-xl lg:text-2xl font-bold font-mono whitespace-nowrap"
+                                            style={{ color: "var(--accent-cyan-text)" }}
+                                        >
+                                            {item.value}
+                                        </div>
+                                        <div className="text-xs sm:text-sm text-right lg:text-center" style={{ color: "var(--secondary-text)" }}>
+                                            {item.label}
+                                        </div>
+                                    </div>
+                                </Fragment>
+                            ))}
                         </div>
                     </div>
                 </div>

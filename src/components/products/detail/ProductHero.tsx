@@ -202,6 +202,7 @@ export default function ProductHero({ product }: { product: Product }) {
                             </Link>
                         </div>
 
+                        {product.stats.length > 0 && (
                         <div className="grid grid-cols-2 items-center justify-items-center gap-x-4 gap-y-6 sm:gap-x-8 lg:justify-items-start 2xl:flex 2xl:flex-nowrap 2xl:justify-start 2xl:gap-4 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             {product.stats.map((stat, i) => (
                                 <React.Fragment key={i}>
@@ -213,6 +214,7 @@ export default function ProductHero({ product }: { product: Product }) {
                                 </React.Fragment>
                             ))}
                         </div>
+                        )}
                     </div>
 
                     <div className="relative hidden lg:flex flex-col gap-6 animate-fadeIn delay-500">

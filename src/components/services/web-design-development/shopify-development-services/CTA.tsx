@@ -45,7 +45,7 @@ export default function CTA() {
             />
 
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background elements omitted for brevity - keeping them from original */}
@@ -61,14 +61,9 @@ export default function CTA() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
 
-                {/* Final CTA Card */}
-                <div
-                    className="relative p-6 md:p-16 rounded-3xl border-2 overflow-hidden"
-                    style={{
-                        background: "linear-gradient(135deg, var(--card-bg), color-mix(in srgb, #96bf48 5%, var(--card-bg)))",
-                        borderColor: "color-mix(in srgb, #96bf48 40%, var(--border-color))",
-                    }}
-                >
+                {/* Final CTA Card: no tint or border, so it sits on the page's own
+                    background; side padding kept, top/bottom padding dropped. */}
+                <div className="relative px-6 md:px-16">
                     <div className="relative z-10 text-center max-w-3xl mx-auto">
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border"
@@ -84,7 +79,7 @@ export default function CTA() {
                         </div>
 
                         <h2
-                            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                             style={{ color: "var(--foreground)" }}
                         >
                             Your Global E-commerce{" "}
@@ -109,11 +104,11 @@ export default function CTA() {
                         <div className="flex flex-wrap items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-2xl focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #96bf48, #5c8a1e)",
+                                    // Deeper Shopify green: white text 4.9-7.1:1 (the light #96bf48 start was 2.1:1).
+                                    background: "linear-gradient(135deg, #527c1b, #3f6212)",
                                     color: "#ffffff",
-                                    boxShadow: "0 8px 32px rgba(150, 191, 72, 0.4)",
                                 }}
                             >
                                 Contact Us Today for a Free Quote
