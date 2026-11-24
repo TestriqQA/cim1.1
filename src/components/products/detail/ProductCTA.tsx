@@ -105,6 +105,7 @@ export default function ProductCTA({ product }: { product: Product }) {
                         Tablets use the rows too: at 768px the centred row needs
                         ~672px and the card has 544px, so it wrapped two and one.
                         From lg it is the centred row of three as before. */}
+                    {product.stats.length > 0 && (
                     <div className="mt-10 pt-2 border-t flex flex-col md:mt-16 lg:pt-8 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-24" style={{ borderColor: "var(--border-color)" }}>
                         {product.stats.slice(0, 3).map((stat, i) => (
                             <div key={i} className={`flex items-baseline justify-between gap-4 py-3 lg:block lg:py-0 lg:text-center ${i > 0 ? "border-t lg:border-t-0" : ""}`} style={{ borderColor: "var(--border-color)" }}>
@@ -113,6 +114,7 @@ export default function ProductCTA({ product }: { product: Product }) {
                             </div>
                         ))}
                     </div>
+                    )}
                 </div>
             </div>
         </section>
