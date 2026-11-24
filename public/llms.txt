@@ -5,29 +5,25 @@
 - [Digital Transformation Case Studies](https://www.cinuteinfomedia.com/blog/category/case-studies): Showcase business success stories through digital transformation case studies and their measurable outcomes.
 - [Web Development Insights](https://www.cinuteinfomedia.com/blog/category/web-development): Provide expert articles and guides on modern web development techniques and best practices.
 - [Digital Marketing Blog](https://www.cinuteinfomedia.com/blog): Provide expert digital marketing and technology insights to help businesses grow and improve online presence.
-- [Shravan More Portfolio](https://www.cinuteinfomedia.com/blog/author/shravan-more): Showcase Shravan More's UI/UX design and web development expertise through articles and contact info.
 - [Digital Growth Agency](https://www.cinuteinfomedia.com/about): Provide comprehensive digital marketing and growth services to help businesses scale sustainably.
 - [Contact Cinute Infomedia](https://www.cinuteinfomedia.com/contact): Facilitates communication and project inquiries through multiple contact options and a detailed message form.
 - [Mobile App Development](https://www.cinuteinfomedia.com/blog/category/mobile-apps): Provide articles and insights on mobile app development trends, technologies, and best practices.
 - [UI/UX Design Blog](https://www.cinuteinfomedia.com/blog/category/ui-ux-design): Offer articles and insights on UI/UX design principles, trends, and best practices for effective digital user experiences.
-- [Adnan Khan Developer Profile](https://www.cinuteinfomedia.com/blog/author/adnan-khan): Showcase Adnan Khan's web development and UI/UX articles and share his professional profile.
 - [Web Performance Optimization](https://www.cinuteinfomedia.com/blog/web-performance-optimization-speed): Explain techniques to improve website speed, user experience, and SEO through performance optimization.
-- [Prakash Mishra Articles](https://www.cinuteinfomedia.com/blog/author/prakash-mishra): Showcase Prakash Mishra's expertise through articles on web development, AI automation, and case studies.
 - [Web Design & Development](https://www.cinuteinfomedia.com/services/web-design-development): Provide comprehensive custom web design and development services to enhance business growth and digital presence.
 - [Digital Growth Services](https://www.cinuteinfomedia.com): Provide full-stack digital marketing and growth services to enhance online presence and measurable business results.
 - [Mobile App Development Services](https://www.cinuteinfomedia.com/services/mobile-app-development): Offer comprehensive custom mobile app development services for various platforms with expert support and security.
-- [Article Categories](https://www.cinuteinfomedia.com/blog/categories): Organize and provide articles across digital topics to help readers succeed online.
-- [AI Workflow Automation](https://www.cinuteinfomedia.com/services/ai-workflows-automations): Provide AI-powered workflow automation solutions to optimize business processes, reduce costs, and enhance scalability.
+- [AI Workflow Automation](https://www.cinuteinfomedia.com/services/ai-workflows-automations-services): Provide AI-powered workflow automation solutions to optimize business processes, reduce costs, and enhance scalability.
 - [Additional Support Services](https://www.cinuteinfomedia.com/services/additional-support-services): Offer comprehensive digital solution support services including maintenance, security, and dedicated customer assistance.
 - [AI & Automation Insights](https://www.cinuteinfomedia.com/blog/category/ai-automation): Explore AI and automation strategies transforming business efficiency and competitive advantage.
 - [Business Strategy Insights](https://www.cinuteinfomedia.com/blog/category/business-strategy): Provide expert insights and strategies for digital business growth, covering market analysis, digital transformation, and leadership.
-- [Mobile App Trends 2024](https://www.cinuteinfomedia.com/blog/mobile-app-development-trends-2024): Highlight key mobile app development trends and technologies shaping the industry in 2024.
+- [Mobile App Trends 2026](https://www.cinuteinfomedia.com/blog/mobile-app-development-trends-2026): Highlight key mobile app development trends and technologies shaping the industry in 2026.
 - [Performance Marketing Services](https://www.cinuteinfomedia.com/services/performance-marketing): Offer data-driven performance marketing services to maximize ROI through targeted multi-channel ad campaigns.
 - [Digital Marketing Insights](https://www.cinuteinfomedia.com/blog/category/digital-marketing): Provide comprehensive guides and strategies to master digital marketing for business growth.
 - [Full-Stack Digital Solutions](https://www.cinuteinfomedia.com/services): Offer comprehensive digital services to enhance business growth through design, development, marketing, and AI solutions.
-- [React Best Practices 2024](https://www.cinuteinfomedia.com/blog/react-best-practices-2024): Guide developers on modern React best practices and patterns for building efficient applications in 2024.
-- [AI-Powered Chatbot Solutions](https://www.cinuteinfomedia.com/services/ai-powered-chatbots): Promote and offer AI-powered chatbot solutions that enhance customer engagement and automate business processes across industries.
+- [React Best Practices 2026](https://www.cinuteinfomedia.com/blog/react-best-practices-2026): Guide developers on modern React best practices and patterns for building efficient applications in 2026.
+- [AI-Powered Chatbot Solutions](https://www.cinuteinfomedia.com/services/ai-chatbots-services): Promote and offer AI-powered chatbot solutions that enhance customer engagement and automate business processes across industries.
 - [Future of Next.js](https://www.cinuteinfomedia.com/blog/future-web-development-nextjs): Explain Next.js features and its impact on modern web development practices and performance.
 - [SEO Guides & Strategies](https://www.cinuteinfomedia.com/blog/category/seo): Provide comprehensive SEO guides and strategies to improve website visibility and drive organic traffic.
 - [Organic Growth & SEO](https://www.cinuteinfomedia.com/services/seo-services): Promote sustainable organic traffic growth through comprehensive, data-driven SEO services and strategies.
-- [Social Media Marketing Services](https://www.cinuteinfomedia.com/services/social-media-marketing): Provide strategic social media marketing services to enhance brand growth, engagement, and measurable ROI.
+- [Social Media Marketing Services](https://www.cinuteinfomedia.com/services/social-media-marketing-services): Provide strategic social media marketing services to enhance brand growth, engagement, and measurable ROI.
