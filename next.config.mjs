@@ -26,10 +26,15 @@ const nextConfig = {
     },
     async redirects() {
         // The 6 discontinued products (fake catalog entries) and the old /products
-        // listing hub all now resolve to the single live product. Sources are
-        // exact-match (no :path*), so the canonical /products/chimegenius-ai-pro
+        // listing hub all now resolve to the single live product. Every source is
+        // scoped to a retired slug, so the canonical /products/chimegenius-ai-pro
         // target is never itself matched — avoids the case-insensitive 308 loop
-        // documented below.
+        // documented below. The per-slug `/:path*` catch-all added 2026-11-25 is
+        // safe for the same reason: it can only match a retired slug's subtree.
+        // It sends every subpath to the product's base URL rather than preserving
+        // the path, because the live product has only /support and
+        // /privacy-policy — a path-preserving rule would redirect strangers into
+        // 404s.
         const productTarget = '/products/chimegenius-ai-pro';
         const removedProductSlugs = [
             'testriq-qa', 'cim-chatbot', 'cim-autoflow',
@@ -54,6 +59,7 @@ const nextConfig = {
                 { source: `/products/${slug}`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/support`, destination: productTarget, permanent: true },
                 { source: `/products/${slug}/privacy-policy`, destination: productTarget, permanent: true },
+                { source: `/products/${slug}/:path*`, destination: productTarget, permanent: true },
             ]),
         ];
         // The portfolio shipped with six case studies on 2026-09-07; five were
