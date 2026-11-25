@@ -1,122 +1,88 @@
-"use client";
-
-import { useState } from "react";
+import type { CSSProperties } from "react";
 import {
-    Shield,
-    Globe,
-    Users,
-    Layers,
-    Award,
-    Headphones,
+    Trophy,
+    ShieldCheck,
+    Languages,
+    BadgeCheck,
+    Network,
+    Accessibility,
+    HeartHandshake,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-    // Map each card's decorative iconColor (which also feeds borders/particles/gradients)
-    // to a theme-aware, AA-contrast token when it is used as TEXT.
-    const iconColorTextToken: Record<string, string> = {
-        "#0678BE": "var(--accent-sky-text)",
-        "#29A8DF": "var(--accent-sky-text)",
-        "#6366f1": "var(--accent-indigo-text)",
-        "#a855f7": "var(--brand-purple-text)",
-        "#14b8a6": "var(--accent-teal-text)",
-        "#10b981": "var(--accent-green-text)",
-    };
-
     const reasons = [
         {
-            icon: Shield,
+            icon: ShieldCheck,
             title: "Enterprise Security",
             description: "Dedicated security team with proactive updates, vulnerability monitoring, and compliance-ready architecture.",
             gradient: "from-blue-600 via-cyan-500 to-sky-500",
-            bgColor: "rgba(6, 120, 190, 0.15)",
-            iconColor: "#0678BE",
-            particles: 3,
+            iconColor: "var(--color-blue-600, #2563eb)",
         },
         {
-            icon: Globe,
+            icon: Languages,
             title: "Multilingual Excellence",
             description: "Built-in support for 100+ languages with proper RTL handling and localization workflows.",
             gradient: "from-sky-500 via-blue-500 to-indigo-500",
-            bgColor: "rgba(41, 168, 223, 0.15)",
-            iconColor: "#29A8DF",
-            particles: 4,
+            iconColor: "var(--color-sky-500, #0ea5e9)",
         },
         {
-            icon: Users,
+            icon: BadgeCheck,
             title: "Certified Drupal Experts",
             description: "Acquia-certified developers with deep enterprise Drupal experience.",
             gradient: "from-indigo-500 via-purple-500 to-violet-500",
-            bgColor: "rgba(99, 102, 241, 0.15)",
-            iconColor: "#6366f1",
-            particles: 5,
+            iconColor: "var(--color-indigo-500, #6366f1)",
         },
         {
-            icon: Layers,
+            icon: Network,
             title: <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--brand-purple-text)] transition-colors">Scalable Architecture</Link>,
             description: "Designed for high-traffic sites with caching strategies, CDN integration, and load balancing.",
             gradient: "from-purple-500 via-fuchsia-500 to-pink-500",
-            bgColor: "rgba(168, 85, 247, 0.15)",
-            iconColor: "#a855f7",
-            particles: 3,
+            iconColor: "var(--color-purple-500, #a855f7)",
         },
         {
-            icon: Award,
+            icon: Accessibility,
             title: "Accessibility First",
             description: "WCAG 2.1 AA compliant websites ensuring equal access for all users regardless of ability.",
             gradient: "from-teal-500 via-cyan-500 to-blue-500",
-            bgColor: "rgba(20, 184, 166, 0.15)",
-            iconColor: "#14b8a6",
-            particles: 4,
+            iconColor: "var(--color-teal-500, #14b8a6)",
         },
         {
-            icon: Headphones,
+            icon: HeartHandshake,
             title: <Link href="/services/additional-support-services" className="hover:text-[var(--accent-green-text)] transition-colors">Ongoing Partnership</Link>,
             description: "Long-term support agreements with clear SLAs, training, and continuous improvement.",
             gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-            bgColor: "rgba(16, 185, 129, 0.15)",
-            iconColor: "#10b981",
-            particles: 5,
+            iconColor: "var(--color-emerald-500, #10b981)",
         },
     ];
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
+            className="py-16 md:py-20 relative overflow-hidden"
             style={{
                 backgroundColor: "var(--card-bg)",
                 borderColor: "var(--border-color)",
             }}
         >
-            {/* Animated mesh gradient background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-            </div>
-
             <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
                         style={{
                             background: "linear-gradient(135deg, rgba(6, 120, 190, 0.1), rgba(5, 74, 145, 0.1))",
                             border: "1px solid rgba(6, 120, 190, 0.2)",
                         }}>
-                        <Award className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <Trophy className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    
+
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Drupal </span>{" "}
                         <span
-                            className="inline-block"
-                            style={{
-                                background: "linear-gradient(135deg, #0678BE, #29A8DF)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                            className="inline-block" style={{ color: "var(--accent-sky-text)" }}>
                             Excellence
                         </span>
                     </h2>
@@ -125,207 +91,37 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Cards Grid: cards side by side share one size (phones: each fits its
+                    content; the card itself is the grid item). Hover: the border turns
+                    the card's own icon colour and the card lifts 4px (colour change
+                    only for reduced-motion users). */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
-                        const isHovered = hoveredIndex === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className="group relative cursor-pointer"
-                                onMouseEnter={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredIndex(idx);
-                                    }
-                                }}
-                                onMouseLeave={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredIndex(null);
-                                    }
-                                }}
-                                onClick={() => {
-                                    if (!window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredIndex(hoveredIndex === idx ? null : idx);
-                                    }
-                                }}
+                                className="p-6 md:p-8 rounded-3xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[var(--card-accent)] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)", "--card-accent": reason.iconColor } as CSSProperties}
                             >
-
-                                {/* Main card */}
-                                <div
-                                    className="relative p-8 rounded-3xl border transition-all duration-700 overflow-hidden"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? reason.iconColor : "var(--border-color)",
-                                        transform: isHovered
-                                            ? "translateY(-12px) rotateX(2deg)"
-                                            : "translateY(0) rotateX(0deg)",
-                                        boxShadow: isHovered
-                                            ? `0 25px 50px -12px ${reason.bgColor}`
-                                            : "0 4px 6px rgba(0, 0, 0, 0.1)",
-                                    }}
-                                >
-                                    {/* Animated gradient background overlay */}
-
-                                    {/* Floating particles */}
-                                    {isHovered && (
-                                        <div className="absolute inset-0 pointer-events-none">
-                                            {Array.from({ length: reason.particles }).map((_, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="absolute w-1.5 h-1.5 rounded-full"
-                                                    style={{
-                                                        background: reason.iconColor,
-                                                        left: `${20 + i * 25}%`,
-                                                        top: `${30 + i * 15}%`,
-                                                        animation: `float-particle ${2 + i * 0.5}s ease-in-out infinite`,
-                                                        animationDelay: `${i * 0.3}s`,
-                                                    }}
-                                                />
-                                            ))}
-                                        </div>
-                                    )}
-
-                                    {/* Icon container */}
-                                    <div className="relative mb-6 inline-block">
-                                        <div
-                                            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-700 bg-gradient-to-br ${reason.gradient}`}
-                                            style={{
-                                                transform: isHovered
-                                                    ? "rotate(360deg) scale(1.15)"
-                                                    : "rotate(0deg) scale(1)",
-                                                boxShadow: isHovered
-                                                    ? `0 10px 30px ${reason.bgColor}`
-                                                    : "0 4px 12px rgba(0, 0, 0, 0.1)",
-                                            }}
-                                        >
-                                            <Icon
-                                                className="w-8 h-8 text-white transition-all duration-700"
-                                                style={{
-                                                    filter: isHovered ? "drop-shadow(0 0 8px rgba(255,255,255,0.5))" : "none",
-                                                }}
-                                            />
-                                        </div>
-
-                                        {/* Orbiting ring */}
-                                        {isHovered && (
-                                            <div
-                                                className="absolute inset-0 rounded-2xl border-2"
-                                                style={{
-                                                    borderColor: `${reason.iconColor}40`,
-                                                    borderTopColor: reason.iconColor,
-                                                    animation: "spin-slow 3s linear infinite",
-                                                    transform: "scale(1.3)",
-                                                }}
-                                            />
-                                        )}
+                                <div className="mb-6">
+                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${reason.gradient}`}>
+                                        <Icon className="w-8 h-8 text-white" aria-hidden="true" />
                                     </div>
-
-                                    {/* Content */}
-                                    <div className="relative z-10">
-                                        <h3
-                                            className="text-xl font-bold mb-3 transition-all duration-500"
-                                            style={{
-                                                color: isHovered ? (iconColorTextToken[reason.iconColor] ?? reason.iconColor) : "var(--foreground)",
-                                                transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                            }}
-                                        >
-                                            {reason.title}
-                                        </h3>
-                                        <p
-                                            className="leading-relaxed transition-all duration-500"
-                                            style={{
-                                                color: "var(--secondary-text)",
-                                                transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                            }}
-                                        >
-                                            {reason.description}
-                                        </p>
-
-                                        {/* Animated progress bar */}
-                                        <div
-                                            className="mt-6 h-1 rounded-full overflow-hidden"
-                                            style={{ backgroundColor: "var(--border-color)" }}
-                                        >
-                                            <div
-                                                className="h-full rounded-full transition-all duration-700"
-                                                style={{
-                                                    width: isHovered ? "100%" : "0%",
-                                                    background: `linear-gradient(90deg, ${reason.gradient})`,
-                                                }}
-                                            />
-                                        </div>
-
-                                        {/* Number indicator */}
-                                        <div
-                                            className="absolute top-0 right-0 w-12 h-12 flex items-center justify-center rounded-full font-bold text-2xl opacity-0 group-hover:opacity-10 transition-all duration-500"
-                                            style={{
-                                                color: iconColorTextToken[reason.iconColor] ?? reason.iconColor,
-                                                transform: isHovered ? "scale(1)" : "scale(0.5)",
-                                            }}
-                                        >
-                                            {String(idx + 1).padStart(2, "0")}
-                                        </div>
-                                    </div>
-
-                                    {/* Corner decorations */}
-                                    <div
-                                        className="absolute bottom-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-20 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(135deg, transparent 50%, ${reason.bgColor})`,
-                                            borderRadius: "100% 0 0 0",
-                                            transform: isHovered ? "translate(0, 0)" : "translate(25%, 25%)",
-                                        }}
-                                    />
                                 </div>
+
+                                <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                                    {reason.title}
+                                </h3>
+                                <p className="leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                    {reason.description}
+                                </p>
                             </div>
                         );
                     })}
                 </div>
             </div>
-
-            <style jsx>{`
-                @keyframes float {
-                    0%, 100% {
-                        transform: translate(0, 0) scale(1);
-                    }
-                    33% {
-                        transform: translate(30px, -30px) scale(1.1);
-                    }
-                    66% {
-                        transform: translate(-20px, 20px) scale(0.9);
-                    }
-                }
-
-                @keyframes float-particle {
-                    0% {
-                        transform: translateY(0) translateX(0) scale(0);
-                        opacity: 0;
-                    }
-                    50% {
-                        opacity: 1;
-                        transform: translateY(-30px) translateX(10px) scale(1);
-                    }
-                    100% {
-                        transform: translateY(-60px) translateX(-5px) scale(0);
-                        opacity: 0;
-                    }
-                }
-
-                @keyframes spin-slow {
-                    from {
-                        transform: rotate(0deg) scale(1.3);
-                    }
-                    to {
-                        transform: rotate(360deg) scale(1.3);
-                    }
-                }
-
-                .group {
-                    perspective: 1000px;
-                }
-            `}</style>
         </section>
     );
 }

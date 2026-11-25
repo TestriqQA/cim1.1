@@ -1,10 +1,11 @@
 import {
     Award,
     Target,
-    Layers,
-    Zap,
     Globe,
     TrendingUp,
+    Trophy,
+    BadgeCheck,
+    ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -39,14 +40,14 @@ export default function WhyChooseUs() {
             gradient: "from-[#b4d97c] to-[#96bf48]",
         },
         {
-            icon: Zap,
+            icon: BadgeCheck,
             title: "Thoroughly Tested Deployment",
             description:
                 "Rigorous QA involving automated load testing and manual checks to ensure stable launches and maintain customer trust.",
             gradient: "from-[#5c8a1e] to-[#96bf48]",
         },
         {
-            icon: Layers,
+            icon: ShieldCheck,
             title: "Data Security & Trust",
             description:
                 "Prioritizing Shopify maintenance and ongoing support with regular security patches and GDPR/CCPA compliance audits.",
@@ -69,7 +70,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>

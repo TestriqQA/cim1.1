@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import {
-    Search,
-    Layers,
-    Code2,
-    TestTube2,
-    Rocket,
     CheckCircle2,
+    Code2,
+    Rocket,
+    Search,
+    TestTube2,
+    Workflow,
+    DraftingCompass,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -33,14 +34,14 @@ export default function Process() {
         },
         {
             number: "02",
-            icon: Layers,
+            icon: DraftingCompass,
             title: "Architecture & Design",
             description: "Structuring content types, taxonomies, and creating user-centered designs.",
             details: [
                 "Content type design",
                 "Taxonomy structure",
                 "User flow wireframes",
-                <Link href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-sky-text)] transition-colors underline underline-offset-2">UI/UX design</Link>,
+                <Link key="link-1" href="/services/web-design-development/branding-services" className="hover:text-[var(--accent-sky-text)] transition-colors underline underline-offset-2">UI/UX design</Link>,
                 "Theme architecture",
                 "Module planning"
             ],
@@ -72,7 +73,7 @@ export default function Process() {
                 "Accessibility testing (WCAG)",
                 "Security audit",
                 "Cross-browser testing",
-                <Link href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-sky-text)] transition-colors underline underline-offset-2">Performance optimization</Link>,
+                <Link key="link-2" href="/blog/web-performance-optimization-speed" className="hover:text-[var(--accent-sky-text)] transition-colors underline underline-offset-2">Performance optimization</Link>,
                 "Content review",
                 "User acceptance testing"
             ],
@@ -98,12 +99,10 @@ export default function Process() {
     ];
 
     return (
-        <section id="process" className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
-            {/* Enhanced background decoration */}
-
+        <section id="process" className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: "var(--background)" }}>
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border mb-6 backdrop-blur-sm"
                         style={{
@@ -111,23 +110,19 @@ export default function Process() {
                             borderColor: "rgba(6, 120, 190, 0.3)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <Workflow className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-sky-text)" }}>
                             Our Process
                         </span>
                     </div>
+                    
+
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6"
+                        className="text-3xl md:text-5xl font-bold mb-6"
                         style={{ color: "var(--foreground)" }}
                     >
                         Our{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #0678BE, #29A8DF)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-sky-text)" }}>
                             Development Process
                         </span>
                     </h2>
@@ -139,17 +134,18 @@ export default function Process() {
                     </p>
                 </div>
 
-                {/* Timeline */}
+                {/* Timeline (the WordPress layout) */}
                 <div className="relative">
-                    {/* Vertical line with gradient */}
+                    {/* Central Line (Desktop) */}
                     <div
-                        className="absolute left-1/2 top-0 bottom-0 w-1 hidden lg:block overflow-hidden"
+                        className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2"
                         style={{
-                            background: "linear-gradient(180deg, rgba(6, 120, 190, 0.1), rgba(6, 120, 190, 0.4), rgba(6, 120, 190, 0.1))",
+                            background: "#0678BE",
+                            opacity: 0.5
                         }}
                     />
 
-                    <div className="space-y-12 lg:space-y-16">
+                    <div className="lg:space-y-16">
                         {steps.map((step, idx) => {
                             const Icon = step.icon;
                             const isEven = idx % 2 === 0;
@@ -158,192 +154,92 @@ export default function Process() {
                             return (
                                 <div
                                     key={idx}
-                                    className={`cursor-pointer relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                    className={`relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                                         }`}
-                                    onMouseEnter={() => {
-                                        if (window.matchMedia("(hover: hover)").matches) {
-                                            setHoveredStep(idx);
-                                        }
-                                    }}
-                                    onMouseLeave={() => {
-                                        if (window.matchMedia("(hover: hover)").matches) {
-                                            setHoveredStep(null);
-                                        }
-                                    }}
-                                    onClick={() => {
-                                        if (!window.matchMedia("(hover: hover)").matches) {
-                                            setHoveredStep(hoveredStep === idx ? null : idx);
-                                        }
-                                    }}
+                                    onMouseEnter={() => setHoveredStep(idx)}
+                                    onMouseLeave={() => setHoveredStep(null)}
                                 >
                                     {/* Content Card */}
-                                    <div
-                                        className={`w-full lg:w-5/12 ${isEven ? "lg:pr-16" : "lg:pl-16"}`}
-                                    >
+                                    <div className="w-full lg:w-5/12">
                                         <div
-                                            className="group relative p-8 rounded-3xl border transition-all duration-700 cursor-pointer overflow-hidden"
+                                            className={`
+                                                p-6 md:p-8 rounded-3xl border transition-all duration-300
+                                                ${isHovered ? "shadow-xl border-[#0678BE]/50 -translate-y-2" : ""}
+                                            `}
                                             style={{
                                                 backgroundColor: "var(--card-bg)",
-                                                borderColor: isHovered ? "#0678BE" : "var(--border-color)",
-                                                transform: isHovered ? "scale(1.03) translateY(-4px)" : "scale(1)",
-                                                boxShadow: isHovered
-                                                    ? "0 20px 60px rgba(6, 120, 190, 0.25)"
-                                                    : "0 4px 6px rgba(0, 0, 0, 0.05)",
+                                                borderColor: isHovered ? "" : "var(--border-color)",
                                             }}
                                         >
-
-                                            {/* Step number - large background */}
-                                            <div
-                                                className="absolute top-4 right-6 text-7xl font-bold opacity-5 transition-all duration-500"
-                                                style={{
-                                                    color: "var(--accent-sky-text)",
-                                                    transform: isHovered ? "scale(1.1)" : "scale(1)",
-                                                }}
-                                            >
-                                                {step.number}
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <div
+                                                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0"
+                                                    style={{ background: "linear-gradient(135deg, #0678BE, #054A91)" }}
+                                                >
+                                                    <Icon className="w-6 h-6" aria-hidden="true" />
+                                                </div>
+                                                <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>{step.title}</h3>
                                             </div>
+                                            <p className="mb-6" style={{ color: "var(--secondary-text)" }}>{step.description}</p>
+                                            <ul className="space-y-2">
+                                                {step.details.map((detail, dIdx) => (
+                                                    <li key={dIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                        <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[var(--accent-sky-text)]" aria-hidden="true" />
+                                                        <span>{detail}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
 
-                                            <div className="relative z-10">
-                                                {/* Icon and header */}
-                                                <div className="flex items-start gap-5 mb-6">
-                                                    <div
-                                                        className="relative w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-700"
-                                                        style={{
-                                                            background: isHovered
-                                                                ? "linear-gradient(135deg, #0678BE, #054A91)"
-                                                                : "rgba(6, 120, 190, 0.1)",
-                                                            transform: isHovered ? "rotate(360deg) scale(1.1)" : "rotate(0)",
-                                                            boxShadow: isHovered ? "0 8px 24px rgba(6, 120, 190, 0.3)" : "none",
-                                                        }}
-                                                    >
-                                                        <Icon
-                                                            className="w-8 h-8 transition-all duration-500"
-                                                            style={{
-                                                                color: isHovered ? "#fff" : "var(--accent-sky-text)",
-                                                            }}
-                                                        />
-                                                    </div>
-
-                                                    <div className="flex-1">
-                                                        <span
-                                                            className="inline-block text-xs font-bold tracking-wider px-2.5 py-1 rounded-full mb-2"
-                                                            style={{
-                                                                backgroundColor: "rgba(41, 168, 223, 0.15)",
-                                                                color: "var(--accent-sky-text)",
-                                                            }}
-                                                        >
-                                                            STEP {step.number}
-                                                        </span>
-                                                        <h3
-                                                            className="text-2xl font-bold mb-2 transition-colors duration-300"
-                                                            style={{
-                                                                color: isHovered ? "var(--accent-sky-text)" : "var(--foreground)",
-                                                            }}
-                                                        >
-                                                            {step.title}
-                                                        </h3>
-                                                        <p
-                                                            className="text-sm leading-relaxed"
-                                                            style={{ color: "var(--secondary-text)" }}
-                                                        >
-                                                            {step.description}
-                                                        </p>
-                                                    </div>
+                                            {/* Deliverable and timeline */}
+                                            <div className="flex flex-wrap gap-x-4 gap-y-2 mt-6 pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "#29A8DF" }} />
+                                                    <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
+                                                        <span style={{ color: "var(--accent-sky-text)" }}>Deliverable:</span> {step.deliverable}
+                                                    </span>
                                                 </div>
-
-                                                {/* Details grid - expands on hover */}
-                                                <div
-                                                    className="transition-all duration-700 overflow-hidden"
-                                                    style={{
-                                                        maxHeight: isHovered ? "300px" : "0px",
-                                                        opacity: isHovered ? 1 : 0,
-                                                    }}
-                                                >
-                                                    <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                                        <h4 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--accent-sky-text)" }}>
-                                                            Key Activities
-                                                        </h4>
-                                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
-                                                            {step.details.map((detail, dIdx) => (
-                                                                <div
-                                                                    key={dIdx}
-                                                                    className="flex items-start gap-2 text-sm transition-all duration-300"
-                                                                    style={{
-                                                                        color: "var(--secondary-text)",
-                                                                        transform: isHovered ? "translateX(0)" : "translateX(-10px)",
-                                                                        transitionDelay: `${dIdx * 50}ms`,
-                                                                    }}
-                                                                >
-                                                                    <CheckCircle2
-                                                                        className="w-4 h-4 flex-shrink-0 mt-0.5"
-                                                                        style={{ color: "var(--accent-sky-text)" }}
-                                                                    />
-                                                                    <span>{detail}</span>
-                                                                </div>
-                                                            ))}
-                                                        </div>
-
-                                                        {/* Deliverable and duration */}
-                                                        <div className="flex flex-wrap gap-4 pt-3 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                                            <div className="flex items-center gap-2">
-                                                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#29A8DF" }} />
-                                                                <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                    <span style={{ color: "var(--accent-sky-text)" }}>Deliverable:</span> {step.deliverable}
-                                                                </span>
-                                                            </div>
-                                                            <div className="flex items-center gap-2">
-                                                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#054A91" }} />
-                                                                <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
-                                                                    <span style={{ color: "var(--accent-sky-text)" }}>Timeline:</span> {step.duration}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                {/* Progress indicator */}
-                                                <div
-                                                    className="mt-6 h-1.5 rounded-full overflow-hidden"
-                                                    style={{ backgroundColor: "rgba(6, 120, 190, 0.1)" }}
-                                                >
-                                                    <div
-                                                        className="h-full rounded-full transition-all duration-700"
-                                                        style={{
-                                                            width: isHovered ? "100%" : "0%",
-                                                            background: "linear-gradient(90deg, #0678BE, #29A8DF, #054A91)",
-                                                        }}
-                                                    />
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "#054A91" }} />
+                                                    <span className="text-xs font-medium" style={{ color: "var(--secondary-text)" }}>
+                                                        <span style={{ color: "var(--accent-sky-text)" }}>Timeline:</span> {step.duration}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* Center dot with pulse effect */}
-                                    <div className="hidden lg:flex w-2/12 justify-center relative">
-                                        {isHovered && (
-                                            <div
-                                                className="absolute w-12 h-12 rounded-full border-2 animate-ping"
-                                                style={{
-                                                    borderColor: "rgba(6, 120, 190, 0.3)",
-                                                }}
-                                            />
-                                        )}
-
+                                    {/* Center Node */}
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex items-center justify-center z-10">
                                         <div
-                                            className="relative w-5 h-5 rounded-full transition-all duration-500 z-10"
-                                            style={{
-                                                background: isHovered
-                                                    ? "linear-gradient(135deg, #0678BE, #29A8DF)"
-                                                    : "var(--background)",
-                                                border: `3px solid ${isHovered ? "#29A8DF" : "#0678BE"}`,
-                                                transform: isHovered ? "scale(1.6)" : "scale(1)",
-                                                boxShadow: isHovered ? "0 0 20px rgba(6, 120, 190, 0.5)" : "none",
-                                            }}
-                                        />
+                                            className={`
+                                                w-12 h-12 rounded-full border-4 transition-all duration-300 flex items-center justify-center
+                                                ${isHovered ? "border-[#0678BE] bg-background scale-125" : "border-muted bg-background"}
+                                            `}
+                                        >
+                                            <div
+                                                className={`w-3 h-3 rounded-full transition-colors duration-300 ${isHovered ? "bg-[#0678BE]" : "bg-muted-foreground"
+                                                    }`}
+                                            />
+                                        </div>
                                     </div>
 
-                                    {/* Spacer */}
-                                    <div className="hidden lg:block w-5/12" />
+                                    <div className={`w-full lg:w-5/12 hidden lg:flex items-center ${isEven ? "justify-start pl-50" : "justify-end pr-50"}`}>
+                                        <div
+                                            className="text-[120px] font-bold leading-none opacity-50 transition-all duration-300"
+                                            style={{
+                                                color: isHovered ? "var(--accent-sky-text)" : "var(--foreground)",
+                                                transform: isHovered ? "scale(1.1)" : "scale(1)",
+                                                opacity: 0.5,
+                                            }}
+                                        >
+                                            {step.number}
+                                        </div>
+                                    </div>
+
+                                    {/* Mobile Connector: 8 + 32 + 8 = 48px between cards; none after the last step */}
+                                    {idx < steps.length - 1 && (
+                                        <div className="lg:hidden h-8 w-0.5 bg-gradient-to-b from-[#0678BE] to-transparent opacity-30 my-2" />
+                                    )}
                                 </div>
                             );
                         })}

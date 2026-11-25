@@ -410,16 +410,7 @@ export default function SolutionTypes() {
             </div>
 
             <style jsx>{`
-                @keyframes gradient-slide {
-                    0%, 100% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                }
                 
-                @keyframes gradient-move {
-                    0% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                    100% { background-position: 0% 50%; }
-                }
             `}</style>
         </section>
     );

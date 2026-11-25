@@ -1,33 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, Layers } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 
 export default function CTA() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 md:py-20 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-background" />
 
-            {/* Glowing Orbs */}
-            <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[100px] opacity-10"
-                style={{ background: "#0286FF" }}
-            />
-            <div
-                className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-[80px] opacity-10"
-                style={{ background: "#4DA3FF" }}
-            />
 
             <div className="max-w-4xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div
-                    className="p-6 md:p-12 rounded-3xl border text-center"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                        boxShadow: "0 20px 60px rgba(2, 134, 255, 0.1)",
-                    }}
-                >
+                {/* No glow, border or shadow: the content sits on the page's own
+                    background. Side padding kept, top/bottom padding dropped. */}
+                <div className="px-6 md:px-12 text-center">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
@@ -36,7 +20,7 @@ export default function CTA() {
                             border: "1px solid rgba(77, 163, 255, 0.3)",
                         }}
                     >
-                        <Layers className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                        <MessagesSquare className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                             Free Contentful Consultation
                         </span>
@@ -44,17 +28,11 @@ export default function CTA() {
 
                     {/* Headline */}
                     <h2
-                        className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6"
+                        className="text-3xl md:text-5xl font-bold mb-6"
                         style={{ color: "var(--foreground)" }}
                     >
                         Go Composable with{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #0286FF, #4DA3FF)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-sky-text)" }}>
                             Contentful
                         </span>
                     </h2>
@@ -70,14 +48,13 @@ export default function CTA() {
                     {/* CTA Button */}
                     <Link
                         href="/contact"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                         style={{
-                            background: "linear-gradient(135deg, #0286FF, #0059C8)",
-                            boxShadow: "0 4px 20px rgba(2, 134, 255, 0.3)",
+                            background: "linear-gradient(135deg, #0067D6, #0059C8)",
                         }}
                     >
                         Start Your Project
-                        <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                        <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                     </Link>
                 </div>
             </div>

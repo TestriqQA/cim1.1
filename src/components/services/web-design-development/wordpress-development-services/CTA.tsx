@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -20,7 +20,7 @@ export default function CTA() {
                                 borderColor: "rgba(0, 115, 170, 0.2)",
                             }}
                         >
-                            <Globe className="w-4 h-4 text-[var(--brand-blue-text)]" />
+                            <MessagesSquare className="w-4 h-4 text-[var(--brand-blue-text)]" />
                             <span className="text-sm font-semibold text-[var(--brand-blue-text)]">
                                 Free WordPress Consultation
                             </span>

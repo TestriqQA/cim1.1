@@ -1,6 +1,16 @@
 import {
-    Code2, Zap, Server, Globe, Shield, Rocket,
-    ChevronRight, ArrowRight, CheckCircle2, Sparkles, Terminal, Layers
+    Code2,
+    Zap,
+    Server,
+    Globe,
+    Shield,
+    Rocket,
+    ChevronRight,
+    ArrowRight,
+    CheckCircle2,
+    Layers,
+    Atom,
+    Route,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +71,7 @@ export default function Hero() {
                                 borderColor: "color-mix(in srgb, #61dafb 30%, transparent)",
                             }}
                         >
-                            <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                            <Atom className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                                 Modern React Development
                             </span>
@@ -214,7 +224,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #000000, #333333)" }}
                                     >
-                                        <Sparkles className="w-6 h-6 text-white" />
+                                        <Route className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

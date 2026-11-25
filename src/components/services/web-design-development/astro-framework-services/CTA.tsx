@@ -1,33 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 
 export default function CTA() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 md:py-20 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-background" />
 
-            {/* Glowing Orbs */}
-            <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[100px] opacity-10"
-                style={{ background: "#7C3AED" }}
-            />
-            <div
-                className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-[80px] opacity-10"
-                style={{ background: "#FF5D01" }}
-            />
 
             <div className="max-w-4xl mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div
-                    className="p-6 md:p-12 rounded-3xl border text-center"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                        boxShadow: "0 20px 60px rgba(124, 58, 237, 0.1)",
-                    }}
-                >
+                {/* No glow, border or shadow: the content sits on the page's own
+                    background. Side padding kept, top/bottom padding dropped. */}
+                <div className="px-6 md:px-12 text-center">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
@@ -36,25 +20,19 @@ export default function CTA() {
                             border: "1px solid rgba(255, 93, 1, 0.3)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
-                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
+                        <MessagesSquare className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             Free Astro Consultation
                         </span>
                     </div>
 
                     {/* Headline */}
                     <h2
-                        className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6"
+                        className="text-3xl md:text-5xl font-bold mb-6"
                         style={{ color: "var(--foreground)" }}
                     >
                         Build Lightning Fast with{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-orange-text)" }}>
                             Astro Framework
                         </span>
                     </h2>
@@ -72,27 +50,16 @@ export default function CTA() {
                         <span>✓ Headless CMS Integration</span>
                     </div>
 
-                    <div className="mb-8 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-dashed border-border">
-                        <p className="text-sm font-semibold mb-2" style={{ color: "var(--accent-violet-text)" }}>GET IN TOUCH TODAY</p>
-                        <p className="text-base" style={{ color: "var(--foreground)" }}>
-                            Email: contact@cinuteinfomedia.com | Phone: +91 9004988859, +91 7700995410
-                        </p>
-                        <p className="text-xs mt-1" style={{ color: "var(--secondary-text)" }}>
-                            Office Hours: Mon-Sat, 9 AM - 8 PM
-                        </p>
-                    </div>
-
                     {/* CTA Button */}
                     <Link
                         href="/contact"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-sm sm:text-base md:text-lg text-white transition-all transform hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                         style={{
-                            background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                            boxShadow: "0 4px 20px rgba(124, 58, 237, 0.3)",
+                            background: "linear-gradient(135deg, #C94600, #B33E00)",
                         }}
                     >
                         Start Your Project
-                        <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                        <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                     </Link>
                 </div>
             </div>

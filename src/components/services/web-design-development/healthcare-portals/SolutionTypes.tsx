@@ -135,63 +135,6 @@ export default function SolutionTypes() {
             </div>
 
             <style jsx>{`
-                @keyframes float-pulse {
-                    0%, 100% {
-                        transform: translateY(0) scale(1);
-                        opacity: 0.3;
-                    }
-                    50% {
-                        transform: translateY(-30px) scale(1.1);
-                        opacity: 0.5;
-                    }
-                }
-                @keyframes medical-float {
-                    0%, 100% {
-                        transform: translateY(0) rotate(0deg);
-                    }
-                    25% {
-                        transform: translateY(-20px) rotate(5deg);
-                    }
-                    50% {
-                        transform: translateY(-10px) rotate(-5deg);
-                    }
-                    75% {
-                        transform: translateY(-15px) rotate(3deg);
-                    }
-                }
-                @keyframes heartbeat-pulse {
-                    0%, 100% {
-                        transform: scale(1);
-                    }
-                    10% {
-                        transform: scale(1.1);
-                    }
-                    20% {
-                        transform: scale(1);
-                    }
-                    30% {
-                        transform: scale(1.15);
-                    }
-                    40% {
-                        transform: scale(1);
-                    }
-                }
-                @keyframes vital-sign {
-                    0% {
-                        transform: translateX(-100%);
-                    }
-                    100% {
-                        transform: translateX(200%);
-                    }
-                }
-                @keyframes shimmer {
-                    0% {
-                        background-position: -200% center;
-                    }
-                    100% {
-                        background-position: 200% center;
-                    }
-                }
             `}</style>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">

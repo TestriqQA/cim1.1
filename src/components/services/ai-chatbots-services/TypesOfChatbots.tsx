@@ -176,10 +176,6 @@ export default function TypesOfChatbots() {
                         opacity: 1;
                     }
                 }
-                @keyframes border-rotate {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
                 @keyframes glow-pulse {
                     0%, 100% { 
                         box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);

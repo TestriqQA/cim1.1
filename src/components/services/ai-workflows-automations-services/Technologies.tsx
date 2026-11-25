@@ -124,34 +124,7 @@ export default function Technologies() {
     return (
         <>
             <style jsx>{`
-                @keyframes float-logo {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-5px); }
-                }
-                @keyframes glow {
-                    0%, 100% { 
-                        box-shadow: 0 0 5px rgba(251, 146, 60, 0.2);
-                    }
-                    50% { 
-                        box-shadow: 0 0 20px rgba(251, 146, 60, 0.4);
-                    }
-                }
-                @keyframes pulse-border {
-                    0%, 100% { border-color: var(--border-color); }
-                    50% { border-color: var(--brand-orange); }
-                }
-                @keyframes gradient-shift {
-                    0%, 100% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                }
                 
-                .animate-float-logo { animation: float-logo 3s ease-in-out infinite; }
-                .animate-glow { animation: glow 2s ease-in-out infinite; }
-                .animate-pulse-border { animation: pulse-border 3s ease-in-out infinite; }
-                .animate-gradient { 
-                    background-size: 200% 200%;
-                    animation: gradient-shift 3s ease infinite;
-                }
             `}</style>
 
             <section

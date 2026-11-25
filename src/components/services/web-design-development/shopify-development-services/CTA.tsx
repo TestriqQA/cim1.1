@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import { ArrowRight, Rocket } from "lucide-react";
 import Link from "next/link";
 import FaqSection from "@/components/ui/FaqSection";
 
@@ -72,7 +72,7 @@ export default function CTA() {
                                 borderColor: "color-mix(in srgb, #96bf48 40%, transparent)",
                             }}
                         >
-                            <ShoppingCart className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
+                            <Rocket className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                                 Ready to Dominate Shopify?
                             </span>
