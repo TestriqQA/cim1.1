@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import {
     Award,
     Zap,
@@ -12,87 +9,53 @@ import {
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     const reasons = [
         {
             icon: Award,
             title: "Senior Engineers Only",
             description:
                 "Your project is handled by experienced backend engineers building production systems.",
-            gradient: "from-[#339933] to-[#215732]",
         },
         {
             icon: Zap,
             title: <Link href="/services/seo-services/technical-seo-services" className="hover:text-[#339933] transition-colors">Performance First</Link>,
             description:
                 "Every API we build is optimized for speed. We obsess over response times and throughput.",
-            gradient: "from-[#68a063] to-[#339933]",
         },
         {
             icon: Shield,
             title: "Security Focused",
             description:
                 "Security isn't an afterthought. We implement best practices from day one.",
-            gradient: "from-[#339933] to-[#68a063]",
         },
         {
             icon: Users,
             title: "Collaborative Process",
             description:
                 "We work alongside your team with clear communication and transparent progress.",
-            gradient: "from-[#215732] to-[#339933]",
         },
         {
             icon: HeadphonesIcon,
             title: "Ongoing Support",
             description:
                 "We don't disappear after launch. Ongoing maintenance and support as you scale.",
-            gradient: "from-[#68a063] to-[#215732]",
         },
         {
             icon: TrendingUp,
             title: "Built to Scale",
             description:
                 "Architecture that grows with your business - from MVP to millions of users.",
-            gradient: "from-[#339933] to-[#68a063]",
         },
     ];
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-                .card-shimmer::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(51, 153, 51, 0.1),
-                        transparent
-                    );
-                    animation: shimmer 2s infinite;
-                    pointer-events: none;
-                }
-            `}</style>
-
-            {/* Background Elements */}
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -100,24 +63,18 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "#339933" }} />
+                        <Zap className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Why Work With Us
                         </span>
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Your{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #339933, #68a063)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-green-text)" }}>
                             Backend
                         </span>{" "}
                         Partners
@@ -131,94 +88,37 @@ export default function WhyChooseUs() {
                     </p>
                 </div>
 
-                {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Reasons Grid: cards side by side share one size (md:auto-rows-fr);
+                    on phones each card fits its own content. Hover: border in the
+                    icon colour + 4px lift, nothing else. */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
-                        const isHovered = hoveredIndex === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className="group relative"
-                                onMouseEnter={() => setHoveredIndex(idx)}
-                                onMouseLeave={() => setHoveredIndex(null)}
+                                className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#339933] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
-
-                                {/* Card */}
                                 <div
-                                    className={`
-                                        relative p-6 rounded-2xl border overflow-hidden
-                                        transition-all duration-500 ease-out
-                                        ${isHovered ? "shadow-2xl -translate-y-3 scale-[1.02]" : "shadow-md"}
-                                        ${isHovered ? "card-shimmer" : ""}
-                                    `}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? "#33993350" : "var(--border-color)",
-                                    }}
+                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                                    style={{ background: "linear-gradient(135deg, #339933, #215732)" }}
                                 >
-                                    {/* Corner accent */}
-
-                                    {/* Icon Container */}
-                                    <div className="relative mb-4">
-                                        <div
-                                            className={`
-                                                w-14 h-14 rounded-xl flex items-center justify-center
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-110 rotate-6" : ""}
-                                            `}
-                                            style={{
-                                                background: "linear-gradient(135deg, #339933, #215732)",
-                                                boxShadow: isHovered ? "0 8px 24px rgba(51, 153, 51, 0.5)" : "0 4px 16px rgba(51, 153, 51, 0.3)",
-                                            }}
-                                        >
-                                            <Icon className="w-7 h-7 text-white" />
-                                        </div>
-
-                                        {/* Animated ring on hover */}
-                                        <div
-                                            className={`
-                                                absolute inset-0 w-14 h-14 rounded-xl border-2
-                                                transition-all duration-500
-                                                ${isHovered ? "scale-125 opacity-50" : "scale-100 opacity-0"}
-                                            `}
-                                            style={{ borderColor: "#339933" }}
-                                        />
-                                    </div>
-
-                                    {/* Title */}
-                                    <h3
-                                        className="text-xl font-bold mb-2 transition-all duration-300"
-                                        style={{
-                                            color: isHovered ? "#339933" : "var(--foreground)",
-                                        }}
-                                    >
-                                        {reason.title}
-                                    </h3>
-
-                                    {/* Description */}
-                                    <p
-                                        className={`
-                                            text-sm leading-relaxed transition-all duration-300
-                                            ${isHovered ? "translate-x-1" : ""}
-                                        `}
-                                        style={{ color: "var(--secondary-text)" }}
-                                    >
-                                        {reason.description}
-                                    </p>
-
-                                    {/* Bottom accent line */}
-                                    <div
-                                        className={`
-                                            absolute bottom-0 left-0 h-1 rounded-b-2xl transition-all duration-500
-                                            ${isHovered ? "w-full" : "w-0"}
-                                        `}
-                                        style={{
-                                            background: "linear-gradient(90deg, #339933, #68a063)",
-                                        }}
-                                    />
+                                    <Icon className="w-7 h-7 text-white" aria-hidden="true" />
                                 </div>
+                                <h3
+                                    className="text-xl font-bold mb-2"
+                                    style={{ color: "var(--foreground)" }}
+                                >
+                                    {reason.title}
+                                </h3>
+                                <p
+                                    className="text-sm leading-relaxed"
+                                    style={{ color: "var(--secondary-text)" }}
+                                >
+                                    {reason.description}
+                                </p>
                             </div>
                         );
                     })}

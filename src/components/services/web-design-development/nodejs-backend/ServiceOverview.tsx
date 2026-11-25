@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Code2, Database, Server, Zap, Shield, Cloud } from "lucide-react";
 
@@ -39,7 +37,7 @@ export default function ServiceOverview() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background Pattern */}
@@ -55,7 +53,7 @@ export default function ServiceOverview() {
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -63,24 +61,18 @@ export default function ServiceOverview() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Server className="w-4 h-4" style={{ color: "#339933" }} />
+                        <Server className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Why Backend Matters
                         </span>
                     </div>
 
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         Power Your Apps With{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #339933, #68a063)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-green-text)" }}>
                             Robust Backend
                         </span>
                     </h2>
@@ -93,27 +85,23 @@ export default function ServiceOverview() {
                     </p>
                 </div>
 
-                {/* Highlights Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Highlights Grid: cards side by side share one size (md:auto-rows-fr);
+                    on phones each card fits its own content. Hover: border in the
+                    icon colour + 4px lift, nothing else. */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-8">
                     {highlights.map((highlight, idx) => {
                         const Icon = highlight.icon;
                         return (
                             <div
                                 key={idx}
-                                className="group p-6 rounded-2xl border transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
+                                className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#339933] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
                                 <div
-                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
-                                    style={{
-                                        background: "linear-gradient(135deg, #339933, #215732)",
-                                        boxShadow: "0 4px 16px rgba(51, 153, 51, 0.3)",
-                                    }}
+                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                                    style={{ background: "linear-gradient(135deg, #339933, #215732)" }}
                                 >
-                                    <Icon className="w-7 h-7 text-white" />
+                                    <Icon className="w-7 h-7 text-white" aria-hidden="true" />
                                 </div>
                                 <h3
                                     className="text-xl font-bold mb-2"
