@@ -42,10 +42,6 @@ export default function Hero() {
                     0%, 100% { box-shadow: 0 0 20px rgba(24, 119, 242, 0.2); }
                     50% { box-shadow: 0 0 40px rgba(24, 119, 242, 0.4); }
                 }
-                @keyframes count-up {
-                    from { opacity: 0; transform: scale(0.5); }
-                    to { opacity: 1; transform: scale(1); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }

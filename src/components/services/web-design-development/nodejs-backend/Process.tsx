@@ -3,12 +3,13 @@
 import { useState } from "react";
 import {
     Search,
-    GitBranch,
     Code2,
-    Link2,
     TestTube,
     Rocket,
     CheckCircle,
+    Workflow,
+    DraftingCompass,
+    Plug,
 } from "lucide-react";
 
 export default function Process() {
@@ -33,7 +34,7 @@ export default function Process() {
         {
             anchor: "step-architecture",
             number: "02",
-            icon: GitBranch,
+            icon: DraftingCompass,
             title: "Architecture Design",
             description: "Design scalable system architecture with proper patterns and best practices.",
             details: [
@@ -61,7 +62,7 @@ export default function Process() {
         {
             anchor: "step-integration",
             number: "04",
-            icon: Link2,
+            icon: Plug,
             title: "Integration",
             description: "Connect with third-party APIs, frontend applications, and external systems.",
             details: [
@@ -117,7 +118,7 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <GitBranch className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
+                        <Workflow className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>

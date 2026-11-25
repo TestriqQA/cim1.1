@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowRight, Coffee, ChevronRight, CheckCircle2, Zap } from "lucide-react";
+import { ArrowRight, Building2, ChevronRight, Zap, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -33,18 +33,11 @@ export default function Hero() {
                     from { opacity: 0; }
                     to { opacity: 1; }
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
                 }
                 .delay-100 { animation-delay: 0.1s; }
                 .delay-200 { animation-delay: 0.2s; }
@@ -76,7 +69,7 @@ export default function Hero() {
                                 borderColor: "rgba(248, 152, 32, 0.3)",
                             }}
                         >
-                            <Coffee className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                            <Building2 className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
                             <span className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
                                 <Link href="/services/web-design-development/business-corporate" className="hover:underline">Enterprise-Grade Java Solutions</Link>
                             </span>
@@ -90,11 +83,7 @@ export default function Hero() {
                             Robust Applications with{" "}
                             <span
                                 className="relative inline-block"
-                                style={{
-                                    background: "linear-gradient(135deg, #6DB33F, #5A9A32)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
+                                style={{ color: "var(--accent-green-text)" }}
                             >
                                 Java & Spring Boot
                                 {/* Underline decoration */}
@@ -113,8 +102,8 @@ export default function Hero() {
                             Build scalable, secure, and high-performance <Link href="/services/web-design-development/business-corporate" className="text-[var(--accent-green-text)] underline underline-offset-2 hover:underline">enterprise applications</Link> with the world&apos;s most trusted technology stack.
                         </p>
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
+                        {/* Feature Pills: a 2x2 grid on phones, dot beside the label */}
+                        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start sm:gap-3 animate-slideUp delay-200">
                             {[
                                 "Spring Boot 3",
                                 "Microservices",
@@ -123,35 +112,36 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
+                                    className="flex items-center justify-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-md border backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#F89820" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#F89820" }} />
+                                    <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
                                 </div>
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
+                        {/* CTA Buttons. White on the Spring green #6DB33F -> #5A9A32 is
+                            2.6-3.4:1, so the button uses darker shades of the same green,
+                            #467F27 -> #3A6B1F (4.9-6.4:1). */}
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #6DB33F, #5A9A32)",
-                                    boxShadow: "0 4px 20px rgba(109, 179, 63, 0.25)",
+                                    background: "linear-gradient(135deg, #467F27, #3A6B1F)",
                                 }}
                             >
                                 Start Your Project
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                             </Link>
 
                             <Link
                                 href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border transition-all hover:bg-accent"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -163,20 +153,22 @@ export default function Hero() {
                         </div>
 
                         {/* Stats */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        {/* Stats: one row of three on phones; the columns take their
+                            content's width, so a long label may wrap to two lines at 320px. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-1.5 sm:flex sm:flex-row sm:items-center sm:justify-center lg:justify-start sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Enterprise Apps</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Proven</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Enterprise Apps</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Deep</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>Deep</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Uptime SLA</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-green-text)" }}>High</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Uptime SLA</p>
                             </div>
                         </div>
                     </div>
@@ -252,7 +244,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #F89820, #E88B1C)" }}
                                     >
-                                        <CheckCircle2 className="w-6 h-6 text-white" />
+                                        <ShieldCheck className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

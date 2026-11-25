@@ -8,6 +8,7 @@ import {
     TestTube2,
     Rocket,
     CheckCircle2,
+    Workflow,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -109,7 +110,7 @@ export default function Process() {
                             borderColor: "rgba(48, 105, 152, 0.3)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                        <Workflow className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>

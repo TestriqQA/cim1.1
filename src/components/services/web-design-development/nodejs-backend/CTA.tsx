@@ -1,4 +1,4 @@
-import { ArrowRight, Server } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -33,7 +33,7 @@ export default function CTA() {
                                 borderColor: "color-mix(in srgb, #339933 40%, transparent)",
                             }}
                         >
-                            <Server className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
+                            <MessagesSquare className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Free Consultation
                             </span>

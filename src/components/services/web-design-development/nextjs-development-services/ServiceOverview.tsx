@@ -1,20 +1,20 @@
-import { Zap, Shield, Globe, Code2, Layers, Rocket } from "lucide-react";
+import { Code2, Award, Server, FileCode, RefreshCw, Palette, Route } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
     const highlights = [
         {
-            icon: Zap,
+            icon: Server,
             title: "Next.js SSR Services",
             description: "Deliver content instantly to users and search engines alike with server-side rendering.",
         },
         {
-            icon: Shield,
+            icon: FileCode,
             title: "Static Site Generation",
             description: "Pre-render pages for unparalleled speed and security using Next.js SSG capabilities.",
         },
         {
-            icon: Globe,
+            icon: RefreshCw,
             title: "Incremental Static Regeneration",
             description: "Update static content in milliseconds without rebuilding the entire application via ISR.",
         },
@@ -24,12 +24,12 @@ export default function ServiceOverview() {
             description: <>Seamless serverless web application development with TypeScript and <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">Next.js API routes</Link>.</>,
         },
         {
-            icon: Layers,
+            icon: Palette,
             title: "Tailwind CSS & UI/UX",
             description: <>Beautiful, responsive interfaces that convert visitors into loyal customers with <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">modern design</Link>.</>,
         },
         {
-            icon: Rocket,
+            icon: Route,
             title: <Link href="/blog/future-web-development-nextjs" className="hover:text-[var(--accent-cyan-text)] transition-colors">App Router Expertise</Link>,
             description: "Leveraging the latest patterns for optimized data fetching and layout management.",
         },
@@ -61,7 +61,7 @@ export default function ServiceOverview() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <Award className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Technical Excellence
                         </span>

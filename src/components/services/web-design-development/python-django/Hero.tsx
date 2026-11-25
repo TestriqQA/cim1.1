@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Code2, ChevronRight, CheckCircle2, Zap } from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle2, Zap, BatteryFull } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,18 +33,11 @@ export default function Hero() {
                     from { opacity: 0; }
                     to { opacity: 1; }
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
                 }
                 .delay-100 { animation-delay: 0.1s; }
                 .delay-200 { animation-delay: 0.2s; }
@@ -253,7 +246,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #FFD43B, #F0C419)" }}
                                     >
-                                        <Code2 className="w-6 h-6 text-gray-800" />
+                                        <BatteryFull className="w-6 h-6 text-gray-800" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

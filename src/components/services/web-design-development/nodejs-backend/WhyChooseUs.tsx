@@ -1,10 +1,11 @@
 import {
     Award,
-    Zap,
-    Shield,
     Users,
     HeadphonesIcon,
     TrendingUp,
+    Trophy,
+    Gauge,
+    ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -17,13 +18,13 @@ export default function WhyChooseUs() {
                 "Your project is handled by experienced backend engineers building production systems.",
         },
         {
-            icon: Zap,
+            icon: Gauge,
             title: <Link href="/services/seo-services/technical-seo-services" className="hover:text-[#339933] transition-colors">Performance First</Link>,
             description:
                 "Every API we build is optimized for speed. We obsess over response times and throughput.",
         },
         {
-            icon: Shield,
+            icon: ShieldCheck,
             title: "Security Focused",
             description:
                 "Security isn't an afterthought. We implement best practices from day one.",
@@ -63,7 +64,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
+                        <Trophy className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Why Work With Us
                         </span>

@@ -117,21 +117,10 @@ export default function IndustriesAndUseCases() {
                     0%, 100% { transform: translateY(0px); }
                     50% { transform: translateY(-5px); }
                 }
-                @keyframes pulse-glow {
-                    0%, 100% { 
-                        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.2);
-                        transform: scale(1);
-                    }
-                    50% { 
-                        box-shadow: 0 0 20px 10px rgba(251, 146, 60, 0.1);
-                        transform: scale(1.02);
-                    }
-                }
                 
                 .animate-metric-count { animation: metric-count 0.8s ease-out forwards; }
                 .animate-ripple { animation: ripple 2s ease-out infinite; }
                 .animate-float-subtle { animation: float-subtle 3s ease-in-out infinite; }
-                .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
             `}</style>
 
             <section

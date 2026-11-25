@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
-    Megaphone,
-    Building2,
-    Briefcase,
     BookOpenCheck,
-    ShoppingCart,
-    PenLine,
-    ArrowRight,
+    Briefcase,
+    Building2,
     CheckCircle2,
+    Megaphone,
+    PenLine,
+    Puzzle,
+    ShoppingCart,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -37,14 +37,14 @@ export default function SolutionTypes() {
         {
             icon: Megaphone,
             title: "Marketing Websites",
-            description: <>High-performance marketing sites that rank well and convert visitors with <Link href="/services/seo-services/technical-seo-services" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Astro SEO audit</Link> and optimization services built-in.</>,
+            description: <>High-performance marketing sites that rank well and convert visitors with <Link href="/services/seo-services/technical-seo-services" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">Astro SEO audit</Link> and optimization services built-in.</>,
             features: [
                 "SaaS & B2B focus",
                 "SEO audit included",
                 "High conversion rate",
                 "Advanced analytics",
             ],
-            gradient: "from-[#7C3AED] to-[#A855F7]",
+            gradient: "from-[#FF5D01] to-[#FF8534]",
         },
         {
             icon: Building2,
@@ -68,7 +68,7 @@ export default function SolutionTypes() {
                 "Client testimonials",
                 "Creative focus",
             ],
-            gradient: "from-[#7C3AED] to-[#6D28D9]",
+            gradient: "from-[#FF5D01] to-[#E14F00]",
         },
         {
             icon: BookOpenCheck,
@@ -80,19 +80,19 @@ export default function SolutionTypes() {
                 "API references",
                 "Developer portals",
             ],
-            gradient: "from-[#A855F7] to-[#7C3AED]",
+            gradient: "from-[#FF8534] to-[#FF5D01]",
         },
         {
             icon: ShoppingCart,
             title: "E-commerce Catalogs",
-            description: <>Fast product showcases that drive purchases with <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">Astro headless CMS integration services</Link> for flexible management.</>,
+            description: <>Fast product showcases that drive purchases with <Link href="/services/web-design-development/headless-traditional-cms" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">Astro headless CMS integration services</Link> for flexible management.</>,
             features: [
                 "Headless CMS sync",
                 "Product filtering",
                 "Cart integration",
                 "B2B catalogs",
             ],
-            gradient: "from-[#7C3AED] to-[#FF5D01]",
+            gradient: "from-[#FF5D01] to-[#E14F00]",
         },
         {
             icon: PenLine,
@@ -104,37 +104,33 @@ export default function SolutionTypes() {
                 "RSS & Newsletters",
                 "SEO excellence",
             ],
-            gradient: "from-[#FF5D01] to-[#7C3AED]",
+            gradient: "from-[#FF5D01] to-[#E14F00]",
         },
     ];
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-16 md:py-20 bg-background relative overflow-hidden">
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     {/* Badge */}
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(124, 58, 237, 0.05)",
-                            borderColor: "rgba(124, 58, 237, 0.2)",
+                            backgroundColor: "rgba(255, 93, 1, 0.05)",
+                            borderColor: "rgba(255, 93, 1, 0.2)",
                         }}
                     >
-                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
-                        <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
+                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             Solutions We Deliver
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    
+
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span style={{ color: "var(--foreground)" }}>Solutions We</span>{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-orange-text)" }}>
                             Deliver
                         </span>
                     </h2>
@@ -143,32 +139,32 @@ export default function SolutionTypes() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Hovering a card opens the tick lists of its whole row (so the row
+                    stays even) but highlights only that card. The row stays open while
+                    the mouse moves between its cards; it closes when the mouse leaves
+                    the grid. The lists open to their real height (grid rows 0fr to
+                    1fr), and everything shares one 400ms ease. On touch, tap toggles. */}
+                <div
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    onMouseLeave={() => {
+                        if (window.matchMedia("(hover: hover)").matches) {
+                            setActiveSolution(null);
+                        }
+                    }}
+                >
                     {solutions.map((solution, idx) => {
                         const Icon = solution.icon;
-                        const currentRow = activeSolution !== null ? Math.floor(activeSolution / columns) : -1;
-                        const cardRow = Math.floor(idx / columns);
-                        const isActive = currentRow === cardRow;
+                        const isOpen = activeSolution !== null && Math.floor(activeSolution / columns) === Math.floor(idx / columns);
+                        const isHighlighted = activeSolution === idx;
 
                         return (
                             <div
                                 key={idx}
-                                className={`
-                                    relative p-8 rounded-3xl border transition-all duration-300 cursor-pointer overflow-hidden group
-                                    ${isActive ? "ring-2 ring-[#7C3AED] ring-offset-2" : "hover:border-[#7C3AED]/50"}
-                                `}
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
+                                className={`relative p-6 md:p-8 rounded-3xl border overflow-hidden transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "border-[#FF5D01]/50" : "border-[var(--border-color)]"}`}
+                                style={{ backgroundColor: "var(--card-bg)" }}
                                 onMouseEnter={() => {
                                     if (window.matchMedia("(hover: hover)").matches) {
                                         setActiveSolution(idx);
-                                    }
-                                }}
-                                onMouseLeave={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setActiveSolution(null);
                                     }
                                 }}
                                 onClick={() => {
@@ -177,63 +173,48 @@ export default function SolutionTypes() {
                                     }
                                 }}
                             >
-                                {/* Gradient Background on Hover */}
+                                {/* Light tint on the highlighted card */}
                                 <div
-                                    className={`
-                                        absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none
-                                        ${isActive ? "opacity-5" : ""}
-                                    `}
-                                    style={{
-                                        background: `linear-gradient(135deg, #7C3AED, #A855F7)`,
-                                    }}
+                                    className={`absolute inset-0 pointer-events-none transition-opacity duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "opacity-5" : "opacity-0"}`}
+                                    style={{ background: "linear-gradient(135deg, #FF5D01, #FF8534)" }}
                                 />
 
-                                {/* Icon */}
+                                {/* Icon: the accent fill fades in rather than switching */}
                                 <div
-                                    className={`
-                                        w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300
-                                        ${isActive ? "scale-110 rotate-3" : ""}
-                                    `}
-                                    style={{
-                                        background: isActive
-                                            ? `linear-gradient(135deg, #7C3AED, #A855F7)`
-                                            : "rgba(124, 58, 237, 0.1)",
-                                    }}
+                                    className={`relative w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "scale-110" : "scale-100"}`}
+                                    style={{ background: "rgba(255, 93, 1, 0.1)" }}
                                 >
+                                    <div
+                                        className={`absolute inset-0 rounded-xl transition-opacity duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "opacity-100" : "opacity-0"}`}
+                                        style={{ background: "linear-gradient(135deg, #C94600, #B33E00)" }}
+                                    />
                                     <Icon
-                                        className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-[var(--accent-violet-text)]"
-                                            }`}
+                                        aria-hidden="true"
+                                        className={`relative w-6 h-6 transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none ${isHighlighted ? "text-white" : "text-[var(--accent-orange-text)]"}`}
                                     />
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{solution.title}</h3>
-                                <p className="text-sm mb-6 line-clamp-3" style={{ color: "var(--secondary-text)" }}>
+                                <h3 className="relative text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>{solution.title}</h3>
+                                <p className="relative text-sm" style={{ color: "var(--secondary-text)" }}>
                                     {solution.description}
                                 </p>
 
-                                {/* Features List */}
+                                {/* Features list: opens to its real height */}
                                 <div
-                                    className={`
-                                        space-y-3 transition-all duration-300 overflow-hidden
-                                        ${isActive ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-                                    `}
+                                    className={`relative grid transition-[grid-template-rows,opacity] duration-[400ms] ease-in-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                                 >
-                                    {solution.features.map((feature, fIdx) => (
-                                        <div key={fIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            <CheckCircle2 className="w-4 h-4 text-[var(--accent-violet-text)]" />
-                                            <span>{feature}</span>
+                                    <div className="min-h-0 overflow-hidden">
+                                        {/* The gap above the list lives inside the part that
+                                            collapses, so a closed card has no empty space. */}
+                                        <div className="pt-6 space-y-3">
+                                            {solution.features.map((feature, fIdx) => (
+                                                <div key={fIdx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                    <CheckCircle2 aria-hidden="true" className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--accent-orange-text)]" />
+                                                    <span>{feature}</span>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-
-                                {/* Arrow */}
-                                <div
-                                    className={`
-                                        absolute bottom-8 right-8 transition-all duration-300 transform
-                                        ${isActive ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}
-                                    `}
-                                >
-                                    <ArrowRight className="w-5 h-5 text-[var(--accent-violet-text)]" />
+                                    </div>
                                 </div>
                             </div>
                         );

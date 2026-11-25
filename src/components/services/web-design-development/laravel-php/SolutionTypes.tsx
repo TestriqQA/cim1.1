@@ -7,8 +7,9 @@ import {
     LayoutDashboard,
     ShoppingCart,
     Users,
-    Zap,
     CheckCircle2,
+    Puzzle,
+    Server,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -97,7 +98,7 @@ export default function SolutionTypes() {
             gradient: "from-[#FF2D20] to-[#E0261A]",
         },
         {
-            icon: Zap,
+            icon: Server,
             title: "API Backends",
             description: <>Robust REST and GraphQL APIs to power <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">mobile apps</Link> and frontend frameworks.</>,
             features: [
@@ -122,7 +123,7 @@ export default function SolutionTypes() {
                             borderColor: "rgba(255, 45, 32, 0.2)",
                         }}
                     >
-                        <Building2 className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <Puzzle className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                             Solution Types
                         </span>

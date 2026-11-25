@@ -9,6 +9,7 @@ import {
     Layers,
     Brain,
     CheckCircle2,
+    Puzzle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -119,7 +120,7 @@ export default function SolutionTypes() {
                             borderColor: "rgba(48, 105, 152, 0.2)",
                         }}
                     >
-                        <Building2 className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Solution Types
                         </span>

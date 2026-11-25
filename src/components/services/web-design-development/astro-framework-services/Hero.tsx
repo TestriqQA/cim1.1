@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowRight, Zap, ChevronRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Zap, ChevronRight, Rocket, Component } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -18,7 +18,7 @@ export default function Hero() {
                 <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
-                        backgroundImage: `linear-gradient(#7C3AED 1px, transparent 1px), linear-gradient(90deg, #7C3AED 1px, transparent 1px)`,
+                        backgroundImage: `linear-gradient(#FF5D01 1px, transparent 1px), linear-gradient(90deg, #FF5D01 1px, transparent 1px)`,
                         backgroundSize: "40px 40px",
                     }}
                 />
@@ -33,18 +33,11 @@ export default function Hero() {
                     from { opacity: 0; }
                     to { opacity: 1; }
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
                 }
                 .delay-100 { animation-delay: 0.1s; }
                 .delay-200 { animation-delay: 0.2s; }
@@ -65,7 +58,7 @@ export default function Hero() {
                             <ChevronRight className="w-4 h-4" />
                             <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
                             <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "var(--accent-violet-text)" }}>Astro Framework</span>
+                            <span style={{ color: "var(--accent-orange-text)" }}>Astro Framework</span>
                         </nav>
 
                         {/* Badge */}
@@ -76,8 +69,8 @@ export default function Hero() {
                                 borderColor: "rgba(255, 93, 1, 0.3)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
+                            <Rocket aria-hidden="true" className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                            <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                                 The Web Framework for Content
                             </span>
                         </div>
@@ -89,13 +82,7 @@ export default function Hero() {
                         >
                             Astro Development Agency for{" "}
                             <span
-                                className="relative inline-block"
-                                style={{
-                                    background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
+                                className="relative inline-block" style={{ color: "var(--accent-orange-text)" }}>
                                 Lightning-Fast Sites
                                 {/* Underline decoration */}
                                 <svg
@@ -110,11 +97,11 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Build blazing-fast content sites, marketing pages, and <Link href="/services/web-design-development" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">modern web applications</Link> with our expert Astro framework services. As a leading Astro development agency, we harness Astro&apos;s revolutionary Islands Architecture and zero JavaScript by default to deliver custom Astro website development that achieves 100% <Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-violet-text)] hover:underline underline underline-offset-2">PageSpeed scores</Link> and sub-1-second load times.
+                            Build blazing-fast content sites, marketing pages, and <Link href="/services/web-design-development" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">modern web applications</Link> with our expert Astro framework services. As a leading Astro development agency, we harness Astro&apos;s revolutionary Islands Architecture and zero JavaScript by default to deliver custom Astro website development that achieves 100% <Link href="/blog/web-performance-optimization-speed" className="text-[var(--accent-orange-text)] hover:underline underline underline-offset-2">PageSpeed scores</Link> and sub-1-second load times.
                         </p>
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
+                        {/* Feature Pills: a 2x2 grid on phones, dot beside the label */}
+                        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start sm:gap-3 animate-slideUp delay-200">
                             {[
                                 "✓ Zero JS by Default",
                                 "✓ Islands Architecture",
@@ -123,14 +110,14 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
+                                    className="flex items-center justify-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-md border backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FF5D01" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF5D01" }} />
+                                    <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -139,19 +126,18 @@ export default function Hero() {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                                    boxShadow: "0 4px 20px rgba(124, 58, 237, 0.25)",
+                                    background: "linear-gradient(135deg, #C94600, #B33E00)",
                                 }}
                             >
                                 Start Your Project
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                             </Link>
 
                             <Link
                                 href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border transition-all hover:bg-accent"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -162,21 +148,22 @@ export default function Hero() {
                             </Link>
                         </div>
 
-                        {/* Stats */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        {/* Stats: one row of three on phones; the columns take their
+                            content's width, so a long label may wrap at 320px. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-1.5 sm:flex sm:flex-row sm:items-center sm:justify-center lg:justify-start sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Sites Delivered</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-orange-text)" }}>Proven</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Sites Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>&lt;1s</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Average Load Time</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-orange-text)" }}>&lt;1s</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Average Load Time</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-violet-text)" }}>100</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>PageSpeed Score</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--accent-orange-text)" }}>100</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>PageSpeed Score</p>
                             </div>
                         </div>
                     </div>
@@ -188,8 +175,8 @@ export default function Hero() {
                             <div
                                 className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden border flex items-center justify-center"
                                 style={{
-                                    borderColor: "rgba(124, 58, 237, 0.2)",
-                                    background: "linear-gradient(135deg, rgba(124, 58, 237, 0.05), var(--card-bg))",
+                                    borderColor: "rgba(255, 93, 1, 0.2)",
+                                    background: "linear-gradient(135deg, rgba(255, 93, 1, 0.05), var(--card-bg))",
                                 }}
                             >
                                 {/* Astro Logo - Center */}
@@ -205,7 +192,7 @@ export default function Hero() {
                                 {/* Decorative circles */}
                                 <div
                                     className="absolute w-72 h-72 rounded-full border opacity-20"
-                                    style={{ borderColor: "#7C3AED" }}
+                                    style={{ borderColor: "#FF5D01" }}
                                 />
                                 <div
                                     className="absolute w-96 h-96 rounded-full border opacity-10"
@@ -218,13 +205,13 @@ export default function Hero() {
                                 className="absolute -bottom-4 -left-4 p-4 rounded-2xl border shadow-xl"
                                 style={{
                                     backgroundColor: "var(--card-bg)",
-                                    borderColor: "rgba(124, 58, 237, 0.2)",
+                                    borderColor: "rgba(255, 93, 1, 0.2)",
                                 }}
                             >
                                 <div className="flex items-center gap-3">
                                     <div
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #7C3AED, #A855F7)" }}
+                                        style={{ background: "linear-gradient(135deg, #FF5D01, #FF8534)" }}
                                     >
                                         <Zap className="w-6 h-6 text-white" />
                                     </div>
@@ -250,9 +237,9 @@ export default function Hero() {
                                 <div className="flex items-center gap-3">
                                     <div
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #FF5D01, #FF8534)" }}
+                                        style={{ background: "linear-gradient(135deg, #FF5D01, #E14F00)" }}
                                     >
-                                        <CheckCircle2 className="w-6 h-6 text-white" />
+                                        <Component className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -274,7 +261,7 @@ export default function Hero() {
                                 borderColor: "var(--border-color)",
                             }}
                         >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-violet-text)" }}>
+                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-orange-text)" }}>
                                 Works With Your Favorite Frameworks
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -283,8 +270,8 @@ export default function Hero() {
                                         key={idx}
                                         className="px-3 py-1.5 rounded-full text-xs font-medium border"
                                         style={{
-                                            backgroundColor: "rgba(124, 58, 237, 0.05)",
-                                            borderColor: "rgba(124, 58, 237, 0.15)",
+                                            backgroundColor: "rgba(255, 93, 1, 0.05)",
+                                            borderColor: "rgba(255, 93, 1, 0.15)",
                                             color: "var(--foreground)",
                                         }}
                                     >

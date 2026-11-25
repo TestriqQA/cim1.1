@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { Code2, Server, Zap, Database, Cloud } from "lucide-react";
+import { Code2, Server, Zap, Database, Cloud, Layers } from "lucide-react";
 import Image from "next/image";
 
 export default function TechStack() {
@@ -129,7 +129,7 @@ export default function TechStack() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                        <Layers className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Tech Stack
                         </span>

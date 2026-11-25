@@ -40,10 +40,6 @@ export default function Hero() {
                     0%, 100% { transform: translateY(0); }
                     50% { transform: translateY(-10px); }
                 }
-                @keyframes pulse-soft {
-                    0%, 100% { transform: scale(1); opacity: 0.5; }
-                    50% { transform: scale(1.05); opacity: 0.8; }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }

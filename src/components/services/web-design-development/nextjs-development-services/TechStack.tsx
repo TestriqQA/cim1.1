@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { Layers, Palette, Database, TestTube, Cloud, Code2 } from "lucide-react";
+import { Layers, Palette, Database, TestTube, Cloud, Code2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -92,7 +92,7 @@ export default function TechStack() {
         {
             id: "auth",
             title: "Auth & Security",
-            icon: Layers,
+            icon: ShieldCheck,
             description: "Authentication and security features",
             technologies: [
                 { name: "NextAuth.js", description: "Authentication for Next.js", logo: "/images/techstack_logos/nextauthjs-logo.png" },

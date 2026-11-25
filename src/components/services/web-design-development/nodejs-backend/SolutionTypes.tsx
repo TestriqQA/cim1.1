@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 import {
-    Globe,
-    Layers,
     Server,
     Zap,
     Smartphone,
-    Link2,
-    Sparkles,
     Check,
+    Puzzle,
+    Network,
+    Boxes,
+    Plug,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ export default function SolutionTypes() {
 
     const solutions = [
         {
-            icon: Globe,
+            icon: Server,
             title: <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[#339933] transition-colors">REST API Development</Link>,
             description:
                 "Standard RESTful APIs with clean endpoints, proper HTTP methods, and comprehensive documentation.",
@@ -44,7 +44,7 @@ export default function SolutionTypes() {
             type: "core",
         },
         {
-            icon: Layers,
+            icon: Network,
             title: "GraphQL APIs",
             description:
                 "Flexible, query-based APIs that let clients request exactly the data they need.",
@@ -58,7 +58,7 @@ export default function SolutionTypes() {
             type: "modern",
         },
         {
-            icon: Server,
+            icon: Boxes,
             title: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#339933] transition-colors">Microservices</Link>,
             description:
                 "Distributed systems with independent services that scale and deploy separately.",
@@ -100,7 +100,7 @@ export default function SolutionTypes() {
             type: "mobile",
         },
         {
-            icon: Link2,
+            icon: Plug,
             title: "Enterprise Integrations",
             description:
                 "Connect your systems with third-party APIs, ERPs, CRMs, and payment gateways.",
@@ -130,7 +130,7 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <Sparkles className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
+                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Backend Solutions
                         </span>

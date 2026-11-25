@@ -1,11 +1,11 @@
 import type { CSSProperties } from "react";
 import {
     Trophy,
-    LayoutGrid,
     Shield,
     Server,
     Brain,
     HeartHandshake,
+    Network,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             iconColor: "var(--color-amber-500, #f59e0b)",
         },
         {
-            icon: LayoutGrid,
+            icon: Network,
             title: "Scalable Architecture",
             description: <>We design systems that grow with your business, from <Link href="/services/web-design-development/saas-development-services" className="text-[var(--brand-blue-text)] underline underline-offset-2 hover:underline">startup to enterprise scale</Link>.</>,
             gradient: "from-blue-600 via-blue-500 to-cyan-500",

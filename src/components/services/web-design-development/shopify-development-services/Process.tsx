@@ -3,12 +3,13 @@
 import { useState } from "react";
 import {
     Search,
-    Settings,
     Palette,
     Code2,
     TestTube,
     Rocket,
     CheckCircle,
+    Workflow,
+    Plug,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -61,7 +62,7 @@ export default function Process() {
         {
             anchor: "step-integration",
             number: "04",
-            icon: Settings,
+            icon: Plug,
             title: "Third-Party Integrations",
             description: "Connecting your store to essential tools: POS for retail, ERPs for logistics, and marketing automation.",
             details: [
@@ -117,7 +118,7 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Settings className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             How We Build Your Store
                         </span>

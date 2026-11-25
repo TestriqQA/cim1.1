@@ -5,12 +5,12 @@ import type { CSSProperties } from "react";
 import {
     ShoppingBag,
     Store,
-    Building2,
-    Layers,
-    Globe,
     Users,
-    Sparkles,
     Check,
+    Puzzle,
+    Code2,
+    ArrowRightLeft,
+    Unplug,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -44,7 +44,7 @@ export default function SolutionTypes() {
             type: "platform",
         },
         {
-            icon: Store,
+            icon: Code2,
             title: "Custom Development",
             description: "Tailored functionality for unique business needs.",
             features: [
@@ -57,7 +57,7 @@ export default function SolutionTypes() {
             type: "platform",
         },
         {
-            icon: Building2,
+            icon: ArrowRightLeft,
             title: "Migration Solutions",
             description: "Safe and secure platform migration services.",
             features: [
@@ -70,7 +70,7 @@ export default function SolutionTypes() {
             type: "platform",
         },
         {
-            icon: Layers,
+            icon: Store,
             title: "Magento / Adobe Commerce",
             description:
                 "Complex enterprise e-commerce for businesses with advanced requirements and high volume.",
@@ -84,7 +84,7 @@ export default function SolutionTypes() {
             type: "enterprise",
         },
         {
-            icon: Globe,
+            icon: Unplug,
             title: "Headless Commerce",
             description: "Decoupled front-end for maximum flexibility.",
             features: [
@@ -127,7 +127,7 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
+                        <Puzzle className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             E-commerce Solutions
                         </span>

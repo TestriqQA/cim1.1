@@ -1,17 +1,26 @@
 import {
-    Server, Database, Shield, Zap, Cloud, Code2,
-    ChevronRight, ArrowRight, CheckCircle2, Sparkles, Terminal
+    Server,
+    Zap,
+    Cloud,
+    ChevronRight,
+    ArrowRight,
+    CheckCircle2,
+    Terminal,
+    Network,
+    Boxes,
+    KeyRound,
+    Gauge,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
     const features = [
-        { icon: Code2, text: "REST APIs" },
-        { icon: Database, text: "GraphQL" },
-        { icon: Server, text: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#339933] transition-colors">Microservices</Link> },
+        { icon: Server, text: "REST APIs" },
+        { icon: Network, text: "GraphQL" },
+        { icon: Boxes, text: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#339933] transition-colors">Microservices</Link> },
         { icon: Zap, text: "Real-time" },
-        { icon: Shield, text: "Authentication" },
+        { icon: KeyRound, text: "Authentication" },
         { icon: Cloud, text: "Cloud Native" },
     ];
 
@@ -210,7 +219,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #68a063, #339933)" }}
                                     >
-                                        <Sparkles className="w-6 h-6 text-white" />
+                                        <Gauge className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Code2, Database, Server, Zap, Shield, Cloud } from "lucide-react";
+import { Code2, Database, Server, Zap, Cloud, Boxes, ShieldCheck } from "lucide-react";
 
 export default function ServiceOverview() {
     const highlights = [
@@ -9,7 +9,7 @@ export default function ServiceOverview() {
             description: "RESTful and GraphQL APIs designed for performance, security, and seamless integration.",
         },
         {
-            icon: Server,
+            icon: Boxes,
             title: <Link href="/services/web-design-development/saas-development-services" className="hover:text-[#339933] transition-colors">Microservices Architecture</Link>,
             description: "Scalable, independent services that can be deployed, updated, and scaled individually.",
         },
@@ -24,7 +24,7 @@ export default function ServiceOverview() {
             description: "WebSockets, Server-Sent Events, and pub/sub patterns for live data and notifications.",
         },
         {
-            icon: Shield,
+            icon: ShieldCheck,
             title: "Authentication & Security",
             description: "OAuth 2.0, JWT, encryption, and security best practices to protect your data.",
         },

@@ -370,19 +370,8 @@ export default function UseCases() {
             </div>
 
             <style jsx>{`
-                @keyframes shine {
-                    to { background-position: 200% center; }
-                }
                 
-                @keyframes pattern-move {
-                    0% { background-position: 0 0; }
-                    100% { background-position: 40px 40px; }
-                }
                 
-                @keyframes grid-move {
-                    0% { transform: translate(0, 0); }
-                    100% { transform: translate(30px, 30px); }
-                }
             `}</style>
         </section>
     );

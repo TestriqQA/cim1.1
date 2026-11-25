@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Server } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -21,7 +21,7 @@ export default function CTA() {
                                 borderColor: "rgba(255, 45, 32, 0.2)",
                             }}
                         >
-                            <Server className="w-4 h-4 text-[var(--accent-red-text)]" />
+                            <MessagesSquare className="w-4 h-4 text-[var(--accent-red-text)]" />
                             <span className="text-sm font-semibold text-[var(--accent-red-text)]">
                                 Free Consultation
                             </span>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Code2 } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 
 export default function CTA() {
     return (
@@ -19,7 +19,7 @@ export default function CTA() {
                             border: "1px solid rgba(255, 212, 59, 0.3)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-amber-text)" }} />
+                        <MessagesSquare className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Free Django Consultation
                         </span>

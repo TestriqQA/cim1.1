@@ -1,11 +1,11 @@
 import {
     Code2,
-    Database,
-    Globe,
     LayoutGrid,
     Lock,
-    RefreshCw,
-    Rocket,
+    Cloud,
+    Server,
+    ArrowRightLeft,
+    LayoutDashboard,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -17,22 +17,22 @@ export default function ServiceOverview() {
             description: "Tailor-made web applications built from scratch to meet your unique business requirements with clean, maintainable code.",
         },
         {
-            icon: Rocket,
+            icon: Cloud,
             title: "SaaS Application Development",
             description: <>Scalable multi-tenant <Link href="/services/web-design-development/saas-development-services" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">SaaS platforms</Link> with subscription management, role-based access, and robust billing systems.</>,
         },
         {
-            icon: RefreshCw,
+            icon: Server,
             title: "API Development & Integration",
             description: <>RESTful and GraphQL API development for <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline text-[var(--accent-red-text)]">mobile apps</Link> and third-party integrations (Stripe, Salesforce, etc.).</>,
         },
         {
-            icon: Database,
+            icon: ArrowRightLeft,
             title: "Legacy to Laravel Migration",
             description: "Modernize your aging PHP applications by migrating them to the latest Laravel version for better performance and security.",
         },
         {
-            icon: Globe,
+            icon: LayoutDashboard,
             title: "Enterprise Web Portals",
             description: "Complex B2B and B2C web portals with advanced workflows, data visualization, and reporting capabilities.",
         },

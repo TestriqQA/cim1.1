@@ -1,8 +1,17 @@
 "use client";
 
 import {
-    ShoppingCart, CreditCard, Package, Globe, BarChart3, Smartphone,
-    ChevronRight, ArrowRight, CheckCircle2, Sparkles, Store
+    ShoppingCart,
+    CreditCard,
+    Package,
+    Globe,
+    BarChart3,
+    Smartphone,
+    ChevronRight,
+    ArrowRight,
+    CheckCircle2,
+    Store,
+    Boxes,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -223,7 +232,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #5c8a1e, #96bf48)" }}
                                     >
-                                        <Sparkles className="w-6 h-6 text-white" />
+                                        <Boxes className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
