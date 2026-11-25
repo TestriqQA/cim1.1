@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowRight, Code2, ChevronRight, CheckCircle2, Zap } from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle2, Zap, BatteryFull } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
+            className="relative pt-14 pb-16 transition-colors duration-300 overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
             {/* Background with animated gradient */}
@@ -33,18 +33,11 @@ export default function Hero() {
                     from { opacity: 0; }
                     to { opacity: 1; }
                 }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
                 }
                 .delay-100 { animation-delay: 0.1s; }
                 .delay-200 { animation-delay: 0.2s; }
@@ -90,11 +83,7 @@ export default function Hero() {
                             Scalable Solutions with{" "}
                             <span
                                 className="relative inline-block"
-                                style={{
-                                    background: "linear-gradient(135deg, #306998, #4B8BBE)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
+                                style={{ color: "var(--brand-blue-text)" }}
                             >
                                 Python & Django
                                 {/* Underline decoration */}
@@ -114,7 +103,8 @@ export default function Hero() {
                         </p>
 
                         {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
+                        {/* Feature Pills: a 2x2 grid on phones, dot beside the label */}
+                        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start sm:gap-3 animate-slideUp delay-200">
                             {[
                                 "Django ORM",
                                 "REST APIs",
@@ -123,35 +113,35 @@ export default function Hero() {
                             ].map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
+                                    className="flex items-center justify-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-md border backdrop-blur-sm"
                                     style={{
                                         backgroundColor: "var(--card-bg)",
                                         borderColor: "var(--border-color)",
                                     }}
                                 >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FFD43B" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FFD43B" }} />
+                                    <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
                                 </div>
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
+                        {/* CTA Buttons. White on the old #4B8BBE end was 3.7:1, so the
+                            gradient ends in #1E4D7A (5.8-8.8:1), a shade from this page. */}
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-lg focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #306998, #4B8BBE)",
-                                    boxShadow: "0 4px 20px rgba(48, 105, 152, 0.25)",
+                                    background: "linear-gradient(135deg, #306998, #1E4D7A)",
                                 }}
                             >
                                 Start Your Project
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                             </Link>
 
                             <Link
                                 href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
+                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold border transition-all hover:bg-accent"
                                 style={{
                                     borderColor: "var(--border-color)",
                                     color: "var(--foreground)",
@@ -163,20 +153,24 @@ export default function Hero() {
                         </div>
 
                         {/* Stats */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
+                        {/* Stats: one row of three on phones. The columns take their
+                            content's width ("Enterprise" is wider than a third of the
+                            column at 320px); a long label may wrap to two lines there.
+                            gap-1.5 (not 2) leaves "Apps Delivered" room for one line. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-1.5 sm:flex sm:flex-row sm:items-center sm:justify-center lg:justify-start sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Apps Delivered</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Proven</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Apps Delivered</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Deep</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Deep</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Platform Expertise</p>
                             </div>
                             <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
                             <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Enterprise</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Grade Solutions</p>
+                                <p className="text-xl sm:text-3xl font-bold" style={{ color: "var(--brand-blue-text)" }}>Enterprise</p>
+                                <p className="text-xs sm:text-sm" style={{ color: "var(--secondary-text)" }}>Grade Solutions</p>
                             </div>
                         </div>
                     </div>
@@ -252,7 +246,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #FFD43B, #F0C419)" }}
                                     >
-                                        <Code2 className="w-6 h-6 text-gray-800" />
+                                        <BatteryFull className="w-6 h-6 text-gray-800" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

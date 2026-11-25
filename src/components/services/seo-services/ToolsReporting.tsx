@@ -245,28 +245,14 @@ export default function ToolsReporting() {
                     }
                 }
 
-                @keyframes drift {
-                    0%, 100% { transform: translate(0, 0) scale(1); }
-                    50% { transform: translate(50px, -50px) scale(1.1); }
-                }
 
-                @keyframes drift-reverse {
-                    0%, 100% { transform: translate(0, 0) scale(1); }
-                    50% { transform: translate(-50px, 50px) scale(1.1); }
-                }
 
                 @keyframes pulse-slow {
                     0%, 100% { opacity: 0.3; transform: scale(1); }
                     50% { opacity: 0.5; transform: scale(1.05); }
                 }
 
-                .animate-drift {
-                    animation: drift 20s ease-in-out infinite;
-                }
 
-                .animate-drift-reverse {
-                    animation: drift-reverse 25s ease-in-out infinite;
-                }
 
                 .animate-pulse-slow {
                     animation: pulse-slow 4s ease-in-out infinite;

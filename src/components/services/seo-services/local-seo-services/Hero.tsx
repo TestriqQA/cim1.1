@@ -40,11 +40,6 @@ export default function Hero() {
                     0%, 100% { transform: translateY(0); }
                     50% { transform: translateY(-10px); }
                 }
-                @keyframes pulse-ring {
-                    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
-                    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(245, 158, 11, 0); }
-                    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }

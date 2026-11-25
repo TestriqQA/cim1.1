@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Code2, Database, Layout, Server, Shield, Layers, ChevronRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Code2, Database, Layout, Shield, Layers, ChevronRight, Building2, ShieldCheck, Gauge } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -76,7 +76,7 @@ export default function Hero() {
                                 borderColor: "rgba(255, 45, 32, 0.2)",
                             }}
                         >
-                            <Server className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                            <Building2 className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                                 Enterprise PHP Solutions
                             </span>
@@ -245,7 +245,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #FF2D20, #F05340)" }}
                                     >
-                                        <CheckCircle2 className="w-6 h-6 text-white" />
+                                        <ShieldCheck className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -271,7 +271,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #F05340, #FF2D20)" }}
                                     >
-                                        <Sparkles className="w-6 h-6 text-white" />
+                                        <Gauge className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

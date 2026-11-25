@@ -41,14 +41,6 @@ export default function WhyChooseUs() {
         <>
             <style jsx>{`
 
-                @keyframes border-glow {
-                    0%, 100% { 
-                        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
-                    }
-                    50% { 
-                        box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.3);
-                    }
-                }
                 @keyframes ripple-expand {
                     0% {
                         transform: scale(0.8);

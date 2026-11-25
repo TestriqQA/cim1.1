@@ -2,24 +2,25 @@ import type { CSSProperties } from "react";
 import {
     Trophy,
     Sparkles,
-    TrendingUp,
-    Store,
     ShieldCheck,
     Globe,
+    BadgeCheck,
+    Gauge,
+    Tag,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
     const reasons = [
         {
-            icon: Trophy,
+            icon: BadgeCheck,
             title: "Verified Expertise",
             description: <>a proven record of global delivery, including retail sites seeing <Link href="/services/seo-services" className="text-[var(--accent-amber-text)] underline underline-offset-2 hover:underline">sustained traffic growth</Link>.</>,
             gradient: "from-amber-500 via-yellow-500 to-orange-500",
             iconColor: "var(--color-amber-500, #f59e0b)",
         },
         {
-            icon: TrendingUp,
+            icon: Gauge,
             title: "Performance First",
             description: "Beating 2025 Google Core update signals with 90+ PageSpeed scores and mobile-first engineering.",
             gradient: "from-green-500 via-emerald-500 to-teal-500",
@@ -33,7 +34,7 @@ export default function WhyChooseUs() {
             iconColor: "var(--color-red-500, #ef4444)",
         },
         {
-            icon: Store,
+            icon: Tag,
             title: "White Label Ready",
             description: "Reliable white label WordPress development for agencies at a global scale.",
             gradient: "from-blue-500 via-cyan-500 to-sky-500",

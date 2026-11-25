@@ -155,44 +155,6 @@ export default function WhyChooseUs() {
             </div>
 
             <style jsx>{`
-                @keyframes pulse-ring {
-                    0%, 100% {
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 0.2;
-                    }
-                    50% {
-                        transform: translate(-50%, -50%) scale(1.1);
-                        opacity: 0.1;
-                    }
-                }
-                @keyframes float-medical {
-                    0%, 100% {
-                        transform: translateY(0) rotate(0deg);
-                    }
-                    33% {
-                        transform: translateY(-20px) rotate(5deg);
-                    }
-                    66% {
-                        transform: translateY(-10px) rotate(-5deg);
-                    }
-                }
-                @keyframes heartbeat {
-                    0%, 100% {
-                        transform: scale(1);
-                    }
-                    10% {
-                        transform: scale(1.1);
-                    }
-                    20% {
-                        transform: scale(1);
-                    }
-                    30% {
-                        transform: scale(1.15);
-                    }
-                    40% {
-                        transform: scale(1);
-                    }
-                }
             `}</style>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
@@ -485,40 +447,6 @@ export default function WhyChooseUs() {
             </div>
 
             <style jsx>{`
-                @keyframes pulse-border {
-                    0%, 100% {
-                        transform: scale(1);
-                        opacity: 0.5;
-                    }
-                    50% {
-                        transform: scale(1.05);
-                        opacity: 0.8;
-                    }
-                }
-                @keyframes shine {
-                    0% {
-                        transform: translateX(-100%) translateY(-100%);
-                    }
-                    100% {
-                        transform: translateX(100%) translateY(100%);
-                    }
-                }
-                @keyframes gradient-shift {
-                    0%, 100% {
-                        background-position: 0% 50%;
-                    }
-                    50% {
-                        background-position: 100% 50%;
-                    }
-                }
-                @keyframes ecg-line {
-                    0% {
-                        transform: translateX(-100%);
-                    }
-                    100% {
-                        transform: translateX(100%);
-                    }
-                }
             `}</style>
         </section>
     );

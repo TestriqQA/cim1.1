@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Globe, Settings, Shield, Zap, ChevronRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Globe, Settings, Shield, Zap, ChevronRight, PieChart, SlidersHorizontal } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,25 +33,11 @@ export default function Hero() {
                     from { opacity: 0; }
                     to { opacity: 1; }
                 }
-                @keyframes scaleIn {
-                    from { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-                    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                }
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
                 .animate-slideUp {
                     animation: slideUp 0.6s ease-out forwards;
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-scaleIn {
-                    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
                 }
                 .delay-100 { animation-delay: 0.1s; }
                 .delay-200 { animation-delay: 0.2s; }
@@ -221,7 +207,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #0073AA, #0096D6)" }}
                                     >
-                                        <CheckCircle2 className="w-6 h-6 text-white" />
+                                        <PieChart className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -247,7 +233,7 @@ export default function Hero() {
                                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{ background: "linear-gradient(135deg, #0096D6, #0073AA)" }}
                                     >
-                                        <Sparkles className="w-6 h-6 text-white" />
+                                        <SlidersHorizontal className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
                                     <div>
                                         <p className="font-semibold" style={{ color: "var(--foreground)" }}>

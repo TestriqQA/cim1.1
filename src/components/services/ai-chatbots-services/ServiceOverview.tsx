@@ -64,19 +64,6 @@ export default function ServiceOverview() {
                     50% { background-position: 100% 50%; }
                     100% { background-position: 0% 50%; }
                 }
-                @keyframes particle-orbit {
-                    0% { 
-                        transform: rotate(0deg) translateX(30px) rotate(0deg);
-                        opacity: 0.3;
-                    }
-                    50% {
-                        opacity: 1;
-                    }
-                    100% { 
-                        transform: rotate(360deg) translateX(30px) rotate(-360deg);
-                        opacity: 0.3;
-                    }
-                }
                 @keyframes stat-count {
                     0% { 
                         transform: scale(0.5) rotate(-5deg);
@@ -90,31 +77,9 @@ export default function ServiceOverview() {
                         opacity: 1;
                     }
                 }
-                @keyframes border-dance {
-                    0%, 100% { 
-                        clip-path: inset(0 0 98% 0);
-                    }
-                    25% { 
-                        clip-path: inset(0 0 0 98%);
-                    }
-                    50% { 
-                        clip-path: inset(98% 0 0 0);
-                    }
-                    75% { 
-                        clip-path: inset(0 98% 0 0);
-                    }
-                }
                 @keyframes float-subtle {
                     0%, 100% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }
-                }
-                @keyframes glow-pulse {
-                    0%, 100% { 
-                        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-                    }
-                    50% { 
-                        box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.3);
-                    }
                 }
                 
 
@@ -122,11 +87,8 @@ export default function ServiceOverview() {
                     background-size: 200% 200%;
                     animation: gradient-rotate 4s ease infinite;
                 }
-                .animate-particle-orbit { animation: particle-orbit 4s linear infinite; }
                 .animate-stat-count { animation: stat-count 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-                .animate-border-dance { animation: border-dance 3s linear infinite; }
                 .animate-float-subtle { animation: float-subtle 3s ease-in-out infinite; }
-                .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
                 
                 .particle-1 { animation-delay: 0s; }
                 .particle-2 { animation-delay: 1s; }

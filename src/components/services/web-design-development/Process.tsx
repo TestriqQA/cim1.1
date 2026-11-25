@@ -280,16 +280,6 @@ export default function Process() {
 
                 {/* CSS Animations */}
                 <style jsx>{`
-                    @keyframes fadeInScale {
-                        from {
-                            opacity: 0;
-                            transform: scale(0.9);
-                        }
-                        to {
-                            opacity: 1;
-                            transform: scale(1);
-                        }
-                    }
                     @keyframes spin {
                         from {
                             transform: rotate(0deg);
