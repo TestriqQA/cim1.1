@@ -101,90 +101,6 @@ export default function TypesOfAutomations() {
     return (
         <>
             <style jsx>{`
-                @keyframes morph {
-                    0%, 100% { 
-                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-                        transform: rotate(0deg) scale(1);
-                    }
-                    25% { 
-                        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-                    }
-                    50% { 
-                        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-                        transform: rotate(5deg) scale(1.05);
-                    }
-                    75% { 
-                        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-                    }
-                }
-                @keyframes swing {
-                    0%, 100% { 
-                        transform: rotate(0deg);
-                        transform-origin: top center;
-                    }
-                    25% { transform: rotate(8deg); }
-                    75% { transform: rotate(-8deg); }
-                }
-                @keyframes spiral {
-                    0% { 
-                        transform: rotate(0deg) scale(1) translateY(0);
-                    }
-                    50% { 
-                        transform: rotate(180deg) scale(1.1) translateY(-5px);
-                    }
-                    100% { 
-                        transform: rotate(360deg) scale(1) translateY(0);
-                    }
-                }
-                @keyframes bounce-3d {
-                    0%, 100% { 
-                        transform: translateY(0) translateZ(0) rotateX(0deg);
-                    }
-                    25% { 
-                        transform: translateY(-10px) translateZ(20px) rotateX(-5deg);
-                    }
-                    50% { 
-                        transform: translateY(0) translateZ(0) rotateX(0deg);
-                    }
-                    75% { 
-                        transform: translateY(-5px) translateZ(10px) rotateX(-2deg);
-                    }
-                }
-                @keyframes wave {
-                    0%, 100% { 
-                        transform: skewY(0deg) translateX(0);
-                    }
-                    25% { 
-                        transform: skewY(2deg) translateX(3px);
-                    }
-                    75% { 
-                        transform: skewY(-2deg) translateX(-3px);
-                    }
-                }
-                @keyframes breathe {
-                    0%, 100% { 
-                        transform: scale(1);
-                        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
-                    }
-                    50% { 
-                        transform: scale(1.03);
-                        box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.2);
-                    }
-                }
-                @keyframes shimmer-rotate {
-                    0% { 
-                        transform: rotate(0deg);
-                        filter: brightness(1) contrast(1);
-                    }
-                    50% { 
-                        transform: rotate(180deg);
-                        filter: brightness(1.2) contrast(1.1);
-                    }
-                    100% { 
-                        transform: rotate(360deg);
-                        filter: brightness(1) contrast(1);
-                    }
-                }
                 @keyframes gradient-shift {
                     0%, 100% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
@@ -194,16 +110,6 @@ export default function TypesOfAutomations() {
                     50% { transform: translateY(-8px); }
                 }
                 
-                .animate-morph { animation: morph 6s ease-in-out infinite; }
-                .animate-swing { animation: swing 3s ease-in-out infinite; }
-                .animate-spiral { animation: spiral 4s ease-in-out infinite; }
-                .animate-bounce-3d { 
-                    animation: bounce-3d 2.5s ease-in-out infinite;
-                    transform-style: preserve-3d;
-                }
-                .animate-wave { animation: wave 3s ease-in-out infinite; }
-                .animate-breathe { animation: breathe 3s ease-in-out infinite; }
-                .animate-shimmer-rotate { animation: shimmer-rotate 5s linear infinite; }
                 .animate-gradient { 
                     background-size: 200% 200%;
                     animation: gradient-shift 3s ease infinite;

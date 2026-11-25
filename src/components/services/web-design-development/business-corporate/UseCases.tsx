@@ -360,10 +360,6 @@ export default function UseCases() {
             </div>
 
             <style jsx>{`
-                @keyframes border-flow {
-                    0%, 100% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                }
             `}</style>
         </section>
     );

@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
     Zap,
     Search,
-    Palette,
     Code2,
     Plug,
     Rocket,
@@ -13,6 +12,8 @@ import {
     CheckCircle,
     ArrowRight,
     Terminal,
+    Workflow,
+    DraftingCompass,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -39,7 +40,7 @@ export default function Process() {
         {
             anchor: "step-architecture",
             number: "02",
-            icon: Palette,
+            icon: DraftingCompass,
             title: "Architecture Design",
             subtitle: "System Planning",
             description:
@@ -147,7 +148,7 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Terminal className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Development Process
                         </span>

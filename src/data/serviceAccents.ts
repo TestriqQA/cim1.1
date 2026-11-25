@@ -46,7 +46,7 @@ const ACCENTS: Record<string, string> = {
     "/services/social-media-marketing-services/video-marketing-agency": "--accent-red-text",
 
     "/services/web-design-development": "--brand-blue-text",
-    "/services/web-design-development/astro-framework-services": "--accent-violet-text",
+    "/services/web-design-development/astro-framework-services": "--accent-orange-text",
     "/services/web-design-development/blog-design-services": "--brand-purple-text",
     "/services/web-design-development/branding-services": "--accent-cyan-text",
     "/services/web-design-development/business-corporate": "--accent-orange-text",

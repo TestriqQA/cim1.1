@@ -252,40 +252,11 @@ export default function Industries() {
                     }
                 }
 
-                @keyframes grid-flow {
-                    0% { transform: translate(0, 0); }
-                    100% { transform: translate(40px, 40px); }
-                }
 
-                @keyframes ping-slow {
-                    75%, 100% {
-                        transform: scale(2);
-                        opacity: 0;
-                    }
-                }
 
-                @keyframes pulse-slow {
-                    0%, 100% {
-                        transform: scale(1);
-                        opacity: 0.2;
-                    }
-                    50% {
-                        transform: scale(1.05);
-                        opacity: 0.3;
-                    }
-                }
 
-                .animate-grid-flow {
-                    animation: grid-flow 20s linear infinite;
-                }
 
-                .animate-ping-slow {
-                    animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-                }
 
-                .animate-pulse-slow {
-                    animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                }
             `}</style>
         </section>
     );

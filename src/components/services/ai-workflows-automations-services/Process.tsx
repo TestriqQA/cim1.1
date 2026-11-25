@@ -70,10 +70,6 @@ export default function Process() {
     return (
         <>
             <style jsx>{`
-                @keyframes progress-line {
-                    0% { height: 0; }
-                    100% { height: 100%; }
-                }
                 @keyframes pulse-dot {
                     0%, 100% { 
                         transform: scale(1);
@@ -84,62 +80,8 @@ export default function Process() {
                         opacity: 0.5;
                     }
                 }
-                @keyframes slide-in-left {
-                    0% { 
-                        transform: translateX(-50px);
-                        opacity: 0;
-                    }
-                    100% { 
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-                @keyframes slide-in-right {
-                    0% { 
-                        transform: translateX(50px);
-                        opacity: 0;
-                    }
-                    100% { 
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-                @keyframes icon-rotate {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-                @keyframes glow-pulse {
-                    0%, 100% { 
-                        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.4);
-                    }
-                    50% { 
-                        box-shadow: 0 0 30px 10px rgba(251, 146, 60, 0.2);
-                    }
-                }
-                @keyframes number-pop {
-                    0% { 
-                        transform: scale(0) rotate(-180deg);
-                        opacity: 0;
-                    }
-                    50% { 
-                        transform: scale(1.2) rotate(10deg);
-                    }
-                    100% { 
-                        transform: scale(1) rotate(0deg);
-                        opacity: 1;
-                    }
-                }
-                @keyframes connect-draw {
-                    0% { stroke-dashoffset: 1000; }
-                    100% { stroke-dashoffset: 0; }
-                }
                 
-                .animate-progress-line { animation: progress-line 2s ease-out forwards; }
                 .animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
-                .animate-slide-in-left { animation: slide-in-left 0.6s ease-out forwards; }
-                .animate-slide-in-right { animation: slide-in-right 0.6s ease-out forwards; }
-                .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
-                .animate-number-pop { animation: number-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
             `}</style>
 
             <section

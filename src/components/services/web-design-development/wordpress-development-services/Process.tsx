@@ -8,6 +8,7 @@ import {
     Search,
     Rocket,
     CheckCircle,
+    Workflow,
 } from "lucide-react";
 
 export default function Process() {
@@ -65,7 +66,7 @@ export default function Process() {
                             borderColor: "rgba(0, 115, 170, 0.2)",
                         }}
                     >
-                        <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>

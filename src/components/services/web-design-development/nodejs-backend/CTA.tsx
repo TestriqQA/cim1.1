@@ -1,15 +1,13 @@
-"use client";
-
-import { ArrowRight, Server } from "lucide-react";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* Animated Background */}
+            {/* Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Grid pattern */}
                 <div
@@ -19,41 +17,13 @@ export default function CTA() {
                         backgroundSize: "80px 80px",
                     }}
                 />
-                {/* Floating elements */}
-                <div
-                    className="absolute top-20 left-20 w-4 h-4 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#339933", animationDelay: "0s" }}
-                />
-                <div
-                    className="absolute top-40 right-32 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#68a063", animationDelay: "0.5s" }}
-                />
-                <div
-                    className="absolute bottom-32 left-1/4 w-2 h-2 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#215732", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#339933", animationDelay: "1.5s" }}
-                />
             </div>
 
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div
-                    className="relative p-6 md:p-16 rounded-3xl border-2 overflow-hidden"
-                    style={{
-                        background: "linear-gradient(135deg, var(--card-bg), color-mix(in srgb, #339933 5%, var(--card-bg)))",
-                        borderColor: "color-mix(in srgb, #339933 40%, var(--border-color))",
-                    }}
-                >
-                    {/* Gradient Overlay */}
-                    <div
-                        className="absolute inset-0 opacity-5"
-                        style={{
-                            background: "linear-gradient(135deg, #339933, #215732)",
-                        }}
-                    />
-
+                {/* No tint, overlay or border: the content sits on the page's own
+                    background. Side padding kept, top/bottom padding dropped. The
+                    hero's three stats are not repeated here (shown once, in the hero). */}
+                <div className="relative px-6 md:px-16">
                     <div className="relative z-10 text-center max-w-3xl mx-auto">
                         {/* Badge */}
                         <div
@@ -63,7 +33,7 @@ export default function CTA() {
                                 borderColor: "color-mix(in srgb, #339933 40%, transparent)",
                             }}
                         >
-                            <Server className="w-4 h-4" style={{ color: "#339933" }} />
+                            <MessagesSquare className="w-4 h-4" aria-hidden="true" style={{ color: "#339933" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Free Consultation
                             </span>
@@ -71,17 +41,11 @@ export default function CTA() {
 
                         {/* Heading */}
                         <h2
-                            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                             style={{ color: "var(--foreground)" }}
                         >
                             Ready to{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #339933, #68a063)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
+                            <span style={{ color: "var(--accent-green-text)" }}>
                                 <Link href="/services/web-design-development/saas-development-services" className="hover:underline decoration-[#339933] underline-offset-4">
                                     Scale Your Backend
                                 </Link>
@@ -97,77 +61,19 @@ export default function CTA() {
                             let&apos;s discuss how we can help power your application.
                         </p>
 
-                        {/* CTA Button */}
+                        {/* CTA Button: same green and hover as the hero button */}
                         <div className="flex items-center justify-center">
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-2xl focus-visible:brightness-120"
                                 style={{
-                                    background: "linear-gradient(135deg, #339933, #215732)",
+                                    background: "linear-gradient(135deg, #2B7F2B, #215732)",
                                     color: "#ffffff",
-                                    boxShadow: "0 8px 32px rgba(51, 153, 51, 0.4)",
                                 }}
                             >
                                 Start Your Backend Project
-                                <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </Link>
-                        </div>
-
-                        {/* Trust indicators */}
-                        <div className="mt-12 flex flex-wrap items-center justify-center gap-8">
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #339933, #68a063)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    Proven
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    APIs Deployed
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #339933, #68a063)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    High
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Uptime SLA
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{
-                                        background: "linear-gradient(135deg, #339933, #68a063)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    High
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Daily Requests
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

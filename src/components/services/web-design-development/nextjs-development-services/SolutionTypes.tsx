@@ -8,9 +8,9 @@ import {
     LayoutDashboard,
     FileText,
     Smartphone,
-    Server,
-    Sparkles,
     Check,
+    LayoutGrid,
+    ArrowRightLeft,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -95,7 +95,7 @@ export default function SolutionTypes() {
             accentColor: "#61dafb",
         },
         {
-            icon: Server,
+            icon: ArrowRightLeft,
             title: "Next.js Migration Services",
             description:
                 "Seamless transition from legacy React, Vue, or Angular. Modernize your tech stack with minimal downtime.",
@@ -124,7 +124,7 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)"
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Core Services
                         </span>

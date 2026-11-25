@@ -265,14 +265,6 @@ export default function Platforms() {
                     }
                 }
 
-                @keyframes float {
-                    0%, 100% {
-                        transform: translateY(0) scale(1);
-                    }
-                    50% {
-                        transform: translateY(-30px) scale(1.1);
-                    }
-                }
 
                 @keyframes spin {
                     from {

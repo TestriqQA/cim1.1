@@ -2,19 +2,21 @@
 
 import { useState } from "react";
 import {
-    Search,
-    Settings,
-    Layers,
-    Code2,
     ArrowRightLeft,
+    CheckCircle,
+    Code2,
     Rocket,
-    Check,
+    Search,
+    Workflow,
+    ListChecks,
+    DraftingCompass,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
+    // Each step keeps its id: the page's HowTo schema links to #step-*.
     const steps = [
         {
             anchor: "step-discovery",
@@ -33,7 +35,7 @@ export default function Process() {
         {
             anchor: "step-selection",
             number: "02",
-            icon: Settings,
+            icon: ListChecks,
             title: "CMS Selection",
             description: "Choose the optimal platform based on requirements and team capabilities.",
             details: [
@@ -47,7 +49,7 @@ export default function Process() {
         {
             anchor: "step-architecture",
             number: "03",
-            icon: Layers,
+            icon: DraftingCompass,
             title: "Content Architecture",
             description: "Design content models, schemas, and relationships for maximum flexibility.",
             details: [
@@ -67,7 +69,7 @@ export default function Process() {
             details: [
                 "Custom theme development",
                 "Plugin/extension creation",
-                <Link href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">API integration</Link>,
+                <Link key="link-1" href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:text-[var(--accent-violet-text)] transition-colors">API integration</Link>,
                 "Frontend connection",
                 "Workflow automation",
             ],
@@ -104,26 +106,12 @@ export default function Process() {
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* CSS Animations */}
-            <style jsx>{`
-                @keyframes pulse-ring {
-                    0% { transform: scale(1); opacity: 0.5; }
-                    50% { transform: scale(1.2); opacity: 0.2; }
-                    100% { transform: scale(1); opacity: 0.5; }
-                }
-                .step-ring {
-                    animation: pulse-ring 2s ease-in-out infinite;
-                }
-            `}</style>
-
-            {/* Background Elements */}
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -131,24 +119,20 @@ export default function Process() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Settings className="w-4 h-4" style={{ color: "#9333ea" }} />
+                        <Workflow className="w-4 h-4" aria-hidden="true" style={{ color: "#9333ea" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Our Process
                         </span>
                     </div>
 
+                    
+
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                        className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
                         style={{ color: "var(--foreground)" }}
                     >
                         How We{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #9333ea, #c084fc)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
+                        <span style={{ color: "var(--accent-violet-text)" }}>
                             Implement
                         </span>{" "}
                         CMS
@@ -160,121 +144,60 @@ export default function Process() {
                         A proven methodology for successful CMS implementations,
                         from discovery through launch and beyond.
                     </p>
-                    <div
-                        className="w-24 h-1.5 mx-auto mt-8 rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #9333ea, #c084fc)",
-                        }}
-                    />
                 </div>
 
-                {/* Process Steps */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {steps.map((step, idx) => {
-                        const Icon = step.icon;
-                        const isHovered = hoveredStep === idx;
+                {/* Timeline (the WordPress layout) */}
+                <div className="relative">
+                    {/* Central Line (Desktop) */}
+                    <div
+                        className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2"
+                        style={{
+                            background: "#9333ea",
+                            opacity: 0.5
+                        }}
+                    />
 
-                        return (
-                            <div
-                                key={idx}
-                                id={step.anchor}
-                                className="scroll-mt-20 relative group"
-                                onMouseEnter={() => setHoveredStep(idx)}
-                                onMouseLeave={() => setHoveredStep(null)}
-                            >
-                                {/* Card */}
+                    <div className="lg:space-y-16">
+                        {steps.map((step, idx) => {
+                            const Icon = step.icon;
+                            const isEven = idx % 2 === 0;
+                            const isHovered = hoveredStep === idx;
+
+                            return (
                                 <div
-                                    className={`
-                                        relative p-8 rounded-3xl border-2
-                                        transition-all duration-500 ease-out h-full
-                                        ${isHovered ? "shadow-2xl" : "shadow-md hover:shadow-xl"}
-                                    `}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered
-                                            ? "#9333ea"
-                                            : "var(--border-color)",
-                                        transform: isHovered
-                                            ? "translateY(-8px)"
-                                            : "translateY(0)",
-                                    }}
+                                    key={idx}
+                                    id={step.anchor}
+                                    className={`scroll-mt-20 relative flex flex-col lg:flex-row items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                                        }`}
+                                    onMouseEnter={() => setHoveredStep(idx)}
+                                    onMouseLeave={() => setHoveredStep(null)}
                                 >
-                                    {/* Step Number Badge */}
-                                    <div
-                                        className="absolute -top-4 -right-4 w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-lg transition-transform duration-300"
-                                        style={{
-                                            background: "linear-gradient(135deg, #9333ea, #a855f7)",
-                                            transform: isHovered ? "scale(1.1) rotate(12deg)" : "scale(1) rotate(0)",
-                                        }}
-                                    >
-                                        {step.number}
-                                    </div>
-
-
-                                    {/* Content */}
-                                    <div className="relative z-10">
-                                        {/* Icon */}
-                                        <div className="mb-6 relative">
-                                            <div
-                                                className={`
-                                                    w-16 h-16 rounded-2xl flex items-center justify-center
-                                                    transition-all duration-500
-                                                `}
-                                                style={{
-                                                    background: "linear-gradient(135deg, #9333ea, #a855f7)",
-                                                    boxShadow: isHovered
-                                                        ? "0 12px 32px rgba(147, 51, 234, 0.5)"
-                                                        : "0 4px 12px rgba(147, 51, 234, 0.3)",
-                                                    transform: isHovered
-                                                        ? "scale(1.1) rotate(6deg)"
-                                                        : "scale(1) rotate(0)",
-                                                }}
-                                            >
-                                                <Icon className="w-8 h-8 text-white" />
-                                            </div>
-
-                                            {/* Animated Ring */}
-                                            {isHovered && (
-                                                <div
-                                                    className="absolute inset-0 w-16 h-16 rounded-2xl border-2 step-ring"
-                                                    style={{ borderColor: "#9333ea" }}
-                                                />
-                                            )}
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3
-                                            className="text-xl font-bold mb-3 transition-all duration-300"
+                                    {/* Content Card */}
+                                    <div className="w-full lg:w-5/12">
+                                        <div
+                                            className={`
+                                                p-6 md:p-8 rounded-3xl border transition-all duration-300
+                                                ${isHovered ? "shadow-xl border-[#9333ea]/50 -translate-y-2" : ""}
+                                            `}
                                             style={{
-                                                color: isHovered
-                                                    ? "#9333ea"
-                                                    : "var(--foreground)",
+                                                backgroundColor: "var(--card-bg)",
+                                                borderColor: isHovered ? "" : "var(--border-color)",
                                             }}
                                         >
-                                            {step.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p
-                                            className="text-sm leading-relaxed mb-4"
-                                            style={{ color: "var(--secondary-text)" }}
-                                        >
-                                            {step.description}
-                                        </p>
-
-                                        {/* Details - Always Visible */}
-                                        <div className="pt-4 border-t" style={{ borderColor: "var(--border-color)" }}>
-                                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-violet-text)" }}>
-                                                Key Activities:
-                                            </p>
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <div
+                                                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0"
+                                                    style={{ background: "linear-gradient(135deg, #9333ea, #7e22ce)" }}
+                                                >
+                                                    <Icon className="w-6 h-6" aria-hidden="true" />
+                                                </div>
+                                                <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>{step.title}</h3>
+                                            </div>
+                                            <p className="mb-6" style={{ color: "var(--secondary-text)" }}>{step.description}</p>
                                             <ul className="space-y-2">
-                                                {step.details.map((detail, didx) => (
-                                                    <li
-                                                        key={didx}
-                                                        className="flex items-center gap-2 text-sm"
-                                                        style={{ color: "var(--foreground)" }}
-                                                    >
-                                                        <Check className="w-4 h-4 flex-shrink-0" style={{ color: "#9333ea" }} />
+                                                {step.details.map((detail, dIdx) => (
+                                                    <li key={dIdx} className="flex items-center gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-[var(--accent-violet-text)]" aria-hidden="true" />
                                                         <span>{detail}</span>
                                                     </li>
                                                 ))}
@@ -282,20 +205,42 @@ export default function Process() {
                                         </div>
                                     </div>
 
-                                    {/* Bottom accent line */}
-                                    <div
-                                        className={`
-                                            absolute bottom-0 left-0 h-1 rounded-b-3xl transition-all duration-500
-                                            ${isHovered ? "w-full" : "w-0"}
-                                        `}
-                                        style={{
-                                            background: "linear-gradient(90deg, #9333ea, #c084fc)",
-                                        }}
-                                    />
+                                    {/* Center Node */}
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex items-center justify-center z-10">
+                                        <div
+                                            className={`
+                                                w-12 h-12 rounded-full border-4 transition-all duration-300 flex items-center justify-center
+                                                ${isHovered ? "border-[#9333ea] bg-background scale-125" : "border-muted bg-background"}
+                                            `}
+                                        >
+                                            <div
+                                                className={`w-3 h-3 rounded-full transition-colors duration-300 ${isHovered ? "bg-[#9333ea]" : "bg-muted-foreground"
+                                                    }`}
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className={`w-full lg:w-5/12 hidden lg:flex items-center ${isEven ? "justify-start pl-50" : "justify-end pr-50"}`}>
+                                        <div
+                                            className="text-[120px] font-bold leading-none opacity-50 transition-all duration-300"
+                                            style={{
+                                                color: isHovered ? "var(--accent-violet-text)" : "var(--foreground)",
+                                                transform: isHovered ? "scale(1.1)" : "scale(1)",
+                                                opacity: 0.5,
+                                            }}
+                                        >
+                                            {step.number}
+                                        </div>
+                                    </div>
+
+                                    {/* Mobile Connector: 8 + 32 + 8 = 48px between cards; none after the last step */}
+                                    {idx < steps.length - 1 && (
+                                        <div className="lg:hidden h-8 w-0.5 bg-gradient-to-b from-[#9333ea] to-transparent opacity-30 my-2" />
+                                    )}
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

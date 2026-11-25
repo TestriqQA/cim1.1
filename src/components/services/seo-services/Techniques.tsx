@@ -260,28 +260,14 @@ export default function Techniques() {
                     }
                 }
 
-                @keyframes float {
-                    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-                    33% { transform: translate(30px, -30px) rotate(120deg); }
-                    66% { transform: translate(-20px, 20px) rotate(240deg); }
-                }
 
                 @keyframes gridMove {
                     0% { transform: translate(0, 0); }
                     100% { transform: translate(40px, 40px); }
                 }
 
-                .animate-float {
-                    animation: float 15s ease-in-out infinite;
-                }
 
-                .animate-float-delayed {
-                    animation: float 18s ease-in-out 2s infinite;
-                }
 
-                .animate-float-slow {
-                    animation: float 20s ease-in-out 4s infinite;
-                }
             `}</style>
         </section>
     );

@@ -1,30 +1,30 @@
-import { Palette, Play, RefreshCw, Smartphone, TrendingUp, ShoppingCart } from "lucide-react";
+import { Palette, Smartphone, TrendingUp, Building2, Atom, ArrowRightLeft, Blocks } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
     const highlights = [
         {
-            icon: ShoppingCart,
+            icon: Palette,
             title: <Link href="/services/web-design-development" className="hover:text-[var(--accent-lime-text)] transition-colors">Shopify Store Design</Link>,
             description: "Custom themes that reflect your brand identity. We don't just use templates; we create unique visual experiences.",
         },
         {
-            icon: Palette, // Changed from CreditCard to Palette based on the new import and the fact CreditCard was removed. Assuming this is the intended icon.
+            icon: Building2,
             title: "Shopify Plus Development",
             description: "Enterprise-grade scaling for high-volume merchants, featuring mobile-first architecture and bespoke checkout automation via Shopify Flow.",
         },
         {
-            icon: Play,
+            icon: Atom,
             title: <Link href="/services/web-design-development/headless-traditional-cms" className="hover:text-[var(--accent-lime-text)] transition-colors">Headless & Hydrogen</Link>,
             description: <span>Future-proof your store with <Link href="/services/web-design-development/nextjs-development-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">Next.js</Link> or Hydrogen. Blazing fast load times and ultimate design flexibility.</span>,
         },
         {
-            icon: RefreshCw,
+            icon: ArrowRightLeft,
             title: "Seamless Migration",
             description: <span>Moving from <Link href="/services/web-design-development/ecommerce-development-company" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">Magento</Link>, <Link href="/services/web-design-development/wordpress-development-services" className="text-[var(--accent-lime-text)] underline underline-offset-2 hover:underline">WooCommerce</Link>, or BigCommerce? We ensure zero data loss and minimal downtime.</span>,
         },
         {
-            icon: TrendingUp,
+            icon: Blocks,
             title: "App Development & Integration",
             description: "Custom-built apps and secure bridges for ERP, CRM (Salesforce/HubSpot), or Inventory Management systems.",
         },

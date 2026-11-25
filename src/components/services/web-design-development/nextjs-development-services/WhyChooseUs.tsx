@@ -1,53 +1,54 @@
 import Image from "next/image";
 import {
-    Zap,
-    Shield,
-    Globe,
-    Code2,
-    HeadphonesIcon,
-    TrendingUp,
+    BadgeCheck,
+    Briefcase,
+    Handshake,
+    Trophy,
+    Wrench,
+    Gauge,
+    ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
     const reasons = [
         {
-            icon: Zap,
+            icon: Briefcase,
             title: "Deep Experience",
             description:
                 <>Our team brings deep combined expertise in <Link href="/services/web-design-development" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">web design and development</Link>, ensuring enterprise-grade solutions for every project.</>,
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
-            icon: Shield,
+            icon: Handshake,
             title: "Vercel & AWS Partners",
             description:
                 "As certified Vercel and AWS partners, we specialize in advanced Next.js SEO audit and optimization services that drive results.",
             gradient: "from-[#00d4ff] to-[#61dafb]",
         },
         {
-            icon: Globe,
+            icon: Trophy,
             title: "Top React Agency",
             description:
                 "Ranked as a top React development agency for three consecutive years, delivering high-performance applications globally.",
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
-            icon: Code2,
+            icon: Wrench,
             title: "Expert Maintenance",
             description:
                 "Our Next.js maintenance and ongoing support services ensure your app stays updated with the latest security patches and features.",
             gradient: "from-[#00d4ff] to-[#61dafb]",
         },
         {
-            icon: TrendingUp,
+            icon: Gauge,
             title: "Performance Obsessed",
             description:
                 "Our implementations consistently achieve near-perfect Lighthouse scores, focusing on Next.js speed optimization and Core Web Vitals.",
             gradient: "from-[#61dafb] to-[#00d4ff]",
         },
         {
-            icon: HeadphonesIcon,
+            icon: ShieldCheck,
             title: "E-E-A-T Driven",
             description:
                 <>We follow Google&apos;s <Link href="/blog/mastering-seo-organic-growth" className="hover:text-[var(--accent-cyan-text)] transition-colors underline underline-offset-2">E-E-A-T</Link> guidelines to ensure your platform is authoritative, trustworthy, and expert-led.</>,
@@ -72,7 +73,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Zap className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
+                        <BadgeCheck className="w-4 h-4" style={{ color: "var(--accent-cyan-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             E-E-A-T Verified
                         </span>
