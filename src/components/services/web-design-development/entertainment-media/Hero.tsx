@@ -1,257 +1,312 @@
-import {
-    Play, Film, Music, Radio, Users, TrendingUp,
-    ChevronRight, ArrowRight, CheckCircle2, Sparkles, Tv, Headphones
-} from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Home, ChevronRight, Play, Film, Music, Tv, Users, Radio, TrendingUp } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import type { ReactNode } from "react";
+
+const hero: HeroData = {
+    crumb: "Entertainment & Media",
+    badge: "Entertainment & Media Solutions",
+    badgeIcon: Play,
+    // 31 characters: one line from 360px, two centred lines at 320
+    badgeClass: "text-[13px] min-[360px]:text-sm font-semibold text-center",
+    title: (
+        <>
+            Create <span style={{ color: "var(--accent-violet-text)" }}>Immersive Digital Experiences</span>
+        </>
+    ),
+    tagline: (
+        <>
+            Build powerful streaming platforms, <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-violet-text)" }}>content management systems</Link>, and engaging entertainment experiences that captivate audiences and drive subscriber growth.
+        </>
+    ),
+    taglineClass: "text-lg md:text-xl leading-relaxed",
+    // one button: "View Solutions" only scrolled to the solutions below
+    cta: { href: "/contact", label: "Start Your Project" },
+    image: {
+        src: "/images/services-images/web-design-development/entertainment-media.svg",
+        alt: "Entertainment & Media Platform",
+    },
+};
+
+const features: HeroFeature[] = [
+    { icon: Film, text: "Video Streaming" },
+    { icon: Music, text: "Audio Platforms" },
+    { icon: Tv, text: "Live Broadcasting" },
+    { icon: Users, text: "Social Features" },
+    { icon: Radio, text: "Podcasting" },
+    { icon: TrendingUp, text: "Analytics", href: "/services/ai-workflows-automations-services" },
+];
+
+const stats: HeroStat[] = [
+    { value: "High", label: "Users Engaged" },
+    { value: "High", label: "Content Hours" },
+    { value: "High", label: "Uptime SLA" },
+];
+
+// Platform integrations, each with its own logo
+const chips: HeroChip[] = [
+    { logo: "/images/techstack_logos/aws-logo.png", text: "AWS Media" },
+    { logo: "/images/techstack_logos/Cloudflare-logo.webp", text: "Cloudflare" },
+    { logo: "/images/techstack_logos/Stripe-logo.png", text: "Stripe" },
+    { logo: "/images/techstack_logos/firebase-logo.svg", text: "Firebase" },
+    { logo: "/images/techstack_logos/Vimeo_Logo.png", text: "Vimeo OTT" },
+];
+
+const metrics: HeroMetrics = {
+    title: "Platform Highlights",
+    items: [
+        { value: "4K", label: "Streaming ready: adaptive bitrate delivery" },
+        { value: "Higher", label: "User engagement: personalized content" },
+    ],
+};
+
+type HeroData = {
+    crumb: string;
+    badge: string;
+    badgeIcon: LucideIcon;
+    badgeClass: string;
+    title: ReactNode;
+    tagline: ReactNode;
+    taglineClass: string;
+    taglineExtra?: ReactNode;
+    cta: { href: string; label: string };
+    image: { src: string; alt: string };
+    // override the long-label list layout (measured per page)
+    longLabels?: boolean;
+    // a hero with a lot of text can use the 60/40 split (playbook rule 9)
+    gridClass?: string;
+    // long labels but a wide (60/40) text column: three columns from xl again
+    listXl3?: boolean;
+};
+type HeroFeature = { icon: LucideIcon; text: string; href?: string };
+type HeroStat = { value: string; label: string };
+type HeroChip = { text: string; icon?: LucideIcon; logo?: string; href?: string };
+type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[] } | null;
 
 export default function Hero() {
-    const features = [
-        { icon: Film, text: "Video Streaming" },
-        { icon: Music, text: "Audio Platforms" },
-        { icon: Tv, text: "Live Broadcasting" },
-        { icon: Users, text: "Social Features" },
-        { icon: Radio, text: "Podcasting" },
-        { icon: TrendingUp, text: <Link href="/services/ai-workflows-automations-services" className="hover:underline">Analytics</Link> },
-    ];
-
-    const stats = [
-        { value: "High", label: "Users Engaged" },
-        { value: "High", label: "Content Hours" },
-        { value: "High", label: "Uptime SLA" },
-    ];
-
+    const BadgeIcon = hero.badgeIcon;
+    // Labels longer than 17 characters ("Appointment Booking") don't fit two columns at
+    // 320 or three columns in the 1280 hero: one column below 360px and two from xl.
+    const longLabels = hero.longLabels ?? features.some((feature) => feature.text.length > 17);
+    const listClass = longLabels && hero.listXl3
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6"
+        : longLabels
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+        : "grid grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6";
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
-            style={{ backgroundColor: "var(--background)" }}
+            className="relative overflow-hidden transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Cinematic light streaks */}
-            </div>
+            {/* From 1024px the hero is tighter (top 32px, 24px gaps, 44px heading) so the
+                button shows without scrolling on common laptop screens */}
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 lg:pt-8 relative">
+                {/* Breadcrumbs */}
+                <nav
+                    className="flex items-center gap-1 text-[13px] min-[360px]:text-sm mb-5 lg:mb-3 justify-center lg:justify-start flex-wrap"
+                    aria-label="Breadcrumb"
+                >
+                    <Link
+                        href="/"
+                        className="flex items-center gap-1 hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                        style={{ color: "var(--secondary-text)" }}
+                    >
+                        <Home className="w-4 h-4" aria-hidden="true" />
+                        Home
+                    </Link>
+                    {/* Each › is kept with the item after it, so a wrap on phones never
+                        leaves a › hanging at the end of a line */}
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Services
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services/web-design-development"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Web Design
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <span
+                            className="font-semibold px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--accent-violet-text)" }}
+                        >
+                            {hero.crumb}
+                        </span>
+                    </span>
+                </nav>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
                     {/* LEFT CONTENT */}
-                    <div className="space-y-8">
-                        {/* Breadcrumbs */}
-                        <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm" style={{ color: "var(--secondary-text)" }}>
-                            <Link href="/" className="hover:underline">Home</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services" className="hover:underline">Services</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "var(--brand-purple-text)" }}>Entertainment & Media</span>
-                        </nav>
-
+                    <div className="text-center lg:text-left">
                         {/* Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
                             style={{
-                                background: "linear-gradient(135deg, color-mix(in srgb, #8b5cf6 15%, transparent), color-mix(in srgb, #ec4899 10%, transparent))",
-                                borderColor: "color-mix(in srgb, #8b5cf6 30%, transparent)",
+                                background:
+                                    "linear-gradient(90deg, color-mix(in srgb, #8b5cf6 8%, transparent), color-mix(in srgb, #ec4899 8%, transparent))",
+                                borderColor: "color-mix(in srgb, #8b5cf6 20%, transparent)",
+                                color: "var(--accent-violet-text)",
                             }}
                         >
-                            <Play className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
-                                Entertainment & Media Solutions
-                            </span>
+                            <BadgeIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-violet-text)" }} />
+                            <span className={hero.badgeClass}>{hero.badge}</span>
                         </div>
 
-                        {/* Headline */}
-                        <h1
-                            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-                            style={{ color: "var(--foreground)" }}
-                        >
-                            Create{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                Immersive Digital Experiences
-                            </span>
+                        {/* Heading: solid text token (no gradient text). 30px on phones. */}
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-extrabold leading-tight mb-8 lg:mb-6">
+                            {hero.title}
                         </h1>
 
-                        <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Build powerful streaming platforms, <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline">content management systems</Link>, and engaging
-                            entertainment experiences that captivate audiences and drive subscriber growth.
+                        {/* Tagline */}
+                        <p className={`${hero.taglineClass} mb-8 lg:mb-6`} style={{ color: "var(--secondary-text)" }}>
+                            {hero.tagline}
                         </p>
+                        {hero.taglineExtra && (
+                            <p className="text-base md:text-lg lg:text-base leading-relaxed mb-8 lg:mb-6" style={{ color: "var(--secondary-text)" }}>
+                                {hero.taglineExtra}
+                            </p>
+                        )}
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap gap-3">
-                            {features.map((feature, idx) => {
+                        {/* Feature Highlights: a light icon list, no boxes, every label on one
+                            line. Below lg the columns size to their content and the block is
+                            centred (w-fit mx-auto), with every item starting at its column's
+                            left edge, so the icons line up in straight columns. */}
+                        <ul className={listClass}>
+                            {features.map((feature) => {
                                 const Icon = feature.icon;
                                 return (
-                                    <div
-                                        key={idx}
-                                        className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105"
-                                        style={{
-                                            backgroundColor: "var(--card-bg)",
-                                            borderColor: "var(--border-color)",
-                                        }}
+                                    <li
+                                        key={feature.text}
+                                        className="flex items-center justify-start gap-1.5 sm:gap-2 min-w-0"
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
-                                            {feature.text}
+                                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-violet-text)" }} />
+                                        <span className="text-xs sm:text-sm font-semibold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+                                            {feature.href ? (
+                                                <Link href={feature.href} className="hover:underline">
+                                                    {feature.text}
+                                                </Link>
+                                            ) : (
+                                                feature.text
+                                            )}
                                         </span>
-                                    </div>
+                                    </li>
                                 );
                             })}
-                        </div>
+                        </ul>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap gap-8 pt-4">
-                            {stats.map((stat, idx) => (
-                                <div key={idx} className="text-center">
-                                    <div
-                                        className="text-3xl font-bold"
-                                        style={{
-                                            background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                            WebkitBackgroundClip: "text",
-                                            WebkitTextFillColor: "transparent",
-                                        }}
-                                    >
+                        {/* Stats: no box, just a thin line above. The columns take their
+                            content's width, so no value is ever cut off. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-2 sm:gap-4 mb-8 lg:mb-6 pt-6 border-t border-[var(--border-color)]">
+                            {stats.map((stat) => (
+                                <div key={stat.label} className="text-center">
+                                    <div className={`text-lg sm:text-xl md:text-4xl lg:text-3xl xl:text-4xl font-bold mb-1 leading-tight ${stat.value.includes(" ") ? "" : "whitespace-nowrap"}`} style={{ color: "var(--accent-violet-text)" }}>
                                         {stat.value}
                                     </div>
-                                    <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
+                                    <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {stat.label}
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-4 pt-4">
+                        {/* CTA Button: a darker shade of the page colour so white text passes
+                            4.5:1, no resting glow */}
+                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
                             <Link
-                                href="/contact"
-                                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                                style={{
-                                    background: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
-                                    boxShadow: "0 4px 20px rgba(139, 92, 246, 0.4)",
-                                }}
+                                href={hero.cta.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-6 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold text-center bg-gradient-to-r from-[#7c3aed] to-[#6d28d9] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                             >
-                                Start Your Project
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                            <Link
-                                href="#solutions"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border transition-all duration-300 hover:scale-105"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Solutions
+                                {hero.cta.label}
+                                <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                             </Link>
                         </div>
                     </div>
 
-                    {/* RIGHT VISUAL */}
-                    <div className="relative hidden lg:flex flex-col gap-6">
-                        {/* Image Container */}
-                        <div className="relative flex items-center justify-center">
-                            <div
-                                className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden border"
-                                style={{
-                                    borderColor: "color-mix(in srgb, #8b5cf6 30%, var(--border-color))",
-                                    background: "linear-gradient(135deg, color-mix(in srgb, #8b5cf6 8%, var(--card-bg)), color-mix(in srgb, #ec4899 5%, var(--card-bg)))",
-                                }}
-                            >
-                                <Image
-                                    src="/images/services-images/web-design-development/entertainment-media.svg"
-                                    alt="Entertainment & Media Platform"
-                                    fill
-                                    className="object-cover p-8"
-                                    priority
-                                />
-                            </div>
+                    {/* RIGHT VISUAL ELEMENT */}
+                    <div className="relative hidden lg:flex flex-col items-center justify-center">
+                        <Image
+                            src={hero.image.src}
+                            alt={hero.image.alt}
+                            width={500}
+                            height={400}
+                            className="relative w-[90%] h-[90%] z-10 rounded-2xl"
+                            priority
+                        />
 
-                            {/* Floating Info Card - Bottom Left */}
-                            <div
-                                className="absolute -bottom-4 -left-4 p-4 rounded-2xl border shadow-xl"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "color-mix(in srgb, #8b5cf6 30%, var(--border-color))",
-                                }}
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #8b5cf6, #7c3aed)" }}
-                                    >
-                                        <CheckCircle2 className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                            4K Streaming Ready
-                                        </p>
-                                        <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            Adaptive bitrate delivery
-                                        </p>
-                                    </div>
+                        {chips.length > 0 && (
+                            <div className="mt-12 flex flex-wrap gap-4 justify-center w-full z-10 relative">
+                                {chips.map((chip) => {
+                                    const ChipIcon = chip.icon;
+                                    const inner = (
+                                        <>
+                                            {chip.logo ? (
+                                                <Image src={chip.logo} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                            ) : ChipIcon ? (
+                                                <ChipIcon className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-violet-text)" }} />
+                                            ) : null}
+                                            <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>{chip.text}</span>
+                                        </>
+                                    );
+                                    return chip.href ? (
+                                        <Link
+                                            key={chip.text}
+                                            href={chip.href}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#8b5cf6]/30 transition-colors duration-200 hover:border-[#8b5cf6] focus-visible:outline-none focus-visible:border-[#8b5cf6]"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={chip.text}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#8b5cf6]/30"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+
+                        {metrics && (
+                            <div className="mt-8 text-center w-full z-10 relative">
+                                <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>{metrics.title}</p>
+                                {/* Even grid: 2×2 and one row of 4 from 1440px (four items), or one row of 3 */}
+                                <div className={metrics.items.length === 4 ? "grid grid-cols-2 min-[1440px]:grid-cols-4 gap-3" : metrics.items.length === 2 ? "grid grid-cols-2 gap-3" : "grid grid-cols-3 gap-3"}>
+                                    {metrics.items.map((item) => {
+                                        const ItemIcon = item.icon;
+                                        return (
+                                            <div
+                                                key={item.label}
+                                                className="flex flex-col items-center px-3 py-2 rounded-lg"
+                                                style={{ backgroundColor: "color-mix(in srgb, #8b5cf6 10%, transparent)" }}
+                                            >
+                                                {ItemIcon ? (
+                                                    <ItemIcon className="w-5 h-5 my-1" aria-hidden="true" style={{ color: "var(--accent-violet-text)" }} />
+                                                ) : (
+                                                    <span className="text-xl font-bold" style={{ color: "var(--accent-violet-text)" }}>{item.value}</span>
+                                                )}
+                                                <span className="text-xs" style={{ color: "var(--secondary-text)" }}>{item.label}</span>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
-
-                            {/* Floating Stats Card - Top Right */}
-                            <div
-                                className="absolute -top-4 -right-4 p-4 rounded-2xl border shadow-xl"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "color-mix(in srgb, #ec4899 30%, var(--border-color))",
-                                }}
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #ec4899, #db2777)" }}
-                                    >
-                                        <Sparkles className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                            Higher User Engagement
-                                        </p>
-                                        <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            Personalized content
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Info Section - Below Image */}
-                        <div
-                            className="p-5 rounded-2xl border mt-4"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                            }}
-                        >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--brand-purple-text)" }}>
-                                Platform Integrations
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                                {["AWS Media", "Cloudflare", "Stripe", "Firebase", "Vimeo OTT"].map((partner, idx) => (
-                                    <span
-                                        key={idx}
-                                        className="px-3 py-1.5 rounded-full text-xs font-medium border"
-                                        style={{
-                                            backgroundColor: "color-mix(in srgb, #8b5cf6 8%, transparent)",
-                                            borderColor: "color-mix(in srgb, #8b5cf6 20%, transparent)",
-                                            color: "var(--foreground)",
-                                        }}
-                                    >
-                                        {partner}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>

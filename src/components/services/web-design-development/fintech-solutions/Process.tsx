@@ -1,353 +1,229 @@
-"use client";
-
-import {
-    Search, ShieldCheck, Code, Lock, Rocket, BarChart3,
-    ArrowRight, CheckCircle2, FileText, Users, Server, Zap,
-    Target, TrendingUp, Globe, Key
-} from "lucide-react";
-import { useState } from "react";
+import { CheckCircle, Workflow, ArrowRight, ShieldCheck, DraftingCompass, Code, Lock, Rocket, BarChart3 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
+
+const processHeader: ProcessHeader = {
+    title: (
+        <>
+            Our <span style={{ color: "var(--accent-sky-text)" }}>Secured FinTech</span> Process
+        </>
+    ),
+    intro: "A security-first methodology that prioritizes compliance and trust without compromising on innovation.",
+};
+
+// #step-* anchors kept (HowTo data). Step 02 "Architecture & UX Design" had a search icon.
+const steps: Step[] = [
+    {
+        anchor: "step-compliance",
+        number: "01",
+        icon: ShieldCheck,
+        title: "Security & Compliance Analysis",
+        description: "We start by mapping regulatory requirements (GDPR, PCI-DSS, KYC/AML) and defining the security architecture needed for your financial product.",
+        details: [
+            "Compliance roadmap",
+            "Security audit",
+            <Link key="personas" href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:underline">User personas</Link>,
+            "Risk assessment",
+        ],
+    },
+    {
+        anchor: "step-architecture",
+        number: "02",
+        icon: DraftingCompass,
+        title: "Architecture & UX Design",
+        description: "Designing trust-centric interfaces and robust backend architectures. We focus on clarity, speed, and reassuring user experiences for financial workflows.",
+        details: [
+            "System architecture",
+            "API specification",
+            <Link key="ux" href="/services/web-design-development/branding-services" className="underline underline-offset-2 hover:underline">UX/UI prototypes</Link>,
+            "Data flow diagrams",
+        ],
+    },
+    {
+        anchor: "step-development",
+        number: "03",
+        icon: Code,
+        title: "Secure Development",
+        description: "Building your platform with a security-first approach. Implementing encryption, secure authentication, and real-time transaction processing engines.",
+        details: [
+            "Core banking logic",
+            "Auth integration",
+            <Link key="api" href="/services/web-design-development/nodejs-backend" className="underline underline-offset-2 hover:underline">API development</Link>,
+            "Performance tuning",
+        ],
+    },
+    {
+        anchor: "step-testing",
+        number: "04",
+        icon: Lock,
+        title: "Penetration Testing & QA",
+        description: "Rigorous testing protocols including penetration testing, load testing, and smart contract audits to minimize vulnerabilities before launch.",
+        details: ["Penetration testing", "Smart contract audit", "Load testing", "UAT cycles"],
+    },
+    {
+        anchor: "step-launch",
+        number: "05",
+        icon: Rocket,
+        title: "Secure Launch",
+        description: "Controlled deployment strategies with phased rollouts. We ensure all integrations (banking rails, payment gateways) are live and stable.",
+        details: ["Production deployment", "Environment setup", "Staff training", "Global availability"],
+    },
+    {
+        anchor: "step-monitoring",
+        number: "06",
+        icon: BarChart3,
+        title: "Monitoring & Scaling",
+        description: "24/7 internal monitoring for fraud detection and system health. We scale infrastructure as your transaction volume and user base grows.",
+        details: ["Real-time monitoring", "Fraud alerts", "Scaling strategy", "Feature updates"],
+    },
+];
+
+const processCta: SectionCta = {
+    title: "Ready to Disrupt Finance?",
+    text: "Let's audit your compliance needs and architect a platform that scales.",
+    label: "Schedule a FinTech Consultation",
+};
+
+type ProcessHeader = { title: ReactNode; intro: ReactNode };
+type Step = {
+    anchor?: string;
+    number: string;
+    icon: LucideIcon;
+    title: ReactNode;
+    // a short line under the title (Travel: "Starting Point", "Take Off"…)
+    subtitle?: string;
+    description: ReactNode;
+    details: ReactNode[];
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string } | null;
 
 export default function Process() {
-    const [hoveredStep, setHoveredStep] = useState<number | null>(null);
-    const [activeStep, setActiveStep] = useState(0);
-
-    const steps = [
-        {
-            anchor: "step-compliance",
-            number: "01",
-            icon: ShieldCheck,
-            title: "Security & Compliance Analysis",
-            description: "We start by mapping regulatory requirements (GDPR, PCI-DSS, KYC/AML) and defining the security architecture needed for your financial product.",
-            deliverables: [
-                { icon: ShieldCheck, text: "Compliance roadmap" },
-                { icon: Lock, text: "Security audit" },
-                { icon: Users, text: <Link href="/blog/ui-ux-design-principles-best-practices" className="hover:underline">User personas</Link> },
-                { icon: Target, text: "Risk assessment" }
-            ],
-            color: "#0ea5e9", // Sky blue
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-        {
-            anchor: "step-architecture",
-            number: "02",
-            icon: Search,
-            title: "Architecture & UX Design",
-            description: "Designing trust-centric interfaces and robust backend architectures. We focus on clarity, speed, and reassuring user experiences for financial workflows.",
-            deliverables: [
-                { icon: Server, text: "System architecture" },
-                { icon: FileText, text: "API specification" },
-                { icon: Users, text: <Link href="/services/web-design-development/branding-services" className="hover:underline">UX/UI prototypes</Link> },
-                { icon: Lock, text: "Data flow diagrams" }
-            ],
-            color: "#0ea5e9", // Sky blue
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-        {
-            anchor: "step-development",
-            number: "03",
-            icon: Code,
-            title: "Secure Development",
-            description: "Building your platform with a security-first approach. Implementing encryption, secure authentication, and real-time transaction processing engines.",
-            deliverables: [
-                { icon: Code, text: "Core banking logic" },
-                { icon: Key, text: "Auth integration" },
-                { icon: Globe, text: <Link href="/services/web-design-development/nodejs-backend" className="hover:underline">API development</Link> },
-                { icon: Zap, text: "Performance tuning" }
-            ],
-            color: "#0ea5e9", // Sky blue
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-        {
-            anchor: "step-testing",
-            number: "04",
-            icon: Lock,
-            title: "Penetration Testing & QA",
-            description: "Rigorous testing protocols including penetration testing, load testing, and smart contract audits to minimize vulnerabilities before launch.",
-            deliverables: [
-                { icon: ShieldCheck, text: "Penetration testing" },
-                { icon: CheckCircle2, text: "Smart contract audit" },
-                { icon: TrendingUp, text: "Load testing" },
-                { icon: Target, text: "UAT cycles" }
-            ],
-            color: "#0ea5e9",
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-        {
-            anchor: "step-launch",
-            number: "05",
-            icon: Rocket,
-            title: "Secure Launch",
-            description: "Controlled deployment strategies with phased rollouts. We ensure all integrations (banking rails, payment gateways) are live and stable.",
-            deliverables: [
-                { icon: Rocket, text: "Production deployment" },
-                { icon: Server, text: "Environment setup" },
-                { icon: Users, text: "Staff training" },
-                { icon: Globe, text: "Global availability" }
-            ],
-            color: "#0ea5e9",
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-        {
-            anchor: "step-monitoring",
-            number: "06",
-            icon: BarChart3,
-            title: "Monitoring & Scaling",
-            description: "24/7 internal monitoring for fraud detection and system health. We scale infrastructure as your transaction volume and user base grows.",
-            deliverables: [
-                { icon: BarChart3, text: "Real-time monitoring" },
-                { icon: ShieldCheck, text: "Fraud alerts" },
-                { icon: TrendingUp, text: "Scaling strategy" },
-                { icon: Zap, text: "Feature updates" }
-            ],
-            color: "#0ea5e9",
-            gradient: "from-[#0ea5e9] to-[#38bdf8]",
-        },
-    ];
+    // Columns from lg: 7 steps in rows of 4 (4+3); 5 or 6 steps in rows of 3
+    // (3+3, 3+2), so no row is left with a single card.
+    const cols = steps.length === 7 || steps.length === 8 ? 4 : 3;
+    const gridClass = cols === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3";
 
     return (
         <section
-            className="py-20 transition-colors duration-300 relative overflow-hidden"
-            style={{
-                backgroundColor: "var(--card-bg)",
-                borderColor: "var(--border-color)",
-            }}
+            className="py-16 md:py-20 transition-colors duration-300 relative overflow-hidden"
+            style={{ backgroundColor: "var(--card-bg)" }}
         >
-            {/* Animated background elements */}
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20">
-                    <div className="inline-block mb-4">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <Code className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
-                                Our Process
-                            </span>
-                        </div>
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+                    >
+                        <Workflow className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
+                            Our Process
+                        </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Our <span style={{ color: "var(--accent-sky-text)" }}>Secured FinTech</span> Process
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {processHeader.title}
                     </h2>
 
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        A security-first methodology that prioritizes compliance and trust without compromising on innovation.
+                    <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                        {processHeader.intro}
                     </p>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{
-                            background: "#0ea5e9",
-                        }}
-                    />
                 </div>
 
-                {/* Process Steps with Timeline */}
-                <div className="relative">
-                    {/* Vertical Timeline Line */}
-                    <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2">
-                        <div
-                            className="absolute inset-0 rounded-full"
-                            style={{
-                                background: "linear-gradient(180deg, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9)",
-                                opacity: 0.2,
-                            }}
-                        />
-                        <div
-                            className="absolute inset-0 rounded-full transition-all duration-1000"
-                            style={{
-                                background: "linear-gradient(180deg, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9, #0ea5e9)",
-                                transform: `scaleY(${(activeStep + 1) / steps.length})`,
-                                transformOrigin: "top",
-                            }}
-                        />
-                    </div>
+                {/* Numbered stepper (website-type pages). From lg: rows of steps, the
+                    number circles joined by a line (none after the end of a row or the
+                    last step). Below lg: a list with the numbers on a rail at the left.
+                    Each step keeps its #step-* anchor (the page's HowTo data links to it).
+                    Hover (CSS only): the card's border turns the page colour and lifts
+                    4px, and the number circle fills. */}
+                <ol className={`grid ${gridClass} gap-8 lg:gap-x-6 lg:gap-y-12`}>
+                    {steps.map((step, idx) => {
+                        const Icon = step.icon;
+                        const isLast = idx === steps.length - 1;
+                        const endsRow = idx % cols === cols - 1;
 
-                    <div className="space-y-12 lg:space-y-24">
-                        {steps.map((step, idx) => {
-                            const Icon = step.icon;
-                            const isEven = idx % 2 === 0;
-                            const isHovered = hoveredStep === idx;
-                            const isActive = activeStep === idx;
+                        return (
+                            <li
+                                key={step.number}
+                                id={step.anchor}
+                                className="group scroll-mt-20 relative flex lg:flex-col gap-4"
+                            >
+                                {/* Number on the line */}
+                                <div className="relative flex-shrink-0">
+                                    <div className="relative z-10 w-10 h-10 rounded-full border-2 border-[#0ea5e9] flex items-center justify-center text-sm font-bold text-[var(--accent-sky-text)] bg-[var(--card-bg)] transition-colors duration-200 group-hover:bg-[#006d97] group-hover:border-[#006d97] group-hover:text-white motion-reduce:transition-none">
+                                        {step.number}
+                                    </div>
+                                </div>
 
-                            return (
+                                {/* Connector: across to the next step from lg, down to it below lg */}
+                                {!isLast && !endsRow && (
+                                    <div aria-hidden="true" className="hidden lg:block absolute top-5 left-12 -right-4 h-0.5 bg-[#0ea5e9]/50" />
+                                )}
+                                {!isLast && (
+                                    <div aria-hidden="true" className="lg:hidden absolute left-5 top-12 -bottom-6 w-0.5 -translate-x-1/2 bg-[#0ea5e9]/50" />
+                                )}
+
+                                {/* Step card */}
                                 <div
-                                    key={idx}
-                                    id={step.anchor}
-                                    className="scroll-mt-20 relative"
-                                    onMouseEnter={() => {
-                                        setHoveredStep(idx);
-                                        setActiveStep(idx);
-                                    }}
-                                    onMouseLeave={() => setHoveredStep(null)}
+                                    className="flex-1 min-w-0 p-6 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out group-hover:border-[#0ea5e9] group-hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:group-hover:translate-y-0"
+                                    style={{ backgroundColor: "var(--card-bg)" }}
                                 >
-                                    <div
-                                        className={`flex flex-col lg:flex-row gap-8 items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
-                                    >
-                                        {/* Left/Right Content */}
-                                        <div className={`lg:w-5/12 ${isEven ? "lg:text-right" : "lg:text-left"}`}>
-                                            <div
-                                                className="text-7xl md:text-8xl font-bold mb-4 opacity-20 transition-all duration-500"
-                                                style={{
-                                                    background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
-                                                    WebkitBackgroundClip: "text",
-                                                    WebkitTextFillColor: "transparent",
-                                                    transform: isHovered ? "scale(1.1)" : "scale(1)",
-                                                }}
-                                            >
-                                                {step.number}
-                                            </div>
-
-                                            <h3
-                                                className="hidden lg:block text-2xl md:text-3xl font-bold mb-4 transition-colors duration-300"
-                                                style={{ color: isHovered ? step.color : "var(--foreground)" }}
-                                            >
-                                                {step.title}
-                                            </h3>
+                                    {/* Icon beside the title (above it in narrow four-column cards at
+                                        1024–1279). Hidden on phones: the numbered circle already marks
+                                        the step, and the title gets the full width. */}
+                                    <div className={`flex ${cols === 4 ? "lg:flex-col xl:flex-row" : ""} items-start gap-3 mb-3`}>
+                                        <div
+                                            className="hidden sm:flex w-10 h-10 rounded-xl items-center justify-center text-white flex-shrink-0"
+                                            style={{ background: "linear-gradient(135deg, #006d97, #00557a)" }}
+                                        >
+                                            <Icon className="w-5 h-5" aria-hidden="true" />
                                         </div>
-
-                                        {/* Center Icon */}
-                                        <div className="lg:w-2/12 flex justify-center relative z-20">
-                                            <div
-                                                className="relative transition-all duration-500"
-                                                style={{
-                                                    transform: isHovered ? "scale(1.15) rotate(10deg)" : "scale(1) rotate(0deg)",
-                                                }}
-                                            >
-
-                                                <div
-                                                    className={`relative w-24 h-24 rounded-2xl flex items-center justify-center bg-gradient-to-br ${step.gradient} shadow-2xl`}
-                                                >
-                                                    {isActive && (
-                                                        <div
-                                                            className="absolute inset-0 rounded-2xl animate-ping"
-                                                            style={{ background: step.color, opacity: 0.3 }}
-                                                        />
-                                                    )}
-                                                    <Icon className="w-12 h-12 text-white relative z-10" />
-                                                </div>
-
-                                                <div
-                                                    className={`hidden lg:block absolute top-1/2 w-16 h-0.5 transition-all duration-500 ${isEven ? "left-full ml-2" : "right-full mr-2"}`}
-                                                    style={{
-                                                        background: step.color,
-                                                        opacity: isHovered ? 1 : 0.3,
-                                                        transform: isHovered ? "scaleX(1.2)" : "scaleX(1)",
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Right/Left Content Card */}
-                                        <div className="lg:w-5/12 w-full">
-                                            <h3
-                                                className="lg:hidden text-2xl font-bold mb-4 text-center transition-colors duration-300"
-                                                style={{ color: isHovered ? step.color : "var(--foreground)" }}
-                                            >
-                                                {step.title}
-                                            </h3>
-
-                                            <div
-                                                className="relative p-8 rounded-2xl border overflow-hidden transition-all duration-500"
-                                                style={{
-                                                    backgroundColor: "var(--card-bg)",
-                                                    borderColor: isHovered ? step.color : "var(--border-color)",
-                                                    transform: isHovered ? "translateY(-8px)" : "translateY(0)",
-                                                    boxShadow: isHovered ? `0 20px 60px ${step.color}30` : "0 4px 6px rgba(0, 0, 0, 0.05)",
-                                                }}
-                                            >
-                                                <div
-                                                    className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                                                    style={{
-                                                        background: `linear-gradient(135deg, ${step.color}10, transparent)`,
-                                                        opacity: isHovered ? 1 : 0,
-                                                    }}
-                                                />
-
-                                                <div className="relative z-10">
-                                                    <p className="text-base md:text-lg mb-6 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                                        {step.description}
-                                                    </p>
-
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                                        {step.deliverables.map((deliverable, didx) => {
-                                                            const DeliverableIcon = deliverable.icon;
-                                                            return (
-                                                                <div
-                                                                    key={didx}
-                                                                    className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 group/deliverable"
-                                                                    style={{
-                                                                        backgroundColor: isHovered ? `${step.color}15` : `${step.color}08`,
-                                                                        transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                                                        transitionDelay: `${didx * 50}ms`,
-                                                                    }}
-                                                                >
-                                                                    <div
-                                                                        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover/deliverable:scale-110 group-hover/deliverable:rotate-12"
-                                                                        style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}cc)` }}
-                                                                    >
-                                                                        <DeliverableIcon className="w-4 h-4 text-white" />
-                                                                    </div>
-                                                                    <span
-                                                                        className="text-sm font-medium transition-colors duration-300"
-                                                                        style={{ color: isHovered ? "var(--foreground)" : "var(--secondary-text)" }}
-                                                                    >
-                                                                        {deliverable.text}
-                                                                    </span>
-                                                                </div>
-                                                            );
-                                                        })}
-                                                    </div>
-                                                </div>
-
-                                                <div
-                                                    className="absolute bottom-0 left-0 right-0 h-1 transition-all duration-500"
-                                                    style={{
-                                                        background: `linear-gradient(90deg, ${step.color}, transparent)`,
-                                                        transform: isHovered ? "scaleX(1)" : "scaleX(0)",
-                                                        transformOrigin: isEven ? "left" : "right",
-                                                    }}
-                                                />
-                                            </div>
+                                        <div className="min-w-0">
+                                            <h3 className="text-lg font-bold leading-snug" style={{ color: "var(--foreground)" }}>{step.title}</h3>
+                                            {step.subtitle && (
+                                                <p className="text-xs font-semibold uppercase tracking-wide mt-1" style={{ color: "var(--accent-sky-text)" }}>
+                                                    {step.subtitle}
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
-
-                                    {idx < steps.length - 1 && (
-                                        <div className="lg:hidden flex justify-center my-8">
-                                            <div
-                                                className="w-12 h-12 rounded-full flex items-center justify-center"
-                                                style={{ background: `linear-gradient(135deg, ${step.color}30, ${steps[idx + 1].color}30)` }}
-                                            >
-                                                <ArrowRight className="w-6 h-6" style={{ color: step.color }} />
-                                            </div>
-                                        </div>
-                                    )}
+                                    <p className="text-sm mb-4" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>{step.description}</p>
+                                    <ul className="space-y-2">
+                                        {step.details.map((detail, didx) => (
+                                            <li key={didx} className="flex items-start gap-2 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-[var(--accent-sky-text)]" aria-hidden="true" />
+                                                <span>{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                            </li>
+                        );
+                    })}
+                </ol>
 
-                {/* Bottom CTA */}
-                <div className="text-center mt-20">
-                    <div className="inline-block p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                            Ready to Disrupt Finance?
-                        </h3>
-                        <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                            Let's audit your compliance needs and architect a platform that scales.
-                        </p>
+                {processCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {processCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {processCta.title}
+                            </h3>
+                        )}
+                        {processCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {processCta.text}
+                            </p>
+                        )}
                         <Link
-                            href="/contact"
-                            className="px-8 py-4 rounded-full font-semibold text-white text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center gap-2 group"
-                            style={{ background: "var(--brand-blue-btn)" }}
+                            href={processCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#006d97] to-[#00557a] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                         >
-                            Schedule a FinTech Consultation
-                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                            {processCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                         </Link>
                     </div>
-                </div>
+                )}
             </div>
         </section>
     );

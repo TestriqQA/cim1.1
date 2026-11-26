@@ -4,20 +4,16 @@ import { ArrowRight, ShoppingCart } from "lucide-react";
 export default function CTA() {
     return (
         <section
-            className="py-16 transition-colors duration-300"
+            className="py-16 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
-                {/* Main CTA Card */}
-                <div
-                    className="relative rounded-3xl p-6 md:p-16 border text-center overflow-hidden"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                    }}
-                >
-
-                    {/* Content */}
+                {/* No tint, glow or border: the content sits on the page's own
+                    background; top/bottom padding dropped. On phones the inner side
+                    padding is 0 so the content matches every other section's width
+                    (it was 48px a side); from 640px it keeps px-6 / md:px-16. The
+                    trust stats that repeated the hero's are gone (shown once). */}
+                <div className="relative px-0 sm:px-6 md:px-16 text-center">
                     <div className="relative z-10">
                         {/* Badge */}
                         <div
@@ -29,73 +25,31 @@ export default function CTA() {
                                 color: "var(--accent-cyan-text)",
                             }}
                         >
-                            <ShoppingCart className="w-4 h-4" />
+                            <ShoppingCart className="w-4 h-4" aria-hidden="true" />
                             <span className="text-sm font-semibold">Start Selling Online</span>
                         </div>
 
-                        {/* Heading */}
-                        <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            <span
-                                className="bg-clip-text text-transparent"
-                                style={{
-                                    background:
-                                        "linear-gradient(90deg, #00b5ca, var(--brand-cyan), #00efd6)",
-                                    WebkitBackgroundClip: "text",
-                                    color: "transparent",
-                                }}
-                            >
-                                Ready to Launch Your High-Converting Store?
-                            </span>
+                        {/* Heading: the cyan text token (the old gradient was 1.3–2.2:1 on the light page) */}
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: "var(--accent-cyan-text)" }}>
+                            Ready to Launch Your High-Converting Store?
                         </h2>
 
                         {/* Description */}
-                        <p className="text-base md:text-xl max-w-3xl mx-auto mb-12" style={{ color: "var(--secondary-text)" }}>
-                            Don't settle for a generic template. Partner with a global Ecommerce Agency that delivers quantifiable results.
+                        <p className="text-base md:text-xl max-w-3xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
+                            Don&apos;t settle for a generic template. Partner with a global Ecommerce Agency that delivers quantifiable results.
                         </p>
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#0e7490] to-[#155e75] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                             >
                                 Book Your Free Strategy Call Today
-                                <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                                <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                             </Link>
                         </div>
                     </div>
-                </div>
-
-                {/* Trust Indicators */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    {[
-                        {
-                            number: "Significant",
-                            label: "Revenue Generated",
-                        },
-                        {
-                            number: "Higher",
-                            label: "Avg. Conversion Lift",
-                        },
-                        {
-                            number: "Proven",
-                            label: "Stores Launched",
-                        },
-                    ].map((indicator, idx) => (
-                        <div key={idx}>
-                            <div
-                                className="text-4xl font-bold mb-2"
-                                style={{
-                                    background: "linear-gradient(90deg, #00b5ca, #00efd6)",
-                                    WebkitBackgroundClip: "text",
-                                    color: "transparent",
-                                }}
-                            >
-                                {indicator.number}
-                            </div>
-                            <p style={{ color: "var(--secondary-text)" }}>{indicator.label}</p>
-                        </div>
-                    ))}
                 </div>
             </div>
         </section>

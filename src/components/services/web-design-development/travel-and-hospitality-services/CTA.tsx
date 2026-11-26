@@ -1,123 +1,117 @@
-import {
-  Plane,
-  ArrowRight,
-  Calendar,
-  Globe,
-  CreditCard,
-  CheckCircle2,
-} from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+// No tinted card or decorative plane; the three chips are a tick list (one links to
+// its page), and "Talk to an Expert" went to the same /contact page.
+const cta: CtaData = {
+    title: "Ready to Pioneer the Future of Travel and Hospitality?",
+    text: "Transform your operations, delight your guests, and drive unprecedented growth with our expert Travel and Hospitality Services. Whether you're looking for custom development or a complete digital overhaul, Cinute InfoMedia is your partner in innovation. Contact us today for a free consultation and let's build something extraordinary together.",
+    label: "Get Your Free Audit",
+    href: "/contact",
+    checks: [
+        <Link key="booking" href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:underline">Custom Booking Engines</Link>,
+        "GDS/OTA Integration",
+        "Secure Global Payments",
+    ],
+};
+
+type CtaData = {
+    pill?: string;
+    pillIcon?: LucideIcon;
+    title: ReactNode;
+    text: ReactNode;
+    label: string;
+    href: string;
+    note?: ReactNode;
+    stats?: { value: string; label: string }[];
+    checks?: ReactNode[];
+};
 
 export default function CTA() {
-  const features = [
-    {
-      icon: Calendar,
-      text: (
-        <Link
-          href="/services/web-design-development/ecommerce-development-company"
-          className="hover:underline"
+    const PillIcon = cta.pillIcon;
+    return (
+        <section
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)" }}
         >
-          Custom Booking Engines
-        </Link>
-      ),
-    },
-    { icon: Globe, text: "GDS/OTA Integration" },
-    { icon: CreditCard, text: "Secure Global Payments" },
-  ];
-
-  return (
-    <section
-      className="py-20 transition-colors duration-300"
-      style={{ backgroundColor: "var(--background)" }}
-    >
-      <div className="mx-auto px-6 md:px-12 xl:px-20">
-        <div
-          className="relative p-8 md:p-12 rounded-3xl border overflow-hidden"
-          style={{
-            background: "color-mix(in srgb, #0d9488 10%, var(--card-bg))",
-            borderColor: "var(--border-color)",
-          }}
-        >
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 opacity-10">
-            <Plane
-              className="w-64 h-64 -rotate-12"
-              style={{ color: "#0d9488" }}
-            />
-          </div>
-
-          <div className="relative z-10 max-w-3xl">
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              style={{ color: "var(--foreground)" }}
-            >
-              Ready to Pioneer the Future of{" "}
-              <span style={{ color: "var(--accent-teal-text)" }}>
-                Travel and Hospitality
-              </span>
-              ?
-            </h2>
-
-            <p
-              className="text-lg mb-8"
-              style={{ color: "var(--secondary-text)" }}
-            >
-              Transform your operations, delight your guests, and drive
-              unprecedented growth with our expert Travel and Hospitality
-              Services. Whether you&apos;re looking for custom development or a
-              complete digital overhaul, Cinute InfoMedia is your partner in
-              innovation. Contact us today for a free consultation and
-              let&apos;s build something extraordinary together.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-8">
-              {features.map((feature, idx) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full"
-                    style={{
-                      backgroundColor: "var(--card-bg)",
-                      border: "1px solid var(--border-color)",
-                    }}
-                  >
-                    <Icon className="w-4 h-4" style={{ color: "#0d9488" }} />
-                    <span
-                      className="text-sm font-medium"
-                      style={{ color: "var(--foreground)" }}
+            <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
+                {/* No tint, glow or border: the content sits on the page's own
+                    background. On phones the inner side padding is 0 so the content
+                    matches every other section's width; from 640px px-6 / md:px-16. */}
+                <div className="relative px-0 sm:px-6 md:px-16 text-center">
+                    {/* Badge */}
+                    {cta.pill && PillIcon && (
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            background:
+                                "linear-gradient(90deg, color-mix(in srgb, #0d9488 8%, transparent), color-mix(in srgb, #14b8a6 8%, transparent))",
+                            borderColor: "color-mix(in srgb, #0d9488 20%, transparent)",
+                            color: "var(--accent-teal-text)",
+                        }}
                     >
-                      {feature.text}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+                        <PillIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                        <span className="text-sm font-semibold text-center">{cta.pill}</span>
+                    </div>
+                    )}
 
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
-                style={{ backgroundColor: "var(--accent-teal-btn)" }}
-              >
-                Get Your Free Audit
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold border transition-all duration-300 hover:scale-105"
-                style={{
-                  borderColor: "var(--border-color)",
-                  color: "var(--foreground)",
-                  backgroundColor: "var(--card-bg)",
-                }}
-              >
-                Talk to an Expert
-              </Link>
+                    {/* Heading: solid text token, no gradient text */}
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: "var(--accent-teal-text)" }}>
+                        {cta.title}
+                    </h2>
+
+                    <p className="text-base md:text-xl max-w-3xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
+                        {cta.text}
+                    </p>
+
+                    {/* What the project covers: a tick list, centred as a block */}
+                    {cta.checks && (
+                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 w-fit max-w-full mx-auto mb-10 text-left">
+                            {cta.checks.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--foreground)" }}>
+                                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-teal-text)" }} />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <Link
+                            href={cta.href}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#0f766e] to-[#115e59] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {cta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Stats: one row per stat below lg (value left, label right), a
+                        centred row from lg */}
+                    {cta.stats && (
+                        <dl className="mt-10 max-w-md lg:max-w-none mx-auto divide-y lg:divide-y-0 divide-[var(--border-color)] lg:flex lg:justify-center lg:gap-16">
+                            {cta.stats.map((stat) => (
+                                <div key={stat.label} className="flex items-baseline justify-between gap-4 py-3 last:pb-0 lg:flex-col lg:items-center lg:gap-1 lg:py-0">
+                                    <dt className="order-2 lg:order-none text-xs sm:text-sm text-right lg:text-center" style={{ color: "var(--secondary-text)" }}>
+                                        {stat.label}
+                                    </dt>
+                                    <dd className="order-1 lg:-order-1 text-2xl lg:text-4xl font-bold whitespace-nowrap" style={{ color: "var(--accent-teal-text)" }}>
+                                        {stat.value}
+                                    </dd>
+                                </div>
+                            ))}
+                        </dl>
+                    )}
+
+                    {cta.note && (
+                        <p className="mt-8 text-sm md:text-base" style={{ color: "var(--secondary-text)" }}>
+                            {cta.note}
+                        </p>
+                    )}
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

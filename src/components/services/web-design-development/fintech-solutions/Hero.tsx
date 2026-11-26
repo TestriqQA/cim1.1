@@ -1,192 +1,305 @@
-import {
-    ShieldCheck, TrendingUp, Wallet, Globe, Lock, Smartphone,
-    ChevronRight, ArrowRight, Activity, PieChart, Building2
-} from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Home, ChevronRight, ShieldCheck, Landmark, CreditCard, TrendingUp, Link2, Smartphone, Lock, Activity, Globe } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import type { ReactNode } from "react";
+
+const hero: HeroData = {
+    crumb: "FinTech Solutions",
+    badge: "FinTech & Banking Solutions",
+    badgeIcon: ShieldCheck,
+    badgeClass: "text-[13px] min-[360px]:text-sm font-semibold whitespace-nowrap",
+    title: (
+        <>
+            Secure the Future of <span style={{ color: "var(--accent-sky-text)" }}>Digital Finance</span>
+        </>
+    ),
+    tagline: "Build secure, scalable, and compliant financial technology platforms. From neobanks to blockchain solutions, we engineer the future of money.",
+    taglineClass: "text-lg md:text-xl",
+    cta: { href: "/contact", label: "Start Your FinTech Project" },
+    image: {
+        src: "/images/services-images/web-design-development/fintech-solutions.svg",
+        alt: "FinTech Solutions Platform",
+    },
+};
+
+const features: HeroFeature[] = [
+    { icon: Landmark, text: "Digital Banking" },
+    { icon: ShieldCheck, text: "Bank-Grade Security" },
+    { icon: CreditCard, text: "Payment Gateways" },
+    { icon: TrendingUp, text: "Investment Tech" },
+    { icon: Link2, text: "Blockchain Solutions" },
+    { icon: Smartphone, text: "Mobile Finance", href: "/services/mobile-app-development" },
+];
+
+const stats: HeroStat[] = [
+    { value: "High-Volume", label: "Transaction Volume" },
+    { value: "High", label: "System Uptime" },
+    { value: "PCI-DSS", label: "Compliant" },
+];
+
+const chips: HeroChip[] = [
+    { icon: Lock, text: "256-bit Encrypted" },
+    { icon: Activity, text: "Real-time Data" },
+    { icon: Globe, text: "Global Payments" },
+];
+
+const metrics: HeroMetrics = {
+    title: "Platform Performance",
+    items: [
+        { value: "<100ms", label: "Transaction Speed" },
+        { value: "High", label: "Availability" },
+        { value: "A+", label: "Security Score" },
+        { value: "Low", label: "API Latency" },
+    ],
+};
+
+type HeroData = {
+    crumb: string;
+    badge: string;
+    badgeIcon: LucideIcon;
+    badgeClass: string;
+    title: ReactNode;
+    tagline: ReactNode;
+    taglineClass: string;
+    taglineExtra?: ReactNode;
+    cta: { href: string; label: string };
+    image: { src: string; alt: string };
+    // override the long-label list layout (measured per page)
+    longLabels?: boolean;
+    // a hero with a lot of text can use the 60/40 split (playbook rule 9)
+    gridClass?: string;
+    // long labels but a wide (60/40) text column: three columns from xl again
+    listXl3?: boolean;
+};
+type HeroFeature = { icon: LucideIcon; text: string; href?: string };
+type HeroStat = { value: string; label: string };
+type HeroChip = { text: string; icon?: LucideIcon; logo?: string; href?: string };
+type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[] } | null;
 
 export default function Hero() {
-    const features = [
-        { icon: Building2, text: "Digital Banking" },
-        { icon: ShieldCheck, text: "Bank-Grade Security" },
-        { icon: Wallet, text: "Payment Gateways" },
-        { icon: TrendingUp, text: "Investment Tech" },
-        { icon: Lock, text: "Blockchain Solutions" },
-        { icon: Smartphone, text: <Link href="/services/mobile-app-development" className="hover:underline">Mobile Finance</Link> },
-    ];
-
-    const stats = [
-        { value: "High-Volume", label: "Transaction Volume" },
-        { value: "High", label: "System Uptime" },
-        { value: "PCI-DSS", label: "Compliant" },
-    ];
-
+    const BadgeIcon = hero.badgeIcon;
+    // Labels longer than 17 characters ("Appointment Booking") don't fit two columns at
+    // 320 or three columns in the 1280 hero: one column below 360px and two from xl.
+    const longLabels = hero.longLabels ?? features.some((feature) => feature.text.length > 17);
+    const listClass = longLabels && hero.listXl3
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6"
+        : longLabels
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+        : "grid grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6";
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
-            style={{ backgroundColor: "var(--background)" }}
+            className="relative overflow-hidden transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Animated Background */}
+            {/* From 1024px the hero is tighter (top 32px, 24px gaps, 44px heading) so the
+                button shows without scrolling on common laptop screens */}
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 lg:pt-8 relative">
+                {/* Breadcrumbs */}
+                <nav
+                    className="flex items-center gap-1 text-[13px] min-[360px]:text-sm mb-5 lg:mb-3 justify-center lg:justify-start flex-wrap"
+                    aria-label="Breadcrumb"
+                >
+                    <Link
+                        href="/"
+                        className="flex items-center gap-1 hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                        style={{ color: "var(--secondary-text)" }}
+                    >
+                        <Home className="w-4 h-4" aria-hidden="true" />
+                        Home
+                    </Link>
+                    {/* Each › is kept with the item after it, so a wrap on phones never
+                        leaves a › hanging at the end of a line */}
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Services
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services/web-design-development"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Web Design
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <span
+                            className="font-semibold px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--accent-sky-text)" }}
+                        >
+                            {hero.crumb}
+                        </span>
+                    </span>
+                </nav>
 
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
                     {/* LEFT CONTENT */}
-                    <div className="space-y-8">
-                        {/* Breadcrumbs */}
-                        <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm" style={{ color: "var(--secondary-text)" }}>
-                            <Link href="/" className="hover:underline">Home</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services" className="hover:underline">Services</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services/web-design-development" className="hover:underline">Web Design</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "var(--brand-blue-text)" }}>FinTech Solutions</span>
-                        </nav>
-
+                    <div className="text-center lg:text-left">
                         {/* Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
                             style={{
-                                background: "color-mix(in srgb, #0ea5e9 10%, transparent)",
-                                borderColor: "color-mix(in srgb, #0ea5e9 30%, transparent)",
+                                background:
+                                    "linear-gradient(90deg, color-mix(in srgb, #0ea5e9 8%, transparent), color-mix(in srgb, #38bdf8 8%, transparent))",
+                                borderColor: "color-mix(in srgb, #0ea5e9 20%, transparent)",
+                                color: "var(--accent-sky-text)",
                             }}
                         >
-                            <ShieldCheck className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
-                                FinTech & Banking Solutions
-                            </span>
+                            <BadgeIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
+                            <span className={hero.badgeClass}>{hero.badge}</span>
                         </div>
 
-                        {/* Headline */}
-                        <h1
-                            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-                            style={{ color: "var(--foreground)" }}
-                        >
-                            Secure the Future of{" "}
-                            <span
-                                className="bg-clip-text text-transparent"
-                                style={{
-                                    color: "var(--accent-sky-text)"
-                                }}
-                            >
-                                Digital Finance
-                            </span>
+                        {/* Heading: solid text token (no gradient text). 30px on phones. */}
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-extrabold leading-tight mb-8 lg:mb-6">
+                            {hero.title}
                         </h1>
 
-                        <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                            Build secure, scalable, and compliant financial technology platforms. From neobanks to blockchain solutions, we engineer the future of money.
+                        {/* Tagline */}
+                        <p className={`${hero.taglineClass} mb-8 lg:mb-6`} style={{ color: "var(--secondary-text)" }}>
+                            {hero.tagline}
                         </p>
+                        {hero.taglineExtra && (
+                            <p className="text-base md:text-lg lg:text-base leading-relaxed mb-8 lg:mb-6" style={{ color: "var(--secondary-text)" }}>
+                                {hero.taglineExtra}
+                            </p>
+                        )}
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap gap-3">
-                            {features.map((feature, idx) => {
+                        {/* Feature Highlights: a light icon list, no boxes, every label on one
+                            line. Below lg the columns size to their content and the block is
+                            centred (w-fit mx-auto), with every item starting at its column's
+                            left edge, so the icons line up in straight columns. */}
+                        <ul className={listClass}>
+                            {features.map((feature) => {
                                 const Icon = feature.icon;
                                 return (
-                                    <div
-                                        key={idx}
-                                        className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105"
-                                        style={{
-                                            backgroundColor: "var(--card-bg)",
-                                            borderColor: "var(--border-color)",
-                                        }}
+                                    <li
+                                        key={feature.text}
+                                        className="flex items-center justify-start gap-1.5 sm:gap-2 min-w-0"
                                     >
-                                        <Icon className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                                        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
-                                            {feature.text}
+                                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
+                                        <span className="text-xs sm:text-sm font-semibold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+                                            {feature.href ? (
+                                                <Link href={feature.href} className="hover:underline">
+                                                    {feature.text}
+                                                </Link>
+                                            ) : (
+                                                feature.text
+                                            )}
                                         </span>
-                                    </div>
+                                    </li>
                                 );
                             })}
-                        </div>
+                        </ul>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap gap-8 pt-4">
-                            {stats.map((stat, idx) => (
-                                <div key={idx} className="text-center">
-                                    <div
-                                        className="text-3xl md:text-4xl font-bold"
-                                        style={{ color: "var(--accent-sky-text)" }}
-                                    >
+                        {/* Stats: no box, just a thin line above. The columns take their
+                            content's width, so no value is ever cut off. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-2 sm:gap-4 mb-8 lg:mb-6 pt-6 border-t border-[var(--border-color)]">
+                            {stats.map((stat) => (
+                                <div key={stat.label} className="text-center">
+                                    <div className={`text-lg sm:text-xl md:text-4xl lg:text-3xl xl:text-4xl font-bold mb-1 leading-tight ${stat.value.includes(" ") ? "" : "whitespace-nowrap"}`} style={{ color: "var(--accent-sky-text)" }}>
                                         {stat.value}
                                     </div>
-                                    <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
+                                    <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
                                         {stat.label}
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-4 pt-4">
+                        {/* CTA Button: a darker shade of the page colour so white text passes
+                            4.5:1, no resting glow */}
+                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
                             <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                                style={{ backgroundColor: "var(--brand-blue-btn)" }}
+                                href={hero.cta.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-6 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold text-center bg-gradient-to-r from-[#006d97] to-[#00557a] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                             >
-                                Start Your FinTech Project
-                                <ArrowRight className="w-5 h-5" />
+                                {hero.cta.label}
+                                <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                             </Link>
                         </div>
                     </div>
 
                     {/* RIGHT VISUAL ELEMENT */}
                     <div className="relative hidden lg:flex flex-col items-center justify-center">
-                        {/* Placeholder for now, anticipating the file or using a generic one if needed. 
-                            If the user has a specific image in mind, they should place it here. 
-                            For now I will point to where it SHOULD be.
-                        */}
                         <Image
-                            src="/images/services-images/web-design-development/fintech-solutions.svg"
-                            alt="FinTech Solutions Platform"
+                            src={hero.image.src}
+                            alt={hero.image.alt}
                             width={500}
                             height={400}
-                            className="relative w-[75%] h-[75%] z-10 rounded-2xl"
+                            className="relative w-[90%] h-[90%] z-10 rounded-2xl"
                             priority
-                        // Fallback to a place holder or handle error gracefully in a real app, 
-                        // but here we assume the asset will be provided.
                         />
 
-                        {/* Info Section Below Image */}
-                        <div className="flex gap-4 justify-center w-full z-10 relative mt-6">
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(14, 165, 233, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Lock className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>256-bit Encrypted</span>
+                        {chips.length > 0 && (
+                            <div className="mt-12 flex flex-wrap gap-4 justify-center w-full z-10 relative">
+                                {chips.map((chip) => {
+                                    const ChipIcon = chip.icon;
+                                    const inner = (
+                                        <>
+                                            {chip.logo ? (
+                                                <Image src={chip.logo} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                            ) : ChipIcon ? (
+                                                <ChipIcon className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
+                                            ) : null}
+                                            <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>{chip.text}</span>
+                                        </>
+                                    );
+                                    return chip.href ? (
+                                        <Link
+                                            key={chip.text}
+                                            href={chip.href}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#0ea5e9]/30 transition-colors duration-200 hover:border-[#0ea5e9] focus-visible:outline-none focus-visible:border-[#0ea5e9]"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={chip.text}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#0ea5e9]/30"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </div>
+                                    );
+                                })}
                             </div>
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(14, 165, 233, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Activity className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Real-time Data</span>
-                            </div>
-                            <div className="flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm" style={{ borderColor: "rgba(14, 165, 233, 0.3)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
-                                <Globe className="w-4 h-4" style={{ color: "#0ea5e9" }} />
-                                <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>Global Payments</span>
-                            </div>
-                        </div>
+                        )}
 
-                        {/* Performance Metrics */}
-                        <div className="grid grid-cols-2 gap-4 mt-6 w-full z-10 relative">
-                            {[
-                                { label: "Transaction Speed", value: "<100ms" },
-                                { label: "Availability", value: "High" },
-                                { label: "Security Score", value: "A+" },
-                                { label: "API Latency", value: "Low" },
-                            ].map((metric, idx) => (
-                                <div
-                                    key={idx}
-                                    className="p-3 rounded-xl border text-center transition-all duration-300 hover:scale-105"
-                                    style={{
-                                        backgroundColor: "color-mix(in srgb, var(--card-bg) 80%, transparent)",
-                                        borderColor: "var(--border-color)",
-                                    }}
-                                >
-                                    <div className="text-xl font-bold" style={{ color: "var(--accent-sky-text)" }}>
-                                        {metric.value}
-                                    </div>
-                                    <div className="text-xs" style={{ color: "var(--secondary-text)" }}>
-                                        {metric.label}
-                                    </div>
+                        {metrics && (
+                            <div className="mt-8 text-center w-full z-10 relative">
+                                <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>{metrics.title}</p>
+                                {/* Even grid: 2×2 and one row of 4 from 1440px (four items), or one row of 3 */}
+                                <div className={metrics.items.length === 4 ? "grid grid-cols-2 min-[1440px]:grid-cols-4 gap-3" : metrics.items.length === 2 ? "grid grid-cols-2 gap-3" : "grid grid-cols-3 gap-3"}>
+                                    {metrics.items.map((item) => {
+                                        const ItemIcon = item.icon;
+                                        return (
+                                            <div
+                                                key={item.label}
+                                                className="flex flex-col items-center px-3 py-2 rounded-lg"
+                                                style={{ backgroundColor: "color-mix(in srgb, #0ea5e9 10%, transparent)" }}
+                                            >
+                                                {ItemIcon ? (
+                                                    <ItemIcon className="w-5 h-5 my-1" aria-hidden="true" style={{ color: "var(--accent-sky-text)" }} />
+                                                ) : (
+                                                    <span className="text-xl font-bold" style={{ color: "var(--accent-sky-text)" }}>{item.value}</span>
+                                                )}
+                                                <span className="text-xs" style={{ color: "var(--secondary-text)" }}>{item.label}</span>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
