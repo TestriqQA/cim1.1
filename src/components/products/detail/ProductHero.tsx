@@ -12,7 +12,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string; style?: 
 
 // Logos for the hero's tech orbit, keyed by the names products use in
 // `techStack`. Every file already lives in /public. `invert` flips logos drawn
-// in black so they stay visible on the dark page. A name with no entry falls
+// in black so they stay visible in dark mode only; in light mode they stay
+// black, as a white logo vanished on the white chip. A name with no entry falls
 // back to the Chrome icon (for the extension API) or to its initials.
 const techLogos: Record<string, { src: string; invert?: boolean }> = {
     "React": { src: "/images/techstack_logos/react-logo.svg" },
@@ -239,7 +240,7 @@ export default function ProductHero({ product }: { product: Product }) {
                                                     style={{ left: `${50 + 50 * Math.cos(angle)}%`, top: `${50 + 50 * Math.sin(angle)}%`, backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
                                                 >
                                                     {logo ? (
-                                                        <Image src={logo.src} alt={tech} width={30} height={30} className={`w-6 h-6 xl:w-[30px] xl:h-[30px] object-contain ${logo.invert ? "invert" : ""}`} />
+                                                        <Image src={logo.src} alt={tech} width={30} height={30} className={`w-6 h-6 xl:w-[30px] xl:h-[30px] object-contain ${logo.invert ? "[[data-theme=dark]_&]:invert" : ""}`} />
                                                     ) : tech === "Chrome Extension API" ? (
                                                         <Chrome className="w-6 h-6 xl:w-7 xl:h-7" style={{ color }} />
                                                     ) : (
