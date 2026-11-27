@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Award, Shield, TrendingUp, Users, Zap, BarChart3, CheckCircle } from "lucide-react";
+import { Award, Shield, TrendingUp, Users, Zap, BarChart3, CheckCircle, Trophy } from "lucide-react";
 
 export default function WhyChooseUs() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                             borderColor: `${tiktokPink}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: tiktokPink }} />
+                        <Trophy className="w-4 h-4" style={{ color: tiktokPink }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                             Why Choose Us
                         </span>

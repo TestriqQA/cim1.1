@@ -14,6 +14,7 @@ import {
   Headphones,
   ArrowRight,
   Check,
+  LayoutGrid,
 } from "lucide-react";
 
 export default function Services() {
@@ -288,7 +289,7 @@ export default function Services() {
               text-[var(--brand-purple-text)]
             "
           >
-            <Zap className="w-4 h-4" />
+            <LayoutGrid className="w-4 h-4" />
             <span className="text-sm font-semibold">Our Services</span>
           </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, Palette, FileText, Target, Users, TrendingUp } from "lucide-react";
+import { Palette, FileText, Target, Users, TrendingUp, LayoutGrid } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
@@ -21,7 +21,7 @@ export default function ServiceOverview() {
                             color: "var(--accent-amber-text)",
                         }}
                     >
-                        <Zap className="w-4 h-4" />
+                        <LayoutGrid className="w-4 h-4" />
                         <span className="text-sm font-semibold">Service Overview</span>
                     </div>
 

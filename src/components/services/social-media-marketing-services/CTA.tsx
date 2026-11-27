@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 
 export default function CTA() {
     return (
@@ -33,7 +33,7 @@ export default function CTA() {
                                 color: "var(--accent-teal-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" />
+                            <TrendingUp className="w-4 h-4" />
                             <span className="text-sm font-semibold">Ready to Elevate Your Social Presence?</span>
                         </div>
 

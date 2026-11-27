@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ListChecks, Search, FileText, Code, Shield, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ListChecks, Search, FileText, Code, Shield, TrendingUp, ArrowRight, CheckCircle2, Workflow } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
@@ -67,7 +67,7 @@ export default function Process() {
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <ListChecks className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             Our Process
                         </span>

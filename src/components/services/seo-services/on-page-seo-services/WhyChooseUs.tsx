@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, TrendingUp, Target, Award, Clock, Users, Sparkles } from "lucide-react";
+import { CheckCircle, TrendingUp, Target, Award, Clock, Users, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
                                 borderColor: `${seoGreen}40`,
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: seoGreen }} />
+                            <Trophy className="w-4 h-4" style={{ color: seoGreen }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Why Choose Us
                             </span>

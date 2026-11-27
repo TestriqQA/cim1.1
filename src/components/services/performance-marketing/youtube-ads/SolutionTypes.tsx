@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Users, ShoppingBag, Eye, Megaphone, TrendingUp, Smartphone, Sparkles } from "lucide-react";
+import { Users, ShoppingBag, Eye, Megaphone, TrendingUp, Smartphone, Target } from "lucide-react";
 
 export default function SolutionTypes() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -64,7 +64,7 @@ export default function SolutionTypes() {
                             borderColor: `${youtubeRed}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <Target className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
                             Business Objectives
                         </span>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { TrendingUp, DollarSign, Users, Target, ArrowUpRight, Sparkles } from "lucide-react";
+import { TrendingUp, DollarSign, Users, Target, ArrowUpRight, Lightbulb } from "lucide-react";
 
 // Display names for the before/after metric keys (keys stay camelCase in the data).
 const METRIC_LABELS: Record<string, string> = {
@@ -130,7 +130,7 @@ export default function CaseStudies() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <Lightbulb className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Illustrative Scenarios
                         </span>

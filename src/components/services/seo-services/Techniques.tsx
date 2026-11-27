@@ -3,9 +3,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-    FileText, Code, Globe, Store, Link2, MousePointerClick, Settings,
-    CheckCircle2, Zap, Search, Rocket, Target, BarChart,
-    TrendingUp, Award, Sparkles
+    FileText,
+    Code,
+    Globe,
+    Store,
+    Link2,
+    MousePointerClick,
+    Settings,
+    CheckCircle2,
+    Zap,
+    Search,
+    Target,
+    BarChart,
+    TrendingUp,
+    Award,
+    Sparkles,
 } from "lucide-react";
 
 export default function Techniques() {
@@ -114,7 +126,7 @@ export default function Techniques() {
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
+                        <Search className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             SEO Techniques
                         </span>

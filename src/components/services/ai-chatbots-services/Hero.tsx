@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, ArrowRight, Home, ChevronRight, Zap, MessageCircle, Brain, Gauge } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, Zap, MessageCircle, Brain, Gauge, Bot } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -63,7 +63,7 @@ export default function Hero() {
                                 color: "var(--accent-indigo-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                            <Bot className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
                             <span className="text-sm font-semibold">Custom AI Chatbot Development Services</span>
                         </div>
 

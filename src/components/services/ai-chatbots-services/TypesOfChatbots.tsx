@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Headphones, Target, ShoppingCart, Users, Stethoscope, Database, Landmark, Code2, CheckCircle2, ArrowRight, Zap } from "lucide-react";
+import { Headphones, Target, ShoppingCart, Users, Stethoscope, Database, Landmark, Code2, CheckCircle2, ArrowRight, Puzzle } from "lucide-react";
 import Link from "next/link";
 
 export default function TypesOfChatbots() {
@@ -226,7 +226,7 @@ export default function TypesOfChatbots() {
                                 borderColor: "var(--brand-chatbot)",
                             }}
                         >
-                            <Zap className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                            <Puzzle className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
                             <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 Comprehensive Solutions
                             </span>

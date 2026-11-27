@@ -8,7 +8,7 @@ import {
     Paintbrush,
     GitMerge,
     Building2,
-    Sparkles,
+    LayoutGrid,
 } from "lucide-react";
 import { Android, Apple, Huawei } from "../../Icons";
 import Link from "next/link";
@@ -105,7 +105,7 @@ export default function AppTypes() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Development Services
                         </span>

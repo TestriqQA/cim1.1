@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, TrendingUp, Target, BarChart3, Users, Zap, Award, Shield } from "lucide-react";
+import { Sparkles, TrendingUp, Target, BarChart3, Users, Zap, Award, Shield, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" />
+                        <Trophy className="w-4 h-4" />
                         <span className="text-sm font-semibold">Why Choose Us</span>
                     </div>
 

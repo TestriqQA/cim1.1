@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Target, Users, ShoppingBag, Building, Briefcase, Globe, Sparkles } from "lucide-react";
+import { Target, Users, ShoppingBag, Building, Briefcase, Globe, Puzzle } from "lucide-react";
 import Link from "next/link";
 
 export default function SolutionTypes() {
@@ -88,7 +88,7 @@ export default function SolutionTypes() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Puzzle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Solutions
                         </span>

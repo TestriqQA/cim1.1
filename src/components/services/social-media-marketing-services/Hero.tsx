@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, Home, ChevronRight, TrendingUp, Users, Zap, Share2, BarChart3, Target } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, TrendingUp, Users, Zap, Share2, BarChart3, Target } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -59,7 +59,7 @@ export default function Hero() {
                                 color: "var(--accent-teal-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--brand-teal)" }} />
+                            <Share2 className="w-4 h-4" style={{ color: "var(--brand-teal)" }} />
                             <span className="text-sm font-semibold">Social Media Marketing</span>
                         </div>
 

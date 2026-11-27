@@ -10,15 +10,15 @@ import {
     ChevronRight,
     ArrowRight,
     CheckCircle2,
-    Store,
     Boxes,
+    Palette,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
     const features = [
-        { icon: Store, text: "Custom Themes" },
+        { icon: Palette, text: "Custom Themes" },
         { icon: CreditCard, text: "Payment Integration" },
         { icon: Package, text: "Inventory Management" },
         { icon: Globe, text: "Multi-channel" },

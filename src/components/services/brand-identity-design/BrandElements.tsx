@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Palette, Type, Image, MessageSquare, FileText, Hexagon, CheckCircle2 } from "lucide-react";
+import { Palette, Type, Image, MessageSquare, FileText, Hexagon, CheckCircle2, Shapes } from "lucide-react";
 import Link from "next/link";
 
 export default function BrandElements() {
@@ -89,7 +89,7 @@ export default function BrandElements() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <Shapes className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             Brand Elements
                         </span>

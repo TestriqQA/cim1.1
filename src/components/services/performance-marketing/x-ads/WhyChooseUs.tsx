@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, TrendingUp, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import { Users, TrendingUp, ShieldCheck, Zap, Trophy } from "lucide-react";
 
 export default function WhyChooseUs() {
     const xBlue = "#1D9BF0";
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                                 borderColor: `${xBlue}40`,
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
+                            <Trophy className="w-4 h-4" style={{ color: xBlue }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 The X Factor
                             </span>

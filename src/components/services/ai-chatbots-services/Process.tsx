@@ -10,12 +10,12 @@ import {
     Plug,
     TestTube,
     LineChart,
-    Sparkles,
     ArrowRight,
     Zap,
     Target,
     Users,
     TrendingUp,
+    Workflow,
 } from "lucide-react";
 
 export default function Process() {
@@ -98,7 +98,7 @@ export default function Process() {
                             border: "1px solid color-mix(in srgb, var(--brand-chatbot) 30%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
                             Our Methodology
                         </span>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Shield, Zap, Users, Award, Headphones, TrendingUp, CheckCircle } from 'lucide-react';
+import { Shield, Zap, Users, Award, Headphones, TrendingUp, CheckCircle, Trophy } from "lucide-react";
 import Link from 'next/link';
 
 const reasons = [
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                                 border: "1px solid var(--border-color)",
                             }}
                         >
-                            <Award className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                            <Trophy className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Why Choose Us</span>
                         </div>
 

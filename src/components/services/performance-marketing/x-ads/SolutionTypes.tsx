@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Flame, Globe2, Target, Smartphone, Sparkles } from "lucide-react";
+import { ArrowRight, Flame, Globe2, Target, Smartphone, Crosshair } from "lucide-react";
 
 export default function SolutionTypes() {
     const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -58,7 +58,7 @@ export default function SolutionTypes() {
                                 borderColor: `${xBlue}40`,
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: xBlue }} />
+                            <Crosshair className="w-4 h-4" style={{ color: xBlue }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Targeting Precision
                             </span>

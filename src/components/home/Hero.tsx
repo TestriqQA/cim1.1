@@ -4,11 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Sparkles,
   ChevronRight,
   BarChart3,
   Lightbulb,
   ArrowRight,
+  Globe,
 } from "lucide-react";
 import type { HeroCaseStudy } from "@/data/portfolio";
 
@@ -98,7 +98,7 @@ export default function Hero({
                   "linear-gradient(90deg, var(--brand-purple), var(--brand-cyan))",
               }}
             >
-              <Sparkles className="w-4 h-4 animate-spin-slow" />
+              <Globe className="w-4 h-4 animate-spin-slow" />
               <span className="text-sm font-semibold">Digital Presence & Digital Growth</span>
             </div>
 

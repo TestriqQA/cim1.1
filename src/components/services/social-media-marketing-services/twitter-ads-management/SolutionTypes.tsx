@@ -9,7 +9,7 @@ import {
     Award,
     Music,
     ChevronRight,
-    Sparkles,
+    Puzzle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -69,7 +69,7 @@ export default function SolutionTypes() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--foreground)" }} />
+                        <Puzzle className="w-4 h-4" style={{ color: "var(--foreground)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                             Solutions Directory
                         </span>

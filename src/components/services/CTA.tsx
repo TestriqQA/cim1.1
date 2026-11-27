@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Phone, Mail, Rocket } from "lucide-react";
 
 export default function CTA() {
     return (
@@ -22,7 +22,7 @@ export default function CTA() {
                     <div className="relative z-10 max-w-3xl mx-auto text-center">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-5">
-                            <Sparkles className="w-4 h-4 text-white" />
+                            <Rocket className="w-4 h-4 text-white" />
                             <span className="text-sm font-semibold text-white">Ready to Get Started?</span>
                         </div>
 

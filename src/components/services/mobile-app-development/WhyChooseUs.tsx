@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, Lock, TrendingUp, Palette, Smartphone, Award, Sparkles } from "lucide-react";
+import { Zap, Lock, TrendingUp, Palette, Smartphone, Award, Trophy, MinusCircle } from "lucide-react";
 import { CheckCircle2, XCircle, ShieldCheck, Rocket, Gauge, Wrench, Layers, Building2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Why Choose Us
                         </span>
@@ -253,7 +253,7 @@ export default function WhyChooseUs() {
                                                             color: "var(--secondary-text)",
                                                         }}
                                                     >
-                                                        <CheckCircle2 className="w-4 h-4" />
+                                                        <MinusCircle className="w-4 h-4" />
                                                         Limited
                                                     </span>
                                                 ) : (

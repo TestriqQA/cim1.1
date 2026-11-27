@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Zap, UserCheck, Search, Database, Globe, Sparkles } from "lucide-react";
+import { CheckCircle, Zap, UserCheck, Search, Database, Globe, Sparkles, Handshake } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
                                 borderColor: `${contentEmerald}40`,
                             }}
                         >
-                            <Sparkles className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
+                            <Handshake className="w-4 h-4" style={{ color: "var(--accent-green-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                                 Why Partner With Us
                             </span>

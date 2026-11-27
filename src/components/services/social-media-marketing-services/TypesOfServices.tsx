@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    Sparkles,
     Sprout,
     Megaphone,
     UsersRound,
@@ -10,7 +9,8 @@ import {
     MessageCircleHeart,
     LineChart,
     ArrowUpRight,
-    CheckCircle2
+    CheckCircle2,
+    LayoutGrid,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -96,7 +96,7 @@ export default function TypesOfServices() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" />
+                        <LayoutGrid className="w-4 h-4" />
                         <span className="text-sm font-semibold">Types of Social Media Marketing</span>
                     </div>
 
