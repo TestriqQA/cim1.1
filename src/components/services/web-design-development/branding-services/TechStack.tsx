@@ -1,196 +1,312 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Layers, FilePen, PenTool, Cloud, Plug, Gauge, MonitorSmartphone } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { isValidElement } from "react";
+import type { ReactNode } from "react";
+import { techLogo } from "@/components/services/web-design-development/techLogos";
+
+const techHeader: TechHeader = {
+    title: (
+        <>
+            Built with <span style={{ color: "var(--accent-cyan-text)" }}>Modern Tech</span>
+        </>
+    ),
+    intro: "We use the latest technologies to create fast, beautiful, and maintainable portfolio websites.",
+};
+
+// The tabs (one category at a time) became category cards with their own short
+// description; tools with a page of their own link to it. The four quality targets that
+// sat under the tabs are the sixth card.
+const technologies: TechCategory[] = [
+    {
+        category: "Frontend",
+        description: "Modern frameworks for fast, interactive portfolios",
+        icon: MonitorSmartphone,
+        items: [
+            { name: "Next.js", url: "/services/web-design-development/nextjs-development-services", logos: ["/images/techstack_logos/nextjs-logo.svg"] },
+            { name: "React", url: "/services/web-design-development/nextjs-development-services", logos: ["/images/techstack_logos/react-logo.svg"] },
+            { name: "Tailwind CSS", logos: ["/images/techstack_logos/tailwindcss-logo.svg"] },
+            { name: "Framer Motion", logos: ["/images/techstack_logos/framer-motion-logo.svg"] },
+        ],
+    },
+    {
+        category: "CMS Options",
+        description: "Easy content management for your portfolio",
+        icon: FilePen,
+        items: [
+            { name: "Sanity", logos: ["/images/techstack_logos/Sanity-square-logo.png"] },
+            { name: "Contentful", url: "/services/web-design-development/contentful-headless-cms", logos: ["/images/techstack_logos/Contentful-logo.webp"] },
+            { name: "Strapi", url: "/services/web-design-development/strapi-headless-cms", logos: ["/images/techstack_logos/Strapi-logo.png"] },
+            { name: "WordPress", url: "/services/web-design-development/wordpress-development-services", logos: ["/images/techstack_logos/wordpress-logo-hero1.png"] },
+        ],
+    },
+    {
+        category: "Design Tools",
+        description: "Tools we use to design your perfect portfolio",
+        icon: PenTool,
+        items: [
+            { name: "Figma", logos: ["/images/techstack_logos/figma-logo.svg"] },
+            { name: "Adobe", logos: ["/images/ai_automation_logos/adobe-logo.png"] },
+        ],
+    },
+    {
+        category: "Hosting",
+        description: "Fast, reliable hosting for global reach",
+        icon: Cloud,
+        items: [
+            { name: "Vercel", url: "/services/web-design-development/saas-development-services", logos: ["/images/techstack_logos/vercel-logo.webp"] },
+            { name: "Netlify", logos: ["/images/techstack_logos/netlify-logo.svg"] },
+            { name: "Cloudflare", logos: ["/images/techstack_logos/Cloudflare-logo.webp"] },
+        ],
+    },
+    {
+        category: "Integrations",
+        description: "Connect with your favorite tools and services",
+        icon: Plug,
+        items: [
+            { name: "Calendly", logos: ["/images/techstack_logos/calendly-logo.webp"] },
+            { name: "Mailchimp", url: "/services/performance-marketing", logos: ["/images/ai_automation_logos/mailchimp-logo.svg"] },
+            { name: "HubSpot", logos: ["/images/ai_automation_logos/hubspot-logo.png"] },
+        ],
+    },
+];
+
+const techStats: TechStats = {
+    title: "Quality Targets",
+    icon: Gauge,
+    items: [
+        { value: "98+", label: "Page Speed" },
+        { value: "100", label: "Mobile Score" },
+        { value: "High", label: "Uptime" },
+        { value: "✓", label: "SEO Ready" },
+    ],
+};
+
+type TechHeader = { title: ReactNode; intro: ReactNode };
+type Tool = {
+    name: ReactNode;
+    label?: string;
+    url?: string;
+    description?: ReactNode;
+    logos?: string[];
+    icon?: LucideIcon;
+    // no longer used: dark logos are inverted in dark mode instead (techLogos.ts)
+    lightTile?: boolean;
+};
+type TechCategory = {
+    category: string;
+    description?: string;
+    icon: LucideIcon;
+    layout?: "wide" | "small" | "last";
+    items: Tool[];
+};
+type TechStats = { title: string; icon: LucideIcon; items: { value: string; label: string }[] } | null;
 
 export default function TechStack() {
-    const [activeCategory, setActiveCategory] = useState(0);
+    // Category cards with big logos (user, 26 Nov 2026: "Category cards, big logos"): each
+    // tool is a big logo tile with its name under it; its short description shows on hover
+    // (title) and is read out by screen readers. A tool whose name linked to its page
+    // links from the whole tool.
+    const nameOf = (item: Tool) => (typeof item.name === "string" ? item.name : item.label ?? "");
+    const hrefOf = (item: Tool) =>
+        item.url ?? (isValidElement<{ href?: string }>(item.name) ? item.name.props.href : undefined);
+    const textOf = (node: ReactNode): string =>
+        typeof node === "string" || typeof node === "number"
+            ? String(node)
+            : Array.isArray(node)
+              ? node.map(textOf).join("")
+              : isValidElement<{ children?: ReactNode }>(node)
+                ? textOf(node.props.children)
+                : "";
+    // "AWS/GCP/Azure" and "OpenStreetMap" have no space to wrap at in a narrow column, so
+    // allow a break after each "/" and inside long joined words of 12+ letters (used only
+    // when it doesn't fit; short ones like "NestJS" and "FastAPI" stay whole)
+    const breakable = (name: string) =>
+        name
+            .split(/(?<=\/)|(?<=(?:^|[\s(])(?=[A-Za-z]{12,})[A-Za-z]*[a-z])(?=[A-Z])/)
+            .flatMap((part, i, all) => (i < all.length - 1 ? [part, <wbr key={i} />] : [part]));
 
-    const technologies = [
-        {
-            category: "Frontend",
-            description: "Modern frameworks for fast, interactive portfolios",
-            items: [
-                { name: "Next.js", logo: "/images/techstack_logos/nextjs-logo.svg", url: "/services/web-design-development/nextjs-development-services" },
-                { name: "React", logo: "/images/techstack_logos/react-logo.svg", url: "/services/web-design-development/nextjs-development-services" },
-                { name: "Tailwind CSS", logo: "/images/techstack_logos/tailwindcss-logo.svg" },
-                { name: "Framer Motion", logo: "/images/techstack_logos/framer-motion-logo.svg" },
-            ],
-        },
-        {
-            category: "CMS Options",
-            description: "Easy content management for your portfolio",
-            items: [
-                { name: "Sanity", logo: "/images/techstack_logos/Sanity-square-logo.png" },
-                { name: "Contentful", logo: "/images/techstack_logos/Contentful-logo.webp", url: "/services/web-design-development/contentful-headless-cms" },
-                { name: "Strapi", logo: "/images/techstack_logos/Strapi-logo.png", url: "/services/web-design-development/strapi-headless-cms" },
-                { name: "WordPress", logo: "/images/techstack_logos/wordpress-logo-hero1.png", url: "/services/web-design-development/wordpress-development-services" },
-            ],
-        },
-        {
-            category: "Design Tools",
-            description: "Tools we use to design your perfect portfolio",
-            items: [
-                { name: "Figma", logo: "/images/techstack_logos/figma-logo.svg" },
-                { name: "Adobe", logo: "/images/ai_automation_logos/adobe-logo.png" },
-            ],
-        },
-        {
-            category: "Hosting",
-            description: "Fast, reliable hosting for global reach",
-            items: [
-                { name: "Vercel", logo: "/images/techstack_logos/vercel-logo.webp", url: "/services/web-design-development/saas-development-services" },
-                { name: "Netlify", logo: "/images/techstack_logos/netlify-logo.svg" },
-                { name: "Cloudflare", logo: "/images/techstack_logos/Cloudflare-logo.webp" },
-            ],
-        },
-        {
-            category: "Integrations",
-            description: "Connect with your favorite tools and services",
-            items: [
-                { name: "Calendly", logo: "/images/techstack_logos/calendly-logo.webp" },
-                { name: "Mailchimp", logo: "/images/ai_automation_logos/mailchimp-logo.svg", url: "/services/performance-marketing" },
-                { name: "HubSpot", logo: "/images/ai_automation_logos/hubspot-logo.png" },
-            ],
-        },
-    ];
+    // Tool columns follow the card's own width (container query) and the tool count, so
+    // rows come out even: 3 tools = one row of 3, 4 = 2×2 (one row of 4 on wide cards),
+    // 6 = 3×2, 2 = one row of 2. On narrow cards 3 tools are 2 + 1 centred.
+    const toolGrid = (count: number) =>
+        count === 4
+            ? "grid-cols-2 @[24rem]:grid-cols-4"
+            : count === 2
+              ? "grid-cols-2"
+              : "grid-cols-2 @[17.5rem]:grid-cols-3";
+
+    // Tiles in the page colour, no white (user: "remove the white background from logos").
+    // Logos come from techLogos.ts: copies with their baked-in white background removed,
+    // and dark ones (Django, Sentry...) inverted in dark mode so they still show.
+    const tileClass =
+        "w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[var(--background)] border border-[var(--border-color)] transition-colors duration-200 ease-out motion-reduce:transition-none";
+    const invertDark = "[[data-theme=dark]_&]:[filter:invert(1)_hue-rotate(180deg)]";
+    const logoImg = (path: string, size: number, sizeClass: string) => {
+        const logo = techLogo(path);
+        return (
+            <Image
+                key={path}
+                src={logo.src}
+                alt=""
+                width={size}
+                height={size}
+                className={`${sizeClass} object-contain ${logo.invert === "dark" ? invertDark : ""}`}
+            />
+        );
+    };
 
     return (
         <section
-            className="py-20 transition-colors duration-300"
+            className="py-16 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Built with <span style={{ color: "var(--accent-cyan-text)" }}>Modern Tech</span>
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            backgroundColor: "color-mix(in srgb, #06b6d4 5%, transparent)",
+                            borderColor: "color-mix(in srgb, #06b6d4 20%, transparent)",
+                        }}
+                    >
+                        <Layers className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
+                            Our Tech Stack
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {techHeader.title}
                     </h2>
 
-                    <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        We use the latest technologies to create fast, beautiful, and maintainable portfolio websites.
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {techHeader.intro}
                     </p>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto mt-6 rounded-full"
-                        style={{ background: "linear-gradient(90deg, #06b6d4, #0891b2)" }}
-                    />
                 </div>
 
-                {/* Category Tabs */}
-                <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    {technologies.map((tech, idx) => (
-                        <button
-                            key={idx}
-                            onClick={() => setActiveCategory(idx)}
-                            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeCategory === idx ? "scale-105 shadow-lg" : "hover:scale-105"
-                                }`}
-                            style={{
-                                background: activeCategory === idx
-                                    ? "linear-gradient(135deg, #06b6d4, #0891b2)"
-                                    : "var(--card-bg)",
-                                color: activeCategory === idx ? "white" : "var(--secondary-text)",
-                                border: `1px solid ${activeCategory === idx ? "transparent" : "var(--border-color)"}`,
-                            }}
-                        >
-                            {tech.category}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Logo Display */}
-                <div
-                    className="p-8 rounded-3xl border transition-all duration-300"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                    }}
-                >
-                    <p className="text-center mb-8" style={{ color: "var(--secondary-text)" }}>
-                        {technologies[activeCategory].description}
-                    </p>
-
-                    <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12">
-                        {technologies[activeCategory].items.map((item, lidx) => {
-                            const commonClasses = "flex flex-col items-center gap-3 transition-all duration-300 hover:scale-110 cursor-pointer";
-                            const content = (
-                                <>
-                                    <div
-                                        className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center p-4 rounded-2xl"
-                                        style={{
-                                            backgroundColor: "color-mix(in srgb, #06b6d4 5%, var(--background))",
-                                        }}
-                                    >
-                                        <Image
-                                            src={item.logo}
-                                            alt={`${item.name} logo`}
-                                            fill
-                                            className="object-contain p-3 filter dark:brightness-90"
-                                        />
-                                    </div>
-                                    <span
-                                        className="text-xs md:text-sm font-medium text-center"
-                                        style={{ color: "var(--secondary-text)" }}
-                                    >
-                                        {item.name}
-                                    </span>
-                                </>
-                            );
-
-                            // @ts-ignore
-                            if (item.url) {
-                                return (
-                                    <Link
-                                        key={lidx}
-                                        // @ts-ignore
-                                        href={item.url}
-                                        className={commonClasses}
-                                    >
-                                        {content}
-                                    </Link>
-                                );
-                            }
-
-                            return (
-                                <div
-                                    key={lidx}
-                                    className={commonClasses}
-                                >
-                                    {content}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* Tech Highlights */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                    {[
-                        { label: "Page Speed", value: "98+" },
-                        { label: "Mobile Score", value: "100" },
-                        { label: "Uptime", value: "High" },
-                        { label: "SEO Ready", value: "✓" },
-                    ].map((stat, idx) => (
-                        <div
-                            key={idx}
-                            className="text-center p-6 rounded-2xl border"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                            }}
-                        >
+                {/* Category cards (website-type pages): 3 across from 1024px, 2 from 768px,
+                    1 on phones. No auto-rows-fr: rows size to their own content. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {technologies.map((tech) => {
+                        const Icon = tech.icon;
+                        return (
                             <div
-                                className="text-3xl font-bold mb-2"
-                                style={{ color: "var(--accent-cyan-text)" }}
+                                key={tech.category}
+                                className="@container p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#06b6d4] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)" }}
                             >
-                                {stat.value}
+                                <div className={`flex items-center gap-3 ${tech.description ? "mb-2" : "mb-6"}`}>
+                                    {/* The button shade, so the white icon passes 3:1 */}
+                                    <div
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                        style={{ background: "linear-gradient(135deg, #0e7490, #155e75)" }}
+                                    >
+                                        <Icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                    </div>
+                                    <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+                                        {tech.category}
+                                    </h3>
+                                </div>
+                                {tech.description && (
+                                    <p className="text-sm mb-6" style={{ color: "var(--secondary-text)" }}>
+                                        {tech.description}
+                                    </p>
+                                )}
+
+                                {/* Tools: a big logo tile (a related icon when there is no product
+                                    logo; a tool with several products shows them together in one
+                                    tile) with the name under it */}
+                                <ul className={`grid gap-x-3 gap-y-5 ${toolGrid(tech.items.length)}`}>
+                                    {tech.items.map((item, iidx) => {
+                                        const ToolIcon = item.icon;
+                                        const logos = item.logos ?? [];
+                                        const name = nameOf(item);
+                                        const href = hrefOf(item);
+                                        const about = item.description ? textOf(item.description) : "";
+                                        const body = (
+                                            <>
+                                                <span
+                                                    className={`${tileClass} ${href ? "group-hover:border-[#06b6d4] group-focus-visible:border-[#06b6d4]" : ""}`}
+                                                    aria-hidden="true"
+                                                >
+                                                    {logos.length === 1 ? (
+                                                        logoImg(logos[0], 40, "w-10 h-10")
+                                                    ) : logos.length > 1 ? (
+                                                        <span className={`flex flex-wrap items-center justify-center gap-1 ${logos.length === 2 ? "w-14" : "w-13"}`}>
+                                                            {logos.map((logo) => logoImg(logo, 26, logos.length === 2 ? "w-6.5 h-6.5" : "w-6 h-6"))}
+                                                        </span>
+                                                    ) : (
+                                                        ToolIcon && <ToolIcon className="w-8 h-8" style={{ color: "var(--accent-cyan-text)" }} />
+                                                    )}
+                                                </span>
+                                                <span
+                                                    className={`text-xs @[20rem]:text-sm font-semibold leading-snug break-words ${href ? "group-hover:underline" : ""}`}
+                                                    style={{ color: "var(--foreground)" }}
+                                                >
+                                                    {breakable(name)}
+                                                    {about && <span className="sr-only">: {about}</span>}
+                                                </span>
+                                            </>
+                                        );
+                                        const toolClass = "flex flex-col items-center gap-2 text-center min-w-0";
+                                        return (
+                                            <li
+                                                key={iidx}
+                                                title={about || undefined}
+                                                className="min-w-0 last:odd:col-span-2 @[17.5rem]:last:odd:col-span-1"
+                                            >
+                                                {href ? (
+                                                    <Link
+                                                        href={href}
+                                                        className={`${toolClass} group rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4`}
+                                                    >
+                                                        {body}
+                                                    </Link>
+                                                ) : (
+                                                    <div className={toolClass}>{body}</div>
+                                                )}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
                             </div>
-                            <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                {stat.label}
+                        );
+                    })}
+
+                    {/* The section's own quality targets, as one more card in the grid */}
+                    {techStats && (
+                        <div
+                            className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)]"
+                            style={{ backgroundColor: "var(--card-bg)" }}
+                        >
+                            <div className="flex items-center gap-3 mb-6">
+                                <div
+                                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                    style={{ background: "linear-gradient(135deg, #0e7490, #155e75)" }}
+                                >
+                                    <techStats.icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                </div>
+                                <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+                                    {techStats.title}
+                                </h3>
                             </div>
+                            <dl className="grid grid-cols-2 gap-4">
+                                {techStats.items.map((stat) => (
+                                    <div
+                                        key={stat.label}
+                                        className="flex flex-col-reverse items-center text-center gap-1 p-4 rounded-xl"
+                                        style={{ backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)" }}
+                                    >
+                                        <dt className="text-xs" style={{ color: "var(--secondary-text)" }}>{stat.label}</dt>
+                                        <dd className="text-2xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>{stat.value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
                         </div>
-                    ))}
+                    )}
                 </div>
             </div>
         </section>

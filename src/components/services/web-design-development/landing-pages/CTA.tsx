@@ -1,135 +1,115 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, Target } from "lucide-react";
+import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+// The trust stats repeated the hero's (Strong / Proven / <1s), so they are shown once;
+// the second button went to the same /contact page.
+const cta: CtaData = {
+    pill: "Maximize Your ROAS",
+    pillIcon: TrendingUp,
+    title: "Stop Wasting Ad Spend. Start Converting.",
+    text: "Don't let clicks go to waste. We build high-velocity landing pages designed to turn your traffic into leads and sales.",
+    label: "Get Your Landing Page",
+    href: "/contact",
+    note: "Standard turnaround: 3-5 days. Express delivery available.",
+};
+
+type CtaData = {
+    pill?: string;
+    pillIcon?: LucideIcon;
+    title: ReactNode;
+    text: ReactNode;
+    label: string;
+    href: string;
+    note?: ReactNode;
+    stats?: { value: string; label: string }[];
+    checks?: ReactNode[];
+};
 
 export default function CTA() {
-  return (
-    <section
-      className="py-16 transition-colors duration-300"
-      style={{ backgroundColor: "var(--background)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
-        {/* Main CTA Card */}
-        <div
-          className="relative rounded-3xl p-6 md:p-16 border text-center overflow-hidden"
-          style={{
-            backgroundColor: "var(--card-bg)",
-            borderColor: "var(--border-color)",
-          }}
+    const PillIcon = cta.pillIcon;
+    return (
+        <section
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)" }}
         >
+            <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
+                {/* No tint, glow or border: the content sits on the page's own
+                    background. On phones the inner side padding is 0 so the content
+                    matches every other section's width; from 640px px-6 / md:px-16. */}
+                <div className="relative px-0 sm:px-6 md:px-16 text-center">
+                    {/* Badge */}
+                    {cta.pill && PillIcon && (
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            background:
+                                "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
+                            borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
+                            color: "var(--accent-green-text)",
+                        }}
+                    >
+                        <PillIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                        <span className="text-sm font-semibold text-center">{cta.pill}</span>
+                    </div>
+                    )}
 
-          {/* Content */}
-          <div className="relative z-10">
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-              style={{
-                background:
-                  "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
-                borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                color: "var(--accent-green-text)",
-              }}
-            >
-              <Target className="w-4 h-4" />
-              <span className="text-sm font-semibold">Maximize Your ROAS</span>
+                    {/* Heading: solid text token, no gradient text */}
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: "var(--accent-green-text)" }}>
+                        {cta.title}
+                    </h2>
+
+                    <p className="text-base md:text-xl max-w-3xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
+                        {cta.text}
+                    </p>
+
+                    {/* What the project covers: a tick list, centred as a block */}
+                    {cta.checks && (
+                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 w-fit max-w-full mx-auto mb-10 text-left">
+                            {cta.checks.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--foreground)" }}>
+                                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-green-text)" }} />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <Link
+                            href={cta.href}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#047857] to-[#065f46] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {cta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Stats: one row per stat below lg (value left, label right), a
+                        centred row from lg */}
+                    {cta.stats && (
+                        <dl className="mt-10 max-w-md lg:max-w-none mx-auto divide-y lg:divide-y-0 divide-[var(--border-color)] lg:flex lg:justify-center lg:gap-16">
+                            {cta.stats.map((stat) => (
+                                <div key={stat.label} className="flex items-baseline justify-between gap-4 py-3 last:pb-0 lg:flex-col lg:items-center lg:gap-1 lg:py-0">
+                                    <dt className="order-2 lg:order-none text-xs sm:text-sm text-right lg:text-center" style={{ color: "var(--secondary-text)" }}>
+                                        {stat.label}
+                                    </dt>
+                                    <dd className="order-1 lg:-order-1 text-2xl lg:text-4xl font-bold whitespace-nowrap" style={{ color: "var(--accent-green-text)" }}>
+                                        {stat.value}
+                                    </dd>
+                                </div>
+                            ))}
+                        </dl>
+                    )}
+
+                    {cta.note && (
+                        <p className="mt-8 text-sm md:text-base" style={{ color: "var(--secondary-text)" }}>
+                            {cta.note}
+                        </p>
+                    )}
+                </div>
             </div>
-
-            {/* Heading */}
-            <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #10b981, #0ea5e9, #22c55e)",
-                  WebkitBackgroundClip: "text",
-                  color: "transparent",
-                }}
-              >
-                Stop Wasting Ad Spend.
-              </span>
-              <br />
-              <span style={{ color: "var(--foreground)" }}>
-                Start Converting.
-              </span>
-            </h2>
-
-            {/* Description */}
-            <p
-              className="text-base md:text-xl max-w-3xl mx-auto mb-12"
-              style={{ color: "var(--secondary-text)" }}
-            >
-              Don&apos;t let clicks go to waste. We build high-velocity landing
-              pages designed to turn your traffic into leads and sales.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#10b981] to-[#0ea5e9] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                Get Your Landing Page
-                <ArrowRight className="w-5 h-5 flex-shrink-0" />
-              </Link>
-
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-sm md:text-base font-bold border transition-all duration-300"
-                style={{
-                  borderColor: "var(--border-color)",
-                  color: "var(--foreground)",
-                }}
-              >
-                Free Page Audit
-                <ArrowRight className="w-5 h-5 flex-shrink-0" />
-              </Link>
-            </div>
-
-            {/* Bottom Text */}
-            <p
-              className="mt-8"
-              style={{ color: "var(--secondary-text)", fontSize: "0.95rem" }}
-            >
-              Standard turnaround: 3-5 days. Express delivery available.
-            </p>
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {[
-            {
-              number: "Strong",
-              label: "Avg. ROI Increase",
-            },
-            {
-              number: "Proven",
-              label: "Pages Optimized",
-            },
-            {
-              number: "<1s",
-              label: "Avg. Load Time",
-            },
-          ].map((indicator, idx) => (
-            <div key={idx}>
-              <div
-                className="text-4xl font-bold mb-2"
-                style={{
-                  background: "linear-gradient(90deg, #10b981, #0ea5e9)",
-                  WebkitBackgroundClip: "text",
-                  color: "transparent",
-                }}
-              >
-                {indicator.number}
-              </div>
-              <p style={{ color: "var(--secondary-text)" }}>
-                {indicator.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

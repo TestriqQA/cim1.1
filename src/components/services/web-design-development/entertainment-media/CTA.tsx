@@ -1,161 +1,120 @@
-import { ArrowRight, Play, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, CheckCircle2, Play } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+// No gradient card, glow or pulsing dots. "High Uptime SLA" repeated the hero's stat, so
+// it is shown once; the other two stats stay.
+const cta: CtaData = {
+    pill: "Ready to Create?",
+    pillIcon: Play,
+    title: "Let's Build Your Next-Gen Platform",
+    text: (
+        <>
+            Whether you&apos;re launching a <Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-violet-text)" }}>streaming service</Link>, podcast network, or interactive media platform, we have the expertise to bring your vision to life.
+        </>
+    ),
+    label: "Start Your Project",
+    href: "/contact",
+    stats: [
+        { value: "Proven", label: "Media Platforms" },
+        { value: "High", label: "Content Views" },
+    ],
+};
+
+type CtaData = {
+    pill?: string;
+    pillIcon?: LucideIcon;
+    title: ReactNode;
+    text: ReactNode;
+    label: string;
+    href: string;
+    note?: ReactNode;
+    stats?: { value: string; label: string }[];
+    checks?: ReactNode[];
+};
 
 export default function CTA() {
+    const PillIcon = cta.pillIcon;
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
+            className="py-16 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Floating particles */}
-                <div
-                    className="absolute top-20 left-20 w-4 h-4 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#8b5cf6", animationDelay: "0s" }}
-                />
-                <div
-                    className="absolute top-40 right-32 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#ec4899", animationDelay: "0.5s" }}
-                />
-                <div
-                    className="absolute bottom-32 left-1/4 w-2 h-2 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#7c3aed", animationDelay: "1s" }}
-                />
-                <div
-                    className="absolute bottom-20 right-20 w-3 h-3 rounded-full animate-pulse"
-                    style={{ backgroundColor: "#d946ef", animationDelay: "1.5s" }}
-                />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div
-                    className="relative p-6 md:p-16 rounded-3xl border-2 overflow-hidden"
-                    style={{
-                        background: "linear-gradient(135deg, var(--card-bg), color-mix(in srgb, #8b5cf6 10%, var(--card-bg)))",
-                        borderColor: "color-mix(in srgb, #8b5cf6 40%, var(--border-color))",
-                    }}
-                >
-                    {/* Gradient Overlay */}
+            <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20">
+                {/* No tint, glow or border: the content sits on the page's own
+                    background. On phones the inner side padding is 0 so the content
+                    matches every other section's width; from 640px px-6 / md:px-16. */}
+                <div className="relative px-0 sm:px-6 md:px-16 text-center">
+                    {/* Badge */}
+                    {cta.pill && PillIcon && (
                     <div
-                        className="absolute inset-0 opacity-5"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+                            background:
+                                "linear-gradient(90deg, color-mix(in srgb, #8b5cf6 8%, transparent), color-mix(in srgb, #ec4899 8%, transparent))",
+                            borderColor: "color-mix(in srgb, #8b5cf6 20%, transparent)",
+                            color: "var(--accent-violet-text)",
                         }}
-                    />
-
-                    <div className="relative z-10 text-center max-w-3xl mx-auto">
-                        {/* Badge */}
-                        <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border"
-                            style={{
-                                background: "linear-gradient(135deg, color-mix(in srgb, #8b5cf6 20%, transparent), color-mix(in srgb, #ec4899 15%, transparent))",
-                                borderColor: "color-mix(in srgb, #8b5cf6 40%, transparent)",
-                            }}
-                        >
-                            <Play className="w-4 h-4" style={{ color: "#8b5cf6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
-                                Ready to Create?
-                            </span>
-                        </div>
-
-                        {/* Heading */}
-                        <h2
-                            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ color: "var(--foreground)" }}
-                        >
-                            Let&apos;s Build Your{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                Next-Gen Platform
-                            </span>
-                        </h2>
-
-                        <p
-                            className="text-base md:text-xl mb-10 leading-relaxed"
-                            style={{ color: "var(--secondary-text)" }}
-                        >
-                            Whether you&apos;re launching a <Link href="/services/social-media-marketing-services/video-marketing-agency" className="underline underline-offset-2 hover:underline">streaming service</Link>, podcast network, or
-                            interactive media platform, we have the expertise to bring your vision to life.
-                        </p>
-
-                        {/* CTA Button */}
-                        <div className="flex items-center justify-center">
-                            <Link
-                                href="/contact"
-                                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                                style={{
-                                    background: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
-                                    boxShadow: "0 8px 32px rgba(139, 92, 246, 0.4)",
-                                }}
-                            >
-                                Start Your Project
-                                <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-
-                        {/* Trust indicators */}
-                        <div className="mt-12 flex flex-wrap items-center justify-center gap-8">
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold"
-                                    style={{
-                                        background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    Proven
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Media Platforms
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold"
-                                    style={{
-                                        background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    High
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Content Views
-                                </div>
-                            </div>
-                            <div
-                                className="w-px h-8"
-                                style={{ backgroundColor: "var(--border-color)" }}
-                            />
-                            <div className="text-center">
-                                <div
-                                    className="text-2xl font-bold"
-                                    style={{
-                                        background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                    }}
-                                >
-                                    High
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Uptime SLA
-                                </div>
-                            </div>
-                        </div>
+                    >
+                        <PillIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                        <span className="text-sm font-semibold text-center">{cta.pill}</span>
                     </div>
+                    )}
+
+                    {/* Heading: solid text token, no gradient text */}
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: "var(--accent-violet-text)" }}>
+                        {cta.title}
+                    </h2>
+
+                    <p className="text-base md:text-xl max-w-3xl mx-auto mb-10" style={{ color: "var(--secondary-text)" }}>
+                        {cta.text}
+                    </p>
+
+                    {/* What the project covers: a tick list, centred as a block */}
+                    {cta.checks && (
+                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 w-fit max-w-full mx-auto mb-10 text-left">
+                            {cta.checks.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5 text-base" style={{ color: "var(--foreground)" }}>
+                                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-violet-text)" }} />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <Link
+                            href={cta.href}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-bold bg-gradient-to-r from-[#7c3aed] to-[#6d28d9] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {cta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Stats: one row per stat below lg (value left, label right), a
+                        centred row from lg */}
+                    {cta.stats && (
+                        <dl className="mt-10 max-w-md lg:max-w-none mx-auto divide-y lg:divide-y-0 divide-[var(--border-color)] lg:flex lg:justify-center lg:gap-16">
+                            {cta.stats.map((stat) => (
+                                <div key={stat.label} className="flex items-baseline justify-between gap-4 py-3 last:pb-0 lg:flex-col lg:items-center lg:gap-1 lg:py-0">
+                                    <dt className="order-2 lg:order-none text-xs sm:text-sm text-right lg:text-center" style={{ color: "var(--secondary-text)" }}>
+                                        {stat.label}
+                                    </dt>
+                                    <dd className="order-1 lg:-order-1 text-2xl lg:text-4xl font-bold whitespace-nowrap" style={{ color: "var(--accent-violet-text)" }}>
+                                        {stat.value}
+                                    </dd>
+                                </div>
+                            ))}
+                        </dl>
+                    )}
+
+                    {cta.note && (
+                        <p className="mt-8 text-sm md:text-base" style={{ color: "var(--secondary-text)" }}>
+                            {cta.note}
+                        </p>
+                    )}
                 </div>
             </div>
         </section>
