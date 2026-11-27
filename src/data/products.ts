@@ -52,7 +52,12 @@ export interface Product {
   // policy is a binding statement about data handling — it is not ours to write
   // on a product's behalf. ProductLinks hides the button when this is absent.
   privacyUrl?: string;
-  demoVideoUrl?: string; // Optional URL for product video demo; the demo section is hidden without one
+  demoVideoUrl?: string; // Optional embed URL (e.g. YouTube) for the product demo
+  // Optional self-hosted demo video (an .mp4 in /public), played in the page's
+  // own player. Nothing downloads until the visitor presses play; `poster` is
+  // the still shown before that. The demo section is hidden when a product has
+  // neither this nor demoVideoUrl.
+  demoVideo?: { src: string; poster: string };
   // Optional 1200x630 Open Graph / Twitter image for this product. Without one
   // the page falls back to the generic services image.
   ogImage?: string;
@@ -167,6 +172,11 @@ export const products: Product[] = [
     // unfinished, and "7+" did not match the 6 platforms the page names. The
     // hero and closing-CTA stat rows are hidden while this is empty.
     stats: [],
+    // The poster is the video's own title card (the frame at 0:03).
+    demoVideo: {
+      src: "/videos/chimegenius-ai-pro-demo.mp4",
+      poster: "/videos/chimegenius-ai-pro-demo-poster.webp",
+    },
     ogImage: "/og-images/chimegenius-ai-pro.webp",
     relatedService: {
       lead: "Want experts to grow your social media for you? See our",
