@@ -73,8 +73,9 @@ export default function Hero() {
                 </nav>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    {/* LEFT CONTENT */}
-                    <div className="text-center lg:text-left">
+                    {/* LEFT CONTENT: always starts at the top of the hero (user, 27 Nov 2026: "bring it
+                        top"); when the image column is the shorter one it stays centred against the text */}
+                    <div className="text-center lg:text-left lg:self-start">
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
@@ -161,7 +162,7 @@ export default function Hero() {
                             alt="E-commerce Store Development"
                             width={500}
                             height={400}
-                            className="relative w-[90%] h-[90%] z-10 rounded-2xl"
+                            className="relative w-[90%] h-auto max-h-105 object-contain z-10 rounded-2xl"
                             priority
                         />
 

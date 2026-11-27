@@ -21,6 +21,10 @@ const hero: HeroData = {
         src: "/images/services-images/web-design-development/edtech-lms.svg",
         alt: "EdTech LMS Platform Development",
     },
+    // Image at most 440px tall: first capped so image + the block under it ended level
+    // with the text (user, 27 Nov 2026: "fix the others"), then 25% larger (user, same
+    // day: "image size reduce too much ... increase it by 25%")
+    imageClass: "relative w-[90%] h-auto max-h-110 object-contain z-10 rounded-2xl",
 };
 
 const features: HeroFeature[] = [
@@ -71,11 +75,15 @@ type HeroData = {
     gridClass?: string;
     // long labels but a wide (60/40) text column: three columns from xl again
     listXl3?: boolean;
+    // override the hero image size: each page caps its height so image + chips/scores end
+    // about level with the text (measured per page at 1280–1440)
+    imageClass?: string;
 };
 type HeroFeature = { icon: LucideIcon; text: string; href?: string };
 type HeroStat = { value: string; label: string };
 type HeroChip = { text: string; icon?: LucideIcon; logo?: string; href?: string };
-type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[] } | null;
+// node: a ready-made block shown instead of the tiles (Landing: PageSpeed-style scores)
+type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[]; node?: ReactNode } | null;
 
 export default function Hero() {
     const BadgeIcon = hero.badgeIcon;
@@ -142,8 +150,10 @@ export default function Hero() {
                 </nav>
 
                 <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
-                    {/* LEFT CONTENT */}
-                    <div className="text-center lg:text-left">
+                    {/* LEFT CONTENT: always starts at the top of the hero (user, 27 Nov 2026:
+                        "bring it top"); when the image column is the shorter one it stays
+                        centred against the text */}
+                    <div className="text-center lg:text-left lg:self-start">
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
@@ -235,7 +245,7 @@ export default function Hero() {
                             alt={hero.image.alt}
                             width={500}
                             height={400}
-                            className="relative w-[90%] h-[90%] z-10 rounded-2xl"
+                            className={hero.imageClass ?? "relative w-[90%] h-[90%] z-10 rounded-2xl"}
                             priority
                         />
 
@@ -275,7 +285,9 @@ export default function Hero() {
                             </div>
                         )}
 
-                        {metrics && (
+                        {metrics?.node ? (
+                            <div className="mt-8 w-full z-10 relative">{metrics.node}</div>
+                        ) : metrics && (
                             <div className="mt-8 text-center w-full z-10 relative">
                                 <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>{metrics.title}</p>
                                 {/* Even grid: 2×2 and one row of 4 from 1440px (four items), or one row of 3 */}

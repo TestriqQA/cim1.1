@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutGrid, CheckCircle2, Newspaper, Palette, Zap, BarChart3, FileText } from "lucide-react";
+import { LayoutGrid, CheckCircle2, Newspaper, Palette, Zap, BarChart3, FileText, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -45,6 +45,14 @@ const rows: OverviewRow[] = [
         title: "Professional Content",
         description: <><Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-purple-text)" }}>Blog writing services</Link> and <Link href="/services/seo-services/seo-content-writing-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-purple-text)" }}>Professional editorial services</Link> providing high-E-E-A-T content that ranks.</>,
         tags: ["Content strategy", "Topic clusters", "Editorial workflows", "Brief creation"],
+    },
+    // Sixth row so the two-column panel fills evenly; covers the "Website Management"
+    // the heading and intro promise (user, 27 Nov 2026: "Add 1, Management")
+    {
+        icon: ShieldCheck,
+        title: "Website Management & Support",
+        description: "Keep your portal fast, secure and online after launch with ongoing Website Management Services and News portal security.",
+        tags: ["Core & plugin updates", "Daily backups", "Uptime monitoring", "Security hardening"],
     },
 ];
 

@@ -22,6 +22,10 @@ const hero: HeroData = {
         src: "/images/services-images/web-design-development/landing-page.svg",
         alt: "High-Conversion Landing Page",
     },
+    // The image is 300px tall (it was 390–764px with the width, up to 548 at 1440; first cut
+    // to 240 so image + scores matched the text, then 25% larger). User, 27 Nov 2026: "bring
+    // it top and reduce the height of image on the right", then "increase it by 25%".
+    imageClass: "relative h-75 w-auto z-10 rounded-2xl",
 };
 
 const features: HeroFeature[] = [
@@ -71,6 +75,9 @@ type HeroData = {
     gridClass?: string;
     // long labels but a wide (60/40) text column: three columns from xl again
     listXl3?: boolean;
+    // override the hero image size: each page caps its height so image + chips/scores end
+    // about level with the text (measured per page at 1280–1440)
+    imageClass?: string;
 };
 type HeroFeature = { icon: LucideIcon; text: string; href?: string };
 type HeroStat = { value: string; label: string };
@@ -143,8 +150,10 @@ export default function Hero() {
                 </nav>
 
                 <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
-                    {/* LEFT CONTENT */}
-                    <div className="text-center lg:text-left">
+                    {/* LEFT CONTENT: always starts at the top of the hero (user, 27 Nov 2026:
+                        "bring it top"); when the image column is the shorter one it stays
+                        centred against the text */}
+                    <div className="text-center lg:text-left lg:self-start">
                         {/* Badge */}
                         <div
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
@@ -236,7 +245,7 @@ export default function Hero() {
                             alt={hero.image.alt}
                             width={500}
                             height={400}
-                            className="relative w-[90%] h-[90%] z-10 rounded-2xl"
+                            className={hero.imageClass ?? "relative w-[90%] h-[90%] z-10 rounded-2xl"}
                             priority
                         />
 
