@@ -1,309 +1,357 @@
-"use client";
-
-import { ArrowRight, ChevronRight, Zap, Shield, Layers } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, Layers, Code2, Smartphone, Rocket, BadgeCheck, Award, Component, LayoutTemplate, Server, Globe } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
+import PhoneHomeScreen from "@/components/services/mobile-app-development/PhoneHomeScreen";
+
+// Redesigned with the website-type look, like the iOS page (user, 27 Nov 2026: "Newer look").
+// The hero image (devices showing the Apple, Android and Windows logos) is gone, and so are
+// the two floating cards ("Single Codebase / iOS & Android", "Dual Store Ready / App Store &
+// Play Store"), which repeated the feature list. One button: "View Our Process" only
+// scrolled down the page.
+const hero: HeroData = {
+    crumb: "Cross-Platform",
+    crumbParent: { href: "/services/mobile-app-development", label: "Mobile Apps" },
+    badge: "React Native & Flutter",
+    badgeIcon: Layers,
+    badgeClass: "text-[13px] min-[360px]:text-sm font-semibold whitespace-nowrap",
+    title: (
+        <>
+            Cross-Platform <span style={{ color: "var(--accent-indigo-text)" }}>App Development Services</span>
+        </>
+    ),
+    tagline: "Enterprise-grade multi-platform solutions. React Native & Flutter experts delivering 100% native-like performance and scalability for global brands.",
+    taglineClass: "text-lg md:text-xl lg:text-lg",
+    cta: { href: "/contact", label: "Book Free Consultation" },
+    // Right side: the phone home screen (as on iOS). The "Cross-Platform Expertise" box's six
+    // tools are the apps in an open folder; only TypeScript's logo is already an app-icon
+    // square, the others are icons on the page's tiles. The dock holds the platforms that
+    // Our Service names: iOS, Android and the browser (PWA).
+    visual: (
+        <PhoneHomeScreen
+            title="Cross-Platform Expertise"
+            apps={[
+                { name: "React Native", icon: Component, tile: "linear-gradient(135deg, #6366f1, #4f46e5)" },
+                { name: "Flutter", icon: LayoutTemplate, tile: "linear-gradient(135deg, #8b5cf6, #7c3aed)" },
+                { name: "Expo", icon: Rocket, tile: "linear-gradient(135deg, #764ba2, #5b3a80)" },
+                { name: "Dart", icon: Code2, tile: "linear-gradient(135deg, #6366f1, #4f46e5)" },
+                { name: "TypeScript", logo: "/images/techstack_logos/typescript-logo.svg" },
+                { name: "Firebase", icon: Server, tile: "linear-gradient(135deg, #764ba2, #5b3a80)" },
+            ]}
+            dockLabel="Platforms"
+            dock={[
+                { name: "iOS", icon: Smartphone, tile: "linear-gradient(135deg, #6366f1, #4f46e5)" },
+                { name: "Android", icon: Smartphone, tile: "linear-gradient(135deg, #8b5cf6, #7c3aed)" },
+                { name: "Progressive Web App", icon: Globe, tile: "linear-gradient(135deg, #764ba2, #5b3a80)" },
+            ]}
+            wallpaper={["#667eea", "#8b5cf6", "#764ba2"]}
+        />
+    ),
+};
+
+// The pill "iOS & Android Native Feel" linked "iOS" and "Android" to their pages; a feature
+// label can hold one link at most, so it is plain here (Our Service and the Process UI/UX
+// step link both pages).
+const features: HeroFeature[] = [
+    { icon: Code2, text: "Single Codebase Efficiency" },
+    { icon: Smartphone, text: "iOS & Android Native Feel" },
+    { icon: Rocket, text: "Dual Store Deployment" },
+    { icon: BadgeCheck, text: "App Store & Play Store Ready" },
+    { icon: Award, text: "Certified Cross-Platform Experts" },
+];
+
+const stats: HeroStat[] = [
+    { value: "Proven", label: "Cross-Platform Apps Delivered at Scale" },
+    { value: "Faster", label: "Faster Development Time" },
+    { value: "Greater", label: "Cost Efficiency" },
+];
+
+const chips: HeroChip[] = [];
+
+const metrics: HeroMetrics = null;
+
+type HeroData = {
+    crumb: string;
+    badge: string;
+    badgeIcon: LucideIcon;
+    badgeClass: string;
+    title: ReactNode;
+    tagline: ReactNode;
+    taglineClass: string;
+    taglineExtra?: ReactNode;
+    cta: { href: string; label: string };
+    // the hero image (not needed when `visual` is set)
+    image?: { src: string; alt: string };
+    // a ready-made visual instead of the image (iOS: a phone home screen drawn in code)
+    visual?: ReactNode;
+    // override the long-label list layout (measured per page)
+    longLabels?: boolean;
+    // a hero with a lot of text can use the 60/40 split (playbook rule 9)
+    gridClass?: string;
+    // long labels but a wide (60/40) text column: three columns from xl again
+    listXl3?: boolean;
+    // override the hero image size: each page caps its height so image + chips/scores end
+    // about level with the text (measured per page at 1280–1440)
+    imageClass?: string;
+    // breadcrumb level above the page (default: Web Design)
+    crumbParent?: { href: string; label: string };
+    // small caption above the chips (iOS: "Apple Ecosystem Expertise")
+    chipsTitle?: string;
+};
+type HeroFeature = { icon: LucideIcon; text: string; href?: string };
+type HeroStat = { value: string; label: string };
+type HeroChip = { text: string; icon?: LucideIcon; logo?: string; href?: string };
+// node: a ready-made block shown instead of the tiles (Landing: PageSpeed-style scores)
+type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[]; node?: ReactNode } | null;
 
 export default function Hero() {
+    const BadgeIcon = hero.badgeIcon;
+    // Labels longer than 17 characters ("Appointment Booking") don't fit two columns at
+    // 320 or three columns in the 1280 hero: one column below 360px and two from xl.
+    const longLabels = hero.longLabels ?? features.some((feature) => feature.text.length > 17);
+    // Four features: 2 × 2 at every size (three columns from xl left the fourth alone)
+    // (long labels: one column below 360px, as for the other lists)
+    // Very long labels (Android 25, Cross-Platform up to 32 characters) overlapped in two or
+    // three columns: one column on phones and at 1024–1279px, two from 640px and from 1280px
+    const veryLong = features.some((feature) => feature.text.length > 22);
+    const listClass = veryLong
+        ? "grid grid-cols-[auto] sm:grid-cols-[auto_auto] lg:grid-cols-[auto] xl:grid-cols-[auto_auto] w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6"
+        : features.length === 4
+        ? longLabels
+            ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+            : "grid grid-cols-[auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+        : longLabels && hero.listXl3
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6"
+        : longLabels
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+        : "grid grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6";
     return (
         <section
-            className="relative min-h-screen pt-14 pb-16 transition-colors duration-300 overflow-hidden"
-            style={{ backgroundColor: "var(--background)" }}
+            className="relative overflow-hidden transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Background with animated gradient */}
-            <div
-                className="absolute inset-0 z-0"
-            >
-                {/* Grid Pattern */}
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: `linear-gradient(#667eea 1px, transparent 1px), linear-gradient(90deg, #667eea 1px, transparent 1px)`,
-                        backgroundSize: "40px 40px",
-                    }}
-                />
-            </div>
+            {/* From 1024px the hero is tighter (top 32px, 24px gaps, 44px heading) so the
+                button shows without scrolling on common laptop screens */}
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 lg:pt-8 relative">
+                {/* Breadcrumbs */}
+                <nav
+                    className="flex items-center gap-1 text-[13px] min-[360px]:text-sm mb-5 lg:mb-3 justify-center lg:justify-start flex-wrap"
+                    aria-label="Breadcrumb"
+                >
+                    <Link
+                        href="/"
+                        className="flex items-center gap-1 hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                        style={{ color: "var(--secondary-text)" }}
+                    >
+                        <Home className="w-4 h-4" aria-hidden="true" />
+                        Home
+                    </Link>
+                    {/* Each › is kept with the item after it, so a wrap on phones never
+                        leaves a › hanging at the end of a line */}
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Services
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href={hero.crumbParent?.href ?? "/services/web-design-development"}
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            {hero.crumbParent?.label ?? "Web Design"}
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <span
+                            className="font-semibold px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--accent-indigo-text)" }}
+                        >
+                            {hero.crumb}
+                        </span>
+                    </span>
+                </nav>
 
-            <style jsx>{`
-                @keyframes slideUp {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes fadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes float-gentle {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
-                }
-                @keyframes gradient-shift {
-                    0%, 100% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                }
-                .animate-slideUp {
-                    animation: slideUp 0.6s ease-out forwards;
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.8s ease-out forwards;
-                }
-                .animate-float-gentle {
-                    animation: float-gentle 4s ease-in-out infinite;
-                }
-                .animate-gradient {
-                    background-size: 200% 200%;
-                    animation: gradient-shift 4s ease infinite;
-                }
-                .delay-100 { animation-delay: 0.1s; }
-                .delay-200 { animation-delay: 0.2s; }
-                .delay-300 { animation-delay: 0.3s; }
-                .delay-400 { animation-delay: 0.4s; }
-                .delay-500 { animation-delay: 0.5s; }
-            `}</style>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    {/* Text Content */}
-                    <div className="space-y-8 text-center lg:text-left">
-                        {/* Breadcrumbs */}
-                        <nav className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-sm" style={{ color: "var(--secondary-text)" }}>
-                            <Link href="/" className="hover:underline">Home</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services" className="hover:underline">Services</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <Link href="/services/mobile-app-development" className="hover:underline">Mobile Apps</Link>
-                            <ChevronRight className="w-4 h-4" />
-                            <span style={{ color: "var(--accent-indigo-text)" }}>Cross-Platform</span>
-                        </nav>
-
+                <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
+                    {/* LEFT CONTENT: always starts at the top of the hero (user, 27 Nov 2026:
+                        "bring it top"); when the image column is the shorter one it stays
+                        centred against the text */}
+                    <div className="text-center lg:text-left lg:self-start">
                         {/* Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-sm animate-fadeIn"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
                             style={{
-                                background: "linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
-                                borderColor: "rgba(102, 126, 234, 0.3)",
+                                background:
+                                    "linear-gradient(90deg, color-mix(in srgb, #667eea 8%, transparent), color-mix(in srgb, #764ba2 8%, transparent))",
+                                borderColor: "color-mix(in srgb, #667eea 20%, transparent)",
+                                color: "var(--accent-indigo-text)",
                             }}
                         >
-                            <Layers className="w-4 h-4" style={{ color: "var(--accent-indigo-text)" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--accent-indigo-text)" }}>
-                                React Native & Flutter
-                            </span>
+                            <BadgeIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-indigo-text)" }} />
+                            <span className={hero.badgeClass}>{hero.badge}</span>
                         </div>
 
-                        {/* Title */}
-                        <h1
-                            className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight animate-slideUp"
-                            style={{ color: "var(--foreground)" }}
-                        >
-                            Cross-Platform{" "}
-                            <span
-                                className="relative inline-block animate-gradient"
-                                style={{
-                                    background: "linear-gradient(135deg, #667eea, #764ba2, #00d4ff)",
-                                    backgroundSize: "200% 200%",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
-                            >
-                                App Development Services
-                                <svg
-                                    className="absolute w-full h-3 -bottom-2 left-0 opacity-30"
-                                    style={{ color: "#764ba2" }}
-                                    viewBox="0 0 100 10"
-                                    preserveAspectRatio="none"
-                                >
-                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                                </svg>
-                            </span>
+                        {/* Heading: solid text token (no gradient text). 30px on phones. */}
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-extrabold leading-tight mb-8 lg:mb-6">
+                            {hero.title}
                         </h1>
 
-                        <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slideUp delay-100" style={{ color: "var(--secondary-text)" }}>
-                            Enterprise-grade multi-platform solutions. React Native & Flutter experts delivering 100% native-like performance and scalability for global brands.
+                        {/* Tagline */}
+                        <p className={`${hero.taglineClass} mb-8 lg:mb-6`} style={{ color: "var(--secondary-text)" }}>
+                            {hero.tagline}
                         </p>
+                        {hero.taglineExtra && (
+                            <p className="text-base md:text-lg lg:text-base leading-relaxed mb-8 lg:mb-6" style={{ color: "var(--secondary-text)" }}>
+                                {hero.taglineExtra}
+                            </p>
+                        )}
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-3 animate-slideUp delay-200">
-                            {[
-                                "Single Codebase Efficiency",
-                                <><Link href="/services/mobile-app-development/ios-app-development-company" className="text-inherit hover:text-[var(--accent-indigo-text)] transition-colors">iOS</Link> & <Link href="/services/mobile-app-development/android-app-development-company" className="text-inherit hover:text-[var(--accent-indigo-text)] transition-colors">Android</Link> Native Feel</>,
-                                "Dual Store Deployment",
-                                "App Store & Play Store Ready",
-                                "Certified Cross-Platform Experts",
-                            ].map((feature, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex items-center gap-2 px-3 py-1.5 rounded-md border backdrop-blur-sm"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: "var(--border-color)",
-                                    }}
-                                >
-                                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#764ba2" }} />
-                                    <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{feature}</span>
+                        {/* Feature Highlights: a light icon list, no boxes, every label on one
+                            line. Below lg the columns size to their content and the block is
+                            centred (w-fit mx-auto), with every item starting at its column's
+                            left edge, so the icons line up in straight columns. */}
+                        <ul className={listClass}>
+                            {features.map((feature) => {
+                                const Icon = feature.icon;
+                                return (
+                                    <li
+                                        key={feature.text}
+                                        className="flex items-center justify-start gap-1.5 sm:gap-2 min-w-0"
+                                    >
+                                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-indigo-text)" }} />
+                                        <span className="text-xs sm:text-sm font-semibold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+                                            {feature.href ? (
+                                                <Link href={feature.href} className="hover:underline">
+                                                    {feature.text}
+                                                </Link>
+                                            ) : (
+                                                feature.text
+                                            )}
+                                        </span>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+
+                        {/* Stats: no box, just a thin line above. The columns take their
+                            content's width, so no value is ever cut off. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-2 sm:gap-4 mb-8 lg:mb-6 pt-6 border-t border-[var(--border-color)]">
+                            {stats.map((stat) => (
+                                <div key={stat.label} className="text-center">
+                                    <div className={`text-lg sm:text-xl md:text-4xl lg:text-3xl xl:text-4xl font-bold mb-1 leading-tight ${stat.value.includes(" ") ? "" : "whitespace-nowrap"}`} style={{ color: "var(--accent-indigo-text)" }}>
+                                        {stat.value}
+                                    </div>
+                                    <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
+                                        {stat.label}
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slideUp delay-300">
+                        {/* CTA Button: a darker shade of the page colour so white text passes
+                            4.5:1, no resting glow */}
+                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
                             <Link
-                                href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{
-                                    background: "linear-gradient(135deg, #667eea, #764ba2)",
-                                    boxShadow: "0 4px 20px rgba(102, 126, 234, 0.25)",
-                                }}
+                                href={hero.cta.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-6 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold text-center bg-gradient-to-r from-[#4f46e5] to-[#4338ca] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                             >
-                                Book Free Consultation
-                                <ArrowRight className="w-5 h-5 ml-2" />
+                                {hero.cta.label}
+                                <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                             </Link>
-
-                            <Link
-                                href="#process"
-                                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border transition-all hover:bg-accent"
-                                style={{
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--foreground)",
-                                    backgroundColor: "var(--card-bg)",
-                                }}
-                            >
-                                View Our Process
-                            </Link>
-                        </div>
-
-                        {/* Stats */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-6 border-t animate-slideUp delay-400" style={{ borderColor: "var(--border-color)" }}>
-                            <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>Proven</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Cross-Platform Apps Delivered at Scale</p>
-                            </div>
-                            <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
-                            <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>Faster</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Faster Development Time</p>
-                            </div>
-                            <div className="w-px h-10 bg-border hidden sm:block" style={{ backgroundColor: "var(--border-color)" }} />
-                            <div className="text-center lg:text-left">
-                                <p className="text-3xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>Greater</p>
-                                <p className="text-sm" style={{ color: "var(--secondary-text)" }}>Cost Efficiency</p>
-                            </div>
                         </div>
                     </div>
 
-                    {/* Right Visual */}
-                    <div className="relative hidden lg:flex flex-col gap-6 animate-fadeIn delay-500">
-                        {/* Main Image Container */}
-                        <div className="relative flex items-center justify-center">
-                            <div
-                                className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden border flex items-center justify-center animate-float-gentle"
-                                style={{
-                                    borderColor: "rgba(102, 126, 234, 0.2)",
-                                    background: "linear-gradient(135deg, rgba(102, 126, 234, 0.05), var(--card-bg))",
-                                    boxShadow: "0 0 30px rgba(102, 126, 234, 0.15)",
-                                }}
-                            >
-                                {/* Hero Image */}
-                                <div className="w-full h-full relative flex items-center justify-center p-8">
-                                    <Image
-                                        src="/images/techstack_logos/cross-platform-app-development-company-hero-image.png"
-                                        alt="Cross-Platform App Development"
-                                        width={400}
-                                        height={400}
-                                        className="object-contain"
-                                    />
-                                </div>
+                    {/* RIGHT VISUAL ELEMENT */}
+                    <div className="relative hidden lg:flex flex-col items-center justify-center">
+                        {hero.visual}
+                        {!hero.visual && hero.image && (
+                            <Image
+                                src={hero.image.src}
+                                alt={hero.image.alt}
+                                width={500}
+                                height={400}
+                                className={hero.imageClass ?? "relative w-[90%] h-[90%] z-10 rounded-2xl"}
+                                priority
+                            />
+                        )}
 
-                                {/* Decorative circles */}
-                                <div
-                                    className="absolute w-72 h-72 rounded-full border opacity-20"
-                                    style={{ borderColor: "#667eea" }}
-                                />
-                                <div
-                                    className="absolute w-96 h-96 rounded-full border opacity-10"
-                                    style={{ borderColor: "#764ba2" }}
-                                />
-                            </div>
-
-                            {/* Floating Info Card - Bottom Left */}
-                            <div
-                                className="absolute -bottom-4 -left-4 p-4 rounded-2xl border shadow-xl"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "rgba(102, 126, 234, 0.2)",
-                                }}
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #667eea, #764ba2)" }}
-                                    >
-                                        <Zap className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                            Single Codebase
-                                        </p>
-                                        <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            iOS & Android
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Floating Stats Card - Top Right */}
-                            <div
-                                className="absolute -top-4 -right-4 p-4 rounded-2xl border shadow-xl"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "rgba(118, 75, 162, 0.3)",
-                                }}
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                        style={{ background: "linear-gradient(135deg, #764ba2, #667eea)" }}
-                                    >
-                                        <Shield className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                            Dual Store Ready
-                                        </p>
-                                        <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
-                                            App Store & Play Store
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Tech Pills */}
-                        <div
-                            className="p-5 rounded-2xl border mt-4"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                            }}
-                        >
-                            <p className="text-sm font-semibold mb-3" style={{ color: "var(--accent-indigo-text)" }}>
-                                Cross-Platform Expertise
+                        {chips.length > 0 && hero.chipsTitle && (
+                            <p className="mt-8 -mb-4 text-xs font-bold uppercase tracking-wider opacity-70 text-center z-10 relative" style={{ color: "var(--foreground)" }}>
+                                {hero.chipsTitle}
                             </p>
-                            <div className="flex flex-wrap gap-2">
-                                {["React Native", "Flutter", "Expo", "Dart", "TypeScript", "Firebase"].map((tech, idx) => (
-                                    <span
-                                        key={idx}
-                                        className="px-3 py-1.5 rounded-full text-xs font-medium border"
-                                        style={{
-                                            backgroundColor: "rgba(102, 126, 234, 0.05)",
-                                            borderColor: "rgba(102, 126, 234, 0.15)",
-                                            color: "var(--foreground)",
-                                        }}
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
+                        )}
+                        {/* six chips: an even 3 × 2 grid (a wrapping row left the sixth alone) */}
+                        {chips.length > 0 && (
+                            <div className={`mt-12 w-full z-10 relative ${chips.length === 6 ? "grid grid-cols-3 gap-3" : "flex flex-wrap gap-4 justify-center"}`}>
+                                {chips.map((chip) => {
+                                    const ChipIcon = chip.icon;
+                                    const inner = (
+                                        <>
+                                            {chip.logo ? (
+                                                <Image src={chip.logo} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                            ) : ChipIcon ? (
+                                                <ChipIcon className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-indigo-text)" }} />
+                                            ) : null}
+                                            <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>{chip.text}</span>
+                                        </>
+                                    );
+                                    return chip.href ? (
+                                        <Link
+                                            key={chip.text}
+                                            href={chip.href}
+                                            className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-[#667eea]/30 transition-colors duration-200 hover:border-[#667eea] focus-visible:outline-none focus-visible:border-[#667eea]"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={chip.text}
+                                            className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-[#667eea]/30"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
+                                        </div>
+                                    );
+                                })}
                             </div>
-                        </div>
+                        )}
+
+                        {metrics?.node ? (
+                            <div className="mt-8 w-full z-10 relative">{metrics.node}</div>
+                        ) : metrics && (
+                            <div className="mt-8 text-center w-full z-10 relative">
+                                <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>{metrics.title}</p>
+                                {/* Even grid: 2×2 and one row of 4 from 1440px (four items), or one row of 3 */}
+                                <div className={metrics.items.length === 4 ? "grid grid-cols-2 min-[1440px]:grid-cols-4 gap-3" : metrics.items.length === 2 ? "grid grid-cols-2 gap-3" : "grid grid-cols-3 gap-3"}>
+                                    {metrics.items.map((item) => {
+                                        const ItemIcon = item.icon;
+                                        return (
+                                            <div
+                                                key={item.label}
+                                                className="flex flex-col items-center px-3 py-2 rounded-lg"
+                                                style={{ backgroundColor: "color-mix(in srgb, #667eea 10%, transparent)" }}
+                                            >
+                                                {ItemIcon ? (
+                                                    <ItemIcon className="w-5 h-5 my-1" aria-hidden="true" style={{ color: "var(--accent-indigo-text)" }} />
+                                                ) : (
+                                                    <span className="text-xl font-bold" style={{ color: "var(--accent-indigo-text)" }}>{item.value}</span>
+                                                )}
+                                                <span className="text-xs" style={{ color: "var(--secondary-text)" }}>{item.label}</span>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
