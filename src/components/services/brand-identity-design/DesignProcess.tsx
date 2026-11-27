@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Lightbulb, PenTool, Palette, Rocket, ClipboardList, CheckCircle2, ArrowRight } from "lucide-react";
+import { Search, Lightbulb, PenTool, Palette, Rocket, CheckCircle2, ArrowRight, Workflow } from "lucide-react";
 import Link from "next/link";
 
 export default function DesignProcess() {
@@ -57,7 +57,7 @@ export default function DesignProcess() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <ClipboardList className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             Our Process
                         </span>

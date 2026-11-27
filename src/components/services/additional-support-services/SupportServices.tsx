@@ -7,6 +7,7 @@ import {
     Users,
     Headset,
     ArrowRight,
+    LayoutGrid,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -65,7 +66,7 @@ export default function SupportServices() {
                             borderColor: "#fab900",
                         }}
                     >
-                        <Wrench className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-amber-text)" }}>
                             Our Services
                         </span>

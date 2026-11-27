@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Play, ArrowRight, ChevronRight, TrendingUp, Users, Zap, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight, TrendingUp, Users, Zap, Sparkles, CheckCircle2, BadgeCheck } from "lucide-react";
 
 export default function Hero() {
     // TikTok brand colors
@@ -57,7 +57,7 @@ export default function Hero() {
                                 borderColor: `${tiktokPink}30`,
                             }}
                         >
-                            <Play className="w-4 h-4" style={{ color: tiktokPink }} />
+                            <BadgeCheck className="w-4 h-4" style={{ color: tiktokPink }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                                 <Link href="/services/social-media-marketing-services" className="hover:underline">TikTok Marketing Partner</Link>
                             </span>

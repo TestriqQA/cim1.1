@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, Home, ChevronRight, Rocket, Zap, Smartphone, TrendingUp, ShieldCheck, Code } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, Rocket, Zap, Smartphone, TrendingUp, ShieldCheck, Code, Code2 } from "lucide-react";
 import Link from "next/link";
 import WebDevAnimation from "./WebDevAnimation";
 
@@ -66,7 +66,7 @@ export default function Hero() {
                                 color: "var(--brand-blue-text)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
+                            <Code2 className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
                             <span className="text-sm font-semibold">Web Design & Development</span>
                         </div>
 

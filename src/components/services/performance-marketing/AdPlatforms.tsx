@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, TrendingUp, Users, Target } from "lucide-react";
+import { TrendingUp, Users, Megaphone, BadgeCheck } from "lucide-react";
 
 export default function AdPlatforms() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -112,7 +112,7 @@ export default function AdPlatforms() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <ExternalLink className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <Megaphone className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Ad Platforms
                         </span>
@@ -206,7 +206,7 @@ export default function AdPlatforms() {
                         className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl sm:rounded-full border"
                         style={{ backgroundColor: "color-mix(in srgb, var(--brand-orange) 5%, var(--card-bg))", borderColor: "var(--brand-orange)" }}
                     >
-                        <Target className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
+                        <BadgeCheck className="w-5 h-5 flex-shrink-0" style={{ color: "var(--brand-orange)" }} />
                         <span className="font-semibold text-center text-sm sm:text-base" style={{ color: "var(--accent-orange-text)" }}>
                             Google Partner | Meta Business Partner | LinkedIn Marketing Partner
                         </span>

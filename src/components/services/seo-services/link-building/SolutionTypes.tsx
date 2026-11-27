@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FileEdit, Users, BookMarked, LinkIcon, Newspaper, ArrowRight, Sparkles } from "lucide-react";
+import { FileEdit, Users, BookMarked, LinkIcon, Newspaper, ArrowRight, Link2 } from "lucide-react";
 import Link from "next/link";
 
 export default function SolutionTypes() {
@@ -69,7 +69,7 @@ export default function SolutionTypes() {
                             borderColor: `${linkCyan}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: linkCyan }} />
+                        <Link2 className="w-4 h-4" style={{ color: linkCyan }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Link Strategies
                         </span>

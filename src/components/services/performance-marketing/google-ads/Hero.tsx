@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, ArrowRight, ChevronRight, Target, TrendingUp, DollarSign, BarChart3, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight, Target, TrendingUp, DollarSign, BarChart3, Zap, CheckCircle2, BadgeCheck } from "lucide-react";
 
 export default function Hero() {
     // Google Ads brand colors
@@ -59,7 +59,7 @@ export default function Hero() {
                                 borderColor: `${googleBlue}30`,
                             }}
                         >
-                            <Search className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <BadgeCheck className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Google Premier Partner
                             </span>

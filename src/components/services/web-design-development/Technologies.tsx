@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Code2, Database, Cloud, Zap } from "lucide-react";
+import { Code2, Database, Cloud, Zap, Layers } from "lucide-react";
 import Link from "next/link";
 
 export default function Technologies() {
@@ -181,7 +181,7 @@ export default function Technologies() {
               borderColor: "rgba(0, 138, 193, 0.2)",
             }}
           >
-            <Code2 className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
+            <Layers className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
             <span
               className="text-sm font-semibold"
               style={{ color: "var(--brand-blue-text)" }}

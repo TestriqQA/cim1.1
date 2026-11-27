@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Mail, Phone, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Phone, Calendar, Rocket } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -62,7 +62,7 @@ export default function CTA() {
                             borderColor: "#4b277a",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
+                        <Rocket className="w-4 h-4" style={{ color: "var(--accent-violet-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-violet-text)" }}>
                             Get Started Today
                         </span>

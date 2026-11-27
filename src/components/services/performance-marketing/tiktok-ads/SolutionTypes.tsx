@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ShoppingCart, Rocket, Eye, Users, Download, Repeat, Sparkles } from "lucide-react";
+import { ShoppingCart, Rocket, Eye, Users, Download, Repeat, Puzzle } from "lucide-react";
 
 export default function SolutionTypes() {
     const [flippedCard, setFlippedCard] = useState<number | null>(null);
@@ -76,7 +76,7 @@ export default function SolutionTypes() {
                             borderColor: `${tiktokPink}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: tiktokPink }} />
+                        <Puzzle className="w-4 h-4" style={{ color: tiktokPink }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                             Ad Solutions
                         </span>

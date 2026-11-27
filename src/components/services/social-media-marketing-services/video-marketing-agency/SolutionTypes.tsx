@@ -10,6 +10,7 @@ import {
     Briefcase,
     CheckCircle2,
     Sparkles,
+    Puzzle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -106,7 +107,7 @@ export default function SolutionTypes() {
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "var(--card-bg)", border: `1px solid ${youtubeRed}30` }}>
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <Puzzle className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>Tailored Expertise</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">

@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  Zap,
   Globe,
   Palette,
   Search,
@@ -13,6 +12,7 @@ import {
   Code,
   CheckCircle2,
   ArrowRight,
+  Layers,
 } from "lucide-react";
 
 export default function Services() {
@@ -324,7 +324,7 @@ export default function Services() {
               border: "1px solid var(--border-color)",
             }}
           >
-            <Zap
+            <Layers
               className="w-4 h-4 flex-shrink-0"
               style={{ color: "var(--brand-yellow)" }}
             />

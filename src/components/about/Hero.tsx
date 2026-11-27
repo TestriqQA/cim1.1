@@ -1,4 +1,4 @@
-import { Sparkles, Home, ChevronRight } from "lucide-react";
+import { Home, ChevronRight, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 // Optimized for LCP: Removed client-side fade-in delay
@@ -56,7 +56,7 @@ export default function Hero() {
                 color: "var(--brand-blue-text)",
               }}
             >
-              <Sparkles
+              <TrendingUp
                 className="w-4 h-4"
                 style={{ color: "var(--brand-blue-text)" }}
               />

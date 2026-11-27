@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Wrench } from "lucide-react";
+import { Wrench } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -174,7 +174,7 @@ export default function DesignTools() {
                             border: "1px solid color-mix(in srgb, var(--brand-yellow) 20%, var(--border-color))",
                         }}
                     >
-                        <Sparkles className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />
+                        <Wrench className="w-5 h-5" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
                             Mastery of professional tools for exceptional results
                         </span>

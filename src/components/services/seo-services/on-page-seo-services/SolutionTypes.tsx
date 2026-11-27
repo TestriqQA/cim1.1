@@ -8,7 +8,7 @@ import {
     GraduationCap,
     HeartPulse,
     Scale,
-    Sparkles,
+    Factory,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -78,7 +78,7 @@ export default function SolutionTypes() {
                             borderColor: `${seoGreen}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: seoGreen }} />
+                        <Factory className="w-4 h-4" style={{ color: seoGreen }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Industry Expertise
                         </span>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, MessageCircle, Clock, PiggyBank, Sparkles, Zap, Users, ArrowRight } from "lucide-react";
+import { Bot, MessageCircle, Clock, PiggyBank, Zap, Users, ArrowRight, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
@@ -112,7 +112,7 @@ export default function ServiceOverview() {
                                 borderColor: "var(--brand-chatbot)",
                             }}
                         >
-                            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
+                            <MessagesSquare className="w-4 h-4 animate-spin-slow" style={{ color: "var(--accent-indigo-text)" }} />
                             <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-indigo-text)" }}>
                                 Intelligent Conversations Powered by Next-Gen AI
                             </span>

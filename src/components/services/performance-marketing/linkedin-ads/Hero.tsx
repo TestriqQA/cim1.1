@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Briefcase, ArrowRight, ChevronRight, TrendingUp, Users, Target, Building2, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight, TrendingUp, Users, Target, Building2, CheckCircle2, Linkedin } from "lucide-react";
 
 export default function Hero() {
     // LinkedIn brand color
@@ -62,7 +62,7 @@ export default function Hero() {
                                 borderColor: `${linkedInBlue}30`,
                             }}
                         >
-                            <Briefcase className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                            <Linkedin className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="hover:underline">LinkedIn Marketing Partner</Link>
                             </span>

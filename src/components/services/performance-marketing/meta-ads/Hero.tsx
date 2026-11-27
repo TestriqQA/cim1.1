@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Target, ArrowRight, ChevronRight, TrendingUp, DollarSign, Users, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight, TrendingUp, DollarSign, Users, Zap, CheckCircle2, BadgeCheck } from "lucide-react";
 
 export default function Hero() {
     // Meta brand colors
@@ -63,7 +63,7 @@ export default function Hero() {
                                 borderColor: `${metaBlue}30`,
                             }}
                         >
-                            <Target className="w-4 h-4" style={{ color: metaBlue }} />
+                            <BadgeCheck className="w-4 h-4" style={{ color: metaBlue }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Meta Business Partner
                             </span>

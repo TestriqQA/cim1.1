@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, Home, ChevronRight, Zap, Cpu, Workflow, BarChart3, ShieldCheck, Rocket } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, Zap, Cpu, Workflow, BarChart3, ShieldCheck, Rocket } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -61,7 +61,7 @@ export default function Hero() {
                                 color: "var(--accent-orange-text)",
                             }}
                         >
-                            <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
+                            <Workflow className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
                             <span className="text-sm font-semibold">AI Workflows & Automations</span>
                         </div>
 
