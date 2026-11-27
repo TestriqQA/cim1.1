@@ -1,68 +1,167 @@
-"use client";
-
-import { ArrowRight, Home, ChevronRight, Palette, Image as ImageIcon, Award, Star, Users, Briefcase, Eye } from "lucide-react";
+import { ArrowRight, Home, ChevronRight, Palette, ImageIcon, BadgeCheck, Lightbulb, Search, Handshake, Code2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
+
+const hero: HeroData = {
+    crumb: "Portfolio & Personal",
+    badge: "Personal Branding Services & Custom Portfolio Website Design",
+    badgeIcon: Palette,
+    // 60 characters: wraps to two centred lines on phones and in the narrow hero
+    badgeClass: "text-[13px] min-[360px]:text-sm font-semibold text-center",
+    title: (
+        <>
+            <span className="block" style={{ color: "var(--accent-cyan-text)" }}>Build Your Brand 2026</span>
+            <span className="block mt-2 text-2xl md:text-3xl lg:text-[28px] font-bold leading-snug">Is your digital footprint working as hard as you do?</span>
+        </>
+    ),
+    tagline: (
+        <>
+            In the competitive landscape of 2026, a generic resume isn&apos;t enough. You need a powerful, automated 24/7 <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:underline font-bold" style={{ color: "var(--accent-cyan-text)" }}>personal branding engine</Link>.
+        </>
+    ),
+    taglineClass: "text-lg md:text-xl leading-relaxed",
+    taglineExtra: (
+        <>
+            As an expert <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>online reputation management</Link> agency and <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>website design services</Link> provider, we specialize in crafting <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>high-impact digital narratives</Link> for global leaders. We don&apos;t just build websites; we engineer Personal Branding Services that position you as an undisputed authority in your niche.
+        </>
+    ),
+    cta: { href: "/contact", label: "Control Your Narrative" },
+    // two paragraphs and a two-part heading: the 60/40 split keeps the button above the fold at 1280×900
+    gridClass: "grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-16 items-center",
+    listXl3: true,
+    image: {
+        src: "/images/services-images/web-design-development/branding-services.svg",
+        alt: "Portfolio and Personal Website Development",
+    },
+};
+
+const features: HeroFeature[] = [
+    { icon: ImageIcon, text: "Aesthetic Excellence" },
+    { icon: BadgeCheck, text: "E-E-A-T Principles" },
+    { icon: Lightbulb, text: "Thought Leadership" },
+    { icon: Search, text: "Entity SEO", href: "/services/seo-services/technical-seo-services" },
+    { icon: Handshake, text: "Transitive Trust" },
+    { icon: Code2, text: "Next.js / React", href: "/services/web-design-development/nextjs-development-services" },
+];
+
+const stats: HeroStat[] = [
+    { value: "Proven", label: "Portfolios Built" },
+    { value: "95%", label: "Client Satisfaction" },
+    { value: "3x", label: "More Inquiries" },
+];
+
+const chips: HeroChip[] = [];
+
+const metrics: HeroMetrics = {
+    title: "Portfolio Impact",
+    items: [
+        { value: "12K+", label: "Profile Views" },
+        { value: "8.5%", label: "Contact Rate" },
+        { value: "Proven", label: "Project Leads" },
+    ],
+};
+
+type HeroData = {
+    crumb: string;
+    badge: string;
+    badgeIcon: LucideIcon;
+    badgeClass: string;
+    title: ReactNode;
+    tagline: ReactNode;
+    taglineClass: string;
+    taglineExtra?: ReactNode;
+    cta: { href: string; label: string };
+    image: { src: string; alt: string };
+    // override the long-label list layout (measured per page)
+    longLabels?: boolean;
+    // a hero with a lot of text can use the 60/40 split (playbook rule 9)
+    gridClass?: string;
+    // long labels but a wide (60/40) text column: three columns from xl again
+    listXl3?: boolean;
+    // override the hero image size: each page caps its height so image + chips/scores end
+    // about level with the text (measured per page at 1280–1440)
+    imageClass?: string;
+};
+type HeroFeature = { icon: LucideIcon; text: string; href?: string };
+type HeroStat = { value: string; label: string };
+type HeroChip = { text: string; icon?: LucideIcon; logo?: string; href?: string };
+// node: a ready-made block shown instead of the tiles (Landing: PageSpeed-style scores)
+type HeroMetrics = { title: string; items: { value?: string; icon?: LucideIcon; label: string }[]; node?: ReactNode } | null;
 
 export default function Hero() {
+    const BadgeIcon = hero.badgeIcon;
+    // Labels longer than 17 characters ("Appointment Booking") don't fit two columns at
+    // 320 or three columns in the 1280 hero: one column below 360px and two from xl.
+    const longLabels = hero.longLabels ?? features.some((feature) => feature.text.length > 17);
+    const listClass = longLabels && hero.listXl3
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6"
+        : longLabels
+        ? "grid grid-cols-[auto] min-[360px]:grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 gap-y-3 mb-8 lg:mb-6"
+        : "grid grid-cols-[auto_auto] sm:grid-cols-[auto_auto_auto] lg:grid-cols-2 xl:grid-cols-3 w-fit lg:w-auto mx-auto lg:mx-0 gap-x-4 min-[360px]:gap-x-6 sm:gap-x-8 xl:gap-x-6 gap-y-3 mb-8 lg:mb-6";
     return (
         <section
             className="relative overflow-hidden transition-colors duration-300"
             style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
-            {/* Animated Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                {/* Floating elements */}
-                <div className="absolute top-1/4 right-1/3 w-3 h-3 rounded-full bg-cyan-400/30 animate-float" />
-                <div className="absolute top-1/2 left-1/4 w-2 h-2 rounded-full bg-teal-400/20 animate-float" style={{ animationDelay: "2s" }} />
-                <div className="absolute bottom-1/3 right-1/4 w-4 h-4 rounded-full bg-cyan-300/25 animate-float" style={{ animationDelay: "1s" }} />
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 relative">
+            {/* From 1024px the hero is tighter (top 32px, 24px gaps, 44px heading) so the
+                button shows without scrolling on common laptop screens */}
+            <div className="mx-auto px-6 md:px-12 xl:px-20 py-12 lg:pt-8 relative">
                 {/* Breadcrumbs */}
                 <nav
-                    className="flex items-center gap-1 text-sm mb-5 justify-center lg:justify-start flex-wrap"
+                    className="flex items-center gap-1 text-[13px] min-[360px]:text-sm mb-5 lg:mb-3 justify-center lg:justify-start flex-wrap"
                     aria-label="Breadcrumb"
                 >
                     <Link
                         href="/"
-                        className="flex items-center gap-1 hover:underline transition-colors p-2"
+                        className="flex items-center gap-1 hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
                         style={{ color: "var(--secondary-text)" }}
                     >
-                        <Home className="w-4 h-4" />
+                        <Home className="w-4 h-4" aria-hidden="true" />
                         Home
                     </Link>
-                    <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <Link
-                        href="/services"
-                        className="hover:underline transition-colors p-2"
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        Services
-                    </Link>
-                    <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <Link
-                        href="/services/web-design-development"
-                        className="hover:underline transition-colors p-2"
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        Web Design
-                    </Link>
-                    <ChevronRight className="w-4 h-4" style={{ color: "var(--secondary-text)" }} />
-                    <span
-                        className="font-semibold p-2"
-                        style={{ color: "var(--accent-cyan-text)" }}
-                    >
-                        Portfolio & Personal
+                    {/* Each › is kept with the item after it, so a wrap on phones never
+                        leaves a › hanging at the end of a line */}
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Services
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <Link
+                            href="/services/web-design-development"
+                            className="hover:underline transition-colors px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--secondary-text)" }}
+                        >
+                            Web Design
+                        </Link>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" style={{ color: "var(--secondary-text)" }} />
+                        <span
+                            className="font-semibold px-1.5 py-2 min-[360px]:p-2"
+                            style={{ color: "var(--accent-cyan-text)" }}
+                        >
+                            {hero.crumb}
+                        </span>
                     </span>
                 </nav>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
-                    {/* LEFT CONTENT */}
-                    <div className="text-center lg:text-left">
+                <div className={hero.gridClass ?? "grid lg:grid-cols-2 gap-16 items-center"}>
+                    {/* LEFT CONTENT: always starts at the top of the hero (user, 27 Nov 2026:
+                        "bring it top"); when the image column is the shorter one it stays
+                        centred against the text */}
+                    <div className="text-center lg:text-left lg:self-start">
                         {/* Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors animate-slideDown"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border transition-colors"
                             style={{
                                 background:
                                     "linear-gradient(90deg, color-mix(in srgb, #06b6d4 8%, transparent), color-mix(in srgb, #0891b2 8%, transparent))",
@@ -70,176 +169,76 @@ export default function Hero() {
                                 color: "var(--accent-cyan-text)",
                             }}
                         >
-                            <Palette className="w-4 h-4" style={{ color: "#06b6d4" }} />
-                            <span className="text-sm font-semibold">Personal Branding Services & Custom Portfolio Website Design</span>
+                            <BadgeIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                            <span className={hero.badgeClass}>{hero.badge}</span>
                         </div>
 
-                        {/* Heading */}
-                        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold mb-4 animate-slideUp leading-tight">
-                            <span
-                                className="bg-clip-text text-transparent"
-                                style={{
-                                    background: "linear-gradient(135deg, #06b6d4, #0891b2)",
-                                    WebkitBackgroundClip: "text",
-                                    color: "transparent",
-                                }}
-                            >
-                                Build Your Brand 2026
-                            </span>
-                            <br />
-                            <span style={{ color: "var(--foreground)" }}>Is your digital footprint working as hard as you do?</span>
+                        {/* Heading: solid text token (no gradient text). 30px on phones. */}
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-extrabold leading-tight mb-8 lg:mb-6">
+                            {hero.title}
                         </h1>
 
-                        {/* Underline */}
-                        <div
-                            className="w-32 h-1.5 mb-8 rounded-full lg:mx-0 mx-auto animate-expandWidth"
-                            style={{
-                                background: "linear-gradient(90deg, #06b6d4, #0891b2)",
-                            }}
-                        />
-
                         {/* Tagline */}
-                        <p className="text-lg md:text-xl mb-8 animate-fadeIn leading-relaxed" style={{ color: "var(--secondary-text)", animationDelay: "0.2s" }}>
-                            In the competitive landscape of 2026, a generic resume isn't enough. You need a powerful, automated 24/7 <Link href="/blog/ui-ux-design-principles-best-practices" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)] font-bold">personal branding engine</Link>.
+                        <p className={`${hero.taglineClass} mb-8 lg:mb-6`} style={{ color: "var(--secondary-text)" }}>
+                            {hero.tagline}
                         </p>
-                        <p className="text-base md:text-lg mb-8 animate-fadeIn leading-relaxed" style={{ color: "var(--secondary-text)", animationDelay: "0.3s" }}>
-                            As an expert <Link href="/services/seo-services" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">online reputation management</Link> agency and <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">website design services</Link> provider, we specialize in crafting <Link href="/blog/future-web-development-nextjs" className="underline underline-offset-2 hover:underline text-[var(--accent-cyan-text)]">high-impact digital narratives</Link> for global leaders. We don't just build websites; we engineer Personal Branding Services that position you as an undisputed authority in your niche.
-                        </p>
+                        {hero.taglineExtra && (
+                            <p className="text-base md:text-lg lg:text-base leading-relaxed mb-8 lg:mb-6" style={{ color: "var(--secondary-text)" }}>
+                                {hero.taglineExtra}
+                            </p>
+                        )}
 
-                        {/* Feature Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.1s"
-                                }}
-                            >
-                                <ImageIcon className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    Aesthetic Excellence
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.15s"
-                                }}
-                            >
-                                <Award className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    E-E-A-T Principles
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.2s"
-                                }}
-                            >
-                                <Star className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    Thought Leadership
-                                </span>
-                            </div>
-                            <Link href="/services/seo-services/technical-seo-services" className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.25s"
-                                }}
-                            >
-                                <Briefcase className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    Entity SEO
-                                </span>
-                            </Link>
-                            <div className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.3s"
-                                }}
-                            >
-                                <Users className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    Transitive Trust
-                                </span>
-                            </div>
-                            <Link href="/services/web-design-development/nextjs-development-services" className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 animate-slideUp"
-                                style={{
-                                    backgroundColor: "color-mix(in srgb, #06b6d4 8%, transparent)",
-                                    animationDelay: "0.35s"
-                                }}
-                            >
-                                <Eye className="w-5 h-5 flex-shrink-0" style={{ color: "#06b6d4" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
-                                    Next.js / React
-                                </span>
-                            </Link>
+                        {/* Feature Highlights: a light icon list, no boxes, every label on one
+                            line. Below lg the columns size to their content and the block is
+                            centred (w-fit mx-auto), with every item starting at its column's
+                            left edge, so the icons line up in straight columns. */}
+                        <ul className={listClass}>
+                            {features.map((feature) => {
+                                const Icon = feature.icon;
+                                return (
+                                    <li
+                                        key={feature.text}
+                                        className="flex items-center justify-start gap-1.5 sm:gap-2 min-w-0"
+                                    >
+                                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                        <span className="text-xs sm:text-sm font-semibold whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+                                            {feature.href ? (
+                                                <Link href={feature.href} className="hover:underline">
+                                                    {feature.text}
+                                                </Link>
+                                            ) : (
+                                                feature.text
+                                            )}
+                                        </span>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+
+                        {/* Stats: no box, just a thin line above. The columns take their
+                            content's width, so no value is ever cut off. */}
+                        <div className="grid grid-cols-[auto_auto_auto] justify-between gap-2 sm:gap-4 mb-8 lg:mb-6 pt-6 border-t border-[var(--border-color)]">
+                            {stats.map((stat) => (
+                                <div key={stat.label} className="text-center">
+                                    <div className={`text-lg sm:text-xl md:text-4xl lg:text-3xl xl:text-4xl font-bold mb-1 leading-tight ${stat.value.includes(" ") ? "" : "whitespace-nowrap"}`} style={{ color: "var(--accent-cyan-text)" }}>
+                                        {stat.value}
+                                    </div>
+                                    <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
-                        {/* Stats Section */}
-                        <div className="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl animate-fadeIn"
-                            style={{
-                                backgroundColor: "color-mix(in srgb, var(--card-bg) 50%, transparent)",
-                                border: "1px solid var(--border-color)",
-                                animationDelay: "0.4s"
-                            }}
-                        >
-                            <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{
-                                        background: "linear-gradient(90deg, #06b6d4, #0891b2)",
-                                        WebkitBackgroundClip: "text",
-                                        color: "transparent",
-                                    }}
-                                >
-                                    Proven
-                                </div>
-                                <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Portfolios Built
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{
-                                        background: "linear-gradient(90deg, #06b6d4, #0891b2)",
-                                        WebkitBackgroundClip: "text",
-                                        color: "transparent",
-                                    }}
-                                >
-                                    95%
-                                </div>
-                                <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    Client Satisfaction
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold mb-1"
-                                    style={{
-                                        background: "linear-gradient(90deg, #06b6d4, #0891b2)",
-                                        WebkitBackgroundClip: "text",
-                                        color: "transparent",
-                                    }}
-                                >
-                                    3x
-                                </div>
-                                <div className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>
-                                    More Inquiries
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* CTA Button */}
-                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center animate-slideUp" style={{ animationDelay: "0.5s" }}>
+                        {/* CTA Button: a darker shade of the page colour so white text passes
+                            4.5:1, no resting glow */}
+                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
                             <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                                style={{
-                                    background: "linear-gradient(135deg, #06b6d4, #0891b2)",
-                                    boxShadow: "0 8px 20px -4px rgba(6, 182, 212, 0.4)",
-                                }}
+                                href={hero.cta.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 sm:px-6 md:px-8 md:py-4 rounded-2xl text-sm md:text-base font-semibold text-center bg-gradient-to-r from-[#0e7490] to-[#155e75] text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                             >
-                                Control Your Narrative
-                                <ArrowRight className="w-5 h-5" />
+                                {hero.cta.label}
+                                <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                             </Link>
                         </div>
                     </div>
@@ -247,100 +246,80 @@ export default function Hero() {
                     {/* RIGHT VISUAL ELEMENT */}
                     <div className="relative hidden lg:flex flex-col items-center justify-center">
                         <Image
-                            src="/images/services-images/web-design-development/branding-services.svg"
-                            alt="Portfolio and Personal Website Development"
+                            src={hero.image.src}
+                            alt={hero.image.alt}
                             width={500}
                             height={400}
-                            className="relative w-[90%] h-[90%] z-10 rounded-2xl animate-float"
+                            className={hero.imageClass ?? "relative w-[90%] h-[90%] z-10 rounded-2xl"}
                             priority
                         />
 
-                        {/* Portfolio Showcase Card */}
-                        <div
-                            className="mt-8 p-6 rounded-2xl border backdrop-blur-md"
-                            style={{
-                                backgroundColor: "var(--card-bg)",
-                                borderColor: "var(--border-color)",
-                                boxShadow: "0 10px 30px -5px rgba(0,0,0,0.05)",
-                                maxWidth: "500px",
-                                marginInline: "auto"
-                            }}
-                        >
-                            <div className="flex items-center justify-between mb-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                                    <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--secondary-text)" }}>
-                                        Portfolio Impact
-                                    </span>
-                                </div>
-                                <div className="text-xs font-medium px-2 py-1 rounded-md bg-cyan-500/10 text-cyan-500">
-                                    Results
-                                </div>
-                            </div>
-
-                            <div className="flex justify-between gap-4">
-                                {[
-                                    { label: "Profile Views", value: "12K+" },
-                                    { label: "Contact Rate", value: "8.5%" },
-                                    { label: "Project Leads", value: "Proven" },
-                                ].map((metric, i) => (
-                                    <div key={i} className="text-center flex-1">
-                                        <div
-                                            className="text-xl font-bold mb-1"
-                                            style={{ color: "var(--accent-cyan-text)" }}
+                        {chips.length > 0 && (
+                            <div className="mt-12 flex flex-wrap gap-4 justify-center w-full z-10 relative">
+                                {chips.map((chip) => {
+                                    const ChipIcon = chip.icon;
+                                    const inner = (
+                                        <>
+                                            {chip.logo ? (
+                                                <Image src={chip.logo} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                            ) : ChipIcon ? (
+                                                <ChipIcon className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                            ) : null}
+                                            <span className="text-xs font-bold" style={{ color: "var(--foreground)" }}>{chip.text}</span>
+                                        </>
+                                    );
+                                    return chip.href ? (
+                                        <Link
+                                            key={chip.text}
+                                            href={chip.href}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#06b6d4]/30 transition-colors duration-200 hover:border-[#06b6d4] focus-visible:outline-none focus-visible:border-[#06b6d4]"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
                                         >
-                                            {metric.value}
+                                            {inner}
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={chip.text}
+                                            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#06b6d4]/30"
+                                            style={{ backgroundColor: "var(--card-bg)" }}
+                                        >
+                                            {inner}
                                         </div>
-                                        <div className="text-[10px] font-semibold leading-tight" style={{ color: "var(--secondary-text)" }}>
-                                            {metric.label}
-                                        </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
-                        </div>
+                        )}
+
+                        {metrics?.node ? (
+                            <div className="mt-8 w-full z-10 relative">{metrics.node}</div>
+                        ) : metrics && (
+                            <div className="mt-8 text-center w-full z-10 relative">
+                                <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-70" style={{ color: "var(--foreground)" }}>{metrics.title}</p>
+                                {/* Even grid: 2×2 and one row of 4 from 1440px (four items), or one row of 3 */}
+                                <div className={metrics.items.length === 4 ? "grid grid-cols-2 min-[1440px]:grid-cols-4 gap-3" : metrics.items.length === 2 ? "grid grid-cols-2 gap-3" : "grid grid-cols-3 gap-3"}>
+                                    {metrics.items.map((item) => {
+                                        const ItemIcon = item.icon;
+                                        return (
+                                            <div
+                                                key={item.label}
+                                                className="flex flex-col items-center px-3 py-2 rounded-lg"
+                                                style={{ backgroundColor: "color-mix(in srgb, #06b6d4 10%, transparent)" }}
+                                            >
+                                                {ItemIcon ? (
+                                                    <ItemIcon className="w-5 h-5 my-1" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                                ) : (
+                                                    <span className="text-xl font-bold" style={{ color: "var(--accent-cyan-text)" }}>{item.value}</span>
+                                                )}
+                                                <span className="text-xs" style={{ color: "var(--secondary-text)" }}>{item.label}</span>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-
-            <style jsx>{`
-                @keyframes float {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-15px); }
-                }
-                @keyframes slideUp {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes slideDown {
-                    from { opacity: 0; transform: translateY(-20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes fadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes expandWidth {
-                    from { width: 0; }
-                    to { width: 8rem; }
-                }
-                .animate-float {
-                    animation: float 5s ease-in-out infinite;
-                }
-                .animate-slideUp {
-                    animation: slideUp 0.6s ease-out forwards;
-                    opacity: 0;
-                }
-                .animate-slideDown {
-                    animation: slideDown 0.6s ease-out forwards;
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.8s ease-out forwards;
-                    opacity: 0;
-                }
-                .animate-expandWidth {
-                    animation: expandWidth 0.8s ease-out forwards;
-                }
-            `}</style>
         </section>
     );
 }

@@ -1,15 +1,122 @@
-import { Code2, Layers, Database, Zap, Lock, Settings } from "lucide-react";
 import Link from "next/link";
+import { LayoutGrid, CheckCircle2, Layers, Server, Zap, ShieldCheck, CreditCard } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+// "The SaaS Opportunity" list ($197B / 38% / 5-7x) repeated the hero stats, so it is
+// shown once, in the hero.
+const overview: OverviewData = {
+    title: (
+        <>
+            <span style={{ color: "var(--brand-blue-text)" }}>SaaS Development Company</span> Building Products That Scale
+        </>
+    ),
+    paragraphs: [
+        <>
+            A <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS web application</span> is more than a website - it&apos;s a revenue-generating software product that solves real business problems, automates complex workflows, and scales to serve millions.
+        </>,
+        <>
+            We&apos;re a <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS development company</span> specializing in custom SaaS development and cloud-based web applications that handle intricate business logic, support multi-tenant architectures, and maintain enterprise-grade security standards.
+        </>,
+        <>
+            From B2B SaaS platforms to B2C customer solutions, our <Link href="/services/web-design-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS agency</Link> combines product thinking with technical excellence to architect scalable systems. Whether you&apos;re a startup launching an MVP to validate market fit or an enterprise scaling an existing product, we deliver <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS app development services</span> that transform your vision into a market-ready, production-grade solution.
+        </>,
+        <>
+            Our team has delivered <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>rigorously tested SaaS applications</span> for global clients across <Link href="/services/web-design-development/fintech-solutions" className="underline underline-offset-2 hover:underline" style={{ color: "var(--foreground)" }}>fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline underline-offset-2 hover:underline" style={{ color: "var(--foreground)" }}>healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline underline-offset-2 hover:underline" style={{ color: "var(--foreground)" }}>e-commerce</Link> - driving <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>sustained traffic growth</span> through <Link href="/services/seo-services/technical-seo-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--foreground)" }}>technical SEO optimization</Link> and <Link href="/blog/web-performance-optimization-speed" className="underline underline-offset-2 hover:underline" style={{ color: "var(--foreground)" }}>performance engineering</Link>.
+        </>,
+    ],
+};
+
+// Row descriptions approved by the user (26 Nov 2026)
+const rows: OverviewRow[] = [
+    { icon: Layers, title: "Multi-Tenant", description: "One codebase serving every customer, with each tenant's data kept separate." },
+    { icon: Server, title: "API-First", description: "Every feature exposed through clean APIs, ready for integrations and mobile apps." },
+    { icon: Zap, title: "Real-Time", description: "Live updates, notifications and dashboards without page reloads." },
+    { icon: ShieldCheck, title: "Security", description: "Enterprise-grade security standards, from authentication to data encryption." },
+    { icon: CreditCard, title: "Billing", description: "Subscription plans, invoicing and payments built in." },
+];
+
+type OverviewData = {
+    title: ReactNode;
+    intro?: ReactNode;
+    paragraphs: ReactNode[];
+    checklist?: { title: string; items: ReactNode[] };
+    panelTitle?: string;
+    panelNote?: ReactNode;
+    // "stacked": body text centred under the heading, then the panel full width with its
+    // rows in a grid (for short text beside a long panel)
+    layout?: "stacked";
+};
+type OverviewRow = { icon: LucideIcon; title?: string; href?: string; description: ReactNode; tags?: string[] };
 
 export default function ServiceOverview() {
+    // One big card, rows (sub-sections) split by dividers, no fill and no hover effect of
+    // its own (user, 26 Nov 2026: "remove the background color", "remove the border hover
+    // effect"). Hovering a sub-section lifts only its icon and text (user, after trying it
+    // on E-commerce: "instead of hovering entire particular section, can we just hover icon
+    // and content in it", then "apply to all"): the row and its divider lines stay still,
+    // the content rises 2px, easing over 400ms, with no shadow or background, and eases
+    // back down when the pointer leaves. Keyboard: the same while a link in the row has
+    // focus. Each row is a `group`; the lift sits on the row's content.
+    const liftClass = "group";
+    const rowContent = (item: OverviewRow) => {
+        const Icon = item.icon;
+        return (
+            <div className="flex items-start gap-4 transition-[translate] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 motion-safe:group-focus-within:-translate-y-0.5 motion-reduce:transition-none">
+                <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{
+                        background: "linear-gradient(135deg, color-mix(in srgb, #008ac1 15%, transparent), color-mix(in srgb, #bc3feb 15%, transparent))",
+                    }}
+                >
+                    <Icon className="w-6 h-6" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                </div>
+                {item.title ? (
+                    <div className="min-w-0">
+                        <h3 className="text-lg font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                            {item.href ? (
+                                <Link href={item.href} className="hover:underline">
+                                    {item.title}
+                                </Link>
+                            ) : (
+                                item.title
+                            )}
+                        </h3>
+                        <p className="text-sm" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                            {item.description}
+                        </p>
+                        {item.tags && (
+                            <ul className="flex flex-wrap gap-2 mt-3">
+                                {item.tags.map((tag) => (
+                                    <li
+                                        key={tag}
+                                        className="px-2.5 py-0.5 rounded-full border border-[var(--border-color)] text-xs"
+                                        style={{ color: "var(--secondary-text)" }}
+                                    >
+                                        {tag}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+                ) : (
+                    /* A one-line point: centred on the icon */
+                    <p className="min-w-0 self-center text-base" style={{ color: "var(--foreground)", lineHeight: "1.5" }}>
+                        {item.description}
+                    </p>
+                )}
+            </div>
+        );
+    };
+
     return (
         <section
-            className="px-6 md:px-12 xl:px-20 py-16 transition-colors duration-300"
+            className="px-6 md:px-12 xl:px-20 py-16 md:py-20 transition-colors duration-300"
             style={{ backgroundColor: "var(--background)" }}
         >
             <div>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-4xl mx-auto">
+                <div className="text-center mb-10 md:mb-12 max-w-4xl mx-auto">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
@@ -19,162 +126,148 @@ export default function ServiceOverview() {
                             color: "var(--brand-blue-text)",
                         }}
                     >
-                        <Code2 className="w-4 h-4" />
-                        <span className="text-sm font-semibold">Service Overview</span>
+                        <LayoutGrid className="w-4 h-4" aria-hidden="true" />
+                        <span className="text-sm font-semibold">Our Service</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        <span style={{ color: "#008ac1" }}>SaaS Development Company</span> Building Products That Scale
+                    <h2 className="text-3xl md:text-5xl font-bold" style={{ color: "var(--foreground)" }}>
+                        {overview.title}
                     </h2>
 
-                    <div
-                        className="w-24 h-1.5 mx-auto mb-8 rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #008ac1, #bc3feb)",
-                        }}
-                    />
+                    {overview.intro && (
+                        <p className="text-lg sm:text-xl mt-6" style={{ color: "var(--secondary-text)" }}>
+                            {overview.intro}
+                        </p>
+                    )}
                 </div>
 
-                {/* Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
-                    {/* Left Content */}
-                    <div className="space-y-6">
-                        <p className="text-lg" style={{ color: "var(--foreground)", fontWeight: 500 }}>
-                            A <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS web application</span> is more than a website - it's a revenue-generating software product that solves real business problems, automates complex workflows, and scales to serve millions.
-                        </p>
+                {overview.layout === "stacked" ? (
+                    /* Stacked (Healthcare; user, 26 Nov 2026: "left content is very less and
+                       right side card is very big, bring the content in center of width and
+                       right side in 3*3 with full width"): the body text centred under the
+                       heading at the heading's width, then the panel full width with its rows
+                       in a grid: 1 column on phones, 2 from 768px, 3 from 1280px (at 1024 a
+                       third column left titles about 180px wide). Dividers: a top line on
+                       every row but the first row, a left line on every column but the first. */
+                    <>
+                        <div className="max-w-4xl mx-auto text-center space-y-6 mb-10 md:mb-12">
+                            {overview.paragraphs.map((paragraph, idx) => (
+                                <p key={idx} className="text-base leading-[1.7] sm:text-[1.1rem] sm:leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
+                                    {paragraph}
+                                </p>
+                            ))}
+                            {overview.checklist && (
+                                <div className="pt-2">
+                                    <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                        {overview.checklist.title}
+                                    </h3>
+                                    <ul className="inline-flex flex-col gap-3 text-left">
+                                        {overview.checklist.items.map((item, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
 
-                        <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            We're a <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS development company</span> specializing in custom SaaS development and cloud-based web applications that handle intricate business logic, support multi-tenant architectures, and maintain enterprise-grade security standards.
-                        </p>
-
-                        <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            From B2B SaaS platforms to B2C customer solutions, our <Link href="/services/web-design-development" className="underline hover:underline" style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS agency</Link> combines product thinking with technical excellence to architect scalable systems. Whether you're a startup launching an MVP to validate market fit or an enterprise scaling an existing product, we deliver <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>SaaS app development services</span> that transform your vision into a market-ready, production-grade solution.
-                        </p>
-
-                        <p style={{ color: "var(--secondary-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
-                            Our team has delivered <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>rigorously tested SaaS applications</span> for global clients across <Link href="/services/web-design-development/fintech-solutions" className="underline hover:underline" style={{ color: "var(--foreground)" }}>fintech</Link>, <Link href="/services/web-design-development/healthcare-portals" className="underline hover:underline" style={{ color: "var(--foreground)" }}>healthcare</Link>, and <Link href="/services/web-design-development/ecommerce-development-company" className="underline hover:underline" style={{ color: "var(--foreground)" }}>e-commerce</Link> - driving <span style={{ color: "var(--brand-blue-text)", fontWeight: 700 }}>sustained traffic growth</span> through <Link href="/services/seo-services/technical-seo-services" className="underline hover:underline" style={{ color: "var(--foreground)" }}>technical SEO optimization</Link> and <Link href="/blog/web-performance-optimization-speed" className="underline hover:underline" style={{ color: "var(--foreground)" }}>performance engineering</Link>.
-                        </p>
-
-                        <div className="pt-4">
-                            <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                                The SaaS Opportunity
-                            </h3>
-                            <ul className="space-y-3">
-                                {[
-                                    "$197B - Global SaaS market by 2027",
-                                    "38% - Average SaaS gross margin",
-                                    "5-7x - ARR multiple for SaaS exits",
-                                ].map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-3">
-                                        <span
-                                            className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold mt-0.5"
-                                            style={{
-                                                background: "linear-gradient(90deg, #008ac1, #bc3feb)",
-                                            }}
-                                        >
-                                            ✓
-                                        </span>
-                                        <span style={{ color: "var(--secondary-text)" }}>{item}</span>
-                                    </li>
+                        <div className="rounded-2xl border border-[var(--border-color)]">
+                            {overview.panelTitle && (
+                                <h3 className="px-6 md:px-8 pt-6 pb-4 text-xl font-bold border-b border-[var(--border-color)]" style={{ color: "var(--foreground)" }}>
+                                    {overview.panelTitle}
+                                </h3>
+                            )}
+                            <div className="grid md:grid-cols-2 xl:grid-cols-3">
+                                {rows.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`p-6 md:px-8 border-[var(--border-color)] border-t first:border-t-0 md:[&:nth-child(2)]:border-t-0 md:even:border-l xl:[&:nth-child(3)]:border-t-0 xl:[&:nth-child(3n+1)]:border-l-0 xl:[&:not(:nth-child(3n+1))]:border-l ${liftClass}`}
+                                    >
+                                        {rowContent(item)}
+                                    </div>
                                 ))}
-                            </ul>
+                            </div>
+                            {overview.panelNote && (
+                                <p
+                                    className="px-6 md:px-8 py-4 text-sm rounded-b-2xl border-t border-[var(--border-color)]"
+                                    style={{ color: "var(--secondary-text)", backgroundColor: "color-mix(in srgb, #008ac1 6%, transparent)" }}
+                                >
+                                    {overview.panelNote}
+                                </p>
+                            )}
+                        </div>
+                    </>
+                ) : overview.paragraphs.length > 0 ? (
+                    /* Text and the services panel side by side, centred on each other so
+                       neither leaves an empty band under it. From 1680px the text column
+                       stops at 43rem (about 80 characters a line) and the panel takes the
+                       rest. Both breakpoints are written as min-[…px] so Tailwind orders
+                       them by size. */
+                    <div className="grid min-[1024px]:grid-cols-2 min-[1680px]:grid-cols-[minmax(0,43rem)_minmax(0,1fr)] gap-12 items-center mx-auto">
+                        <div className="space-y-6">
+                            {/* All paragraphs share one body style */}
+                            {overview.paragraphs.map((paragraph, idx) => (
+                                <p key={idx} className="text-base leading-[1.7] sm:text-[1.1rem] sm:leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
+                                    {paragraph}
+                                </p>
+                            ))}
+
+                            {overview.checklist && (
+                                <div className="pt-2">
+                                    <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                        {overview.checklist.title}
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        {overview.checklist.items.map((item, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="rounded-2xl border border-[var(--border-color)] divide-y divide-[var(--border-color)]">
+                            {overview.panelTitle && (
+                                <h3 className="px-6 md:px-8 pt-6 pb-4 text-xl font-bold" style={{ color: "var(--foreground)" }}>
+                                    {overview.panelTitle}
+                                </h3>
+                            )}
+                            {rows.map((item, idx) => (
+                                <div key={idx} className={`${item.title ? "p-6 md:px-8" : "px-6 md:px-8 py-4"} ${liftClass}`}>
+                                    {rowContent(item)}
+                                </div>
+                            ))}
+                            {overview.panelNote && (
+                                <p
+                                    className="px-6 md:px-8 py-4 text-sm rounded-b-2xl"
+                                    style={{ color: "var(--secondary-text)", backgroundColor: "color-mix(in srgb, #008ac1 6%, transparent)" }}
+                                >
+                                    {overview.panelNote}
+                                </p>
+                            )}
                         </div>
                     </div>
-
-                    {/* Right Content - Visual Illustration */}
-                    <div className="relative h-[600px] w-full flex items-center justify-center hidden lg:flex">
-                        {/* Connecting Lines (SVG) */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-                            {/* Lines from center to satellites */}
-                            <line x1="50%" y1="50%" x2="15%" y2="15%" stroke="#008ac1" strokeWidth="2" strokeDasharray="5,5" className="opacity-30" />
-                            <line x1="50%" y1="50%" x2="85%" y2="15%" stroke="#bc3feb" strokeWidth="2" strokeDasharray="5,5" className="opacity-30" />
-                            <line x1="50%" y1="50%" x2="10%" y2="55%" stroke="#008ac1" strokeWidth="2" strokeDasharray="5,5" className="opacity-30" />
-                            <line x1="50%" y1="50%" x2="90%" y2="55%" stroke="#bc3feb" strokeWidth="2" strokeDasharray="5,5" className="opacity-30" />
-                            <line x1="50%" y1="50%" x2="50%" y2="90%" stroke="#008ac1" strokeWidth="2" strokeDasharray="5,5" className="opacity-30" />
-                            {/* Orbiting circles */}
-                            <circle cx="50%" cy="50%" r="120" fill="none" stroke="url(#orbit-gradient)" strokeWidth="1" className="opacity-20" />
-                            <circle cx="50%" cy="50%" r="200" fill="none" stroke="url(#orbit-gradient)" strokeWidth="1" className="opacity-10" />
-                            <defs>
-                                <linearGradient id="orbit-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#008ac1" />
-                                    <stop offset="100%" stopColor="#bc3feb" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        {/* Central Hub */}
-                        <div className="relative z-20 flex flex-col items-center justify-center">
-                            <div className="w-36 h-36 rounded-full flex items-center justify-center shadow-2xl relative">
-                                <div className="absolute inset-0 rounded-full opacity-15" style={{ background: "linear-gradient(135deg, #008ac1, #bc3feb)", animation: "pulse 6s ease-in-out infinite" }}></div>
-                                <div className="absolute inset-0 rounded-full" style={{ background: "linear-gradient(135deg, #008ac1, #bc3feb)" }}></div>
-                                <Code2 className="w-16 h-16 text-white relative z-10" />
+                ) : (
+                    /* No body text: the panel runs full width, rows in two columns from 768px.
+                       With an odd number of rows (Blogs: 5) the last one spans both columns,
+                       so no empty cell is left beside it (user, 26 Nov 2026: "is not looking
+                       proper make it proper only for this page"). */
+                    <div className="grid md:grid-cols-2 rounded-2xl border border-[var(--border-color)]">
+                        {rows.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className={`p-6 md:px-8 border-t border-[var(--border-color)] first:border-t-0 md:[&:nth-child(2)]:border-t-0 md:even:border-l ${rows.length % 2 === 1 && idx === rows.length - 1 ? "md:col-span-2" : ""} ${liftClass}`}
+                            >
+                                {rowContent(item)}
                             </div>
-                            <div className="mt-4 px-5 py-2.5 rounded-xl backdrop-blur-md border shadow-lg text-center" style={{ backgroundColor: "var(--card-bg)", borderColor: "rgba(0, 138, 193, 0.2)" }}>
-                                <span className="font-bold text-lg" style={{ color: "var(--foreground)" }}>SaaS Platform</span>
-                            </div>
-                        </div>
-
-                        {/* Satellite: Multi-Tenant (Top Left) */}
-                        <div className="absolute top-[5%] left-[5%] z-20" style={{ animation: "bounce 8s ease-in-out 0s infinite" }}>
-                            <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
-                                style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                                <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(0, 138, 193, 0.15), rgba(188, 63, 235, 0.1))" }}>
-                                    <Layers className="w-6 h-6" style={{ color: "#008ac1" }} />
-                                </div>
-                                <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Multi-Tenant</span>
-                            </div>
-                        </div>
-
-                        {/* Satellite: API-First (Top Right) */}
-                        <div className="absolute top-[5%] right-[5%] z-20" style={{ animation: "bounce 8s ease-in-out 1s infinite" }}>
-                            <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
-                                style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                                <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(188, 63, 235, 0.15), rgba(0, 138, 193, 0.1))" }}>
-                                    <Database className="w-6 h-6" style={{ color: "#bc3feb" }} />
-                                </div>
-                                <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>API-First</span>
-                            </div>
-                        </div>
-
-                        {/* Satellite: Real-Time (Middle Left) */}
-                        <div className="absolute top-[45%] left-[0%] z-20" style={{ animation: "bounce 8s ease-in-out 2s infinite" }}>
-                            <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
-                                style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                                <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(0, 138, 193, 0.15), rgba(188, 63, 235, 0.1))" }}>
-                                    <Zap className="w-6 h-6" style={{ color: "#008ac1" }} />
-                                </div>
-                                <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Real-Time</span>
-                            </div>
-                        </div>
-
-                        {/* Satellite: Security (Middle Right) */}
-                        <div className="absolute top-[45%] right-[0%] z-20" style={{ animation: "bounce 8s ease-in-out 3s infinite" }}>
-                            <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
-                                style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                                <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(188, 63, 235, 0.15), rgba(0, 138, 193, 0.1))" }}>
-                                    <Lock className="w-6 h-6" style={{ color: "#bc3feb" }} />
-                                </div>
-                                <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Security</span>
-                            </div>
-                        </div>
-
-                        {/* Satellite: Billing (Bottom Center) */}
-                        <div className="absolute bottom-[2%] left-[50%] -translate-x-1/2 z-20" style={{ animation: "bounce 8s ease-in-out 4s infinite" }}>
-                            <div className="flex flex-col items-center gap-3 p-4 rounded-xl shadow-lg border backdrop-blur-md max-w-[140px]"
-                                style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                                <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, rgba(0, 138, 193, 0.15), rgba(188, 63, 235, 0.1))" }}>
-                                    <Settings className="w-6 h-6" style={{ color: "#008ac1" }} />
-                                </div>
-                                <span className="text-sm font-bold text-center" style={{ color: "var(--foreground)" }}>Billing</span>
-                            </div>
-                        </div>
-
-                        {/* Floating Decorative Elements */}
-                        <div className="absolute top-[30%] left-[30%] w-3 h-3 rounded-full" style={{ background: "#008ac1", animation: "pulse 4s ease-in-out 0.5s infinite" }} />
-                        <div className="absolute top-[60%] right-[25%] w-2 h-2 rounded-full" style={{ background: "#bc3feb", animation: "pulse 4s ease-in-out 1.5s infinite" }} />
-                        <div className="absolute bottom-[25%] left-[20%] w-2 h-2 rounded-full" style={{ background: "#008ac1", animation: "pulse 4s ease-in-out 2.5s infinite" }} />
+                        ))}
                     </div>
-                </div>
+                )}
             </div>
         </section>
     );

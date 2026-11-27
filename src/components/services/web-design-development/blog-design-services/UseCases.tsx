@@ -1,139 +1,189 @@
-"use client";
+import type { CSSProperties, ReactNode } from "react";
+import { Factory, BadgeCheck, ArrowRight, Newspaper, Building2, Laptop, Landmark } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
-import { useState } from "react";
-import { Newspaper, Laptop, Coins, Heart, GraduationCap, Building2, ArrowUpRight } from "lucide-react";
+const industriesHeader: IndustriesHeader = {
+    title: (
+        <>
+            Tailored Digital Media <span style={{ color: "var(--brand-purple-text)" }}>Strategy for Every Niche</span>
+        </>
+    ),
+    intro: "We've built successful content platforms across diverse industries, each with unique requirements.",
+};
+
+// Four cards (2×2, four across from 1280px); each card's three results are its tags.
+// Local Governments had a graduation-cap icon.
+const industries: Industry[] = [
+    {
+        icon: Newspaper,
+        title: "Media Agencies",
+        description: "High-Traffic News Portals designed for breaking news cycles.",
+        tags: ["High Availability", "Real-time indexing", "Ad revenue optimization"],
+        color: "from-[#a855f7] to-[#9333ea]",
+        iconColor: "#a855f7",
+    },
+    {
+        icon: Building2,
+        title: "Corporate Brands",
+        description: "Thought Leadership Blogs that establish authority and drive leads.",
+        tags: ["40% Increase in B2B Leads", "Brand authority", "CRM integration"],
+        color: "from-[#8b5cf6] to-[#7c3aed]",
+        iconColor: "#8b5cf6",
+    },
+    {
+        icon: Laptop,
+        title: "Independent Creators",
+        description: "Subscription-Based Magazines with built-in paywalls and newsletters.",
+        tags: ["Higher Revenue via Paywalls", "Member management", "Exclusive content"],
+        color: "from-[#ec4899] to-[#db2777]",
+        iconColor: "#ec4899",
+    },
+    {
+        icon: Landmark,
+        title: "Local Governments",
+        description: "Community Info Portals for public service announcements and engagement.",
+        tags: ["Improved Engagement", "Accessibility compliant", "Public notifications"],
+        color: "from-[#d946ef] to-[#c026d3]",
+        iconColor: "#d946ef",
+    },
+];
+
+const industriesCta: SectionCta = null;
+
+type IndustriesHeader = { title: ReactNode; intro: ReactNode };
+type Industry = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    example?: string;
+    tag?: string;
+    tags?: ReactNode[];
+    color: string;
+    iconColor: string;
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string; secondary?: { label: string; href: string } } | null;
 
 export default function UseCases() {
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    const industries = [
-        {
-            icon: Newspaper,
-            title: "Media Agencies",
-            description: "High-Traffic News Portals designed for breaking news cycles.",
-            metrics: ["High Availability", "Real-time indexing", "Ad revenue optimization"],
-            bgColor: "#a855f7",
-        },
-        {
-            icon: Building2,
-            title: "Corporate Brands",
-            description: "Thought Leadership Blogs that establish authority and drive leads.",
-            metrics: ["40% Increase in B2B Leads", "Brand authority", "CRM integration"],
-            bgColor: "#8b5cf6",
-        },
-        {
-            icon: Laptop,
-            title: "Independent Creators",
-            description: "Subscription-Based Magazines with built-in paywalls and newsletters.",
-            metrics: ["Higher Revenue via Paywalls", "Member management", "Exclusive content"],
-            bgColor: "#ec4899",
-        },
-        {
-            icon: GraduationCap,
-            title: "Local Governments",
-            description: "Community Info Portals for public service announcements and engagement.",
-            metrics: ["Improved Engagement", "Accessibility compliant", "Public notifications"],
-            bgColor: "#d946ef",
-        },
-    ];
-
     return (
         <section
-            className="py-20 transition-colors duration-300"
-            style={{ backgroundColor: "color-mix(in srgb, #a855f7 2%, var(--background))" }}
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--card-bg)" }}
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Tailored Digital Media <span style={{ color: "#a855f7" }}>Strategy for Every Niche</span>
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            backgroundColor: "color-mix(in srgb, #a855f7 5%, transparent)",
+                            borderColor: "color-mix(in srgb, #a855f7 20%, transparent)",
+                        }}
+                    >
+                        <Factory className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
+                            Industries
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {industriesHeader.title}
                     </h2>
 
-                    <p className="text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        We&apos;ve built successful content platforms across diverse industries, each with unique requirements.
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {industriesHeader.intro}
                     </p>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto mt-6 rounded-full"
-                        style={{ background: "linear-gradient(90deg, #a855f7, #ec4899)" }}
-                    />
                 </div>
 
-                {/* Industries Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {industries.map((industry, idx) => {
+                {/* Industries Grid: each card in its own colour (border on hover + 4px
+                    lift), icon beside the title, and the success story pinned to the foot
+                    so it lines up across a row. */}
+                <div className={`grid grid-cols-1 md:grid-cols-2 ${industries.length === 4 ? "xl:grid-cols-4" : "lg:grid-cols-3"} md:auto-rows-fr gap-6`}>
+                    {industries.map((industry) => {
                         const Icon = industry.icon;
-                        const isActive = activeIndex === idx;
-
                         return (
                             <div
-                                key={idx}
-                                className="relative p-6 rounded-2xl border cursor-pointer transition-all duration-500 overflow-hidden group"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: isActive ? industry.bgColor : "var(--border-color)",
-                                    transform: isActive ? "scale(1.02)" : "scale(1)",
-                                    boxShadow: isActive ? `0 15px 30px -10px ${industry.bgColor}25` : "none"
-                                }}
-                                onMouseEnter={() => setActiveIndex(idx)}
+                                key={industry.title}
+                                className="flex flex-col p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[var(--card-accent)] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)", "--card-accent": industry.iconColor } as CSSProperties}
                             >
-                                {/* Background Gradient */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${industry.bgColor}08, ${industry.bgColor}15)`,
-                                    }}
-                                />
-
-                                <div className="relative z-10">
-                                    {/* Header */}
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <div
-                                            className="p-3 rounded-xl transition-all duration-300"
-                                            style={{
-                                                background: isActive
-                                                    ? `linear-gradient(135deg, ${industry.bgColor}, #ec4899)`
-                                                    : `${industry.bgColor}15`,
-                                            }}
-                                        >
-                                            <Icon
-                                                className="w-6 h-6 transition-colors"
-                                                style={{ color: isActive ? "white" : industry.bgColor }}
-                                            />
-                                        </div>
-                                        <div className="flex-1">
-                                            <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${industry.color}`}>
+                                        <Icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                    </div>
+                                    <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>
+                                        {industry.href ? (
+                                            <Link href={industry.href} className="hover:underline">
                                                 {industry.title}
-                                            </h3>
-                                        </div>
-                                        <ArrowUpRight
-                                            className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                                            style={{ color: industry.bgColor }}
-                                        />
-                                    </div>
-
-                                    {/* Description */}
-                                    <p className="text-sm mb-4" style={{ color: "var(--secondary-text)" }}>
-                                        {industry.description}
-                                    </p>
-
-                                    {/* Metrics */}
-                                    <div className="space-y-2">
-                                        {industry.metrics.map((metric, midx) => (
-                                            <div key={midx} className="flex items-center gap-2 text-xs">
-                                                <div
-                                                    className="w-1.5 h-1.5 rounded-full"
-                                                    style={{ backgroundColor: industry.bgColor }}
-                                                />
-                                                <span style={{ color: "var(--secondary-text)" }}>{metric}</span>
-                                            </div>
-                                        ))}
-                                    </div>
+                                            </Link>
+                                        ) : (
+                                            industry.title
+                                        )}
+                                    </h3>
                                 </div>
+
+                                <p className="text-sm mb-6" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                    {industry.description}
+                                </p>
+
+                                {(industry.tag || industry.tags) && (
+                                    <ul className="flex flex-wrap gap-2 mb-6">
+                                        {[...(industry.tag ? [industry.tag] : []), ...(industry.tags ?? [])].map((tag, tidx) => (
+                                            <li
+                                                key={tidx}
+                                                className="px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                style={{ color: "var(--secondary-text)" }}
+                                            >
+                                                {tag}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {industry.example && (
+                                    <div className="mt-auto pt-4 flex items-start gap-2 border-t border-[var(--border-color)]">
+                                        <BadgeCheck className="w-4 h-4 mt-0.5 flex-shrink-0 text-[var(--brand-purple-text)]" aria-hidden="true" />
+                                        <p className="text-sm font-medium" style={{ color: "var(--brand-purple-text)" }}>
+                                            Success: {industry.example}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
                 </div>
+
+                {industriesCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {industriesCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {industriesCta.title}
+                            </h3>
+                        )}
+                        {industriesCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {industriesCta.text}
+                            </p>
+                        )}
+                        <Link
+                            href={industriesCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#9333ea] to-[#7e22ce] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {industriesCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                        {industriesCta.secondary && (
+                            <Link
+                                href={industriesCta.secondary.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 mt-4 sm:mt-0 sm:ml-4 px-4 sm:px-8 py-4 rounded-full font-semibold text-sm sm:text-lg text-center border border-[var(--border-color)] transition-colors duration-200 hover:border-[#a855f7] focus-visible:outline-none focus-visible:border-[#a855f7]"
+                                style={{ color: "var(--foreground)" }}
+                            >
+                                {industriesCta.secondary.label}
+                            </Link>
+                        )}
+                    </div>
+                )}
             </div>
         </section>
     );
