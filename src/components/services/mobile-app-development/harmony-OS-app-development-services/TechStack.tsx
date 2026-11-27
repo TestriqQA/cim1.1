@@ -1,153 +1,318 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Layers, Code2, Blocks, Palette, TestTube2, Rocket, FileCode2, LayoutTemplate, Braces, Boxes, BellRing, KeyRound, MapPinned, BrainCircuit, HeartPulse, SwatchBook, Atom, Film, MonitorSmartphone, FlaskConical, Smartphone, CloudCog, Gauge, Grid3x3, ShieldCheck, Store, Server, CloudDownload, Split, Bug, Activity } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { isValidElement } from "react";
+import type { ReactNode } from "react";
+import { techLogo } from "@/components/services/mobile-app-development/techLogos";
+
+const techHeader: TechHeader = {
+    title: (
+        <>
+            HarmonyOS <span style={{ color: "var(--accent-red-text)" }}>Technology Stack</span>
+        </>
+    ),
+    intro: "Modern development tools and HMS services for building distributed HarmonyOS applications.",
+};
+
+// The five former tabs as category cards with big logos (as on iOS). Five cards: the last
+// one is wide, so every row is full. Letter tiles became related icons. ArkTS and ArkUI
+// showed ArkUI-logo.png, which is not Huawei's ArkUI (it looks like the logo of Ark UI, a
+// web component library), so both get icons. JavaScript's and Figma's links were on their
+// descriptions ("Web Runtime", "Design Tool"), which this layout shows only on hover, so
+// the whole tool links instead.
+const technologies: TechCategory[] = [
+    {
+        category: "Core Tech",
+        icon: Code2,
+        items: [
+            { name: "ArkTS", description: "TypeScript-based", icon: FileCode2 },
+            { name: "ArkUI", description: "Declarative UI", icon: LayoutTemplate },
+            { name: <Link href="/services/web-design-development" className="hover:underline">JavaScript</Link>, label: "JavaScript", description: "Web Runtime", logos: ["/images/techstack_logos/javascript-logo.svg"] },
+            { name: "C/C++", description: "Native APIs", logos: ["/images/techstack_logos/c++-logo.png"] },
+            { name: "Cangjie", description: "New Language", icon: Braces },
+            { name: "DevEco Studio", description: "Official IDE", logos: ["/images/techstack_logos/DevEco-Studio-logo.png"] },
+        ],
+    },
+    {
+        category: "HMS Core",
+        icon: Blocks,
+        items: [
+            { name: "HMS Core", description: "Core Services", icon: Boxes },
+            { name: "Push Kit", description: "Notifications", icon: BellRing },
+            { name: "Account Kit", description: "Authentication", icon: KeyRound },
+            { name: "Map Kit", description: "Location & Maps", icon: MapPinned },
+            { name: "ML Kit", description: "Machine Learning", icon: BrainCircuit },
+            { name: "Health Kit", description: "Health Data", icon: HeartPulse },
+        ],
+    },
+    {
+        category: "UI & Design",
+        icon: Palette,
+        items: [
+            { name: "ArkUI", description: "Declarative UI", icon: LayoutTemplate },
+            { name: "HarmonyOS Design", description: "Design System", icon: SwatchBook },
+            { name: <Link href="/services/brand-identity-design" className="hover:underline">Figma</Link>, label: "Figma", description: "Design Tool", logos: ["/images/techstack_logos/figma-logo.svg"] },
+            { name: "Atomic Design", description: "Component System", icon: Atom },
+            { name: "Motion Design", description: "Animations", icon: Film },
+            { name: "Adaptive Layout", description: "Multi-device", icon: MonitorSmartphone },
+        ],
+    },
+    {
+        category: "Testing",
+        icon: TestTube2,
+        items: [
+            { name: "DevEco Testing", description: "Unit Testing", icon: FlaskConical },
+            { name: "Simulator", description: "Device Testing", icon: Smartphone },
+            { name: "Remote Device", description: "Cloud Testing", icon: CloudCog },
+            { name: "Performance", description: "Profiling", icon: Gauge },
+            { name: "Compatibility", description: "Device Matrix", icon: Grid3x3 },
+            { name: "Security Scan", description: "App Review", icon: ShieldCheck },
+        ],
+    },
+    {
+        category: "Deployment",
+        icon: Rocket,
+        layout: "wide",
+        items: [
+            { name: "AppGallery", description: "Distribution", icon: Store },
+            { name: "AppGallery Connect", description: "Backend", icon: Server },
+            { name: "OTA Updates", description: "App Updates", icon: CloudDownload },
+            { name: "A/B Testing", description: "Experiments", icon: Split },
+            { name: "Crash Service", description: "Monitoring", icon: Bug },
+            { name: "APM", description: "Performance", icon: Activity },
+        ],
+    },
+];
+
+const techStats: TechStats = null;
+
+type TechHeader = { title: ReactNode; intro: ReactNode };
+type Tool = {
+    name: ReactNode;
+    label?: string;
+    url?: string;
+    description?: ReactNode;
+    logos?: string[];
+    icon?: LucideIcon;
+    // no longer used: dark logos are inverted in dark mode instead (techLogos.ts)
+    lightTile?: boolean;
+};
+type TechCategory = {
+    category: string;
+    description?: string;
+    icon: LucideIcon;
+    layout?: "wide" | "small" | "last";
+    items: Tool[];
+};
+type TechStats = { title: string; icon: LucideIcon; items: { value: string; label: string }[] } | null;
 
 export default function TechStack() {
-    const [activeTab, setActiveTab] = useState("core");
+    // Category cards with big logos (user, 26 Nov 2026: "Category cards, big logos"): each
+    // tool is a big logo tile with its name under it; its short description shows on hover
+    // (title) and is read out by screen readers. A tool whose name linked to its page
+    // links from the whole tool.
+    const nameOf = (item: Tool) => (typeof item.name === "string" ? item.name : item.label ?? "");
+    const hrefOf = (item: Tool) =>
+        item.url ?? (isValidElement<{ href?: string }>(item.name) ? item.name.props.href : undefined);
+    const textOf = (node: ReactNode): string =>
+        typeof node === "string" || typeof node === "number"
+            ? String(node)
+            : Array.isArray(node)
+              ? node.map(textOf).join("")
+              : isValidElement<{ children?: ReactNode }>(node)
+                ? textOf(node.props.children)
+                : "";
+    // "AWS/GCP/Azure" and "OpenStreetMap" have no space to wrap at in a narrow column, so
+    // allow a break after each "/" and inside long joined words of 12+ letters (used only
+    // when it doesn't fit; short ones like "NestJS" and "FastAPI" stay whole)
+    const breakable = (name: string) =>
+        name
+            .split(/(?<=\/)|(?<=(?:^|[\s(])(?=[A-Za-z]{12,})[A-Za-z]*[a-z])(?=[A-Z])/)
+            .flatMap((part, i, all) => (i < all.length - 1 ? [part, <wbr key={i} />] : [part]));
 
-    const categories = [
-        { id: "core", label: "Core Tech" },
-        { id: "hms", label: "HMS Core" },
-        { id: "ui", label: "UI & Design" },
-        { id: "testing", label: "Testing" },
-        { id: "deployment", label: "Deployment" },
-    ];
+    // Tool columns follow the card's own width (container query) and the tool count, so
+    // rows come out even: 3 tools = one row of 3, 4 = 2×2 (one row of 4 on wide cards),
+    // 6 = 3×2, 2 = one row of 2. On narrow cards 3 tools are 2 + 1 centred.
+    const toolGrid = (count: number) =>
+        count === 4
+            ? "grid-cols-2 @[24rem]:grid-cols-4"
+            : count === 2
+              ? "grid-cols-2"
+              : "grid-cols-2 @[17.5rem]:grid-cols-3";
 
-    const technologies: Record<string, { name: string; description: React.ReactNode; logo: string }[]> = {
-        core: [
-            { name: "ArkTS", description: "TypeScript-based", logo: "/images/techstack_logos/ArkUI-logo.png" },
-            { name: "ArkUI", description: "Declarative UI", logo: "/images/techstack_logos/ArkUI-logo.png" },
-            { name: "JavaScript", description: <Link href="/services/web-design-development" className="hover:text-[var(--accent-red-text)] transition-colors">Web Runtime</Link>, logo: "/images/techstack_logos/javascript-logo.svg" },
-            { name: "C/C++", description: "Native APIs", logo: "/images/techstack_logos/c++-logo.png" },
-            { name: "Cangjie", description: "New Language", logo: "" },
-            { name: "DevEco Studio", description: "Official IDE", logo: "/images/techstack_logos/DevEco-Studio-logo.png" },
-        ],
-        hms: [
-            { name: "HMS Core", description: "Core Services", logo: "" },
-            { name: "Push Kit", description: "Notifications", logo: "" },
-            { name: "Account Kit", description: "Authentication", logo: "" },
-            { name: "Map Kit", description: "Location & Maps", logo: "" },
-            { name: "ML Kit", description: "Machine Learning", logo: "" },
-            { name: "Health Kit", description: "Health Data", logo: "" },
-        ],
-        ui: [
-            { name: "ArkUI", description: "Declarative UI", logo: "/images/techstack_logos/ArkUI-logo.png" },
-            { name: "HarmonyOS Design", description: "Design System", logo: "" },
-            { name: "Figma", description: <Link href="/services/brand-identity-design" className="hover:text-[var(--accent-red-text)] transition-colors">Design Tool</Link>, logo: "/images/techstack_logos/figma-logo.svg" },
-            { name: "Atomic Design", description: "Component System", logo: "" },
-            { name: "Motion Design", description: "Animations", logo: "" },
-            { name: "Adaptive Layout", description: "Multi-device", logo: "" },
-        ],
-        testing: [
-            { name: "DevEco Testing", description: "Unit Testing", logo: "" },
-            { name: "Simulator", description: "Device Testing", logo: "" },
-            { name: "Remote Device", description: "Cloud Testing", logo: "" },
-            { name: "Performance", description: "Profiling", logo: "" },
-            { name: "Compatibility", description: "Device Matrix", logo: "" },
-            { name: "Security Scan", description: "App Review", logo: "" },
-        ],
-        deployment: [
-            { name: "AppGallery", description: "Distribution", logo: "" },
-            { name: "AppGallery Connect", description: "Backend", logo: "" },
-            { name: "OTA Updates", description: "App Updates", logo: "" },
-            { name: "A/B Testing", description: "Experiments", logo: "" },
-            { name: "Crash Service", description: "Monitoring", logo: "" },
-            { name: "APM", description: "Performance", logo: "" },
-        ],
+    // Tiles in the page colour, no white (user: "remove the white background from logos").
+    // Logos come from techLogos.ts: copies with their baked-in white background removed,
+    // and dark ones (Django, Sentry...) inverted in dark mode so they still show.
+    const tileClass =
+        "w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[var(--background)] border border-[var(--border-color)] transition-colors duration-200 ease-out motion-reduce:transition-none";
+    const invertDark = "[[data-theme=dark]_&]:[filter:invert(1)_hue-rotate(180deg)]";
+    // a white logo that vanishes on the light tile (Detox), inverted in light mode
+    const invertLight = "[[data-theme=light]_&]:[filter:invert(1)_hue-rotate(180deg)]";
+    const logoImg = (path: string, size: number, sizeClass: string) => {
+        const logo = techLogo(path);
+        return (
+            <Image
+                key={path}
+                src={logo.src}
+                alt=""
+                width={size}
+                height={size}
+                className={`${sizeClass} object-contain ${logo.invert === "dark" ? invertDark : logo.invert === "light" ? invertLight : ""}`}
+            />
+        );
     };
 
     return (
         <section
-            className="py-24 relative overflow-hidden"
-            style={{ backgroundColor: "var(--card-bg)" }}
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)" }}
         >
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span style={{ color: "var(--foreground)" }}>HarmonyOS</span>{" "}
-                        <span style={{ color: "var(--accent-red-text)" }}>
-                            Technology Stack
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            backgroundColor: "color-mix(in srgb, #C7000B 5%, transparent)",
+                            borderColor: "color-mix(in srgb, #C7000B 20%, transparent)",
+                        }}
+                    >
+                        <Layers className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-red-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>
+                            Our Tech Stack
                         </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {techHeader.title}
                     </h2>
-                    <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                        Modern development tools and HMS services for building distributed HarmonyOS applications.
+
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {techHeader.intro}
                     </p>
                 </div>
 
-                {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setActiveTab(cat.id)}
-                            className={`
-                                px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300
-                                ${activeTab === cat.id
-                                    ? "text-white shadow-lg transform scale-105"
-                                    : "hover:bg-accent"
-                                }
-                            `}
-                            style={{
-                                backgroundColor: activeTab === cat.id ? "#C7000B" : "var(--background)",
-                                color: activeTab === cat.id ? "white" : "var(--secondary-text)",
-                                border: activeTab === cat.id ? "none" : "1px solid var(--border-color)",
-                            }}
-                        >
-                            {cat.label}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Technology Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {technologies[activeTab].map((tech, idx) => (
-                        <div
-                            key={idx}
-                            className="group p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                            style={{
-                                backgroundColor: "var(--background)",
-                                borderColor: "var(--border-color)",
-                            }}
-                        >
-                            <div className="flex items-center gap-4">
-                                {/* Logo */}
-                                <div
-                                    className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                                    style={{
-                                        backgroundColor: tech.logo ? "var(--card-bg)" : "#C7000B",
-                                        border: tech.logo ? "1px solid var(--border-color)" : "none",
-                                    }}
-                                >
-                                    {tech.logo ? (
-                                        <Image
-                                            src={tech.logo}
-                                            alt={tech.name}
-                                            width={32}
-                                            height={32}
-                                            className="object-contain"
-                                        />
-                                    ) : (
-                                        <span className="text-white font-bold text-lg">
-                                            {tech.name.charAt(0)}
-                                        </span>
-                                    )}
-                                </div>
-
-                                {/* Info */}
-                                <div>
-                                    <h3 className="font-semibold" style={{ color: "var(--foreground)" }}>
-                                        {tech.name}
+                {/* Category cards (website-type pages): 3 across from 1024px, 2 from 768px,
+                    1 on phones. No auto-rows-fr: rows size to their own content. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {technologies.map((tech) => {
+                        const Icon = tech.icon;
+                        return (
+                            <div
+                                key={tech.category}
+                                className={`@container ${tech.layout === "wide" ? "md:col-span-2 " : ""}p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[#C7000B] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0`}
+                                style={{ backgroundColor: "var(--card-bg)" }}
+                            >
+                                <div className={`flex items-center gap-3 ${tech.description ? "mb-2" : "mb-6"}`}>
+                                    {/* The button shade, so the white icon passes 3:1 */}
+                                    <div
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                        style={{ background: "linear-gradient(135deg, #b91c1c, #991b1b)" }}
+                                    >
+                                        <Icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                    </div>
+                                    <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+                                        {tech.category}
                                     </h3>
-                                    <p className="text-sm" style={{ color: "var(--secondary-text)" }}>
+                                </div>
+                                {tech.description && (
+                                    <p className="text-sm mb-6" style={{ color: "var(--secondary-text)" }}>
                                         {tech.description}
                                     </p>
-                                </div>
+                                )}
+
+                                {/* Tools: a big logo tile (a related icon when there is no product
+                                    logo; a tool with several products shows them together in one
+                                    tile) with the name under it */}
+                                <ul className={`grid gap-x-3 gap-y-5 ${toolGrid(tech.items.length)}`}>
+                                    {tech.items.map((item, iidx) => {
+                                        const ToolIcon = item.icon;
+                                        const logos = item.logos ?? [];
+                                        const name = nameOf(item);
+                                        const href = hrefOf(item);
+                                        const about = item.description ? textOf(item.description) : "";
+                                        const body = (
+                                            <>
+                                                <span
+                                                    className={`${tileClass} ${href ? "group-hover:border-[#C7000B] group-focus-visible:border-[#C7000B]" : ""}`}
+                                                    aria-hidden="true"
+                                                >
+                                                    {logos.length === 1 ? (
+                                                        logoImg(logos[0], 40, "w-10 h-10")
+                                                    ) : logos.length > 1 ? (
+                                                        <span className={`flex flex-wrap items-center justify-center gap-1 ${logos.length === 2 ? "w-14" : "w-13"}`}>
+                                                            {logos.map((logo) => logoImg(logo, 26, logos.length === 2 ? "w-6.5 h-6.5" : "w-6 h-6"))}
+                                                        </span>
+                                                    ) : (
+                                                        ToolIcon && <ToolIcon className="w-8 h-8" style={{ color: "var(--accent-red-text)" }} />
+                                                    )}
+                                                </span>
+                                                <span
+                                                    className={`text-xs @[20rem]:text-sm font-semibold leading-snug break-words ${href ? "group-hover:underline" : ""}`}
+                                                    style={{ color: "var(--foreground)" }}
+                                                >
+                                                    {breakable(name)}
+                                                    {about && <span className="sr-only">: {about}</span>}
+                                                </span>
+                                            </>
+                                        );
+                                        const toolClass = "flex flex-col items-center gap-2 text-center min-w-0";
+                                        return (
+                                            <li
+                                                key={iidx}
+                                                title={about || undefined}
+                                                className="min-w-0 last:odd:col-span-2 @[17.5rem]:last:odd:col-span-1"
+                                            >
+                                                {href ? (
+                                                    <Link
+                                                        href={href}
+                                                        className={`${toolClass} group rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4`}
+                                                    >
+                                                        {body}
+                                                    </Link>
+                                                ) : (
+                                                    <div className={toolClass}>{body}</div>
+                                                )}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
                             </div>
+                        );
+                    })}
+
+                    {/* The section's own quality targets, as one more card in the grid */}
+                    {techStats && (
+                        <div
+                            className="p-6 md:p-8 rounded-2xl border border-[var(--border-color)]"
+                            style={{ backgroundColor: "var(--card-bg)" }}
+                        >
+                            <div className="flex items-center gap-3 mb-6">
+                                <div
+                                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                    style={{ background: "linear-gradient(135deg, #b91c1c, #991b1b)" }}
+                                >
+                                    <techStats.icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                </div>
+                                <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+                                    {techStats.title}
+                                </h3>
+                            </div>
+                            <dl className="grid grid-cols-2 gap-4">
+                                {techStats.items.map((stat) => (
+                                    <div
+                                        key={stat.label}
+                                        className="flex flex-col-reverse items-center text-center gap-1 p-4 rounded-xl"
+                                        style={{ backgroundColor: "color-mix(in srgb, #C7000B 8%, transparent)" }}
+                                    >
+                                        <dt className="text-xs" style={{ color: "var(--secondary-text)" }}>{stat.label}</dt>
+                                        <dd className="text-2xl font-bold" style={{ color: "var(--accent-red-text)" }}>{stat.value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
                         </div>
-                    ))}
+                    )}
                 </div>
             </div>
         </section>
