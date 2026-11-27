@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, TrendingUp, Target, BarChart3, Users, Zap, Award, Shield, Trophy } from "lucide-react";
+import { Palette, TrendingUp, Target, BarChart3, Users, Activity, Award, Shield, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -9,43 +9,31 @@ export default function WhyChooseUs() {
             icon: Target,
             title: "Platform-Specific Strategies",
             description: <>We don't use a one-size-fits-all approach. Our experts develop unique strategies tailored to the nuances of each platform-from <Link href="/services/social-media-marketing-services/linkedin-marketing-services" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">LinkedIn B2B networking</Link> to TikTok viral trends-maximizing your reach and impact.</>,
-            color: "var(--brand-teal)",
-            gradient: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))",
         },
         {
             icon: BarChart3,
             title: "Data-Driven Campaigns",
             description: "Every decision is backed by analytics. We continuously test, measure, and refine campaigns using advanced social media reporting and analytics services to ensure optimal performance and cost-efficiency.",
-            color: "var(--brand-teal)",
-            gradient: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))",
         },
         {
-            icon: Sparkles,
+            icon: Palette,
             title: "Consistent Branding",
             description: <>We ensure your voice, visuals, and values are perfectly aligned across all channels, reinforcing your brand identity and building trust with our expert <Link href="/services/brand-identity-design" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">brand awareness & engagement</Link> tactics.</>,
-            color: "var(--brand-cyan)",
-            gradient: "linear-gradient(135deg, var(--brand-cyan), var(--brand-teal))",
         },
         {
             icon: TrendingUp,
             title: "Growth-Focused Execution",
             description: <>Our focus is always on your bottom line. We execute <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:text-[var(--accent-teal-text)] hover:underline transition-colors">ROI-driven social media marketing campaigns</Link> designed to scale your business and deliver a strong return on investment.</>,
-            color: "var(--brand-teal)",
-            gradient: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))",
         },
         {
             icon: Users,
             title: "Community Management",
             description: "We build and nurture genuine communities around your brand, utilizing pro community management services for brands to turn followers into loyal advocates and brand ambassadors.",
-            color: "var(--brand-teal)",
-            gradient: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))",
         },
         {
-            icon: Zap,
+            icon: Activity,
             title: "Real-Time Optimization",
             description: "We monitor campaigns 24/7 and make real-time adjustments to maximize performance, engagement, and conversion rates, ensuring we stay ahead of algorithm changes.",
-            color: "var(--brand-cyan)",
-            gradient: "linear-gradient(135deg, var(--brand-cyan), var(--brand-teal))",
         },
     ];
 
@@ -96,36 +84,27 @@ export default function WhyChooseUs() {
                     {benefits.map((benefit, idx) => {
                         const Icon = benefit.icon;
                         return (
+                            /* Hover "icon fills in" (user's option 4, 27 Nov 2026): at
+                               rest the icon sits on a soft teal tile; on hover the tile
+                               fills solid teal with a white icon and the card border
+                               warms to teal, over 300ms. No glow, nothing moves.
+                               A faint teal tint on the card lifts it off the section,
+                               which has the same colour. The border colour is a class,
+                               not an inline style, so hover can change it. */
                             <div
                                 key={idx}
-                                className="relative rounded-2xl p-6 md:p-8 border transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group overflow-hidden"
+                                className="group relative rounded-2xl p-6 md:p-8 border overflow-hidden border-[var(--border-color)] shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-[border-color] duration-300 ease-out motion-reduce:transition-none hover:border-[color-mix(in_srgb,var(--brand-teal)_45%,var(--border-color))]"
                                 style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
+                                    backgroundColor: "color-mix(in srgb, var(--brand-teal) 3%, var(--card-bg))",
                                 }}
                             >
-                                {/* Gradient overlay on hover */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
-                                    style={{ background: benefit.gradient }}
-                                />
-
-                                {/* Animated corner accent */}
-
                                 <div className="relative z-10">
-                                    {/* Icon container with gradient background */}
-                                    <div
-                                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative"
-                                        style={{
-                                            background: benefit.gradient,
-                                        }}
-                                    >
-                                        <Icon className="w-7 h-7 text-white" />
-
+                                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 relative bg-[color-mix(in_srgb,var(--brand-teal)_16%,transparent)] text-[var(--accent-teal-text)] transition-colors duration-300 ease-out motion-reduce:transition-none group-hover:bg-[var(--brand-teal)] group-hover:text-white">
+                                        <Icon aria-hidden="true" className="w-7 h-7" />
                                     </div>
 
                                     <h3
-                                        className="text-xl font-bold mb-3 group-hover:text-[var(--accent-teal-text)] transition-colors duration-300"
+                                        className="text-xl font-bold mb-3"
                                         style={{ color: "var(--foreground)" }}
                                     >
                                         {benefit.title}
@@ -134,19 +113,6 @@ export default function WhyChooseUs() {
                                     <p style={{ color: "var(--secondary-text)", lineHeight: "1.7" }}>
                                         {benefit.description}
                                     </p>
-
-                                    {/* Bottom accent line */}
-                                    <div
-                                        className="mt-6 h-1 w-0 group-hover:w-16 transition-all duration-500 rounded-full"
-                                        style={{ background: benefit.gradient }}
-                                    />
-                                </div>
-
-                                {/* Decorative dots */}
-                                <div className="absolute bottom-4 right-4 flex gap-1 opacity-20">
-                                    <div className="w-1 h-1 rounded-full" style={{ backgroundColor: benefit.color }} />
-                                    <div className="w-1 h-1 rounded-full" style={{ backgroundColor: benefit.color }} />
-                                    <div className="w-1 h-1 rounded-full" style={{ backgroundColor: benefit.color }} />
                                 </div>
                             </div>
                         );

@@ -94,7 +94,7 @@ export default function Hero() {
 
                         {/* Feature Highlights */}
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-[repeat(2,max-content)] xl:grid-cols-[repeat(3,max-content)] lg:gap-2.5 mb-8">
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -104,7 +104,7 @@ export default function Hero() {
                                     Growth-Focused
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -114,7 +114,7 @@ export default function Hero() {
                                     Community Built
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -124,7 +124,7 @@ export default function Hero() {
                                     Data-Driven
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -134,7 +134,7 @@ export default function Hero() {
                                     Multi-Platform
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -144,7 +144,7 @@ export default function Hero() {
                                     ROI Proven
                                 </span>
                             </div>
-                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl transition-all duration-300 hover:scale-105"
+                            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start lg:justify-center text-center md:text-left gap-2 md:gap-3 lg:gap-2.5 p-3 lg:px-2.5 lg:py-2.5 rounded-xl"
                                 style={{
                                     backgroundColor: "color-mix(in srgb, var(--brand-teal) 8%, transparent)",
                                 }}
@@ -209,7 +209,7 @@ export default function Hero() {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))", color: "white" }}>
+                            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-semibold shadow-lg" style={{ background: "linear-gradient(135deg, var(--brand-teal), var(--brand-cyan))", color: "white" }}>
                                 Start Growing Now
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
@@ -223,7 +223,7 @@ export default function Hero() {
 
                         {/* Feature Card */}
                         <div
-                            className="relative flex items-center justify-center rounded-3xl shadow-2xl border hover:scale-105 transition-transform duration-300 max-w-lg w-full"
+                            className="relative flex items-center justify-center rounded-3xl shadow-2xl border max-w-lg w-full"
                             style={{
                                 backgroundColor: "var(--card-bg)",
                                 borderColor: "var(--border-color)",

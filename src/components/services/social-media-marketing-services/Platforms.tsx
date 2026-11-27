@@ -6,13 +6,12 @@ import {
     Linkedin,
     Youtube,
     Pin,
-    TrendingUp,
     ArrowRight,
-    Zap,
     Share2,
 } from "lucide-react";
 import { TwitterX, Pinterest } from "../../Icons";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export default function Platforms() {
     const platforms = [
@@ -118,107 +117,51 @@ export default function Platforms() {
                     </p>
                 </div>
 
-                {/* Platforms Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+                {/* Platforms Grid: the full section width, not capped at 1280px
+                    (user, 27 Nov 2026: wider cards). */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {platforms.map((platform, idx) => {
                         const Icon = platform.icon;
+                        // Hover / keyboard focus: the border turns the platform's
+                        // own icon colour and doubles to 2px (an inset 1px ring on
+                        // top of the 1px border, so nothing inside shifts). No glow.
+                        // X's icon is black, which vanishes on the dark page, so it
+                        // uses the text colour instead.
+                        const hoverColor = platform.accentColor === "#000000" ? "var(--foreground)" : platform.accentColor;
                         return (
                             <Link
                                 href={platform.link || "#"}
                                 key={idx}
-                                className="group rounded-2xl p-6 md:p-8 border transition-all duration-500 hover:shadow-2xl overflow-hidden relative cursor-pointer block"
+                                className="rounded-2xl p-6 md:p-8 border overflow-hidden relative cursor-pointer block border-[var(--border-color)] transition-[border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:border-[var(--platform-color)] hover:shadow-[inset_0_0_0_1px_var(--platform-color)] focus-visible:outline-none focus-visible:border-[var(--platform-color)] focus-visible:shadow-[inset_0_0_0_1px_var(--platform-color)]"
                                 style={{
+                                    "--platform-color": hoverColor,
                                     backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
                                     animation: `slideIn 0.6s ease-out ${idx * 0.1}s both`
-                                }}
+                                } as CSSProperties}
                             >
-                                {/* Animated Background Gradient - Diagonal sweep */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
-                                    style={{
-                                        background: platform.gradient,
-                                        clipPath: "circle(0% at 0% 0%)",
-                                        transition: "clip-path 0.7s ease-out, opacity 0.7s ease-out"
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.clipPath = "circle(150% at 0% 0%)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.clipPath = "circle(0% at 0% 0%)";
-                                    }}
-                                />
-
-                                {/* Static subtle gradient background */}
-                                <div
-                                    className="absolute inset-0 opacity-5"
-                                    style={{
-                                        background: platform.gradient,
-                                    }}
-                                />
-
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    {/* Icon container with multiple animation layers */}
                                     <div className="relative mb-6 w-fit">
-                                        {/* Outer rotating ring */}
+                                        {/* Icon background (no glow) */}
                                         <div
-                                            className="absolute inset-0 -m-2 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                            style={{
-                                                border: `2px solid ${platform.accentColor}`,
-                                                animation: "spin 3s linear infinite"
-                                            }}
-                                        />
-
-                                        {/* Icon background */}
-                                        <div
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-all duration-500"
+                                            className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden"
                                             style={{
                                                 background: platform.gradient,
-                                                boxShadow: `0 8px 24px ${platform.accentColor}40`
                                             }}
                                         >
-                                            {/* Shimmer effect */}
-                                            <div
-                                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                                style={{
-                                                    background: "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%)",
-                                                    backgroundSize: "200% 200%",
-                                                    animation: "shimmer 2s infinite"
-                                                }}
-                                            />
-
-                                            <Icon className="w-8 h-8 text-white relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" />
-                                        </div>
-
-                                        {/* Trending indicator */}
-                                        <div
-                                            className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 delay-200"
-                                            style={{
-                                                background: "white",
-                                                boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-                                            }}
-                                        >
-                                            <TrendingUp
-                                                className="w-4 h-4"
-                                                style={{ color: platform.accentColor }}
-                                            />
+                                            <Icon className="w-8 h-8 text-white relative z-10" />
                                         </div>
                                     </div>
 
                                     <h3
-                                        className="text-xl font-bold mb-4 group-hover:text-white transition-colors duration-500 flex items-center gap-2"
+                                        className="text-xl font-bold mb-4 flex items-center gap-2"
                                         style={{ color: "var(--foreground)" }}
                                     >
                                         {platform.name}
-                                        <Zap
-                                            className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-500"
-                                            style={{ color: "white" }}
-                                        />
                                     </h3>
 
                                     <p
-                                        className="mb-6 leading-relaxed group-hover:text-white/95 transition-colors duration-500"
+                                        className="mb-6 leading-relaxed"
                                         style={{ color: "var(--secondary-text)", lineHeight: "1.7" }}
                                     >
                                         {platform.description}
@@ -230,23 +173,6 @@ export default function Platforms() {
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                                     </div> */}
                                 </div>
-
-
-                                {/* Bottom accent bar */}
-                                <div
-                                    className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                                    style={{
-                                        background: platform.gradient,
-                                        transform: "scaleX(0)",
-                                        transformOrigin: "left"
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = "scaleX(1)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = "scaleX(0)";
-                                    }}
-                                />
                             </Link>
                         );
                     })}
@@ -262,25 +188,6 @@ export default function Platforms() {
                     to {
                         opacity: 1;
                         transform: translateY(0) scale(1);
-                    }
-                }
-
-
-                @keyframes spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-
-                @keyframes shimmer {
-                    0% {
-                        background-position: -200% 0;
-                    }
-                    100% {
-                        background-position: 200% 0;
                     }
                 }
             `}</style>

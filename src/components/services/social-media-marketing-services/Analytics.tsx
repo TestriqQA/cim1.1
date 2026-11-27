@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    TrendingUp,
     Users,
     Target,
     BarChart3,
@@ -14,6 +13,7 @@ import {
     MousePointerClick,
 } from "lucide-react";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export default function Analytics() {
     const metrics = [
@@ -69,36 +69,6 @@ export default function Analytics() {
                 borderColor: "var(--border-color)",
             }}
         >
-            {/* Animated chart background pattern */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.03]">
-                <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern id="analytics-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" style={{ color: "var(--brand-teal)" }} />
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#analytics-grid)" />
-                </svg>
-            </div>
-
-            {/* Floating data points */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(6)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-2 h-2 rounded-full"
-                        style={{
-                            background: "var(--brand-teal)",
-                            opacity: 0.2,
-                            left: `${20 + i * 15}%`,
-                            top: `${30 + (i % 3) * 20}%`,
-                            animation: `float ${3 + i * 0.5}s ease-in-out infinite`,
-                            animationDelay: `${i * 0.2}s`
-                        }}
-                    />
-                ))}
-            </div>
-
             <div className="relative z-10">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16 max-w-6xl mx-auto">
@@ -131,136 +101,49 @@ export default function Analytics() {
                     </p>
                 </div>
 
-                {/* Metrics Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+                {/* Metrics Grid: same cards as Platforms We Specialize In (user,
+                    27 Nov 2026): full section width, icon tile with no glow, slide-in
+                    on load, and on hover the border turns the card's own icon colour
+                    and doubles to 2px (inset 1px ring, so nothing shifts). */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {metrics.map((metric, idx) => {
                         const Icon = metric.icon;
                         return (
                             <div
                                 key={idx}
-                                className="group rounded-2xl p-6 md:p-8 border  transition-all duration-700 hover:shadow-2xl overflow-hidden relative"
+                                className="rounded-2xl p-6 md:p-8 border overflow-hidden relative border-[var(--border-color)] transition-[border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:border-[var(--card-color)] hover:shadow-[inset_0_0_0_1px_var(--card-color)]"
                                 style={{
+                                    "--card-color": metric.accentColor,
                                     backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                    animation: `bounceIn 0.6s ease-out ${idx * 0.1}s both`
-                                }}
+                                    animation: `slideIn 0.6s ease-out ${idx * 0.1}s both`
+                                } as CSSProperties}
                             >
-                                {/* Animated progress bar background */}
-                                <div className="absolute top-0 left-0 right-0 h-full overflow-hidden">
-                                    <div
-                                        className="absolute top-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-all duration-1000"
-                                        style={{
-                                            background: metric.gradient,
-                                            transform: "translateX(-100%)",
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.transform = "translateX(0)";
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.transform = "translateX(-100%)";
-                                        }}
-                                    />
-                                </div>
-
-                                {/* Rising gradient effect */}
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-1000"
-                                    style={{
-                                        background: `linear-gradient(to top, ${metric.accentColor}15, transparent)`,
-                                        transform: "translateY(100%)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = "translateY(0)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = "translateY(100%)";
-                                    }}
-                                />
-
                                 <div className="relative z-10">
-                                    {/* Icon container with chart animation */}
                                     <div className="relative mb-6 w-fit">
-                                        {/* Expanding circles */}
+                                        {/* Icon background (no glow) */}
                                         <div
-                                            className="absolute inset-0 -m-3 opacity-0 group-hover:opacity-100 transition-all duration-1000"
-                                        >
-                                            <div
-                                                className="absolute inset-0 rounded-full"
-                                                style={{
-                                                    border: `1px solid ${metric.accentColor}`,
-                                                    animation: "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite"
-                                                }}
-                                            />
-                                        </div>
-
-                                        {/* Icon background */}
-                                        <div
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-all duration-500"
+                                            className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden"
                                             style={{
                                                 background: metric.gradient,
-                                                boxShadow: `0 10px 25px ${metric.accentColor}30`,
                                             }}
                                         >
-                                            {/* Scanning line effect */}
-                                            <div
-                                                className="absolute inset-0 opacity-0 group-hover:opacity-100"
-                                                style={{
-                                                    background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent)",
-                                                    animation: "scan 2s ease-in-out infinite",
-                                                    height: "30%",
-                                                }}
-                                            />
-
-                                            <Icon className="w-8 h-8 text-white relative z-10 group-hover:scale-110 transition-all duration-500" />
-                                        </div>
-
-                                        {/* Rising arrow indicator */}
-                                        <div
-                                            className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 delay-200"
-                                            style={{
-                                                background: "white",
-                                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
-                                            }}
-                                        >
-                                            <TrendingUp
-                                                className="w-4 h-4"
-                                                style={{ color: metric.accentColor }}
-                                            />
+                                            <Icon className="w-8 h-8 text-white relative z-10" />
                                         </div>
                                     </div>
 
                                     <h3
-                                        className="text-xl font-bold mb-4 transition-colors duration-500 flex items-center gap-2"
+                                        className="text-xl font-bold mb-4 flex items-center gap-2"
                                         style={{ color: "var(--foreground)" }}
                                     >
                                         {metric.title}
                                     </h3>
 
                                     <p
-                                        className="mb-0 md:mb-6 leading-relaxed transition-colors duration-500"
+                                        className="mb-6 leading-relaxed"
                                         style={{ color: "var(--secondary-text)", lineHeight: "1.7" }}
                                     >
                                         {metric.description}
                                     </p>
-
-                                    {/* Animated metric bar */}
-                                    <div className="relative h-2 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300 hidden md:block"
-                                        style={{ background: `${metric.accentColor}20` }}
-                                    >
-                                        <div
-                                            className="h-full rounded-full transition-all duration-1000 delay-500"
-                                            style={{
-                                                background: metric.gradient,
-                                                width: "0%",
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.width = `${60 + Math.random() * 40}%`;
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.width = "0%";
-                                            }}
-                                        />
-                                    </div>
 
                                     {/* View Details CTA */}
                                     {/* <div className="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-400">
@@ -271,39 +154,6 @@ export default function Analytics() {
                                         <MousePointerClick className="w-3 h-3" style={{ color: metric.accentColor }} />
                                     </div> */}
                                 </div>
-
-                                {/* Corner data visualization accent */}
-                                <div className="absolute -bottom-4 -right-4 w-20 h-20 opacity-10 group-hover:opacity-20 transition-all duration-700">
-                                    <svg viewBox="0 0 100 100" className="w-full h-full" style={{ color: metric.accentColor }}>
-                                        <polyline
-                                            points="10,90 30,70 50,80 70,50 90,60"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            className="group-hover:stroke-dashoffset-0 transition-all duration-1000"
-                                            style={{
-                                                strokeDasharray: "200",
-                                                strokeDashoffset: "200"
-                                            }}
-                                        />
-                                    </svg>
-                                </div>
-
-                                {/* Side accent line */}
-                                <div
-                                    className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-all duration-700"
-                                    style={{
-                                        background: metric.gradient,
-                                        transform: "scaleY(0)",
-                                        transformOrigin: "top"
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = "scaleY(1)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = "scaleY(0)";
-                                    }}
-                                />
                             </div>
                         );
                     })}
@@ -311,42 +161,14 @@ export default function Analytics() {
             </div>
 
             <style jsx>{`
-                @keyframes bounceIn {
-                    0% {
+                @keyframes slideIn {
+                    from {
                         opacity: 0;
-                        transform: scale(0.8) translateY(40px);
+                        transform: translateY(40px) scale(0.95);
                     }
-                    60% {
-                        transform: scale(1.05) translateY(-10px);
-                    }
-                    100% {
+                    to {
                         opacity: 1;
-                        transform: scale(1) translateY(0);
-                    }
-                }
-
-                @keyframes float {
-                    0%, 100% {
-                        transform: translateY(0) translateX(0);
-                    }
-                    50% {
-                        transform: translateY(-20px) translateX(10px);
-                    }
-                }
-
-                @keyframes ping {
-                    75%, 100% {
-                        transform: scale(1.5);
-                        opacity: 0;
-                    }
-                }
-
-                @keyframes scan {
-                    0% {
-                        top: 0;
-                    }
-                    100% {
-                        top: 100%;
+                        transform: translateY(0) scale(1);
                     }
                 }
             `}</style>

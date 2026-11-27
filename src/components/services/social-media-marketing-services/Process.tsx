@@ -82,65 +82,88 @@ export default function Process() {
                     />
                 </div>
 
-                {/* Process Steps */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {/* Process Steps: connected stepper (user's pattern A, 27 Nov 2026).
+                    Each step is a numbered dot with its card below; a thin line runs
+                    from each dot to the next step's dot in the same row (3 per row
+                    on desktop, 2 on tablets). On phones the dots sit on the left on
+                    one vertical line, with each card beside its dot.
+                    The line is drawn from this dot's centre across one column plus
+                    the 2rem column gap, so it ends at the next dot's centre; the
+                    opaque dot sits above it. */}
+                <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10 list-none p-0 m-0">
                     {steps.map((step, idx) => {
                         const Icon = step.icon;
+                        const isLast = idx === steps.length - 1;
+                        const line = "color-mix(in srgb, var(--brand-teal) 45%, transparent)";
                         return (
-                            <div
+                            <li
                                 key={idx}
                                 id={step.anchor}
-                                className="scroll-mt-20 rounded-2xl p-6 md:p-8 border transition-all duration-300 hover:shadow-lg hover:scale-105 relative group"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
+                                className="scroll-mt-20 relative flex gap-4 md:flex-col md:items-center md:gap-5"
                             >
-                                {/* Step Number Background */}
-                                <div
-                                    className="absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-10 group-hover:opacity-20 transition-opacity"
-                                    style={{
-                                        background: "linear-gradient(135deg, var(--brand-teal), var(--brand-teal))",
-                                    }}
-                                />
+                                {/* Phones: vertical line down to the next dot. */}
+                                {!isLast && (
+                                    <span aria-hidden="true" className="md:hidden absolute left-6 top-12 -bottom-6 w-0.5 -translate-x-1/2" style={{ background: line }} />
+                                )}
+                                {/* Tablets: line to the next step, 2 per row. */}
+                                {idx % 2 === 0 && (
+                                    <span aria-hidden="true" className="hidden md:block lg:hidden absolute top-6 left-1/2 w-[calc(100%+2rem)] h-0.5 -translate-y-1/2" style={{ background: line }} />
+                                )}
+                                {/* Desktop: line to the next step, 3 per row. */}
+                                {idx % 3 !== 2 && (
+                                    <span aria-hidden="true" className="hidden lg:block absolute top-6 left-1/2 w-[calc(100%+2rem)] h-0.5 -translate-y-1/2" style={{ background: line }} />
+                                )}
 
-                                {/* Step Number */}
+                                {/* Step number dot: a soft teal ring with teal text,
+                                    which keeps AA contrast in both themes (white on the
+                                    bright brand teal would not). Opaque, so the line
+                                    stops at its edge. */}
                                 <div
-                                    className="text-4xl font-bold mb-4"
+                                    className="relative z-10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 border-2 text-base font-bold"
                                     style={{
-                                        background: "linear-gradient(90deg, var(--brand-teal), var(--brand-teal))",
-                                        WebkitBackgroundClip: "text",
-                                        color: "transparent",
+                                        backgroundColor: "color-mix(in srgb, var(--brand-teal) 15%, var(--background))",
+                                        borderColor: "var(--brand-teal)",
+                                        color: "var(--accent-teal-text)",
                                     }}
                                 >
+                                    <span className="sr-only">Step </span>
                                     {step.number}
                                 </div>
 
-                                <div className="flex items-center gap-4">
-                                    {/* Icon */}
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                                        style={{
-                                            background: "linear-gradient(135deg, var(--brand-teal), var(--brand-teal))",
-                                        }}
-                                    >
-                                        <Icon className="w-6 h-6 text-white" />
+                                <div
+                                    className="flex-1 w-full rounded-2xl p-6 md:p-8 border"
+                                    style={{
+                                        backgroundColor: "var(--card-bg)",
+                                        borderColor: "var(--border-color)",
+                                    }}
+                                >
+                                    <div className="flex items-center gap-4 mb-4">
+                                        {/* Icon */}
+                                        <div
+                                            aria-hidden="true"
+                                            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                                            style={{
+                                                background: "linear-gradient(135deg, var(--brand-teal), var(--brand-teal))",
+                                            }}
+                                        >
+                                            <Icon className="w-6 h-6 text-white" />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>
+                                            {step.title}
+                                        </h3>
                                     </div>
 
-                                    {/* Title */}
-                                    <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
-                                        {step.title}
-                                    </h3>
+                                    {/* Description */}
+                                    <p style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                        {step.description}
+                                    </p>
                                 </div>
-
-                                {/* Description */}
-                                <p style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
-                                    {step.description}
-                                </p>
-                            </div>
+                            </li>
                         );
                     })}
-                </div>
+                </ol>
             </div>
         </section>
     );

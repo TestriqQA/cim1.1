@@ -61,7 +61,7 @@ export default function CTA() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link
                                 href="/contact"
-                                className="w-full sm:w-auto block sm:inline-flex text-center items-center justify-center gap-2 px-3 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-semibold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                                className="w-full sm:w-auto block sm:inline-flex text-center items-center justify-center gap-2 px-3 sm:px-6 py-4 rounded-2xl text-sm md:text-base font-semibold bg-gradient-to-r from-[#008ac1] to-[#00b5ca] text-white"
                             >
                                 Book Your Free Strategy Session
                                 <ArrowRight className="w-5 h-5 flex-shrink-0 inline align-middle ml-2 sm:ml-0" />
