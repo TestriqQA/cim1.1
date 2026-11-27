@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, Target, BarChart3, Users, CheckCircle, Award } from "lucide-react";
+import { Shield, Target, BarChart3, Users, CheckCircle, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
                             borderColor: `${linkCyan}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: linkCyan }} />
+                        <Trophy className="w-4 h-4" style={{ color: linkCyan }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Why Choose Us
                         </span>

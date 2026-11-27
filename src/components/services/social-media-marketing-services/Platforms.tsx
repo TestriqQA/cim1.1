@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    Sparkles,
     Instagram,
     Facebook,
     Linkedin,
@@ -10,6 +9,7 @@ import {
     TrendingUp,
     ArrowRight,
     Zap,
+    Share2,
 } from "lucide-react";
 import { TwitterX, Pinterest } from "../../Icons";
 import Link from "next/link";
@@ -90,7 +90,7 @@ export default function Platforms() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" />
+                        <Share2 className="w-4 h-4" />
                         <span className="text-sm font-semibold">Platforms We Specialize In</span>
                     </div>
 

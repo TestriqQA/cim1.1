@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, MapPin, Search, Users, Phone, BarChart, Award } from "lucide-react";
+import { Check, MapPin, Search, Users, Phone, BarChart, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                                     borderColor: `${localAmber}40`,
                                 }}
                             >
-                                <Award className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                                <ShieldCheck className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                     Why Trust Us
                                 </span>

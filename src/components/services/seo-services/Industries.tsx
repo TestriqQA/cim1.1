@@ -2,9 +2,23 @@
 
 import { useState } from "react";
 import {
-    Rocket, Cloud, ShoppingCart, Building2, Briefcase, ArrowRight, Users,
-    TrendingUp, Zap, Package, MapPin, Globe2, Target, Star, Sparkles,
-    BarChart3, Award
+    Rocket,
+    Cloud,
+    ShoppingCart,
+    Building2,
+    Briefcase,
+    ArrowRight,
+    TrendingUp,
+    Zap,
+    Package,
+    MapPin,
+    Globe2,
+    Target,
+    Star,
+    Sparkles,
+    BarChart3,
+    Award,
+    Factory,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -116,7 +130,7 @@ export default function Industries() {
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <Users className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
+                        <Factory className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             Industries We Serve
                         </span>

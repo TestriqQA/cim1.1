@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, ShieldCheck, Globe, Trophy, Users, BarChart, Sparkles } from "lucide-react";
+import { Zap, ShieldCheck, Globe, Trophy, Users, BarChart } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--foreground)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--foreground)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                             Why Choose Us
                         </span>

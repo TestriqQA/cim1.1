@@ -1,5 +1,5 @@
 import React from "react";
-import { TrendingUp } from "lucide-react";
+import { Workflow } from "lucide-react";
 
 export default function Process() {
   const digitalAuditSteps = [
@@ -48,7 +48,7 @@ export default function Process() {
               border: "1px solid var(--border-color)",
             }}
           >
-            <TrendingUp
+            <Workflow
               className="w-4 h-4"
               style={{ color: "var(--brand-cyan)" }}
             />

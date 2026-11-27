@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronRight, Hash, MessageCircle, Repeat2, TrendingUp } from "lucide-react";
+import { ArrowRight, ChevronRight, Hash, MessageCircle, Repeat2, TrendingUp, Trophy } from "lucide-react";
 
 export default function Hero() {
     // X / Twitter Brand Colors
@@ -53,7 +53,7 @@ export default function Hero() {
                                 backgroundColor: "var(--card-bg)"
                             }}
                         >
-                            <TrendingUp className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-blue-text)" }} />
+                            <Trophy className="w-4 h-4 flex-shrink-0" style={{ color: "var(--brand-blue-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                                 <span style={{ color: "var(--brand-blue-text)" }}>#1</span> <Link href="/services/social-media-marketing-services" className="hover:underline decoration-dotted underline-offset-4">Platform for Brand Interaction</Link>
                             </span>

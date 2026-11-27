@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, ArrowRight, Phone, Sparkles } from "lucide-react";
+import { Target, ArrowRight, Phone, ClipboardCheck } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -34,7 +34,7 @@ export default function CTA() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <ClipboardCheck className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>Free Audit</span>
                     </div>
 

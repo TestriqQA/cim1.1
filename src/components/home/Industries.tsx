@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Briefcase } from "lucide-react";
+import { Factory } from "lucide-react";
 
 export default function Industries() {
   const industriesServed = [
@@ -89,7 +89,7 @@ export default function Industries() {
               border: "1px solid var(--border-color)",
             }}
           >
-            <Briefcase
+            <Factory
               className="w-4 h-4"
               style={{ color: "var(--brand-teal)" }}
             />

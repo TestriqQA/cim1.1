@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, BookOpen, Lightbulb, Settings, Check } from "lucide-react";
+import { BookOpen, Lightbulb, Settings, Check, Award } from "lucide-react";
 import Link from "next/link";
 
 
@@ -22,7 +22,7 @@ export default function ServiceOverview() {
                             color: "var(--brand-blue-text)",
                         }}
                     >
-                        <Zap className="w-4 h-4 shrink-0" />
+                        <Award className="w-4 h-4 shrink-0" />
                         <span className="text-sm font-semibold">Technical Excellence</span>
                     </div>
 

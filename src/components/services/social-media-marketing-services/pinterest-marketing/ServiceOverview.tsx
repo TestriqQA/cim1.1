@@ -8,6 +8,7 @@ import {
     TrendingUp,
     Search,
     BarChart,
+    LayoutGrid,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -68,7 +69,7 @@ export default function ServiceOverview() {
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: `${pinterestRed}10`, borderColor: `${pinterestRed}30` }}>
-                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>Our Services</span>
                     </div>
                     <h2

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Building2, Briefcase, GraduationCap, Users, Target, Megaphone, Sparkles } from "lucide-react";
+import { Building2, Briefcase, GraduationCap, Users, Target, Megaphone } from "lucide-react";
 
 export default function SolutionTypes() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -75,7 +75,7 @@ export default function SolutionTypes() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Briefcase className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             B2B Solutions
                         </span>

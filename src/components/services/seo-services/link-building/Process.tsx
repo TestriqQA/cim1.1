@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Users, Mail, FileText, CheckCircle, BarChart, Link2 } from "lucide-react";
+import { Search, Users, Mail, FileText, CheckCircle, BarChart, Workflow } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
@@ -70,7 +70,7 @@ export default function Process() {
                             borderColor: `${linkCyan}40`,
                         }}
                     >
-                        <Link2 className="w-4 h-4" style={{ color: linkCyan }} />
+                        <Workflow className="w-4 h-4" style={{ color: linkCyan }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Process
                         </span>

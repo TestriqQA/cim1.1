@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TrendingUp, Users, Zap, Search, Globe, DollarSign, Sparkles } from "lucide-react";
+import { TrendingUp, Users, Zap, Search, Globe, DollarSign, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                                     borderColor: `${commerceBlue}40`,
                                 }}
                             >
-                                <Sparkles className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
+                                <Trophy className="w-4 h-4" style={{ color: "var(--accent-sky-text)" }} />
                                 <span className="text-sm font-semibold" style={{ color: "var(--accent-sky-text)" }}>
                                     Why Choose Us
                                 </span>

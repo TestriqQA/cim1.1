@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { MessageSquare, Lightbulb, Rocket, BarChart3, ArrowRight } from 'lucide-react';
+import { MessageSquare, Lightbulb, Rocket, BarChart3, ArrowRight, Workflow } from "lucide-react";
 import Link from 'next/link';
 
 const steps = [
@@ -54,7 +54,7 @@ export default function Process() {
                             border: "1px solid var(--border-color)",
                         }}
                     >
-                        <Rocket className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Our Process</span>
                     </div>
 

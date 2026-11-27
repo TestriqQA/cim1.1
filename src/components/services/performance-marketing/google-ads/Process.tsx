@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, BarChart, Settings, Target, TrendingUp, Rocket, CheckCircle } from "lucide-react";
+import { Search, BarChart, Settings, Target, TrendingUp, Rocket, Workflow } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
@@ -71,7 +71,7 @@ export default function Process() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <CheckCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>

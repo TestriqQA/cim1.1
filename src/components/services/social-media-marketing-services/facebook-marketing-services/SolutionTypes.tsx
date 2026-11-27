@@ -9,6 +9,7 @@ import {
     Home,
     CheckCircle2,
     Sparkles,
+    Factory,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -113,7 +114,7 @@ export default function SolutionTypes() {
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
-                        <Sparkles className="w-4 h-4 text-blue-500" />
+                        <Factory className="w-4 h-4 text-blue-500" />
                         <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Industry Solutions</span>
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">

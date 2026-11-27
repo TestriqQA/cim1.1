@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, Smartphone, Lock, TrendingUp, Search, Accessibility } from "lucide-react";
+import { Zap, Smartphone, Lock, TrendingUp, Search, Accessibility, Globe } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(0, 138, 193, 0.2)",
                         }}
                     >
-                        <Zap className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
+                        <Globe className="w-4 h-4 shrink-0" style={{ color: "var(--brand-blue)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Global Excellence
                         </span>

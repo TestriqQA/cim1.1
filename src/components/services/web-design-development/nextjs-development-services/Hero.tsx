@@ -3,12 +3,10 @@ import {
     Zap,
     Server,
     Globe,
-    Shield,
     Rocket,
     ChevronRight,
     ArrowRight,
     CheckCircle2,
-    Layers,
     Atom,
     Route,
 } from "lucide-react";
@@ -18,11 +16,11 @@ import Link from "next/link";
 export default function Hero() {
     const features = [
         { icon: Server, text: "Server Components" },
-        { icon: Layers, text: "App Router" },
+        { icon: Route, text: "App Router" },
         { icon: Zap, text: "SSR & SSG" },
         { icon: Code2, text: "TypeScript" },
         { icon: Globe, text: <Link href="/services/web-design-development/nodejs-backend" className="hover:text-[var(--accent-cyan-text)] transition-colors">API Routes</Link> },
-        { icon: Shield, text: "Edge Functions" },
+        { icon: Globe, text: "Edge Functions" },
     ];
 
     const stats = [

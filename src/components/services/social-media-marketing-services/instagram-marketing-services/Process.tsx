@@ -11,6 +11,7 @@ import {
     CheckCircle2,
     Clock,
     Zap,
+    Workflow,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -123,7 +124,7 @@ export default function Process() {
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(193, 53, 132, 0.1))", border: "1px solid rgba(225, 48, 108, 0.2)" }}>
-                        <Zap className="w-4 h-4" style={{ color: "#E1306C" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "#E1306C" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>6-Step Framework</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">

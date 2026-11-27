@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TrendingUp, ShieldCheck, Zap, BarChart3, CheckCircle2, ArrowUpRight, Sparkles } from "lucide-react";
+import { TrendingUp, ShieldCheck, Zap, BarChart3, CheckCircle2, ArrowUpRight, Sparkles, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--brand-seo)",
                         }}
                     >
-                        <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-seo)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-green-text)" }}>
                             Why Choose Us
                         </span>

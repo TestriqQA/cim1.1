@@ -6,6 +6,7 @@ import {
   TrendingUp,
   ArrowRight,
   CheckCircle2,
+  Workflow,
 } from "lucide-react";
 
 export default function Process() {
@@ -106,7 +107,7 @@ export default function Process() {
                 "linear-gradient(90deg, color-mix(in srgb,var(--brand-cyan) 8%,transparent), color-mix(in srgb,var(--brand-teal) 8%,transparent))",
             }}
           >
-            <Rocket className="w-4 h-4 text-[var(--accent-teal-text)]" />
+            <Workflow className="w-4 h-4 text-[var(--accent-teal-text)]" />
             <span className="text-sm font-semibold text-[var(--accent-teal-text)]">
               Our Process
             </span>

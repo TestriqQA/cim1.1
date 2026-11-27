@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Zap, Star, Crown, ArrowRight, Sparkles } from "lucide-react";
+import { Check, Zap, Star, Crown, ArrowRight, LifeBuoy } from "lucide-react";
 import Link from "next/link";
 import { RupeeSign } from "@/components/RupeeSign";
 
@@ -94,7 +94,7 @@ export default function SupportPlans() {
                             borderColor: "#97288e",
                         }}
                     >
-                        <Star className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <LifeBuoy className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--brand-purple-text)" }}>
                             Support Plans
                         </span>
@@ -158,7 +158,7 @@ export default function SupportPlans() {
                                         className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold z-10 flex items-center gap-1 sm:gap-1.5"
                                         style={{ backgroundColor: "#fab900", color: "#000" }}
                                     >
-                                        <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                                        <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                                         Most Popular
                                     </div>
                                 )}

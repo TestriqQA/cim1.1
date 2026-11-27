@@ -5,7 +5,7 @@ import { BlogCategoryLink, BlogPost, getCategorySlug } from "@/data/blog";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import SearchParamSync from "./SearchParamSync";
-import { ChevronRight, Sparkles, ArrowRight, Home } from "lucide-react";
+import { ChevronRight, Sparkles, ArrowRight, Home, BookOpen, Handshake } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -126,7 +126,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                             color: "var(--brand-purple-text)",
                                         }}
                                     >
-                                        <Sparkles className="w-4 h-4" />
+                                        <BookOpen className="w-4 h-4" />
                                         Insights & Resources
                                     </span>
                                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
@@ -337,7 +337,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                     color: "var(--brand-purple-text)",
                                 }}
                             >
-                                <Sparkles className="w-4 h-4" />
+                                <BookOpen className="w-4 h-4" />
                                 Insights & Resources
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -480,7 +480,7 @@ export default function BlogClient({ initialPosts, categories, popularPosts, tag
                                     color: "var(--brand-purple-text)",
                                 }}
                             >
-                                <Sparkles className="w-4 h-4" />
+                                <Handshake className="w-4 h-4" />
                                 Let&apos;s Work Together
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

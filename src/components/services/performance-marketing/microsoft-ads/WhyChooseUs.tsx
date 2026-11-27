@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, Wallet, Users, Zap, Award } from "lucide-react";
+import { Check, Wallet, Users, Zap, Award, Trophy } from "lucide-react";
 
 export default function WhyChooseUs() {
     const msBlue = "#0078D4";
@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
                                 borderColor: `${msBlue}40`,
                             }}
                         >
-                            <Award className="w-4 h-4" style={{ color: msBlue }} />
+                            <Trophy className="w-4 h-4" style={{ color: msBlue }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                                 Why Choose Microsoft
                             </span>

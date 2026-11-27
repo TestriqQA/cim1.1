@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Monitor, ShoppingCart, TrendingUp, Shield } from "lucide-react";
+import { Monitor, ShoppingCart, Shield, Factory } from "lucide-react";
 
 export default function CampaignTypes() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -55,7 +55,7 @@ export default function CampaignTypes() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <Factory className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Industries
                         </span>

@@ -3,9 +3,9 @@ import {
     Target,
     Globe,
     TrendingUp,
-    Trophy,
     BadgeCheck,
     ShieldCheck,
+    Handshake,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--border-color)",
                         }}
                     >
-                        <Trophy className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
+                        <Handshake className="w-4 h-4" style={{ color: "var(--accent-shopify-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-lime-text)" }}>
                             Why Partner With Our Shopify Agency?
                         </span>

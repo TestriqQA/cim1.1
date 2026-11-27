@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BarChart3, Shield, Eye, Award, CheckCircle2, Sparkles } from "lucide-react";
+import { BarChart3, Shield, Eye, Award, CheckCircle2, Sparkles, Trophy } from "lucide-react";
 
 export default function WhyChooseUs() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <CheckCircle2 className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Why Choose Us
                         </span>

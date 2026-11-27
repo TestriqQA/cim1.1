@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link2, Mail, FileText, Megaphone, BookOpen, ArrowUpRight } from "lucide-react";
+import { Mail, FileText, Megaphone, BookOpen, ArrowUpRight, LayoutGrid } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceOverview() {
@@ -68,7 +68,7 @@ export default function ServiceOverview() {
                             borderColor: `${linkCyan}40`,
                         }}
                     >
-                        <Link2 className="w-4 h-4" style={{ color: linkCyan }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: linkCyan }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-cyan-text)" }}>
                             Our Services
                         </span>

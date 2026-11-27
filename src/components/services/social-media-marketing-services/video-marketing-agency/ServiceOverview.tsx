@@ -8,7 +8,7 @@ import {
     BarChart2,
     MonitorPlay,
     Clapperboard,
-    Megaphone,
+    Funnel,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -75,7 +75,7 @@ export default function ServiceOverview() {
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${youtubeRed}30` }}>
-                        <Megaphone className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
+                        <Funnel className="w-4 h-4" style={{ color: "var(--accent-red-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-red-text)" }}>Full-Funnel Excellence</span>
                     </div>
                     <h2
