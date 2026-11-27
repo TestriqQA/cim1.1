@@ -9,6 +9,7 @@ import {
     ShoppingBag,
     Home,
     Building2,
+    Factory,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -116,7 +117,7 @@ export default function SolutionTypes() {
                                 borderColor: `${localAmber}40`,
                             }}
                         >
-                            <Building2 className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                            <Factory className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>
                                 Target Industries
                             </span>

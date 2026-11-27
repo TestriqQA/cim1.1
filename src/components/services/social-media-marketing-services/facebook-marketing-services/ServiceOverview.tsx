@@ -8,7 +8,7 @@ import {
     Video,
     MessageCircle,
     Repeat,
-    Megaphone,
+    LayoutGrid,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -65,7 +65,7 @@ export default function ServiceOverview() {
             <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 relative z-10">
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
-                        <Megaphone className="w-4 h-4 text-blue-500" />
+                        <LayoutGrid className="w-4 h-4 text-blue-500" />
                         <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Our Services</span>
                     </div>
                     <h2

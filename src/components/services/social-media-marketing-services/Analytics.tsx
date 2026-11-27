@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    Sparkles,
     TrendingUp,
     Users,
     Target,
@@ -12,7 +11,7 @@ import {
     TestTube2,
     DollarSign,
     Eye,
-    MousePointerClick
+    MousePointerClick,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -112,7 +111,7 @@ export default function Analytics() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" />
+                        <BarChart3 className="w-4 h-4" />
                         <span className="text-sm font-semibold">Analytics & Performance</span>
                     </div>
 

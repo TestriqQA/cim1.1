@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ShieldCheck, TrendingUp, DollarSign, Users, Award, Zap } from "lucide-react";
+import { ShieldCheck, TrendingUp, DollarSign, Users, Award, Zap, Handshake } from "lucide-react";
 
 export default function WhyChooseUs() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
                             borderColor: `${amazonOrange}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: amazonOrange }} />
+                        <Handshake className="w-4 h-4" style={{ color: amazonOrange }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
                             Why Partner With Us
                         </span>

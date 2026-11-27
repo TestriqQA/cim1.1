@@ -8,7 +8,7 @@ import {
     Globe2,
     Database,
     Layers,
-    Sparkles,
+    Puzzle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -78,7 +78,7 @@ export default function SolutionTypes() {
                             borderColor: `${techPurple}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: techPurple }} />
+                        <Puzzle className="w-4 h-4" style={{ color: techPurple }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-violet-text)" }}>
                             Technical Solutions
                         </span>

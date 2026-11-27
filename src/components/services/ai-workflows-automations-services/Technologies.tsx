@@ -1,6 +1,6 @@
 "use client";
 
-import { Cloud, Zap, Database, Shield, Brain, Sparkles, Lock, Activity, Server, CheckCircle2, ArrowRight } from "lucide-react";
+import { Cloud, Zap, Database, Shield, Brain, Lock, Activity, Server, CheckCircle2, ArrowRight, Layers } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -138,7 +138,7 @@ export default function Technologies() {
                     {/* Section Header */}
                     <div className="text-center mb-10 md:mb-16 animate-fadeIn" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                            <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
+                            <Layers className="w-3.5 h-3.5" style={{ color: "var(--brand-orange)" }} />
                             <span className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Powered by Industry Leaders</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">

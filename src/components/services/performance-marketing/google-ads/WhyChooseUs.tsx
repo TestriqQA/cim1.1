@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Award, Shield, TrendingUp, Users, CheckCircle, BarChart3, Zap } from "lucide-react";
+import { Award, Shield, TrendingUp, Users, CheckCircle, BarChart3, Zap, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
                             borderColor: `${googleBlue}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>

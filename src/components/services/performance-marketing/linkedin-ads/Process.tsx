@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Search, Target, Palette, Rocket, BarChart, RefreshCw, CheckCircle } from "lucide-react";
+import { Search, Target, Palette, Rocket, BarChart, RefreshCw, Workflow } from "lucide-react";
 
 export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
@@ -74,7 +74,7 @@ export default function Process() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <CheckCircle className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Our Process
                         </span>

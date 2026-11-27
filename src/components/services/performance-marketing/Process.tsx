@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ClipboardList, Search, Rocket, Settings, TrendingUp, FileText, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ClipboardList, Search, Rocket, Settings, TrendingUp, FileText, ArrowRight, CheckCircle2, Workflow } from "lucide-react";
 
 export default function Process() {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
@@ -65,7 +65,7 @@ export default function Process() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <ClipboardList className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Our Process
                         </span>

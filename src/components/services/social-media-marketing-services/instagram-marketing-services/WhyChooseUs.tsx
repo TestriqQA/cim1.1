@@ -9,6 +9,7 @@ import {
     Zap,
     HeadphonesIcon,
     Sparkles,
+    Trophy,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -80,7 +81,7 @@ export default function WhyChooseUs() {
                             borderColor: "rgba(225, 48, 108, 0.2)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#E1306C" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "#E1306C" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-pink-text)" }}>
                             Why Choose Us
                         </span>

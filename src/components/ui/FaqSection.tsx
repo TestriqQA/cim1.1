@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useId, useState } from "react";
-import { ChevronDown, MessageSquare } from "lucide-react";
+import { ChevronDown, CircleHelp } from "lucide-react";
 
 export type FaqItem = {
     q: React.ReactNode;
@@ -77,7 +77,7 @@ export default function FaqSection({
                                     borderColor: "var(--border-color)",
                                 }}
                             >
-                                <MessageSquare
+                                <CircleHelp
                                     aria-hidden="true"
                                     className="flex-shrink-0"
                                     style={{ width: "1.15em", height: "1.15em", color: accent }}

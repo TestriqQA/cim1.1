@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Target, Users, BarChart2, Briefcase, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Users, BarChart2, Briefcase, CheckCircle2 } from "lucide-react";
 
 export default function SolutionTypes() {
     const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -71,7 +71,7 @@ export default function SolutionTypes() {
                             borderColor: `${msBlue}40`,
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: msBlue }} />
+                        <CheckCircle2 className="w-4 h-4" style={{ color: msBlue }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Platform Benefits
                         </span>

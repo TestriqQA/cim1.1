@@ -1,6 +1,6 @@
 "use client";
 
-import { Palette, ArrowRight, Phone, Sparkles } from "lucide-react";
+import { Palette, ArrowRight, Phone, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -34,7 +34,7 @@ export default function CTA() {
                             borderColor: "var(--brand-yellow)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
+                        <MessagesSquare className="w-4 h-4" style={{ color: "var(--accent-amber-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-amber-text)" }}>Free Consultation</span>
                     </div>
 

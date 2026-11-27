@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Award, Shield, TrendingUp, Users, Zap, BarChart3, CheckCircle } from "lucide-react";
+import { Award, Shield, TrendingUp, Users, Zap, BarChart3, CheckCircle, Trophy } from "lucide-react";
 
 export default function WhyChooseUs() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                             borderColor: `${linkedInBlue}40`,
                         }}
                     >
-                        <Award className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
+                        <Trophy className="w-4 h-4" style={{ color: "var(--brand-blue-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
                             Why Choose Us
                         </span>

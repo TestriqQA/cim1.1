@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb, Pencil, Code, TestTube, Rocket, Wrench, Sparkles } from "lucide-react";
+import { Lightbulb, Pencil, Code, TestTube, Rocket, Wrench, Workflow } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -71,7 +71,7 @@ export default function Process() {
                             borderColor: "color-mix(in srgb, var(--brand-purple) 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
+                        <Workflow className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
                             Our Process
                         </span>

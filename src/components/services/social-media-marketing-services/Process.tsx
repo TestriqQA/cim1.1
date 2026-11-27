@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, Search, Calendar, Palette, Send, MessageSquare, TrendingUp } from "lucide-react";
+import { Search, Calendar, Palette, Send, MessageSquare, TrendingUp, Workflow } from "lucide-react";
 import Link from "next/link";
 
 export default function Process() {
@@ -66,7 +66,7 @@ export default function Process() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" />
+                        <Workflow className="w-4 h-4" />
                         <span className="text-sm font-semibold">Our Process</span>
                     </div>
 

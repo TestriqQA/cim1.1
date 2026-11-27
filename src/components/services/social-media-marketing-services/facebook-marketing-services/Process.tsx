@@ -10,7 +10,7 @@ import {
     RefreshCw,
     CheckCircle2,
     Clock,
-    Zap,
+    Workflow,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -128,7 +128,7 @@ export default function Process() {
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
-                        <Zap className="w-4 h-4 text-blue-500" />
+                        <Workflow className="w-4 h-4 text-blue-500" />
                         <span className="text-sm font-semibold text-[var(--brand-blue-text)]">6-Step Framework</span>
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">

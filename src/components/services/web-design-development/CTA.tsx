@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -30,7 +30,7 @@ export default function CTA() {
                 color: "var(--brand-blue-text)",
               }}
             >
-              <Sparkles className="w-4 h-4 shrink-0" />
+              <Globe className="w-4 h-4 shrink-0" />
               <span className="text-sm font-semibold">
                 Global Excellence
               </span>

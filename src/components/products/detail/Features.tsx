@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import React from "react";
-import { Brain, Eye, Zap, GitBranch, BarChart3, Shield, BookOpen, Globe, UserCheck, Languages, BarChart, Workflow, Puzzle, Mail, FileText, Clock, GitMerge, LayoutDashboard, TrendingUp, Target, PieChart, Lightbulb, Users, MousePointer2, Sparkles, Gauge, Search, ShoppingCart, Rocket, CalendarDays, Wand2, BarChart2, Inbox, Hash } from "lucide-react";
+import { Brain, Eye, Zap, GitBranch, BarChart3, Shield, BookOpen, Globe, UserCheck, Languages, BarChart, Workflow, Puzzle, Mail, FileText, Clock, GitMerge, LayoutDashboard, TrendingUp, Target, PieChart, Lightbulb, Users, MousePointer2, Sparkles, Gauge, Search, ShoppingCart, Rocket, CalendarDays, Wand2, BarChart2, Inbox, Hash, ListChecks } from "lucide-react";
 import type { Product } from "@/data/products";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
@@ -34,7 +34,7 @@ export default function Features({ product }: { product: Product }) {
                 <div className="text-center mb-10 md:mb-12">
                     <div className="inline-block mb-4">
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold leading-none border" style={{ backgroundColor: "var(--card-bg)", borderColor: `${color}30`, color: textColor }}>
-                            <Sparkles aria-hidden="true" className="flex-shrink-0" style={{ width: "1.15em", height: "1.15em", color }} />
+                            <ListChecks aria-hidden="true" className="flex-shrink-0" style={{ width: "1.15em", height: "1.15em", color }} />
                             Features
                         </span>
                     </div>

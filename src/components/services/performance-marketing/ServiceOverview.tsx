@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MousePointerClick, RefreshCw, Share2, Layers, ArrowRight, CheckCircle2, Sparkles, BookOpen, Combine, ChartColumn } from "lucide-react";
+import { MousePointerClick, RefreshCw, Share2, Layers, ArrowRight, CheckCircle2, BookOpen, Combine, ChartColumn, LayoutGrid } from "lucide-react";
 
 export default function ServiceOverview() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -60,7 +60,7 @@ export default function ServiceOverview() {
                             borderColor: "var(--brand-orange)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
+                        <LayoutGrid className="w-4 h-4" style={{ color: "var(--brand-orange)" }} />
                         <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--accent-orange-text)" }}>
                             Our Services
                         </span>

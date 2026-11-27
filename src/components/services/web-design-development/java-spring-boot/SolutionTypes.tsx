@@ -8,8 +8,8 @@ import {
     Truck,
     BarChart3,
     CheckCircle2,
-    Puzzle,
     Landmark,
+    Factory,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -120,7 +120,7 @@ export default function SolutionTypes() {
                             borderColor: "rgba(109, 179, 63, 0.2)",
                         }}
                     >
-                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-green-text)" }} />
+                        <Factory className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-green-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
                             Industry Solutions
                         </span>

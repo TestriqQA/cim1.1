@@ -1,4 +1,4 @@
-import { Award, Users, Globe2, Rocket, Shield, TrendingUp } from "lucide-react";
+import { Users, Globe2, Rocket, Shield, TrendingUp, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
                             background: "linear-gradient(90deg, color-mix(in srgb,var(--brand-blue) 8%,transparent), color-mix(in srgb,var(--brand-purple) 8%,transparent))",
                         }}
                     >
-                        <Award className="w-4 h-4 text-[var(--brand-blue-text)]" />
+                        <Trophy className="w-4 h-4 text-[var(--brand-blue-text)]" />
                         <span className="text-sm font-semibold text-[var(--brand-blue-text)]">Why Choose Us</span>
                     </div>
 

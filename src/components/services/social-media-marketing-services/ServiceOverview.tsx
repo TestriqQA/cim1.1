@@ -1,6 +1,6 @@
 
 
-import { Zap, BookOpen, Share2, TrendingUp } from "lucide-react";
+import { BookOpen, Share2, TrendingUp, LayoutGrid } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ export default function ServiceOverview() {
                             color: "var(--accent-teal-text)",
                         }}
                     >
-                        <Zap className="w-4 h-4" />
+                        <LayoutGrid className="w-4 h-4" />
                         <span className="text-sm font-semibold">Service Overview</span>
                     </div>
 
