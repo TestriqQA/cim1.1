@@ -1,282 +1,330 @@
 "use client";
 
-import {
-    BookOpen, Video, Users, Building2, Briefcase, Globe,
-    ArrowRight, CheckCircle2, GraduationCap, Award, Play,
-    FileText, MessageSquare, BarChart3, Zap, Target
-} from "lucide-react";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import type { KeyboardEvent, ReactNode } from "react";
+import { CheckCircle2, Puzzle, ArrowRight, BookOpen, Building2, GraduationCap, Video, Briefcase, Globe } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function SolutionTypes() {
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+const solutionsHeader: SolutionsHeader = {
+    title: (
+        <>
+            EdTech <span style={{ color: "var(--brand-purple-text)" }}>Solutions</span> We Build
+        </>
+    ),
+    intro: "Comprehensive learning platforms designed for modern education and training needs.",
+    ariaLabel: "Learning platform types",
+};
 
-    const solutions = [
-        {
-            icon: BookOpen,
-            title: "Online Course Platforms",
-            description: <>Create and sell <Link href="/services/web-design-development/edtech-lms" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">online courses</Link> with video lessons, quizzes, assignments, and progress tracking like Udemy or Skillshare.</>,
-            features: [
-                { icon: Video, text: "Video Lessons" },
-                { icon: FileText, text: "Downloadable Resources" },
-                { icon: Award, text: "Course Certificates" },
-                { icon: BarChart3, text: "Student Analytics" }
-            ],
-            color: "var(--brand-purple-text)",
-            textColor: "var(--brand-purple-text)",
-            gradient: "from-[#a855f7] to-[#c084fc]",
-            accentColor: "#c084fc",
-        },
-        {
-            icon: Building2,
-            title: "Corporate LMS",
-            description: <>Enterprise <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline text-[var(--accent-pink-text)]">learning management</Link> for employee training, onboarding, compliance, and skill development.</>,
-            features: [
-                { icon: Users, text: "Team Management" },
-                { icon: Target, text: "Skill Tracking" },
-                { icon: Award, text: "Compliance Training" },
-                { icon: BarChart3, text: "Performance Reports" }
-            ],
-            color: "#ec4899",
-            textColor: "var(--accent-pink-text)",
-            gradient: "from-[#ec4899] to-[#f472b6]",
-            accentColor: "#f472b6",
-        },
-        {
-            icon: GraduationCap,
-            title: "Academic LMS",
-            description: "Comprehensive learning platforms for schools and universities with grading, attendance, and parent portals.",
-            features: [
-                { icon: FileText, text: "Assignment Submission" },
-                { icon: BarChart3, text: "Gradebook" },
-                { icon: Users, text: "Parent Portal" },
-                { icon: MessageSquare, text: "Discussion Forums" }
-            ],
-            color: "#f97316",
-            textColor: "var(--accent-orange-text)",
-            gradient: "from-[#f97316] to-[#fb923c]",
-            accentColor: "#fb923c",
-        },
-        {
-            icon: Video,
-            title: "Live Learning Platforms",
-            description: <>Real-time <Link href="/services/web-design-development/entertainment-media" className="underline underline-offset-2 hover:underline text-[var(--brand-purple-text)]">virtual classrooms</Link> with video conferencing, screen sharing, and interactive whiteboards.</>,
-            features: [
-                { icon: Video, text: "Live Video Classes" },
-                { icon: MessageSquare, text: "Real-time Chat" },
-                { icon: Play, text: "Recording & Replay" },
-                { icon: Users, text: "Breakout Rooms" }
-            ],
-            color: "var(--brand-purple-text)",
-            textColor: "var(--brand-purple-text)",
-            gradient: "from-[#a855f7] to-[#ec4899]",
-            accentColor: "#ec4899",
-        },
-        {
-            icon: Briefcase,
-            title: "Training Marketplaces",
-            description: "Multi-instructor platforms where experts can create and monetize their courses with revenue sharing.",
-            features: [
-                { icon: Users, text: "Instructor Portals" },
-                { icon: Zap, text: "Revenue Sharing" },
-                { icon: BarChart3, text: "Sales Analytics" },
-                { icon: Award, text: "Instructor Verification" }
-            ],
-            color: "#ec4899",
-            textColor: "var(--accent-pink-text)",
-            gradient: "from-[#ec4899] to-[#f97316]",
-            accentColor: "#f97316",
-        },
-        {
-            icon: Globe,
-            title: "MOOC Platforms",
-            description: "Massive open online courses with self-paced learning, discussion forums, and peer assessments.",
-            features: [
-                { icon: Globe, text: "Global Access" },
-                { icon: Users, text: "Peer Learning" },
-                { icon: Award, text: "Verified Certificates" },
-                { icon: MessageSquare, text: "Community Forums" }
-            ],
-            color: "#f97316",
-            textColor: "var(--accent-orange-text)",
-            gradient: "from-[#f97316] to-[#a855f7]",
-            accentColor: "#a855f7",
-        },
-    ];
+const solutions: Solution[] = [
+    {
+        icon: BookOpen,
+        title: "Online Course Platforms",
+        description: <>Create and sell <Link href="/services/web-design-development/edtech-lms" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-purple-text)" }}>online courses</Link> with video lessons, quizzes, assignments, and progress tracking like Udemy or Skillshare.</>,
+        features: ["Video Lessons", "Downloadable Resources", "Course Certificates", "Student Analytics"],
+        color: "from-[#a855f7] to-[#9333ea]",
+    },
+    {
+        icon: Building2,
+        title: "Corporate LMS",
+        description: <>Enterprise <Link href="/services/web-design-development/business-corporate" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-purple-text)" }}>learning management</Link> for employee training, onboarding, compliance, and skill development.</>,
+        features: ["Team Management", "Skill Tracking", "Compliance Training", "Performance Reports"],
+        color: "from-[#ec4899] to-[#db2777]",
+    },
+    {
+        icon: GraduationCap,
+        title: "Academic LMS",
+        description: "Comprehensive learning platforms for schools and universities with grading, attendance, and parent portals.",
+        features: ["Assignment Submission", "Gradebook", "Parent Portal", "Discussion Forums"],
+        color: "from-[#ea580c] to-[#c2410c]",
+    },
+    {
+        icon: Video,
+        title: "Live Learning Platforms",
+        description: <>Real-time <Link href="/services/web-design-development/entertainment-media" className="underline underline-offset-2 hover:underline" style={{ color: "var(--brand-purple-text)" }}>virtual classrooms</Link> with video conferencing, screen sharing, and interactive whiteboards.</>,
+        features: ["Live Video Classes", "Real-time Chat", "Recording & Replay", "Breakout Rooms"],
+        color: "from-[#a855f7] to-[#9333ea]",
+    },
+    {
+        icon: Briefcase,
+        title: "Training Marketplaces",
+        description: "Multi-instructor platforms where experts can create and monetize their courses with revenue sharing.",
+        features: ["Instructor Portals", "Revenue Sharing", "Sales Analytics", "Instructor Verification"],
+        color: "from-[#ec4899] to-[#db2777]",
+    },
+    {
+        icon: Globe,
+        title: "MOOC Platforms",
+        description: "Massive open online courses with self-paced learning, discussion forums, and peer assessments.",
+        features: ["Global Access", "Peer Learning", "Verified Certificates", "Community Forums"],
+        color: "from-[#ea580c] to-[#c2410c]",
+    },
+];
+
+const solutionsCta: SectionCta = {
+    title: "Ready to Transform Education?",
+    text: "Let's build a learning platform that engages students and delivers results.",
+    label: "Discuss Your EdTech Project",
+};
+
+type SolutionsHeader = { title: ReactNode; intro: ReactNode; ariaLabel: string };
+type Solution = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    features: string[];
+    color: string;
+    meta?: string[];
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string } | null;
+
+export default function SolutionTypes() {
+    // Business-model picker: one tab per model, one panel shows the chosen model.
+    const [active, setActive] = useState(0);
+    // The panel fades in only after a real switch (styled-jsx CSS is injected on
+    // the client, so animating on first load would flash).
+    const [switched, setSwitched] = useState(false);
+    const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+    // The panel box eases between heights while the model changes (descriptions
+    // differ in length). The height is fixed only for the 400ms of the change; at
+    // rest it is auto, so a resize can never clip the content.
+    const boxRef = useRef<HTMLDivElement>(null);
+    const fromHeight = useRef<number | null>(null);
+
+    const select = (idx: number) => {
+        if (idx === active) return;
+        fromHeight.current = boxRef.current?.offsetHeight ?? null;
+        setActive(idx);
+        setSwitched(true);
+    };
+
+    useLayoutEffect(() => {
+        const box = boxRef.current;
+        const from = fromHeight.current;
+        fromHeight.current = null;
+        if (!box || from === null) return;
+        box.style.height = "";
+        const to = box.offsetHeight; // natural height with the new panel
+        if (from === to) return;
+        box.style.height = `${from}px`;
+        void box.offsetHeight; // apply the start height before animating
+        box.style.height = `${to}px`;
+        const release = () => {
+            box.style.height = "";
+        };
+        box.addEventListener("transitionend", release, { once: true });
+        const fallback = window.setTimeout(release, 450);
+        return () => {
+            window.clearTimeout(fallback);
+            box.removeEventListener("transitionend", release);
+        };
+    }, [active]);
+
+    // Arrow keys move between tabs (left/up = previous, right/down = next), Home/End
+    // jump to the ends; the tab that gets focus is also selected.
+    const onTabKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+        const last = solutions.length - 1;
+        let next: number | null = null;
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") next = active === last ? 0 : active + 1;
+        else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = active === 0 ? last : active - 1;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = last;
+        if (next === null) return;
+        e.preventDefault();
+        select(next);
+        tabRefs.current[next]?.focus();
+    };
+
+    // Tabs sit above the panel at every size (user, 26 Nov 2026: "1. Tabs on top"; a side
+    // list was taller than most panels and left blank space above and below the text).
+    // Five models: five 44px icon tabs in a row on phones, five tiles from 640px.
+    // Six models: six 43px tabs in one even row at 320 (no min-width, or they would
+    // overflow), 3×2 tiles from 640px, one row of six from 1024px.
+    const six = solutions.length === 6;
+    const tabListClass = six
+        ? "grid grid-cols-6 gap-1 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6"
+        : "flex justify-center gap-2 sm:grid sm:grid-cols-5 sm:gap-3";
+    const tabSizeClass = six ? "min-h-11" : "min-h-11 min-w-11";
 
     return (
         <section
-            className="py-20 transition-colors duration-300 relative overflow-hidden"
+            className="py-16 md:py-20 transition-colors duration-300 relative overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* Background Elements */}
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <GraduationCap className="w-4 h-4" style={{ color: "var(--brand-purple-text)" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
-                                Learning Solutions
-                            </span>
-                        </div>
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+                    >
+                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-purple-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-purple-text)" }}>
+                            Our Solutions
+                        </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        EdTech <span style={{ color: "var(--brand-purple-text)" }}>Solutions</span> We Build
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {solutionsHeader.title}
                     </h2>
+
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        Comprehensive learning platforms designed for modern education and training needs.
+                        {solutionsHeader.intro}
                     </p>
-                    <div
-                        className="w-24 h-1.5 mx-auto mt-8 rounded-full"
-                        style={{ background: "linear-gradient(90deg, #a855f7, #ec4899)" }}
-                    />
                 </div>
 
-                {/* Solutions Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {solutions.map((solution, idx) => {
-                        const Icon = solution.icon;
-                        const isHovered = hoveredCard === idx;
-
-                        return (
-                            <div
-                                key={idx}
-                                className="group relative"
-                                onMouseEnter={() => setHoveredCard(idx)}
-                                onMouseLeave={() => setHoveredCard(null)}
-                            >
-                                <div
-                                    className="relative p-8 rounded-2xl border overflow-hidden transition-all duration-500 h-full flex flex-col"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? solution.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-12px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered
-                                            ? `0 25px 60px ${solution.color}25, 0 0 0 2px ${solution.color}20`
-                                            : "0 4px 6px rgba(0, 0, 0, 0.05)",
+                {/* Picker: a row of model tabs above one panel. From 640px the tabs are
+                    tiles (icon above name); phones: icon-only tabs, the name shows as the
+                    panel heading. */}
+                <div className="grid gap-6">
+                    <div
+                        role="tablist"
+                        aria-label={solutionsHeader.ariaLabel}
+                        onKeyDown={onTabKeyDown}
+                        className={tabListClass}
+                    >
+                        {solutions.map((solution, idx) => {
+                            const Icon = solution.icon;
+                            const isActive = active === idx;
+                            return (
+                                <button
+                                    key={solution.title}
+                                    ref={(el) => {
+                                        tabRefs.current[idx] = el;
                                     }}
+                                    id={`solution-tab-${idx}`}
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={isActive}
+                                    aria-controls={`solution-panel-${idx}`}
+                                    tabIndex={isActive ? 0 : -1}
+                                    onClick={() => select(idx)}
+                                    className={`flex items-center justify-center gap-3 ${tabSizeClass} p-1.5 sm:flex-col sm:gap-2 sm:p-3 sm:min-h-[104px] rounded-xl border transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none focus-visible:outline-none ${isActive
+                                        ? "bg-[#9333ea] border-[#9333ea] text-white focus-visible:brightness-120"
+                                        : "bg-[var(--card-bg)] border-[var(--border-color)] text-[var(--foreground)] hover:border-[#a855f7] focus-visible:border-[#a855f7]"
+                                        }`}
                                 >
-                                    {/* Gradient overlay */}
+                                    <span className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${solution.color}`}>
+                                        <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" aria-hidden="true" />
+                                    </span>
+                                    <span className="sr-only sm:not-sr-only text-xs sm:text-center lg:text-sm font-semibold leading-tight">
+                                        {solution.title}
+                                    </span>
+                                </button>
+                            );
+                        })}
+                    </div>
 
-                                    {/* Content */}
-                                    <div className="relative z-10 flex flex-col h-full">
-                                        {/* Icon */}
-                                        <div className="mb-6 relative">
-                                            <div
-                                                className={`relative inline-flex w-20 h-20 rounded-2xl items-center justify-center bg-gradient-to-br ${solution.gradient} transition-all duration-500`}
-                                                style={{
-                                                    transform: isHovered ? "scale(1.15) rotate(5deg)" : "scale(1)",
-                                                    boxShadow: isHovered ? `0 15px 40px ${solution.color}50` : "0 4px 6px rgba(0, 0, 0, 0.1)",
-                                                }}
-                                            >
-                                                <Icon className="w-10 h-10 text-white" />
+                    {/* Panel: every model stays in the HTML (inactive ones hidden), so every
+                        description and link is still read by search engines. Its height is
+                        its own content, so there is no blank space above or below. */}
+                    <div
+                        className="rounded-3xl border border-[var(--border-color)] p-6 md:p-8 lg:p-10"
+                        style={{ backgroundColor: "var(--card-bg)" }}
+                    >
+                        <div ref={boxRef} className="overflow-hidden transition-[height] duration-[400ms] ease-in-out motion-reduce:transition-none">
+                            {solutions.map((solution, idx) => {
+                                const Icon = solution.icon;
+                                const isActive = active === idx;
+                                return (
+                                    <div
+                                        key={solution.title}
+                                        id={`solution-panel-${idx}`}
+                                        role="tabpanel"
+                                        aria-labelledby={`solution-tab-${idx}`}
+                                        tabIndex={0}
+                                        hidden={!isActive}
+                                    >
+                                        <div className={`grid lg:grid-cols-[minmax(0,1fr)_minmax(0,16rem)] 2xl:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] gap-8 items-center ${isActive && switched ? "solution-in" : ""}`}>
+                                            <div>
+                                                {/* A title with its own page links from here (a link can't sit inside a tab) */}
+                                                <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                                    {solution.href ? (
+                                                        <Link href={solution.href} className="hover:underline">
+                                                            {solution.title}
+                                                        </Link>
+                                                    ) : (
+                                                        solution.title
+                                                    )}
+                                                </h3>
+                                                <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                                    {solution.description}
+                                                </p>
+                                                {solution.meta && (
+                                                    <ul className="flex flex-wrap gap-2 mt-4">
+                                                        {solution.meta.map((item) => (
+                                                            <li
+                                                                key={item}
+                                                                className="px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                                style={{ color: "var(--secondary-text)" }}
+                                                            >
+                                                                {item}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-6">
+                                                    {solution.features.map((feature) => (
+                                                        <li key={feature} className="flex items-start gap-2.5 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                            <CheckCircle2 aria-hidden="true" className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--brand-purple-text)]" />
+                                                            <span>{feature}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             </div>
-
-                                            {/* Number badge */}
+                                            {/* Colour panel with the model's icon, from 1024px (the panel is full
+                                                width now, so two-column ticks still fit beside it); wider from
+                                                1536px so the text lines don't get too long */}
                                             <div
-                                                className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-500 border-2"
-                                                style={{
-                                                    background: isHovered
-                                                        ? `linear-gradient(135deg, ${solution.color}, ${solution.accentColor})`
-                                                        : "var(--card-bg)",
-                                                    color: isHovered ? "white" : solution.textColor,
-                                                    borderColor: isHovered ? "transparent" : solution.color,
-                                                    transform: isHovered ? "scale(1.2) rotate(360deg)" : "scale(1)",
-                                                }}
+                                                aria-hidden="true"
+                                                className={`hidden lg:flex self-stretch min-h-56 rounded-2xl items-center justify-center bg-gradient-to-br ${solution.color}`}
                                             >
-                                                {idx + 1}
+                                                <Icon className="w-20 h-20 text-white" />
                                             </div>
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3
-                                            className="text-xl md:text-2xl font-bold mb-4 transition-all duration-300"
-                                            style={{ color: isHovered ? solution.textColor : "var(--foreground)" }}
-                                        >
-                                            {solution.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p className="text-sm md:text-base mb-6 leading-relaxed flex-1" style={{ color: "var(--secondary-text)" }}>
-                                            {solution.description}
-                                        </p>
-
-                                        {/* Features */}
-                                        <div className="space-y-3 pt-4 border-t" style={{ borderColor: isHovered ? `${solution.color}30` : "var(--border-color)" }}>
-                                            {solution.features.map((feature, fidx) => {
-                                                const FeatureIcon = feature.icon;
-                                                return (
-                                                    <div
-                                                        key={fidx}
-                                                        className="flex items-center gap-3 transition-all duration-300"
-                                                        style={{
-                                                            transform: isHovered ? "translateX(6px)" : "translateX(0)",
-                                                            transitionDelay: `${fidx * 60}ms`,
-                                                        }}
-                                                    >
-                                                        <div
-                                                            className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${solution.gradient} transition-all duration-300`}
-                                                            style={{
-                                                                transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1)",
-                                                                boxShadow: isHovered ? `0 4px 12px ${solution.color}30` : "none",
-                                                            }}
-                                                        >
-                                                            <FeatureIcon className="w-4 h-4 text-white" />
-                                                        </div>
-                                                        <span
-                                                            className="text-sm font-medium transition-colors duration-300 flex-1"
-                                                            style={{ color: isHovered ? solution.textColor : "var(--secondary-text)" }}
-                                                        >
-                                                            {feature.text}
-                                                        </span>
-                                                        {isHovered && (
-                                                            <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: "#10b981" }} />
-                                                        )}
-                                                    </div>
-                                                );
-                                            })}
                                         </div>
                                     </div>
-
-                                    {/* Bottom gradient bar */}
-                                    <div
-                                        className="absolute bottom-0 left-0 right-0 h-1.5 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${solution.color}, ${solution.accentColor}, ${solution.color})`,
-                                            backgroundSize: "200% 100%",
-                                            transform: isHovered ? "scaleX(1)" : "scaleX(0)",
-                                            transformOrigin: "left",
-                                        }}
-                                    />
-                                </div>
-
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="text-center mt-16">
-                    <div className="inline-block p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                            Ready to Transform Education?
-                        </h3>
-                        <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                            Let's build a learning platform that engages students and delivers results.
-                        </p>
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl group"
-                            style={{ background: "linear-gradient(135deg, #a855f7, #ec4899)" }}
-                        >
-                            Discuss Your EdTech Project
-                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                        </Link>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
+
+                {solutionsCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {solutionsCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {solutionsCta.title}
+                            </h3>
+                        )}
+                        {solutionsCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {solutionsCta.text}
+                            </p>
+                        )}
+                        <Link
+                            href={solutionsCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#9333ea] to-[#7e22ce] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {solutionsCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                    </div>
+                )}
+
+                <style jsx>{`
+                    @keyframes solutionIn {
+                        from { opacity: 0; transform: translateY(8px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    .solution-in {
+                        animation: solutionIn 400ms cubic-bezier(0.4, 0, 0.2, 1) both;
+                    }
+                    @media (prefers-reduced-motion: reduce) {
+                        .solution-in { animation: none; }
+                    }
+                `}</style>
             </div>
         </section>
     );

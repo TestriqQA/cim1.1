@@ -1,400 +1,334 @@
 "use client";
 
-import {
-    Heart, Video, Building2, Pill, Brain, Activity,
-    ArrowRight, CheckCircle2, Calendar, MessageSquare,
-    CreditCard, FileText, Stethoscope, Clock, Users,
-    Clipboard, DollarSign, UserCheck, Package, AlertCircle,
-    BookOpen, TrendingUp, BarChart3, Target, Shield,
-    Sparkles, Plus, Zap
-} from "lucide-react";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import type { KeyboardEvent, ReactNode } from "react";
+import { CheckCircle2, Puzzle, ArrowRight, UserRound, Video, Building2, Pill, Brain, Activity } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function SolutionTypes() {
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-    const [activeTab, setActiveTab] = useState(0);
+const solutionsHeader: SolutionsHeader = {
+    title: (
+        <>
+            Healthcare <span style={{ color: "var(--brand-blue-text)" }}>Solutions</span> We Build
+        </>
+    ),
+    intro: "Comprehensive digital health platforms designed for modern healthcare delivery with HIPAA compliance and patient safety at the core.",
+    ariaLabel: "Healthcare platform types",
+};
 
-    const solutions = [
-        {
-            icon: Heart,
-            title: "Patient Portals",
-            description: "Empower patients with secure access to their health records, appointment scheduling, prescription refills, and provider messaging.",
-            features: [
-                { icon: FileText, text: "Health Records Access" },
-                { icon: Calendar, text: "Appointment Booking" },
-                { icon: MessageSquare, text: "Secure Messaging" },
-                { icon: CreditCard, text: "Bill Pay Integration" }
-            ],
-            color: "#3b82f6",
-            gradient: "from-[#3b82f6] to-[#60a5fa]",
-            accentColor: "#60a5fa",
-        },
-        {
-            icon: Video,
-            title: "Telehealth Platforms",
-            description: "Enable virtual care delivery with HIPAA-compliant video consultations, remote patient monitoring, and digital health tools.",
-            features: [
-                { icon: Video, text: "Video Consultations" },
-                { icon: Activity, text: "Remote Monitoring" },
-                { icon: Pill, text: "E-Prescriptions" },
-                { icon: Clock, text: "Virtual Waiting Rooms" }
-            ],
-            color: "#6366f1",
-            gradient: "from-[#6366f1] to-[#818cf8]",
-            accentColor: "#818cf8",
-        },
-        {
-            icon: Building2,
-            title: <Link href="/services/web-design-development/business-corporate" className="hover:underline">Practice Management</Link>,
-            description: "Streamline clinical operations with scheduling, billing, documentation, and workflow automation tools.",
-            features: [
-                { icon: Calendar, text: "Scheduling Systems" },
-                { icon: DollarSign, text: "Billing & Claims" },
-                { icon: Clipboard, text: "Clinical Documentation" },
-                { icon: Users, text: "Staff Management" }
-            ],
-            color: "#8b5cf6",
-            gradient: "from-[#8b5cf6] to-[#a78bfa]",
-            accentColor: "#a78bfa",
-        },
-        {
-            icon: Pill,
-            title: <Link href="/services/web-design-development/ecommerce-development-company" className="hover:underline">Pharmacy Systems</Link>,
-            description: "Digital platforms for medication management, prescription processing, and pharmacy operations.",
-            features: [
-                { icon: FileText, text: "Prescription Processing" },
-                { icon: Package, text: "Inventory Management" },
-                { icon: AlertCircle, text: "Drug Interactions" },
-                { icon: BookOpen, text: "Patient Education" }
-            ],
-            color: "#3b82f6",
-            gradient: "from-[#3b82f6] to-[#6366f1]",
-            accentColor: "#6366f1",
-        },
-        {
-            icon: Brain,
-            title: <Link href="/services/web-design-development/saas-development-services" className="hover:underline">Mental Health Platforms</Link>,
-            description: "Specialized solutions for behavioral health including therapy scheduling, progress tracking, and secure communication.",
-            features: [
-                { icon: Calendar, text: "Therapy Scheduling" },
-                { icon: TrendingUp, text: "Progress Tracking" },
-                { icon: Shield, text: "Crisis Resources" },
-                { icon: Users, text: "Group Sessions" }
-            ],
-            color: "#6366f1",
-            gradient: "from-[#6366f1] to-[#8b5cf6]",
-            accentColor: "#8b5cf6",
-        },
-        {
-            icon: Activity,
-            title: "Health Analytics",
-            description: "Data-driven insights for population health management, outcome tracking, and quality improvement.",
-            features: [
-                { icon: Users, text: "Population Health" },
-                { icon: BarChart3, text: "Outcome Analytics" },
-                { icon: Target, text: "Quality Metrics" },
-                { icon: TrendingUp, text: "Predictive Modeling" }
-            ],
-            color: "#8b5cf6",
-            gradient: "from-[#8b5cf6] to-[#3b82f6]",
-            accentColor: "#3b82f6",
-        },
-    ];
+// Three titles linked to their pages; the link now sits on the panel heading
+const solutions: Solution[] = [
+    {
+        icon: UserRound,
+        title: "Patient Portals",
+        description: "Empower patients with secure access to their health records, appointment scheduling, prescription refills, and provider messaging.",
+        features: ["Health Records Access", "Appointment Booking", "Secure Messaging", "Bill Pay Integration"],
+        color: "from-[#3b82f6] to-[#2563eb]",
+    },
+    {
+        icon: Video,
+        title: "Telehealth Platforms",
+        description: "Enable virtual care delivery with HIPAA-compliant video consultations, remote patient monitoring, and digital health tools.",
+        features: ["Video Consultations", "Remote Monitoring", "E-Prescriptions", "Virtual Waiting Rooms"],
+        color: "from-[#6366f1] to-[#4f46e5]",
+    },
+    {
+        icon: Building2,
+        title: "Practice Management",
+        href: "/services/web-design-development/business-corporate",
+        description: "Streamline clinical operations with scheduling, billing, documentation, and workflow automation tools.",
+        features: ["Scheduling Systems", "Billing & Claims", "Clinical Documentation", "Staff Management"],
+        color: "from-[#8b5cf6] to-[#7c3aed]",
+    },
+    {
+        icon: Pill,
+        title: "Pharmacy Systems",
+        href: "/services/web-design-development/ecommerce-development-company",
+        description: "Digital platforms for medication management, prescription processing, and pharmacy operations.",
+        features: ["Prescription Processing", "Inventory Management", "Drug Interactions", "Patient Education"],
+        color: "from-[#3b82f6] to-[#2563eb]",
+    },
+    {
+        icon: Brain,
+        title: "Mental Health Platforms",
+        href: "/services/web-design-development/saas-development-services",
+        description: "Specialized solutions for behavioral health including therapy scheduling, progress tracking, and secure communication.",
+        features: ["Therapy Scheduling", "Progress Tracking", "Crisis Resources", "Group Sessions"],
+        color: "from-[#6366f1] to-[#4f46e5]",
+    },
+    {
+        icon: Activity,
+        title: "Health Analytics",
+        description: "Data-driven insights for population health management, outcome tracking, and quality improvement.",
+        features: ["Population Health", "Outcome Analytics", "Quality Metrics", "Predictive Modeling"],
+        color: "from-[#8b5cf6] to-[#7c3aed]",
+    },
+];
+
+const solutionsCta: SectionCta = {
+    title: "HIPAA-Compliant Solutions",
+    text: "Let's build secure, patient-centered healthcare platforms that transform care delivery.",
+    label: "Discuss Your Healthcare Project",
+};
+
+type SolutionsHeader = { title: ReactNode; intro: ReactNode; ariaLabel: string };
+type Solution = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    features: string[];
+    color: string;
+    meta?: string[];
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string } | null;
+
+export default function SolutionTypes() {
+    // Business-model picker: one tab per model, one panel shows the chosen model.
+    const [active, setActive] = useState(0);
+    // The panel fades in only after a real switch (styled-jsx CSS is injected on
+    // the client, so animating on first load would flash).
+    const [switched, setSwitched] = useState(false);
+    const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+    // The panel box eases between heights while the model changes (descriptions
+    // differ in length). The height is fixed only for the 400ms of the change; at
+    // rest it is auto, so a resize can never clip the content.
+    const boxRef = useRef<HTMLDivElement>(null);
+    const fromHeight = useRef<number | null>(null);
+
+    const select = (idx: number) => {
+        if (idx === active) return;
+        fromHeight.current = boxRef.current?.offsetHeight ?? null;
+        setActive(idx);
+        setSwitched(true);
+    };
+
+    useLayoutEffect(() => {
+        const box = boxRef.current;
+        const from = fromHeight.current;
+        fromHeight.current = null;
+        if (!box || from === null) return;
+        box.style.height = "";
+        const to = box.offsetHeight; // natural height with the new panel
+        if (from === to) return;
+        box.style.height = `${from}px`;
+        void box.offsetHeight; // apply the start height before animating
+        box.style.height = `${to}px`;
+        const release = () => {
+            box.style.height = "";
+        };
+        box.addEventListener("transitionend", release, { once: true });
+        const fallback = window.setTimeout(release, 450);
+        return () => {
+            window.clearTimeout(fallback);
+            box.removeEventListener("transitionend", release);
+        };
+    }, [active]);
+
+    // Arrow keys move between tabs (left/up = previous, right/down = next), Home/End
+    // jump to the ends; the tab that gets focus is also selected.
+    const onTabKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+        const last = solutions.length - 1;
+        let next: number | null = null;
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") next = active === last ? 0 : active + 1;
+        else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = active === 0 ? last : active - 1;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = last;
+        if (next === null) return;
+        e.preventDefault();
+        select(next);
+        tabRefs.current[next]?.focus();
+    };
+
+    // Tabs sit above the panel at every size (user, 26 Nov 2026: "1. Tabs on top"; a side
+    // list was taller than most panels and left blank space above and below the text).
+    // Five models: five 44px icon tabs in a row on phones, five tiles from 640px.
+    // Six models: six 43px tabs in one even row at 320 (no min-width, or they would
+    // overflow), 3×2 tiles from 640px, one row of six from 1024px.
+    const six = solutions.length === 6;
+    const tabListClass = six
+        ? "grid grid-cols-6 gap-1 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6"
+        : "flex justify-center gap-2 sm:grid sm:grid-cols-5 sm:gap-3";
+    const tabSizeClass = six ? "min-h-11" : "min-h-11 min-w-11";
 
     return (
         <section
-            className="py-20 transition-colors duration-300 relative overflow-hidden"
+            className="py-16 md:py-20 transition-colors duration-300 relative overflow-hidden"
             style={{ backgroundColor: "var(--background)" }}
         >
-            {/* Medical DNA Helix Background Pattern */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
-            </div>
-
-            {/* Floating medical icons */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {[
-                    { Icon: Stethoscope, delay: 0, left: "5%", top: "15%" },
-                    { Icon: Heart, delay: 2, left: "90%", top: "25%" },
-                    { Icon: Activity, delay: 1, left: "10%", top: "75%" },
-                    { Icon: Pill, delay: 3, left: "85%", top: "80%" },
-                ].map((item, i) => (
-                    <div
-                        key={i}
-                        className="absolute opacity-10"
-                        style={{
-                            left: item.left,
-                            top: item.top,
-                            animation: `medical-float ${6 + i}s ease-in-out infinite`,
-                            animationDelay: `${item.delay}s`,
-                        }}
-                    >
-                        <item.Icon className="w-16 h-16" style={{ color: "#3b82f6" }} />
-                    </div>
-                ))}
-            </div>
-
-            <style jsx>{`
-            `}</style>
-
             <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)", border: "1px solid" }}>
-                            <Plus className="w-4 h-4" style={{ color: "#3b82f6" }} />
-                            <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
-                                Healthcare Solutions
-                            </span>
-                        </div>
+                <div className="text-center mb-10 md:mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}
+                    >
+                        <Puzzle className="w-4 h-4" aria-hidden="true" style={{ color: "var(--brand-blue-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--brand-blue-text)" }}>
+                            Our Solutions
+                        </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Healthcare <span style={{ color: "#3b82f6" }}>Solutions</span> We Build
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {solutionsHeader.title}
                     </h2>
+
                     <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                        Comprehensive digital health platforms designed for modern healthcare delivery with HIPAA compliance and patient safety at the core.
+                        {solutionsHeader.intro}
                     </p>
+                </div>
+
+                {/* Picker: a row of model tabs above one panel. From 640px the tabs are
+                    tiles (icon above name); phones: icon-only tabs, the name shows as the
+                    panel heading. */}
+                <div className="grid gap-6">
                     <div
-                        className="w-24 h-1.5 mx-auto mt-8 rounded-full"
-                        style={{ background: "linear-gradient(90deg, #3b82f6, #6366f1)" }}
-                    />
-                </div>
-
-                {/* Solutions Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {solutions.map((solution, idx) => {
-                        const Icon = solution.icon;
-                        const isHovered = hoveredCard === idx;
-
-                        return (
-                            <div
-                                key={idx}
-                                className="group relative"
-                                onMouseEnter={() => {
-                                    setHoveredCard(idx);
-                                    setActiveTab(idx);
-                                }}
-                                onMouseLeave={() => setHoveredCard(null)}
-                            >
-                                <div
-                                    className="relative p-8 rounded-2xl border overflow-hidden transition-all duration-500 h-full flex flex-col"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        borderColor: isHovered ? solution.color : "var(--border-color)",
-                                        transform: isHovered ? "translateY(-12px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered
-                                            ? `0 25px 60px ${solution.color}25, 0 0 0 2px ${solution.color}20`
-                                            : "0 4px 6px rgba(0, 0, 0, 0.05)",
+                        role="tablist"
+                        aria-label={solutionsHeader.ariaLabel}
+                        onKeyDown={onTabKeyDown}
+                        className={tabListClass}
+                    >
+                        {solutions.map((solution, idx) => {
+                            const Icon = solution.icon;
+                            const isActive = active === idx;
+                            return (
+                                <button
+                                    key={solution.title}
+                                    ref={(el) => {
+                                        tabRefs.current[idx] = el;
                                     }}
+                                    id={`solution-tab-${idx}`}
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={isActive}
+                                    aria-controls={`solution-panel-${idx}`}
+                                    tabIndex={isActive ? 0 : -1}
+                                    onClick={() => select(idx)}
+                                    className={`flex items-center justify-center gap-3 ${tabSizeClass} p-1.5 sm:flex-col sm:gap-2 sm:p-3 sm:min-h-[104px] rounded-xl border transition-colors duration-[400ms] ease-in-out motion-reduce:transition-none focus-visible:outline-none ${isActive
+                                        ? "bg-[#2563eb] border-[#2563eb] text-white focus-visible:brightness-120"
+                                        : "bg-[var(--card-bg)] border-[var(--border-color)] text-[var(--foreground)] hover:border-[#3b82f6] focus-visible:border-[#3b82f6]"
+                                        }`}
                                 >
-                                    {/* Animated gradient background */}
+                                    <span className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${solution.color}`}>
+                                        <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" aria-hidden="true" />
+                                    </span>
+                                    <span className="sr-only sm:not-sr-only text-xs sm:text-center lg:text-sm font-semibold leading-tight">
+                                        {solution.title}
+                                    </span>
+                                </button>
+                            );
+                        })}
+                    </div>
 
-                                    {/* Medical cross corner decoration */}
+                    {/* Panel: every model stays in the HTML (inactive ones hidden), so every
+                        description and link is still read by search engines. Its height is
+                        its own content, so there is no blank space above or below. */}
+                    <div
+                        className="rounded-3xl border border-[var(--border-color)] p-6 md:p-8 lg:p-10"
+                        style={{ backgroundColor: "var(--card-bg)" }}
+                    >
+                        <div ref={boxRef} className="overflow-hidden transition-[height] duration-[400ms] ease-in-out motion-reduce:transition-none">
+                            {solutions.map((solution, idx) => {
+                                const Icon = solution.icon;
+                                const isActive = active === idx;
+                                return (
                                     <div
-                                        className="absolute top-0 right-0 w-20 h-20 transition-all duration-500"
-                                        style={{
-                                            opacity: isHovered ? 0.15 : 0.05,
-                                            transform: isHovered ? "scale(1) rotate(0deg)" : "scale(0.8) rotate(45deg)",
-                                        }}
+                                        key={solution.title}
+                                        id={`solution-panel-${idx}`}
+                                        role="tabpanel"
+                                        aria-labelledby={`solution-tab-${idx}`}
+                                        tabIndex={0}
+                                        hidden={!isActive}
                                     >
-                                        <Plus className="w-full h-full" style={{ color: solution.color }} />
-                                    </div>
-
-                                    {/* Vital signs line animation */}
-                                    {isHovered && (
-                                        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                                            <div
-                                                className="absolute top-1/2 left-0 w-full h-0.5 opacity-20"
-                                                style={{
-                                                    background: solution.color,
-                                                    animation: "vital-sign 3s linear infinite",
-                                                    clipPath: "polygon(0 50%, 10% 50%, 15% 20%, 20% 80%, 25% 50%, 100% 50%)",
-                                                }}
-                                            />
-                                        </div>
-                                    )}
-
-                                    {/* Content */}
-                                    <div className="relative z-10 flex flex-col h-full">
-                                        {/* Icon with complex animation */}
-                                        <div className="mb-6 relative">
-
-                                            {/* Icon container */}
-                                            <div
-                                                className={`relative inline-flex w-20 h-20 rounded-2xl items-center justify-center bg-gradient-to-br ${solution.gradient} transition-all duration-500 overflow-hidden`}
-                                                style={{
-                                                    transform: isHovered ? "scale(1.15) rotate(5deg)" : "scale(1) rotate(0deg)",
-                                                    boxShadow: isHovered ? `0 15px 40px ${solution.color}50` : "0 4px 6px rgba(0, 0, 0, 0.1)",
-                                                    animation: solution.icon === Heart && isHovered ? "heartbeat-pulse 1.5s ease-in-out infinite" : "none",
-                                                }}
-                                            >
-                                                {/* Shimmer effect */}
-                                                {isHovered && (
-                                                    <div
-                                                        className="absolute inset-0"
-                                                        style={{
-                                                            background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
-                                                            backgroundSize: "200% 100%",
-                                                            animation: "shimmer 2s linear infinite",
-                                                        }}
-                                                    />
+                                        <div className={`grid lg:grid-cols-[minmax(0,1fr)_minmax(0,16rem)] 2xl:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] gap-8 items-center ${isActive && switched ? "solution-in" : ""}`}>
+                                            <div>
+                                                {/* A title with its own page links from here (a link can't sit inside a tab) */}
+                                                <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                                    {solution.href ? (
+                                                        <Link href={solution.href} className="hover:underline">
+                                                            {solution.title}
+                                                        </Link>
+                                                    ) : (
+                                                        solution.title
+                                                    )}
+                                                </h3>
+                                                <p className="text-base leading-relaxed" style={{ color: "var(--secondary-text)" }}>
+                                                    {solution.description}
+                                                </p>
+                                                {solution.meta && (
+                                                    <ul className="flex flex-wrap gap-2 mt-4">
+                                                        {solution.meta.map((item) => (
+                                                            <li
+                                                                key={item}
+                                                                className="px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                                style={{ color: "var(--secondary-text)" }}
+                                                            >
+                                                                {item}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
                                                 )}
-
-                                                {/* Rotating border */}
-                                                {isHovered && (
-                                                    <div
-                                                        className="absolute inset-0 rounded-2xl"
-                                                        style={{
-                                                            border: `2px solid ${solution.color}50`,
-                                                            animation: "spin 3s linear infinite",
-                                                        }}
-                                                    />
-                                                )}
-
-                                                <Icon
-                                                    className="w-10 h-10 text-white relative z-10 transition-all duration-500"
-                                                    style={{
-                                                        filter: isHovered ? "drop-shadow(0 0 8px rgba(255,255,255,0.6))" : "none",
-                                                    }}
-                                                />
-
-                                                {/* Active indicator */}
-                                                <div
-                                                    className="absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-white"
-                                                    style={{
-                                                        background: "#10b981",
-                                                        animation: isHovered ? "pulse 1.5s ease-in-out infinite" : "none",
-                                                        boxShadow: isHovered ? "0 0 10px #10b98180" : "none",
-                                                    }}
-                                                />
-
-                                                {/* Sparkle effect */}
-                                                {isHovered && (
-                                                    <div className="absolute -top-2 -right-2">
-                                                        <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-                                                    </div>
-                                                )}
+                                                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-6">
+                                                    {solution.features.map((feature) => (
+                                                        <li key={feature} className="flex items-start gap-2.5 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                            <CheckCircle2 aria-hidden="true" className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--brand-blue-text)]" />
+                                                            <span>{feature}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             </div>
-
-                                            {/* Solution number badge */}
+                                            {/* Colour panel with the model's icon, from 1024px (the panel is full
+                                                width now, so two-column ticks still fit beside it); wider from
+                                                1536px so the text lines don't get too long */}
                                             <div
-                                                className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-500 border-2"
-                                                style={{
-                                                    background: isHovered
-                                                        ? `linear-gradient(135deg, ${solution.color}, ${solution.accentColor})`
-                                                        : "var(--card-bg)",
-                                                    color: isHovered ? "white" : solution.color,
-                                                    borderColor: isHovered ? "transparent" : solution.color,
-                                                    transform: isHovered ? "scale(1.2) rotate(360deg)" : "scale(1) rotate(0deg)",
-                                                }}
+                                                aria-hidden="true"
+                                                className={`hidden lg:flex self-stretch min-h-56 rounded-2xl items-center justify-center bg-gradient-to-br ${solution.color}`}
                                             >
-                                                {idx + 1}
+                                                <Icon className="w-20 h-20 text-white" />
                                             </div>
                                         </div>
-
-                                        {/* Title */}
-                                        <h3
-                                            className="text-xl md:text-2xl font-bold mb-4 transition-all duration-300"
-                                            style={{
-                                                color: isHovered ? solution.color : "var(--foreground)",
-                                            }}
-                                        >
-                                            {solution.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p
-                                            className="text-sm md:text-base mb-6 leading-relaxed flex-1"
-                                            style={{ color: "var(--secondary-text)" }}
-                                        >
-                                            {solution.description}
-                                        </p>
-
-                                        {/* Features with icons */}
-                                        <div className="space-y-3 pt-4 border-t" style={{ borderColor: isHovered ? `${solution.color}30` : "var(--border-color)" }}>
-                                            {solution.features.map((feature, fidx) => {
-                                                const FeatureIcon = feature.icon;
-                                                return (
-                                                    <div
-                                                        key={fidx}
-                                                        className="flex items-center gap-3 transition-all duration-300 group/feature"
-                                                        style={{
-                                                            transform: isHovered ? "translateX(6px)" : "translateX(0)",
-                                                            transitionDelay: `${fidx * 60}ms`,
-                                                        }}
-                                                    >
-                                                        <div
-                                                            className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${solution.gradient} transition-all duration-300`}
-                                                            style={{
-                                                                transform: isHovered ? "scale(1.1) rotate(5deg)" : "scale(1)",
-                                                                boxShadow: isHovered ? `0 4px 12px ${solution.color}30` : "none",
-                                                            }}
-                                                        >
-                                                            <FeatureIcon className="w-4 h-4 text-white" />
-                                                        </div>
-                                                        <span
-                                                            className="text-sm font-medium transition-colors duration-300 flex-1"
-                                                            style={{
-                                                                color: isHovered ? solution.color : "var(--secondary-text)",
-                                                            }}
-                                                        >
-                                                            {feature.text}
-                                                        </span>
-                                                        {isHovered && (
-                                                            <CheckCircle2
-                                                                className="w-4 h-4 flex-shrink-0"
-                                                                style={{ color: "#10b981" }}
-                                                            />
-                                                        )}
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-
                                     </div>
-
-                                    {/* Animated bottom gradient bar */}
-                                    <div
-                                        className="absolute bottom-0 left-0 right-0 h-1.5 transition-all duration-700"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${solution.color}, ${solution.accentColor}, ${solution.color})`,
-                                            backgroundSize: "200% 100%",
-                                            transform: isHovered ? "scaleX(1)" : "scaleX(0)",
-                                            transformOrigin: "left",
-                                            animation: isHovered ? "shimmer 3s ease infinite" : "none",
-                                        }}
-                                    />
-
-                                </div>
-
-                            </div>
-                        );
-                    })}
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
 
-                {/* Bottom CTA */}
-                <div className="text-center mt-16">
-                    <div className="inline-block p-8 rounded-2xl border" style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border-color)" }}>
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <Shield className="w-8 h-8" style={{ color: "#3b82f6" }} />
-                            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--foreground)" }}>
-                                HIPAA-Compliant Solutions
+                {solutionsCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {solutionsCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {solutionsCta.title}
                             </h3>
-                        </div>
-                        <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
-                            Let's build secure, patient-centered healthcare platforms that transform care delivery.
-                        </p>
+                        )}
+                        {solutionsCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {solutionsCta.text}
+                            </p>
+                        )}
                         <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl group"
-                            style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)" }}
+                            href={solutionsCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
                         >
-                            Discuss Your Healthcare Project
-                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                            {solutionsCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                         </Link>
                     </div>
-                </div>
+                )}
+
+                <style jsx>{`
+                    @keyframes solutionIn {
+                        from { opacity: 0; transform: translateY(8px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    .solution-in {
+                        animation: solutionIn 400ms cubic-bezier(0.4, 0, 0.2, 1) both;
+                    }
+                    @media (prefers-reduced-motion: reduce) {
+                        .solution-in { animation: none; }
+                    }
+                `}</style>
             </div>
         </section>
     );

@@ -1,378 +1,217 @@
-"use client";
-
-import { Rocket, ShoppingBag, Briefcase, Home, GraduationCap, Heart, Users, TrendingUp, CheckCircle2, ArrowUpRight, Sparkles, Target } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { Factory, BadgeCheck, ArrowRight, Rocket, ShoppingBag, Briefcase, Home, GraduationCap, HeartPulse } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
+const industriesHeader: IndustriesHeader = {
+    title: (
+        <>
+            Who Needs <span style={{ color: "var(--accent-green-text)" }}>Landing Pages?</span>
+        </>
+    ),
+    intro: "We build high-performance pages for any business that relies on online traffic to generate leads or sales.",
+};
+
+// Card colours follow the Why Choose cycle; the three tags per card are kept, the
+// one-word stat badges repeated the success line.
+const industries: Industry[] = [
+    {
+        icon: Rocket,
+        title: "SaaS & Tech Startups",
+        description: "Drive free trials, demo requests, and webinar signups for your software products. Explain complex value props simply.",
+        example: "Increase in demo requests",
+        tags: ["B2B SaaS", "Demos", "Trials"],
+        color: "from-[#10b981] to-[#0ea5e9]",
+        iconColor: "#10b981",
+    },
+    {
+        icon: ShoppingBag,
+        title: "E-commerce Brands",
+        description: "Dedicated product launch pages and seasonal promo pages that convert traffic better than standard product pages.",
+        example: "Higher conversion on Black Friday",
+        tags: ["Product Launch", "Promos", "DTC"],
+        color: "from-[#0ea5e9] to-[#22c55e]",
+        iconColor: "#0ea5e9",
+    },
+    {
+        icon: Briefcase,
+        title: "Professional Services",
+        description: "Generate high-quality leads for legal, consulting, and financial services. Build trust and authority instantly.",
+        example: "High-ticket client acquisition",
+        tags: ["Consulting", "Legal", "Finance"],
+        color: "from-[#22c55e] to-[#10b981]",
+        iconColor: "#22c55e",
+    },
+    {
+        icon: Home,
+        title: "Real Estate Agents",
+        description: "Capture seller leads with home valuation pages or showcase luxury properties with immersive listing pages.",
+        example: "Seller lead generation machine",
+        tags: ["Listings", "Valuations", "Realtors"],
+        color: "from-[#0ea5e9] to-[#10b981]",
+        iconColor: "#0ea5e9",
+    },
+    {
+        icon: GraduationCap,
+        title: "Education & Courses",
+        description: "Fill your webinars and sell your online courses with persuasive long-form sales pages that overcome objections.",
+        example: "Sold out webinar seats",
+        tags: ["Courses", "Webinars", "Coaching"],
+        color: "from-[#10b981] to-[#22c55e]",
+        iconColor: "#10b981",
+    },
+    {
+        icon: HeartPulse,
+        title: "Health & Wellness",
+        description: "Book more appointments for clinics, gyms, and spas. Local landing pages that rank and convert.",
+        example: "New patient bookings",
+        tags: ["Clinics", "Gyms", "Spas"],
+        color: "from-[#22c55e] to-[#0ea5e9]",
+        iconColor: "#22c55e",
+    },
+];
+
+const industriesCta: SectionCta = {
+    title: "Any Industry. Any Goal.",
+    text: "Whether you're B2B, B2C, or non-profit, the principles of persuasion remain the same. We apply universal conversion strategies tailored to your niche.",
+    label: "Get Your Landing Page",
+    secondary: { label: "View Other Services", href: "/services" },
+};
+
+type IndustriesHeader = { title: ReactNode; intro: ReactNode };
+type Industry = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    example?: string;
+    tag?: string;
+    tags?: ReactNode[];
+    color: string;
+    iconColor: string;
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string; secondary?: { label: string; href: string } } | null;
+
 export default function UseCases() {
-    const [isVisible, setIsVisible] = useState(false);
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
-
-    const industries = [
-        {
-            icon: Rocket,
-            title: "SaaS & Tech Startups",
-            description: "Drive free trials, demo requests, and webinar signups for your software products. Explain complex value props simply.",
-            example: "Increase in demo requests",
-            gradient: "from-emerald-600 via-green-600 to-teal-600",
-            bgColor: "#10b981",
-            stats: "Demo Requests",
-            tags: ["B2B SaaS", "Demos", "Trials"],
-        },
-        {
-            icon: ShoppingBag,
-            title: "E-commerce Brands",
-            description: "Dedicated product launch pages and seasonal promo pages that convert traffic better than standard product pages.",
-            example: "Higher conversion on Black Friday",
-            gradient: "from-blue-600 via-cyan-600 to-sky-600",
-            bgColor: "#0ea5e9",
-            stats: "Sales Boost",
-            tags: ["Product Launch", "Promos", "DTC"],
-        },
-        {
-            icon: Briefcase,
-            title: "Professional Services",
-            description: "Generate high-quality leads for legal, consulting, and financial services. Build trust and authority instantly.",
-            example: "High-ticket client acquisition",
-            gradient: "from-teal-600 via-emerald-600 to-green-600",
-            bgColor: "#14b8a6",
-            stats: "Qualified Leads",
-            tags: ["Consulting", "Legal", "Finance"],
-        },
-        {
-            icon: Home,
-            title: "Real Estate Agents",
-            description: "Capture seller leads with home valuation pages or showcase luxury properties with immersive listing pages.",
-            example: "Seller lead generation machine",
-            gradient: "from-cyan-600 via-sky-600 to-blue-600",
-            bgColor: "#06b6d4",
-            stats: "Property Leads",
-            tags: ["Listings", "Valuations", "Realtors"],
-        },
-        {
-            icon: GraduationCap,
-            title: "Education & Courses",
-            description: "Fill your webinars and sell your online courses with persuasive long-form sales pages that overcome objections.",
-            example: "Sold out webinar seats",
-            gradient: "from-green-600 via-lime-600 to-emerald-600",
-            bgColor: "#22c55e",
-            stats: "Enrollments",
-            tags: ["Courses", "Webinars", "Coaching"],
-        },
-        {
-            icon: Heart,
-            title: "Health & Wellness",
-            description: "Book more appointments for clinics, gyms, and spas. Local landing pages that rank and convert.",
-            example: "New patient bookings",
-            gradient: "from-sky-600 via-blue-600 to-indigo-600",
-            bgColor: "#3b82f6",
-            stats: "Appointments",
-            tags: ["Clinics", "Gyms", "Spas"],
-        },
-    ];
-
-    const accentTextMap: Record<string, string> = {
-        "#10b981": "var(--accent-green-text)",
-        "#0ea5e9": "var(--accent-sky-text)",
-        "#14b8a6": "var(--accent-teal-text)",
-        "#06b6d4": "var(--accent-cyan-text)",
-        "#22c55e": "var(--accent-green-text)",
-        "#3b82f6": "var(--accent-sky-text)",
-    };
-
     return (
         <section
-            ref={sectionRef}
-            className="py-20 md:py-28 relative overflow-hidden transition-colors duration-300"
-            style={{
-                backgroundColor: "var(--card-bg)",
-                borderColor: "var(--border-color)",
-            }}
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--card-bg)" }}
         >
-            {/* Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Radial Gradients */}
-
-                {/* Dot Pattern */}
-            </div>
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16 max-w-4xl mx-auto">
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            background:
-                                "linear-gradient(90deg, color-mix(in srgb, #10b981 8%, transparent), color-mix(in srgb, #0ea5e9 8%, transparent))",
+                            backgroundColor: "color-mix(in srgb, #10b981 5%, transparent)",
                             borderColor: "color-mix(in srgb, #10b981 20%, transparent)",
-                            color: "var(--accent-green-text)",
                         }}
                     >
-                        <Users className="w-4 h-4" />
-                        <span className="text-sm font-semibold">Industries</span>
+                        <Factory className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-green-text)" }} />
+                        <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
+                            Industries
+                        </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                        Who Needs <span style={{ color: "var(--accent-green-text)" }}>Landing Pages?</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {industriesHeader.title}
                     </h2>
 
-                    <p
-                        className="text-xl max-w-3xl mx-auto mb-8"
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        We build high-performance pages for any business that relies on online traffic to generate leads or sales.
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {industriesHeader.intro}
                     </p>
-
-                    <div
-                        className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{
-                            background: "linear-gradient(90deg, #10b981, #0ea5e9)",
-                        }}
-                    />
                 </div>
 
-                {/* Industries Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {industries.map((industry, idx) => {
+                {/* Industries Grid: each card in its own colour (border on hover + 4px
+                    lift), icon beside the title, and the success story pinned to the foot
+                    so it lines up across a row. */}
+                <div className={`grid grid-cols-1 md:grid-cols-2 ${industries.length === 4 ? "xl:grid-cols-4" : "lg:grid-cols-3"} md:auto-rows-fr gap-6`}>
+                    {industries.map((industry) => {
                         const Icon = industry.icon;
-                        const isActive = activeIndex === idx;
-
                         return (
                             <div
-                                key={idx}
-                                className={`group relative transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-                                    }`}
-                                style={{
-                                    transitionDelay: `${400 + idx * 100}ms`,
-                                }}
-                                onMouseEnter={() => setActiveIndex(idx)}
-                                onMouseLeave={() => setActiveIndex(null)}
+                                key={industry.title}
+                                className="flex flex-col p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[var(--card-accent)] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+                                style={{ backgroundColor: "var(--card-bg)", "--card-accent": industry.iconColor } as CSSProperties}
                             >
-                                <div
-                                    className={`relative h-full rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2`}
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        border: "1px solid var(--border-color)",
-                                    }}
-                                >
-                                    {/* Gradient Header */}
-                                    <div
-                                        className="relative p-8 pb-6 overflow-hidden"
-                                        style={{
-                                            background: "linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(14, 165, 233, 0.05))",
-                                            borderBottom: "1px solid var(--border-color)",
-                                        }}
-                                    >
-                                        {/* Icon Container */}
-                                        <div className="relative z-10 flex items-start justify-between mb-4">
-                                            <div
-                                                className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
-                                                style={{
-                                                    background: "linear-gradient(135deg, #10b981, #0ea5e9)",
-                                                    boxShadow: "0 4px 12px rgba(16, 185, 129, 0.2)",
-                                                }}
-                                            >
-                                                <Icon className="w-7 h-7 text-white" />
-                                            </div>
-
-                                            {/* Stats Badge */}
-                                            <div
-                                                className="px-3 py-1.5 rounded-full border bg-white/5 backdrop-blur-sm"
-                                                style={{ borderColor: "rgba(16, 185, 129, 0.2)" }}
-                                            >
-                                                <p className="text-xs font-bold" style={{ color: "var(--accent-green-text)" }}>
-                                                    {industry.stats}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3 className="relative z-10 text-xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
-                                            {industry.title}
-                                        </h3>
-
-                                        {/* Tags */}
-                                        <div className="relative z-10 flex flex-wrap gap-2">
-                                            {industry.tags.map((tag, tidx) => (
-                                                <span
-                                                    key={tidx}
-                                                    className="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-300 group-hover:bg-[#10b981]/10 group-hover:text-[var(--accent-green-text)]"
-                                                    style={{
-                                                        backgroundColor: "var(--background)",
-                                                        color: "var(--secondary-text)",
-                                                        border: "1px solid var(--border-color)",
-                                                    }}
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${industry.color}`}>
+                                        <Icon className="w-6 h-6 text-white" aria-hidden="true" />
                                     </div>
-
-                                    {/* Card Body */}
-                                    <div className="p-8 pt-6">
-                                        {/* Description */}
-                                        <p
-                                            className="text-sm leading-relaxed mb-6"
-                                            style={{ color: "var(--secondary-text)" }}
-                                        >
-                                            {industry.description}
-                                        </p>
-
-                                        {/* Example Card */}
-                                        <div
-                                            className={`relative p-5 rounded-2xl transition-all duration-500 overflow-hidden ${isActive ? "translate-y-0" : "translate-y-2"
-                                                }`}
-                                            style={{
-                                                backgroundColor: `${industry.bgColor}08`,
-                                                border: `1.5px solid ${industry.bgColor}25`,
-                                            }}
-                                        >
-                                            <div className="relative z-10 flex items-start gap-3">
-                                                {/* Icon */}
-                                                <div
-                                                    className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:rotate-12"
-                                                    style={{
-                                                        backgroundColor: `${industry.bgColor}20`,
-                                                    }}
-                                                >
-                                                    <CheckCircle2 className="w-5 h-5" style={{ color: industry.bgColor }} />
-                                                </div>
-
-                                                <div className="flex-1">
-                                                    <p className="text-xs font-semibold mb-1 uppercase tracking-wide" style={{ color: accentTextMap[industry.bgColor] }}>
-                                                        Proven Result
-                                                    </p>
-                                                    <p className="text-sm font-medium leading-relaxed" style={{ color: "var(--foreground)" }}>
-                                                        {industry.example}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    {/* Bottom Border Glow */}
-                                    <div
-                                        className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${industry.gradient} transition-all duration-500 ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
-                                            }`}
-                                        style={{ transformOrigin: "center" }}
-                                    />
-
-                                    {/* Floating Icons */}
-                                    {isActive && (
-                                        <>
-                                            <TrendingUp
-                                                className="absolute top-24 right-6 w-5 h-5 animate-bounce"
-                                                style={{ color: industry.bgColor, opacity: 0.3, animationDelay: "0.5s" }}
-                                            />
-                                            <Sparkles
-                                                className="absolute bottom-40 left-6 w-4 h-4 animate-pulse"
-                                                style={{ color: industry.bgColor, opacity: 0.4 }}
-                                            />
-                                        </>
-                                    )}
+                                    <h3 className="text-xl font-bold" style={{ color: "var(--foreground)" }}>
+                                        {industry.href ? (
+                                            <Link href={industry.href} className="hover:underline">
+                                                {industry.title}
+                                            </Link>
+                                        ) : (
+                                            industry.title
+                                        )}
+                                    </h3>
                                 </div>
+
+                                <p className="text-sm mb-6" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                    {industry.description}
+                                </p>
+
+                                {(industry.tag || industry.tags) && (
+                                    <ul className="flex flex-wrap gap-2 mb-6">
+                                        {[...(industry.tag ? [industry.tag] : []), ...(industry.tags ?? [])].map((tag, tidx) => (
+                                            <li
+                                                key={tidx}
+                                                className="px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                style={{ color: "var(--secondary-text)" }}
+                                            >
+                                                {tag}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {industry.example && (
+                                    <div className="mt-auto pt-4 flex items-start gap-2 border-t border-[var(--border-color)]">
+                                        <BadgeCheck className="w-4 h-4 mt-0.5 flex-shrink-0 text-[var(--accent-green-text)]" aria-hidden="true" />
+                                        <p className="text-sm font-medium" style={{ color: "var(--accent-green-text)" }}>
+                                            Success: {industry.example}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
                 </div>
 
-                {/* Bottom CTA Section */}
-                <div
-                    className={`mt-20 transition-all duration-700 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                        }`}
-                >
-                    <div
-                        className="relative overflow-hidden p-12 rounded-3xl"
-                        style={{
-                            background: "linear-gradient(135deg, #10b98115, #0ea5e915)",
-                            border: "2px solid var(--border-color)",
-                        }}
-                    >
-                        {/* Animated Grid Background */}
-                        <div className="absolute inset-0 opacity-[0.03]" style={{
-                            backgroundImage: "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
-                            backgroundSize: "30px 30px",
-                            animation: "grid-move 20s linear infinite",
-                        }} />
-
-                        <div className="relative z-10 text-center max-w-3xl mx-auto">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{
-                                backgroundColor: "var(--card-bg)",
-                                border: "1px solid var(--border-color)",
-                            }}>
-                                <Target className="w-5 h-5" style={{ color: "var(--accent-green-text)" }} />
-                                <span className="text-sm font-semibold" style={{ color: "var(--accent-green-text)" }}>
-                                    Industry-Agnostic Approach
-                                </span>
-                            </div>
-
-                            <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-                                Any Industry. Any Goal.
+                {industriesCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {industriesCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {industriesCta.title}
                             </h3>
-
-                            <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--secondary-text)" }}>
-                                Whether you're B2B, B2C, or non-profit, the principles of persuasion remain the same. We apply universal conversion strategies tailored to your niche.
+                        )}
+                        {industriesCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {industriesCta.text}
                             </p>
-
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link
-                                    href="/contact"
-                                    className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                                    style={{
-                                        background: "linear-gradient(135deg, #10b981, #0ea5e9)",
-                                    }}
-                                >
-                                    Get Your Landing Page
-                                    <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                </Link>
-
-                                <Link
-                                    href="/services"
-                                    className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105"
-                                    style={{
-                                        backgroundColor: "var(--card-bg)",
-                                        color: "var(--accent-green-text)",
-                                        border: "2px solid var(--border-color)",
-                                    }}
-                                >
-                                    View Other Services
-                                    <ArrowUpRight className="w-5 h-5" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Decorative Elements */}
-                        <Sparkles className="absolute top-8 right-8 w-8 h-8 text-[var(--accent-green-text)] opacity-20 animate-pulse" />
-                        <Sparkles className="absolute bottom-8 left-8 w-6 h-6 text-[var(--accent-sky-text)] opacity-20 animate-pulse" style={{ animationDelay: "1s" }} />
+                        )}
+                        <Link
+                            href={industriesCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#047857] to-[#065f46] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {industriesCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                        {industriesCta.secondary && (
+                            <Link
+                                href={industriesCta.secondary.href}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 mt-4 sm:mt-0 sm:ml-4 px-4 sm:px-8 py-4 rounded-full font-semibold text-sm sm:text-lg text-center border border-[var(--border-color)] transition-colors duration-200 hover:border-[#10b981] focus-visible:outline-none focus-visible:border-[#10b981]"
+                                style={{ color: "var(--foreground)" }}
+                            >
+                                {industriesCta.secondary.label}
+                            </Link>
+                        )}
                     </div>
-                </div>
+                )}
             </div>
-
-            <style jsx>{`
-                
-                
-            `}</style>
         </section>
     );
 }

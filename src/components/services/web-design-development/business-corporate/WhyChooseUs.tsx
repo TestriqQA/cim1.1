@@ -1,265 +1,289 @@
-"use client";
-
-import { Shield, Award, Zap, Clock, Headphones, Lock, CheckCircle2, TrendingUp, Users, FileCheck } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { Trophy, CheckCircle2, ArrowRight, ShieldCheck, Award, Gauge, Clock, Headphones, ClipboardCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
+const whyHeader: WhyHeader = {
+    title: (
+        <>
+            Why <span style={{ color: "var(--accent-orange-text)" }}>Leading Enterprises</span> Choose Us
+        </>
+    ),
+    intro: "We understand that corporate websites require a different caliber of expertise-one that balances brand excellence with technical rigor.",
+};
+
+const reasons: Reason[] = [
+    {
+        icon: ShieldCheck,
+        title: "Enterprise Security Standards",
+        href: "/services/seo-services/technical-seo-services",
+        description: "SOC 2-aligned development practices with enterprise-grade security protocols protecting your corporate data and reputation.",
+        color: "from-[#008ac1] to-[#00b5ca]",
+        iconColor: "#008ac1",
+        features: ["SOC 2-Aligned", "End-to-End Encryption", "Regular Security Audits"],
+    },
+    {
+        icon: Award,
+        title: "Enterprise Experience",
+        description: "Proven track record with multinational corporations, understanding the unique requirements of large-scale enterprise websites.",
+        color: "from-[#f97316] to-[#ea580c]",
+        iconColor: "#f97316",
+        features: ["Enterprise Clients", "Global Scale", "Industry Leaders"],
+    },
+    {
+        icon: Gauge,
+        title: "Performance Excellence",
+        href: "/services/web-design-development/nextjs-development-services",
+        description: "Sub-second load times and high availability ensure your corporate presence is always available and lightning fast.",
+        color: "from-[#00efd6] to-[#00b5ca]",
+        iconColor: "#00efd6",
+        features: ["<1s Load Time", "High Availability", "CDN Optimized"],
+    },
+    {
+        icon: Clock,
+        title: "On-Time Delivery",
+        description: "Rigorous project management with milestone-based delivery ensuring your corporate website launches when stakeholders expect it.",
+        color: "from-[#bc3feb] to-[#f97316]",
+        iconColor: "#bc3feb",
+        features: ["Milestone Tracking", "Agile Methodology", "100% On-Time Rate"],
+    },
+    {
+        icon: Headphones,
+        title: "Dedicated Account Management",
+        description: "A single point of contact who understands your business, ensuring seamless communication throughout the project lifecycle.",
+        color: "from-[#008ac1] to-[#bc3feb]",
+        iconColor: "#008ac1",
+        features: ["24/7 Support", "Personal Account Manager", "Proactive Communication"],
+    },
+    {
+        icon: ClipboardCheck,
+        title: "Regulatory Compliance",
+        href: "/services/seo-services/technical-seo-services",
+        description: "WCAG 2.1 accessibility, GDPR data handling, and industry-specific compliance built into every corporate website we deliver.",
+        color: "from-[#ea580c] to-[#f97316]",
+        iconColor: "#ea580c",
+        features: ["WCAG 2.1 AA", "GDPR Ready", "Industry Standards"],
+    },
+];
+
+const whyCta: SectionCta = {
+    text: "Ready to elevate your corporate digital presence?",
+    label: "Let's Build Your Enterprise Solution",
+};
+
+const whyStats: WhyStat[] = [];
+
+type WhyHeader = { title: ReactNode; intro: ReactNode; checks?: string[] };
+type Reason = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    color: string;
+    iconColor: string;
+    features?: ReactNode[];
+    // lead card only: a quoted result from the card's own text, shown as a callout
+    highlight?: { label: string; text: ReactNode };
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string } | null;
+type WhyStat = { value: string; label: string };
+
 export default function WhyChooseUs() {
-    const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+    const count = reasons.length;
+    // Bento (website-type pages). When the lead card has a panel (highlights or a
+    // quoted result) it is two rows tall from lg:
+    // 6 cards: lg [1 2 3]/[1 4 4]/[5 5 6], md [1 1]/[2 3]/[4 5]/[6 6].
+    // 5 cards: lg [1 2 3]/[1 4 5], md [1 1]/[2 3]/[4 5].
+    // 4 cards: lg [1 2 2]/[1 3 4], md [1 1]/[2 2]/[3 4].
+    // Without one it would be a tall card with an empty band, so the lead is wide
+    // instead and wide cards zig-zag: 6 cards lg [1 1 2]/[3 4 4]/[5 5 6],
+    // md [1 1]/[2 3]/[4 4]/[5 6].
+    const tallLead = Boolean(reasons[0]?.features || reasons[0]?.highlight);
+    const placementFor = (idx: number) => {
+        if (!tallLead && count === 6) {
+            if (idx === 0 || idx === 3) return "md:col-span-2";
+            if (idx === 4) return "lg:col-span-2";
+            return "";
         }
-
-        return () => observer.disconnect();
-    }, []);
-
-    const reasons = [
-        {
-            icon: Shield,
-            title: "Enterprise Security Standards",
-            description: "SOC 2-aligned development practices with enterprise-grade security protocols protecting your corporate data and reputation.",
-            color: "from-[#008ac1] to-[#00b5ca]",
-            accentColor: "#008ac1",
-            features: ["SOC 2-Aligned", "End-to-End Encryption", "Regular Security Audits"]
-        },
-        {
-            icon: Award,
-            title: "Enterprise Experience",
-            description: "Proven track record with multinational corporations, understanding the unique requirements of large-scale enterprise websites.",
-            color: "from-[#f97316] to-[#ea580c]",
-            accentColor: "#f97316",
-            features: ["Enterprise Clients", "Global Scale", "Industry Leaders"]
-        },
-        {
-            icon: Zap,
-            title: "Performance Excellence",
-            description: "Sub-second load times and high availability ensure your corporate presence is always available and lightning fast.",
-            color: "from-[#00efd6] to-[#00b5ca]",
-            accentColor: "#00efd6",
-            features: ["<1s Load Time", "High Availability", "CDN Optimized"]
-        },
-        {
-            icon: Clock,
-            title: "On-Time Delivery",
-            description: "Rigorous project management with milestone-based delivery ensuring your corporate website launches when stakeholders expect it.",
-            color: "from-[#bc3feb] to-[#f97316]",
-            accentColor: "#bc3feb",
-            features: ["Milestone Tracking", "Agile Methodology", "100% On-Time Rate"]
-        },
-        {
-            icon: Headphones,
-            title: "Dedicated Account Management",
-            description: "A single point of contact who understands your business, ensuring seamless communication throughout the project lifecycle.",
-            color: "from-[#008ac1] to-[#bc3feb]",
-            accentColor: "#008ac1",
-            features: ["24/7 Support", "Personal Account Manager", "Proactive Communication"]
-        },
-        {
-            icon: Lock,
-            title: "Regulatory Compliance",
-            description: "WCAG 2.1 accessibility, GDPR data handling, and industry-specific compliance built into every corporate website we deliver.",
-            color: "from-[#ea580c] to-[#f97316]",
-            accentColor: "#ea580c",
-            features: ["WCAG 2.1 AA", "GDPR Ready", "Industry Standards"]
-        },
-    ];
+        // 5 cards: lg [1 1 2]/[3 4 5], md [1 1]/[2 3]/[4 5]
+        if (!tallLead && count === 5) return idx === 0 ? "md:col-span-2" : "";
+        // 4 cards: lg [1 1 2]/[3 4 4], md [1 1]/[2 3]/[4 4]
+        if (!tallLead && count === 4) return idx === 0 || idx === 3 ? "md:col-span-2" : "";
+        if (idx === 0) return "md:col-span-2 lg:col-span-1 lg:row-span-2";
+        if (count === 6 && (idx === 3 || idx === 4)) return "lg:col-span-2";
+        if (count === 6 && idx === 5) return "md:col-span-2 lg:col-span-1";
+        if (count === 4 && idx === 1) return "md:col-span-2";
+        return "";
+    };
+    const isWideCard = (idx: number) => {
+        if (!tallLead && count === 6) return idx === 3 || idx === 4;
+        if (!tallLead && count === 4) return idx === 3;
+        if (!tallLead) return false;
+        return (count === 6 && (idx === 3 || idx === 4)) || (count === 4 && idx === 1);
+    };
 
     return (
         <section
-            ref={sectionRef}
-            className="py-20 md:py-28 relative overflow-hidden transition-colors duration-300"
-            style={{
-                backgroundColor: "var(--card-bg)",
-                borderColor: "var(--border-color)",
-            }}
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--card-bg)" }}
         >
-            {/* Animated Background Elements */}
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
+            <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-12">
                     <div
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
-                            }`}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "var(--card-bg)",
-                            border: "1px solid var(--border-color)"
+                            backgroundColor: "color-mix(in srgb, #f97316 5%, transparent)",
+                            borderColor: "color-mix(in srgb, #f97316 20%, transparent)",
                         }}
                     >
-                        <TrendingUp className="w-4 h-4" style={{ color: "var(--accent-orange-text)" }} />
+                        <Trophy className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-orange-text)" }}>
-                            Trusted by Industry Leaders
+                            Why Choose Us
                         </span>
                     </div>
 
-                    <h2
-                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            }`}
-                        style={{ color: "var(--foreground)" }}
-                    >
-                        Why <span className="bg-gradient-to-r from-[#f97316] to-[#ea580c] bg-clip-text text-transparent">Leading Enterprises</span> Choose Us
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {whyHeader.title}
                     </h2>
 
-                    <p
-                        className={`text-xl md:text-2xl max-w-3xl mx-auto mb-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            }`}
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        We understand that corporate websites require a different caliber of expertise-one that balances brand excellence with technical rigor.
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {whyHeader.intro}
                     </p>
 
-                    <div
-                        className={`w-24 h-1.5 mx-auto rounded-full transition-all duration-700 delay-300 ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                            }`}
-                        style={{
-                            background: "linear-gradient(90deg, #f97316, #ea580c)",
-                        }}
-                    />
+                    {whyHeader.checks && (
+                        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 max-w-4xl mx-auto">
+                            {whyHeader.checks.map((item) => (
+                                <li key={item} className="flex items-center gap-2 text-base" style={{ color: "var(--foreground)" }}>
+                                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
 
-                {/* Stats Bar */}
-                <div
-                    className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                        }`}
-                >
-                    {[
-                        { value: "Proven", label: "Projects Delivered", icon: FileCheck },
-                        { value: "Strong", label: "Client Satisfaction", icon: Users },
-                        { value: "2025", label: "Founded", icon: Award },
-                        { value: "High", label: "Uptime SLA", icon: TrendingUp },
-                    ].map((stat, idx) => {
-                        const StatIcon = stat.icon;
-                        return (
-                            <div
-                                key={idx}
-                                className="text-center p-6 rounded-2xl transition-all duration-300 hover:scale-105"
-                                style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    border: "1px solid var(--border-color)",
-                                }}
-                            >
-                                <StatIcon className="w-8 h-8 mx-auto mb-3" style={{ color: "var(--accent-orange-text)" }} />
-                                <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-[#f97316] to-[#ea580c] bg-clip-text text-transparent">
-                                    {stat.value}
-                                </div>
-                                <div className="text-sm font-medium" style={{ color: "var(--secondary-text)" }}>
-                                    {stat.label}
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Reasons Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Hover as everywhere: the border turns the tile's own colour and the
+                    card lifts 4px; no shadow. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
+                        const isLead = idx === 0;
+                        const isWide = isWideCard(idx);
                         return (
                             <div
-                                key={idx}
-                                className={`group rounded-3xl overflow-hidden border transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                                    }`}
+                                key={reason.title}
+                                className={`flex flex-col p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[var(--card-accent)] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0 ${placementFor(idx)}`}
                                 style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                    transitionDelay: `${500 + idx * 100}ms`,
-                                }}
+                                    backgroundColor: isLead
+                                        ? `color-mix(in srgb, ${reason.iconColor} 6%, var(--card-bg))`
+                                        : "var(--card-bg)",
+                                    "--card-accent": reason.iconColor,
+                                } as CSSProperties}
                             >
-                                {/* Gradient Header */}
-                                <div className="relative h-2 overflow-hidden">
-                                    <div
-                                        className={`absolute inset-0 bg-gradient-to-r ${reason.color} transition-transform duration-500 group-hover:scale-x-110`}
-                                    />
+                                <div className={`${isLead ? "w-20 h-20" : "w-16 h-16"} rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br ${reason.color}`}>
+                                    <Icon className={`${isLead ? "w-10 h-10" : "w-8 h-8"} text-white`} aria-hidden="true" />
                                 </div>
 
-                                {/* Icon Section */}
-                                <div className="p-8 pb-6">
-                                    <div
-                                        className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${reason.color} mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg`}
+                                {/* Lead card: its own highlights as a small panel. From lg (where
+                                    the card is two rows tall) it sits between the icon and the text,
+                                    centred in the spare height so neither gap is a big empty band;
+                                    below lg it follows the text. */}
+                                {isLead && reason.features && (
+                                    <ul
+                                        className="order-last lg:order-none mt-6 lg:my-auto rounded-2xl border border-[var(--border-color)] px-4 py-1 divide-y divide-[var(--border-color)]"
+                                        style={{ backgroundColor: "var(--card-bg)" }}
                                     >
-                                        <Icon className="w-8 h-8 text-white" />
+                                        {reason.features.map((feature, fidx) => (
+                                            <li key={fidx} className="flex items-start gap-2.5 py-2.5 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {isLead && !reason.features && reason.highlight && (
+                                    <div
+                                        className="order-last lg:order-none mt-6 lg:my-auto rounded-2xl border border-[var(--border-color)] px-4 py-3"
+                                        style={{ backgroundColor: "var(--card-bg)" }}
+                                    >
+                                        <p className="text-sm font-semibold mb-1" style={{ color: "var(--accent-orange-text)" }}>
+                                            {reason.highlight.label}
+                                        </p>
+                                        <p className="text-sm" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                            {reason.highlight.text}
+                                        </p>
                                     </div>
+                                )}
 
-                                    <h3 className="text-2xl font-bold mb-4 transition-colors duration-300" style={{ color: "var(--foreground)" }}>
-                                        {reason.title === "Enterprise Security Standards" ? (
-                                            <Link href="/services/seo-services/technical-seo-services" className="hover:underline">
-                                                {reason.title}
-                                            </Link>
-                                        ) : reason.title === "Regulatory Compliance" ? (
-                                            <Link href="/services/seo-services/technical-seo-services" className="hover:underline">
-                                                {reason.title}
-                                            </Link>
-                                        ) : reason.title === "Performance Excellence" ? (
-                                            <Link href="/services/web-design-development/nextjs-development-services" className="hover:underline">
+                                {/* Text sits at the foot of every tile, so a tile taller than its
+                                    content keeps the extra space between icon and title */}
+                                <div className={isLead && (reason.features || reason.highlight) ? "mt-auto lg:mt-0 lg:pt-6" : "mt-auto"}>
+                                    <h3 className={`${isLead ? "text-2xl md:text-3xl" : "text-xl"} font-bold mb-3`} style={{ color: "var(--foreground)" }}>
+                                        {reason.href ? (
+                                            <Link href={reason.href} className="hover:underline">
                                                 {reason.title}
                                             </Link>
                                         ) : (
                                             reason.title
                                         )}
                                     </h3>
-
-                                    <p className="text-base leading-relaxed mb-6" style={{ color: "var(--secondary-text)" }}>
+                                    <p className={isLead || isWide ? "text-base" : "text-sm"} style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
                                         {reason.description}
                                     </p>
-
-                                    {/* Feature Tags */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {reason.features.map((feature, featureIdx) => (
-                                            <div
-                                                key={featureIdx}
-                                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 group-hover:scale-105"
-                                                style={{
-                                                    backgroundColor: `${reason.accentColor}15`,
-                                                    color: reason.accentColor === "#f97316" ? "var(--accent-orange-text)" : reason.accentColor,
-                                                }}
-                                            >
-                                                <CheckCircle2 className="w-3 h-3" />
-                                                {feature}
-                                            </div>
-                                        ))}
-                                    </div>
+                                    {!isLead && reason.features && (
+                                        <ul className="flex flex-wrap gap-2 mt-4">
+                                            {reason.features.map((feature, fidx) => (
+                                                <li
+                                                    key={fidx}
+                                                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                    style={{ color: "var(--secondary-text)" }}
+                                                >
+                                                    <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-orange-text)" }} />
+                                                    {feature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
-
-                                {/* Hover Effect Bottom Bar */}
-                                <div
-                                    className="h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                                />
                             </div>
                         );
                     })}
                 </div>
 
-                {/* CTA Section */}
-                <div
-                    className={`mt-16 text-center transition-all duration-700 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                        }`}
-                >
-                    <p className="text-lg mb-6" style={{ color: "var(--secondary-text)" }}>
-                        Ready to elevate your corporate digital presence?
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                        style={{
-                            background: "linear-gradient(135deg, #f97316, #ea580c)",
-                        }}
-                    >
-                        Let's Build Your Enterprise Solution
-                        <Zap className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-                </div>
+                {/* Stats: a plain row under a thin line, 2×2 on phones */}
+                {whyStats.length > 0 && (
+                    <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 mt-12 md:mt-16 pt-8 border-t border-[var(--border-color)] text-center">
+                        {whyStats.map((stat) => (
+                            <div key={stat.label} className="flex flex-col-reverse gap-1">
+                                <dt className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</dt>
+                                <dd className="text-2xl md:text-4xl font-bold" style={{ color: "var(--accent-orange-text)" }}>{stat.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                )}
+
+                {whyCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {whyCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {whyCta.title}
+                            </h3>
+                        )}
+                        {whyCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {whyCta.text}
+                            </p>
+                        )}
+                        <Link
+                            href={whyCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#c2410c] to-[#9a3412] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {whyCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );

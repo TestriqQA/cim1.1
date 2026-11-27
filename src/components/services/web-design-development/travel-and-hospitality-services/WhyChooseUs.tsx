@@ -1,160 +1,280 @@
-import { Zap, Globe, Shield, Users, BarChart3, HeadphonesIcon, Sparkles } from "lucide-react";
+import type { CSSProperties, ReactNode } from "react";
+import { Trophy, CheckCircle2, ArrowRight, Award, BarChart3, BadgeCheck, Lightbulb, Handshake, Headphones } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function WhyChooseUs() {
-    const reasons = [
-        {
-            icon: Globe,
-            title: "Deep Expertise",
-            description: "Our deep expertise delivers custom Travel Technology Solutions that solve complex challenges and drive growth.",
-            color: "#0d9488",
-        },
-        {
-            icon: BarChart3,
-            title: "Data-Driven Results",
-            description: <span>Our <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline">Travel Data Analytics</Link> and Business Intelligence focus ensures every feature drives ROI and maximizes profitability.</span>,
-            color: "#0d9488",
-        },
-        {
-            icon: Shield,
-            title: "E-E-A-T Certified Quality",
-            description: "Content and code adhere strictly to Google's E-E-A-T guidelines, building Authority and Trust through secure, compliant systems.",
-            color: "#0d9488",
-        },
-        {
-            icon: Sparkles,
-            title: "Innovation First",
-            description: "Stay ahead of Hospitality Technology Trends 2026. From AI chatbots to sustainable travel features, we integrate forward-thinking solutions.",
-            color: "#0d9488",
-        },
-        {
-            icon: Users,
-            title: "360° Digital Partnership",
-            description: <span>Beyond development, we offer <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:underline">Hospitality Social Media Management</Link>, SEO, and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline">Travel Lead Generation</Link> to ensure your platform thrives.</span>,
-            color: "#0d9488",
-        },
-        {
-            icon: HeadphonesIcon,
-            title: "24/7 Support & Maintenance",
-            description: "Our Travel and Hospitality Maintenance teams provide round-the-clock monitoring and rapid response for consistent uptime.",
-            color: "#0d9488",
-        },
-    ];
+const whyHeader: WhyHeader = {
+    title: (
+        <>
+            Why <span style={{ color: "var(--accent-teal-text)" }}>Choose Us</span>
+        </>
+    ),
+    intro: "We understand hospitality - from boutique hotels to global chains, we deliver platforms that drive bookings and delight guests.",
+};
 
-    const stats = [
-        { value: "Strong", label: "Traffic Growth" },
-        { value: "80%+", label: "Test Coverage" },
-        { value: "Global", label: "Global Partners" },
-        { value: "24/7", label: "Monitoring" },
-    ];
+// All six cards were one teal; they now cycle three teals of the page palette.
+const reasons: Reason[] = [
+    {
+        icon: Award,
+        title: "Deep Expertise",
+        description: "Our deep expertise delivers custom Travel Technology Solutions that solve complex challenges and drive growth.",
+        color: "from-[#0d9488] to-[#0f766e]",
+        iconColor: "#0d9488",
+    },
+    {
+        icon: BarChart3,
+        title: "Data-Driven Results",
+        description: <>Our <Link href="/services/ai-workflows-automations-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-teal-text)" }}>Travel Data Analytics</Link> and Business Intelligence focus ensures every feature drives ROI and maximizes profitability.</>,
+        color: "from-[#0891b2] to-[#0e7490]",
+        iconColor: "#0891b2",
+    },
+    {
+        icon: BadgeCheck,
+        title: "E-E-A-T Certified Quality",
+        description: "Content and code adhere strictly to Google's E-E-A-T guidelines, building Authority and Trust through secure, compliant systems.",
+        color: "from-[#0f766e] to-[#115e59]",
+        iconColor: "#0f766e",
+    },
+    {
+        icon: Lightbulb,
+        title: "Innovation First",
+        description: "Stay ahead of Hospitality Technology Trends 2026. From AI chatbots to sustainable travel features, we integrate forward-thinking solutions.",
+        color: "from-[#0d9488] to-[#0f766e]",
+        iconColor: "#0d9488",
+    },
+    {
+        icon: Handshake,
+        title: "360° Digital Partnership",
+        description: <>Beyond development, we offer <Link href="/services/social-media-marketing-services" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-teal-text)" }}>Hospitality Social Media Management</Link>, SEO, and <Link href="/services/performance-marketing" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-teal-text)" }}>Travel Lead Generation</Link> to ensure your platform thrives.</>,
+        color: "from-[#0891b2] to-[#0e7490]",
+        iconColor: "#0891b2",
+    },
+    {
+        icon: Headphones,
+        title: "24/7 Support & Maintenance",
+        description: "Our Travel and Hospitality Maintenance teams provide round-the-clock monitoring and rapid response for consistent uptime.",
+        color: "from-[#0f766e] to-[#115e59]",
+        iconColor: "#0f766e",
+    },
+];
+
+// The section's stats panel (Strong / 80%+ / Global / 24/7) repeated the hero's stats,
+// so they are shown once, in the hero.
+const whyStats: WhyStat[] = [];
+
+const whyCta: SectionCta = null;
+
+type WhyHeader = { title: ReactNode; intro: ReactNode; checks?: string[] };
+type Reason = {
+    icon: LucideIcon;
+    title: string;
+    href?: string;
+    description: ReactNode;
+    color: string;
+    iconColor: string;
+    features?: ReactNode[];
+    // lead card only: a quoted result from the card's own text, shown as a callout
+    highlight?: { label: string; text: ReactNode };
+};
+type SectionCta = { title?: string; text?: ReactNode; label: string; href?: string } | null;
+type WhyStat = { value: string; label: string };
+
+export default function WhyChooseUs() {
+    const count = reasons.length;
+    // Bento (website-type pages). When the lead card has a panel (highlights or a
+    // quoted result) it is two rows tall from lg:
+    // 6 cards: lg [1 2 3]/[1 4 4]/[5 5 6], md [1 1]/[2 3]/[4 5]/[6 6].
+    // 5 cards: lg [1 2 3]/[1 4 5], md [1 1]/[2 3]/[4 5].
+    // 4 cards: lg [1 2 2]/[1 3 4], md [1 1]/[2 2]/[3 4].
+    // Without one it would be a tall card with an empty band, so the lead is wide
+    // instead and wide cards zig-zag: 6 cards lg [1 1 2]/[3 4 4]/[5 5 6],
+    // md [1 1]/[2 3]/[4 4]/[5 6].
+    const tallLead = Boolean(reasons[0]?.features || reasons[0]?.highlight);
+    const placementFor = (idx: number) => {
+        if (!tallLead && count === 6) {
+            if (idx === 0 || idx === 3) return "md:col-span-2";
+            if (idx === 4) return "lg:col-span-2";
+            return "";
+        }
+        // 5 cards: lg [1 1 2]/[3 4 5], md [1 1]/[2 3]/[4 5]
+        if (!tallLead && count === 5) return idx === 0 ? "md:col-span-2" : "";
+        // 4 cards: lg [1 1 2]/[3 4 4], md [1 1]/[2 3]/[4 4]
+        if (!tallLead && count === 4) return idx === 0 || idx === 3 ? "md:col-span-2" : "";
+        if (idx === 0) return "md:col-span-2 lg:col-span-1 lg:row-span-2";
+        if (count === 6 && (idx === 3 || idx === 4)) return "lg:col-span-2";
+        if (count === 6 && idx === 5) return "md:col-span-2 lg:col-span-1";
+        if (count === 4 && idx === 1) return "md:col-span-2";
+        return "";
+    };
+    const isWideCard = (idx: number) => {
+        if (!tallLead && count === 6) return idx === 3 || idx === 4;
+        if (!tallLead && count === 4) return idx === 3;
+        if (!tallLead) return false;
+        return (count === 6 && (idx === 3 || idx === 4)) || (count === 4 && idx === 1);
+    };
 
     return (
         <section
-            className="py-20 transition-colors duration-300"
-            style={{ backgroundColor: "var(--background)" }}
+            className="py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--card-bg)" }}
         >
             <div className="mx-auto px-6 md:px-12 xl:px-20">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    {/* Badge */}
+                <div className="text-center mb-10 md:mb-12">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                         style={{
-                            backgroundColor: "rgba(13, 148, 136, 0.05)",
-                            borderColor: "rgba(13, 148, 136, 0.2)",
+                            backgroundColor: "color-mix(in srgb, #0d9488 5%, transparent)",
+                            borderColor: "color-mix(in srgb, #0d9488 20%, transparent)",
                         }}
                     >
-                        <Sparkles className="w-4 h-4" style={{ color: "#0d9488" }} />
+                        <Trophy className="w-4 h-4" aria-hidden="true" style={{ color: "var(--accent-teal-text)" }} />
                         <span className="text-sm font-semibold" style={{ color: "var(--accent-teal-text)" }}>
                             Why Choose Us
                         </span>
                     </div>
 
-                    <h2
-                        className="text-4xl md:text-5xl font-bold mb-6"
-                        style={{ color: "var(--foreground)" }}
-                    >
-                        Why <span style={{ color: "var(--accent-teal-text)" }}>Choose Us</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                        {whyHeader.title}
                     </h2>
-                    <p
-                        className="text-xl max-w-3xl mx-auto mb-8"
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        We understand hospitality - from boutique hotels to global chains, we deliver platforms that drive bookings and delight guests.
+
+                    <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                        {whyHeader.intro}
                     </p>
-                    <div
-                        className="w-24 h-1.5 mx-auto rounded-full"
-                        style={{ backgroundColor: "#0d9488" }}
-                    />
+
+                    {whyHeader.checks && (
+                        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 max-w-4xl mx-auto">
+                            {whyHeader.checks.map((item) => (
+                                <li key={item} className="flex items-center gap-2 text-base" style={{ color: "var(--foreground)" }}>
+                                    <CheckCircle2 className="w-5 h-5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-teal-text)" }} />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
 
-                {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                {/* Hover as everywhere: the border turns the tile's own colour and the
+                    card lifts 4px; no shadow. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {reasons.map((reason, idx) => {
                         const Icon = reason.icon;
+                        const isLead = idx === 0;
+                        const isWide = isWideCard(idx);
                         return (
                             <div
-                                key={idx}
-                                className="p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg group"
+                                key={reason.title}
+                                className={`flex flex-col p-6 md:p-8 rounded-2xl border border-[var(--border-color)] transition duration-200 ease-out hover:border-[var(--card-accent)] hover:-translate-y-1 motion-reduce:transition-colors motion-reduce:hover:translate-y-0 ${placementFor(idx)}`}
                                 style={{
-                                    backgroundColor: "var(--card-bg)",
-                                    borderColor: "var(--border-color)",
-                                }}
+                                    backgroundColor: isLead
+                                        ? `color-mix(in srgb, ${reason.iconColor} 6%, var(--card-bg))`
+                                        : "var(--card-bg)",
+                                    "--card-accent": reason.iconColor,
+                                } as CSSProperties}
                             >
-                                <div
-                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                                    style={{ backgroundColor: reason.color }}
-                                >
-                                    <Icon className="w-7 h-7 text-white" />
+                                <div className={`${isLead ? "w-20 h-20" : "w-16 h-16"} rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br ${reason.color}`}>
+                                    <Icon className={`${isLead ? "w-10 h-10" : "w-8 h-8"} text-white`} aria-hidden="true" />
                                 </div>
 
-                                <h3
-                                    className="text-xl font-bold mb-2"
-                                    style={{ color: "var(--foreground)" }}
-                                >
-                                    {reason.title}
-                                </h3>
+                                {/* Lead card: its own highlights as a small panel. From lg (where
+                                    the card is two rows tall) it sits between the icon and the text,
+                                    centred in the spare height so neither gap is a big empty band;
+                                    below lg it follows the text. */}
+                                {isLead && reason.features && (
+                                    <ul
+                                        className="order-last lg:order-none mt-6 lg:my-auto rounded-2xl border border-[var(--border-color)] px-4 py-1 divide-y divide-[var(--border-color)]"
+                                        style={{ backgroundColor: "var(--card-bg)" }}
+                                    >
+                                        {reason.features.map((feature, fidx) => (
+                                            <li key={fidx} className="flex items-start gap-2.5 py-2.5 text-sm" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-teal-text)" }} />
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {isLead && !reason.features && reason.highlight && (
+                                    <div
+                                        className="order-last lg:order-none mt-6 lg:my-auto rounded-2xl border border-[var(--border-color)] px-4 py-3"
+                                        style={{ backgroundColor: "var(--card-bg)" }}
+                                    >
+                                        <p className="text-sm font-semibold mb-1" style={{ color: "var(--accent-teal-text)" }}>
+                                            {reason.highlight.label}
+                                        </p>
+                                        <p className="text-sm" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                            {reason.highlight.text}
+                                        </p>
+                                    </div>
+                                )}
 
-                                <p
-                                    className="text-sm"
-                                    style={{ color: "var(--secondary-text)" }}
-                                >
-                                    {reason.description}
-                                </p>
+                                {/* Text sits at the foot of every tile, so a tile taller than its
+                                    content keeps the extra space between icon and title */}
+                                <div className={isLead && (reason.features || reason.highlight) ? "mt-auto lg:mt-0 lg:pt-6" : "mt-auto"}>
+                                    <h3 className={`${isLead ? "text-2xl md:text-3xl" : "text-xl"} font-bold mb-3`} style={{ color: "var(--foreground)" }}>
+                                        {reason.href ? (
+                                            <Link href={reason.href} className="hover:underline">
+                                                {reason.title}
+                                            </Link>
+                                        ) : (
+                                            reason.title
+                                        )}
+                                    </h3>
+                                    <p className={isLead || isWide ? "text-base" : "text-sm"} style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                                        {reason.description}
+                                    </p>
+                                    {!isLead && reason.features && (
+                                        <ul className="flex flex-wrap gap-2 mt-4">
+                                            {reason.features.map((feature, fidx) => (
+                                                <li
+                                                    key={fidx}
+                                                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--border-color)] text-xs font-semibold"
+                                                    style={{ color: "var(--secondary-text)" }}
+                                                >
+                                                    <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-teal-text)" }} />
+                                                    {feature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
                             </div>
                         );
                     })}
                 </div>
 
-                {/* Stats Section */}
-                <div
-                    className="p-8 rounded-3xl border"
-                    style={{
-                        backgroundColor: "var(--card-bg)",
-                        borderColor: "var(--border-color)",
-                    }}
-                >
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {stats.map((stat, idx) => (
-                            <div key={idx} className="text-center">
-                                <div
-                                    className="text-4xl md:text-5xl font-bold mb-2"
-                                    style={{
-                                        color: "#0d9488",
-                                    }}
-                                >
-                                    {stat.value}
-                                </div>
-                                <p
-                                    className="text-sm font-medium"
-                                    style={{ color: "var(--secondary-text)" }}
-                                >
-                                    {stat.label}
-                                </p>
+                {/* Stats: a plain row under a thin line, 2×2 on phones */}
+                {whyStats.length > 0 && (
+                    <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 mt-12 md:mt-16 pt-8 border-t border-[var(--border-color)] text-center">
+                        {whyStats.map((stat) => (
+                            <div key={stat.label} className="flex flex-col-reverse gap-1">
+                                <dt className="text-xs md:text-sm" style={{ color: "var(--secondary-text)" }}>{stat.label}</dt>
+                                <dd className="text-2xl md:text-4xl font-bold" style={{ color: "var(--accent-teal-text)" }}>{stat.value}</dd>
                             </div>
                         ))}
+                    </dl>
+                )}
+
+                {whyCta && (
+                    <div className="mt-12 md:mt-16 text-center px-0 sm:px-8">
+                        {whyCta.title && (
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                {whyCta.title}
+                            </h3>
+                        )}
+                        {whyCta.text && (
+                            <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: "var(--secondary-text)" }}>
+                                {whyCta.text}
+                            </p>
+                        )}
+                        <Link
+                            href={whyCta.href ?? "/contact"}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 rounded-full font-semibold text-white text-sm sm:text-lg text-center bg-gradient-to-r from-[#0f766e] to-[#115e59] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:brightness-120 focus-visible:outline-none focus-visible:scale-105 focus-visible:shadow-xl focus-visible:brightness-120"
+                        >
+                            {whyCta.label}
+                            <ArrowRight className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        </Link>
                     </div>
-                </div>
+                )}
             </div>
         </section>
     );

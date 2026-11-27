@@ -1,208 +1,311 @@
-"use client";
-
-import { useState } from "react";
-import {
-    Smartphone,
-    Globe,
-    Zap,
-    RefreshCw,
-    Puzzle,
-    Rocket,
-} from "lucide-react";
 import Link from "next/link";
+import { LayoutGrid, CheckCircle2, Globe, Zap, Smartphone, ArrowRightLeft, Blocks, Rocket } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+// The six hybrid services as the rows of one panel, 3 across from 1280px (as on iOS). No body
+// paragraphs, only the intro under the heading. Icons: Custom Plugin had Puzzle (the Our
+// Solutions pill icon) → Blocks (plugins); the native-to-hybrid conversion had RefreshCw →
+// ArrowRightLeft (migration).
+const overview: OverviewData = {
+    title: (
+        <>
+            Comprehensive <span style={{ color: "var(--accent-cyan-text)" }}>Hybrid App</span> Solutions
+        </>
+    ),
+    intro: "Leverage your reach and minimize overhead with hybrid app development strategies that bridge the gap between web agility and native power.",
+    paragraphs: [],
+    layout: "stacked",
+};
+
+const rows: OverviewRow[] = [
+    {
+        icon: Globe,
+        title: "Ionic Framework App Development Services",
+        description: (
+            <>
+                As an expert Ionic framework app development agency, we build lightning-fast apps using Angular, React, or Vue. Our performance optimization ensures your Ionic apps feel as smooth as{" "}
+                <Link href="/services/mobile-app-development" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>
+                    native apps
+                </Link>
+                .
+            </>
+        ),
+    },
+    {
+        icon: Zap,
+        title: "Capacitor & Native Bridge Integration",
+        description: "Unlock the full potential of hardware with Capacitor solutions. We provide custom API integration for hybrid applications, enabling seamless access to GPS, Camera, Biometrics, and Push Notifications.",
+    },
+    {
+        icon: Smartphone,
+        title: "Scalable Progressive Web Apps (PWA)",
+        description: "Future-proof your business with installable web apps. Our PWAs offer offline functionality and app-like experiences directly in the browser, maximizing user engagement without friction.",
+    },
+    {
+        icon: ArrowRightLeft,
+        title: "Native to Hybrid App Conversion Services",
+        description: "Modernize your tech stack. We specialize in hybrid app migration, converting siloed native apps into a unified, maintainable cross-platform app development architecture.",
+    },
+    {
+        icon: Blocks,
+        title: "Custom Plugin & Native Container Dev",
+        description: "When standard plugins fall short, our hybrid app developers build custom native bridges to handle complex requirements like specialized IoT connectivity or hardware integration.",
+    },
+    {
+        icon: Rocket,
+        title: "App Store & Play Store Deployment",
+        description: (
+            <>
+                Navigating global compliance is our forte. We handle the entire submission process, ensuring your apps meet the latest 2026 security and privacy standards for both{" "}
+                <Link href="/services/mobile-app-development/ios-app-development-company" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>
+                    iOS
+                </Link>{" "}
+                and{" "}
+                <Link href="/services/mobile-app-development/android-app-development-company" className="underline underline-offset-2 hover:underline" style={{ color: "var(--accent-cyan-text)" }}>
+                    Android
+                </Link>
+                .
+            </>
+        ),
+    },
+];
+
+type OverviewData = {
+    title: ReactNode;
+    intro?: ReactNode;
+    paragraphs: ReactNode[];
+    checklist?: { title: string; items: ReactNode[] };
+    panelTitle?: string;
+    panelNote?: ReactNode;
+    // "stacked": body text centred under the heading, then the panel full width with its
+    // rows in a grid (for short text beside a long panel)
+    layout?: "stacked";
+};
+type OverviewRow = { icon: LucideIcon; title?: string; href?: string; description: ReactNode; tags?: string[] };
 
 export default function ServiceOverview() {
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
-    const services = [
-        {
-            icon: Globe,
-            title: "Ionic Framework App Development Services",
-            description: <><span className="text-inherit">As an expert Ionic framework app development agency, we build lightning-fast apps using Angular, React, or Vue. Our performance optimization ensures your Ionic apps feel as smooth as </span><Link href="/services/mobile-app-development" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">native apps</Link>.</>,
-            gradient: "from-[#00b4d8] to-[#0077b6]",
-            shadowColor: "rgba(0, 180, 216, 0.4)",
-        },
-        {
-            icon: Zap,
-            title: "Capacitor & Native Bridge Integration",
-            description: "Unlock the full potential of hardware with Capacitor solutions. We provide custom API integration for hybrid applications, enabling seamless access to GPS, Camera, Biometrics, and Push Notifications.",
-            gradient: "from-[#0077b6] to-[#00b4d8]",
-            shadowColor: "rgba(0, 119, 182, 0.4)",
-        },
-        {
-            icon: Smartphone,
-            title: "Scalable Progressive Web Apps (PWA)",
-            description: "Future-proof your business with installable web apps. Our PWAs offer offline functionality and app-like experiences directly in the browser, maximizing user engagement without friction.",
-            gradient: "from-[#48cae4] to-[#00b4d8]",
-            shadowColor: "rgba(72, 202, 228, 0.4)",
-        },
-        {
-            icon: RefreshCw,
-            title: "Native to Hybrid App Conversion Services",
-            description: "Modernize your tech stack. We specialize in hybrid app migration, converting siloed native apps into a unified, maintainable cross-platform app development architecture.",
-            gradient: "from-[#00b4d8] to-[#48cae4]",
-            shadowColor: "rgba(0, 180, 216, 0.4)",
-        },
-        {
-            icon: Puzzle,
-            title: "Custom Plugin & Native Container Dev",
-            description: "When standard plugins fall short, our hybrid app developers build custom native bridges to handle complex requirements like specialized IoT connectivity or hardware integration.",
-            gradient: "from-[#0077b6] to-[#48cae4]",
-            shadowColor: "rgba(0, 119, 182, 0.4)",
-        },
-        {
-            icon: Rocket,
-            title: "App Store & Play Store Deployment",
-            description: <><span className="text-inherit">Navigating global compliance is our forte. We handle the entire submission process, ensuring your apps meet the latest 2026 security and privacy standards for both </span><Link href="/services/mobile-app-development/ios-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">iOS</Link> and <Link href="/services/mobile-app-development/android-app-development-company" className="text-[var(--accent-cyan-text)] hover:underline underline underline-offset-2">Android</Link>.</>,
-            gradient: "from-[#48cae4] to-[#0077b6]",
-            shadowColor: "rgba(72, 202, 228, 0.4)",
-        },
-    ];
+    // One big card, rows (sub-sections) split by dividers, no fill and no hover effect of
+    // its own (user, 26 Nov 2026: "remove the background color", "remove the border hover
+    // effect"). Hovering a sub-section lifts only its icon and text (user, after trying it
+    // on E-commerce: "instead of hovering entire particular section, can we just hover icon
+    // and content in it", then "apply to all"): the row and its divider lines stay still,
+    // the content rises 2px, easing over 400ms, with no shadow or background, and eases
+    // back down when the pointer leaves. Keyboard: the same while a link in the row has
+    // focus. Each row is a `group`; the lift sits on the row's content.
+    const liftClass = "group";
+    const rowContent = (item: OverviewRow) => {
+        const Icon = item.icon;
+        return (
+            <div className="flex items-start gap-4 transition-[translate] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 motion-safe:group-focus-within:-translate-y-0.5 motion-reduce:transition-none">
+                <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{
+                        background: "linear-gradient(135deg, color-mix(in srgb, #00b4d8 15%, transparent), color-mix(in srgb, #48cae4 15%, transparent))",
+                    }}
+                >
+                    <Icon className="w-6 h-6" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                </div>
+                {item.title ? (
+                    <div className="min-w-0">
+                        <h3 className="text-lg font-bold mb-2" style={{ color: "var(--foreground)" }}>
+                            {item.href ? (
+                                <Link href={item.href} className="hover:underline">
+                                    {item.title}
+                                </Link>
+                            ) : (
+                                item.title
+                            )}
+                        </h3>
+                        <p className="text-sm" style={{ color: "var(--secondary-text)", lineHeight: "1.6" }}>
+                            {item.description}
+                        </p>
+                        {item.tags && (
+                            <ul className="flex flex-wrap gap-2 mt-3">
+                                {item.tags.map((tag) => (
+                                    <li
+                                        key={tag}
+                                        className="px-2.5 py-0.5 rounded-full border border-[var(--border-color)] text-xs"
+                                        style={{ color: "var(--secondary-text)" }}
+                                    >
+                                        {tag}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+                ) : (
+                    /* A one-line point: centred on the icon */
+                    <p className="min-w-0 self-center text-base" style={{ color: "var(--foreground)", lineHeight: "1.5" }}>
+                        {item.description}
+                    </p>
+                )}
+            </div>
+        );
+    };
 
     return (
         <section
-            className="py-24 relative overflow-hidden transition-colors duration-300"
-            style={{
-                backgroundColor: "var(--card-bg)",
-                borderColor: "var(--border-color)",
-            }}
+            className="px-6 md:px-12 xl:px-20 py-16 md:py-20 transition-colors duration-300"
+            style={{ backgroundColor: "var(--background)" }}
         >
-            {/* Animated background elements */}
-
-            <div className="mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-                <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <span
-                            className="px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase"
-                            style={{
-                                background: "linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(0, 119, 182, 0.1))",
-                                color: "var(--accent-cyan-text)",
-                            }}
-                        >
-                            Our Services
-                        </span>
+            <div>
+                {/* Header */}
+                <div className="text-center mb-10 md:mb-12 max-w-4xl mx-auto">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
+                        style={{
+                            background:
+                                "linear-gradient(90deg, color-mix(in srgb, #00b4d8 8%, transparent), color-mix(in srgb, #48cae4 8%, transparent))",
+                            borderColor: "color-mix(in srgb, #00b4d8 20%, transparent)",
+                            color: "var(--accent-cyan-text)",
+                        }}
+                    >
+                        <LayoutGrid className="w-4 h-4" aria-hidden="true" />
+                        <span className="text-sm font-semibold">Our Service</span>
                     </div>
-                    <h2
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
-                        style={{ color: "var(--foreground)" }}
-                    >
-                        Comprehensive{" "}
-                        <span
-                            style={{
-                                background: "linear-gradient(135deg, #00b4d8, #0077b6)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
-                            Hybrid App
-                        </span>{" "}
-                        Solutions
+
+                    <h2 className="text-3xl md:text-5xl font-bold" style={{ color: "var(--foreground)" }}>
+                        {overview.title}
                     </h2>
-                    <p
-                        className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-                        style={{ color: "var(--secondary-text)" }}
-                    >
-                        Leverage your reach and minimize overhead with hybrid app development strategies that bridge the gap between web agility and native power.
-                    </p>
+
+                    {overview.intro && (
+                        <p className="text-lg sm:text-xl mt-6" style={{ color: "var(--secondary-text)" }}>
+                            {overview.intro}
+                        </p>
+                    )}
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, idx) => {
-                        const Icon = service.icon;
-                        const isHovered = hoveredCard === idx;
+                {overview.layout === "stacked" ? (
+                    /* Stacked (Healthcare; user, 26 Nov 2026: "left content is very less and
+                       right side card is very big, bring the content in center of width and
+                       right side in 3*3 with full width"): the body text centred under the
+                       heading at the heading's width, then the panel full width with its rows
+                       in a grid: 1 column on phones, 2 from 768px, 3 from 1280px (at 1024 a
+                       third column left titles about 180px wide). Dividers: a top line on
+                       every row but the first row, a left line on every column but the first. */
+                    <>
+                        {/* body text, when the section has any (iOS has only the intro) */}
+                        {(overview.paragraphs.length > 0 || overview.checklist) && (
+                            <div className="max-w-4xl mx-auto text-center space-y-6 mb-10 md:mb-12">
+                                {overview.paragraphs.map((paragraph, idx) => (
+                                    <p key={idx} className="text-base leading-[1.7] sm:text-[1.1rem] sm:leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
+                                        {paragraph}
+                                    </p>
+                                ))}
+                                {overview.checklist && (
+                                    <div className="pt-2">
+                                        <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                            {overview.checklist.title}
+                                        </h3>
+                                        <ul className="inline-flex flex-col gap-3 text-left">
+                                            {overview.checklist.items.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-3 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
-                        return (
+                        <div className="rounded-2xl border border-[var(--border-color)]">
+                            {overview.panelTitle && (
+                                <h3 className="px-6 md:px-8 pt-6 pb-4 text-xl font-bold border-b border-[var(--border-color)]" style={{ color: "var(--foreground)" }}>
+                                    {overview.panelTitle}
+                                </h3>
+                            )}
+                            <div className="grid md:grid-cols-2 xl:grid-cols-3">
+                                {rows.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`p-6 md:px-8 border-[var(--border-color)] border-t first:border-t-0 md:[&:nth-child(2)]:border-t-0 md:even:border-l xl:[&:nth-child(3)]:border-t-0 xl:[&:nth-child(3n+1)]:border-l-0 xl:[&:not(:nth-child(3n+1))]:border-l ${liftClass}`}
+                                    >
+                                        {rowContent(item)}
+                                    </div>
+                                ))}
+                            </div>
+                            {overview.panelNote && (
+                                <p
+                                    className="px-6 md:px-8 py-4 text-sm rounded-b-2xl border-t border-[var(--border-color)]"
+                                    style={{ color: "var(--secondary-text)", backgroundColor: "color-mix(in srgb, #00b4d8 6%, transparent)" }}
+                                >
+                                    {overview.panelNote}
+                                </p>
+                            )}
+                        </div>
+                    </>
+                ) : overview.paragraphs.length > 0 ? (
+                    /* Text and the services panel side by side, centred on each other so
+                       neither leaves an empty band under it. From 1680px the text column
+                       stops at 43rem (about 80 characters a line) and the panel takes the
+                       rest. Both breakpoints are written as min-[…px] so Tailwind orders
+                       them by size. */
+                    <div className="grid min-[1024px]:grid-cols-2 min-[1680px]:grid-cols-[minmax(0,43rem)_minmax(0,1fr)] gap-12 items-center mx-auto">
+                        <div className="space-y-6">
+                            {/* All paragraphs share one body style */}
+                            {overview.paragraphs.map((paragraph, idx) => (
+                                <p key={idx} className="text-base leading-[1.7] sm:text-[1.1rem] sm:leading-[1.8]" style={{ color: "var(--secondary-text)" }}>
+                                    {paragraph}
+                                </p>
+                            ))}
+
+                            {overview.checklist && (
+                                <div className="pt-2">
+                                    <h3 className="text-xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+                                        {overview.checklist.title}
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        {overview.checklist.items.map((item, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-base" style={{ color: "var(--secondary-text)" }}>
+                                                <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" style={{ color: "var(--accent-cyan-text)" }} />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="rounded-2xl border border-[var(--border-color)] divide-y divide-[var(--border-color)]">
+                            {overview.panelTitle && (
+                                <h3 className="px-6 md:px-8 pt-6 pb-4 text-xl font-bold" style={{ color: "var(--foreground)" }}>
+                                    {overview.panelTitle}
+                                </h3>
+                            )}
+                            {rows.map((item, idx) => (
+                                <div key={idx} className={`${item.title ? "p-6 md:px-8" : "px-6 md:px-8 py-4"} ${liftClass}`}>
+                                    {rowContent(item)}
+                                </div>
+                            ))}
+                            {overview.panelNote && (
+                                <p
+                                    className="px-6 md:px-8 py-4 text-sm rounded-b-2xl"
+                                    style={{ color: "var(--secondary-text)", backgroundColor: "color-mix(in srgb, #00b4d8 6%, transparent)" }}
+                                >
+                                    {overview.panelNote}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    /* No body text: the panel runs full width, rows in two columns from 768px.
+                       With an odd number of rows (Blogs: 5) the last one spans both columns,
+                       so no empty cell is left beside it (user, 26 Nov 2026: "is not looking
+                       proper make it proper only for this page"). */
+                    <div className="grid md:grid-cols-2 rounded-2xl border border-[var(--border-color)]">
+                        {rows.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="group relative cursor-pointer"
-                                onMouseEnter={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredCard(idx);
-                                    }
-                                }}
-                                onMouseLeave={() => {
-                                    if (window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredCard(null);
-                                    }
-                                }}
-                                onClick={() => {
-                                    if (!window.matchMedia("(hover: hover)").matches) {
-                                        setHoveredCard(hoveredCard === idx ? null : idx);
-                                    }
-                                }}
+                                className={`p-6 md:px-8 border-t border-[var(--border-color)] first:border-t-0 md:[&:nth-child(2)]:border-t-0 md:even:border-l ${rows.length % 2 === 1 && idx === rows.length - 1 ? "md:col-span-2" : ""} ${liftClass}`}
                             >
-
-                                {/* Main card */}
-                                <div
-                                    className="relative p-8 rounded-3xl border transition-all duration-500 bg-card overflow-hidden"
-                                    style={{
-                                        borderColor: "var(--border-color)",
-                                        transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
-                                        boxShadow: isHovered
-                                            ? `0 20px 40px ${service.shadowColor}`
-                                            : "0 4px 6px rgba(0, 0, 0, 0.1)",
-                                    }}
-                                >
-                                    {/* Animated corner accent */}
-                                    <div
-                                        className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-20 transition-all duration-500"
-                                        style={{
-                                            background: `linear-gradient(135deg, transparent, ${service.shadowColor})`,
-                                            transform: isHovered ? "translate(0, 0)" : "translate(50%, -50%)",
-                                            borderRadius: "0 0 0 100%",
-                                        }}
-                                    />
-
-                                    {/* Icon container */}
-                                    <div className="relative mb-6">
-                                        <div
-                                            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 bg-gradient-to-br ${service.gradient}`}
-                                            style={{
-                                                transform: isHovered ? "rotate(10deg) scale(1.1)" : "rotate(0deg) scale(1)",
-                                                boxShadow: isHovered
-                                                    ? `0 8px 24px ${service.shadowColor}`
-                                                    : "0 4px 12px rgba(0, 0, 0, 0.1)",
-                                            }}
-                                        >
-                                            <Icon
-                                                className="w-8 h-8 text-white transition-transform duration-500"
-                                                style={{
-                                                    transform: isHovered ? "scale(1.1)" : "scale(1)",
-                                                }}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <h3
-                                        className="text-xl font-bold mb-3 transition-colors duration-300"
-                                        style={{ color: "var(--foreground)" }}
-                                    >
-                                        {service.title}
-                                    </h3>
-                                    <p
-                                        className="leading-relaxed transition-all duration-300"
-                                        style={{
-                                            color: "var(--secondary-text)",
-                                            transform: isHovered ? "translateX(4px)" : "translateX(0)",
-                                        }}
-                                    >
-                                        {service.description}
-                                    </p>
-
-                                    {/* Animated bottom border */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-1 transition-all duration-500"
-                                        style={{
-                                            width: isHovered ? "100%" : "0%",
-                                            background: `linear-gradient(90deg, ${service.gradient})`,
-                                        }}
-                                    />
-                                </div>
+                                {rowContent(item)}
                             </div>
-                        );
-                    })}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );
